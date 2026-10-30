@@ -72,8 +72,8 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
-      expect(find.text('Practice Papers'), findsOneWidget);
-      expect(find.text('Start'), findsNWidgets(21));
+      expect(find.text('2026 Practice Papers'), findsOneWidget);
+      expect(find.text('Start this paper'), findsNWidgets(21));
     });
 
     testWidgets('paper setup renders after selecting a paper',

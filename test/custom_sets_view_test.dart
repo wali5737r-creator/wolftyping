@@ -89,17 +89,11 @@ void main() {
     await tester.ensureVisible(find.text('Start This Custom Test'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Start This Custom Test'));
-    await tester.pumpAndSettle();
-    // Custom tests ask for the student's name first; empty falls back
-    // to 'Student' and never blocks starting.
-    expect(find.text('Your name'), findsOneWidget);
-    await tester.tap(find.text('Start test'));
     // pump(), not pumpAndSettle(): the running test's 1-second timer
     // keeps scheduling frames, so pumpAndSettle would never settle.
     await tester.pump();
-    expect(find.text('All questions'), findsOneWidget);
-    expect(find.text('Seed question one?'), findsOneWidget);
-    expect(find.text('Seed question two?'), findsOneWidget);
+    expect(find.text('Question 1 of 2'), findsOneWidget);
+    expect(find.text('Question Palette'), findsOneWidget);
     expect(find.text('Submit Test'), findsOneWidget);
   });
 

@@ -48,22 +48,12 @@ class CustomSetsRepository {
     }
   }
 
-  /// Persists [sets]. Throws a readable error instead of a raw
-  /// storage exception when the device store is full or unavailable,
-  /// so callers can show 'could not save — storage full' visibly.
   Future<void> saveAll(List<CustomSet> sets) async {
-    try {
-      final SharedPreferences prefs = await SharedPreferences.getInstance();
-      await prefs.setString(
-        storageKey,
-        jsonEncode(sets.map((s) => s.toJson()).toList()),
-      );
-    } catch (_) {
-      throw Exception(
-        'Could not save — storage full. Free up space in this browser '
-        'and try again.',
-      );
-    }
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString(
+      storageKey,
+      jsonEncode(sets.map((s) => s.toJson()).toList()),
+    );
   }
 
   /// Inserts [set], or replaces the set with the same id. Returns the
