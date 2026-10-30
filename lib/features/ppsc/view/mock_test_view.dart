@@ -9,6 +9,7 @@ import '../../../core/widgets/app_controls.dart';
 import '../../../core/widgets/app_scaffold.dart';
 import '../../../core/widgets/app_surfaces.dart';
 import '../controller/mock_test_controller.dart';
+import '../model/custom_set.dart';
 import '../model/mock_question.dart';
 import '../model/paper_test.dart';
 import '../service/mock_test_engine.dart';
@@ -64,6 +65,15 @@ class _SetupPanel extends StatelessWidget {
             final PaperTest? paper = controller.activePaper.value;
             if (isPaper && paper != null) {
               return _PaperSetupPanel(controller: controller, paper: paper);
+            }
+            final bool isCustom =
+                controller.kind.value == MockTestKind.custom;
+            final CustomSet? customSet = controller.activeCustomSet.value;
+            if (isCustom && customSet != null) {
+              return _CustomSetupPanel(
+                controller: controller,
+                customSet: customSet,
+              );
             }
             return _SampleSetupPanel(controller: controller);
           }),
@@ -231,6 +241,30 @@ class _SampleSetupPanel extends StatelessWidget {
                   ],
                 ),
               ),
+              const SizedBox(height: 20),
+              SectionCard(
+                title: 'My Custom Tests',
+                subtitle:
+                    'Tests you create yourself, saved on this device.',
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Create your own MCQ test, or import one a teacher '
+                      'shared as a code or file. User-created practice '
+                      'tests only — never official papers.',
+                      style: AppTextStyles.body,
+                    ),
+                    const SizedBox(height: 12),
+                    ElevatedButton.icon(
+                      onPressed: () =>
+                          Get.toNamed(AppRoutes.ppscCustomTests),
+                      icon: const Icon(Icons.edit_note_outlined),
+                      label: const Text('My Custom Tests'),
+                    ),
+                  ],
+                ),
+              ),
             ],
     );
   }
@@ -328,6 +362,113 @@ class _PaperSetupPanel extends StatelessWidget {
           onPressed: () => Get.toNamed(AppRoutes.ppscPastPapers),
           icon: const Icon(Icons.list),
           label: const Text('Choose another paper'),
+        ),
+        TextButton.icon(
+          onPressed: () => controller.selectKind(MockTestKind.full),
+          icon: const Icon(Icons.arrow_back),
+          label: const Text('Back to sample mock tests'),
+        ),
+      ],
+    );
+  }
+}
+
+/// Setup for a selected teacher-created custom set: set identity,
+/// duration, negative marking and start. Reached from the custom tests
+/// list. The run itself reuses the shared test and result panels, so a
+/// custom set gets the same timer, palette, 5-minute warning,
+/// auto-submit and review as every other test.
+class _CustomSetupPanel extends StatelessWidget {
+  const _CustomSetupPanel({required this.controller, required this.customSet});
+
+  final MockTestController controller;
+  final CustomSet customSet;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        PageHeader(
+          title: 'Custom Test: ${customSet.name}',
+          subtitle:
+              'User-created practice test · ${customSet.questionCount} '
+              'question${customSet.questionCount == 1 ? '' : 's'} · '
+              'Practice only — not an official paper.',
+        ),
+        const SizedBox(height: 20),
+        SectionCard(
+          title: customSet.name,
+          subtitle: 'User-created practice test',
+          child: Text(
+            '${customSet.questionCount} question${customSet.questionCount == 1 ? '' : 's'} · '
+            'one question at a time · question palette · auto-submit when time ends',
+            style: AppTextStyles.bodyMedium,
+          ),
+        ),
+        const SizedBox(height: 20),
+        const Text('Duration', style: AppTextStyles.h3),
+        const SizedBox(height: 8),
+        Obx(() {
+          return Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              for (final Duration d in MockTestController.customDurations)
+                ChoiceChip(
+                  label: Text('${d.inMinutes} minutes'),
+                  selected: controller.selectedDuration.value == d,
+                  onSelected: (_) => controller.selectDuration(d),
+                ),
+            ],
+          );
+        }),
+        const SizedBox(height: 16),
+        Obx(
+          () => SwitchListTile(
+            title: const Text('Negative marking'),
+            subtitle: Text(
+              controller.negativeMarking.value
+                  ? 'Each wrong answer deducts ${controller.negativeDeduction.value} marks. Skipped questions never deduct.'
+                  : 'Off: wrong answers score 0, nothing is deducted.',
+            ),
+            value: controller.negativeMarking.value,
+            onChanged: controller.setNegativeMarking,
+            contentPadding: EdgeInsets.zero,
+          ),
+        ),
+        Obx(() {
+          if (!controller.negativeMarking.value) {
+            return const SizedBox.shrink();
+          }
+          return Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              const Text('Deduction per wrong answer:'),
+              for (final double d in MockTestController.deductionOptions)
+                ChoiceChip(
+                  label: Text('-$d'),
+                  selected: controller.negativeDeduction.value == d,
+                  onSelected: (_) => controller.setDeduction(d),
+                ),
+            ],
+          );
+        }),
+        const SizedBox(height: 20),
+        ElevatedButton.icon(
+          onPressed: () {
+            if (controller.availableQuestions.isEmpty) return;
+            controller.startTest();
+          },
+          icon: const Icon(Icons.play_arrow),
+          label: const Text('Start This Custom Test'),
+        ),
+        const SizedBox(height: 12),
+        TextButton.icon(
+          onPressed: () => Get.toNamed(AppRoutes.ppscCustomTests),
+          icon: const Icon(Icons.list),
+          label: const Text('Choose another custom test'),
         ),
         TextButton.icon(
           onPressed: () => controller.selectKind(MockTestKind.full),
@@ -671,6 +812,14 @@ class _ResultPanel extends StatelessWidget {
                   '${controller.activePaper.value!.post}, '
                   '${controller.activePaper.value!.department} · '
                   '${controller.activePaper.value!.examDate}',
+                  style: AppTextStyles.bodyMedium,
+                ),
+              ],
+              if (controller.activeCustomSet.value != null) ...[
+                const SizedBox(height: 6),
+                Text(
+                  'Custom test "${controller.activeCustomSet.value!.name}" · '
+                  'User-created practice test — not an official paper.',
                   style: AppTextStyles.bodyMedium,
                 ),
               ],

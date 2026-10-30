@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:get/get.dart';
 
+import '../model/custom_set.dart';
 import '../model/mock_question.dart';
 import '../model/paper_test.dart';
 import '../service/mock_questions.dart';
@@ -9,7 +10,7 @@ import '../service/mock_test_engine.dart';
 
 enum MockTestPhase { setup, test, result }
 
-enum MockTestKind { full, subject, paper }
+enum MockTestKind { full, subject, paper, custom }
 
 /// Drives the PPSC practice MCQ mock test: setup choices (full vs
 /// subject-wise, duration, negative marking), the countdown timer with
@@ -26,6 +27,12 @@ class MockTestController extends GetxController {
   /// The past paper selected from the papers list, when [kind] is
   /// [MockTestKind.paper]. Null for sample (full/subject) tests.
   final Rxn<PaperTest> activePaper = Rxn<PaperTest>();
+
+  /// The teacher-created custom set selected from the custom tests
+  /// list, when [kind] is [MockTestKind.custom]. Null otherwise. Runs
+  /// through the same engine, timer, palette and review as every
+  /// other kind.
+  final Rxn<CustomSet> activeCustomSet = Rxn<CustomSet>();
   final Rx<Duration> selectedDuration = const Duration(minutes: 90).obs;
   final RxBool negativeMarking = false.obs;
   final RxDouble negativeDeduction = 0.25.obs;
@@ -53,10 +60,25 @@ class MockTestController extends GetxController {
 
   static const List<double> deductionOptions = [0.25, 0.5, 1.0];
 
-  /// Questions available for the currently selected kind/subject/paper.
+  /// Durations offered for custom sets: short teacher sets suit the
+  /// short options, longer ones the full-test options.
+  static const List<Duration> customDurations = [
+    Duration(minutes: 15),
+    Duration(minutes: 20),
+    Duration(minutes: 30),
+    Duration(minutes: 60),
+    Duration(minutes: 90),
+    Duration(minutes: 120),
+  ];
+
+  /// Questions available for the currently selected kind/subject/paper
+  /// /custom set.
   List<MockQuestion> get availableQuestions {
     if (kind.value == MockTestKind.paper) {
       return activePaper.value?.questions ?? const [];
+    }
+    if (kind.value == MockTestKind.custom) {
+      return activeCustomSet.value?.questions ?? const [];
     }
     if (kind.value == MockTestKind.subject && subject.value != null) {
       return sampleQuestions
@@ -95,8 +117,9 @@ class MockTestController extends GetxController {
 
   void selectKind(MockTestKind value) {
     kind.value = value;
-    if (value == MockTestKind.paper) return;
+    if (value == MockTestKind.paper || value == MockTestKind.custom) return;
     activePaper.value = null;
+    activeCustomSet.value = null;
     if (value == MockTestKind.full) {
       subject.value = null;
       selectedDuration.value = const Duration(minutes: 90);
@@ -111,9 +134,27 @@ class MockTestController extends GetxController {
   /// of the sample-test selectors.
   void selectPaper(PaperTest paper) {
     activePaper.value = paper;
+    activeCustomSet.value = null;
     kind.value = MockTestKind.paper;
     subject.value = null;
     selectedDuration.value = const Duration(minutes: 90);
+    phase.value = MockTestPhase.setup;
+  }
+
+  /// Selects a teacher-created custom set for the next test run. The
+  /// setup panel then shows the set's own setup instead of the
+  /// sample-test selectors. Negative marking is reset to OFF, the
+  /// default for every new test run.
+  void selectCustomSet(CustomSet set) {
+    activeCustomSet.value = set;
+    activePaper.value = null;
+    kind.value = MockTestKind.custom;
+    subject.value = null;
+    selectedDuration.value = set.questions.length <= 20
+        ? const Duration(minutes: 20)
+        : const Duration(minutes: 60);
+    negativeMarking.value = false;
+    negativeDeduction.value = 0.25;
     phase.value = MockTestPhase.setup;
   }
 

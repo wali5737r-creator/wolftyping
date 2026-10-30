@@ -18,8 +18,11 @@ import '../../features/practice/controller/practice_controller.dart';
 import '../../features/practice/view/mistake_practice_view.dart';
 import '../../features/practice/view/practice_view.dart';
 
+import '../../features/ppsc/controller/custom_sets_controller.dart';
 import '../../features/ppsc/controller/mock_test_controller.dart';
 import '../../features/ppsc/controller/ppsc_typing_controller.dart';
+import '../../features/ppsc/view/custom_set_editor_view.dart';
+import '../../features/ppsc/view/custom_tests_view.dart';
 import '../../features/ppsc/view/mock_test_view.dart';
 import '../../features/ppsc/view/papers_list_view.dart';
 import '../../features/ppsc/view/ppsc_view.dart';
@@ -169,6 +172,26 @@ class AppPages {
       page: () => const PapersListView(),
       binding: BindingsBuilder(() {
         Get.lazyPut<MockTestController>(() => MockTestController());
+      }),
+    ),
+
+    // Teacher-created custom MCQ tests (user-created, practice-only)
+    GetPage(
+      name: AppRoutes.ppscCustomTests,
+      page: () => const CustomTestsView(),
+      binding: BindingsBuilder(() {
+        Get.lazyPut<CustomSetsController>(() => CustomSetsController());
+        Get.lazyPut<MockTestController>(() => MockTestController());
+      }),
+    ),
+
+    // Custom test create/edit screen (argument: the CustomSet to edit,
+    // or null for a new set)
+    GetPage(
+      name: AppRoutes.ppscCustomTestEditor,
+      page: () => const CustomSetEditorView(),
+      binding: BindingsBuilder(() {
+        Get.lazyPut<CustomSetsController>(() => CustomSetsController());
       }),
     ),
 

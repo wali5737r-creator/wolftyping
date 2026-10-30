@@ -47,6 +47,54 @@ class MockQuestion {
   final String? explanation;
 
   bool isCorrect(int? selectedIndex) => selectedIndex == correctIndex;
+
+  /// JSON form used to persist and share teacher-created custom sets
+  /// (see `CustomSet`). Plain data only — no answers are hidden or
+  /// encoded: a shared set is meant to be taken, so its key travels
+  /// with it, exactly like the editable question file.
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'id': id,
+      'subject': subject.name,
+      'question': question,
+      'options': options,
+      'correctIndex': correctIndex,
+      if (topic != null) 'topic': topic,
+      if (explanation != null) 'explanation': explanation,
+    };
+  }
+
+  /// Parses [toJson] output. Throws a [FormatException] with a readable
+  /// message for bad data instead of a raw type error, so import can
+  /// report it and never crash. Option-count / index-range checks are
+  /// re-applied by [CustomSet] validation and by the test engine at
+  /// run time.
+  factory MockQuestion.fromJson(Map<String, dynamic> json) {
+    final Object? rawSubject = json['subject'];
+    final MockSubject subject;
+    try {
+      subject = MockSubject.values.byName(rawSubject as String);
+    } catch (_) {
+      throw FormatException(
+        'Unknown subject "$rawSubject" for question "${json['id']}".',
+      );
+    }
+    final Object? rawOptions = json['options'];
+    if (rawOptions is! List) {
+      throw FormatException(
+        'Question "${json['id']}" has no options list.',
+      );
+    }
+    return MockQuestion(
+      id: json['id'] as String? ?? '',
+      subject: subject,
+      question: json['question'] as String? ?? '',
+      options: rawOptions.map((e) => e.toString()).toList(),
+      correctIndex: json['correctIndex'] as int? ?? -1,
+      topic: json['topic'] as String?,
+      explanation: json['explanation'] as String?,
+    );
+  }
 }
 
 /// Subjects for the subject-wise short tests. The full mock test uses
