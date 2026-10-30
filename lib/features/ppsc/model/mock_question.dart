@@ -21,6 +21,7 @@ class MockQuestion {
     required this.options,
     required this.correctIndex,
     this.topic,
+    this.explanation,
   });
 
   /// Stable identifier (e.g. 'eng-1'). Used as the map key for answers.
@@ -38,6 +39,12 @@ class MockQuestion {
 
   /// Optional sub-topic shown in review, e.g. 'Grammar', 'Arithmetic'.
   final String? topic;
+
+  /// Optional verified explanation shown in the end review, under the
+  /// correct answer, explaining why the correct answer is correct.
+  /// Only researched, authentic facts — never invented dates, names,
+  /// figures, or rules. Null when no explanation has been written yet.
+  final String? explanation;
 
   bool isCorrect(int? selectedIndex) => selectedIndex == correctIndex;
 }

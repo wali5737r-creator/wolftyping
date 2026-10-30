@@ -3,12 +3,13 @@ import 'dart:async';
 import 'package:get/get.dart';
 
 import '../model/mock_question.dart';
+import '../model/paper_test.dart';
 import '../service/mock_questions.dart';
 import '../service/mock_test_engine.dart';
 
 enum MockTestPhase { setup, test, result }
 
-enum MockTestKind { full, subject }
+enum MockTestKind { full, subject, paper }
 
 /// Drives the PPSC practice MCQ mock test: setup choices (full vs
 /// subject-wise, duration, negative marking), the countdown timer with
@@ -21,6 +22,10 @@ class MockTestController extends GetxController {
   final Rx<MockTestPhase> phase = MockTestPhase.setup.obs;
   final Rx<MockTestKind> kind = MockTestKind.full.obs;
   final Rxn<MockSubject> subject = Rxn<MockSubject>();
+
+  /// The past paper selected from the papers list, when [kind] is
+  /// [MockTestKind.paper]. Null for sample (full/subject) tests.
+  final Rxn<PaperTest> activePaper = Rxn<PaperTest>();
   final Rx<Duration> selectedDuration = const Duration(minutes: 90).obs;
   final RxBool negativeMarking = false.obs;
   final RxDouble negativeDeduction = 0.25.obs;
@@ -48,8 +53,11 @@ class MockTestController extends GetxController {
 
   static const List<double> deductionOptions = [0.25, 0.5, 1.0];
 
-  /// Questions available for the currently selected kind/subject.
+  /// Questions available for the currently selected kind/subject/paper.
   List<MockQuestion> get availableQuestions {
+    if (kind.value == MockTestKind.paper) {
+      return activePaper.value?.questions ?? const [];
+    }
     if (kind.value == MockTestKind.subject && subject.value != null) {
       return sampleQuestions
           .where((q) => q.subject == subject.value)
@@ -57,6 +65,11 @@ class MockTestController extends GetxController {
     }
     return sampleQuestions;
   }
+
+  /// Latest-update notes for the active paper, if any. Shown in the end
+  /// review so current-affairs answers carry the latest position.
+  List<String> get activeLatestUpdates =>
+      activePaper.value?.latestUpdates ?? const [];
 
   MockTestEngine get engine {
     final MockTestEngine? e = _engine;
@@ -82,6 +95,8 @@ class MockTestController extends GetxController {
 
   void selectKind(MockTestKind value) {
     kind.value = value;
+    if (value == MockTestKind.paper) return;
+    activePaper.value = null;
     if (value == MockTestKind.full) {
       subject.value = null;
       selectedDuration.value = const Duration(minutes: 90);
@@ -89,6 +104,17 @@ class MockTestController extends GetxController {
       subject.value ??= MockSubject.english;
       selectedDuration.value = const Duration(minutes: 20);
     }
+  }
+
+  /// Selects a past paper for the next test run. The setup panel then
+  /// shows the paper's own setup (title, date, question count) instead
+  /// of the sample-test selectors.
+  void selectPaper(PaperTest paper) {
+    activePaper.value = paper;
+    kind.value = MockTestKind.paper;
+    subject.value = null;
+    selectedDuration.value = const Duration(minutes: 90);
+    phase.value = MockTestPhase.setup;
   }
 
   void selectSubject(MockSubject value) {

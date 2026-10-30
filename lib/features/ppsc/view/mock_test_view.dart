@@ -10,6 +10,7 @@ import '../../../core/widgets/app_scaffold.dart';
 import '../../../core/widgets/app_surfaces.dart';
 import '../controller/mock_test_controller.dart';
 import '../model/mock_question.dart';
+import '../model/paper_test.dart';
 import '../service/mock_test_engine.dart';
 
 /// PPSC practice MCQ mock test: timed questions answered one at a time,
@@ -55,9 +56,34 @@ class _SetupPanel extends StatelessWidget {
         alignment: Alignment.topLeft,
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 760),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+          child: Obx(() {
+            // Reactive reads captured directly in this builder, so this
+            // branch rebuilds when the selected test kind changes.
+            final bool isPaper =
+                controller.kind.value == MockTestKind.paper;
+            final PaperTest? paper = controller.activePaper.value;
+            if (isPaper && paper != null) {
+              return _PaperSetupPanel(controller: controller, paper: paper);
+            }
+            return _SampleSetupPanel(controller: controller);
+          }),
+        ),
+      ),
+    );
+  }
+}
+
+/// Setup for the sample (full / subject-wise) mock tests.
+class _SampleSetupPanel extends StatelessWidget {
+  const _SampleSetupPanel({required this.controller});
+
+  final MockTestController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
               const PageHeader(
                 title: 'PPSC Practice Mock Test',
                 subtitle:
@@ -182,10 +208,133 @@ class _SetupPanel extends StatelessWidget {
                 icon: const Icon(Icons.keyboard_alt_outlined),
                 label: const Text('Go to PPSC Urdu Typing Practice instead'),
               ),
+              const SizedBox(height: 20),
+              SectionCard(
+                title: '2026 practice papers',
+                subtitle:
+                    'Timed practice tests by paper, year and department.',
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Practice material only — not official papers. Pick a '
+                      'paper to run it with the same timer, palette and review.',
+                      style: AppTextStyles.body,
+                    ),
+                    const SizedBox(height: 12),
+                    ElevatedButton.icon(
+                      onPressed: () =>
+                          Get.toNamed(AppRoutes.ppscPastPapers),
+                      icon: const Icon(Icons.article_outlined),
+                      label: const Text('Browse 2026 papers'),
+                    ),
+                  ],
+                ),
+              ),
             ],
+    );
+  }
+}
+
+/// Setup for a selected past paper: paper identity, duration, negative
+/// marking and start. Reached from the papers list.
+class _PaperSetupPanel extends StatelessWidget {
+  const _PaperSetupPanel({required this.controller, required this.paper});
+
+  final MockTestController controller;
+  final PaperTest paper;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        PageHeader(
+          title: 'Practice Paper ${paper.paperNo}',
+          subtitle:
+              '${paper.post}, ${paper.department} · ${paper.examDate} · '
+              'Practice material only — not an official paper.',
+        ),
+        const SizedBox(height: 20),
+        SectionCard(
+          title: paper.post,
+          subtitle: '${paper.department} · ${paper.examDate}',
+          child: Text(
+            '${paper.questionCount} question${paper.questionCount == 1 ? '' : 's'} · '
+            'one question at a time · question palette · auto-submit when time ends',
+            style: AppTextStyles.bodyMedium,
           ),
         ),
-      ),
+        const SizedBox(height: 20),
+        const Text('Duration', style: AppTextStyles.h3),
+        const SizedBox(height: 8),
+        Obx(() {
+          return Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              for (final Duration d in MockTestController.fullDurations)
+                ChoiceChip(
+                  label: Text('${d.inMinutes} minutes'),
+                  selected: controller.selectedDuration.value == d,
+                  onSelected: (_) => controller.selectDuration(d),
+                ),
+            ],
+          );
+        }),
+        const SizedBox(height: 16),
+        Obx(
+          () => SwitchListTile(
+            title: const Text('Negative marking'),
+            subtitle: Text(
+              controller.negativeMarking.value
+                  ? 'Each wrong answer deducts ${controller.negativeDeduction.value} marks. Skipped questions never deduct.'
+                  : 'Off: wrong answers score 0, nothing is deducted.',
+            ),
+            value: controller.negativeMarking.value,
+            onChanged: controller.setNegativeMarking,
+            contentPadding: EdgeInsets.zero,
+          ),
+        ),
+        Obx(() {
+          if (!controller.negativeMarking.value) {
+            return const SizedBox.shrink();
+          }
+          return Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              const Text('Deduction per wrong answer:'),
+              for (final double d in MockTestController.deductionOptions)
+                ChoiceChip(
+                  label: Text('-$d'),
+                  selected: controller.negativeDeduction.value == d,
+                  onSelected: (_) => controller.setDeduction(d),
+                ),
+            ],
+          );
+        }),
+        const SizedBox(height: 20),
+        ElevatedButton.icon(
+          onPressed: () {
+            if (controller.availableQuestions.isEmpty) return;
+            controller.startTest();
+          },
+          icon: const Icon(Icons.play_arrow),
+          label: const Text('Start This Paper'),
+        ),
+        const SizedBox(height: 12),
+        TextButton.icon(
+          onPressed: () => Get.toNamed(AppRoutes.ppscPastPapers),
+          icon: const Icon(Icons.list),
+          label: const Text('Choose another paper'),
+        ),
+        TextButton.icon(
+          onPressed: () => controller.selectKind(MockTestKind.full),
+          icon: const Icon(Icons.arrow_back),
+          label: const Text('Back to sample mock tests'),
+        ),
+      ],
     );
   }
 }
@@ -515,6 +664,16 @@ class _ResultPanel extends StatelessWidget {
                   style: AppTextStyles.body,
                 ),
               ],
+              if (controller.activePaper.value != null) ...[
+                const SizedBox(height: 6),
+                Text(
+                  'Practice Paper ${controller.activePaper.value!.paperNo} · '
+                  '${controller.activePaper.value!.post}, '
+                  '${controller.activePaper.value!.department} · '
+                  '${controller.activePaper.value!.examDate}',
+                  style: AppTextStyles.bodyMedium,
+                ),
+              ],
               const SizedBox(height: 6),
               const Text(
                 'Practice result only — not a real PPSC result.',
@@ -584,6 +743,28 @@ class _ResultPanel extends StatelessWidget {
                   question: result.questions[i],
                   selected: result.answers[result.questions[i].id],
                 ),
+              if (controller.activeLatestUpdates.isNotEmpty) ...[
+                const SizedBox(height: 24),
+                SectionCard(
+                  title: 'Latest updates',
+                  subtitle:
+                      'Current-affairs answers in this paper, with the latest position.',
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      for (final String note
+                          in controller.activeLatestUpdates)
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 8),
+                          child: Text(
+                            '• $note',
+                            style: AppTextStyles.body,
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+              ],
             ],
           ),
         ),
@@ -639,6 +820,14 @@ class _ReviewTile extends StatelessWidget {
                   : (i == selected
                         ? const Icon(Icons.close, color: AppColors.wrongChar)
                         : null),
+            ),
+          if (question.explanation != null)
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 4, 16, 12),
+              child: Text(
+                'Explanation: ${question.explanation!}',
+                style: AppTextStyles.body,
+              ),
             ),
         ],
       ),

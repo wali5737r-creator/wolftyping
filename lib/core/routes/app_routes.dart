@@ -14,6 +14,7 @@ abstract class AppRoutes {
   static const String keyboardHeatmap = '/keyboard-heatmap';
   static const String ppscUrdu = '/ppsc-urdu';
   static const String ppscMockTest = '/ppsc-mock-test';
+  static const String ppscPastPapers = '/ppsc-past-papers';
   static const String myParagraphs = '/my-paragraphs';
   static const String paragraphForm = '/paragraph-form';
   static const String paragraphPreview = '/paragraph-preview';

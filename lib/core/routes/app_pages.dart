@@ -21,6 +21,7 @@ import '../../features/practice/view/practice_view.dart';
 import '../../features/ppsc/controller/mock_test_controller.dart';
 import '../../features/ppsc/controller/ppsc_typing_controller.dart';
 import '../../features/ppsc/view/mock_test_view.dart';
+import '../../features/ppsc/view/papers_list_view.dart';
 import '../../features/ppsc/view/ppsc_view.dart';
 
 import '../../features/paragraphs/controller/paragraph_form_controller.dart';
@@ -157,6 +158,15 @@ class AppPages {
     GetPage(
       name: AppRoutes.ppscMockTest,
       page: () => const MockTestView(),
+      binding: BindingsBuilder(() {
+        Get.lazyPut<MockTestController>(() => MockTestController());
+      }),
+    ),
+
+    // 2026 practice papers list (practice material only)
+    GetPage(
+      name: AppRoutes.ppscPastPapers,
+      page: () => const PapersListView(),
       binding: BindingsBuilder(() {
         Get.lazyPut<MockTestController>(() => MockTestController());
       }),
