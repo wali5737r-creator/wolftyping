@@ -64,7 +64,7 @@ class _SetupPanel extends StatelessWidget {
                     'Timed MCQ practice. Questions are practice samples — not real PPSC past papers.',
               ),
               const SizedBox(height: 20),
-              Obx(() => _KindChoice(controller: controller)),
+              _KindChoice(controller: controller),
               const SizedBox(height: 16),
               Obx(() {
                 if (controller.kind.value != MockTestKind.subject) {
@@ -197,33 +197,40 @@ class _KindChoice extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text('Test type', style: AppTextStyles.h3),
-        const SizedBox(height: 8),
-        RadioGroup<MockTestKind>(
-          groupValue: controller.kind.value,
-          onChanged: (v) {
-            if (v != null) controller.selectKind(v);
-          },
-          child: const Column(
-            children: [
-              RadioListTile<MockTestKind>(
-                title: Text('Full mock test (all subjects)'),
-                subtitle: Text('Every question in the question file.'),
-                value: MockTestKind.full,
-              ),
-              RadioListTile<MockTestKind>(
-                title: Text('Subject-wise short test'),
-                subtitle:
-                    Text('One subject only, e.g. 20 questions per subject.'),
-                value: MockTestKind.subject,
-              ),
-            ],
+    // NOTE: the Obx must live here, not around _KindChoice in the parent:
+    // GetX only tracks observables read directly inside the Obx builder, and
+    // the kind read happens when RadioGroup is constructed below. Wrapping
+    // _KindChoice in an Obx in the parent threw a GetX improper-use error
+    // and rendered this section blank.
+    return Obx(
+      () => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text('Test type', style: AppTextStyles.h3),
+          const SizedBox(height: 8),
+          RadioGroup<MockTestKind>(
+            groupValue: controller.kind.value,
+            onChanged: (v) {
+              if (v != null) controller.selectKind(v);
+            },
+            child: const Column(
+              children: [
+                RadioListTile<MockTestKind>(
+                  title: Text('Full mock test (all subjects)'),
+                  subtitle: Text('Every question in the question file.'),
+                  value: MockTestKind.full,
+                ),
+                RadioListTile<MockTestKind>(
+                  title: Text('Subject-wise short test'),
+                  subtitle:
+                      Text('One subject only, e.g. 20 questions per subject.'),
+                  value: MockTestKind.subject,
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
