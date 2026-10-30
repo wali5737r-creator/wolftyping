@@ -18,7 +18,3 @@ pubspec.lock
 
 # Windows desktop build output
 windows/flutter/ephemeral/
-
-# Local config / secrets (never commit)
-.env
-.env.*

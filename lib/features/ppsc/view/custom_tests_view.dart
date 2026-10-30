@@ -9,7 +9,6 @@ import '../../../core/constants/app_dimensions.dart';
 import '../../../core/constants/app_text_styles.dart';
 import '../../../core/routes/app_routes.dart';
 import '../../../core/services/custom_set_share.dart';
-import '../../../core/services/custom_set_share_link.dart';
 import '../../../core/widgets/app_controls.dart';
 import '../../../core/widgets/app_scaffold.dart';
 import '../../../core/widgets/app_surfaces.dart';
@@ -27,17 +26,16 @@ import '../model/custom_set.dart';
 /// source. Tests run through the shared mock-test engine, so they get
 /// the same timer, palette, auto-submit and review as sample tests.
 ///
-/// NOTE on shareable links: offered only for small sets, when the
-/// full URL is at most 4000 characters (see
-/// `custom_set_share_link.dart`). There is no server to host short
-/// codes (sets are device-only by design), so larger sets are shared
-/// as a code or a file instead — never as a link that silently breaks.
+/// NOTE on shareable links: deliberately not offered. A set's code
+/// grows with every question, so even a small set quickly passes what
+/// fits reliably in a URL, and there is no server to host short codes
+/// (sets are device-only by design). Code + file sharing covers every
+/// set size without a link that silently breaks.
 class CustomTestsView extends GetView<CustomSetsController> {
   const CustomTestsView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    _SharedLinkImport.maybeHandle(context, controller);
     return AppScaffold(
       currentRoute: AppRoutes.ppscCustomTests,
       body: SingleChildScrollView(
@@ -92,8 +90,7 @@ class CustomTestsView extends GetView<CustomSetsController> {
                         'Create your own MCQ test: give it a name, add '
                         'questions with 4 options each, pick the correct '
                         'answer, then run it or share it with students '
-                        'as a code, a file, or — for small tests — a '
-                        'shareable link.',
+                        'as a code or file.',
                         style: AppTextStyles.body,
                       ),
                     );
@@ -231,8 +228,7 @@ class _ExportDialog extends StatelessWidget {
           children: [
             const Text(
               'Students paste this code into Import on their own device, '
-              'open the downloaded file the same way, or open the '
-              'shareable link (small tests only). This is a '
+              'or open the downloaded file the same way. This is a '
               'user-created practice test, not an official paper.',
               style: AppTextStyles.body,
             ),
@@ -265,23 +261,6 @@ class _ExportDialog extends StatelessWidget {
                   icon: const Icon(Icons.copy),
                   label: const Text('Copy code'),
                 ),
-                OutlinedButton.icon(
-                  onPressed: () async {
-                    await Clipboard.setData(
-                      ClipboardData(text: _shareText(set, code)),
-                    );
-                    if (context.mounted) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Share text copied.'),
-                        ),
-                      );
-                    }
-                  },
-                  icon: const Icon(Icons.text_snippet_outlined),
-                  label: const Text('Copy share text'),
-                ),
-                if (kIsWeb) _ShareLinkButton(set: set),
                 if (kIsWeb)
                   OutlinedButton.icon(
                     onPressed: () async {
@@ -319,187 +298,6 @@ class _ExportDialog extends StatelessWidget {
         TextButton(
           onPressed: () => Navigator.of(context).pop(),
           child: const Text('Done'),
-        ),
-      ],
-    );
-  }
-}
-
-
-String _shareText(CustomSet set, String code) {
-  final String base =
-      'Try my practice test "${set.name}" '
-      '(${set.questionCount} question${set.questionCount == 1 ? '' : 's'}) '
-      'on WolfTyping. Open My Custom Tests and choose Import a shared test';
-  // The code travels in the share text only when it fits comfortably;
-  // for large sets the student uses the code or file from the share
-  // sheet instead.
-  if (code.length <= 1000) {
-    return '$base, then paste this code: $code';
-  }
-  return '$base, then paste the code or open the file from the share sheet.';
-}
-
-/// Copy-share-link button, shown only on web and only when the full
-/// URL fits in 4000 characters. Larger tests show a plain note
-/// instead — never a link that does not work.
-class _ShareLinkButton extends StatelessWidget {
-  const _ShareLinkButton({required this.set});
-
-  final CustomSet set;
-
-  @override
-  Widget build(BuildContext context) {
-    final String? link = buildCustomSetShareLink(
-      origin: Uri.base.origin,
-      set: set,
-    );
-    if (link == null) {
-      return const Text(
-        'This test is too large for a shareable link — share the code '
-        'or file instead.',
-        style: AppTextStyles.body,
-      );
-    }
-    return OutlinedButton.icon(
-      onPressed: () async {
-        await Clipboard.setData(ClipboardData(text: link));
-        if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Share link copied.')),
-          );
-        }
-      },
-      icon: const Icon(Icons.link_outlined),
-      label: const Text('Copy share link'),
-    );
-  }
-}
-
-/// Reads a shareable-link import parameter out of the URL hash
-/// fragment once (web only), validates it, and offers to save it.
-/// Runs at most once per app run; a fragment without an import
-/// parameter is ignored silently.
-class _SharedLinkImport {
-  static bool _handled = false;
-
-  static void maybeHandle(
-    BuildContext context,
-    CustomSetsController controller,
-  ) {
-    if (!kIsWeb || _handled) return;
-    _handled = true;
-    final String? code =
-        extractImportCodeFromFragment(Uri.base.fragment);
-    if (code == null) return;
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (!context.mounted) return;
-      CustomSet decoded;
-      try {
-        decoded = CustomSet.decode(code);
-      } on FormatException catch (e) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(e.message)),
-        );
-        return;
-      }
-      showDialog<void>(
-        context: context,
-        builder: (dialogContext) => _LinkImportDialog(
-          controller: controller,
-          code: code,
-          decoded: decoded,
-        ),
-      );
-    });
-  }
-}
-
-class _LinkImportDialog extends StatefulWidget {
-  const _LinkImportDialog({
-    required this.controller,
-    required this.code,
-    required this.decoded,
-  });
-
-  final CustomSetsController controller;
-  final String code;
-  final CustomSet decoded;
-
-  @override
-  State<_LinkImportDialog> createState() => _LinkImportDialogState();
-}
-
-class _LinkImportDialogState extends State<_LinkImportDialog> {
-  String? _error;
-  bool _busy = false;
-
-  Future<void> _save() async {
-    setState(() {
-      _busy = true;
-      _error = null;
-    });
-    try {
-      final CustomSet imported =
-          await widget.controller.importCode(widget.code);
-      if (!mounted) return;
-      Navigator.of(context).pop();
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            'Imported "${imported.name}" '
-            '(${imported.questionCount} questions).',
-          ),
-        ),
-      );
-    } on FormatException catch (e) {
-      setState(() {
-        _error = e.message;
-        _busy = false;
-      });
-    } catch (e) {
-      setState(() {
-        _error = 'Could not import this test: $e';
-        _busy = false;
-      });
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return AlertDialog(
-      title: const Text('Save this shared test?'),
-      content: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              '"${widget.decoded.name}" — '
-              '${widget.decoded.questionCount} question${widget.decoded.questionCount == 1 ? '' : 's'}. '
-              'User-created practice test — not an official paper.',
-              style: AppTextStyles.body,
-            ),
-            const SizedBox(height: 8),
-            const Text(
-              'Imported from a code/file — WolfTyping did not check who made this.',
-              style: AppTextStyles.body,
-            ),
-            if (_error != null) ...[
-              const SizedBox(height: 12),
-              Text(_error!, style: const TextStyle(color: Colors.red)),
-            ],
-          ],
-        ),
-      ),
-      actions: [
-        TextButton(
-          onPressed: _busy ? null : () => Navigator.of(context).pop(),
-          child: const Text('Cancel'),
-        ),
-        FilledButton(
-          onPressed: _busy ? null : _save,
-          child: const Text('Save test'),
         ),
       ],
     );
@@ -569,11 +367,6 @@ class _ImportDialogState extends State<_ImportDialog> {
               'Paste the share code a teacher sent you. Bad codes are '
               'rejected with an explanation — nothing is saved until '
               'the whole test checks out.',
-              style: AppTextStyles.body,
-            ),
-            const SizedBox(height: 8),
-            const Text(
-              'Imported from a code/file — WolfTyping did not check who made this.',
               style: AppTextStyles.body,
             ),
             const SizedBox(height: 12),

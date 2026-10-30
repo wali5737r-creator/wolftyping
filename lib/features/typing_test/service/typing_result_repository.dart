@@ -31,12 +31,11 @@ class TypingResultRepository {
     return _db.into(_db.users).insert(const UsersCompanion());
   }
 
-  /// Saves one completed attempt and its mistake records. Returns
-  /// false (never throws) when the save fails — e.g. the database
-  /// isn't ready — so the caller can warn the user visibly instead of
-  /// silently losing the result. The in-memory result the user is
-  /// looking at is still correct either way.
-  Future<bool> saveCompletedTest({
+  /// Saves one completed attempt and its mistake records. Never throws to
+  /// the caller — a failed save (e.g. the database isn't ready) is logged
+  /// and swallowed rather than crashing the result screen, since the
+  /// in-memory result the user is looking at is still correct either way.
+  Future<void> saveCompletedTest({
     required TypingSnapshot snapshot,
     required TypingLanguage language,
     required TypingTestKind kind,
@@ -85,11 +84,9 @@ class TypingResultRepository {
       }
       // Dashboard / Progress / History reload now that this test is stored.
       DataRefreshService.notifyChanged();
-      return true;
     } catch (error) {
       // ignore: avoid_print
       print('TypingResultRepository: failed to save result — $error');
-      return false;
     }
   }
 }

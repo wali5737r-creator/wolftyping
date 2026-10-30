@@ -20,10 +20,6 @@ class ParagraphFormController extends GetxController {
 
   final RxnString titleError = RxnString();
   final RxnString textError = RxnString();
-
-  /// Set when saving fails (e.g. storage unavailable); shown in the
-  /// form so a failed save is visible instead of silent.
-  final RxnString saveError = RxnString();
   final RxBool isSaving = false.obs;
 
   bool get isEditing => editingParagraph != null;
@@ -73,7 +69,6 @@ class ParagraphFormController extends GetxController {
   /// timing/result flow as any other test.
   Future<CustomParagraph?> saveAndGetParagraph() async {
     if (!_validate()) return null;
-    saveError.value = null;
     isSaving.value = true;
     try {
       final String title = titleController.text.trim();
@@ -112,10 +107,6 @@ class ParagraphFormController extends GetxController {
         createdAt: DateTime.now(),
         updatedAt: null,
       );
-    } catch (_) {
-      saveError.value =
-          'Could not save this paragraph on this device — storage may be unavailable.';
-      return null;
     } finally {
       isSaving.value = false;
     }

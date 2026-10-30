@@ -92,22 +92,8 @@ class _CustomSetEditorViewState extends State<CustomSetEditorView> {
     if (_nameController.text.trim().isEmpty) {
       return 'Give the test a name first.';
     }
-    if (_nameController.text.length > CustomSet.maxFieldChars) {
-      return 'The test name is too long (over ${CustomSet.maxFieldChars} characters).';
-    }
     if (_drafts.isEmpty) {
       return 'Add at least one question.';
-    }
-    if (_drafts.length > CustomSet.maxQuestions) {
-      return 'At most ${CustomSet.maxQuestions} questions are allowed.';
-    }
-    for (int qi = 0; qi < _drafts.length; qi++) {
-      final _QuestionDraft draft = _drafts[qi];
-      if (draft.question.text.length > CustomSet.maxFieldChars ||
-          draft.topic.text.length > CustomSet.maxFieldChars ||
-          draft.options.any((c) => c.text.length > CustomSet.maxFieldChars)) {
-        return 'Question ${qi + 1} has text over ${CustomSet.maxFieldChars} characters.';
-      }
     }
     for (int qi = 0; qi < _drafts.length; qi++) {
       final _QuestionDraft draft = _drafts[qi];
@@ -156,18 +142,6 @@ class _CustomSetEditorViewState extends State<CustomSetEditorView> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(e.message)),
-        );
-      }
-      return;
-    } catch (_) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text(
-              'Could not save — storage full. Free up space in this '
-              'browser and try again.',
-            ),
-          ),
         );
       }
       return;
