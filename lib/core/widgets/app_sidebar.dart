@@ -91,10 +91,17 @@ class _Brand extends StatelessWidget {
             width: 36,
             height: 36,
             decoration: BoxDecoration(
-              color: AppColors.primary,
               borderRadius: BorderRadius.circular(11),
             ),
-            child: const Icon(Icons.keyboard, color: Colors.white, size: 20),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(11),
+              child: Image.asset(
+                'assets/images/logo.png',
+                width: 36,
+                height: 36,
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           if (!collapsed) ...[
             const SizedBox(width: 12),

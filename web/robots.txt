@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wolftyping.pages.dev/sitemap.xml

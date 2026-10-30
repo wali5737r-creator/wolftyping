@@ -19,18 +19,20 @@
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="WolfTyping — free English and Urdu typing trainer in the browser: typing tests, lessons, practice, paragraphs, PPSC typing tests and a practice MCQ mock test with instant results.">
-  <meta name="keywords" content="typing test, Urdu typing test, English typing test, PPSC typing test, typing practice, typing lessons, WPM test, WolfTyping">
-  <meta name="theme-color" content="#0E7C6B">
+  <meta name="theme-color" content="#0F766E">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://wolftyping.pages.dev/">
 
   <!-- Open Graph / social sharing -->
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wolftyping.pages.dev/">
   <meta property="og:title" content="WolfTyping — English & Urdu Typing Trainer, Typing Tests & PPSC Mock Test">
   <meta property="og:description" content="Practice English and Urdu typing with timed tests, lessons, drills and a PPSC practice mock test — free, in your browser, with instant WPM and accuracy results.">
-  <meta property="og:image" content="icons/Icon-512.png">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://wolftyping.pages.dev/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="WolfTyping — English & Urdu Typing Trainer, Typing Tests & PPSC Mock Test">
   <meta name="twitter:description" content="Practice English and Urdu typing with timed tests, lessons, drills and a PPSC practice mock test — free, in your browser, with instant WPM and accuracy results.">
+  <meta name="twitter:image" content="https://wolftyping.pages.dev/og-image.png">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -41,6 +43,102 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "WolfTyping",
+    "url": "https://wolftyping.pages.dev/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is WPM calculated in a typing test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WPM means words per minute. WolfTyping counts your correctly typed words over the time you took and shows your WPM and accuracy as soon as the test ends."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the English typing test free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The English typing test on WolfTyping is free, and you do not need an account to take it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need an account to take a typing test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. You can take typing tests on WolfTyping without creating an account, and your results are stored on your own device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I practise Urdu typing on WolfTyping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. WolfTyping includes an Urdu typing test with WPM and accuracy results, alongside English typing tests."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I practise typing with my own paragraph?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can paste your own paragraph in My Paragraphs and start a typing test with it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do typing lessons work for beginners?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Typing lessons on WolfTyping walk you through keys step by step, and practice drills focus on the keys you get wrong most, so you improve where you need it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the PPSC mock test questions real PPSC papers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The PPSC mock test questions on WolfTyping are practice samples written for practice only. They are not real PPSC past papers and not from any exam."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many practice questions are in the PPSC mock test bank?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The built-in bank contains 18 practice sample questions, and the mock test engine supports a full 100-question test."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there negative marking in the PPSC practice test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Negative marking is optional in the PPSC practice mock test and is off by default. You can turn it on before starting a test if you want it."
+        }
+      }
+    ]
+  }
+  </script>
+
   <title>WolfTyping — English &amp; Urdu Typing Trainer, Typing Tests &amp; PPSC Mock Test</title>
   <link rel="manifest" href="manifest.json">
 </head>
@@ -49,6 +147,39 @@
     <main style="font-family: system-ui, sans-serif; max-width: 640px; margin: 48px auto; padding: 0 20px; color: #1a1d23;">
       <h1>WolfTyping — English &amp; Urdu Typing Trainer</h1>
       <p>WolfTyping is a free typing trainer that runs in your browser. It includes English and Urdu typing tests with WPM and accuracy results, step-by-step typing lessons, practice drills for your weakest keys, custom paragraphs you can paste yourself, PPSC-style typing tests, and a practice MCQ mock test with a timed session, score and answer review.</p>
+
+      <h2>English typing test</h2>
+      <p>Take a timed English typing test and get your words per minute (WPM) and accuracy instantly when the test ends. Choose your test duration and difficulty, type the paragraph shown, and review your result with a shareable result card.</p>
+
+      <h2>Urdu typing test</h2>
+      <p>WolfTyping also includes an Urdu typing test with WPM and accuracy results, so you can practise typing in Urdu script in the same browser app as your English tests.</p>
+
+      <h2>Typing lessons and practice</h2>
+      <p>Step-by-step typing lessons walk you through the keys, and practice drills focus on the keys you get wrong most. You can also paste your own paragraph in My Paragraphs and start a typing test with it, and track your progress and history on your own device.</p>
+
+      <h2>PPSC practice mock test</h2>
+      <p>The PPSC practice mock test is a timed MCQ practice session with one question at a time, navigation to any question, a warning in the last five minutes, automatic submission when time ends, and a final score with correct, incorrect and skipped review. The questions are practice samples written for practice only. They are not real PPSC past papers and not from any exam. Negative marking is optional and off by default.</p>
+
+      <h2>Frequently asked questions</h2>
+      <h3>How is WPM calculated in a typing test?</h3>
+      <p>WPM means words per minute. WolfTyping counts your correctly typed words over the time you took and shows your WPM and accuracy as soon as the test ends.</p>
+      <h3>Is the English typing test free?</h3>
+      <p>Yes. The English typing test on WolfTyping is free, and you do not need an account to take it.</p>
+      <h3>Do I need an account to take a typing test?</h3>
+      <p>No. You can take typing tests on WolfTyping without creating an account, and your results are stored on your own device.</p>
+      <h3>Can I practise Urdu typing on WolfTyping?</h3>
+      <p>Yes. WolfTyping includes an Urdu typing test with WPM and accuracy results, alongside English typing tests.</p>
+      <h3>Can I practise typing with my own paragraph?</h3>
+      <p>Yes. You can paste your own paragraph in My Paragraphs and start a typing test with it.</p>
+      <h3>How do typing lessons work for beginners?</h3>
+      <p>Typing lessons on WolfTyping walk you through keys step by step, and practice drills focus on the keys you get wrong most, so you improve where you need it.</p>
+      <h3>Are the PPSC mock test questions real PPSC papers?</h3>
+      <p>No. The PPSC mock test questions on WolfTyping are practice samples written for practice only. They are not real PPSC past papers and not from any exam.</p>
+      <h3>How many practice questions are in the PPSC mock test bank?</h3>
+      <p>The built-in bank contains 18 practice sample questions, and the mock test engine supports a full 100-question test.</p>
+      <h3>Is there negative marking in the PPSC practice test?</h3>
+      <p>Negative marking is optional in the PPSC practice mock test and is off by default. You can turn it on before starting a test if you want it.</p>
+
       <p>JavaScript is required to run the app. Please enable JavaScript and reload this page.</p>
     </main>
   </noscript>

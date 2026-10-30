@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14B8A6"/>
+      <stop offset="1" stop-color="#0F766E"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="304" height="304" rx="72" fill="url(#g)"/>
+  <g transform="translate(43.2,43.2) scale(0.59375)">
+  <polygon points="148,168 172,66 250,124" fill="#FFFFFF"/>
+  <polygon points="364,168 340,66 262,124" fill="#FFFFFF"/>
+  <polygon points="172,148 186,92 226,122" fill="#2DD4BF"/>
+  <polygon points="340,148 326,92 286,122" fill="#2DD4BF"/>
+  <polygon points="148,168 256,118 364,168 396,300 256,442 116,300" fill="#FFFFFF"/>
+  <polygon points="196,236 238,226 234,250 196,258" fill="#D97706"/>
+  <polygon points="316,236 274,226 278,250 316,258" fill="#D97706"/>
+  <polygon points="236,318 276,318 256,350" fill="#0B4F4A"/>
+  <path d="M256 350 L256 374 M256 374 Q236 390 212 378 M256 374 Q276 390 300 378"
+        fill="none" stroke="#0B4F4A" stroke-width="10" stroke-linecap="round"/>
+</g>
+  <text x="360" y="185" font-family="DejaVu Sans, sans-serif" font-size="104"
+        font-weight="bold" fill="#0F766E">WolfTyping</text>
+</svg>

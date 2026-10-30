@@ -31,6 +31,12 @@ const List<SidebarItem> kSidebarItems = [
     selectedIcon: Icons.keyboard_alt,
   ),
   SidebarItem(
+    route: AppRoutes.urduTypingTest,
+    label: 'Urdu Typing Test',
+    icon: Icons.language_outlined,
+    selectedIcon: Icons.language,
+  ),
+  SidebarItem(
     route: AppRoutes.lessons,
     label: 'Lessons',
     icon: Icons.school_outlined,

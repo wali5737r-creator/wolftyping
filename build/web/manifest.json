@@ -3,9 +3,9 @@
     "short_name": "WolfTyping",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A professional typing learning and testing application (English & Urdu).",
+    "background_color": "#0F766E",
+    "theme_color": "#0F766E",
+    "description": "WolfTyping — free English and Urdu typing trainer: typing tests, lessons, practice and a PPSC practice mock test.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
