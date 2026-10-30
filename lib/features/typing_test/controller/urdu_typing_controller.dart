@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
@@ -235,12 +237,23 @@ class UrduTypingController extends GetxController
     if (engine.status == TypingTestStatus.completed) {
       _clock.stop();
       screenPhase.value = TypingScreenPhase.result;
-      TypingResultRepository.instance.saveCompletedTest(
-        snapshot: engine.snapshot,
-        language: TypingLanguage.urdu,
-        kind: TypingTestKind.normal,
-        plannedDuration: engine.duration,
-        mistakes: engine.mistakes,
+      unawaited(
+        TypingResultRepository.instance
+            .saveCompletedTest(
+              snapshot: engine.snapshot,
+              language: TypingLanguage.urdu,
+              kind: TypingTestKind.normal,
+              plannedDuration: engine.duration,
+              mistakes: engine.mistakes,
+            )
+            .then((saved) {
+          if (!saved) {
+            Get.snackbar(
+              'Result not saved',
+              'This result could not be saved on this device.',
+            );
+          }
+        }),
       );
     }
   }

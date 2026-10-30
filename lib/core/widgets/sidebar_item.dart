@@ -61,6 +61,18 @@ const List<SidebarItem> kSidebarItems = [
     selectedIcon: Icons.quiz,
   ),
   SidebarItem(
+    route: AppRoutes.ppscPastPapers,
+    label: '2026 Practice Papers',
+    icon: Icons.article_outlined,
+    selectedIcon: Icons.article,
+  ),
+  SidebarItem(
+    route: AppRoutes.ppscCustomTests,
+    label: 'My Custom Tests',
+    icon: Icons.edit_note_outlined,
+    selectedIcon: Icons.edit_note,
+  ),
+  SidebarItem(
     route: AppRoutes.myParagraphs,
     label: 'My Paragraphs',
     icon: Icons.article_outlined,
@@ -83,6 +95,12 @@ const List<SidebarItem> kSidebarItems = [
     label: 'Profile',
     icon: Icons.person_outline,
     selectedIcon: Icons.person,
+  ),
+  SidebarItem(
+    route: AppRoutes.feedback,
+    label: 'Feedback',
+    icon: Icons.feedback_outlined,
+    selectedIcon: Icons.feedback,
   ),
   SidebarItem(
     route: AppRoutes.settings,

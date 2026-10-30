@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,13 +15,17 @@ import '../model/custom_set.dart';
 import '../model/mock_question.dart';
 import '../model/paper_test.dart';
 import '../service/mock_test_engine.dart';
+import 'weak_subject_hint.dart';
 
-/// PPSC practice MCQ mock test: timed questions answered one at a time,
-/// with a question palette, instant result and per-question review.
+/// PPSC practice MCQ mock test: a timed column view showing every
+/// question together on one scrollable page, with a Submit control at
+/// the end, instant result and per-question review.
 ///
 /// The questions are PRACTICE SAMPLES (see `mock_questions.dart`) — the
-/// screens say so, and never claim to be real PPSC papers. Results are
-/// not saved to history: this is a practice quiz, not a typing test.
+/// screens say so, and never claim to be real PPSC papers. Attempts
+/// are recorded on the device only (see MockProgressRepository) so
+/// paper rows can show completion and the weakest-subject hint has
+/// real data; typing-test history is separate.
 class MockTestView extends GetView<MockTestController> {
   const MockTestView({super.key});
 
@@ -74,6 +80,9 @@ class _SetupPanel extends StatelessWidget {
                 controller: controller,
                 customSet: customSet,
               );
+            }
+            if (controller.kind.value == MockTestKind.bookmarked) {
+              return _BookmarkedSetupPanel(controller: controller);
             }
             return _SampleSetupPanel(controller: controller);
           }),
@@ -191,7 +200,7 @@ class _SampleSetupPanel extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        '$count question${count == 1 ? '' : 's'} · ${controller.selectedDuration.value.inMinutes} minutes · one question at a time',
+                        '$count question${count == 1 ? '' : 's'} · ${controller.selectedDuration.value.inMinutes} minutes · all questions together on one page',
                         style: AppTextStyles.bodyMedium,
                       ),
                       const SizedBox(height: 6),
@@ -203,6 +212,12 @@ class _SampleSetupPanel extends StatelessWidget {
                   ),
                 );
               }),
+              const SizedBox(height: 20),
+              WeakSubjectHint(
+                controller: controller,
+                onPractiseSubject: (subject) =>
+                    controller.selectSubject(subject),
+              ),
               const SizedBox(height: 20),
               ElevatedButton.icon(
                 onPressed: () {
@@ -228,7 +243,7 @@ class _SampleSetupPanel extends StatelessWidget {
                   children: [
                     const Text(
                       'Practice material only — not official papers. Pick a '
-                      'paper to run it with the same timer, palette and review.',
+                      'paper to run it with the same timer and review.',
                       style: AppTextStyles.body,
                     ),
                     const SizedBox(height: 12),
@@ -241,6 +256,36 @@ class _SampleSetupPanel extends StatelessWidget {
                   ],
                 ),
               ),
+              const SizedBox(height: 20),
+              Obx(() {
+                final int bookmarkedCount =
+                    controller.progress.bookmarks.length;
+                return SectionCard(
+                  title: 'Bookmarked questions',
+                  subtitle: 'Questions you bookmarked in answer reviews.',
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        bookmarkedCount == 0
+                            ? 'No bookmarked questions yet. Bookmark a '
+                                'question in any answer review to practise '
+                                'it here.'
+                            : '$bookmarkedCount bookmarked question${bookmarkedCount == 1 ? '' : 's'} — practise them together in one timed test.',
+                        style: AppTextStyles.body,
+                      ),
+                      const SizedBox(height: 12),
+                      ElevatedButton.icon(
+                        onPressed: bookmarkedCount == 0
+                            ? null
+                            : () => controller.selectBookmarked(),
+                        icon: const Icon(Icons.bookmark_outlined),
+                        label: const Text('Practise bookmarked questions'),
+                      ),
+                    ],
+                  ),
+                );
+              }),
               const SizedBox(height: 20),
               SectionCard(
                 title: 'My Custom Tests',
@@ -295,7 +340,7 @@ class _PaperSetupPanel extends StatelessWidget {
           subtitle: '${paper.department} · ${paper.examDate}',
           child: Text(
             '${paper.questionCount} question${paper.questionCount == 1 ? '' : 's'} · '
-            'one question at a time · question palette · auto-submit when time ends',
+            'all questions together on one page · auto-submit when time ends',
             style: AppTextStyles.bodyMedium,
           ),
         ),
@@ -376,8 +421,8 @@ class _PaperSetupPanel extends StatelessWidget {
 /// Setup for a selected teacher-created custom set: set identity,
 /// duration, negative marking and start. Reached from the custom tests
 /// list. The run itself reuses the shared test and result panels, so a
-/// custom set gets the same timer, palette, 5-minute warning,
-/// auto-submit and review as every other test.
+/// custom set gets the same timer, 5-minute warning, auto-submit and
+/// review as every other test.
 class _CustomSetupPanel extends StatelessWidget {
   const _CustomSetupPanel({required this.controller, required this.customSet});
 
@@ -402,7 +447,7 @@ class _CustomSetupPanel extends StatelessWidget {
           subtitle: 'User-created practice test',
           child: Text(
             '${customSet.questionCount} question${customSet.questionCount == 1 ? '' : 's'} · '
-            'one question at a time · question palette · auto-submit when time ends',
+            'all questions together on one page · auto-submit when time ends',
             style: AppTextStyles.bodyMedium,
           ),
         ),
@@ -459,7 +504,7 @@ class _CustomSetupPanel extends StatelessWidget {
         ElevatedButton.icon(
           onPressed: () {
             if (controller.availableQuestions.isEmpty) return;
-            controller.startTest();
+            _askStudentNameAndStart(context, controller);
           },
           icon: const Icon(Icons.play_arrow),
           label: const Text('Start This Custom Test'),
@@ -477,6 +522,162 @@ class _CustomSetupPanel extends StatelessWidget {
         ),
       ],
     );
+  }
+}
+
+
+/// Asks for the student's name before a CUSTOM test starts. The name
+/// is carried into the result ('Name — Score X/Y'). Empty falls back
+/// to 'Student' and never blocks starting. Sample/paper tests never
+/// ask for a name. The last-used name is saved on the device only.
+Future<void> _askStudentNameAndStart(
+  BuildContext context,
+  MockTestController controller,
+) async {
+  final String? name = await showDialog<String>(
+    context: context,
+    barrierDismissible: true,
+    builder: (dialogContext) => _StudentNameDialog(
+      initialName: controller.progress.lastStudentName.value,
+    ),
+  );
+  if (name == null) return;
+  controller.studentName.value = name;
+  if (name.trim().isNotEmpty) {
+    unawaited(controller.progress.setLastStudentName(name.trim()));
+  }
+  controller.startTest();
+}
+
+class _StudentNameDialog extends StatefulWidget {
+  const _StudentNameDialog({required this.initialName});
+
+  final String initialName;
+
+  @override
+  State<_StudentNameDialog> createState() => _StudentNameDialogState();
+}
+
+class _StudentNameDialogState extends State<_StudentNameDialog> {
+  late final TextEditingController _nameController =
+      TextEditingController(text: widget.initialName);
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: const Text('Your name'),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Your name will be shown with your score at the end of '
+            'this custom test. You can leave it empty — the result '
+            'will show "Student".',
+            style: AppTextStyles.body,
+          ),
+          const SizedBox(height: 12),
+          TextField(
+            key: const Key('student-name-field'),
+            controller: _nameController,
+            decoration: const InputDecoration(
+              labelText: 'Student name (optional)',
+              border: OutlineInputBorder(),
+            ),
+          ),
+        ],
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(null),
+          child: const Text('Cancel'),
+        ),
+        FilledButton(
+          onPressed: () => Navigator.of(context)
+              .pop(_nameController.text.trim()),
+          child: const Text('Start test'),
+        ),
+      ],
+    );
+  }
+}
+
+/// Setup for a bookmarked-questions run: only the questions the
+/// student bookmarked in an end review, run in the same column view
+/// and engine, labelled practice.
+class _BookmarkedSetupPanel extends StatelessWidget {
+  const _BookmarkedSetupPanel({required this.controller});
+
+  final MockTestController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return Obx(() {
+      final int count = controller.availableQuestions.length;
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const PageHeader(
+            title: 'Bookmarked Questions',
+            subtitle:
+                'Practice only — the questions you bookmarked in answer '
+                'reviews, run as one timed test.',
+          ),
+          const SizedBox(height: 20),
+          SectionCard(
+            title: 'Bookmarked questions practice',
+            child: Text(
+              count == 0
+                  ? 'No bookmarked questions yet. Bookmark a question '
+                      'in any answer review and it will appear here.'
+                  : '$count bookmarked question${count == 1 ? '' : 's'} · '
+                      'all questions together on one page · auto-submit when time ends',
+              style: AppTextStyles.bodyMedium,
+            ),
+          ),
+          const SizedBox(height: 20),
+          const Text('Duration', style: AppTextStyles.h3),
+          const SizedBox(height: 8),
+          Obx(() {
+            return Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                for (final Duration d in MockTestController.customDurations)
+                  ChoiceChip(
+                    label: Text('${d.inMinutes} minutes'),
+                    selected: controller.selectedDuration.value == d,
+                    onSelected: (_) => controller.selectDuration(d),
+                  ),
+              ],
+            );
+          }),
+          const SizedBox(height: 20),
+          ElevatedButton.icon(
+            onPressed: count == 0
+                ? null
+                : () {
+                    if (controller.availableQuestions.isEmpty) return;
+                    controller.startTest();
+                  },
+            icon: const Icon(Icons.play_arrow),
+            label: const Text('Start Bookmarked Practice'),
+          ),
+          const SizedBox(height: 12),
+          TextButton.icon(
+            onPressed: () => controller.selectKind(MockTestKind.full),
+            icon: const Icon(Icons.arrow_back),
+            label: const Text('Back to sample mock tests'),
+          ),
+        ],
+      );
+    });
   }
 }
 
@@ -529,198 +730,161 @@ class _KindChoice extends StatelessWidget {
 // Test
 // ---------------------------------------------------------------------
 
-class _TestPanel extends StatelessWidget {
+class _TestPanel extends StatefulWidget {
   const _TestPanel({required this.controller});
 
   final MockTestController controller;
 
   @override
+  State<_TestPanel> createState() => _TestPanelState();
+}
+
+class _TestPanelState extends State<_TestPanel> {
+  late final ScrollController _scrollController = ScrollController();
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final MockTestController controller = widget.controller;
     return Obx(() {
-      // Reactive reads (timer, answers, navigation) rebuild this panel.
+      // Reactive reads (timer, answers) rebuild this panel.
       controller.remaining.value;
       controller.answersTick.value;
-      final int index = controller.currentIndex.value;
       final MockTestEngine engine = controller.engine;
-      final MockQuestion question = engine.questions[index];
-      final int? selected = controller.selectedFor(question);
       final bool warning = controller.timeWarning;
       final Color timerColor = warning
           ? AppColors.wrongChar
           : Theme.of(context).colorScheme.primary;
 
-      return SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    'Question ${index + 1} of ${engine.totalQuestions}',
-                    style: AppTextStyles.h2,
-                  ),
-                ),
-                Row(
-                  children: [
-                    Icon(Icons.timer_outlined, color: timerColor),
-                    const SizedBox(width: 6),
-                    Text(
-                      controller.remainingLabel,
-                      style: AppTextStyles.h2.copyWith(color: timerColor),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            const SizedBox(height: 6),
-            Text(
-              'Answered ${engine.answeredCount} · Unanswered ${engine.unansweredCount}',
-              style: AppTextStyles.captionOf(context),
-            ),
-            if (warning) ...[
-              const SizedBox(height: 10),
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: AppColors.wrongCharBg,
-                  borderRadius: BorderRadius.circular(
-                    AppDimensions.cardRadius,
-                  ),
-                ),
-                child: const Text(
-                  'Only 5 minutes left! The test will submit automatically when time ends.',
-                  style: TextStyle(fontWeight: FontWeight.w700),
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Expanded(
+                child: Text(
+                  'All questions',
+                  style: AppTextStyles.h2,
                 ),
               ),
-            ],
-            const SizedBox(height: 16),
-            SectionCard(
-              title: question.subject.label,
-              subtitle: question.topic,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              Row(
                 children: [
-                  Text(question.question, style: AppTextStyles.h3),
-                  const SizedBox(height: 14),
-                  for (int i = 0; i < question.options.length; i++)
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 8),
-                      child: SizedBox(
-                        width: double.infinity,
-                        child: OutlinedButton(
-                          style: OutlinedButton.styleFrom(
-                            alignment: Alignment.centerLeft,
-                            backgroundColor: selected == i
-                                ? Theme.of(
-                                    context,
-                                  ).colorScheme.primary.withValues(alpha: 0.12)
-                                : null,
-                            side: BorderSide(
-                              color: selected == i
-                                  ? Theme.of(context).colorScheme.primary
-                                  : Theme.of(context).dividerColor,
-                            ),
-                          ),
-                          onPressed: () => controller.selectOption(i),
-                          child: Text(
-                            '${String.fromCharCode(65 + i)}. ${question.options[i]}',
-                            style: AppTextStyles.bodyMedium,
-                          ),
-                        ),
-                      ),
-                    ),
+                  Icon(Icons.timer_outlined, color: timerColor),
+                  const SizedBox(width: 6),
+                  Text(
+                    controller.remainingLabel,
+                    style: AppTextStyles.h2.copyWith(color: timerColor),
+                  ),
                 ],
               ),
-            ),
-            const SizedBox(height: 16),
-            Wrap(
-              spacing: 12,
-              runSpacing: 12,
-              children: [
-                OutlinedButton.icon(
-                  onPressed: index > 0 ? controller.previousQuestion : null,
-                  icon: const Icon(Icons.arrow_back),
-                  label: const Text('Previous'),
+            ],
+          ),
+          const SizedBox(height: 6),
+          Text(
+            'Answered ${engine.answeredCount} of ${engine.totalQuestions} · '
+            'Unanswered ${engine.unansweredCount} · '
+            'All questions are on this page — scroll to answer, then submit at the end.',
+            style: AppTextStyles.captionOf(context),
+          ),
+          if (warning) ...[
+            const SizedBox(height: 10),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: AppColors.wrongCharBg,
+                borderRadius: BorderRadius.circular(
+                  AppDimensions.cardRadius,
                 ),
-                ElevatedButton.icon(
-                  onPressed: index < engine.totalQuestions - 1
-                      ? controller.nextQuestion
-                      : null,
-                  icon: const Icon(Icons.arrow_forward),
-                  label: const Text('Next'),
-                ),
-                TextButton(
-                  onPressed: selected == null
-                      ? null
-                      : controller.clearCurrentAnswer,
-                  child: const Text('Clear answer'),
-                ),
-                const SizedBox(width: 8),
-                FilledButton.icon(
-                  onPressed: () => _confirmSubmit(context),
-                  icon: const Icon(Icons.check),
-                  label: const Text('Submit Test'),
-                ),
-              ],
-            ),
-            const SizedBox(height: 24),
-            SectionCard(
-              title: 'Question Palette',
-              subtitle: 'Tap a number to jump to that question.',
-              child: GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate:
-                    const SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: 52,
-                      mainAxisSpacing: 8,
-                      crossAxisSpacing: 8,
-                    ),
-                itemCount: engine.totalQuestions,
-                itemBuilder: (context, i) {
-                  final MockQuestion q = engine.questions[i];
-                  final bool answered =
-                      engine.isAnsweredQuestion(q.id);
-                  final bool current = i == index;
-                  return SizedBox(
-                    height: 40,
-                    child: OutlinedButton(
-                      style: OutlinedButton.styleFrom(
-                        padding: EdgeInsets.zero,
-                        backgroundColor: answered
-                            ? Theme.of(
-                                context,
-                              ).colorScheme.primary.withValues(alpha: 0.85)
-                            : null,
-                        foregroundColor: answered ? Colors.white : null,
-                        side: current
-                            ? BorderSide(
-                                color: Theme.of(context).colorScheme.primary,
-                                width: 2,
-                              )
-                            : null,
-                      ),
-                      onPressed: () => controller.goToQuestion(i),
-                      child: Text('${i + 1}'),
-                    ),
-                  );
-                },
+              ),
+              child: const Text(
+                'Only 5 minutes left! The test will submit automatically when time ends.',
+                style: TextStyle(fontWeight: FontWeight.w700),
               ),
             ),
-            const SizedBox(height: 8),
-            Text(
-              'Palette: filled = answered, outlined = current question.',
-              style: AppTextStyles.captionOf(context),
-            ),
           ],
-        ),
+          const SizedBox(height: 12),
+          Expanded(
+            child: ListView.builder(
+              key: const Key('mock-test-question-list'),
+              controller: _scrollController,
+              itemCount: engine.totalQuestions,
+              itemBuilder: (context, index) {
+                final MockQuestion question = engine.questions[index];
+                final int? selected = controller.selectedFor(question);
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: SectionCard(
+                    key: ValueKey(question.id),
+                    title: 'Q${index + 1} · ${question.subject.label}',
+                    subtitle: question.topic,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(question.question, style: AppTextStyles.h3),
+                        const SizedBox(height: 14),
+                        for (int i = 0; i < question.options.length; i++)
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 8),
+                            child: SizedBox(
+                              width: double.infinity,
+                              child: OutlinedButton(
+                                style: OutlinedButton.styleFrom(
+                                  alignment: Alignment.centerLeft,
+                                  backgroundColor: selected == i
+                                      ? Theme.of(
+                                          context,
+                                        ).colorScheme.primary.withValues(alpha: 0.12)
+                                      : null,
+                                  side: BorderSide(
+                                    color: selected == i
+                                        ? Theme.of(context).colorScheme.primary
+                                        : Theme.of(context).dividerColor,
+                                  ),
+                                ),
+                                onPressed: () =>
+                                    controller.selectOptionFor(question, i),
+                                child: Text(
+                                  '${String.fromCharCode(65 + i)}. ${question.options[i]}',
+                                  style: AppTextStyles.bodyMedium,
+                                ),
+                              ),
+                            ),
+                          ),
+                        if (selected != null)
+                          TextButton(
+                            onPressed: () =>
+                                controller.clearAnswerFor(question),
+                            child: const Text('Clear answer'),
+                          ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+          const SizedBox(height: 12),
+          SizedBox(
+            width: double.infinity,
+            child: FilledButton.icon(
+              onPressed: () => _confirmSubmit(context),
+              icon: const Icon(Icons.check),
+              label: const Text('Submit Test'),
+            ),
+          ),
+        ],
       );
     });
   }
 
   Future<void> _confirmSubmit(BuildContext context) async {
+    final MockTestController controller = widget.controller;
     final List<MockQuestion> unanswered = controller.unansweredQuestions;
     final bool? submit = await showDialog<bool>(
       context: context,
@@ -798,6 +962,13 @@ class _ResultPanel extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text('Mock Test Result', style: AppTextStyles.h1),
+              if (controller.kind.value == MockTestKind.custom) ...[
+                const SizedBox(height: 6),
+                Text(
+                  '${controller.displayStudentName} — Score ${result.scoreLabel} · ${result.percentage.toStringAsFixed(1)}%',
+                  style: AppTextStyles.h2,
+                ),
+              ],
               if (controller.autoSubmitted.value) ...[
                 const SizedBox(height: 6),
                 const Text(
@@ -886,12 +1057,21 @@ class _ResultPanel extends StatelessWidget {
               const SizedBox(height: 24),
               const Text('Answer Review', style: AppTextStyles.h2),
               const SizedBox(height: 10),
-              for (int i = 0; i < result.questions.length; i++)
-                _ReviewTile(
-                  index: i,
-                  question: result.questions[i],
-                  selected: result.answers[result.questions[i].id],
-                ),
+              Obx(() {
+                // Reactive read: bookmark toggles rebuild the tiles.
+                controller.progress.bookmarks.length;
+                return Column(
+                  children: [
+                    for (int i = 0; i < result.questions.length; i++)
+                      _ReviewTile(
+                        index: i,
+                        question: result.questions[i],
+                        selected: result.answers[result.questions[i].id],
+                        controller: controller,
+                      ),
+                  ],
+                );
+              }),
               if (controller.activeLatestUpdates.isNotEmpty) ...[
                 const SizedBox(height: 24),
                 SectionCard(
@@ -927,11 +1107,13 @@ class _ReviewTile extends StatelessWidget {
     required this.index,
     required this.question,
     required this.selected,
+    required this.controller,
   });
 
   final int index;
   final MockQuestion question;
   final int? selected;
+  final MockTestController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -959,6 +1141,22 @@ class _ReviewTile extends StatelessWidget {
               : 'Your answer: ${String.fromCharCode(65 + selected!)} · Correct answer: ${String.fromCharCode(65 + question.correctIndex)}',
         ),
         children: [
+          Align(
+            alignment: Alignment.centerLeft,
+            child: TextButton.icon(
+              onPressed: () => controller.toggleBookmark(question),
+              icon: Icon(
+                controller.isBookmarked(question)
+                    ? Icons.bookmark
+                    : Icons.bookmark_border,
+              ),
+              label: Text(
+                controller.isBookmarked(question)
+                    ? 'Bookmarked'
+                    : 'Bookmark this question',
+              ),
+            ),
+          ),
           for (int i = 0; i < question.options.length; i++)
             ListTile(
               dense: true,
