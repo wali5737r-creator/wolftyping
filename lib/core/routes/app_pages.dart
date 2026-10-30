@@ -25,6 +25,7 @@ import '../../features/ppsc/view/custom_set_editor_view.dart';
 import '../../features/ppsc/view/custom_tests_view.dart';
 import '../../features/ppsc/view/mock_test_view.dart';
 import '../../features/ppsc/view/papers_list_view.dart';
+import '../../features/ppsc/view/year_papers_view.dart';
 import '../../features/ppsc/view/ppsc_view.dart';
 
 import '../../features/paragraphs/controller/paragraph_form_controller.dart';
@@ -166,10 +167,23 @@ class AppPages {
       }),
     ),
 
-    // 2026 practice papers list (practice material only)
+    // Practice papers list, organised by year (practice material only)
     GetPage(
       name: AppRoutes.ppscPastPapers,
       page: () => const PapersListView(),
+      binding: BindingsBuilder(() {
+        Get.lazyPut<MockTestController>(() => MockTestController());
+      }),
+    ),
+
+    // One year's practice papers (argument: the year as an int;
+    // defaults to 2026 when no argument is given)
+    GetPage(
+      name: AppRoutes.ppscPastPapersYear,
+      page: () {
+        final Object? argument = Get.arguments;
+        return YearPapersView(year: argument is int ? argument : 2026);
+      },
       binding: BindingsBuilder(() {
         Get.lazyPut<MockTestController>(() => MockTestController());
       }),

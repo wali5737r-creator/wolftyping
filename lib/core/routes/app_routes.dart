@@ -15,6 +15,7 @@ abstract class AppRoutes {
   static const String ppscUrdu = '/ppsc-urdu';
   static const String ppscMockTest = '/ppsc-mock-test';
   static const String ppscPastPapers = '/ppsc-past-papers';
+  static const String ppscPastPapersYear = '/ppsc-past-papers-year';
   static const String ppscCustomTests = '/ppsc-custom-tests';
   static const String ppscCustomTestEditor = '/ppsc-custom-test-editor';
   static const String myParagraphs = '/my-paragraphs';
