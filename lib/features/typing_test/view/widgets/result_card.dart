@@ -53,7 +53,7 @@ class ShareableResultCard extends StatelessWidget {
               ),
               const SizedBox(width: 10),
               const Text(
-                'TYPING MASTER',
+                'WOLFTYPING',
                 style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w800,
@@ -103,7 +103,7 @@ class ShareableResultCard extends StatelessWidget {
           _DetailRow('Total errors', '${s.totalErrors}'),
           const SizedBox(height: 14),
           Text(
-            'Completed ${_formatDate(completedAt)} · Practice result — Typing Master',
+            'Completed ${_formatDate(completedAt)} · Practice result — WolfTyping',
             style: const TextStyle(
               fontSize: 11,
               color: Color(0xFF5A6372),
@@ -245,7 +245,7 @@ String formatResultShareText({
   required DateTime completedAt,
 }) {
   final TypingSnapshot s = snapshot;
-  return 'Typing Master — $title\n'
+  return 'WolfTyping — $title\n'
       'Net WPM: ${s.netWpm.toStringAsFixed(0)} · '
       'Accuracy: ${s.accuracy.toStringAsFixed(0)}%\n'
       'Gross WPM: ${s.grossWpm.toStringAsFixed(1)} · '

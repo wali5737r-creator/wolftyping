@@ -13,7 +13,7 @@ import 'tables/settings_table.dart';
 
 part 'app_database.g.dart';
 
-/// The single local SQLite database for Typing Master.
+/// The single local SQLite database for WolfTyping.
 ///
 /// Everything the app needs offline lives here: profile, test history,
 /// lessons + progress, paragraphs (built-in and custom), mistakes, daily

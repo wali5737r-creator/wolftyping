@@ -1,4 +1,4 @@
-# Typing Master — Web Build Notes
+# WolfTyping — Web Build Notes
 
 This document records how the Windows desktop app (Flutter + GetX + Drift)
 was converted to a web build, what was changed and why, what persists on

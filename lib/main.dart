@@ -27,11 +27,11 @@ Future<void> main() async {
     permanent: true,
   );
 
-  runApp(const TypingMasterApp());
+  runApp(const WolfTypingApp());
 }
 
-class TypingMasterApp extends StatelessWidget {
-  const TypingMasterApp({super.key});
+class WolfTypingApp extends StatelessWidget {
+  const WolfTypingApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class TypingMasterApp extends StatelessWidget {
 
     return Obx(
       () => GetMaterialApp(
-        title: 'Typing Master',
+        title: 'WolfTyping',
         debugShowCheckedModeBanner: false,
         theme: AppTheme.light,
         darkTheme: AppTheme.dark,

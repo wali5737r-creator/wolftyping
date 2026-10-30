@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// Centralized color palette for Typing Master.
+/// Centralized color palette for WolfTyping.
 ///
 /// Rule: colors used to signal typing state (correct / wrong / current word /
 /// warning) must ALWAYS come from here so the meaning stays consistent

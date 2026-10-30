@@ -1,6 +1,6 @@
 {
-    "name": "typing_master",
-    "short_name": "typing_master",
+    "name": "WolfTyping",
+    "short_name": "WolfTyping",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

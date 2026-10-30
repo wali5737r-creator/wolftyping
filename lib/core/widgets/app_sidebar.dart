@@ -100,7 +100,7 @@ class _Brand extends StatelessWidget {
             const SizedBox(width: 12),
             const Flexible(
               child: Text(
-                'Typing Master',
+                'WolfTyping',
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
               ),

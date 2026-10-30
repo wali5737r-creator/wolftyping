@@ -80,7 +80,7 @@ class TypingResultScreen extends StatelessWidget {
                     title: 'Typing Test Result',
                     completedAt: DateTime.now(),
                   ),
-                  fileName: 'typing-master-result.png',
+                  fileName: 'wolftyping-result.png',
                 ),
                 const SizedBox(height: 28),
                 Wrap(

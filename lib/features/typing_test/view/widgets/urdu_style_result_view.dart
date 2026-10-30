@@ -92,7 +92,7 @@ class UrduStyleResultScreen extends StatelessWidget {
                     title: title,
                     completedAt: DateTime.now(),
                   ),
-                  fileName: 'typing-master-result.png',
+                  fileName: 'wolftyping-result.png',
                 ),
                 const SizedBox(height: 28),
                 Wrap(

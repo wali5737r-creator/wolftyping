@@ -1,4 +1,4 @@
-# Typing Master - Development Handoff
+# WolfTyping - Development Handoff
 
 ## Completed in this handoff
 - Replaced Profile placeholder with a real database-backed profile.

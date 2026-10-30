@@ -168,7 +168,7 @@ class SettingsView extends GetView<SettingsController> {
               [
                 ListTile(
                   leading: Icon(Icons.info_outline),
-                  title: Text('Typing Master'),
+                  title: Text('WolfTyping'),
                   subtitle: Text(
                     'Offline desktop typing practice for English, Urdu and PPSC.',
                   ),

@@ -1,4 +1,4 @@
-# Typing Master — Foundation
+# WolfTyping — Foundation
 
 Windows-first desktop typing trainer (English + Urdu). Flutter + GetX + Drift/SQLite.
 
