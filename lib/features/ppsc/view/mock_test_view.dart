@@ -186,7 +186,7 @@ class _SampleSetupPanel extends StatelessWidget {
                 return SectionCard(
                   title: isFull
                       ? 'Full mock test'
-                      : '${controller.subject.value?.label ?? ''} short test',
+                      : '${controller.subject.value?.label ?? ''} test',
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -196,7 +196,7 @@ class _SampleSetupPanel extends StatelessWidget {
                       ),
                       const SizedBox(height: 6),
                       const Text(
-                        'Practice sample questions only. To run a full 100-question test, add your questions to lib/features/ppsc/service/mock_questions.dart — the engine adapts to however many questions are in the file.',
+                        'Practice sample questions only — 100 per subject. The full test draws a balanced 100 across all subjects.',
                         style: AppTextStyles.body,
                       ),
                     ],
@@ -511,9 +511,9 @@ class _KindChoice extends StatelessWidget {
                   value: MockTestKind.full,
                 ),
                 RadioListTile<MockTestKind>(
-                  title: Text('Subject-wise short test'),
+                  title: Text('Subject-wise test'),
                   subtitle:
-                      Text('One subject only, e.g. 20 questions per subject.'),
+                      Text('One subject only, 100 questions.'),
                   value: MockTestKind.subject,
                 ),
               ],

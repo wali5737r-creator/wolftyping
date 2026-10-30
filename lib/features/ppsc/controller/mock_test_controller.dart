@@ -53,9 +53,9 @@ class MockTestController extends GetxController {
   ];
 
   static const List<Duration> subjectDurations = [
-    Duration(minutes: 15),
-    Duration(minutes: 20),
-    Duration(minutes: 30),
+    Duration(minutes: 60),
+    Duration(minutes: 90),
+    Duration(minutes: 120),
   ];
 
   static const List<double> deductionOptions = [0.25, 0.5, 1.0];
@@ -71,14 +71,43 @@ class MockTestController extends GetxController {
     Duration(minutes: 120),
   ];
 
+  /// Balanced 100-question set for the full mock test: questions are
+  /// taken round-robin across the 6 subjects in bank order, so each
+  /// subject contributes 16–17 questions and no question repeats.
+  static List<MockQuestion> get fullTestQuestions {
+    final Map<MockSubject, List<MockQuestion>> bySubject = {
+      for (final s in MockSubject.values)
+        s: sampleQuestions.where((q) => q.subject == s).toList(),
+    };
+    final List<MockQuestion> result = [];
+    var index = 0;
+    while (result.length < 100) {
+      var progressed = false;
+      for (final s in MockSubject.values) {
+        if (result.length >= 100) break;
+        final List<MockQuestion> list = bySubject[s]!;
+        if (index < list.length) {
+          result.add(list[index]);
+          progressed = true;
+        }
+      }
+      if (!progressed) break;
+      index++;
+    }
+    return result;
+  }
+
   /// Questions available for the currently selected kind/subject/paper
-  /// /custom set.
+  /// /custom set. The full test draws the balanced 100, not the whole bank.
   List<MockQuestion> get availableQuestions {
     if (kind.value == MockTestKind.paper) {
       return activePaper.value?.questions ?? const [];
     }
     if (kind.value == MockTestKind.custom) {
       return activeCustomSet.value?.questions ?? const [];
+    }
+    if (kind.value == MockTestKind.full) {
+      return fullTestQuestions;
     }
     if (kind.value == MockTestKind.subject && subject.value != null) {
       return sampleQuestions
@@ -125,7 +154,7 @@ class MockTestController extends GetxController {
       selectedDuration.value = const Duration(minutes: 90);
     } else {
       subject.value ??= MockSubject.english;
-      selectedDuration.value = const Duration(minutes: 20);
+      selectedDuration.value = const Duration(minutes: 90);
     }
   }
 
@@ -162,7 +191,7 @@ class MockTestController extends GetxController {
     subject.value = value;
     kind.value = MockTestKind.subject;
     if (!subjectDurations.contains(selectedDuration.value)) {
-      selectedDuration.value = const Duration(minutes: 20);
+      selectedDuration.value = const Duration(minutes: 90);
     }
   }
 

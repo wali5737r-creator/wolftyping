@@ -97,7 +97,7 @@ class MockQuestion {
   }
 }
 
-/// Subjects for the subject-wise short tests. The full mock test uses
+/// Subjects for the subject-wise tests. The full mock test uses
 /// every subject together.
 enum MockSubject {
   english,
