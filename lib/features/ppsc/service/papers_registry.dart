@@ -1,4 +1,5 @@
 import '../model/paper_test.dart';
+import 'papers2025_registry.dart';
 import 'papers2026_registry.dart';
 
 /// One year's group of practice papers.
@@ -24,12 +25,13 @@ class PaperYearGroup {
 /// Years covered by the source collection (2019-2026) that have no
 /// built papers yet. Shown as "coming soon" only — no paper is ever
 /// invented for these years.
-const List<int> plannedPaperYears = [2025, 2024, 2023, 2022, 2021, 2020, 2019];
+const List<int> plannedPaperYears = [2024, 2023, 2022, 2021, 2020, 2019];
 
 /// Built papers by year. To add a future year, add its registry import
 /// and one entry here; the year-grouped list screens need no rewrite.
 Map<int, List<PaperTest>> get papersByYear => <int, List<PaperTest>>{
       2026: papers2026,
+      2025: papers2025,
     };
 
 /// All paper years, newest first: built years, then planned years.
