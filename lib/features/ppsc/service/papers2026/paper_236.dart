@@ -581,9 +581,9 @@ const PaperTest paper236 = PaperTest(
       subject: MockSubject.english,
       question: 'Choose the preposition: he parted ___ his family.',
       options: ['to', 'from', 'with', 'at'],
-      correctIndex: 2,
+      correctIndex: 1,
       topic: 'Prepositions',
-      explanation: 'Part with is the phrasal verb used when someone separates from people or gives something up.',
+      explanation: 'We say "part from" when separating from a person (he parted from his family), while "part with" is used for giving up a thing or possession.',
     ),
     MockQuestion(
       id: 'p236-62',

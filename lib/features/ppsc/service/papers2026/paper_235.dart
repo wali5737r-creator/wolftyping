@@ -900,16 +900,16 @@ const PaperTest paper235 = PaperTest(
     MockQuestion(
       id: 'p235-81',
       subject: MockSubject.generalKnowledge,
-      question: 'When the sales tax rate changes, what happens for the changed period?',
+      question: 'Under the Punjab Sales Tax on Services Act, 2012 (section 13), at which rate is a taxable service charged when the tax rate changes?',
       options: [
-        'No action is required',
-        'Previous tax returns are cancelled',
-        'A separate return is filed for the changed period',
-        'Tax collection stops',
+        'The rate in force when the service is provided',
+        'The rate in force when the invoice is issued',
+        'The rate in force when payment is received',
+        'The rate in force at the end of the tax period',
       ],
-      correctIndex: 2,
+      correctIndex: 0,
       topic: 'Tax',
-      explanation: 'When the sales tax rate changes, a separate return is filed for the changed period.',
+      explanation: 'Section 13 of the Punjab Sales Tax on Services Act, 2012 provides that a taxable service is charged to tax at the rate in force at the time the service is provided.',
     ),
     MockQuestion(
       id: 'p235-82',

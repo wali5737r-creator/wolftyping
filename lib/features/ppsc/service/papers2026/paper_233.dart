@@ -62,9 +62,9 @@ const PaperTest paper233 = PaperTest(
       question:
           'How many main canal systems does the Indus Basin system in Pakistan have, according to standard accounts?',
       options: ['24', '14', '43', '19'],
-      correctIndex: 0,
+      correctIndex: 2,
       topic: 'Irrigation',
-      explanation: 'Standard overviews count 24 main canal systems in the Indus Basin system; this is distinct from the wider count of canal commands.',
+      explanation: 'The Indus Basin irrigation system in Pakistan has 43 main canal systems (43 main canals, as stated by IUCN).',
     ),
     MockQuestion(
       id: 'p233-5',

@@ -128,7 +128,7 @@ const PaperTest paper219 = PaperTest(
     MockQuestion(
       id: 'p219-13',
       subject: MockSubject.generalKnowledge,
-      question: 'The 2019 Summer Universiade, the world university games, was hosted by which Russian city?',
+      question: 'The 2019 Winter Universiade, the world university games, was hosted by which Russian city?',
       options: ['Moscow', 'Kazan', 'Krasnoyarsk', 'Sochi'],
       correctIndex: 2,
       topic: 'Sports',
