@@ -1,0 +1,140 @@
+import 'package:flutter_test/flutter_test.dart';
+import 'package:get/get.dart';
+import 'package:typing_master/core/routes/app_pages.dart';
+import 'package:typing_master/core/routes/app_routes.dart';
+import 'package:typing_master/core/theme/app_theme.dart';
+import 'package:typing_master/features/ppsc/controller/mock_test_controller.dart';
+import 'package:typing_master/features/ppsc/model/mock_question.dart';
+import 'package:typing_master/features/ppsc/service/mock_test_engine.dart';
+import 'package:typing_master/features/ppsc/service/papers2025_registry.dart';
+import 'package:typing_master/features/ppsc/service/papers_registry.dart';
+
+/// Phase A tests for the 2025 papers: registry, paper selection in the
+/// controller, the year page, and explanation display in the end
+/// review. Counts are each paper's actual length, verified by grep
+/// against the files; paper 218 has no entry because it does not
+/// appear anywhere in the source file.
+void main() {
+  const List<int> expectedCounts = [
+    10, 10, 20, 10, 15, 21, 21, // 162-168
+    63, 93, 99, 100, 100, 90, 75, // 169-175
+    25, 47, 45, 19, 29, 99, 25, // 176-182
+    15, 74, 15, 20, 20, 16, 100, // 183-189
+    99, 25, 20, 30, 100, 100, 20, // 190-196
+    40, 20, 60, 20, 40, 20, 13, // 197-203
+    18, 100, 100, 100, 100, 89, 97, // 204-210
+    100, 100, 100, 100, 100, 100, 92, // 211-217
+  ];
+
+  group('2025 papers registry', () {
+    test('has 56 papers, numbered 162-217, all year 2025, no paper 218',
+        () {
+      expect(papers2025.length, 56);
+      expect(expectedCounts.length, 56);
+      for (int i = 0; i < papers2025.length; i++) {
+        expect(papers2025[i].paperNo, 162 + i);
+        expect(papers2025[i].year, 2025);
+        expect(papers2025[i].questionCount, expectedCounts[i]);
+      }
+      expect(papers2025.any((paper) => paper.paperNo == 218), isFalse);
+      expect(papers2025TotalQuestions, 3179);
+      expect(papersForYear(2025), papers2025);
+    });
+
+    test('every question is valid and ids are unique per paper', () {
+      for (final paper in papers2025) {
+        final ids = <String>{};
+        for (final q in paper.questions) {
+          expect(q.options.length, 4, reason: '${paper.id} ${q.id}');
+          expect(q.correctIndex >= 0 && q.correctIndex <= 3, isTrue);
+          expect(q.explanation, isNotEmpty, reason: '${paper.id} ${q.id}');
+          expect(ids.add(q.id), isTrue, reason: 'duplicate id ${q.id}');
+        }
+      }
+    });
+
+    test('latest-update notes total 30', () {
+      expect(papers2025TotalLatestUpdates, 30);
+    });
+
+    test('incomplete papers carry only their readable questions', () {
+      final paper209 = papers2025.firstWhere((p) => p.paperNo == 209);
+      expect(paper209.questionCount, 89);
+      final paper217 = papers2025.firstWhere((p) => p.paperNo == 217);
+      expect(paper217.questionCount, 92);
+    });
+  });
+
+  group('paper selection in the controller', () {
+    test('selectPaper exposes the paper questions and starts the engine',
+        () {
+      final controller = MockTestController();
+      final paper = papers2025.first;
+      controller.selectPaper(paper);
+      expect(controller.kind.value, MockTestKind.paper);
+      expect(controller.activePaper.value, paper);
+      expect(controller.availableQuestions.length, paper.questionCount);
+      expect(controller.negativeMarking.value, isFalse);
+      controller.selectDuration(const Duration(minutes: 60));
+      controller.startTest();
+      expect(controller.engine.totalQuestions, paper.questionCount);
+      expect(controller.phase.value, MockTestPhase.test);
+      controller.onClose();
+    });
+  });
+
+  group('2025 year page', () {
+    testWidgets('year page renders all 56 papers', (tester) async {
+      await tester.pumpWidget(
+        GetMaterialApp(
+          theme: AppTheme.light,
+          initialRoute: AppRoutes.ppscPastPapers,
+          getPages: AppPages.pages,
+        ),
+      );
+      await tester.pumpAndSettle();
+      Get.toNamed(AppRoutes.ppscPastPapersYear, arguments: 2025);
+      await tester.pumpAndSettle();
+      expect(find.text('2025 Practice Papers'), findsOneWidget);
+      expect(find.text('Start'), findsNWidgets(56));
+      expect(find.text('0/56 papers complete'), findsOneWidget);
+    });
+
+    testWidgets('end review shows explanations and latest updates',
+        (tester) async {
+      await tester.pumpWidget(
+        GetMaterialApp(
+          theme: AppTheme.light,
+          initialRoute: AppRoutes.ppscMockTest,
+          getPages: AppPages.pages,
+        ),
+      );
+      await tester.pumpAndSettle();
+      final controller = Get.find<MockTestController>();
+      const question = MockQuestion(
+        id: 'expl-1',
+        subject: MockSubject.generalKnowledge,
+        question: 'Synthetic question?',
+        options: ['A', 'B', 'C', 'D'],
+        correctIndex: 1,
+        explanation: 'B is correct because it is the verified fact.',
+      );
+      final engine = MockTestEngine(questions: [question]);
+      engine.answer(question.id, 1);
+      // Paper 169 is the first 2025 paper with a latest-update note.
+      controller.selectPaper(papers2025[7]);
+      controller.result.value = engine.result();
+      controller.phase.value = MockTestPhase.result;
+      await tester.pumpAndSettle();
+      // The review tile is an ExpansionTile: expand it first so the
+      // explanation child is laid out.
+      await tester.tap(find.text('Q1. Synthetic question?'));
+      await tester.pumpAndSettle();
+      expect(
+        find.text('Explanation: B is correct because it is the verified fact.'),
+        findsOneWidget,
+      );
+      expect(find.text('Latest updates'), findsOneWidget);
+    });
+  });
+}

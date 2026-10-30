@@ -63,7 +63,8 @@ void main() {
   });
 
   group('papers views', () {
-    testWidgets('papers list renders all 21 papers', (tester) async {
+    testWidgets('papers list renders all 2026 and 2025 papers',
+        (tester) async {
       await tester.pumpWidget(
         GetMaterialApp(
           theme: AppTheme.light,
@@ -73,7 +74,7 @@ void main() {
       );
       await tester.pumpAndSettle();
       expect(find.text('Practice Papers'), findsOneWidget);
-      expect(find.text('Start'), findsNWidgets(21));
+      expect(find.text('Start'), findsNWidgets(77));
     });
 
     testWidgets('paper setup renders after selecting a paper',

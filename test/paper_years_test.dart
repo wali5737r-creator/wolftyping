@@ -7,6 +7,7 @@ import 'package:typing_master/core/routes/app_routes.dart';
 import 'package:typing_master/core/theme/app_theme.dart';
 import 'package:typing_master/features/ppsc/controller/mock_test_controller.dart';
 import 'package:typing_master/features/ppsc/service/mock_progress_repository.dart';
+import 'package:typing_master/features/ppsc/service/papers2025_registry.dart';
 import 'package:typing_master/features/ppsc/service/papers2026_registry.dart';
 import 'package:typing_master/features/ppsc/service/papers_registry.dart';
 
@@ -24,29 +25,37 @@ void main() {
   });
 
   group('papers registry by year', () {
-    test('groups are newest-first, 2026 built, later years empty', () {
+    test('groups are newest-first, 2026 and 2025 built, later years empty',
+        () {
       final groups = paperYearGroups;
       expect(groups.first.year, 2026);
       expect(groups.first.isBuilt, isTrue);
       expect(groups.first.papers.length, 21);
       expect(groups.first.totalQuestions, 1417);
+      expect(groups[1].year, 2025);
+      expect(groups[1].isBuilt, isTrue);
+      expect(groups[1].papers.length, 56);
+      expect(groups[1].totalQuestions, 3179);
       expect(
         groups.map((g) => g.year).toList(),
         [2026, 2025, 2024, 2023, 2022, 2021, 2020, 2019],
       );
-      for (final group in groups.skip(1)) {
+      for (final group in groups.skip(2)) {
         expect(group.isBuilt, isFalse);
         expect(group.papers, isEmpty);
       }
     });
 
-    test('papersForYear returns 2026 papers and empty for unbuilt years',
+    test(
+        'papersForYear returns 2026 and 2025 papers and empty for unbuilt years',
         () {
       expect(papersForYear(2026), papers2026);
-      expect(papersForYear(2025), isEmpty);
+      expect(papersForYear(2025), papers2025);
+      expect(papersForYear(2024), isEmpty);
       expect(papersForYear(2030), isEmpty);
       expect(isPaperYearBuilt(2026), isTrue);
-      expect(isPaperYearBuilt(2025), isFalse);
+      expect(isPaperYearBuilt(2025), isTrue);
+      expect(isPaperYearBuilt(2024), isFalse);
     });
 
     test('filterPapers matches number, post, department and filters', () {
@@ -78,42 +87,47 @@ void main() {
   }
 
   group('year-grouped list screen', () {
-    testWidgets('shows heading, 2026 papers, and coming-soon years',
+    testWidgets('shows heading, 2026 and 2025 papers, and coming-soon years',
         (tester) async {
       await pumpEntry(tester);
       expect(find.text('Practice Papers'), findsOneWidget);
       expect(find.text('2026'), findsOneWidget);
-      expect(find.text('Start'), findsNWidgets(21));
+      expect(find.text('Start'), findsNWidgets(77));
       expect(find.text('0/21 papers complete'), findsOneWidget);
+      expect(find.text('0/56 papers complete'), findsOneWidget);
       expect(find.text('2025'), findsOneWidget);
-      expect(find.text('Coming soon · 0 papers built'), findsNWidgets(7));
-      // Search + filter controls are present on the entry screen.
-      expect(find.byKey(const Key('paper-search-field')), findsOneWidget);
+      expect(find.text('Coming soon · 0 papers built'), findsNWidgets(6));
+      // Search + filter controls are present in each built year's
+      // section (one set per section).
+      expect(find.byKey(const Key('paper-search-field')), findsNWidgets(2));
       expect(
         find.byKey(const Key('paper-department-filter')),
-        findsOneWidget,
+        findsNWidgets(2),
       );
     });
 
     testWidgets('search filters the todo-list rows live', (tester) async {
       await pumpEntry(tester);
+      // Each built year's section has its own search field; the first
+      // one filters the 2026 section only.
       await tester.enterText(
-        find.byKey(const Key('paper-search-field')),
+        find.byKey(const Key('paper-search-field')).first,
         '233',
       );
       await tester.pumpAndSettle();
-      expect(find.text('Start'), findsOneWidget);
+      expect(find.text('Start'), findsNWidgets(57));
       expect(
         find.textContaining('Paper 233'),
         findsOneWidget,
       );
       await tester.enterText(
-        find.byKey(const Key('paper-search-field')),
+        find.byKey(const Key('paper-search-field')).first,
         'no-such-paper-xyz',
       );
       await tester.pumpAndSettle();
       expect(find.text('No papers match this search or filter.'),
           findsOneWidget);
+      expect(find.text('Start'), findsNWidgets(56));
     });
 
     testWidgets('tapping a built year opens its year page', (tester) async {
@@ -125,22 +139,38 @@ void main() {
       expect(find.text('0/21 papers complete'), findsOneWidget);
     });
 
+    testWidgets('tapping the built 2025 year opens its year page',
+        (tester) async {
+      await pumpEntry(tester);
+      // The 2025 header sits below the 21-paper 2026 section, off
+      // screen in the test viewport: scroll it into view first.
+      await tester.ensureVisible(
+        find.byKey(const Key('paper-year-2025-header')),
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const Key('paper-year-2025-header')));
+      await tester.pumpAndSettle();
+      expect(find.text('2025 Practice Papers'), findsOneWidget);
+      expect(find.text('Start'), findsNWidgets(56));
+      expect(find.text('0/56 papers complete'), findsOneWidget);
+    });
+
     testWidgets('tapping a coming-soon year goes nowhere', (tester) async {
       await pumpEntry(tester);
-      await tester.tap(find.byKey(const Key('paper-year-2025-row')));
+      await tester.tap(find.byKey(const Key('paper-year-2024-row')));
       await tester.pumpAndSettle();
       expect(find.text('Practice Papers'), findsOneWidget);
-      expect(find.text('2025 Practice Papers'), findsNothing);
+      expect(find.text('2024 Practice Papers'), findsNothing);
     });
 
     testWidgets('year page for an unbuilt year is honest and has no Start',
         (tester) async {
       await pumpEntry(tester);
-      Get.toNamed(AppRoutes.ppscPastPapersYear, arguments: 2025);
+      Get.toNamed(AppRoutes.ppscPastPapersYear, arguments: 2024);
       await tester.pumpAndSettle();
-      expect(find.text('2025 Practice Papers'), findsOneWidget);
+      expect(find.text('2024 Practice Papers'), findsOneWidget);
       expect(find.text('Coming soon'), findsWidgets);
-      expect(find.text('2025 — coming soon · 0 papers built'),
+      expect(find.text('2024 — coming soon · 0 papers built'),
           findsOneWidget);
       expect(find.text('Start'), findsNothing);
       expect(find.text('Retake'), findsNothing);
