@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
@@ -270,12 +272,23 @@ class TypingController extends GetxController {
       // Added for Practice + Mistake Analysis, which needs real saved
       // English data to analyze — does not change any existing typing,
       // timer, or result-screen behavior above.
-      TypingResultRepository.instance.saveCompletedTest(
-        snapshot: engine.snapshot,
-        language: TypingLanguage.english,
-        kind: TypingTestKind.normal,
-        plannedDuration: engine.duration,
-        mistakes: engine.mistakes,
+      unawaited(
+        TypingResultRepository.instance
+            .saveCompletedTest(
+              snapshot: engine.snapshot,
+              language: TypingLanguage.english,
+              kind: TypingTestKind.normal,
+              plannedDuration: engine.duration,
+              mistakes: engine.mistakes,
+            )
+            .then((saved) {
+          if (!saved) {
+            Get.snackbar(
+              'Result not saved',
+              'This result could not be saved on this device.',
+            );
+          }
+        }),
       );
     }
   }

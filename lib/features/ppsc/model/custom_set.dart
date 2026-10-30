@@ -13,6 +13,16 @@ import 'mock_question.dart';
 /// single line of text. Plain JSON is also accepted on import, so a
 /// hand-written or file-exported set imports the same way.
 class CustomSet {
+  /// Maximum questions per set (import, decode and editor).
+  static const int maxQuestions = 200;
+
+  /// Maximum size of an import code/file, in characters.
+  static const int maxImportChars = 512 * 1024;
+
+  /// Maximum characters per text field (name, question, option,
+  /// topic, explanation).
+  static const int maxFieldChars = 4000;
+
   CustomSet({
     required this.id,
     required this.name,
@@ -85,9 +95,20 @@ class CustomSet {
     if (set.name.trim().isEmpty) {
       throw const FormatException('Custom test has no name.');
     }
+    if (set.name.length > maxFieldChars) {
+      throw const FormatException(
+        'Custom test name is too long (over $maxFieldChars characters).',
+      );
+    }
     if (set.questions.isEmpty) {
       throw FormatException(
         'Custom test "${set.name}" has no questions.',
+      );
+    }
+    if (set.questions.length > maxQuestions) {
+      throw FormatException(
+        'Custom test "${set.name}" has ${set.questions.length} questions — '
+        'at most $maxQuestions are allowed.',
       );
     }
     for (final MockQuestion q in set.questions) {
@@ -101,6 +122,18 @@ class CustomSet {
           'A question in "${set.name}" has no question text.',
         );
       }
+      if (q.question.length > maxFieldChars) {
+        throw FormatException(
+          'Question "${q.id}" is too long (over $maxFieldChars characters).',
+        );
+      }
+      if ((q.topic ?? '').length > maxFieldChars ||
+          (q.explanation ?? '').length > maxFieldChars) {
+        throw FormatException(
+          'Question "${q.id}" has a topic or explanation over '
+          '$maxFieldChars characters.',
+        );
+      }
       if (q.options.length != 4) {
         throw FormatException(
           'Question "${q.id}" must have exactly 4 options '
@@ -111,6 +144,12 @@ class CustomSet {
         if (option.trim().isEmpty) {
           throw FormatException(
             'Question "${q.id}" has an empty option.',
+          );
+        }
+        if (option.length > maxFieldChars) {
+          throw FormatException(
+            'Question "${q.id}" has an option over '
+            '$maxFieldChars characters.',
           );
         }
       }
@@ -144,6 +183,11 @@ class CustomSet {
     final String trimmed = code.trim();
     if (trimmed.isEmpty) {
       throw const FormatException('Nothing to import — the code is empty.');
+    }
+    if (trimmed.length > maxImportChars) {
+      throw const FormatException(
+        'This code or file is too large to import (over 512 KB).',
+      );
     }
     try {
       final Object? parsed;

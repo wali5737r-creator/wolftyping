@@ -3,22 +3,26 @@ import 'dart:async';
 import 'package:get/get.dart';
 
 import '../model/custom_set.dart';
+import '../model/mock_attempt.dart';
 import '../model/mock_question.dart';
 import '../model/paper_test.dart';
+import '../service/mock_progress_repository.dart';
 import '../service/mock_questions.dart';
 import '../service/mock_test_engine.dart';
 
 enum MockTestPhase { setup, test, result }
 
-enum MockTestKind { full, subject, paper, custom }
+enum MockTestKind { full, subject, paper, custom, bookmarked }
 
 /// Drives the PPSC practice MCQ mock test: setup choices (full vs
 /// subject-wise, duration, negative marking), the countdown timer with
 /// auto-submit, question navigation/answers, and the result + review.
 ///
-/// The question data comes only from [sampleQuestions]; the engine
-/// ([MockTestEngine]) owns all scoring so the rules are unit tested
-/// without this controller.
+/// The question data comes from the sample bank, a paper, a custom
+/// set, or the bookmarked questions; the engine ([MockTestEngine])
+/// owns all scoring so the rules are unit tested without this
+/// controller. Finished attempts are recorded on the device only
+/// (see [MockProgressRepository]).
 class MockTestController extends GetxController {
   final Rx<MockTestPhase> phase = MockTestPhase.setup.obs;
   final Rx<MockTestKind> kind = MockTestKind.full.obs;
@@ -36,6 +40,27 @@ class MockTestController extends GetxController {
   final Rx<Duration> selectedDuration = const Duration(minutes: 90).obs;
   final RxBool negativeMarking = false.obs;
   final RxDouble negativeDeduction = 0.25.obs;
+
+  /// Student name for a custom test run, asked before the test starts.
+  /// Empty for sample/paper tests, which never ask for a name. When a
+  /// name was typed it is the typed name; when left empty it falls
+  /// back to 'Student' at result time (see [displayStudentName]).
+  final RxString studentName = ''.obs;
+
+  final MockProgressRepository progress = MockProgressRepository.instance;
+
+  /// Futures for in-flight progress writes, so tests can wait for
+  /// persistence with [flushProgress] instead of guessing.
+  final List<Future<void>> _progressOps = <Future<void>>[];
+
+  @override
+  void onInit() {
+    super.onInit();
+    unawaited(progress.init());
+  }
+
+  /// Waits for all progress writes started so far to finish.
+  Future<void> flushProgress() => Future.wait(_progressOps);
 
   final RxInt currentIndex = 0.obs;
   final Rx<Duration> remaining = Duration.zero.obs;
@@ -100,6 +125,9 @@ class MockTestController extends GetxController {
   /// Questions available for the currently selected kind/subject/paper
   /// /custom set. The full test draws the balanced 100, not the whole bank.
   List<MockQuestion> get availableQuestions {
+    if (kind.value == MockTestKind.bookmarked) {
+      return progress.bookmarks.toList();
+    }
     if (kind.value == MockTestKind.paper) {
       return activePaper.value?.questions ?? const [];
     }
@@ -146,6 +174,7 @@ class MockTestController extends GetxController {
 
   void selectKind(MockTestKind value) {
     kind.value = value;
+    if (value != MockTestKind.custom) studentName.value = '';
     if (value == MockTestKind.paper || value == MockTestKind.custom) return;
     activePaper.value = null;
     activeCustomSet.value = null;
@@ -164,6 +193,7 @@ class MockTestController extends GetxController {
   void selectPaper(PaperTest paper) {
     activePaper.value = paper;
     activeCustomSet.value = null;
+    studentName.value = '';
     kind.value = MockTestKind.paper;
     subject.value = null;
     selectedDuration.value = const Duration(minutes: 90);
@@ -174,6 +204,16 @@ class MockTestController extends GetxController {
   /// setup panel then shows the set's own setup instead of the
   /// sample-test selectors. Negative marking is reset to OFF, the
   /// default for every new test run.
+  void selectBookmarked() {
+    activePaper.value = null;
+    activeCustomSet.value = null;
+    studentName.value = '';
+    kind.value = MockTestKind.bookmarked;
+    subject.value = null;
+    selectedDuration.value = const Duration(minutes: 60);
+    phase.value = MockTestPhase.setup;
+  }
+
   void selectCustomSet(CustomSet set) {
     activeCustomSet.value = set;
     activePaper.value = null;
@@ -205,6 +245,61 @@ class MockTestController extends GetxController {
 
   void setDeduction(double value) {
     negativeDeduction.value = value;
+  }
+
+  /// Name shown with a custom-test result. 'Student' when no name
+  /// was typed — never empty, never blocking.
+  String get displayStudentName {
+    final String name = studentName.value.trim();
+    return name.isEmpty ? 'Student' : name;
+  }
+
+  /// Label for the current run, used when recording the attempt.
+  String get attemptSourceLabel {
+    switch (kind.value) {
+      case MockTestKind.paper:
+        final PaperTest? paper = activePaper.value;
+        return paper == null
+            ? 'Practice paper'
+            : 'Practice Paper ${paper.paperNo}';
+      case MockTestKind.custom:
+        return activeCustomSet.value?.name ?? 'Custom test';
+      case MockTestKind.subject:
+        return '${subject.value?.label ?? ''} test';
+      case MockTestKind.bookmarked:
+        return 'Bookmarked questions';
+      case MockTestKind.full:
+        return 'Full mock test';
+    }
+  }
+
+  String get attemptSourceId {
+    switch (kind.value) {
+      case MockTestKind.paper:
+        return activePaper.value?.id ?? 'paper';
+      case MockTestKind.custom:
+        return activeCustomSet.value?.id ?? 'custom';
+      case MockTestKind.subject:
+        return subject.value?.name ?? 'subject';
+      case MockTestKind.bookmarked:
+        return 'bookmarked';
+      case MockTestKind.full:
+        return 'full';
+    }
+  }
+
+  /// Per-subject correct/total counts for [result], used to record
+  /// the attempt breakdown for the weakest-subject hint.
+  Map<String, Map<String, int>> _subjectBreakdown(MockTestResult result) {
+    final Map<String, int> correct = {};
+    final Map<String, int> total = {};
+    for (final MockQuestion q in result.questions) {
+      total[q.subject.name] = (total[q.subject.name] ?? 0) + 1;
+      if (q.isCorrect(result.answers[q.id])) {
+        correct[q.subject.name] = (correct[q.subject.name] ?? 0) + 1;
+      }
+    }
+    return {'correct': correct, 'total': total};
   }
 
   void startTest() {
@@ -248,6 +343,40 @@ class MockTestController extends GetxController {
     answersTick.value++;
   }
 
+  /// Answers [question] with [optionIndex], for the column view where
+  /// every question is visible at once. The one-at-a-time panel uses
+  /// [selectOption] (current question) instead; both write to the
+  /// same engine answers map.
+  void selectOptionFor(MockQuestion question, int optionIndex) {
+    if (_engine == null) return;
+    engine.answer(question.id, optionIndex);
+    answersTick.value++;
+  }
+
+  void clearAnswerFor(MockQuestion question) {
+    if (_engine == null) return;
+    engine.clearAnswer(question.id);
+    answersTick.value++;
+  }
+
+  bool isBookmarked(MockQuestion question) =>
+      progress.isBookmarked(question.id);
+
+  /// Toggles a bookmark for [question] in the end review. Returns
+  /// true when the question is bookmarked afterwards.
+  Future<bool> toggleBookmark(MockQuestion question) async {
+    final Future<bool> op = progress.toggleBookmark(question);
+    final bool bookmarked = await op;
+    answersTick.value++;
+    return bookmarked;
+  }
+
+  /// Weakest subjects from recorded attempts, weakest first. Empty
+  /// when no attempts have enough questions yet — the UI must show
+  /// no hint (or a neutral prompt), never invented data.
+  List<SubjectAttemptStats> get weakestSubjects =>
+      progress.weakestSubjects();
+
   void clearCurrentAnswer() {
     if (_engine == null) return;
     engine.clearAnswer(engine.questions[currentIndex.value].id);
@@ -266,8 +395,28 @@ class MockTestController extends GetxController {
     _timer?.cancel();
     _timer = null;
     autoSubmitted.value = auto;
-    result.value = engine.result();
+    final MockTestResult finished = engine.result();
+    result.value = finished;
     phase.value = MockTestPhase.result;
+    final Map<String, Map<String, int>> breakdown =
+        _subjectBreakdown(finished);
+    final MockAttempt attempt = MockAttempt(
+      id: 'attempt-${DateTime.now().microsecondsSinceEpoch}',
+      sourceKind: kind.value.name,
+      sourceId: attemptSourceId,
+      sourceLabel: attemptSourceLabel,
+      totalQuestions: finished.totalQuestions,
+      correct: finished.correct,
+      wrong: finished.wrong,
+      skipped: finished.skipped,
+      score: finished.score,
+      attemptedAt: DateTime.now(),
+      perSubjectCorrect: breakdown['correct'] ?? const {},
+      perSubjectTotal: breakdown['total'] ?? const {},
+    );
+    final Future<void> op = progress.recordAttempt(attempt);
+    _progressOps.add(op);
+    unawaited(op.then((_) => _progressOps.remove(op)));
   }
 
   void backToSetup() {
