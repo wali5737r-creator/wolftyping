@@ -30,6 +30,7 @@ const PaperTest paper232 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Idioms',
+      explanation: 'To bite the bullet means to face an unpleasant situation bravely.',
     ),
     MockQuestion(
       id: 'p232-2',
@@ -43,6 +44,7 @@ const PaperTest paper232 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Idioms',
+      explanation: 'To break the ice means to start a conversation and ease tension at a gathering.',
     ),
     MockQuestion(
       id: 'p232-3',
@@ -56,6 +58,7 @@ const PaperTest paper232 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Idioms',
+      explanation: 'To hit the nail on the head means to describe something exactly right.',
     ),
     MockQuestion(
       id: 'p232-4',
@@ -64,6 +67,7 @@ const PaperTest paper232 = PaperTest(
       options: ['Every night', 'Very rarely', 'At midnight', 'Once a year'],
       correctIndex: 1,
       topic: 'Idioms',
+      explanation: 'Once in a blue moon means very rarely.',
     ),
     MockQuestion(
       id: 'p232-5',
@@ -77,6 +81,7 @@ const PaperTest paper232 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Idioms',
+      explanation: 'To spill the beans means to reveal a secret.',
     ),
     MockQuestion(
       id: 'p232-6',
@@ -90,6 +95,7 @@ const PaperTest paper232 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Idioms',
+      explanation: 'To feel under the weather means to feel slightly unwell.',
     ),
     MockQuestion(
       id: 'p232-7',
@@ -103,6 +109,7 @@ const PaperTest paper232 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Idioms',
+      explanation: 'A piece of cake describes a task that is very easy.',
     ),
     MockQuestion(
       id: 'p232-8',
@@ -116,6 +123,7 @@ const PaperTest paper232 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Idioms',
+      explanation: 'To burn the midnight oil means to work or study late at night.',
     ),
     MockQuestion(
       id: 'p232-9',
@@ -129,6 +137,7 @@ const PaperTest paper232 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Idioms',
+      explanation: 'The ball is in your court means it is now your turn to act or decide.',
     ),
     MockQuestion(
       id: 'p232-10',
@@ -142,6 +151,7 @@ const PaperTest paper232 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Idioms',
+      explanation: 'To beat around the bush means to avoid saying what you really mean.',
     ),
     MockQuestion(
       id: 'p232-11',
@@ -150,6 +160,7 @@ const PaperTest paper232 = PaperTest(
       options: ['Old', 'Antique', 'Modern', 'Aged'],
       correctIndex: 2,
       topic: 'Antonyms',
+      explanation: 'Ancient means very old, so its opposite is modern.',
     ),
     MockQuestion(
       id: 'p232-12',
@@ -158,6 +169,7 @@ const PaperTest paper232 = PaperTest(
       options: ['Bold', 'Fearless', 'Cowardly', 'Heroic'],
       correctIndex: 2,
       topic: 'Antonyms',
+      explanation: 'Brave means fearless, so its opposite is cowardly.',
     ),
     MockQuestion(
       id: 'p232-13',
@@ -166,6 +178,7 @@ const PaperTest paper232 = PaperTest(
       options: ['Kind', 'Charitable', 'Stingy', 'Liberal'],
       correctIndex: 2,
       topic: 'Antonyms',
+      explanation: 'Generous means giving freely, so its opposite is stingy.',
     ),
     MockQuestion(
       id: 'p232-14',
@@ -174,6 +187,7 @@ const PaperTest paper232 = PaperTest(
       options: ['Triumph', 'Defeat', 'Success', 'Win'],
       correctIndex: 1,
       topic: 'Antonyms',
+      explanation: 'Victory means winning, so its opposite is defeat.',
     ),
     MockQuestion(
       id: 'p232-15',
@@ -182,6 +196,7 @@ const PaperTest paper232 = PaperTest(
       options: ['Clear', 'Thin', 'Opaque', 'Glassy'],
       correctIndex: 2,
       topic: 'Antonyms',
+      explanation: 'Transparent means light passes through clearly, so its opposite is opaque.',
     ),
     MockQuestion(
       id: 'p232-16',
@@ -190,6 +205,7 @@ const PaperTest paper232 = PaperTest(
       options: ['Grow', 'Enlarge', 'Contract', 'Spread'],
       correctIndex: 2,
       topic: 'Antonyms',
+      explanation: 'Expand means to grow larger, so its opposite is contract.',
     ),
     MockQuestion(
       id: 'p232-17',
@@ -198,6 +214,7 @@ const PaperTest paper232 = PaperTest(
       options: ['Courteous', 'Gentle', 'Civil', 'Rude'],
       correctIndex: 3,
       topic: 'Antonyms',
+      explanation: 'Polite means courteous, so its opposite is rude.',
     ),
     MockQuestion(
       id: 'p232-18',
@@ -206,6 +223,7 @@ const PaperTest paper232 = PaperTest(
       options: ['Lasting', 'Temporary', 'Eternal', 'Fixed'],
       correctIndex: 1,
       topic: 'Antonyms',
+      explanation: 'Permanent means lasting, so its opposite is temporary.',
     ),
     MockQuestion(
       id: 'p232-19',
@@ -214,6 +232,7 @@ const PaperTest paper232 = PaperTest(
       options: ['Truthful', 'Sincere', 'Frank', 'Dishonest'],
       correctIndex: 3,
       topic: 'Antonyms',
+      explanation: 'Honest means truthful, so its opposite is dishonest.',
     ),
     MockQuestion(
       id: 'p232-20',
@@ -222,6 +241,7 @@ const PaperTest paper232 = PaperTest(
       options: ['Come', 'Reach', 'Enter', 'Depart'],
       correctIndex: 3,
       topic: 'Antonyms',
+      explanation: 'Arrive means to reach a place, so its opposite is depart.',
     ),
     MockQuestion(
       id: 'p232-21',
@@ -236,6 +256,7 @@ const PaperTest paper232 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Narration',
+      explanation: 'An imperative in indirect speech becomes told plus to plus the verb: told the class to open their books.',
     ),
     MockQuestion(
       id: 'p232-22',
@@ -250,6 +271,7 @@ const PaperTest paper232 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Narration',
+      explanation: 'A tag question in indirect speech becomes a statement, with the seeking of confirmation expressed separately, not as a question.',
     ),
     MockQuestion(
       id: 'p232-23',
@@ -264,6 +286,7 @@ const PaperTest paper232 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Narration',
+      explanation: 'A wish with may in indirect speech becomes wished that God might bless me.',
     ),
     MockQuestion(
       id: 'p232-24',
@@ -278,6 +301,7 @@ const PaperTest paper232 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Narration',
+      explanation: 'A universal truth keeps its present tense in indirect speech, so the sun rises stays unchanged.',
     ),
     MockQuestion(
       id: 'p232-25',
@@ -292,6 +316,7 @@ const PaperTest paper232 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Narration',
+      explanation: 'A still-continuing habit with every Sunday can stay in the present simple in indirect speech: she visits her grandmother every Sunday.',
     ),
     MockQuestion(
       id: 'p232-26',
@@ -306,6 +331,7 @@ const PaperTest paper232 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Voice',
+      explanation: 'The past simple passive is: the plants were watered by the gardener.',
     ),
     MockQuestion(
       id: 'p232-27',
@@ -319,6 +345,7 @@ const PaperTest paper232 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Voice',
+      explanation: 'The passive of a modal is must not be plus the past participle: a lie must not be told by you.',
     ),
     MockQuestion(
       id: 'p232-28',
@@ -333,6 +360,7 @@ const PaperTest paper232 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Voice',
+      explanation: 'Only the main clause changes to passive here: a house will be bought by him, while the if-clause stays active.',
     ),
     MockQuestion(
       id: 'p232-29',
@@ -346,6 +374,7 @@ const PaperTest paper232 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Voice',
+      explanation: 'The past simple question becomes a passive question with was: was the match seen by you?',
     ),
     MockQuestion(
       id: 'p232-30',
@@ -359,6 +388,7 @@ const PaperTest paper232 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Voice',
+      explanation: 'A negative imperative becomes passive with let: let the door not be opened.',
     ),
     MockQuestion(
       id: 'p232-31',
@@ -368,6 +398,7 @@ const PaperTest paper232 = PaperTest(
       options: ['by', 'with', 'for', 'to'],
       correctIndex: 0,
       topic: 'Prepositions',
+      explanation: 'Stand by someone is the idiom for supporting them in difficult times.',
     ),
     MockQuestion(
       id: 'p232-32',
@@ -377,6 +408,7 @@ const PaperTest paper232 = PaperTest(
       options: ['at', 'into', 'beyond', 'over'],
       correctIndex: 2,
       topic: 'Prepositions',
+      explanation: 'Looked beyond the horizon fits dreaming of what lies further ahead, beyond the visible limit.',
     ),
     MockQuestion(
       id: 'p232-33',
@@ -386,6 +418,7 @@ const PaperTest paper232 = PaperTest(
       options: ['in', 'across', 'on', 'through'],
       correctIndex: 1,
       topic: 'Prepositions',
+      explanation: 'Across is used for movement from one side of a river to the other.',
     ),
     MockQuestion(
       id: 'p232-34',
@@ -395,6 +428,7 @@ const PaperTest paper232 = PaperTest(
       options: ['over', 'across', 'through', 'along'],
       correctIndex: 2,
       topic: 'Prepositions',
+      explanation: 'Through is used for movement inside and along a valley.',
     ),
     MockQuestion(
       id: 'p232-35',
@@ -404,6 +438,7 @@ const PaperTest paper232 = PaperTest(
       options: ['about', 'for', 'of', 'with'],
       correctIndex: 0,
       topic: 'Prepositions',
+      explanation: 'Care about is the usual collocation for being concerned about health.',
     ),
     MockQuestion(
       id: 'p232-36',
@@ -413,6 +448,7 @@ const PaperTest paper232 = PaperTest(
       options: ['at', 'on', 'with', 'in'],
       correctIndex: 3,
       topic: 'Prepositions',
+      explanation: 'Take delight in is the fixed collocation for enjoying an activity.',
     ),
     MockQuestion(
       id: 'p232-37',
@@ -422,6 +458,7 @@ const PaperTest paper232 = PaperTest(
       options: ['for', 'to', 'at', 'on'],
       correctIndex: 3,
       topic: 'Prepositions',
+      explanation: 'Insist on is the fixed collocation, followed by the -ing form: insisted on paying.',
     ),
     MockQuestion(
       id: 'p232-38',
@@ -431,6 +468,7 @@ const PaperTest paper232 = PaperTest(
       options: ['at', 'for', 'to', 'after'],
       correctIndex: 0,
       topic: 'Prepositions',
+      explanation: 'Looked at is used when directing the eyes towards someone with curiosity.',
     ),
     MockQuestion(
       id: 'p232-39',
@@ -440,6 +478,7 @@ const PaperTest paper232 = PaperTest(
       options: ['on', 'up', 'off', 'over'],
       correctIndex: 0,
       topic: 'Prepositions',
+      explanation: 'Getting on with a job is the phrasal verb for making progress with it.',
     ),
     MockQuestion(
       id: 'p232-40',
@@ -449,6 +488,7 @@ const PaperTest paper232 = PaperTest(
       options: ['of', 'off', 'out', 'away'],
       correctIndex: 1,
       topic: 'Prepositions',
+      explanation: 'Take off is the phrasal verb for removing shoes or clothing.',
     ),
   ],
 );

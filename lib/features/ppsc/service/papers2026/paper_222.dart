@@ -24,6 +24,7 @@ const PaperTest paper222 = PaperTest(
       options: ['A mistake had been made by you, it seemed', 'A mistake seems to have been made by you', 'A mistake is being made by you, it seems', 'A mistake has made by you, it seems'],
       correctIndex: 1,
       topic: 'Voice',
+      explanation: 'In the passive, seem becomes seems and have made becomes have been made, giving: A mistake seems to have been made by you.',
     ),
     MockQuestion(
       id: 'p222-2',
@@ -32,6 +33,7 @@ const PaperTest paper222 = PaperTest(
       options: ['Were the clothes being pressed by her?', 'Were the clothes pressed by her?', 'Are the clothes pressed by her?', 'Had the clothes been pressed by her?'],
       correctIndex: 1,
       topic: 'Voice',
+      explanation: 'The active sentence is in the past simple, so its passive form is: Were the clothes pressed by her?',
     ),
     MockQuestion(
       id: 'p222-3',
@@ -40,6 +42,7 @@ const PaperTest paper222 = PaperTest(
       options: ['He said that he serves as a manager before taking up medicine', 'He said that he served as a manager before taking up medicine', 'He says that he had served as a manager before taking up medicine', 'He said that he had served as a manager before taking up medicine'],
       correctIndex: 1,
       topic: 'Narration',
+      explanation: 'In this indirect form the action stays in the past tense, so served is retained and the sentence is reported with said.',
     ),
     MockQuestion(
       id: 'p222-4',
@@ -48,6 +51,7 @@ const PaperTest paper222 = PaperTest(
       options: ['On', 'To', 'With', 'In'],
       correctIndex: 1,
       topic: 'Prepositions',
+      explanation: 'Hold fast to is the fixed idiom, meaning to cling firmly to something such as a belief.',
     ),
     MockQuestion(
       id: 'p222-5',
@@ -56,6 +60,7 @@ const PaperTest paper222 = PaperTest(
       options: ['Curse', 'Blessing', 'Prayer', 'Wish'],
       correctIndex: 1,
       topic: 'Vocabulary',
+      explanation: 'Benediction means a blessing, especially a spoken blessing or prayer for good.',
     ),
     MockQuestion(
       id: 'p222-6',
@@ -64,6 +69,7 @@ const PaperTest paper222 = PaperTest(
       options: ['Cruel', 'Harsh', 'Compassionate', 'Merciless'],
       correctIndex: 2,
       topic: 'Vocabulary',
+      explanation: 'Ruthless means without pity, so its opposite is compassionate, meaning feeling pity and kindness for others.',
     ),
     MockQuestion(
       id: 'p222-7',
@@ -72,6 +78,7 @@ const PaperTest paper222 = PaperTest(
       options: ['Legal', 'Fair', 'Illicit', 'Just'],
       correctIndex: 2,
       topic: 'Vocabulary',
+      explanation: 'Unlawful means against the law, and illicit is the closest synonym for something forbidden by law.',
     ),
     MockQuestion(
       id: 'p222-8',
@@ -80,6 +87,7 @@ const PaperTest paper222 = PaperTest(
       options: ['Angry', 'Sad', 'Extremely happy', 'Confused'],
       correctIndex: 2,
       topic: 'Idioms',
+      explanation: 'On cloud nine is an idiom for feeling extremely happy.',
     ),
     MockQuestion(
       id: 'p222-9',
@@ -88,6 +96,7 @@ const PaperTest paper222 = PaperTest(
       options: ['She asked that I could note it down for her', 'She asked me that I could note it down for her', 'She asked if I could note it down for her', 'She asked whether could I note it down for her'],
       correctIndex: 2,
       topic: 'Narration',
+      explanation: 'A polite request in indirect speech is reported with asked if, keeping could and using statement word order: She asked if I could note it down for her.',
     ),
     MockQuestion(
       id: 'p222-10',
@@ -96,6 +105,7 @@ const PaperTest paper222 = PaperTest(
       options: ['The teachers loud voices startled the five year old child What a scene!', 'The teachers\u2019 loud voices startled the five-year-old child, what a scene!', 'The teachers loud voices startled the five-year-old child. What a scene!', 'The teachers\u2019 loud voices startled the five-year-old child. What a scene!'],
       correctIndex: 3,
       topic: 'Punctuation',
+      explanation: 'The correct sentence uses the possessive teachers with an apostrophe, the hyphenated five-year-old, and a full stop before the separate exclamation What a scene!',
     ),
     MockQuestion(
       id: 'p222-11',
@@ -104,6 +114,7 @@ const PaperTest paper222 = PaperTest(
       options: ['To strike something hard', 'To make an error', 'To become furious', 'To say exactly the right thing'],
       correctIndex: 3,
       topic: 'Idioms',
+      explanation: 'To hit the nail on the head means to say exactly the right thing about a matter.',
     ),
     MockQuestion(
       id: 'p222-12',
@@ -112,6 +123,7 @@ const PaperTest paper222 = PaperTest(
       options: ['With', 'Of', 'By', 'From'],
       correctIndex: 3,
       topic: 'Prepositions',
+      explanation: 'Held back from is the correct collocation: from is followed by the gerund doing.',
     ),
     MockQuestion(
       id: 'p222-13',
@@ -120,6 +132,7 @@ const PaperTest paper222 = PaperTest(
       options: ['Cut', 'Sharpen', 'Slice', 'Break'],
       correctIndex: 2,
       topic: 'Analogy',
+      explanation: 'In this item\'s tool-to-action framing, a microscope is matched with magnify and a knife is matched with slice, the cutting action used here.',
     ),
     MockQuestion(
       id: 'p222-14',
@@ -128,6 +141,7 @@ const PaperTest paper222 = PaperTest(
       options: ['Coin', 'Note', 'Money', 'Dollar'],
       correctIndex: 2,
       topic: 'Grammar',
+      explanation: 'Money is an uncountable noun, while coin, note and dollar are countable forms of money.',
     ),
     MockQuestion(
       id: 'p222-15',
@@ -136,6 +150,7 @@ const PaperTest paper222 = PaperTest(
       options: ['The horse is a faithful animal', 'A horse is a faithful animal', 'Horse is a faithful animal', 'The horse is the faithful animal'],
       correctIndex: 0,
       topic: 'Grammar',
+      explanation: 'For a general truth about a whole class, English can use the plus a singular noun, so The horse is a faithful animal states a general truth about horses.',
     ),
     MockQuestion(
       id: 'p222-16',
@@ -144,6 +159,7 @@ const PaperTest paper222 = PaperTest(
       options: ['Arrests', 'Will arrest', 'Arrested', 'Had arrested'],
       correctIndex: 1,
       topic: 'Grammar',
+      explanation: 'This is a first conditional: if plus the present simple in the condition, so the result uses will arrest.',
     ),
     MockQuestion(
       id: 'p222-17',
@@ -152,6 +168,7 @@ const PaperTest paper222 = PaperTest(
       options: ['Heard', 'Hear', 'Was hearing', 'Have been hearing'],
       correctIndex: 1,
       topic: 'Grammar',
+      explanation: 'Hear is a verb of perception, and such verbs are normally used in the simple present, not the continuous, for what is perceived now: I hear a strange sound.',
     ),
     MockQuestion(
       id: 'p222-18',
@@ -160,6 +177,7 @@ const PaperTest paper222 = PaperTest(
       options: ['Never', 'Usual', 'Rare', 'Sometimes'],
       correctIndex: 2,
       topic: 'Vocabulary',
+      explanation: 'Infrequent means not happening often, so rare is the closest in meaning.',
     ),
     MockQuestion(
       id: 'p222-19',
@@ -168,6 +186,7 @@ const PaperTest paper222 = PaperTest(
       options: ['Remain peaceful', 'Keep silent', 'Remain seated', 'Become reconciled'],
       correctIndex: 1,
       topic: 'Idioms',
+      explanation: 'To hold ones peace means to keep silent, which is what the speaker asked the crowd to do until his talk was over.',
     ),
     MockQuestion(
       id: 'p222-20',
@@ -176,6 +195,7 @@ const PaperTest paper222 = PaperTest(
       options: ['To give latitude', 'To show compassion', 'To miss a golden opportunity', 'To reveal a secret by accident'],
       correctIndex: 3,
       topic: 'Idioms',
+      explanation: 'To let the cat out of the bag means to reveal a secret by accident.',
     ),
   ],
   latestUpdates: [],

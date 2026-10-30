@@ -25,6 +25,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Thatta', 'Karachi', 'Lahore', 'Peshawar'],
       correctIndex: 2,
       topic: 'Places',
+      explanation: "The Wazir Khan Mosque stands in the old walled city of Lahore and is one of that city's best-known Mughal-era mosques.",
     ),
     MockQuestion(
       id: 'p238-2',
@@ -33,6 +34,7 @@ const PaperTest paper238 = PaperTest(
       options: ['1958', '1960', '1969', '1971'],
       correctIndex: 0,
       topic: 'History',
+      explanation: 'Ayub Khan imposed martial law in Pakistan in 1958, bringing the civilian government of the time to an end.',
     ),
     MockQuestion(
       id: 'p238-3',
@@ -41,6 +43,7 @@ const PaperTest paper238 = PaperTest(
       options: ['July 1960', 'January 1966', 'March 1966', 'July 1966'],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'The Tashkent Agreement was signed in January 1966, following the 1965 war between India and Pakistan.',
     ),
     MockQuestion(
       id: 'p238-4',
@@ -49,6 +52,7 @@ const PaperTest paper238 = PaperTest(
       options: ['1979', '1981', '1985', 'None of these'],
       correctIndex: 0,
       topic: 'History',
+      explanation: 'Pakistan, which had earlier been aligned with Western defence pacts, became a member of the Non-Aligned Movement in 1979.',
     ),
     MockQuestion(
       id: 'p238-5',
@@ -57,6 +61,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Multan', 'Bahawalpur', 'Sialkot', 'Gujranwala'],
       correctIndex: 0,
       topic: 'Culture',
+      explanation: 'Multan is famous for its camel-skin craft, especially the decorated camel-skin lamps made there.',
     ),
     MockQuestion(
       id: 'p238-6',
@@ -70,6 +75,7 @@ const PaperTest paper238 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'History',
+      explanation: "Sir Muhammad Zafarullah Khan served as Pakistan's first foreign minister after independence.",
     ),
     MockQuestion(
       id: 'p238-7',
@@ -78,6 +84,7 @@ const PaperTest paper238 = PaperTest(
       options: ['16', '17', '18', '21'],
       correctIndex: 2,
       topic: 'Constitution',
+      explanation: 'The voting age in Pakistan is 18 years, so a citizen becomes eligible to vote at 18.',
     ),
     MockQuestion(
       id: 'p238-8',
@@ -87,6 +94,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Yahya Afridi', 'Faiz Isa', 'Amin ud Din', 'Muneeb Akhtar'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: "Justice Aminuddin Khan is the first Chief Justice of Pakistan's Federal Constitutional Court.",
     ),
     MockQuestion(
       id: 'p238-9',
@@ -95,6 +103,7 @@ const PaperTest paper238 = PaperTest(
       options: ['1996', '1997', '1998', '1999'],
       correctIndex: 3,
       topic: 'History',
+      explanation: 'The Kargil conflict between Pakistan and India took place in 1999.',
     ),
     MockQuestion(
       id: 'p238-10',
@@ -103,6 +112,7 @@ const PaperTest paper238 = PaperTest(
       options: ['1956', '1958', '1960', '1966'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'The Indus Waters Treaty between Pakistan and India was signed in 1960, dividing the use of the Indus river system between the two countries.',
     ),
     MockQuestion(
       id: 'p238-11',
@@ -111,6 +121,7 @@ const PaperTest paper238 = PaperTest(
       options: ['25', '30', '35', '45'],
       correctIndex: 1,
       topic: 'Constitution',
+      explanation: "Under Pakistan's Constitution, a person must be at least 30 years old to become a Senator.",
     ),
     // ------------------------------------------------------------------
     // General Knowledge
@@ -122,6 +133,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Panama Canal', 'Suez Canal', 'Bosporus', 'Rhine Canal'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'The Suez Canal is an artificial waterway linking the Mediterranean Sea to the Red Sea, and it is a major route for world shipping trade.',
     ),
     // ------------------------------------------------------------------
     // Current Affairs
@@ -138,6 +150,7 @@ const PaperTest paper238 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'Syedaal Khan Nasar is the Deputy Chairman of the Senate of Pakistan.',
     ),
     MockQuestion(
       id: 'p238-14',
@@ -146,6 +159,7 @@ const PaperTest paper238 = PaperTest(
       options: ['NATO', 'USA', 'Mossad', 'None of these'],
       correctIndex: 3,
       topic: 'Current Affairs',
+      explanation: "None of the listed threats matches the exercise's stated purpose, which was safeguarding shipping lanes and maritime security.",
     ),
     MockQuestion(
       id: 'p238-15',
@@ -154,6 +168,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Hasina Wajid', 'Khalilur Rahman', 'Tarique Rahman', 'Khalida Zia'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'Tarique Rahman is the Prime Minister of Bangladesh, sworn in after his party won the February 2026 general election.',
     ),
     MockQuestion(
       id: 'p238-16',
@@ -163,6 +178,7 @@ const PaperTest paper238 = PaperTest(
       options: ['2', '3', '5', 'None of these'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'Under the amended State Bank law, the Governor of the State Bank of Pakistan is appointed for a term of five years.',
     ),
     // ------------------------------------------------------------------
     // Geography
@@ -174,6 +190,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Iran', 'Turkey', 'Egypt', 'Afghanistan'],
       correctIndex: 3,
       topic: 'Geography',
+      explanation: 'Mazar-i-Sharif is a major city in northern Afghanistan.',
     ),
     MockQuestion(
       id: 'p238-18',
@@ -182,6 +199,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Diamond', 'Ruby', 'Copper', 'Gold'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'Gilgit-Baltistan is known for its gemstone deposits, including ruby.',
     ),
     MockQuestion(
       id: 'p238-19',
@@ -195,6 +213,7 @@ const PaperTest paper238 = PaperTest(
       ],
       correctIndex: 3,
       topic: 'Geography',
+      explanation: 'The Aral Sea lies between Kazakhstan and Uzbekistan in Central Asia.',
     ),
     MockQuestion(
       id: 'p238-20',
@@ -203,6 +222,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Freetown', 'Helsinki', 'Dublin', 'Accra'],
       correctIndex: 0,
       topic: 'Capitals',
+      explanation: 'Freetown is the capital city of Sierra Leone.',
     ),
     MockQuestion(
       id: 'p238-21',
@@ -211,6 +231,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Alps', 'Kilimanjaro', 'McKinley', 'Mount Logan'],
       correctIndex: 3,
       topic: 'Geography',
+      explanation: 'Mount Logan is the highest mountain peak in Canada.',
     ),
     // ------------------------------------------------------------------
     // Everyday Science
@@ -222,6 +243,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Lithium', 'Graphite', 'Silicon', 'None of these'],
       correctIndex: 2,
       topic: 'Physics',
+      explanation: 'Solar panels use silicon, a semiconductor material whose photovoltaic cells convert sunlight into electricity.',
     ),
     MockQuestion(
       id: 'p238-23',
@@ -230,6 +252,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Mercury', 'Pluto', 'Saturn', 'Neptune'],
       correctIndex: 0,
       topic: 'Astronomy',
+      explanation: 'Mercury is the smallest planet in the solar system; Pluto is classed as a dwarf planet, not a planet.',
     ),
     MockQuestion(
       id: 'p238-24',
@@ -238,6 +261,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Gold', 'Lead', 'Mercury', 'Tin'],
       correctIndex: 2,
       topic: 'Chemistry',
+      explanation: 'Mercury is the only metal among the options that is liquid at room temperature.',
     ),
     MockQuestion(
       id: 'p238-25',
@@ -246,6 +270,7 @@ const PaperTest paper238 = PaperTest(
       options: ['50%', '60%', '70%', '80%'],
       correctIndex: 1,
       topic: 'Biology',
+      explanation: 'About 60 percent of the adult human body is water, which is the standard textbook figure.',
     ),
     MockQuestion(
       id: 'p238-26',
@@ -254,6 +279,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Edison', 'Boyle', 'Robert Hooke', 'William Harvey'],
       correctIndex: 3,
       topic: 'Biology',
+      explanation: 'William Harvey described the circulation of blood through the heart and blood vessels.',
     ),
     MockQuestion(
       id: 'p238-27',
@@ -267,6 +293,7 @@ const PaperTest paper238 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Physics',
+      explanation: 'A normal human ear can hear sounds roughly from 20 Hz to 20 kHz.',
     ),
     MockQuestion(
       id: 'p238-28',
@@ -275,6 +302,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Fox', 'Tiger', 'Lion', 'None of these'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: 'Lions are the social members of the cat family: they live in groups called prides and hunt together.',
     ),
     MockQuestion(
       id: 'p238-29',
@@ -283,6 +311,7 @@ const PaperTest paper238 = PaperTest(
       options: ['90%', '92%', '95%', '97%'],
       correctIndex: 2,
       topic: 'Chemistry',
+      explanation: 'Rectified spirit is concentrated ethanol of about 95 percent strength.',
     ),
     // ------------------------------------------------------------------
     // Computer Science
@@ -299,6 +328,7 @@ const PaperTest paper238 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'Phishing is a fraud in which fake emails or messages trick people into revealing passwords or other private information.',
     ),
     MockQuestion(
       id: 'p238-31',
@@ -307,6 +337,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Records', 'Fields', 'Headers', 'Ranges'],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'In a database table, each horizontal row is a record, while each column is a field.',
     ),
     MockQuestion(
       id: 'p238-32',
@@ -315,6 +346,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Email', 'Linux', 'The World Wide Web', 'SpaceX'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'Tim Berners-Lee invented the World Wide Web, the system of linked pages viewed through a browser.',
     ),
     MockQuestion(
       id: 'p238-33',
@@ -328,6 +360,7 @@ const PaperTest paper238 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: 'Cloud computing is defined by broad network access, so local-only access is the opposite of a cloud characteristic.',
     ),
     MockQuestion(
       id: 'p238-34',
@@ -336,6 +369,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Data mining', 'Robotics', 'Speech recognition', 'Image processing'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'Speech recognition is the AI application that converts spoken words into text or commands.',
     ),
     MockQuestion(
       id: 'p238-35',
@@ -344,6 +378,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Bug', 'Chip', 'CPU', 'None of these'],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'An error in computer data or a program is commonly called a bug.',
     ),
     MockQuestion(
       id: 'p238-36',
@@ -352,6 +387,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Facebook', 'Lenovo', 'Motorola', 'SpaceX and Tesla'],
       correctIndex: 3,
       topic: 'Computer',
+      explanation: 'Elon Musk is associated with both SpaceX and Tesla, unlike the companies in the other options.',
     ),
     MockQuestion(
       id: 'p238-37',
@@ -360,6 +396,7 @@ const PaperTest paper238 = PaperTest(
       options: ['DHCP', 'FTP', 'HTTP', 'SMTP'],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'DHCP is the protocol that automatically assigns IP addresses to devices joining a network.',
     ),
     MockQuestion(
       id: 'p238-38',
@@ -368,6 +405,7 @@ const PaperTest paper238 = PaperTest(
       options: ['SMTP and POP', 'POP and FTP', 'SMTP and FTP', 'None of these'],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'SMTP is used to send email and POP is used to receive it, so the two together cover email transfer.',
     ),
     MockQuestion(
       id: 'p238-39',
@@ -377,6 +415,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Normal view', 'Outline view', 'Slide Show view', 'Notes view'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'Slide Show view presents the slides full-screen, hiding the editing panes and other on-screen elements.',
     ),
     MockQuestion(
       id: 'p238-40',
@@ -385,6 +424,7 @@ const PaperTest paper238 = PaperTest(
       options: ['AI computation', 'Modelling', 'Problem solving', 'All of these'],
       correctIndex: 3,
       topic: 'Computer',
+      explanation: 'A Turing machine is an abstract model of computation, used in computing theory for modelling and problem solving.',
     ),
     MockQuestion(
       id: 'p238-41',
@@ -398,6 +438,7 @@ const PaperTest paper238 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'Data compression encodes data more compactly, so the result is a smaller file.',
     ),
     MockQuestion(
       id: 'p238-42',
@@ -411,6 +452,7 @@ const PaperTest paper238 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'Broad network access is a defining feature of cloud computing, so limiting network accessibility is not one.',
     ),
     MockQuestion(
       id: 'p238-43',
@@ -419,6 +461,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Regression test', 'Unit test', 'Integration test', 'Smoke test'],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'A regression test re-runs earlier tests to check that new changes have not broken existing functionality.',
     ),
     MockQuestion(
       id: 'p238-44',
@@ -432,6 +475,7 @@ const PaperTest paper238 = PaperTest(
       ],
       correctIndex: 3,
       topic: 'Biology',
+      explanation: 'Hydrophytes are water plants adapted with air spaces called aerenchyma and little mechanical tissue, so both features apply.',
     ),
     // ------------------------------------------------------------------
     // Mathematics
@@ -443,6 +487,7 @@ const PaperTest paper238 = PaperTest(
       options: ['31', '32', '35', 'None of these'],
       correctIndex: 0,
       topic: 'Series',
+      explanation: 'The gaps grow by 6, 8, 10, 12 and 14: 7, 13, 21, 31, 43, 57, so the missing term is 31.',
     ),
     MockQuestion(
       id: 'p238-46',
@@ -451,6 +496,7 @@ const PaperTest paper238 = PaperTest(
       options: ['√3 cm²', '100√3 cm²', '60√3 cm²', '120 cm²'],
       correctIndex: 1,
       topic: 'Geometry',
+      explanation: 'A perimeter of 60 cm gives a side of 20 cm, and the area is (sqrt3 / 4) x 20 x 20 = 100 sqrt3 square cm.',
     ),
     MockQuestion(
       id: 'p238-47',
@@ -459,6 +505,7 @@ const PaperTest paper238 = PaperTest(
       options: ['43 m²', '49 m²', '51 m²', '57 m²'],
       correctIndex: 1,
       topic: 'Geometry',
+      explanation: 'The cube root of 343 is 7, so each side is 7 m and one face has area 7 x 7 = 49 square m.',
     ),
     MockQuestion(
       id: 'p238-48',
@@ -467,6 +514,7 @@ const PaperTest paper238 = PaperTest(
       options: ['17', '64', '34', 'None of these'],
       correctIndex: 1,
       topic: 'Series',
+      explanation: 'The pattern doubles then adds 3: 2, 4, 7, 14, 17, 34, 37, 74, so 64 breaks the pattern and should be 74.',
     ),
     MockQuestion(
       id: 'p238-49',
@@ -475,6 +523,7 @@ const PaperTest paper238 = PaperTest(
       options: ['42', '49', '56', '63'],
       correctIndex: 1,
       topic: 'Ratio',
+      explanation: 'Sugar 35 is 5 parts of 7 each, so water is 7 x 7 = 49.',
     ),
     MockQuestion(
       id: 'p238-50',
@@ -489,6 +538,7 @@ const PaperTest paper238 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Sequences',
+      explanation: 'Starting at 5 and adding the common difference 7 each time gives 5, 12, 19, 26.',
     ),
     MockQuestion(
       id: 'p238-51',
@@ -497,6 +547,7 @@ const PaperTest paper238 = PaperTest(
       options: ['224', '226', '228', '232'],
       correctIndex: 0,
       topic: 'Ratio',
+      explanation: 'From 7/8 = 196/x, cross-multiplying gives 7x = 1568, so x = 224.',
     ),
     MockQuestion(
       id: 'p238-52',
@@ -505,6 +556,7 @@ const PaperTest paper238 = PaperTest(
       options: ['2999', '3999', '39999', 'None of these'],
       correctIndex: 2,
       topic: 'Arithmetic',
+      explanation: '201 x 199 = (200 + 1)(200 - 1) = 40000 - 1 = 39999.',
     ),
     MockQuestion(
       id: 'p238-53',
@@ -514,6 +566,7 @@ const PaperTest paper238 = PaperTest(
       options: ['10 m', '15 m', '5 m', '45√3 m'],
       correctIndex: 2,
       topic: 'Trigonometry',
+      explanation: 'At 45 degrees to the wall, the height reached equals the distance from the wall, so the height is 5 m.',
     ),
     MockQuestion(
       id: 'p238-54',
@@ -522,6 +575,7 @@ const PaperTest paper238 = PaperTest(
       options: ['49', '50', '51', 'None of these'],
       correctIndex: 1,
       topic: 'Algebra',
+      explanation: 'By the remainder theorem, the remainder is f(-1) = (-1)^51 + 51 = -1 + 51 = 50.',
     ),
     MockQuestion(
       id: 'p238-55',
@@ -530,6 +584,7 @@ const PaperTest paper238 = PaperTest(
       options: ['0', '105', '35', '1'],
       correctIndex: 3,
       topic: 'Arithmetic',
+      explanation: 'Any non-zero number raised to the power 0 is 1, so 1 x 1 x 1 = 1.',
     ),
     MockQuestion(
       id: 'p238-56',
@@ -539,6 +594,7 @@ const PaperTest paper238 = PaperTest(
       options: ['20', '24', '26', '28'],
       correctIndex: 1,
       topic: 'Age Problems',
+      explanation: 'Solving C - 3 = 3(D - 3) and C + 4 = 2(D + 4) gives D = 10 and C = 24, so C is now 24 years old.',
     ),
     MockQuestion(
       id: 'p238-57',
@@ -547,6 +603,7 @@ const PaperTest paper238 = PaperTest(
       options: ['2', '−3/2', '3/2', '−1/2'],
       correctIndex: 2,
       topic: 'Algebra',
+      explanation: 'Factoring gives (2x - 3)(x + 4) = 0, so one root is x = 3/2.',
     ),
     MockQuestion(
       id: 'p238-58',
@@ -555,6 +612,7 @@ const PaperTest paper238 = PaperTest(
       options: ['(4x − 3)²', '(4x + 3)', '(4x + 6)²', '(4x + 3)²'],
       correctIndex: 3,
       topic: 'Algebra',
+      explanation: 'Expanding (4x + 3)^2 gives 16x^2 + 24x + 9, which matches the expression.',
     ),
     MockQuestion(
       id: 'p238-59',
@@ -563,6 +621,7 @@ const PaperTest paper238 = PaperTest(
       options: ['−8, −3', '9, 4', '4, 8', '5, −2'],
       correctIndex: 3,
       topic: 'Algebra',
+      explanation: 'Factoring gives (x - 5)(x + 2) = 0, so the roots are 5 and -2.',
     ),
     MockQuestion(
       id: 'p238-60',
@@ -571,6 +630,7 @@ const PaperTest paper238 = PaperTest(
       options: ['42', '47', '49', '51'],
       correctIndex: 1,
       topic: 'Arithmetic',
+      explanation: '2^3 x 3^2 - 5^2 = 8 x 9 - 25 = 72 - 25 = 47.',
     ),
     // ------------------------------------------------------------------
     // English
@@ -582,6 +642,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Hits', 'Pushes', 'Washes', 'Holds'],
       correctIndex: 2,
       topic: 'Idioms',
+      explanation: 'The idiom is one hand washes the other, meaning people help each other in return.',
     ),
     MockQuestion(
       id: 'p238-62',
@@ -590,6 +651,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Fame', 'Dullness', 'Splendor', 'Shine'],
       correctIndex: 1,
       topic: 'Vocabulary',
+      explanation: 'Eclat means brilliant success or acclaim, so its opposite is dullness, a lack of brilliance.',
     ),
     MockQuestion(
       id: 'p238-63',
@@ -598,6 +660,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Stiff', 'Heavy', 'Rough', 'Supple'],
       correctIndex: 3,
       topic: 'Vocabulary',
+      explanation: 'Lissome means lithe and flexible, which is the same as supple.',
     ),
     MockQuestion(
       id: 'p238-64',
@@ -606,6 +669,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Child', 'Man', 'Person', 'Boat'],
       correctIndex: 1,
       topic: 'Idioms',
+      explanation: 'The idiom is a drowning man catches at a straw, meaning a desperate person clutches at any hope.',
     ),
     MockQuestion(
       id: 'p238-65',
@@ -615,6 +679,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Adjective', 'Verb', 'Noun', 'Adverb'],
       correctIndex: 2,
       topic: 'Grammar',
+      explanation: 'Rose names a thing in the sentence, and naming words are nouns.',
     ),
     MockQuestion(
       id: 'p238-66',
@@ -624,6 +689,7 @@ const PaperTest paper238 = PaperTest(
       options: ['That I visited', 'Where I visited', 'Which I visited', 'Who I visited'],
       correctIndex: 2,
       topic: 'Grammar',
+      explanation: 'Which refers back to Gwadar as the place that was visited, so which I visited completes the sentence.',
     ),
     MockQuestion(
       id: 'p238-67',
@@ -632,6 +698,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Anything', 'Nothing', 'Something', 'Everything'],
       correctIndex: 1,
       topic: 'Grammar',
+      explanation: 'In a negative sentence, he does not like food, so he will eat nothing.',
     ),
     MockQuestion(
       id: 'p238-68',
@@ -640,6 +707,7 @@ const PaperTest paper238 = PaperTest(
       options: ['At', 'With', 'By', 'On'],
       correctIndex: 0,
       topic: 'Grammar',
+      explanation: 'Annoyed at is used for remarks or things, while annoyed with is used for people.',
     ),
     MockQuestion(
       id: 'p238-69',
@@ -648,6 +716,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Been', 'Went', 'Gone', 'Go'],
       correctIndex: 0,
       topic: 'Grammar',
+      explanation: 'Has been to means he visited Skardu and returned, which fits a past visit in June.',
     ),
     MockQuestion(
       id: 'p238-70',
@@ -656,6 +725,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Joy', 'Anger', 'Mourning', 'Fear'],
       correctIndex: 2,
       topic: 'Analogy',
+      explanation: 'A whoop is a cry expressing exuberance, just as a keen is a wail expressing mourning.',
     ),
     MockQuestion(
       id: 'p238-71',
@@ -664,6 +734,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Hour', 'Day', 'Minute', 'Second'],
       correctIndex: 0,
       topic: 'Analogy',
+      explanation: 'A break is a short part of a shift, just as a minute is a small part of an hour.',
     ),
     MockQuestion(
       id: 'p238-72',
@@ -672,6 +743,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Noun', 'Verb', 'Relative pronoun', 'None of these'],
       correctIndex: 2,
       topic: 'Grammar',
+      explanation: 'Who joins a clause to a noun it refers to, so it is a relative pronoun.',
     ),
     MockQuestion(
       id: 'p238-73',
@@ -685,6 +757,7 @@ const PaperTest paper238 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Grammar',
+      explanation: 'A direct question must end with a question mark, not a full stop or an exclamation mark.',
     ),
     MockQuestion(
       id: 'p238-74',
@@ -698,6 +771,7 @@ const PaperTest paper238 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Grammar',
+      explanation: 'Yet correctly joins the two contrasting clauses, and the statement needs no exclamation mark.',
     ),
     // ------------------------------------------------------------------
     // Islamiat
@@ -710,6 +784,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Diwan-ul-Kharaj', 'Diwan-e-Rasal', 'Diwan-e-Ata', 'None of these'],
       correctIndex: 0,
       topic: 'History',
+      explanation: 'The Diwan system organised state revenue, and Diwan-ul-Kharaj was its land-revenue department.',
     ),
     MockQuestion(
       id: 'p238-76',
@@ -724,6 +799,7 @@ const PaperTest paper238 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Seerah',
+      explanation: 'After the death of Hazrat Khadija (RA), the Prophet (PBUH) married Hazrat Sauda (RA).',
     ),
     MockQuestion(
       id: 'p238-77',
@@ -732,6 +808,7 @@ const PaperTest paper238 = PaperTest(
       options: ['حضرت خدیجہؓ', 'حضرت عائشہؓ', 'حضرت ام سلمہؓ', 'حضرت جویریہؓ'],
       correctIndex: 1,
       topic: 'Seerah',
+      explanation: 'The incident of Ifk concerned Hazrat Aisha (RA), against whom a false allegation was spread and then cleared.',
     ),
     MockQuestion(
       id: 'p238-78',
@@ -746,6 +823,7 @@ const PaperTest paper238 = PaperTest(
       ],
       correctIndex: 3,
       topic: 'Seerah',
+      explanation: 'The companion named in this account of the preparations for Badr is Saad Bin Abada (RA).',
     ),
     MockQuestion(
       id: 'p238-79',
@@ -754,6 +832,7 @@ const PaperTest paper238 = PaperTest(
       options: ['Seljuk', 'Umayyad', 'Mongols', 'None of these'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'The Abbasid caliphate came to an end when the Mongols captured Baghdad in 1258.',
     ),
     // ------------------------------------------------------------------
     // Urdu
@@ -765,6 +844,7 @@ const PaperTest paper238 = PaperTest(
       options: ['بات', 'یاد', 'شام', 'رات'],
       correctIndex: 0,
       topic: 'Urdu',
+      explanation: 'The proverb is completed as raat gayi baat gayi, meaning a matter is over once its time has passed.',
     ),
     MockQuestion(
       id: 'p238-81',
@@ -778,6 +858,7 @@ const PaperTest paper238 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'The saying describes much labour with little gain, which is the meaning given in the correct option.',
     ),
     MockQuestion(
       id: 'p238-82',
@@ -786,6 +867,7 @@ const PaperTest paper238 = PaperTest(
       options: ['ہاتھ', 'پاؤں', 'کان', 'پر'],
       correctIndex: 1,
       topic: 'Urdu',
+      explanation: 'The proverb is jhoot ke paon nahi hote, meaning a lie has no legs to stand on.',
     ),
     MockQuestion(
       id: 'p238-83',
@@ -799,6 +881,7 @@ const PaperTest paper238 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Urdu',
+      explanation: 'The completed phrase gives the meaning that falsehood is a door to ruin, as stated in the correct option.',
     ),
     MockQuestion(
       id: 'p238-84',
@@ -807,6 +890,7 @@ const PaperTest paper238 = PaperTest(
       options: ['دو', 'چار', 'تین', 'پانچ'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'The elements of istiara are counted as three in the standard teaching of this figure of speech.',
     ),
     MockQuestion(
       id: 'p238-85',
@@ -816,6 +900,7 @@ const PaperTest paper238 = PaperTest(
       options: ['بہانا', 'پیاس بجھانا', 'پانی پلانا', 'شرمندہ کرنا'],
       correctIndex: 3,
       topic: 'Urdu',
+      explanation: 'Pani pani kar jana means to put someone to shame or embarrass them.',
     ),
     MockQuestion(
       id: 'p238-86',
@@ -824,6 +909,7 @@ const PaperTest paper238 = PaperTest(
       options: ['اسم ضمیر', 'اشارہ', 'صفت', 'فعل'],
       correctIndex: 0,
       topic: 'Urdu',
+      explanation: 'Woh stands in place of a noun in this sentence, so it is an ism-e-zameer (pronoun).',
     ),
     MockQuestion(
       id: 'p238-87',
@@ -832,6 +918,7 @@ const PaperTest paper238 = PaperTest(
       options: ['آرام کرنا', 'تنگ کرنا', 'گھر گھر پھرنے والی عورت', 'کوئی نہیں'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'The saying describes a woman who goes from house to house, as given in the correct option.',
     ),
     MockQuestion(
       id: 'p238-88',
@@ -840,6 +927,7 @@ const PaperTest paper238 = PaperTest(
       options: ['پھونکے', 'چلے', 'گرے', 'بنے'],
       correctIndex: 0,
       topic: 'Urdu',
+      explanation: 'The proverb is completed with phoonke, giving the saying in its familiar form.',
     ),
     MockQuestion(
       id: 'p238-89',
@@ -848,6 +936,7 @@ const PaperTest paper238 = PaperTest(
       options: ['کاٹی', 'پتھر', 'ہاتھ', 'کوئی نہیں'],
       correctIndex: 1,
       topic: 'Urdu',
+      explanation: 'The phrase is dil par pathar rakh kar, meaning to take a hard decision with a heavy heart.',
     ),
   ],
   latestUpdates: [

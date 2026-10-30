@@ -25,6 +25,7 @@ const PaperTest paper239 = PaperTest(
       options: ['China', 'Japan', 'South Korea', 'Thailand'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'Kyoto is a historic city in Japan, famous for its temples and old capital status.',
     ),
     MockQuestion(
       id: 'p239-2',
@@ -38,6 +39,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'The Shanghai Tower in China is a tall skyscraper built with a twisting, spiral form.',
     ),
     // ------------------------------------------------------------------
     // Pakistan Affairs
@@ -49,6 +51,7 @@ const PaperTest paper239 = PaperTest(
       options: ['11 May 1998', '30 May 1998', '28 May 1998', '25 May 1998'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'Pakistan conducted its first nuclear device tests on 28 May 1998 at Chagai.',
     ),
     MockQuestion(
       id: 'p239-4',
@@ -57,6 +60,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Zulfiqar Ali Bhutto', 'Ayub Khan', 'Yahya Khan', 'Liaquat Ali Khan'],
       correctIndex: 2,
       topic: 'History',
+      explanation: "Yahya Khan, then Pakistan's ruler, attended the first OIC Summit at Rabat in 1969.",
     ),
     MockQuestion(
       id: 'p239-5',
@@ -70,6 +74,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'Khawaja Nazimuddin succeeded Muhammad Ali Jinnah as the second Governor General of Pakistan.',
     ),
     MockQuestion(
       id: 'p239-6',
@@ -83,6 +88,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'Zahid Hussain was nominated by Quaid-e-Azam as the first Governor of the State Bank of Pakistan.',
     ),
     MockQuestion(
       id: 'p239-7',
@@ -96,6 +102,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'Harry S. Truman was President of the United States in 1947, when Pakistan gained independence.',
     ),
     MockQuestion(
       id: 'p239-8',
@@ -109,6 +116,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'Friends Not Masters is the well-known book written by Ayub Khan.',
     ),
     MockQuestion(
       id: 'p239-9',
@@ -122,6 +130,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'The Simla Agreement was signed between Pakistan and India in 1972, after the 1971 war.',
     ),
     MockQuestion(
       id: 'p239-10',
@@ -130,6 +139,7 @@ const PaperTest paper239 = PaperTest(
       options: ['1956', '1973', '1962', '1985'],
       correctIndex: 2,
       topic: 'Constitution',
+      explanation: "Pakistan's 1962 Constitution introduced a presidential system of government.",
     ),
     MockQuestion(
       id: 'p239-11',
@@ -138,6 +148,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Liaqat Ali Khan', 'Yahya Khan', 'Zia-ul-Haq', 'Ayub Khan'],
       correctIndex: 3,
       topic: 'History',
+      explanation: 'The Basic Democracies system was introduced by Ayub Khan as a tier of local government.',
     ),
     MockQuestion(
       id: 'p239-12',
@@ -151,6 +162,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Culture',
+      explanation: "Pakistan's culture is predominantly Islamic in character, reflecting the faith of the majority.",
     ),
     // ------------------------------------------------------------------
     // Current Affairs
@@ -162,6 +174,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Sanaullah Abbasi', 'Usman Anwar', 'Mohsin Butt', 'Ahmad Ishfaq'],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: 'Dr Usman Anwar is the Director General of the Federal Investigation Agency (FIA).',
     ),
     MockQuestion(
       id: 'p239-14',
@@ -175,6 +188,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: 'Justice Muhammad Kamran Khan Mulakhail is the Chief Justice of the Balochistan High Court.',
     ),
     MockQuestion(
       id: 'p239-15',
@@ -183,6 +197,7 @@ const PaperTest paper239 = PaperTest(
       options: ['22nd', '23rd', '24th', '25th'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: "Pakistan's current IMF programme is its 24th, the Extended Fund Facility approved in September 2024.",
     ),
     MockQuestion(
       id: 'p239-16',
@@ -196,6 +211,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: 'Barrister Sultan Mahmood Chaudhry, President of Azad Jammu and Kashmir, passed away in January 2026.',
     ),
     // ------------------------------------------------------------------
     // Geography
@@ -207,6 +223,7 @@ const PaperTest paper239 = PaperTest(
       options: ['300–500 m', '1000–1500 m', '600–900 m', '1500–1800 m'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: 'The Balochistan Plateau is described in Pakistan geography as lying in the 600-900 m height band given here.',
     ),
     MockQuestion(
       id: 'p239-18',
@@ -215,6 +232,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Coal', 'Gold', 'Iron', 'Copper'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: 'Chiniot in Punjab is known for its large iron ore deposits, explored for a future steel industry.',
     ),
     MockQuestion(
       id: 'p239-19',
@@ -223,6 +241,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Indus', 'Jhelum', 'Ravi', 'Chenab'],
       correctIndex: 3,
       topic: 'Geography',
+      explanation: 'Trimmu Barrage is built on the Chenab river in Punjab.',
     ),
     MockQuestion(
       id: 'p239-20',
@@ -231,6 +250,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Myanmar', 'Laos', 'Thailand', 'Nepal'],
       correctIndex: 3,
       topic: 'Geography',
+      explanation: 'Among the options, Nepal is the landlocked country of South Asia; Myanmar and Thailand have coastlines, and Laos is in South East Asia.',
     ),
     MockQuestion(
       id: 'p239-21',
@@ -239,6 +259,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Caspian Sea', 'Red Sea', 'Persian Gulf', 'Arabian Sea'],
       correctIndex: 3,
       topic: 'Geography',
+      explanation: 'The Makran coast of Balochistan lies along the Arabian Sea.',
     ),
     MockQuestion(
       id: 'p239-22',
@@ -247,6 +268,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Durand Line', 'Radcliffe Line', 'McMahon Line', 'Hindenburg Line'],
       correctIndex: 0,
       topic: 'Geography',
+      explanation: 'The Durand Line is the boundary line between Pakistan and Afghanistan.',
     ),
     // ------------------------------------------------------------------
     // Everyday Science
@@ -263,6 +285,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Physics',
+      explanation: 'Ultrasound scanning is widely used in prenatal care to examine the unborn child.',
     ),
     MockQuestion(
       id: 'p239-24',
@@ -271,6 +294,7 @@ const PaperTest paper239 = PaperTest(
       options: ['1.5 billion', '3.5 billion', '4.5 billion', '10 billion'],
       correctIndex: 2,
       topic: 'Astronomy',
+      explanation: 'The Earth is about 4.5 billion years old, according to radiometric dating of rocks and meteorites.',
     ),
     MockQuestion(
       id: 'p239-25',
@@ -279,6 +303,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Lion', 'Cheetah', 'Horse', 'Ostrich'],
       correctIndex: 1,
       topic: 'Biology',
+      explanation: 'The cheetah is the fastest land animal, capable of short bursts of very high speed.',
     ),
     MockQuestion(
       id: 'p239-26',
@@ -287,6 +312,7 @@ const PaperTest paper239 = PaperTest(
       options: ['66 N', '200 N', '100 N', 'Zero'],
       correctIndex: 3,
       topic: 'Physics',
+      explanation: 'At the centre of the Earth, gravity pulls equally in all directions and cancels out, so weight is zero.',
     ),
     MockQuestion(
       id: 'p239-27',
@@ -295,6 +321,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Louis Pasteur', 'Jaime Ferran', 'Edward Jenner', 'Robert Koch'],
       correctIndex: 1,
       topic: 'Biology',
+      explanation: 'Jaime Ferran developed the first cholera vaccine, used during the 1885 cholera epidemic in Valencia.',
     ),
     MockQuestion(
       id: 'p239-28',
@@ -303,6 +330,7 @@ const PaperTest paper239 = PaperTest(
       options: ['20–25%', '25–30%', '25–45%', '50–60%'],
       correctIndex: 2,
       topic: 'Physics',
+      explanation: 'Diesel engines are more efficient than petrol engines, with a typical textbook efficiency range of about 25-45 percent.',
     ),
     MockQuestion(
       id: 'p239-29',
@@ -311,6 +339,7 @@ const PaperTest paper239 = PaperTest(
       options: ['646 watts', '846 watts', '746 watts', '946 watts'],
       correctIndex: 2,
       topic: 'Physics',
+      explanation: 'One horsepower is defined as 746 watts.',
     ),
     MockQuestion(
       id: 'p239-30',
@@ -324,6 +353,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Biology',
+      explanation: 'Class I HLA molecules are present on the surface of all nucleated cells of the body.',
     ),
     // ------------------------------------------------------------------
     // Computer Science
@@ -335,6 +365,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Charles Babbage', 'Alan Turing', 'Ada Lovelace', 'Grace Hopper'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'Ada Lovelace wrote the first algorithm intended for a machine, so she is called the first computer programmer.',
     ),
     MockQuestion(
       id: 'p239-32',
@@ -343,6 +374,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Printer', 'Plotter', 'Switch', 'Scanner'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'A switch is the networking device that connects multiple computers on a network.',
     ),
     MockQuestion(
       id: 'p239-33',
@@ -351,6 +383,7 @@ const PaperTest paper239 = PaperTest(
       options: ['PowerPoint', 'YouTube', 'Excel', 'Adobe Reader'],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: 'YouTube is the best-known platform for streaming and sharing videos.',
     ),
     MockQuestion(
       id: 'p239-34',
@@ -359,6 +392,7 @@ const PaperTest paper239 = PaperTest(
       options: ['RAM', 'Cache', 'SSD', 'Registers'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'An SSD keeps its data without power, so it is non-volatile memory, unlike RAM.',
     ),
     MockQuestion(
       id: 'p239-35',
@@ -367,6 +401,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Flash memory', 'RAM', 'Cache', 'SRAM'],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'Flash memory is non-volatile and is commonly used to store firmware.',
     ),
     MockQuestion(
       id: 'p239-36',
@@ -375,6 +410,7 @@ const PaperTest paper239 = PaperTest(
       options: ['HDD', 'Optical disc', 'DVD', 'SSD'],
       correctIndex: 3,
       topic: 'Computer',
+      explanation: 'An SSD stores data on chips with no moving parts, unlike a hard disk drive.',
     ),
     MockQuestion(
       id: 'p239-37',
@@ -383,6 +419,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Tim Berners-Lee', 'Steve Jobs', 'Bill Gates', 'Mark Zuckerberg'],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'Tim Berners-Lee invented the World Wide Web.',
     ),
     MockQuestion(
       id: 'p239-38',
@@ -396,6 +433,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'HTTPS stands for Hypertext Transfer Protocol Secure, the secure version of HTTP.',
     ),
     MockQuestion(
       id: 'p239-39',
@@ -404,6 +442,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Human traffic', 'Organic traffic', 'Bot traffic', 'Paid traffic'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'Fake, automated visits to a website are called bot traffic, not human or organic traffic.',
     ),
     MockQuestion(
       id: 'p239-40',
@@ -417,6 +456,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: "Cookies are small text files that a web browser stores on a user's computer for a website.",
     ),
     MockQuestion(
       id: 'p239-41',
@@ -430,6 +470,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'Bluetooth connects devices over a short personal range, so it belongs to a Personal Area Network.',
     ),
     MockQuestion(
       id: 'p239-42',
@@ -443,6 +484,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: 'B2C stands for Business to Consumer, meaning a business selling directly to customers.',
     ),
     MockQuestion(
       id: 'p239-43',
@@ -456,6 +498,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'In MS Word, a table is removed through the Layout tab, using Delete and then Table.',
     ),
     MockQuestion(
       id: 'p239-44',
@@ -464,6 +507,7 @@ const PaperTest paper239 = PaperTest(
       options: ['1', '2', '3', 'Unlimited'],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: 'By definition, each node of a binary tree has at most two children.',
     ),
     MockQuestion(
       id: 'p239-45',
@@ -472,6 +516,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Drop', 'Delete', 'Truncate', 'Remove'],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'In SQL, DROP TABLE removes the whole table, while DELETE only removes rows from it.',
     ),
     // ------------------------------------------------------------------
     // English
@@ -483,6 +528,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Funny', 'Solemn', 'Witty', 'Humorous'],
       correctIndex: 1,
       topic: 'Vocabulary',
+      explanation: 'Droll means amusing in an odd way, so its opposite is solemn, meaning serious and grave.',
     ),
     MockQuestion(
       id: 'p239-47',
@@ -491,6 +537,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Loves', 'Dreads', 'Touches', 'Ignores'],
       correctIndex: 1,
       topic: 'Proverbs',
+      explanation: 'The proverb is a burnt child dreads the fire, meaning a bad experience teaches caution.',
     ),
     MockQuestion(
       id: 'p239-48',
@@ -499,6 +546,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Ignore', 'Consider', 'Forget', 'Avoid'],
       correctIndex: 1,
       topic: 'Analogy',
+      explanation: 'To smear someone is to libel them, and to heed something is to consider it.',
     ),
     MockQuestion(
       id: 'p239-49',
@@ -507,6 +555,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Fragrant', 'Rotten', 'Stinking', 'Smelly'],
       correctIndex: 0,
       topic: 'Vocabulary',
+      explanation: 'Malodorous means bad-smelling, so its opposite is fragrant, meaning sweet-smelling.',
     ),
     MockQuestion(
       id: 'p239-50',
@@ -520,6 +569,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Grammar',
+      explanation: 'After did, the base form of the verb is used, so did your friends come is correct and did came is wrong.',
     ),
     MockQuestion(
       id: 'p239-51',
@@ -529,6 +579,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Will', 'Shall', 'Could', 'May'],
       correctIndex: 2,
       topic: 'Grammar',
+      explanation: 'In indirect speech with a past reporting verb, can shifts back to could.',
     ),
     MockQuestion(
       id: 'p239-52',
@@ -538,6 +589,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Get up', 'Get on', 'Get over', 'Get along'],
       correctIndex: 3,
       topic: 'Grammar',
+      explanation: 'Get along with someone means to have a friendly relationship with them, which fits the sentence.',
     ),
     MockQuestion(
       id: 'p239-53',
@@ -546,6 +598,7 @@ const PaperTest paper239 = PaperTest(
       options: ['School', 'Home', 'Work', 'Church'],
       correctIndex: 1,
       topic: 'Proverbs',
+      explanation: "The proverb is charity begins at home, meaning help should start with one's own family.",
     ),
     MockQuestion(
       id: 'p239-54',
@@ -555,6 +608,7 @@ const PaperTest paper239 = PaperTest(
       options: ['This', 'Those', 'That', 'These'],
       correctIndex: 2,
       topic: 'Grammar',
+      explanation: 'That points back to the city already mentioned, and it matches the singular noun city.',
     ),
     MockQuestion(
       id: 'p239-55',
@@ -563,6 +617,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Verb', 'Adverb', 'Noun', 'Adjective'],
       correctIndex: 3,
       topic: 'Grammar',
+      explanation: 'Heavy describes the table, and describing words are adjectives.',
     ),
     MockQuestion(
       id: 'p239-56',
@@ -571,6 +626,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Through', 'To', 'Like', 'For'],
       correctIndex: 1,
       topic: 'Grammar',
+      explanation: 'Party to is the fixed phrase used for being involved in something such as a crime.',
     ),
     MockQuestion(
       id: 'p239-57',
@@ -580,6 +636,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Cash', 'Greed', 'Nonsense', 'Event'],
       correctIndex: 2,
       topic: 'Analogy',
+      explanation: 'Folderol means nonsense, just as benevolence is closely linked with charity.',
     ),
     MockQuestion(
       id: 'p239-58',
@@ -588,6 +645,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Woods', 'Royalty', 'Water', 'Greenish'],
       correctIndex: 0,
       topic: 'Analogy',
+      explanation: 'A glade is an open space within woods, just as a moat lies around a castle.',
     ),
     MockQuestion(
       id: 'p239-59',
@@ -596,6 +654,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Flattering', 'Gentle', 'Facile', 'Submissive'],
       correctIndex: 1,
       topic: 'Vocabulary',
+      explanation: 'Truculent means aggressive and defiant, so its opposite is gentle.',
     ),
     MockQuestion(
       id: 'p239-60',
@@ -605,6 +664,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Verb', 'Subject', 'Object', 'Noun'],
       correctIndex: 3,
       topic: 'Grammar',
+      explanation: 'Honesty is a naming word, so its part of speech is a noun, even though it also functions as the subject here.',
     ),
     MockQuestion(
       id: 'p239-61',
@@ -614,6 +674,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Are used to', 'Used to', 'Use to', 'Were used to'],
       correctIndex: 0,
       topic: 'Grammar',
+      explanation: 'Are used to means accustomed to something now, which fits living here at present.',
     ),
     MockQuestion(
       id: 'p239-62',
@@ -622,6 +683,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Vice', 'Valor', 'Both A and B', 'None of these'],
       correctIndex: 1,
       topic: 'Proverbs',
+      explanation: 'The proverb is discretion is the better part of valor, meaning caution can be the wiser form of courage.',
     ),
     // ------------------------------------------------------------------
     // Mathematics
@@ -633,6 +695,7 @@ const PaperTest paper239 = PaperTest(
       options: ['−1', '1', '0', '300'],
       correctIndex: 1,
       topic: 'Arithmetic',
+      explanation: 'A negative number raised to an even power is positive, so (-1)^300 = 1.',
     ),
     MockQuestion(
       id: 'p239-64',
@@ -646,6 +709,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Algebra',
+      explanation: 'Multiplying the exponents gives m^(1/5) and n^(-6/5), since (1/3)(3/5) = 1/5 and (-2)(3/5) = -6/5.',
     ),
     MockQuestion(
       id: 'p239-65',
@@ -655,6 +719,7 @@ const PaperTest paper239 = PaperTest(
       options: ['20', '22', '19', '18'],
       correctIndex: 3,
       topic: 'Sequences',
+      explanation: 'The series multiplies by 3 each time: 2, 6, 18, 54, 162, 486. Counting back from the last term, the fourth is 18.',
     ),
     MockQuestion(
       id: 'p239-66',
@@ -663,6 +728,7 @@ const PaperTest paper239 = PaperTest(
       options: ['9', '7', '10', '8'],
       correctIndex: 1,
       topic: 'Arithmetic',
+      explanation: 'Substituting x = 5 and y = 2 gives 5 + 2 = 7.',
     ),
     MockQuestion(
       id: 'p239-67',
@@ -672,6 +738,7 @@ const PaperTest paper239 = PaperTest(
       options: ['(4P + 12)', '(4A + 12)', '(4W + 12)', '(4l + 12)'],
       correctIndex: 2,
       topic: 'Geometry',
+      explanation: 'The height is W + 6, so the perimeter is 2(W + W + 6) = 4W + 12.',
     ),
     MockQuestion(
       id: 'p239-68',
@@ -680,6 +747,7 @@ const PaperTest paper239 = PaperTest(
       options: ['9', '6', '12', '18'],
       correctIndex: 1,
       topic: 'Geometry',
+      explanation: 'The radius is half the diameter, so 12 / 2 = 6 cm.',
     ),
     MockQuestion(
       id: 'p239-69',
@@ -693,6 +761,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Algebra',
+      explanation: 'Combining like terms, 3x^2 + 7x^2 = 10x^2, leaving 10x^2 + xy + sqrt(x).',
     ),
     MockQuestion(
       id: 'p239-70',
@@ -701,6 +770,7 @@ const PaperTest paper239 = PaperTest(
       options: ['Two same roots', 'Two different roots', 'Both A and B', 'None of these'],
       correctIndex: 1,
       topic: 'Algebra',
+      explanation: 'The discriminant is 25 - 4(2)(-6) = 73, which is positive, so the equation has two different real roots.',
     ),
     MockQuestion(
       id: 'p239-71',
@@ -714,6 +784,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Algebra',
+      explanation: 'Factoring gives (2x + 3)(x - 4) = 0, so x = 4 or x = -3/2.',
     ),
     MockQuestion(
       id: 'p239-72',
@@ -723,6 +794,7 @@ const PaperTest paper239 = PaperTest(
       options: ['x² + 4x + 3 = 0', 'x² − 4x + 3 = 0', 'x² + 4x − 3 = 0', 'x² + 4x + 3 = 1'],
       correctIndex: 0,
       topic: 'Algebra',
+      explanation: 'A quadratic with root sum S and product P is x^2 - Sx + P = 0, giving x^2 + 4x + 3 = 0.',
     ),
     MockQuestion(
       id: 'p239-73',
@@ -731,6 +803,7 @@ const PaperTest paper239 = PaperTest(
       options: ['144', '145', '156', '146'],
       correctIndex: 0,
       topic: 'Geometry',
+      explanation: 'The area of a square is side squared, so 12 x 12 = 144.',
     ),
     // ------------------------------------------------------------------
     // Islamiat / Urdu
@@ -742,6 +815,7 @@ const PaperTest paper239 = PaperTest(
       options: ['حضرت عثمان بن عفانؓ', 'حضرت ابو بکرؓ', 'حضرت سلیمان فارسیؓ', 'حضرت خالد بن ولیدؓ'],
       correctIndex: 0,
       topic: 'Seerah',
+      explanation: 'Baiat-e-Rizwan was taken after the false news spread that Hazrat Uthman (RA) had been martyred.',
     ),
     MockQuestion(
       id: 'p239-75',
@@ -755,6 +829,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Seerah',
+      explanation: 'Mithaq-e-Madina, the Charter of Madina, is regarded as the first written constitution of its kind.',
     ),
     MockQuestion(
       id: 'p239-76',
@@ -763,6 +838,7 @@ const PaperTest paper239 = PaperTest(
       options: ['حضرت ام سلمہؓ', 'حضرت جویریہؓ', 'حضرت ماریہ قبطیہؓ', 'حضرت سودہؓ'],
       correctIndex: 1,
       topic: 'Seerah',
+      explanation: "Hazrat Juwairiyah (RA) came into the Prophet's (PBUH) household after the expedition of Bani Mustaliq.",
     ),
     MockQuestion(
       id: 'p239-77',
@@ -771,6 +847,7 @@ const PaperTest paper239 = PaperTest(
       options: ['نجران، طور', 'مکہ، طور', 'مکہ، مدینہ', 'نجران، فلسطین'],
       correctIndex: 1,
       topic: 'Quran',
+      explanation: 'Surah Al-Tin swears by the fig and the olive, and by Mount Tur and the secure city, Makkah.',
     ),
     MockQuestion(
       id: 'p239-78',
@@ -779,6 +856,7 @@ const PaperTest paper239 = PaperTest(
       options: ['متوقع فائدہ', 'غیر متوقع فائدہ', 'دونوں', 'ان میں سے کوئی نہیں'],
       correctIndex: 1,
       topic: 'Urdu',
+      explanation: "The proverb means an unexpected gain, as if something fortunate falls into one's lap by chance.",
     ),
     MockQuestion(
       id: 'p239-79',
@@ -787,6 +865,7 @@ const PaperTest paper239 = PaperTest(
       options: ['مصیبت میں آنا', 'اوقات سے باہر ہونا', 'ٹھوکر کھائی میں آنا', 'ان میں سے کوئی نہیں'],
       correctIndex: 1,
       topic: 'Urdu',
+      explanation: "The saying means going beyond one's proper limits or station, as given in the correct option.",
     ),
     MockQuestion(
       id: 'p239-80',
@@ -795,6 +874,7 @@ const PaperTest paper239 = PaperTest(
       options: ['ہاتھ سے لگنا', 'وقت کی قدر نہ کرنا', 'قیمتی چیز ہاتھ آنا', 'ان میں سے کوئی نہیں'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: "The idiom means obtaining something very precious, like a golden bird falling into one's hands.",
     ),
     MockQuestion(
       id: 'p239-81',
@@ -808,6 +888,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 3,
       topic: 'Urdu',
+      explanation: 'The proverb means that in trouble, even a small help feels very great, as given in the correct option.',
     ),
     MockQuestion(
       id: 'p239-82',
@@ -816,6 +897,7 @@ const PaperTest paper239 = PaperTest(
       options: ['کنایہ', 'استعارہ', 'تشبیہ', 'مجاز مرسل'],
       correctIndex: 0,
       topic: 'Urdu',
+      explanation: 'Here chiragh is not a literal lamp but an allusion to a person, which is kinaya.',
     ),
     MockQuestion(
       id: 'p239-83',
@@ -824,6 +906,7 @@ const PaperTest paper239 = PaperTest(
       options: ['اسم', 'حرف', 'فعل', 'کوئی نہیں'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'A word that shows an action in relation to time is a fail (verb).',
     ),
     MockQuestion(
       id: 'p239-84',
@@ -832,6 +915,7 @@ const PaperTest paper239 = PaperTest(
       options: ['جھگڑا ہونا', 'ہاتھ خالی رہنا', 'جھگڑا دونوں طرف سے ہونا', 'ایک طرف سے جھگڑا ہونا'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'The proverb means that a quarrel takes two sides, as given in the correct option.',
     ),
     MockQuestion(
       id: 'p239-85',
@@ -845,6 +929,7 @@ const PaperTest paper239 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'The proverb means that stubborn or wicked people do not listen to gentle words.',
     ),
     MockQuestion(
       id: 'p239-86',
@@ -853,6 +938,7 @@ const PaperTest paper239 = PaperTest(
       options: ['حقن', 'سانپ', 'چیونٹی', 'ہرن'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'The saying is completed with chiunti: when the time comes, even an ant grows wings, meaning the weak become bold.',
     ),
   ],
   latestUpdates: [

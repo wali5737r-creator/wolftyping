@@ -25,6 +25,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Geneva', 'New York', 'The Hague', 'Vienna'],
       correctIndex: 2,
       topic: 'World Organisations',
+      explanation: 'The International Court of Justice has its seat at the Peace Palace in The Hague, Netherlands.',
     ),
     MockQuestion(
       id: 'p237-2',
@@ -38,6 +39,7 @@ const PaperTest paper237 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'History',
+      explanation: "Dhaka fell on 16 December 1971, the day Bangladesh's independence was secured.",
     ),
     // ------------------------------------------------------------------
     // Pakistan Studies
@@ -55,6 +57,7 @@ const PaperTest paper237 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'History',
+      explanation: "Zulfikar Ali Bhutto took over as Pakistan's first civilian martial law administrator in December 1971.",
     ),
     MockQuestion(
       id: 'p237-4',
@@ -68,6 +71,7 @@ const PaperTest paper237 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'Justice Yahya Afridi is the Chief Justice of Pakistan, having taken office in October 2024.',
     ),
     MockQuestion(
       id: 'p237-5',
@@ -76,6 +80,7 @@ const PaperTest paper237 = PaperTest(
       options: ['1956', '1960', '1968', '1973'],
       correctIndex: 3,
       topic: 'Constitution',
+      explanation: 'The 1973 Constitution of Pakistan contains the definition of a Muslim.',
     ),
     MockQuestion(
       id: 'p237-6',
@@ -84,6 +89,7 @@ const PaperTest paper237 = PaperTest(
       options: ['3', '4', '5', '6'],
       correctIndex: 1,
       topic: 'Constitution',
+      explanation: 'The 1973 Constitution provides for four provinces: Punjab, Sindh, Khyber Pakhtunkhwa (then NWFP) and Balochistan.',
     ),
     MockQuestion(
       id: 'p237-7',
@@ -97,6 +103,7 @@ const PaperTest paper237 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'Pervez Musharraf stepped down as president on 18 August 2008.',
     ),
     MockQuestion(
       id: 'p237-8',
@@ -110,6 +117,7 @@ const PaperTest paper237 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'History',
+      explanation: 'Liaquat Ali Khan was assassinated in Rawalpindi on 16 October 1951.',
     ),
     MockQuestion(
       id: 'p237-9',
@@ -123,6 +131,7 @@ const PaperTest paper237 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'Governor-General Ghulam Muhammad dismissed the government of Prime Minister Khawaja Nazimuddin in 1953.',
     ),
     // ------------------------------------------------------------------
     // Current Affairs
@@ -135,6 +144,7 @@ const PaperTest paper237 = PaperTest(
       options: ['2023', '2024', '2025', '2026'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'The Pakistan-Saudi bilateral defence agreement was signed in 2025, on 17 September of that year.',
     ),
     MockQuestion(
       id: 'p237-11',
@@ -144,6 +154,7 @@ const PaperTest paper237 = PaperTest(
       options: ['36', '114', '130', '150'],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: 'The planned Indian purchase of Rafale jets from France covers 114 aircraft, under a proposal submitted in 2026.',
     ),
     MockQuestion(
       id: 'p237-12',
@@ -152,6 +163,7 @@ const PaperTest paper237 = PaperTest(
       options: ['58', '60', '62', '70'],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: 'Sixty US presidential elections had been held up to and including the election of November 2024.',
     ),
     // ------------------------------------------------------------------
     // Geography
@@ -163,6 +175,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Atlantic', 'Indian', 'Pacific', 'Arctic'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: 'Sulu Island lies in the Pacific region, in the Sulu Archipelago of the Philippines.',
     ),
     MockQuestion(
       id: 'p237-14',
@@ -172,6 +185,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Baltoro', 'Biafo', 'Siachen', 'Hispar'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: 'The Siachen Glacier is the largest glacier in the world outside the polar regions.',
     ),
     MockQuestion(
       id: 'p237-15',
@@ -180,6 +194,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Asia', 'Africa', 'Europe', 'North America'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: 'The Alps mountain range lies in Europe, stretching across countries such as France, Switzerland and Austria.',
     ),
     MockQuestion(
       id: 'p237-16',
@@ -188,6 +203,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Jhelum', 'Indus', 'Chenab', 'Kabul'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'Tarbela Dam is built on the Indus River in Pakistan.',
     ),
     MockQuestion(
       id: 'p237-17',
@@ -196,6 +212,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Tube well', 'Canal', 'Karez', 'Lift'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: 'The karez, a system of underground water channels, is the most commonly used method of irrigation in Balochistan.',
     ),
     MockQuestion(
       id: 'p237-18',
@@ -204,6 +221,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Pakistan', 'Afghanistan', 'Tajikistan', 'Azerbaijan'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: 'The Nurek Dam is located in Tajikistan, on the Vakhsh River.',
     ),
     // ------------------------------------------------------------------
     // Everyday Science
@@ -220,6 +238,7 @@ const PaperTest paper237 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Inventions',
+      explanation: 'Igor Sikorsky is credited with building the first practical helicopter, the VS-300.',
     ),
     MockQuestion(
       id: 'p237-20',
@@ -228,6 +247,7 @@ const PaperTest paper237 = PaperTest(
       options: ['1', '0.5', 'Zero', 'Infinite'],
       correctIndex: 2,
       topic: 'Physics',
+      explanation: 'A photon has zero rest mass, although it carries energy and momentum.',
     ),
     MockQuestion(
       id: 'p237-21',
@@ -236,6 +256,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Inhibitor', 'Reactant', 'Product', 'Catalyst'],
       correctIndex: 3,
       topic: 'Chemistry',
+      explanation: 'An enzyme acts as a catalyst: it speeds up a chemical reaction without being used up in it.',
     ),
     MockQuestion(
       id: 'p237-22',
@@ -245,6 +266,7 @@ const PaperTest paper237 = PaperTest(
       options: ['DNA', 'Plasma', 'Chromosome', 'None of these'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: 'A hereditary genetic disorder of this kind is caused by an abnormality in the chromosome that carries the genes.',
     ),
     MockQuestion(
       id: 'p237-23',
@@ -258,6 +280,7 @@ const PaperTest paper237 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: "The hypothalamus, a part of the brain, controls the body's temperature.",
     ),
     MockQuestion(
       id: 'p237-24',
@@ -271,6 +294,7 @@ const PaperTest paper237 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Chemistry',
+      explanation: 'William Ramsay is credited with discovering the gas neon.',
     ),
     // ------------------------------------------------------------------
     // Computer Science
@@ -287,6 +311,7 @@ const PaperTest paper237 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'HTML, the HyperText Markup Language, is mainly used for developing web pages.',
     ),
     MockQuestion(
       id: 'p237-26',
@@ -295,6 +320,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Deleted', 'Encrypted', 'Copied', 'Hidden'],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: 'Ransomware locks files by encrypting them, so the victim cannot open them without the decryption key.',
     ),
     MockQuestion(
       id: 'p237-27',
@@ -308,6 +334,7 @@ const PaperTest paper237 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: 'Direct Memory Access lets data move between a device and memory without the CPU handling each transfer.',
     ),
     MockQuestion(
       id: 'p237-28',
@@ -321,6 +348,7 @@ const PaperTest paper237 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'Multiprogramming is an operating system running more than one program concurrently, sharing the CPU among them.',
     ),
     MockQuestion(
       id: 'p237-29',
@@ -334,6 +362,7 @@ const PaperTest paper237 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'Database normalization is mainly done to minimize redundant data and keep the data consistent.',
     ),
     MockQuestion(
       id: 'p237-30',
@@ -343,6 +372,7 @@ const PaperTest paper237 = PaperTest(
       options: ['To', 'BCC', 'CC', 'Subject'],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: "The BCC field hides the recipients' addresses from each other, unlike CC where all can see them.",
     ),
     MockQuestion(
       id: 'p237-31',
@@ -356,6 +386,7 @@ const PaperTest paper237 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: 'Dennis Ritchie invented the C programming language at Bell Labs in the 1970s.',
     ),
     MockQuestion(
       id: 'p237-32',
@@ -364,6 +395,7 @@ const PaperTest paper237 = PaperTest(
       options: ['ROM', 'HDD', 'RAM', 'SSD'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: "RAM is the primary memory that holds data in active use, so having it available speeds up the computer's work.",
     ),
     MockQuestion(
       id: 'p237-33',
@@ -372,6 +404,7 @@ const PaperTest paper237 = PaperTest(
       options: ['MS Word', 'Excel', 'Google Drive', 'Paint'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'Google Drive is a cloud storage service, while MS Word, Excel and Paint are applications, not storage services.',
     ),
     MockQuestion(
       id: 'p237-34',
@@ -380,6 +413,7 @@ const PaperTest paper237 = PaperTest(
       options: ['John Blankenbaker', 'Bill Gates', 'Alan Turing', 'Steve Jobs'],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'John Blankenbaker is credited with inventing the personal computer, the Kenbak-1.',
     ),
     // ------------------------------------------------------------------
     // Mathematics
@@ -392,6 +426,7 @@ const PaperTest paper237 = PaperTest(
       options: ['8', '84/9', '9', '10'],
       correctIndex: 1,
       topic: 'Arithmetic',
+      explanation: 'Working: 9x - 12 = 72, so 9x = 84 and x = 84/9.',
     ),
     MockQuestion(
       id: 'p237-36',
@@ -400,6 +435,7 @@ const PaperTest paper237 = PaperTest(
       options: ['2x + 3', '3x − 2', 'x − 3', '2x − 3'],
       correctIndex: 1,
       topic: 'Algebra',
+      explanation: 'Working: (9x^2 - 6x) divided by 3x = 3x - 2, dividing each term by 3x.',
     ),
     MockQuestion(
       id: 'p237-37',
@@ -413,6 +449,7 @@ const PaperTest paper237 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Algebra',
+      explanation: 'Working: the discriminant is (square root of 5)^2 - 4 x 2 x 1 = 5 - 8 = -3, which is negative, so there is no real solution.',
     ),
     MockQuestion(
       id: 'p237-38',
@@ -421,6 +458,7 @@ const PaperTest paper237 = PaperTest(
       options: ['1/2', '1', '2/3', '3/2'],
       correctIndex: 1,
       topic: 'Arithmetic',
+      explanation: 'Working: 1/3 x 3/2 = 1/2, and 1/2 divided by 1/2 = 1.',
     ),
     MockQuestion(
       id: 'p237-39',
@@ -435,6 +473,7 @@ const PaperTest paper237 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Trigonometry',
+      explanation: 'A longer shadow means the Sun is lower in the sky, so its angle of elevation decreases.',
     ),
     MockQuestion(
       id: 'p237-40',
@@ -444,6 +483,7 @@ const PaperTest paper237 = PaperTest(
       options: ['3', '5', '6', '1¼'],
       correctIndex: 3,
       topic: 'Arithmetic',
+      explanation: 'Working: 30 chocolates fill 30 / 24 = 1 and 1/4 boxes.',
     ),
     MockQuestion(
       id: 'p237-41',
@@ -453,6 +493,7 @@ const PaperTest paper237 = PaperTest(
       options: ['20%', '30%', '45%', '50%'],
       correctIndex: 1,
       topic: 'Percentage',
+      explanation: 'Working: John ate 35 lb in total; Kyle ate 24 lb of wings and 21 lb of hot dogs, 45 lb in total, an increase of 10 / 35 = about 29%, or about 30%.',
     ),
     MockQuestion(
       id: 'p237-42',
@@ -462,6 +503,7 @@ const PaperTest paper237 = PaperTest(
       options: ['350', '400', '450', '500'],
       correctIndex: 3,
       topic: 'Percentage',
+      explanation: 'Working: with 300 boys and 200 girls, 60 boys and 30 girls failed (90 in total), and 240 boys passed against 170 girls, a difference of 70, so 500 students appeared.',
     ),
     MockQuestion(
       id: 'p237-43',
@@ -470,6 +512,7 @@ const PaperTest paper237 = PaperTest(
       options: ['500π cm³', '1000π cm³', '2000π cm³', '3000π cm³'],
       correctIndex: 1,
       topic: 'Geometry',
+      explanation: 'Working: volume of a cone = (1/3) x pi x r^2 x h = (1/3) x pi x 100 x 30 = 1000 x pi cm3.',
     ),
     MockQuestion(
       id: 'p237-44',
@@ -478,6 +521,7 @@ const PaperTest paper237 = PaperTest(
       options: ['30 km/h', '36 km/h', '40 km/h', '45 km/h'],
       correctIndex: 1,
       topic: 'Speed',
+      explanation: 'Working: 30 km in 50 minutes is 30 / (50/60) = 36 km/h.',
     ),
     MockQuestion(
       id: 'p237-45',
@@ -486,6 +530,7 @@ const PaperTest paper237 = PaperTest(
       options: ['4', '5√2', '6', '7'],
       correctIndex: 1,
       topic: 'Geometry',
+      explanation: 'Working: distance = square root of ((-5 - 0)^2 + (0 - 5)^2) = square root of 50 = 5 x square root of 2.',
     ),
     MockQuestion(
       id: 'p237-46',
@@ -495,6 +540,7 @@ const PaperTest paper237 = PaperTest(
       options: ['24', '26', '28', '30'],
       correctIndex: 2,
       topic: 'Ratio',
+      explanation: 'Working: wheat = 21 x 4/3 = 28 kg, keeping the 3:4 ratio of rice to wheat.',
     ),
     MockQuestion(
       id: 'p237-47',
@@ -503,6 +549,7 @@ const PaperTest paper237 = PaperTest(
       options: ['100', '1000', '5000', '10000'],
       correctIndex: 1,
       topic: 'Arithmetic',
+      explanation: 'Working: 100^1.5 = 100 x square root of 100 = 100 x 10 = 1000.',
     ),
     // ------------------------------------------------------------------
     // English
@@ -514,6 +561,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Paltry', 'Rich', 'Large', 'Strong'],
       correctIndex: 0,
       topic: 'Vocabulary',
+      explanation: 'Picayune means of little value or importance, which is the meaning of paltry.',
     ),
     MockQuestion(
       id: 'p237-49',
@@ -522,6 +570,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Fail', 'Attempt', 'Stop', 'Rest'],
       correctIndex: 1,
       topic: 'Analogy',
+      explanation: 'Outrage is a stronger form of peeve, just as strive is a stronger form of attempt.',
     ),
     MockQuestion(
       id: 'p237-50',
@@ -531,6 +580,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Speak', 'Delay', 'Vote', 'Win'],
       correctIndex: 1,
       topic: 'Analogy',
+      explanation: 'Gerrymandering divides electorates to gain advantage, just as a filibuster delays a vote by prolonged speaking.',
     ),
     MockQuestion(
       id: 'p237-51',
@@ -540,6 +590,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Adverb', 'Preposition', 'Conjunction', 'Pronoun'],
       correctIndex: 2,
       topic: 'Grammar',
+      explanation: 'When joins the two clauses of the sentence, so it is a conjunction here.',
     ),
     MockQuestion(
       id: 'p237-52',
@@ -548,6 +599,7 @@ const PaperTest paper237 = PaperTest(
       options: ['For', 'Since', 'From', 'At'],
       correctIndex: 1,
       topic: 'Grammar',
+      explanation: 'Since is used with a point in time, such as half past nine, while for is used with a period of time.',
     ),
     MockQuestion(
       id: 'p237-53',
@@ -556,6 +608,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Cringe', 'Redress', 'Pressure', 'Nag'],
       correctIndex: 2,
       topic: 'Analogy',
+      explanation: 'Chagrin is the feeling caused by criticism, just as a sag is the drooping caused by pressure.',
     ),
     MockQuestion(
       id: 'p237-54',
@@ -564,6 +617,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Soft', 'Loud', 'Slow', 'Weak'],
       correctIndex: 1,
       topic: 'Vocabulary',
+      explanation: "Stentorian means very loud and powerful, like a stentor's voice.",
     ),
     MockQuestion(
       id: 'p237-55',
@@ -572,6 +626,7 @@ const PaperTest paper237 = PaperTest(
       options: ['With', 'To', 'For', 'At'],
       correctIndex: 2,
       topic: 'Grammar',
+      explanation: 'The fixed phrase is a match for: she has no equal as a competitor against you.',
     ),
     MockQuestion(
       id: 'p237-56',
@@ -580,6 +635,7 @@ const PaperTest paper237 = PaperTest(
       options: ['One', 'Two', 'Three', 'Four'],
       correctIndex: 1,
       topic: 'Proverbs',
+      explanation: 'The proverb is: It takes two to tango, meaning both sides share responsibility.',
     ),
     MockQuestion(
       id: 'p237-57',
@@ -589,6 +645,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Object', 'Subject', 'Verb', 'Adverb'],
       correctIndex: 1,
       topic: 'Grammar',
+      explanation: 'Thick cloud is the noun phrase the sentence is about, so it functions as the subject.',
     ),
     MockQuestion(
       id: 'p237-58',
@@ -602,6 +659,7 @@ const PaperTest paper237 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Grammar',
+      explanation: 'The active imperative is simply: Arrange the chair.',
     ),
     MockQuestion(
       id: 'p237-59',
@@ -610,6 +668,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Cat', 'Fox', 'Dog', 'Horse'],
       correctIndex: 2,
       topic: 'Proverbs',
+      explanation: 'The proverb is: You cannot teach an old dog new tricks.',
     ),
     MockQuestion(
       id: 'p237-60',
@@ -618,6 +677,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Refuse', 'Accept', 'Delay', 'Argue'],
       correctIndex: 1,
       topic: 'Vocabulary',
+      explanation: 'Demur means to object or refuse, so its antonym is accept.',
     ),
     // ------------------------------------------------------------------
     // Islamic Studies
@@ -635,6 +695,7 @@ const PaperTest paper237 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Seerah',
+      explanation: 'Hazrat Juwairiyah (RA) was the daughter of Harith ibn Abi Dirar and became a wife of the Prophet (PBUH) after Ghazwa Bani Mustaliq.',
     ),
     MockQuestion(
       id: 'p237-62',
@@ -643,6 +704,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Madina', 'Makkah', 'Kufa', 'Damascus'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'Hazrat Ali (RA) was martyred in Kufa, where he was struck during prayer and died of his wounds.',
     ),
     MockQuestion(
       id: 'p237-63',
@@ -652,6 +714,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Sunan', 'Musnad', 'Sahifa', 'Muwatta'],
       correctIndex: 0,
       topic: 'Hadith',
+      explanation: 'A book of Hadith arranged by chapters of jurisprudence is called a Sunan, such as the Sunan collections.',
     ),
     MockQuestion(
       id: 'p237-64',
@@ -660,6 +723,7 @@ const PaperTest paper237 = PaperTest(
       options: ['Iraq', 'Syria', 'Egypt', 'Spain'],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'The Umayyad caliphate ruled mostly from Syria, with its capital at Damascus.',
     ),
     MockQuestion(
       id: 'p237-65',
@@ -674,6 +738,7 @@ const PaperTest paper237 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Seerah',
+      explanation: 'During the Ghazwa of Tabuk, the Prophet (PBUH) left Hazrat Ali (RA) as governor of Madina in his place.',
     ),
     MockQuestion(
       id: 'p237-66',
@@ -682,6 +747,7 @@ const PaperTest paper237 = PaperTest(
       options: ['7 AH', '8 AH', '9 AH', '10 AH'],
       correctIndex: 1,
       topic: 'Seerah',
+      explanation: 'The conquest of Makkah took place in 8 AH.',
     ),
     // ------------------------------------------------------------------
     // Urdu
@@ -693,6 +759,7 @@ const PaperTest paper237 = PaperTest(
       options: ['دس', 'نو', 'آٹھ', 'گیارہ'],
       correctIndex: 0,
       topic: 'Urdu',
+      explanation: 'The proverb as traditionally worded completes with das (ten).',
     ),
     MockQuestion(
       id: 'p237-68',
@@ -701,6 +768,7 @@ const PaperTest paper237 = PaperTest(
       options: ['مروت دینا', 'تکلیف دینا', 'افسوس کرنا', 'یاد رکھنا'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: "The idiom means to wring one's hands in regret or sorrow.",
     ),
     MockQuestion(
       id: 'p237-69',
@@ -709,6 +777,7 @@ const PaperTest paper237 = PaperTest(
       options: ['اسم', 'مہمل', 'فعل', 'کلمہ'],
       correctIndex: 1,
       topic: 'Urdu',
+      explanation: 'In pani wani, wani adds no meaning of its own; it is a muhmil, a meaningless rhyming companion word.',
     ),
     MockQuestion(
       id: 'p237-70',
@@ -717,6 +786,7 @@ const PaperTest paper237 = PaperTest(
       options: ['خطاب', 'لقب', 'کنیت', 'تخلص'],
       correctIndex: 0,
       topic: 'Urdu',
+      explanation: 'Mohsin-e-Insaniyat is a khitab, an honorific title of address.',
     ),
     MockQuestion(
       id: 'p237-71',
@@ -730,6 +800,7 @@ const PaperTest paper237 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Urdu',
+      explanation: 'The correct sentence uses the full greeting Assalam-o-Alaikum followed by arz hai, the respectful form of request.',
     ),
     MockQuestion(
       id: 'p237-72',
@@ -738,6 +809,7 @@ const PaperTest paper237 = PaperTest(
       options: ['دریا', 'گھاٹ', 'چشمہ', 'تالاب'],
       correctIndex: 1,
       topic: 'Urdu',
+      explanation: 'The phrase completes with ghaat: lion and goat drinking at one ghaat pictures a time of perfect peace and justice.',
     ),
     MockQuestion(
       id: 'p237-73',
@@ -746,6 +818,7 @@ const PaperTest paper237 = PaperTest(
       options: ['بھلا', 'پکا', 'ہڈا', 'کوئی نہیں'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'The idiom as worded completes with hadda, describing a person of firm, steady character.',
     ),
     MockQuestion(
       id: 'p237-74',
@@ -754,6 +827,7 @@ const PaperTest paper237 = PaperTest(
       options: ['فعل نہی', 'فعل مطلق', 'فعل امر', 'فعل ماضی'],
       correctIndex: 0,
       topic: 'Urdu',
+      explanation: 'A verb form that commands an action or forbids it, mentioning doing or not doing a thing, is called fail-e-nahi.',
     ),
     MockQuestion(
       id: 'p237-75',
@@ -762,6 +836,7 @@ const PaperTest paper237 = PaperTest(
       options: ['گھاس', 'گوشت', 'ماس', 'کوئی نہیں'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'The saying completes with maas: a pencil has no flesh in its mouth, picturing something entirely without substance.',
     ),
     MockQuestion(
       id: 'p237-76',
@@ -770,6 +845,7 @@ const PaperTest paper237 = PaperTest(
       options: ['بندہ', 'فرشتہ', 'خدا', 'کوئی نہیں'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: "The saying completes with Khuda: only God knows God's own matters.",
     ),
   ],
   latestUpdates: [

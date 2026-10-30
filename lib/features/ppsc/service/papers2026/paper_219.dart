@@ -24,6 +24,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Sindh coast', 'Balochistan coast', 'Punjab plains', 'Khyber Pakhtunkhwa hills'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'Astola is an island in the Arabian Sea off the coast of Balochistan, near Pasni, so the Balochistan coast is the correct location.',
     ),
     MockQuestion(
       id: 'p219-2',
@@ -32,6 +33,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Australia', 'Brazil', 'South Africa', 'Indonesia'],
       correctIndex: 0,
       topic: 'Geography',
+      explanation: 'The Great Barrier Reef lies off the coast of Queensland in north-eastern Australia and is the largest coral reef system in the world.',
     ),
     MockQuestion(
       id: 'p219-3',
@@ -40,6 +42,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Chiang Kai-shek', 'Sun Yat-sen', 'Mao Zedong', 'Yuan Shikai'],
       correctIndex: 1,
       topic: 'World History',
+      explanation: 'Sun Yat-sen became the first provisional president of the Republic of China in 1912, after the fall of the Qing dynasty.',
     ),
     MockQuestion(
       id: 'p219-4',
@@ -48,6 +51,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Vasco da Gama', 'Ferdinand Magellan', 'Christopher Columbus', 'Marco Polo'],
       correctIndex: 2,
       topic: 'World History',
+      explanation: 'School textbooks credit Christopher Columbus with the European discovery of the Americas, following his voyage of 1492.',
     ),
     MockQuestion(
       id: 'p219-5',
@@ -56,6 +60,7 @@ const PaperTest paper219 = PaperTest(
       options: ['1943', '1945', '1947', '1950'],
       correctIndex: 1,
       topic: 'International Organisations',
+      explanation: 'The United Nations was formally established in 1945, when its Charter came into force after ratification by the founding members.',
     ),
     MockQuestion(
       id: 'p219-6',
@@ -64,6 +69,7 @@ const PaperTest paper219 = PaperTest(
       options: ['New York', 'Geneva', 'Vienna', 'The Hague'],
       correctIndex: 1,
       topic: 'International Organisations',
+      explanation: 'The United Nations Human Rights Council is based in Geneva, Switzerland, where it holds its regular sessions.',
     ),
     MockQuestion(
       id: 'p219-7',
@@ -72,6 +78,7 @@ const PaperTest paper219 = PaperTest(
       options: ['June 2021', 'July 2021', 'August 2021', 'September 2021'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'The United States completed its military withdrawal from Afghanistan by the end of August 2021, with the last troops leaving on 31 August.',
     ),
     MockQuestion(
       id: 'p219-8',
@@ -80,6 +87,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Iran', 'Egypt', 'Iraq', 'Syria'],
       correctIndex: 2,
       topic: 'Ancient History',
+      explanation: 'The ancient city of Babylon stood on the Euphrates in Mesopotamia, in the territory of modern-day Iraq.',
     ),
     MockQuestion(
       id: 'p219-9',
@@ -88,6 +96,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Poland', 'Ukraine', 'Belarus', 'Romania'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'The Donbas region lies in eastern Ukraine, bordering Russia, and is the area disputed in the war in eastern Europe.',
     ),
     MockQuestion(
       id: 'p219-10',
@@ -96,6 +105,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Baghdad', 'Cairo', 'Damascus', 'Riyadh'],
       correctIndex: 1,
       topic: 'World Knowledge',
+      explanation: 'Al-Azhar, one of the oldest centres of Islamic learning, is located in Cairo, Egypt.',
     ),
     MockQuestion(
       id: 'p219-11',
@@ -104,6 +114,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Lord Birkenhead', 'Lord Minto', 'Lord Wavell', 'Lord Curzon'],
       correctIndex: 0,
       topic: 'History',
+      explanation: 'The Nehru Report of 1928 was drawn up by Indian leaders in reply to the challenge of Lord Birkenhead, who had said Indians could not agree on a constitution.',
     ),
     MockQuestion(
       id: 'p219-12',
@@ -112,6 +123,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Libya', 'Egypt', 'Jordan', 'Sudan'],
       correctIndex: 1,
       topic: 'World Leaders',
+      explanation: 'Anwar Sadat was the president of Egypt in the 1970s, succeeding Gamal Abdel Nasser.',
     ),
     MockQuestion(
       id: 'p219-13',
@@ -120,6 +132,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Moscow', 'Kazan', 'Krasnoyarsk', 'Sochi'],
       correctIndex: 2,
       topic: 'Sports',
+      explanation: 'The 2019 Winter Universiade, the world university games, was hosted by Krasnoyarsk in Russia.',
     ),
     MockQuestion(
       id: 'p219-14',
@@ -128,6 +141,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Munich', 'Frankfurt', 'Berlin', 'Hamburg'],
       correctIndex: 2,
       topic: 'Capitals',
+      explanation: 'Berlin is the capital city of Germany.',
     ),
     MockQuestion(
       id: 'p219-15',
@@ -136,6 +150,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Toronto', 'Ottawa', 'Montreal', 'Vancouver'],
       correctIndex: 1,
       topic: 'Capitals',
+      explanation: 'Ottawa is the capital of Canada, not Toronto, which is the capital of Ontario province.',
     ),
     MockQuestion(
       id: 'p219-16',
@@ -144,6 +159,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Netherlands', 'Belgium', 'Luxembourg', 'Denmark'],
       correctIndex: 1,
       topic: 'Capitals',
+      explanation: 'Brussels is the capital of Belgium and also hosts the main institutions of the European Union.',
     ),
     MockQuestion(
       id: 'p219-17',
@@ -152,6 +168,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Asia', 'Africa', 'South America', 'Australia'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'The Ahaggar, or Hoggar, Mountains are in the Sahara in Algeria, which is on the continent of Africa.',
     ),
     MockQuestion(
       id: 'p219-18',
@@ -160,6 +177,7 @@ const PaperTest paper219 = PaperTest(
       options: ['A relief agency', 'A wildlife fund', 'A development foundation', 'Allen Lane (Penguin imprint)'],
       correctIndex: 3,
       topic: 'General Knowledge',
+      explanation: 'Allen Lane is known as the founder of the Penguin publishing imprint, not as a relief, wildlife or development organisation, so it is the odd one out among non-governmental organisations.',
     ),
     MockQuestion(
       id: 'p219-19',
@@ -168,6 +186,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Pythagoras', 'Euclid', 'Archimedes', 'Aristotle'],
       correctIndex: 1,
       topic: 'History of Science',
+      explanation: 'Euclid is traditionally called the father of geometry because of his Elements, which set out geometry as a logical system.',
     ),
     MockQuestion(
       id: 'p219-20',
@@ -176,6 +195,7 @@ const PaperTest paper219 = PaperTest(
       options: ['6', '8', '10', '12'],
       correctIndex: 1,
       topic: 'Sports',
+      explanation: 'The ICC Champions Trophy held in 2025 featured eight teams.',
     ),
     MockQuestion(
       id: 'p219-21',
@@ -184,6 +204,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Shinzo Abe', 'Emperor Naruhito', 'Thomas Bach', 'Yoshihide Suga'],
       correctIndex: 1,
       topic: 'Sports',
+      explanation: 'As head of state, Emperor Naruhito formally declared open the Tokyo Olympic Games that were held in 2021.',
     ),
     // Pakistan Studies
     MockQuestion(
@@ -193,6 +214,7 @@ const PaperTest paper219 = PaperTest(
       options: ['500', '530', '555', '600'],
       correctIndex: 2,
       topic: 'Sports',
+      explanation: 'Jahangir Khan won 555 consecutive matches between 1981 and 1986, a run recorded by Guinness World Records as the longest unbeaten run in squash.',
     ),
     MockQuestion(
       id: 'p219-23',
@@ -201,6 +223,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Hinduism', 'Buddhism', 'Sikhism', 'Jainism'],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'Taxila was a major centre of Buddhist learning in ancient Gandhara, with monasteries and stupas, so it is most closely linked with Buddhism.',
     ),
     MockQuestion(
       id: 'p219-24',
@@ -209,6 +232,7 @@ const PaperTest paper219 = PaperTest(
       options: ['May', 'July', 'September', 'November'],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'Cyril Radcliffe arrived in India on 8 July 1947 to chair the two boundary commissions for Punjab and Bengal.',
     ),
     MockQuestion(
       id: 'p219-25',
@@ -217,6 +241,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Shah Waliullah', 'Ahmad Sirhindi', 'Sir Syed Ahmad Khan', 'Abul Kalam Azad'],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'The Maktubat-e-Imam Rabbani are the letters of the scholar Ahmad Sirhindi, known as Imam Rabbani.',
     ),
     MockQuestion(
       id: 'p219-26',
@@ -225,6 +250,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Punjab', 'Sindh', 'Balochistan', 'Khyber Pakhtunkhwa'],
       correctIndex: 1,
       topic: 'Culture',
+      explanation: 'Malakhra is a traditional form of wrestling especially associated with Sindh.',
     ),
     MockQuestion(
       id: 'p219-27',
@@ -233,6 +259,7 @@ const PaperTest paper219 = PaperTest(
       options: ['5 February 1954', '7 March 1954', '24 October 1954', '7 October 1954'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'The first Constituent Assembly of Pakistan was dissolved on 24 October 1954 by Governor-General Ghulam Muhammad.',
     ),
     MockQuestion(
       id: 'p219-28',
@@ -241,6 +268,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Turkey', 'Iran', 'Saudi Arabia', 'China'],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'Iran was the first country to recognise Pakistan after independence in 1947.',
     ),
     MockQuestion(
       id: 'p219-29',
@@ -249,6 +277,7 @@ const PaperTest paper219 = PaperTest(
       options: ['August 1947', 'September 1947', 'October 1947', 'December 1947'],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'Pakistan became a member of the United Nations in September 1947, shortly after independence.',
     ),
     MockQuestion(
       id: 'p219-30',
@@ -257,6 +286,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Lord Mountbatten', 'Liaquat Ali Khan', 'Justice Abdul Rashid', 'Justice Muhammad Munir'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'Justice Abdul Rashid, the first Chief Justice of Pakistan, administered the oath of office to Muhammad Ali Jinnah as the first Governor-General.',
     ),
     MockQuestion(
       id: 'p219-31',
@@ -265,6 +295,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Zulfikar Ali Bhutto', 'Muhammad Khan Junejo', 'Benazir Bhutto', 'Ghulam Ishaq Khan'],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'President Zia-ul-Haq dismissed the government of Prime Minister Muhammad Khan Junejo on 29 May 1988.',
     ),
     MockQuestion(
       id: 'p219-32',
@@ -273,6 +304,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Liaquat Ali Khan', 'Muhammad Ali Jinnah', 'A. K. Fazlul Haq', 'Chaudhry Khaliquzzaman'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'A. K. Fazlul Haq moved the Lahore Resolution at the Muslim League annual session in March 1940.',
     ),
     // Everyday Science
     MockQuestion(
@@ -282,6 +314,7 @@ const PaperTest paper219 = PaperTest(
       options: ['5%', '10%', '25%', '50%'],
       correctIndex: 1,
       topic: 'Biology',
+      explanation: 'Under the ten percent rule of ecology, roughly ten percent of the energy at one trophic level is passed to the next level.',
     ),
     MockQuestion(
       id: 'p219-34',
@@ -290,6 +323,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Electron', 'Neutron', 'Quark', 'Photon'],
       correctIndex: 1,
       topic: 'Physics',
+      explanation: 'A neutron is a composite particle made of quarks, while electrons, photons and quarks themselves are treated as fundamental particles in the standard model.',
     ),
     MockQuestion(
       id: 'p219-35',
@@ -298,6 +332,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Resistance', 'Back EMF', 'Inductance', 'Capacitance'],
       correctIndex: 1,
       topic: 'Physics',
+      explanation: 'Back EMF is the voltage induced inside a motor as it runs, and by Lenz law it opposes the voltage applied to the motor.',
     ),
     // Computer
     MockQuestion(
@@ -307,6 +342,7 @@ const PaperTest paper219 = PaperTest(
       options: ['External storage', 'Internal memory', 'Read-only memory', 'Optical disc'],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: 'Internal memory, or RAM, holds the programs and data that the processor is working on right now, unlike external storage.',
     ),
     MockQuestion(
       id: 'p219-37',
@@ -315,6 +351,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Domain name', 'URL', 'Protocol', 'Directory path'],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: 'The address of a page on the World Wide Web is called its URL, short for Uniform Resource Locator.',
     ),
     // Mathematics
     MockQuestion(
@@ -324,6 +361,7 @@ const PaperTest paper219 = PaperTest(
       options: ['2', '3', '4', '5'],
       correctIndex: 1,
       topic: 'Algebra',
+      explanation: 'Since 11 multiplied by itself three times is 11 times 11 times 11, which equals 1331, the value of a is 3.',
     ),
     MockQuestion(
       id: 'p219-39',
@@ -332,6 +370,7 @@ const PaperTest paper219 = PaperTest(
       options: ['8 times the square root of 3', '-8 times the square root of 3', '14', '-14'],
       correctIndex: 1,
       topic: 'Algebra',
+      explanation: 'Working: 1 over x equals 7 plus 4 times the square root of 3, because (7 minus 4 root 3) times (7 plus 4 root 3) equals 1. So x minus 1 over x equals minus 8 times the square root of 3.',
     ),
     MockQuestion(
       id: 'p219-40',
@@ -340,6 +379,7 @@ const PaperTest paper219 = PaperTest(
       options: ['8 litres', '80 litres', '800 litres', '8,000 litres'],
       correctIndex: 1,
       topic: 'Measurement',
+      explanation: 'Working: 1 litre equals 1000 cubic centimetres, so 80,000 divided by 1000 equals 80 litres.',
     ),
     MockQuestion(
       id: 'p219-41',
@@ -348,6 +388,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Linear growth', 'Exponential growth', 'Decreasing growth', 'No pattern'],
       correctIndex: 1,
       topic: 'Sequences',
+      explanation: 'Each running total is three times the previous one (3, 9, 27, 81), which is multiplication by a constant factor and therefore exponential, not linear, growth.',
     ),
     // English
     MockQuestion(
@@ -357,6 +398,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Unsure', 'Firm', 'Hesitant', 'Faltering'],
       correctIndex: 1,
       topic: 'Vocabulary',
+      explanation: 'Resolute means firm and determined, so firm is the closest in meaning.',
     ),
     MockQuestion(
       id: 'p219-43',
@@ -365,6 +407,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Push', 'Dissuade', 'Incite', 'Encourage'],
       correctIndex: 1,
       topic: 'Vocabulary',
+      explanation: 'To urge is to press someone to do something, so its opposite is to dissuade, meaning to persuade someone not to do it.',
     ),
     MockQuestion(
       id: 'p219-44',
@@ -373,6 +416,7 @@ const PaperTest paper219 = PaperTest(
       options: ['of', 'in', 'on', 'with'],
       correctIndex: 1,
       topic: 'Grammar',
+      explanation: 'The idiom is consist in, used when saying what something lies in or is made up of, so in is the correct preposition here.',
     ),
     MockQuestion(
       id: 'p219-45',
@@ -381,6 +425,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Shoot', 'Load', 'Aim', 'Firearm'],
       correctIndex: 0,
       topic: 'Analogy',
+      explanation: 'This is a function analogy: the heart pumps blood, and a gun shoots, so shoot matches the function of the first pair.',
     ),
     // Urdu
     MockQuestion(
@@ -390,6 +435,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Bohat khush hona', 'Mushkil mein par kar pareshan hona', 'Kisi ko yaad karna', 'Safar par jana'],
       correctIndex: 1,
       topic: 'Urdu Idioms',
+      explanation: 'Naani yaad aana ka matlab hai mushkil mein par kar bohat pareshan hona, is liye yeh option durust hai.',
     ),
     MockQuestion(
       id: 'p219-47',
@@ -398,6 +444,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Kisi ke khilaf chughli karna', 'Kaan saaf karna', 'Zor se bolna', 'Geet sunna'],
       correctIndex: 0,
       topic: 'Urdu Idioms',
+      explanation: 'Kaan bharna ka matlab hai kisi ke khilaf chughli kar ke usay bhadkana, is liye pehla option durust hai.',
     ),
     MockQuestion(
       id: 'p219-48',
@@ -406,6 +453,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Fail', 'Maftool', 'Fail ka waqt', 'Koi nahi'],
       correctIndex: 1,
       topic: 'Urdu Grammar',
+      explanation: 'Is jumle mein Ali parhne ka kaam kar raha hai aur akhbar woh cheez hai jo parhi ja rahi hai, is liye akhbar maftool hai.',
     ),
     MockQuestion(
       id: 'p219-49',
@@ -414,6 +462,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Murakkab jumla', 'Sada jumla', 'Sawalia jumla', 'Hukmia jumla'],
       correctIndex: 0,
       topic: 'Urdu Grammar',
+      explanation: 'Woh aaya, woh gaya mein do mukammal jumle mil kar aik tarkeeb banate hain, is liye isay murakkab jumla kehte hain.',
     ),
     // Islamiat
     MockQuestion(
@@ -423,6 +472,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Hamza (RA)', 'Salman Farsi (RA)', 'Hudhayfah ibn al-Yaman (RA)', 'Zubair ibn al-Awwam (RA)'],
       correctIndex: 2,
       topic: 'Seerah',
+      explanation: 'During the Battle of the Trench, Hudhayfah ibn al-Yaman was sent to the enemy camp to gather news of their position and plans.',
     ),
     MockQuestion(
       id: 'p219-51',
@@ -431,6 +481,7 @@ const PaperTest paper219 = PaperTest(
       options: ['About 3 years', 'About 4 years and 9 months', 'About 6 years', 'About 2 years'],
       correctIndex: 1,
       topic: 'Caliphate',
+      explanation: 'Hazrat Ali became caliph in 656 and was martyred in 661, a caliphate of about four years and nine months.',
     ),
     MockQuestion(
       id: 'p219-52',
@@ -439,6 +490,7 @@ const PaperTest paper219 = PaperTest(
       options: ['Banu Taym', 'Banu Makhzum', 'Banu Zuhrah', 'Banu Asad'],
       correctIndex: 1,
       topic: 'Seerah',
+      explanation: 'Banu Makhzum was a leading clan of the Quraysh in Makkah and a prominent rival of Banu Hashim.',
     ),
     MockQuestion(
       id: 'p219-53',
@@ -447,6 +499,7 @@ const PaperTest paper219 = PaperTest(
       options: ['The apostasy movement', 'A famine', 'A foreign invasion', 'A dispute over taxes'],
       correctIndex: 0,
       topic: 'Caliphate',
+      explanation: 'At the start of his caliphate, Hazrat Abu Bakr faced the apostasy movement, in which several tribes refused central authority and withheld zakat, and he acted to restore unity.',
     ),
   ],
   latestUpdates: [

@@ -24,6 +24,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Augustus', 'Marcus Brutus', 'Mark Antony', 'Pompey'],
       correctIndex: 1,
       topic: 'World History',
+      explanation: 'Marcus Brutus, together with Cassius, led the senators who conspired to assassinate Julius Caesar in 44 BC.',
     ),
     MockQuestion(
       id: 'p227-2',
@@ -32,6 +33,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Global Information System', 'Geographic Information System', 'Global Internet System', 'Global Intelligence System'],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: 'GIS stands for Geographic Information System, software for capturing, storing and analysing location-based data.',
     ),
     // Pakistan Affairs
     MockQuestion(
@@ -41,6 +43,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Swabi', 'Nowshera', 'Kohat', 'Peshawar'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'Azakhel dry port is in Nowshera district of Khyber Pakhtunkhwa, near the railway line serving the region.',
     ),
     MockQuestion(
       id: 'p227-4',
@@ -49,6 +52,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Education', 'Democracy', 'Exploitation of resources', 'Development'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'The question frames British colonial rule in Punjab as aimed chiefly at extracting revenue and resources for the colonial state, rather than at education or democracy.',
     ),
     MockQuestion(
       id: 'p227-5',
@@ -57,6 +61,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Coinbase', 'Cryptopro', 'Binance', 'None of these'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'Binance is the crypto trading app most widely used in Pakistan among the options given, so it fits the question as framed.',
     ),
     MockQuestion(
       id: 'p227-6',
@@ -65,6 +70,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Rabta', 'Citizen Portal', 'Pak ID', 'Maryam Dastak'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: "Pak ID is NADRA's mobile app for identity and related services, including visa and licence-related services.",
     ),
     MockQuestion(
       id: 'p227-7',
@@ -73,6 +79,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Derawar Fort', 'Rohtas Fort', 'Ranikot', 'Agra Fort'],
       correctIndex: 3,
       topic: 'History',
+      explanation: 'Akbar rebuilt Agra Fort in red sandstone in the 16th century, making it the main Mughal residence of his reign.',
     ),
     MockQuestion(
       id: 'p227-8',
@@ -81,6 +88,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Durrani', 'Sikhs', 'Maratha', 'British'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'In 1758 Lahore was captured by the Marathas during their northward expansion into Punjab.',
     ),
     MockQuestion(
       id: 'p227-9',
@@ -89,6 +97,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Taxes', 'Building permits', 'Traffic control', 'Land record'],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: "Punjab's E-Construction app deals with construction approvals and building permits, not taxes or traffic control.",
     ),
     MockQuestion(
       id: 'p227-10',
@@ -97,6 +106,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Babur', 'Mahmud Ghaznavi', 'Akbar', 'Ahmad Shah Abdali'],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'Mahmud Ghaznavi annexed Lahore and brought Punjab into his empire, before the later Delhi Sultanate rulers.',
     ),
     MockQuestion(
       id: 'p227-11',
@@ -105,6 +115,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Partition', 'Independence', 'Constitutional reforms', 'None of these'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'The Simon Commission was appointed to review the working of the Government of India Act 1919 and recommend constitutional reforms.',
     ),
     MockQuestion(
       id: 'p227-12',
@@ -113,6 +124,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Cabinet', 'Radcliffe', 'Simon', 'Mountbatten'],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'The Radcliffe Commission, headed by Sir Cyril Radcliffe, was appointed to draw the Punjab (and Bengal) boundary at independence.',
     ),
     MockQuestion(
       id: 'p227-13',
@@ -121,6 +133,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Ankara', 'Baku', 'Islamabad', 'Istanbul'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'The second Pakistan-Turkey-Azerbaijan trilateral foreign ministers meeting was held in Islamabad on 13 January 2021, as stated in the question.',
     ),
     MockQuestion(
       id: 'p227-14',
@@ -129,6 +142,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Kahuta', 'Shakarparian', 'Sargodha', 'Chaklala'],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: 'An F-16 crashed at Shakarparian, Islamabad, on 11 March 2020 while rehearsing for the Pakistan Day parade.',
     ),
     MockQuestion(
       id: 'p227-15',
@@ -137,6 +151,7 @@ const PaperTest paper227 = PaperTest(
       options: ['12 May 2021', '16 May 2021', '17 May 2021', '18 May 2021'],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: 'Veteran ANP leader Begum Naseem Wali Khan died on 16 May 2021, as stated in the question.',
     ),
     MockQuestion(
       id: 'p227-16',
@@ -145,6 +160,7 @@ const PaperTest paper227 = PaperTest(
       options: ['4', '5', '7', '8'],
       correctIndex: 2,
       topic: 'History',
+      explanation: "Pakistan's first Constituent Assembly sat from 1947 until its dissolution in 1954, a period of about seven years.",
     ),
     // Current Affairs
     MockQuestion(
@@ -154,6 +170,7 @@ const PaperTest paper227 = PaperTest(
       options: ['4 May', '6 May', '7 May', '9 May'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'The four-day Pakistan-India military conflict of May 2025 began on 7 May 2025, the date given in the question.',
     ),
     // Geography
     MockQuestion(
@@ -163,6 +180,7 @@ const PaperTest paper227 = PaperTest(
       options: ['UK', 'Tanzania', 'Italy', 'France'],
       correctIndex: 3,
       topic: 'Geography',
+      explanation: "Mont Blanc is France's highest peak and stands on the French-Italian border, so France is the country named in the question.",
     ),
     MockQuestion(
       id: 'p227-19',
@@ -171,6 +189,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Jhelum', 'Indus', 'Chenab', 'Ravi'],
       correctIndex: 0,
       topic: 'Geography',
+      explanation: 'The Potohar plateau is bounded on the east by the Jhelum river, which separates it from the Kashmir hills.',
     ),
     // Everyday Science
     MockQuestion(
@@ -180,6 +199,7 @@ const PaperTest paper227 = PaperTest(
       options: ['50mm', '70mm', '100mm', '200mm'],
       correctIndex: 2,
       topic: 'Environment',
+      explanation: 'A cloudburst is defined by the India Meteorological Department as at least 100 mm of rain in one hour over a small area.',
     ),
     MockQuestion(
       id: 'p227-21',
@@ -188,6 +208,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Henry Greathead', 'James Harrison', 'William Hawkin', 'Wright brothers'],
       correctIndex: 0,
       topic: 'Inventions',
+      explanation: 'Henry Greathead built the first practical lifeboat, the Original, which entered service in 1789.',
     ),
     MockQuestion(
       id: 'p227-22',
@@ -196,6 +217,7 @@ const PaperTest paper227 = PaperTest(
       options: ['12', '18', '20', '24'],
       correctIndex: 3,
       topic: 'Space',
+      explanation: 'The GPS constellation is designed around 24 satellites in orbit, giving global coverage.',
     ),
     MockQuestion(
       id: 'p227-23',
@@ -204,6 +226,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Pivot joint', 'Gliding joint', 'Hinge joint', 'Socket joint'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: 'The elbow is a hinge joint: it mainly allows bending and straightening in one plane, like a door hinge.',
     ),
     MockQuestion(
       id: 'p227-24',
@@ -212,6 +235,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Glass', 'Plastic', 'Steel', 'Rubber'],
       correctIndex: 1,
       topic: 'Environment',
+      explanation: 'Modern greenhouses are most commonly covered with plastic film, which is light, cheap and lets light through, rather than glass.',
     ),
     MockQuestion(
       id: 'p227-25',
@@ -220,6 +244,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Positive', 'Neutral', 'Negative', 'None of these'],
       correctIndex: 2,
       topic: 'Chemistry',
+      explanation: 'An anion is an atom that has gained electrons, so it carries a negative charge; a cation carries a positive charge.',
     ),
     MockQuestion(
       id: 'p227-26',
@@ -228,6 +253,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Propane', 'Methane', 'Butane', 'Ethane'],
       correctIndex: 1,
       topic: 'Chemistry',
+      explanation: 'Natural gas consists mainly of methane, with smaller amounts of other hydrocarbons such as ethane and propane.',
     ),
     MockQuestion(
       id: 'p227-27',
@@ -236,6 +262,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Insulin resistance and reduced insulin effectiveness', 'Bacterial infection', 'Excess sugar intake alone', 'High blood glucose level'],
       correctIndex: 0,
       topic: 'Biology',
+      explanation: 'Type 2 diabetes is caused mainly by insulin resistance, where body cells respond poorly to insulin, together with reduced insulin effectiveness.',
     ),
     MockQuestion(
       id: 'p227-28',
@@ -244,6 +271,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Silica', 'Sand', 'Salt', 'Lime'],
       correctIndex: 0,
       topic: 'Chemistry',
+      explanation: 'Silicon dioxide, SiO2, is most commonly known as silica, the main constituent of sand and quartz.',
     ),
     MockQuestion(
       id: 'p227-29',
@@ -252,6 +280,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Joule', 'Newton', 'W/m\u00b2', 'm/sec'],
       correctIndex: 2,
       topic: 'Physics',
+      explanation: 'Sound intensity is power per unit area, so its standard unit is watts per square metre (W/m2).',
     ),
     // Basic Computer Studies
     MockQuestion(
@@ -261,6 +290,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Machine working', 'Reinforcement learning', 'Linear programming', 'Supervised learning'],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: "ChatGPT's fine-tuning uses reinforcement learning from human feedback, in which human rankings guide the model toward preferred responses.",
     ),
     MockQuestion(
       id: 'p227-31',
@@ -269,6 +299,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Structured Query Language', 'Standard Question Language', 'Sequential Language', 'System Query Language'],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'SQL stands for Structured Query Language, the standard language for managing data in relational databases.',
     ),
     MockQuestion(
       id: 'p227-32',
@@ -277,6 +308,7 @@ const PaperTest paper227 = PaperTest(
       options: ['File > Export > Create video', 'File > Select', 'Video > Export', 'None of these'],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'In PowerPoint, File, then Export, then Create a Video converts a presentation into a video file.',
     ),
     MockQuestion(
       id: 'p227-33',
@@ -285,6 +317,7 @@ const PaperTest paper227 = PaperTest(
       options: ['File < Data', 'Tool > Filter', 'Data > Filter', 'File < Filter'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'In MS Excel, filters are added from the Data tab by choosing Filter.',
     ),
     MockQuestion(
       id: 'p227-34',
@@ -293,6 +326,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Preview > Window', 'View > Window > Split', 'Window > Split', 'View > Split'],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: 'In MS Office, View and then Split divides the window into two panes that can be scrolled separately.',
     ),
     MockQuestion(
       id: 'p227-35',
@@ -301,6 +335,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Data', 'Graphics', 'Bytes', 'Pictures'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: "In the framing of this question, the data passing through a computer's ports is counted in bytes, the basic unit of digital data.",
     ),
     // Basic Mathematics
     MockQuestion(
@@ -310,6 +345,7 @@ const PaperTest paper227 = PaperTest(
       options: ['6', '8', '10', '11'],
       correctIndex: 0,
       topic: 'Arithmetic',
+      explanation: 'Working: 6 x 6 x 6 = 216, so the cube root of 216 is 6.',
     ),
     MockQuestion(
       id: 'p227-37',
@@ -318,6 +354,7 @@ const PaperTest paper227 = PaperTest(
       options: ['8', '12', '13', '14'],
       correctIndex: 0,
       topic: 'Geometry',
+      explanation: 'Working: the distance of a point from the x-axis is the absolute value of its y-coordinate, so for (-6, 8) it is 8.',
     ),
     MockQuestion(
       id: 'p227-38',
@@ -326,6 +363,7 @@ const PaperTest paper227 = PaperTest(
       options: ['4x + 2y', '3x + 3y', 'x\u00b3 - y\u00b3', '4x - 2y'],
       correctIndex: 0,
       topic: 'Algebra',
+      explanation: 'Working: (x squared - y squared) / (x + y) = x - y, so (3x + 3y) + (x - y) = 4x + 2y.',
     ),
     MockQuestion(
       id: 'p227-39',
@@ -334,6 +372,7 @@ const PaperTest paper227 = PaperTest(
       options: ['-1', '0', '1', '-2'],
       correctIndex: 0,
       topic: 'Algebra',
+      explanation: 'Working: f(-1) = -1, and f(-1) again is -1, so f(f(-1)) = -1.',
     ),
     MockQuestion(
       id: 'p227-40',
@@ -342,6 +381,7 @@ const PaperTest paper227 = PaperTest(
       options: ['46', '48', '50.2', '56'],
       correctIndex: 2,
       topic: 'Geometry',
+      explanation: 'Working: circumference = 2 x pi x radius = 2 x 3.14 x 8 = 50.24, about 50.2.',
     ),
     MockQuestion(
       id: 'p227-41',
@@ -350,6 +390,7 @@ const PaperTest paper227 = PaperTest(
       options: ['60\u00b0', '90\u00b0', '180\u00b0', '360\u00b0'],
       correctIndex: 2,
       topic: 'Geometry',
+      explanation: 'Angles on a straight line always add up to 180 degrees.',
     ),
     MockQuestion(
       id: 'p227-42',
@@ -358,6 +399,7 @@ const PaperTest paper227 = PaperTest(
       options: ['9', '14', '45/4', '16'],
       correctIndex: 2,
       topic: 'Arithmetic',
+      explanation: 'Working: baskets = (15/2) divided by (2/3) = (15/2) x (3/2) = 45/4.',
     ),
     MockQuestion(
       id: 'p227-43',
@@ -366,6 +408,7 @@ const PaperTest paper227 = PaperTest(
       options: ['130', '150', '170', '175'],
       correctIndex: 2,
       topic: 'Arithmetic',
+      explanation: 'Working: 12/68 = 3/17, so x = 30 x 17/3 = 170.',
     ),
     MockQuestion(
       id: 'p227-44',
@@ -374,6 +417,7 @@ const PaperTest paper227 = PaperTest(
       options: ['45 days', '50 days', '55 days', '60 days'],
       correctIndex: 3,
       topic: 'Arithmetic',
+      explanation: "Working: B's daily rate = 1/10 - 1/12 = 1/60, so B alone takes 60 days.",
     ),
     // English
     MockQuestion(
@@ -383,6 +427,7 @@ const PaperTest paper227 = PaperTest(
       options: ['To hide evidence', 'To end a conflict and make peace', 'To prepare for battle', 'To postpone a decision'],
       correctIndex: 1,
       topic: 'Idioms',
+      explanation: 'To bury the hatchet means to end a quarrel or conflict and make peace.',
     ),
     MockQuestion(
       id: 'p227-46',
@@ -391,6 +436,7 @@ const PaperTest paper227 = PaperTest(
       options: ['To come up to expectations', 'Bear the consequences', 'Destroy something', 'Start a journey'],
       correctIndex: 0,
       topic: 'Idioms',
+      explanation: 'To cut the mustard means to reach the required standard or come up to expectations.',
     ),
     MockQuestion(
       id: 'p227-47',
@@ -399,6 +445,7 @@ const PaperTest paper227 = PaperTest(
       options: ['To bring something inside', 'To perform a complete task', 'Stop working', 'Carry an object'],
       correctIndex: 1,
       topic: 'Phrasal Verbs',
+      explanation: 'To carry out a task means to perform or complete it.',
     ),
     MockQuestion(
       id: 'p227-48',
@@ -407,6 +454,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Injured', 'Good luck', 'In a hurry', 'None of these'],
       correctIndex: 1,
       topic: 'Idioms',
+      explanation: 'Break a leg is an idiom used to wish someone good luck, especially before a performance.',
     ),
     MockQuestion(
       id: 'p227-49',
@@ -415,6 +463,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Paid work', 'Efficient work', 'Needed work', 'Careless work'],
       correctIndex: 1,
       topic: 'Idioms',
+      explanation: "Yeoman's work means good, efficient, hard work, well done.",
     ),
     MockQuestion(
       id: 'p227-50',
@@ -423,6 +472,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Easy work', 'Relax time', 'Difficult situation', 'Happy situation'],
       correctIndex: 2,
       topic: 'Idioms',
+      explanation: 'To be in a fix means to be in a difficult situation.',
     ),
     MockQuestion(
       id: 'p227-51',
@@ -431,6 +481,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Likely', 'Timely', 'Barely', 'Rarely'],
       correctIndex: 1,
       topic: 'Vocabulary',
+      explanation: 'Opportune means happening at a suitable or well-chosen time, that is, timely.',
     ),
     MockQuestion(
       id: 'p227-52',
@@ -439,6 +490,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Joy', 'Huff', 'Hurt', 'Irk'],
       correctIndex: 0,
       topic: 'Vocabulary',
+      explanation: 'Pique means a feeling of irritation or resentment, so its opposite is joy.',
     ),
     MockQuestion(
       id: 'p227-53',
@@ -447,6 +499,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Mock', 'Lift', 'Admire', 'Approve'],
       correctIndex: 2,
       topic: 'Vocabulary',
+      explanation: 'Deride means to mock or ridicule, so its opposite is admire.',
     ),
     MockQuestion(
       id: 'p227-54',
@@ -455,6 +508,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Fixed', 'Stable', 'Tentative', 'Permanent'],
       correctIndex: 2,
       topic: 'Vocabulary',
+      explanation: 'Experimental means based on trial or testing, so tentative, meaning not yet fixed, is the closest synonym.',
     ),
     MockQuestion(
       id: 'p227-55',
@@ -463,6 +517,7 @@ const PaperTest paper227 = PaperTest(
       options: ['I', 'my', 'me', 'your'],
       correctIndex: 2,
       topic: 'Grammar',
+      explanation: 'After let, the object pronoun is used: let you and me go, not let you and I go.',
     ),
     MockQuestion(
       id: 'p227-56',
@@ -471,6 +526,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Hostile', 'Forgive', 'Angry', 'Revenge'],
       correctIndex: 1,
       topic: 'Vocabulary',
+      explanation: 'Vindictive means seeking revenge, so its opposite is forgiving.',
     ),
     MockQuestion(
       id: 'p227-57',
@@ -479,6 +535,7 @@ const PaperTest paper227 = PaperTest(
       options: ['of', 'On', 'from', 'For'],
       correctIndex: 3,
       topic: 'Prepositions',
+      explanation: 'Punishment for a mistake uses for, which gives the reason for the punishment.',
     ),
     MockQuestion(
       id: 'p227-58',
@@ -487,6 +544,7 @@ const PaperTest paper227 = PaperTest(
       options: ['He is man with family', 'He is the man with family', 'He is a man with family', 'He is this man with family'],
       correctIndex: 2,
       topic: 'Grammar',
+      explanation: 'He is a man with family needs the indefinite article a, since no particular man has been identified.',
     ),
     MockQuestion(
       id: 'p227-59',
@@ -495,6 +553,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Spinster', 'Homicide', 'Matricide', 'Patricide'],
       correctIndex: 2,
       topic: 'Vocabulary',
+      explanation: "Matricide is the killing of one's own mother; patricide is the killing of one's father.",
     ),
     MockQuestion(
       id: 'p227-60',
@@ -503,6 +562,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Atheist / Non-believer', 'Secular / Omnist', 'Theist / Believer', 'Agnostic / Skeptic'],
       correctIndex: 1,
       topic: 'Vocabulary',
+      explanation: 'An omnist respects and believes in all religions, which is the sense meant by the secular/omnist option.',
     ),
     MockQuestion(
       id: 'p227-61',
@@ -511,6 +571,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Divorced', 'Orphan', 'Widow', 'Needy'],
       correctIndex: 2,
       topic: 'Vocabulary',
+      explanation: 'A woman whose husband has died is called a widow.',
     ),
     // Subject: PERA Laws
     MockQuestion(
@@ -520,6 +581,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Fundamental speech', 'Free education', 'Prohibited forced labour', 'Property'],
       correctIndex: 2,
       topic: 'Constitution',
+      explanation: 'Article 11 of the 1973 Constitution prohibits slavery and forced labour.',
     ),
     MockQuestion(
       id: 'p227-63',
@@ -528,6 +590,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Punjab Enforcement Regulation Act', 'Punjab Executive Revenue Authority', 'Punjab Enforcement and Regulatory Authority', 'Provincial Enforcement Revenue Authority'],
       correctIndex: 2,
       topic: 'PERA Laws',
+      explanation: 'PERA stands for Punjab Enforcement and Regulatory Authority, established under the Punjab Enforcement and Regulation Act 2024.',
     ),
     MockQuestion(
       id: 'p227-64',
@@ -536,6 +599,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Deputy Commissioner', 'Assistant Commissioner', 'Director General', 'Chief Minister'],
       correctIndex: 0,
       topic: 'PERA Laws',
+      explanation: 'The Deputy Commissioner chairs the District Enforcement and Regulatory Board, as provided for the district board.',
     ),
     MockQuestion(
       id: 'p227-65',
@@ -544,6 +608,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Evidence', 'Signature', 'Affidavit', 'Witness'],
       correctIndex: 2,
       topic: 'PERA Laws',
+      explanation: 'Under the PERA rules as framed in the question, a complaint must be supported by an affidavit.',
     ),
     MockQuestion(
       id: 'p227-66',
@@ -552,6 +617,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Minor offences', 'Major crimes', 'Civil cases', 'Criminal cases'],
       correctIndex: 0,
       topic: 'PERA Laws',
+      explanation: 'Summary trial is a shortened procedure used for minor offences, where the case is decided quickly without a full trial.',
     ),
     MockQuestion(
       id: 'p227-67',
@@ -560,6 +626,7 @@ const PaperTest paper227 = PaperTest(
       options: ['12A', '13A', '14A', '15A'],
       correctIndex: 2,
       topic: 'PERA Laws',
+      explanation: 'Under the PERA framework as framed in the question, hoarding offences are tried by a Special Magistrate appointed under section 14A of the Code of Criminal Procedure.',
     ),
     MockQuestion(
       id: 'p227-68',
@@ -568,6 +635,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Education', 'Environment protection', 'Labour', 'Fair trial'],
       correctIndex: 1,
       topic: 'Constitution',
+      explanation: 'Article 9A of the Constitution guarantees every person the right to a clean, healthy and sustainable environment.',
     ),
     MockQuestion(
       id: 'p227-69',
@@ -576,6 +644,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Supreme Court', 'Federal Court', 'Islamabad High Court', 'High Court jurisdiction'],
       correctIndex: 2,
       topic: 'Constitution',
+      explanation: 'Under the constitutional scheme as framed in the question, Article 175(1) is linked to the Islamabad High Court alongside the Supreme Court and provincial High Courts.',
     ),
     MockQuestion(
       id: 'p227-70',
@@ -584,6 +653,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Private profit', 'Public purpose', 'Commercial gain', 'Political use'],
       correctIndex: 1,
       topic: 'Constitution',
+      explanation: 'Article 24 allows compulsory acquisition of property only for a public purpose, and with compensation.',
     ),
     MockQuestion(
       id: 'p227-71',
@@ -592,6 +662,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Mandatory', 'Temporary', 'Voluntary', 'Optional'],
       correctIndex: 0,
       topic: 'PERA Laws',
+      explanation: 'Under the PERA rules as framed in the question, the buddy system for enforcement staff is mandatory, not optional.',
     ),
     MockQuestion(
       id: 'p227-72',
@@ -600,6 +671,7 @@ const PaperTest paper227 = PaperTest(
       options: ['17', '19 or above', '18', '21'],
       correctIndex: 1,
       topic: 'PERA Laws',
+      explanation: 'The Director General of PERA is an officer of Basic Pay Scale 19 or above.',
     ),
     MockQuestion(
       id: 'p227-73',
@@ -608,6 +680,7 @@ const PaperTest paper227 = PaperTest(
       options: ['DG', 'Board', 'Secretary', 'CM'],
       correctIndex: 2,
       topic: 'PERA Laws',
+      explanation: "A district board meeting called on the chairperson's direction is convened by the Secretary of the board.",
     ),
     MockQuestion(
       id: 'p227-74',
@@ -616,6 +689,7 @@ const PaperTest paper227 = PaperTest(
       options: ['DC', 'Authority', 'Board', 'Chairman'],
       correctIndex: 1,
       topic: 'PERA Laws',
+      explanation: 'Under the PERA framework as framed in the question, an Enforcement Officer is appointed by the Authority.',
     ),
     MockQuestion(
       id: 'p227-75',
@@ -624,6 +698,7 @@ const PaperTest paper227 = PaperTest(
       options: ['12 hours', '24 hours', '72 hours', '30 days'],
       correctIndex: 1,
       topic: 'PERA Laws',
+      explanation: 'An arrested person must be produced before a magistrate within 24 hours, the standard constitutional and criminal-procedure safeguard.',
     ),
     MockQuestion(
       id: 'p227-76',
@@ -632,6 +707,7 @@ const PaperTest paper227 = PaperTest(
       options: ['EO', 'IO', 'SDEO', 'AC'],
       correctIndex: 2,
       topic: 'PERA Laws',
+      explanation: 'Under the PERA rules as framed in the question, a requisition to the district board is sent by the Sub Divisional Enforcement Officer.',
     ),
     MockQuestion(
       id: 'p227-77',
@@ -640,6 +716,7 @@ const PaperTest paper227 = PaperTest(
       options: ['EO', 'IO', 'SDEO', 'All of these'],
       correctIndex: 3,
       topic: 'PERA Laws',
+      explanation: 'Under the PERA framework as framed in the question, the Authority may assign powers to enforcement, investigation and sub-divisional officers, that is, all of these.',
     ),
     MockQuestion(
       id: 'p227-78',
@@ -648,6 +725,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Officer list', 'Case list', 'Schedule appended to regulation', 'Court time table'],
       correctIndex: 2,
       topic: 'PERA Laws',
+      explanation: 'In the PERA rules, schedule means the schedule appended to the regulation itself, not a list of officers or cases.',
     ),
     MockQuestion(
       id: 'p227-79',
@@ -656,6 +734,7 @@ const PaperTest paper227 = PaperTest(
       options: ['33', '37', '40', '43'],
       correctIndex: 1,
       topic: 'PERA Laws',
+      explanation: 'Under the PERA rules as framed in the question, prohibition of encroachment is provided under section 37.',
     ),
     MockQuestion(
       id: 'p227-80',
@@ -664,6 +743,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Arrest', 'Register FIR', 'Suspend', 'Dispose of confiscated article'],
       correctIndex: 3,
       topic: 'PERA Laws',
+      explanation: 'Under the PERA rules as framed in the question, a hearing officer may dispose of a confiscated article.',
     ),
     MockQuestion(
       id: 'p227-81',
@@ -672,6 +752,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Established PERA and implement special laws', 'Special reform for property', 'Judicial reforms', 'Local government'],
       correctIndex: 0,
       topic: 'PERA Laws',
+      explanation: 'The PERA Act was made to establish the Authority and to provide procedures for enforcing special laws across Punjab.',
     ),
     MockQuestion(
       id: 'p227-82',
@@ -680,6 +761,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Weak', 'Irrelevant', 'Admissible', 'Circumstantial'],
       correctIndex: 2,
       topic: 'PERA Laws',
+      explanation: 'A statement by a dying person about the cause of death is admissible in evidence, as a dying declaration.',
     ),
     MockQuestion(
       id: 'p227-83',
@@ -688,6 +770,7 @@ const PaperTest paper227 = PaperTest(
       options: ['39', '40', '41', '42'],
       correctIndex: 0,
       topic: 'Land Revenue',
+      explanation: 'Under the Punjab Land Revenue Act 1967 as framed in the question, the record of rights is dealt with in section 39.',
     ),
     MockQuestion(
       id: 'p227-84',
@@ -696,6 +779,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Enforce laws', 'Monitor violations', 'Report offences', 'All of these'],
       correctIndex: 3,
       topic: 'PERA Laws',
+      explanation: "An Enforcement Officer's duties cover enforcing laws, monitoring violations and reporting offences, that is, all of these.",
     ),
     MockQuestion(
       id: 'p227-85',
@@ -704,6 +788,7 @@ const PaperTest paper227 = PaperTest(
       options: ['9', '10', '13', '14'],
       correctIndex: 0,
       topic: 'Land Revenue',
+      explanation: 'Under the Tenancy Act as framed in the question, the right of occupancy cannot be acquired under section 9.',
     ),
     MockQuestion(
       id: 'p227-86',
@@ -712,6 +797,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Any court matter', 'Only authorized court', 'Civil court', 'Supreme court'],
       correctIndex: 1,
       topic: 'PERA Laws',
+      explanation: 'Bar of jurisdiction means that courts other than the authorised forum are barred from hearing the matter, so only the authorised court may decide it.',
     ),
     MockQuestion(
       id: 'p227-87',
@@ -720,6 +806,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Chief Secretary', 'Sec S&GAD', 'Parliamentary Secretary', 'Director General'],
       correctIndex: 3,
       topic: 'PERA Laws',
+      explanation: 'In the Authority\'s composition, the Director General is listed as Member/Secretary, so the Director General acts as secretary of the Authority.',
     ),
     MockQuestion(
       id: 'p227-88',
@@ -728,6 +815,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Commissioner of the Division', 'Session Judge', 'Deputy Commissioner', 'High Court'],
       correctIndex: 0,
       topic: 'PERA Laws',
+      explanation: "Under the PERA Act as framed in the question, an appeal against a Hearing Officer's decision lies first to the Commissioner of the Division.",
     ),
     MockQuestion(
       id: 'p227-89',
@@ -736,6 +824,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Worker confesses', 'Investigation ends', 'Court decides', 'Owner proves not to be involved'],
       correctIndex: 3,
       topic: 'PERA Laws',
+      explanation: "Under the PERA framework as framed in the question, if a company's worker commits a violation, the owner is treated as the offender until the owner proves non-involvement.",
     ),
     MockQuestion(
       id: 'p227-90',
@@ -744,6 +833,7 @@ const PaperTest paper227 = PaperTest(
       options: ['Enforcement station', 'Police station', 'Field inspection', 'None of these'],
       correctIndex: 0,
       topic: 'PERA Laws',
+      explanation: 'Under the PERA framework as framed in the question, the investigation officer obtains the registered FIR from the enforcement station.',
     ),
   ],
   latestUpdates: [

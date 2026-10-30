@@ -23,6 +23,7 @@ const PaperTest paper229 = PaperTest(
       options: ['Australia', 'Canada', 'England', 'India'],
       correctIndex: 1,
       topic: 'Sports',
+      explanation: 'The first Commonwealth Games, then called the British Empire Games, were held in Hamilton, Canada, in 1930.',
     ),
     MockQuestion(
       id: 'p229-2',
@@ -36,6 +37,7 @@ const PaperTest paper229 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'World Leaders',
+      explanation: "Abraham Lincoln's portrait appears on the United States five-dollar note.",
     ),
     MockQuestion(
       id: 'p229-3',
@@ -44,6 +46,7 @@ const PaperTest paper229 = PaperTest(
       options: ['20', '22', '23', '21'],
       correctIndex: 1,
       topic: 'Sports',
+      explanation: 'A snooker game uses 22 balls: 15 reds, 6 colours and the cue ball.',
     ),
     MockQuestion(
       id: 'p229-4',
@@ -52,6 +55,7 @@ const PaperTest paper229 = PaperTest(
       options: ['Germany', 'France', 'Spain', 'Italy'],
       correctIndex: 1,
       topic: 'World Leaders',
+      explanation: 'Emmanuel Macron is the President of France, first elected in 2017.',
     ),
     MockQuestion(
       id: 'p229-5',
@@ -65,6 +69,7 @@ const PaperTest paper229 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'The Government of India Act 1935 abolished dyarchy in the provinces, replacing it with provincial autonomy.',
     ),
     MockQuestion(
       id: 'p229-6',
@@ -74,6 +79,7 @@ const PaperTest paper229 = PaperTest(
       options: ['Geneva', 'Paris', 'New York', 'London'],
       correctIndex: 2,
       topic: 'World Organisations',
+      explanation: 'The headquarters of the United Nations is in New York City, United States.',
     ),
     MockQuestion(
       id: 'p229-7',
@@ -83,6 +89,7 @@ const PaperTest paper229 = PaperTest(
       options: ['2000', '2003', '2006', '2010'],
       correctIndex: 2,
       topic: 'World Organisations',
+      explanation: 'The United Nations Human Rights Council was established in 2006, replacing the earlier Commission on Human Rights.',
     ),
     MockQuestion(
       id: 'p229-8',
@@ -96,6 +103,7 @@ const PaperTest paper229 = PaperTest(
       ],
       correctIndex: 3,
       topic: 'Current Affairs',
+      explanation: "Pivot to Asia was the US policy of shifting diplomatic, economic and military focus toward the Asia-Pacific, chiefly to manage China's rise.",
     ),
     MockQuestion(
       id: 'p229-9',
@@ -104,6 +112,7 @@ const PaperTest paper229 = PaperTest(
       options: ['Badauni', 'Ibn Battuta', 'Abdul Hamid Lahori', 'Al-Biruni'],
       correctIndex: 2,
       topic: 'History',
+      explanation: "Badshahnama, the court history of Shah Jahan's reign, was written by Abdul Hamid Lahori.",
     ),
     MockQuestion(
       id: 'p229-10',
@@ -112,6 +121,7 @@ const PaperTest paper229 = PaperTest(
       options: ['Ayub Khan', 'Iskandar Mirza', 'Yahya Khan', 'Zia-ul-Haq'],
       correctIndex: 2,
       topic: 'History',
+      explanation: "The One Unit Scheme, which merged West Pakistan's provinces, was abolished by Yahya Khan in 1970.",
     ),
     MockQuestion(
       id: 'p229-11',
@@ -125,6 +135,7 @@ const PaperTest paper229 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'The Quaid-e-Azam Library in Lahore is the biggest library of Punjab, as framed in the question.',
     ),
     MockQuestion(
       id: 'p229-12',
@@ -134,6 +145,7 @@ const PaperTest paper229 = PaperTest(
       options: ['1965', '1972', '1970', '1975'],
       correctIndex: 1,
       topic: 'History',
+      explanation: "Pakistan's first nuclear power plant at Karachi (KANUPP) began operating in 1972.",
     ),
     MockQuestion(
       id: 'p229-13',
@@ -142,6 +154,7 @@ const PaperTest paper229 = PaperTest(
       options: ['Deuteron', 'Proton', 'Neutron', 'Electron'],
       correctIndex: 2,
       topic: 'Physics',
+      explanation: 'Nuclear fission is triggered when a neutron strikes a heavy nucleus, splitting it and releasing energy.',
     ),
     MockQuestion(
       id: 'p229-14',
@@ -151,6 +164,7 @@ const PaperTest paper229 = PaperTest(
       options: ['Powder type', 'Foam', 'Soda acid', 'Liquid type'],
       correctIndex: 1,
       topic: 'Chemistry',
+      explanation: 'Foam extinguishers are used for petroleum fires because foam smothers the flames; water would spread burning fuel.',
     ),
     MockQuestion(
       id: 'p229-15',
@@ -159,6 +173,7 @@ const PaperTest paper229 = PaperTest(
       options: ['15/17', '8/17', '17/15', '7/17'],
       correctIndex: 1,
       topic: 'Trigonometry',
+      explanation: 'Working: sin x = 15/17 gives a 8-15-17 triangle, so cos x = 8/17.',
     ),
     MockQuestion(
       id: 'p229-16',
@@ -167,6 +182,7 @@ const PaperTest paper229 = PaperTest(
       options: ['3/√34', '5/3', '√34/5', '5/√34'],
       correctIndex: 3,
       topic: 'Trigonometry',
+      explanation: 'Working: tan x = 3/5 gives opposite 3 and adjacent 5, so hypotenuse is sqrt(34) and cos x = 5/sqrt(34).',
     ),
     MockQuestion(
       id: 'p229-17',
@@ -175,6 +191,7 @@ const PaperTest paper229 = PaperTest(
       options: ['3.2', '5.2', '4.2', '2.2'],
       correctIndex: 0,
       topic: 'Percentage',
+      explanation: 'Working: 8 percent of 40 = 0.08 x 40 = 3.2.',
     ),
     MockQuestion(
       id: 'p229-18',
@@ -184,6 +201,7 @@ const PaperTest paper229 = PaperTest(
       options: ['30', '32', '20', '8'],
       correctIndex: 1,
       topic: 'Percentage',
+      explanation: 'Working: girls are 20 percent of 40 = 8, so boys are 40 - 8 = 32.',
     ),
     MockQuestion(
       id: 'p229-19',
@@ -193,6 +211,7 @@ const PaperTest paper229 = PaperTest(
       options: ['Muharram', 'Rajab', 'Ramazan', 'Shawwal'],
       correctIndex: 2,
       topic: 'Khulafa-e-Rashideen',
+      explanation: 'Hazrat Ali (RA) was martyred in the month of Ramazan, after being attacked during prayer.',
     ),
     MockQuestion(
       id: 'p229-20',
@@ -207,6 +226,7 @@ const PaperTest paper229 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Sahaba',
+      explanation: 'Hazrat Amr bin Al-Aas (RA) was known for his political skill and shrewdness, earning the title brain of the Arabs.',
     ),
     MockQuestion(
       id: 'p229-21',
@@ -215,6 +235,7 @@ const PaperTest paper229 = PaperTest(
       options: ['Hesitate', 'Speculate', 'Address', 'Insult'],
       correctIndex: 2,
       topic: 'Vocabulary',
+      explanation: 'To accost someone means to approach and address them, often boldly, so address is the synonym.',
     ),
     MockQuestion(
       id: 'p229-22',
@@ -224,6 +245,7 @@ const PaperTest paper229 = PaperTest(
       options: ['Subject', 'Object', 'Predicate', 'Clause'],
       correctIndex: 2,
       topic: 'Grammar',
+      explanation: 'He is the subject, and studies smoothly, the verb with its adverb, is the predicate, saying what the subject does.',
     ),
     MockQuestion(
       id: 'p229-23',
@@ -238,6 +260,7 @@ const PaperTest paper229 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Idioms',
+      explanation: "To fly off the handle means to lose one's temper suddenly.",
     ),
     MockQuestion(
       id: 'p229-24',
@@ -246,6 +269,7 @@ const PaperTest paper229 = PaperTest(
       options: ['چھوٹا', 'سیدھا', 'ٹیڑھا', 'گندا'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'The proverb says that a person who cannot dance blames the courtyard, so teerha (crooked) completes it.',
     ),
     MockQuestion(
       id: 'p229-25',
@@ -254,6 +278,7 @@ const PaperTest paper229 = PaperTest(
       options: ['محبت ہونا', 'محبت ختم ہونا', 'لڑائی ہونا', 'کوئی نہیں'],
       correctIndex: 1,
       topic: 'Urdu',
+      explanation: 'The idiom means that affection or love has ended, that warmth between people has gone cold.',
     ),
   ],
   latestUpdates: [],

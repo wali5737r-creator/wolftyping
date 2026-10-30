@@ -22,6 +22,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Morocco', 'India', 'Australia', 'Pakistan'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'Naveed Akram was born in Sydney, Australia, and is an Australian-born citizen.',
     ),
     MockQuestion(
       id: 'p236-2',
@@ -30,6 +31,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Finland', 'Uruguay', 'Norway', 'Estonia'],
       correctIndex: 2,
       topic: 'World Geography',
+      explanation: 'Norway is both a Scandinavian country (on the Scandinavian Peninsula) and a Nordic country, while Finland is Nordic but not Scandinavian.',
     ),
     MockQuestion(
       id: 'p236-3',
@@ -38,6 +40,7 @@ const PaperTest paper236 = PaperTest(
       options: ['China', 'Pakistan', 'Indonesia', 'India'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'The 1955 Bandung Conference, the meeting of Asian and African states, was held in Bandung, Indonesia.',
     ),
     MockQuestion(
       id: 'p236-4',
@@ -46,6 +49,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Fauji Fertilizer Company', 'Engro', 'Fatima Fertilizer', 'Pak Arab'],
       correctIndex: 2,
       topic: 'Industry',
+      explanation: 'Fatima Fertilizer sells fertiliser in Pakistan under the Sarsabz brand.',
     ),
     MockQuestion(
       id: 'p236-5',
@@ -54,6 +58,7 @@ const PaperTest paper236 = PaperTest(
       options: ['1956 Constitution', '1962 Constitution', '1973 Constitution', '2010 Amendment'],
       correctIndex: 2,
       topic: 'Constitution',
+      explanation: 'The 1973 Constitution declares Islam to be the state religion of Pakistan.',
     ),
     MockQuestion(
       id: 'p236-6',
@@ -67,6 +72,7 @@ const PaperTest paper236 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Constitution',
+      explanation: "Under the 1956 Constitution, the country's official name became the Islamic Republic of Pakistan.",
     ),
     MockQuestion(
       id: 'p236-7',
@@ -75,6 +81,7 @@ const PaperTest paper236 = PaperTest(
       options: ['1983', '1980', '1985', '1988'],
       correctIndex: 2,
       topic: 'Elections',
+      explanation: "Pakistan's non-party-based general elections were held in 1985.",
     ),
     MockQuestion(
       id: 'p236-8',
@@ -83,6 +90,7 @@ const PaperTest paper236 = PaperTest(
       options: ['1988', '1985', '1970', '1990'],
       correctIndex: 2,
       topic: 'Elections',
+      explanation: 'Pakistan held its first general elections in 1970, on the basis of adult franchise.',
     ),
     MockQuestion(
       id: 'p236-9',
@@ -91,6 +99,7 @@ const PaperTest paper236 = PaperTest(
       options: ['92', '88', '96', '104'],
       correctIndex: 2,
       topic: 'Parliament',
+      explanation: 'The Senate of Pakistan now has 96 members, after its strength was reduced from 104.',
     ),
     MockQuestion(
       id: 'p236-10',
@@ -99,6 +108,7 @@ const PaperTest paper236 = PaperTest(
       options: ['1966', '1965', '1967', '1968'],
       correctIndex: 2,
       topic: 'Personalities',
+      explanation: 'Fatima Jinnah passed away in 1967.',
     ),
     MockQuestion(
       id: 'p236-11',
@@ -112,6 +122,7 @@ const PaperTest paper236 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Constitution',
+      explanation: 'At independence in 1947, Pakistan was governed under the Government of India Act 1935, as adapted for Pakistan.',
     ),
     MockQuestion(
       id: 'p236-12',
@@ -120,6 +131,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Turkey', 'Saudi Arabia', 'Pakistan', 'China'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'Pakistan helped mediate an end to the recent United States-Iran conflict, a role publicly credited by the UN Secretary-General.',
     ),
     MockQuestion(
       id: 'p236-13',
@@ -128,6 +140,7 @@ const PaperTest paper236 = PaperTest(
       options: ['David Malpass', 'Kristalina Georgieva', 'Ajay Banga', 'Jim Yong Kim'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'Ajay Banga is the President of the World Bank Group.',
     ),
     MockQuestion(
       id: 'p236-14',
@@ -136,6 +149,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Mike Pompeo', 'Antony Blinken', 'Marco Rubio', 'John Kerry'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'Marco Rubio is the United States Secretary of State.',
     ),
     MockQuestion(
       id: 'p236-15',
@@ -144,6 +158,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Canada', 'Brazil', 'Venezuela', 'Colombia'],
       correctIndex: 2,
       topic: 'World Leaders',
+      explanation: 'Nicolas Maduro was the president of Venezuela, before he ceased to hold the office in January 2026.',
     ),
     MockQuestion(
       id: 'p236-16',
@@ -152,6 +167,7 @@ const PaperTest paper236 = PaperTest(
       options: ['United States', 'China', 'India', 'Brazil'],
       correctIndex: 2,
       topic: 'Summits',
+      explanation: 'India hosted the G20 Summit in 2023.',
     ),
     MockQuestion(
       id: 'p236-17',
@@ -160,6 +176,7 @@ const PaperTest paper236 = PaperTest(
       options: ['230 million', '220 million', '241 million', '250 million'],
       correctIndex: 2,
       topic: 'Census',
+      explanation: "According to the 7th digital census of 2023, Pakistan's population is about 241 million.",
     ),
     MockQuestion(
       id: 'p236-18',
@@ -168,6 +185,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Mian Mansha group', 'Malik Riaz group', 'Arif Habib group', 'Nasir Schon group'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'The Arif Habib-led consortium won the December 2025 auction for a majority stake in PIA.',
     ),
     MockQuestion(
       id: 'p236-19',
@@ -176,6 +194,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Ravi', 'Indus', 'Chenab', 'Jhelum'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: 'The Trimmu Barrage spans the Chenab River in Punjab.',
     ),
     MockQuestion(
       id: 'p236-20',
@@ -184,6 +203,7 @@ const PaperTest paper236 = PaperTest(
       options: ['2015', '2014', '2016', '2017'],
       correctIndex: 2,
       topic: 'Ports',
+      explanation: 'Gwadar Port became formally operational in November 2016, when its first trade convoy was seen off.',
     ),
     MockQuestion(
       id: 'p236-21',
@@ -192,6 +212,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Lachlan River', 'Darling River', 'Murray River', 'Murrumbidgee River'],
       correctIndex: 2,
       topic: 'World Geography',
+      explanation: 'The Hume Dam stands on the Murray River in Australia.',
     ),
     MockQuestion(
       id: 'p236-22',
@@ -200,6 +221,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Punjab', 'Sindh', 'Balochistan', 'Khyber Pakhtunkhwa'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: 'The Hub Dam lies in Balochistan, on the Hub River near the Sindh border.',
     ),
     MockQuestion(
       id: 'p236-23',
@@ -208,6 +230,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Syria', 'Iraq', 'Tajikistan', 'Uzbekistan'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: 'Tajikistan lies nearest to Pakistan without sharing a land border, separated from it only by the narrow Wakhan Corridor of Afghanistan.',
     ),
     MockQuestion(
       id: 'p236-24',
@@ -216,6 +239,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Iron', 'Gold', 'Coal', 'Copper'],
       correctIndex: 2,
       topic: 'Minerals',
+      explanation: 'The Sor (Sur) Range near Quetta is known for its coalfield, the Degari-Sor-Range coalfield.',
     ),
     MockQuestion(
       id: 'p236-25',
@@ -224,6 +248,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Marie Curie', 'Ernest Rutherford', 'Victor Hess', 'Niels Bohr'],
       correctIndex: 2,
       topic: 'Physics',
+      explanation: 'Victor Hess discovered cosmic rays, for which he later received the Nobel Prize in Physics.',
     ),
     MockQuestion(
       id: 'p236-26',
@@ -232,6 +257,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Mass', 'Volume', 'Temperature', 'Density'],
       correctIndex: 2,
       topic: 'Physics',
+      explanation: 'At constant volume, the pressure of a gas rises with its temperature, since the gas molecules strike the walls more forcefully.',
     ),
     MockQuestion(
       id: 'p236-27',
@@ -240,6 +266,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Medulla', 'Cerebrum', 'Cerebellum', 'Thalamus'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: 'The cerebellum controls balance and coordination of body movements.',
     ),
     MockQuestion(
       id: 'p236-28',
@@ -248,6 +275,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Mixture', 'Isotope', 'Allotropic form', 'Compound'],
       correctIndex: 2,
       topic: 'Chemistry',
+      explanation: 'Diamond is an allotrope of carbon: the same element arranged in a different crystal structure from graphite.',
     ),
     MockQuestion(
       id: 'p236-29',
@@ -256,6 +284,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Sulfur', 'Coal', 'Graphite', 'Silicon'],
       correctIndex: 2,
       topic: 'Chemistry',
+      explanation: 'Pencil lead is made of graphite, a soft form of carbon, not the metal lead.',
     ),
     MockQuestion(
       id: 'p236-30',
@@ -264,6 +293,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Gregor Mendel', 'Jean-Baptiste Lamarck', 'Charles Darwin', 'Alfred Wallace'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: "Charles Darwin's work established the theory of evolution by natural selection.",
     ),
     MockQuestion(
       id: 'p236-31',
@@ -272,6 +302,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Petrol', 'Oil', 'Alcohol', 'Wax'],
       correctIndex: 2,
       topic: 'Chemistry',
+      explanation: 'Alcohol mixes easily with water, while petrol, oil and wax do not dissolve in it.',
     ),
     MockQuestion(
       id: 'p236-32',
@@ -280,6 +311,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Marie Curie', 'Wilhelm Rontgen', 'Paul Villard', 'Henri Becquerel'],
       correctIndex: 2,
       topic: 'Physics',
+      explanation: 'Paul Villard discovered gamma rays, the high-energy radiation emitted by atomic nuclei.',
     ),
     MockQuestion(
       id: 'p236-33',
@@ -288,6 +320,7 @@ const PaperTest paper236 = PaperTest(
       options: ['EPRAM', 'DRAM (Dynamic RAM)', 'SRAM (Static RAM)', 'None of these'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'SRAM is faster than DRAM because it does not need constant refreshing to hold its data.',
     ),
     MockQuestion(
       id: 'p236-34',
@@ -296,6 +329,7 @@ const PaperTest paper236 = PaperTest(
       options: ['DNS', 'ISP', 'DHCP', 'ICANN'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'DHCP, the Dynamic Host Configuration Protocol, assigns IP addresses to devices on a network.',
     ),
     MockQuestion(
       id: 'p236-35',
@@ -309,6 +343,7 @@ const PaperTest paper236 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'Virtual memory extends the available RAM by using part of the disk as if it were memory.',
     ),
     MockQuestion(
       id: 'p236-36',
@@ -317,6 +352,7 @@ const PaperTest paper236 = PaperTest(
       options: ['16', '24', '32', '64'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'An IPv4 address is 32 bits long, written as four numbers separated by dots.',
     ),
     MockQuestion(
       id: 'p236-37',
@@ -325,6 +361,7 @@ const PaperTest paper236 = PaperTest(
       options: ['24', '64', '128', '256'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'An IPv6 address is 128 bits long, giving a far larger address space than IPv4.',
     ),
     MockQuestion(
       id: 'p236-38',
@@ -333,6 +370,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Wizard', 'Template', 'Mail Merge', 'Macro'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'Mail Merge produces many personalised letters from a single template and a list of recipients.',
     ),
     MockQuestion(
       id: 'p236-39',
@@ -341,6 +379,7 @@ const PaperTest paper236 = PaperTest(
       options: ['FTP', 'HTTP', 'HTTPS', 'SMPT'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'HTTPS is the secure, encrypted version of HTTP, used for safe data transfer over the web.',
     ),
     MockQuestion(
       id: 'p236-40',
@@ -354,6 +393,7 @@ const PaperTest paper236 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: "A firewall's primary function is to block unauthorised access and threats to a network.",
     ),
     MockQuestion(
       id: 'p236-41',
@@ -362,6 +402,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Hardware fault', 'Virus attack', 'Social engineering attack', 'Network error'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'Phishing is a social engineering attack: tricking people into revealing passwords or other sensitive information.',
     ),
     MockQuestion(
       id: 'p236-42',
@@ -370,6 +411,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Tables', 'Formulas', 'Automated scripts', 'Charts'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'In MS Excel, macros are automated scripts that carry out a recorded series of steps.',
     ),
     MockQuestion(
       id: 'p236-43',
@@ -378,6 +420,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Ring', 'Client-server', 'Peer-to-peer', 'Star'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'A peer-to-peer network has no central server; each computer shares resources directly with the others.',
     ),
     MockQuestion(
       id: 'p236-44',
@@ -386,6 +429,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Design and operation', 'Debug and operating', 'Development and operations', 'Data and operation'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'DevOps stands for Development and Operations, combining software development with IT operations.',
     ),
     MockQuestion(
       id: 'p236-45',
@@ -394,6 +438,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Dropbox', 'Google Drive', 'OneDrive', 'iCloud'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: "OneDrive is Microsoft's cloud storage service.",
     ),
     MockQuestion(
       id: 'p236-46',
@@ -402,6 +447,7 @@ const PaperTest paper236 = PaperTest(
       options: ['UDP', 'HTTP', 'TCP', 'IP'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'TCP is the protocol mainly responsible for reliable, ordered delivery of data over a network.',
     ),
     MockQuestion(
       id: 'p236-47',
@@ -410,6 +456,7 @@ const PaperTest paper236 = PaperTest(
       options: ['MS Excel', 'MS Word', 'MS Publisher', 'MS PowerPoint'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: "Newsletters and desktop publishing are done in MS Publisher, Microsoft's page-layout application.",
     ),
     MockQuestion(
       id: 'p236-48',
@@ -419,6 +466,7 @@ const PaperTest paper236 = PaperTest(
       options: ['15 m', '10 m', '12 m', '20 m'],
       correctIndex: 2,
       topic: 'Geometry',
+      explanation: 'Working: by Pythagoras, height = square root of (13^2 - 5^2) = square root of 144 = 12 m.',
     ),
     MockQuestion(
       id: 'p236-49',
@@ -427,6 +475,7 @@ const PaperTest paper236 = PaperTest(
       options: ['44.24 cm2', '54.24 cm2', '50.27 cm2', '24.27 cm2'],
       correctIndex: 2,
       topic: 'Geometry',
+      explanation: "Working: the square's side is 8 cm, so the inscribed circle has radius 4 cm and area 16 x pi = about 50.27 cm2.",
     ),
     MockQuestion(
       id: 'p236-50',
@@ -435,6 +484,7 @@ const PaperTest paper236 = PaperTest(
       options: ['x = 3, -1', 'x = 1, -2', 'x = 2, -1/2', 'x = -1, 1/2'],
       correctIndex: 2,
       topic: 'Algebra',
+      explanation: 'Working: 2x^2 - 3x - 2 = (2x + 1)(x - 2) = 0, so x = 2 or x = -1/2.',
     ),
     MockQuestion(
       id: 'p236-51',
@@ -443,6 +493,7 @@ const PaperTest paper236 = PaperTest(
       options: ['1800', '1500', '2000', '2500'],
       correctIndex: 2,
       topic: 'Percentages',
+      explanation: 'Working: 75% attended, so 25% did not attend, and 25% of 8000 = 2000 people.',
     ),
     MockQuestion(
       id: 'p236-52',
@@ -451,6 +502,7 @@ const PaperTest paper236 = PaperTest(
       options: ['3rd', '1st', '2nd', '4th'],
       correctIndex: 2,
       topic: 'Coordinate Geometry',
+      explanation: 'With x and y positive, the point (-x, y) has a negative x-coordinate and a positive y-coordinate, which is the 2nd quadrant.',
     ),
     MockQuestion(
       id: 'p236-53',
@@ -459,6 +511,7 @@ const PaperTest paper236 = PaperTest(
       options: ['25', '24', '27', '30'],
       correctIndex: 2,
       topic: 'Ratios',
+      explanation: 'Working: flour = 18 x 3/2 = 27 units, keeping the 2:3 ratio of sugar to flour.',
     ),
     MockQuestion(
       id: 'p236-54',
@@ -467,6 +520,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Weakness', 'Courage', 'Apathy', 'Intelligence'],
       correctIndex: 2,
       topic: 'Vocabulary',
+      explanation: 'Gumption means initiative and courage, so its antonym is apathy, meaning lack of interest or initiative.',
     ),
     MockQuestion(
       id: 'p236-55',
@@ -475,6 +529,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Calm', 'Shy', 'Vixen', 'Fear'],
       correctIndex: 2,
       topic: 'Vocabulary',
+      explanation: 'A termagant is a quarrelsome, ill-tempered woman, and vixen is used in the same sense.',
     ),
     MockQuestion(
       id: 'p236-56',
@@ -483,6 +538,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Smelly', 'Rotten', 'Fragrant', 'Stinking'],
       correctIndex: 2,
       topic: 'Vocabulary',
+      explanation: 'Malodorous means bad-smelling, so its antonym is fragrant, meaning sweet-smelling.',
     ),
     MockQuestion(
       id: 'p236-57',
@@ -491,6 +547,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Nose', 'Mouth', 'Ear', 'Hand'],
       correctIndex: 2,
       topic: 'Analogy',
+      explanation: 'Blindness is the loss of sight through the eye, just as deafness is the loss of hearing through the ear.',
     ),
     MockQuestion(
       id: 'p236-58',
@@ -499,6 +556,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Earth', 'Draft', 'Dry', 'Cow'],
       correctIndex: 2,
       topic: 'Analogy',
+      explanation: 'Arid and parched are synonyms for very dry, and droughty likewise means dry.',
     ),
     MockQuestion(
       id: 'p236-59',
@@ -507,6 +565,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Close', 'Shower', 'Score', 'Praise'],
       correctIndex: 2,
       topic: 'Analogy',
+      explanation: 'A coif is a way of arranging or covering the hair, just as a score is the written form of music.',
     ),
     MockQuestion(
       id: 'p236-60',
@@ -515,6 +574,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Honest', 'Flexible', 'Obstinate', 'Cheerful'],
       correctIndex: 2,
       topic: 'Vocabulary',
+      explanation: "Stubborn means refusing to change one's mind, which is the meaning of obstinate.",
     ),
     MockQuestion(
       id: 'p236-61',
@@ -523,6 +583,7 @@ const PaperTest paper236 = PaperTest(
       options: ['to', 'from', 'with', 'at'],
       correctIndex: 2,
       topic: 'Prepositions',
+      explanation: 'Part with is the phrasal verb used when someone separates from people or gives something up.',
     ),
     MockQuestion(
       id: 'p236-62',
@@ -531,6 +592,7 @@ const PaperTest paper236 = PaperTest(
       options: ['lake', 'Pond', 'Island', 'sea'],
       correctIndex: 2,
       topic: 'Proverbs',
+      explanation: 'The proverb, from John Donne, is: No man is an island entire of itself.',
     ),
     MockQuestion(
       id: 'p236-63',
@@ -539,6 +601,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Will', 'Must', 'Should', 'Shall'],
       correctIndex: 2,
       topic: 'Grammar',
+      explanation: "Should expresses moral duty or advice, which fits the obligation to respect one's elders.",
     ),
     MockQuestion(
       id: 'p236-64',
@@ -547,6 +610,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Surah Al-Maidah', 'Surah Al-Imran', 'Surah Al-Nisa', 'Surah Al-Baqarah'],
       correctIndex: 3,
       topic: 'Quranic Studies',
+      explanation: 'In the account of his martyrdom, Hazrat Usman (R.A.) was reciting the Holy Quran, and the surah named in this account is Surah Al-Baqarah.',
     ),
     MockQuestion(
       id: 'p236-65',
@@ -555,6 +619,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Hazrat Usman (R.A.)', 'Hazrat Umar (R.A.)', 'Hazrat Ali (R.A.)', 'Hazrat Abu Bakr (R.A.)'],
       correctIndex: 2,
       topic: 'Battles',
+      explanation: 'In this account of the Battle of Khyber, the Al-Natah Fort was conquered by Hazrat Ali (R.A.).',
     ),
     MockQuestion(
       id: 'p236-66',
@@ -564,6 +629,7 @@ const PaperTest paper236 = PaperTest(
       options: ['English', 'Arabic', 'Persian', 'Sindhi'],
       correctIndex: 2,
       topic: 'Quranic Studies',
+      explanation: "The well-known complete translation of the Holy Quran in the subcontinent's translation tradition is the Persian one.",
     ),
     MockQuestion(
       id: 'p236-67',
@@ -572,6 +638,7 @@ const PaperTest paper236 = PaperTest(
       options: ['نذر', 'بانڈی', 'ان میں سے کوئی نہیں', 'مکاتبت'],
       correctIndex: 3,
       topic: 'Islamic Law',
+      explanation: 'Mukatabat is the contract by which a master agrees to free a slave on agreed terms, usually payment.',
     ),
     MockQuestion(
       id: 'p236-68',
@@ -580,6 +647,7 @@ const PaperTest paper236 = PaperTest(
       options: ['Hajj', 'Zakat', 'Fasting', 'Usury'],
       correctIndex: 3,
       topic: 'Prohibitions',
+      explanation: 'After the advent of Islam, usury (riba), charging interest on loans, was forbidden, while Hajj, Zakat and fasting were enjoined.',
     ),
     MockQuestion(
       id: 'p236-69',
@@ -593,6 +661,7 @@ const PaperTest paper236 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: "The proverb means searching far away for something that is already close at hand, like a child held in one's own arms.",
     ),
     MockQuestion(
       id: 'p236-70',
@@ -601,6 +670,7 @@ const PaperTest paper236 = PaperTest(
       options: ['اسم معرفہ', 'اسم مشتق', 'اسم مطلق', 'اسم جامد'],
       correctIndex: 3,
       topic: 'Urdu',
+      explanation: 'An ism jamid is a word that is neither formed from another word nor gives rise to a derived noun.',
     ),
     MockQuestion(
       id: 'p236-71',
@@ -614,6 +684,7 @@ const PaperTest paper236 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'The proverb means that people treat a weak or poor person with undue familiarity, as if all were his kin.',
     ),
     MockQuestion(
       id: 'p236-72',
@@ -622,6 +693,7 @@ const PaperTest paper236 = PaperTest(
       options: ['دروازہ بند کر دینا', 'کھول کر دکھانا', 'کوئی جواب نہ دینا', 'ڈانٹ کر بھگا دینا'],
       correctIndex: 3,
       topic: 'Urdu',
+      explanation: 'The idiom means to scold someone and drive them away with a rebuke.',
     ),
     MockQuestion(
       id: 'p236-73',
@@ -630,6 +702,7 @@ const PaperTest paper236 = PaperTest(
       options: ['امیر ہو جانا', 'تعلق قائم کرنا', 'دھوکہ کھانا', 'خودکشی کرنا'],
       correctIndex: 3,
       topic: 'Urdu',
+      explanation: "The idiom means to take poison and end one's own life.",
     ),
     MockQuestion(
       id: 'p236-74',
@@ -638,6 +711,7 @@ const PaperTest paper236 = PaperTest(
       options: ['وقفہ (۔)', 'ندائیہ (!)', 'استفہامیہ (؟)', 'سکتہ (،)'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'A question is marked at the end of the sentence by the question mark (istifhamia).',
     ),
     MockQuestion(
       id: 'p236-75',
@@ -646,6 +720,7 @@ const PaperTest paper236 = PaperTest(
       options: ['لاحقہ', 'فعل', 'صفت', 'سابقہ'],
       correctIndex: 3,
       topic: 'Urdu',
+      explanation: 'In nakhush, the na at the start is a sabiqa, a prefix added before the root word.',
     ),
     MockQuestion(
       id: 'p236-76',
@@ -654,6 +729,7 @@ const PaperTest paper236 = PaperTest(
       options: ['۔', '،', ':', '؟'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'A colon is placed before a list or detailed explanation.',
     ),
     MockQuestion(
       id: 'p236-77',
@@ -662,6 +738,7 @@ const PaperTest paper236 = PaperTest(
       options: ['صنعت تجنیس', 'صنعت ایہام', 'صنعت تضاد', 'لف و نشر'],
       correctIndex: 3,
       topic: 'Urdu',
+      explanation: 'Laf-o-nashr is the figure of speech in which two things are mentioned together and then explained one by one.',
     ),
     MockQuestion(
       id: 'p236-78',
@@ -675,6 +752,7 @@ const PaperTest paper236 = PaperTest(
       ],
       correctIndex: 3,
       topic: 'Urdu',
+      explanation: 'The proverb mocks someone who claims learning while knowing nothing: educated in name only, like Muhammad Fazil.',
     ),
   ],
   latestUpdates: [

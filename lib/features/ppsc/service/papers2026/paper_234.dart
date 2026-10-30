@@ -23,6 +23,7 @@ const PaperTest paper234 = PaperTest(
       options: ['Qatar', 'Bahrain', 'Maldives', 'Brunei'],
       correctIndex: 2,
       topic: 'World Geography',
+      explanation: 'Of the countries listed, the Maldives is the smallest by land area, smaller than Bahrain, Qatar and Brunei.',
     ),
     MockQuestion(
       id: 'p234-2',
@@ -36,6 +37,7 @@ const PaperTest paper234 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'First Ministers',
+      explanation: 'Jogendra Nath Mandal served as the first law minister of Pakistan.',
     ),
     MockQuestion(
       id: 'p234-3',
@@ -45,6 +47,7 @@ const PaperTest paper234 = PaperTest(
       options: ['18', '15', '20', '17'],
       correctIndex: 3,
       topic: 'United Nations',
+      explanation: 'The United Nations 2030 Agenda contains 17 Sustainable Development Goals.',
     ),
     MockQuestion(
       id: 'p234-4',
@@ -53,6 +56,7 @@ const PaperTest paper234 = PaperTest(
       options: ['Shah Jahan', 'Jahangir', 'Akbar', 'Babur'],
       correctIndex: 2,
       topic: 'Mughal History',
+      explanation: 'Akbar is credited with the first major brick construction of Lahore Fort, later extended by his successors.',
     ),
     MockQuestion(
       id: 'p234-5',
@@ -67,6 +71,7 @@ const PaperTest paper234 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Sports',
+      explanation: 'Novak Djokovic leads the men\'s singles Grand Slam tally with 24 titles.',
     ),
     MockQuestion(
       id: 'p234-6',
@@ -75,6 +80,7 @@ const PaperTest paper234 = PaperTest(
       options: ['Solar energy', 'Wind energy', 'Hydropower', 'Fossil fuels'],
       correctIndex: 3,
       topic: 'Energy',
+      explanation: 'Fossil fuels are formed over millions of years and cannot be replaced once used up, unlike solar, wind and hydropower.',
     ),
     MockQuestion(
       id: 'p234-7',
@@ -83,6 +89,7 @@ const PaperTest paper234 = PaperTest(
       options: ['Iron', 'Copper', 'Aluminium', 'Silicon'],
       correctIndex: 3,
       topic: 'Physics',
+      explanation: 'Photovoltaic solar cells are chiefly made from silicon, a semiconductor.',
     ),
     MockQuestion(
       id: 'p234-8',
@@ -91,6 +98,7 @@ const PaperTest paper234 = PaperTest(
       options: ['Vulgar', 'Irreligious', 'Disrespectful', 'Respectful'],
       correctIndex: 3,
       topic: 'Vocabulary',
+      explanation: 'Profane means disrespectful towards what is sacred, so its opposite here is respectful.',
     ),
     MockQuestion(
       id: 'p234-9',
@@ -99,6 +107,7 @@ const PaperTest paper234 = PaperTest(
       options: ['Honest', 'Kind', 'Generous', 'Envious'],
       correctIndex: 3,
       topic: 'Vocabulary',
+      explanation: 'Jealous means feeling envy at someone else\'s advantage, which is the same as envious.',
     ),
     MockQuestion(
       id: 'p234-10',
@@ -107,6 +116,7 @@ const PaperTest paper234 = PaperTest(
       options: ['Are', 'Have', 'Was', 'Were'],
       correctIndex: 2,
       topic: 'Grammar',
+      explanation: 'Each is singular, so it takes the singular verb was: each of the boys was rewarded.',
     ),
     MockQuestion(
       id: 'p234-11',
@@ -120,6 +130,7 @@ const PaperTest paper234 = PaperTest(
       ],
       correctIndex: 3,
       topic: 'Voice',
+      explanation: 'An imperative in the passive takes the form let plus object plus be plus past participle: let this be done by me.',
     ),
     MockQuestion(
       id: 'p234-12',
@@ -128,6 +139,7 @@ const PaperTest paper234 = PaperTest(
       options: ['Community', 'Communication', 'Computer', 'Commercial'],
       correctIndex: 3,
       topic: 'Computer',
+      explanation: 'The .com in a web address stands for commercial, originally for commercial websites.',
     ),
     MockQuestion(
       id: 'p234-13',
@@ -141,6 +153,7 @@ const PaperTest paper234 = PaperTest(
       ],
       correctIndex: 3,
       topic: 'Abbreviations',
+      explanation: 'NCOC stands for National Command and Operation Centre, Pakistan\'s coordination body during the COVID-19 pandemic.',
     ),
     MockQuestion(
       id: 'p234-14',
@@ -149,6 +162,7 @@ const PaperTest paper234 = PaperTest(
       options: ['.ppt', '.txt', '.xls', '.docx'],
       correctIndex: 3,
       topic: 'Computer',
+      explanation: 'The .docx extension belongs to a Microsoft Word document.',
     ),
     MockQuestion(
       id: 'p234-15',
@@ -162,6 +176,7 @@ const PaperTest paper234 = PaperTest(
       ],
       correctIndex: 3,
       topic: 'Geography',
+      explanation: 'Rasul, Balloki and Trimmu barrages are in Punjab, while Sukkur Barrage is in Sindh, outside Punjab.',
     ),
     MockQuestion(
       id: 'p234-16',
@@ -170,6 +185,7 @@ const PaperTest paper234 = PaperTest(
       options: ['1928', '1931', '1929', '1930'],
       correctIndex: 3,
       topic: 'Pakistan Movement',
+      explanation: 'Allama Iqbal delivered the Allahabad Address in 1930.',
     ),
     MockQuestion(
       id: 'p234-17',
@@ -183,6 +199,7 @@ const PaperTest paper234 = PaperTest(
       ],
       correctIndex: 3,
       topic: 'Urdu',
+      explanation: 'The Urdu saying aag na ugalna means not speaking harsh and bitter words.',
     ),
     MockQuestion(
       id: 'p234-18',
@@ -191,6 +208,7 @@ const PaperTest paper234 = PaperTest(
       options: ['عام پتھر', 'خوشبو', 'قیمتی پتھر', 'سجاوٹ'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'Gohar-e-nayab literally means a rare pearl or gem, used for something very precious.',
     ),
     MockQuestion(
       id: 'p234-19',
@@ -199,6 +217,7 @@ const PaperTest paper234 = PaperTest(
       options: ['40', '100', '60', '80'],
       correctIndex: 3,
       topic: 'Algebra',
+      explanation: 'Multiplying the two products gives x to the power 5 times y to the power 5 = 10 x 8 = 80.',
     ),
     MockQuestion(
       id: 'p234-20',
@@ -208,6 +227,7 @@ const PaperTest paper234 = PaperTest(
       options: ['71.5 cm', '72.3 cm', '71.7 cm', '72.7 cm'],
       correctIndex: 3,
       topic: 'Geometry',
+      explanation: 'Circle area 154 = (22/7) x r squared, so r = 7 cm. For an equilateral triangle, inradius = side x root 3 / 6, so side is about 24.25 cm and perimeter about 72.7 cm.',
     ),
   ],
   latestUpdates: [

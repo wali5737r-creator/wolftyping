@@ -24,6 +24,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Novelist', 'Architect', 'Painter', 'Musician'],
       correctIndex: 0,
       topic: 'Literature',
+      explanation: 'Franz Kafka is known as a novelist, famous for works such as The Trial and The Metamorphosis. He was not an architect, painter or musician.',
     ),
     MockQuestion(
       id: 'p224-2',
@@ -32,6 +33,7 @@ const PaperTest paper224 = PaperTest(
       options: ['France', 'Spain', 'Brazil', 'Germany'],
       correctIndex: 2,
       topic: 'Sports',
+      explanation: "Pele, widely regarded as one of football's greatest players, played international football for Brazil. He never represented France, Spain or Germany.",
     ),
     MockQuestion(
       id: 'p224-3',
@@ -40,6 +42,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Cricket', 'Boxing', 'Football', 'Tennis'],
       correctIndex: 1,
       topic: 'Sports',
+      explanation: 'Amir Khan is a British-Pakistani boxer, a former world champion in the light-welterweight division. He is not known for cricket, football or tennis.',
     ),
     MockQuestion(
       id: 'p224-4',
@@ -48,6 +51,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Russia', 'India', 'China', 'Brazil'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: 'China shares land borders with 14 neighbouring countries, which is the figure asked for in this question.',
     ),
     MockQuestion(
       id: 'p224-5',
@@ -56,6 +60,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Leo Tolstoy', 'Mark Twain', 'Charles Dickens', 'Jane Austen'],
       correctIndex: 2,
       topic: 'Literature',
+      explanation: 'A Tale of Two Cities was written by Charles Dickens and published in 1859. Tolstoy, Twain and Austen wrote other well-known novels.',
     ),
     MockQuestion(
       id: 'p224-6',
@@ -64,6 +69,7 @@ const PaperTest paper224 = PaperTest(
       options: ['UK', 'USA', 'China', 'France'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: 'The Three Gorges Dam stands on the Yangtze River in China. It is one of the largest hydroelectric dams in the world.',
     ),
     MockQuestion(
       id: 'p224-7',
@@ -72,6 +78,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Bill Gates', 'Steve Jobs', 'Larry Page', 'Mark Zuckerberg'],
       correctIndex: 3,
       topic: 'Technology',
+      explanation: 'Mark Zuckerberg co-founded Facebook in 2004. Bill Gates co-founded Microsoft, Steve Jobs co-founded Apple and Larry Page co-founded Google.',
     ),
     MockQuestion(
       id: 'p224-8',
@@ -80,6 +87,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Kyrgyzstan', 'China', 'Kazakhstan', 'Tajikistan'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'The 24th summit of the Shanghai Cooperation Organisation was held in Astana, Kazakhstan, in 2024.',
     ),
     MockQuestion(
       id: 'p224-9',
@@ -88,6 +96,7 @@ const PaperTest paper224 = PaperTest(
       options: ['7th', '9th', '10th', '11th'],
       correctIndex: 1,
       topic: 'World Organisations',
+      explanation: 'Antonio Guterres is the 9th Secretary-General of the United Nations, having taken office in 2017.',
     ),
     MockQuestion(
       id: 'p224-10',
@@ -96,6 +105,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Argentina', 'Belgium', 'Peru', 'Chile'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'Argentina, Peru and Chile are all in South America, while Belgium is in Europe. That makes Belgium the odd one out.',
     ),
     MockQuestion(
       id: 'p224-11',
@@ -104,6 +114,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Cold War', 'Cyber War', 'Proxy War', 'Guerrilla War'],
       correctIndex: 2,
       topic: 'World Knowledge',
+      explanation: 'A proxy war is a conflict in which powers fight through others rather than engaging in direct fighting themselves. A cold war is a rivalry without open warfare, while guerrilla war is fought by irregular forces.',
     ),
     MockQuestion(
       id: 'p224-12',
@@ -112,6 +123,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Tigris', 'Euphrates', 'Indus River', 'Nile River'],
       correctIndex: 3,
       topic: 'History',
+      explanation: 'The civilisation of ancient Egypt grew up along the Nile River, whose annual flooding watered its farmland. The Tigris and Euphrates watered Mesopotamia instead.',
     ),
     MockQuestion(
       id: 'p224-13',
@@ -120,6 +132,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Interpol', 'Mossad', 'Raw', 'MI6'],
       correctIndex: 0,
       topic: 'World Knowledge',
+      explanation: 'Interpol is an international police-cooperation organisation, not a national intelligence agency. Mossad, RAW and MI6 are intelligence agencies of Israel, India and the United Kingdom.',
     ),
     MockQuestion(
       id: 'p224-14',
@@ -128,6 +141,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Bangladesh', 'Myanmar', 'Thailand', 'India'],
       correctIndex: 1,
       topic: 'World Knowledge',
+      explanation: 'The Rohingya are a Muslim community whose home region is Rakhine State in Myanmar. Many have fled to Bangladesh as refugees, but Bangladesh is not their country of origin.',
     ),
     MockQuestion(
       id: 'p224-15',
@@ -136,6 +150,7 @@ const PaperTest paper224 = PaperTest(
       options: ['British Scientist', 'French Philosopher', 'German Economist', 'US Intellectual professor'],
       correctIndex: 3,
       topic: 'Personalities',
+      explanation: 'Noam Chomsky is an American linguist and intellectual, long associated with MIT as a professor. He is not British, French or German.',
     ),
     MockQuestion(
       id: 'p224-16',
@@ -144,6 +159,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Jhelum River', 'Ravi River', 'Chenab River', 'Indus River'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: 'The Dul Hasti Stage-II hydro project stands on the Chenab River in India. It is not on the Jhelum, Ravi or Indus.',
     ),
     MockQuestion(
       id: 'p224-17',
@@ -152,6 +168,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Faris Al Faris', 'Ahmed Al Ahmed', 'Mohammad Al Hussain', 'Ali Al Sultan'],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: 'Ahmed Al Ahmed was hailed as a hero after tackling and disarming one of the gunmen during the Bondi Beach attack in December 2025, as widely reported at the time.',
     ),
     // Pakistan Studies
     MockQuestion(
@@ -161,6 +178,7 @@ const PaperTest paper224 = PaperTest(
       options: ['May', 'July', 'June', 'April'],
       correctIndex: 1,
       topic: 'Culture',
+      explanation: 'The Shandur Polo Festival is held in July at Shandur Pass in northern Pakistan. It is famous for polo matches played at high altitude.',
     ),
     MockQuestion(
       id: 'p224-19',
@@ -169,6 +187,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Stand-By Arrangement', 'Extended Fund Facility', 'Rapid Financing Instrument', 'None of these'],
       correctIndex: 1,
       topic: 'Economy',
+      explanation: "Pakistan's most recent IMF programme is the Extended Fund Facility, which supports medium-term economic reform. The Stand-By Arrangement was an earlier, shorter programme.",
     ),
     MockQuestion(
       id: 'p224-20',
@@ -177,6 +196,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Heer Ranjha', 'Armaan', 'Teri Yaad', 'Dupatta'],
       correctIndex: 2,
       topic: 'Culture',
+      explanation: "Teri Yaad, released in 1948, was Pakistan's first film. Heer Ranjha, Armaan and Dupatta all came later.",
     ),
     MockQuestion(
       id: 'p224-21',
@@ -185,6 +205,7 @@ const PaperTest paper224 = PaperTest(
       options: ['\$500 Million', '\$700 Million', '\$600 Million', '\$1 Billion'],
       correctIndex: 1,
       topic: 'Economy',
+      explanation: "The World Bank's Board approved 700 million dollars in financing for Pakistan's Public Resources for Inclusive Development programme on 19 December 2025.",
     ),
     MockQuestion(
       id: 'p224-22',
@@ -193,6 +214,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Uri Attack', 'Mumbai Attacks', 'Pahalgam Incident', 'Siachen Conflict'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'The Pahalgam incident of April 2025 was the episode that pushed India-Pakistan tensions into open conflict in May 2025. The Uri and Mumbai attacks and the Siachen conflict belong to earlier periods.',
     ),
     MockQuestion(
       id: 'p224-23',
@@ -201,6 +223,7 @@ const PaperTest paper224 = PaperTest(
       options: ['CPEC Phase 1.0', 'CPEC Phase 3.0', 'CPEC New Vision', 'CPEC Phase 2.0'],
       correctIndex: 3,
       topic: 'Economy',
+      explanation: 'The current phase of the China-Pakistan Economic Corridor is called CPEC Phase 2.0, focused on industrialisation and wider economic cooperation beyond the first phase of infrastructure.',
     ),
     MockQuestion(
       id: 'p224-24',
@@ -209,6 +232,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Afghanistan', 'India', 'Iran', 'United Kingdom'],
       correctIndex: 0,
       topic: 'History',
+      explanation: "Afghanistan was the country that opposed Pakistan's membership of the United Nations in 1947, when Pakistan applied for admission after independence.",
     ),
     MockQuestion(
       id: 'p224-25',
@@ -217,6 +241,7 @@ const PaperTest paper224 = PaperTest(
       options: ['14', '18', '25', '23'],
       correctIndex: 3,
       topic: 'Constitution',
+      explanation: "Each province elects 23 senators to Pakistan's Senate under the current allocation of seats.",
     ),
     MockQuestion(
       id: 'p224-26',
@@ -225,6 +250,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Deflation', 'Stagflation', 'Demand-Pull inflation', 'Hyperinflation'],
       correctIndex: 2,
       topic: 'Economy',
+      explanation: 'Demand-pull inflation happens when demand for goods and services outstrips supply, pushing prices up. Deflation is falling prices, and hyperinflation is an extreme, uncontrolled price spiral.',
     ),
     MockQuestion(
       id: 'p224-27',
@@ -233,6 +259,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Rubab', 'Sagar Veena', 'Dholak', 'Tarbela Dam'],
       correctIndex: 1,
       topic: 'Culture',
+      explanation: "The Sagar Veena is regarded as Pakistan's own invention, a stringed instrument developed in the country. The rubab and dholak are traditional instruments shared more widely across the region.",
     ),
     MockQuestion(
       id: 'p224-28',
@@ -241,6 +268,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Kennedy Space Center, USA', 'Jiuquan Satellite Launch Center, China', 'Baikonur Cosmodrome, Kazakhstan', 'Satish Dhawan Space Center, India'],
       correctIndex: 1,
       topic: 'Science and Technology',
+      explanation: "Pakistan's PRSC-EO1 electro-optical satellite was launched from the Jiuquan Satellite Launch Center in China on 17 January 2025.",
     ),
     MockQuestion(
       id: 'p224-29',
@@ -249,6 +277,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Article 10', 'Article 45', 'Article 20', 'Article 6'],
       correctIndex: 3,
       topic: 'Climate',
+      explanation: 'Article 6 of the Paris Agreement covers cooperative approaches between countries, including carbon market mechanisms. That is the article this climate agreement relates to.',
     ),
     MockQuestion(
       id: 'p224-30',
@@ -257,6 +286,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Shahid Afridi', 'Javed Miandad', 'Inzamam-ul-Haq', 'Wasim Akram'],
       correctIndex: 1,
       topic: 'Sports',
+      explanation: 'Javed Miandad played in six consecutive Cricket World Cups, from 1975 to 1996. Afridi, Inzamam and Wasim Akram appeared in fewer editions.',
     ),
     MockQuestion(
       id: 'p224-31',
@@ -265,6 +295,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Nasira Iqbal', 'Ayesha Malik', 'Mushir Alam', 'Hina Jilani'],
       correctIndex: 1,
       topic: 'Judiciary',
+      explanation: "Ayesha Malik became Pakistan's first woman judge of the Supreme Court when she was elevated to it in January 2022.",
     ),
     MockQuestion(
       id: 'p224-32',
@@ -273,6 +304,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Education', 'Constitutional Court', 'Finance', 'Province'],
       correctIndex: 1,
       topic: 'Constitution',
+      explanation: "Pakistan's 27th Constitutional Amendment is mainly about the judiciary, including the creation of a Federal Constitutional Court. It is not mainly about education, finance or provinces alone.",
     ),
     MockQuestion(
       id: 'p224-33',
@@ -281,6 +313,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Two Third Majority', 'Simple Majority', 'Absolute Majority', 'Three Four Majority'],
       correctIndex: 0,
       topic: 'Constitution',
+      explanation: 'A constitutional amendment needs a two-thirds majority in the National Assembly. A simple majority is enough for ordinary legislation but not for changing the Constitution.',
     ),
     // Current Affairs
     MockQuestion(
@@ -290,6 +323,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Bahrain', 'Dubai', 'Abu Dhabi', 'Sharjah'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'Sheikh Mohamed bin Zayed Al Nahyan is the Ruler of Abu Dhabi, and as such he serves as President of the UAE. Dubai and Sharjah have their own rulers.',
     ),
     MockQuestion(
       id: 'p224-35',
@@ -298,6 +332,7 @@ const PaperTest paper224 = PaperTest(
       options: ['15%', '13.5%', '10.5%', '18%'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: "The State Bank of Pakistan's policy rate current at exam time in early 2026 was 10.5 percent, as recorded in this paper's own latest updates.",
     ),
     MockQuestion(
       id: 'p224-36',
@@ -306,6 +341,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Belem, Brazil', 'Baku, Azerbaijan', 'Dubai, UAE', 'Glasgow, UK'],
       correctIndex: 0,
       topic: 'Current Affairs',
+      explanation: 'COP-30, the 2025 UN climate conference, was held in Belem, Brazil. Baku hosted COP-29 and Dubai hosted COP-28.',
     ),
     MockQuestion(
       id: 'p224-37',
@@ -314,6 +350,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Tianjin, China', 'Islamabad, Karachi', 'Samarkand, Uzbekistan', 'None of These'],
       correctIndex: 0,
       topic: 'Current Affairs',
+      explanation: 'The 2025 SCO summit was held in Tianjin, China. Samarkand hosted an earlier summit in 2022.',
     ),
     MockQuestion(
       id: 'p224-38',
@@ -322,6 +359,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Australia', 'South Africa', 'India', 'England'],
       correctIndex: 2,
       topic: 'Sports',
+      explanation: "Pakistan's under-19 team beat India in a youth World Cup final, most famously the 2006 final in Colombo, where Pakistan defended a small total of 109.",
     ),
     MockQuestion(
       id: 'p224-39',
@@ -330,6 +368,7 @@ const PaperTest paper224 = PaperTest(
       options: ['mRNA vaccine development', 'Discoveries concerning peripheral immune tolerance', 'CRISPR gene editing', 'Human genome mapping'],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: "The 2025 Nobel Prize in Physiology or Medicine was awarded for discoveries concerning peripheral immune tolerance, the process that stops the immune system attacking the body's own tissues.",
     ),
     MockQuestion(
       id: 'p224-40',
@@ -338,6 +377,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Annie Ernaux', 'Laszlo Krasznahorkai', 'Jon Fosse', 'Han Kang'],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: 'Laszlo Krasznahorkai of Hungary won the 2025 Nobel Prize in Literature. Han Kang won in 2024 and Jon Fosse in 2023.',
     ),
     MockQuestion(
       id: 'p224-41',
@@ -346,6 +386,7 @@ const PaperTest paper224 = PaperTest(
       options: ['UAE', 'USA', 'China', 'Turkey'],
       correctIndex: 0,
       topic: 'Current Affairs',
+      explanation: 'The President of the UAE paid an official visit to Pakistan in December 2025, which is the visit this question refers to.',
     ),
     MockQuestion(
       id: 'p224-42',
@@ -354,6 +395,7 @@ const PaperTest paper224 = PaperTest(
       options: ['SAARC', 'OIC', 'UN', 'D8'],
       correctIndex: 3,
       topic: 'Current Affairs',
+      explanation: 'Sohail Mahmood took over as Secretary-General of the D-8 Organisation for Economic Cooperation on 1 January 2026, as confirmed by the D-8 itself.',
     ),
     MockQuestion(
       id: 'p224-43',
@@ -362,6 +404,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Rangelands and Pastoralists', 'Millets', 'Forests', 'Sustainable Tourism'],
       correctIndex: 0,
       topic: 'Current Affairs',
+      explanation: 'The United Nations named 2026 the International Year of Rangelands and Pastoralists, drawing attention to grasslands and the people who depend on them.',
     ),
     MockQuestion(
       id: 'p224-44',
@@ -370,6 +413,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Zohran Mamdani', 'Sadiq Khan', 'Eric Adams', 'Ahmed Talib'],
       correctIndex: 0,
       topic: 'Current Affairs',
+      explanation: 'Zohran Mamdani became the first Muslim Mayor of New York City, taking office on 1 January 2026 after taking his oath on the Quran.',
     ),
     MockQuestion(
       id: 'p224-45',
@@ -378,6 +422,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Iraq', 'Syria', 'Iran', 'Yemen'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: "Israel's Operation Rising Lion, launched in June 2025, was directed against Iran, targeting its nuclear and military sites.",
     ),
     MockQuestion(
       id: 'p224-46',
@@ -386,6 +431,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Agriculture Tech', 'Financial Services', 'Maritime and Defense Innovations', 'Healthcare Solutions'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: "The main focus showcased at Pakistan's PIMEC Expo 2025 was maritime and defence innovations, matching the expo's maritime theme.",
     ),
     MockQuestion(
       id: 'p224-47',
@@ -394,6 +440,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Sanctions', 'Political Instability', 'Economic Collapse', 'Nuclear Program'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'The question identifies economic collapse as the main reason seen behind the Iran crisis of January 2026, when hardship and price pressures fed widespread unrest.',
     ),
     MockQuestion(
       id: 'p224-48',
@@ -402,6 +449,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Peripheral Immune Tolerance', 'mRNA Vaccine', 'Cancer Immunotherapy', 'Gene Editing'],
       correctIndex: 0,
       topic: 'Current Affairs',
+      explanation: 'Mary E. Brunkow, Fred Ramsdell and Shimon Sakaguchi won the 2025 Nobel Prize in Physiology or Medicine for their discoveries about peripheral immune tolerance.',
     ),
     MockQuestion(
       id: 'p224-49',
@@ -410,6 +458,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Muhammad Waseem', 'Shahzaib Rind', 'Hamza Khan', 'Akhtar Nawaz'],
       correctIndex: 1,
       topic: 'Sports',
+      explanation: 'Shahzaib Rind won the Karate Combat lightweight championship in 2025, defending his title at KC 56 in July 2025 against Luiz Rocha.',
     ),
     // Geography
     MockQuestion(
@@ -419,6 +468,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Pacific', 'Atlantic', 'Indian', 'Arctic'],
       correctIndex: 0,
       topic: 'Geography',
+      explanation: 'The Pacific is the largest ocean in the world, covering more area than the Atlantic, Indian and Arctic oceans.',
     ),
     MockQuestion(
       id: 'p224-51',
@@ -427,6 +477,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Durand Line', 'Radcliffe Line', 'McMahon Line', 'Line of Control'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'The Radcliffe Line forms the boundary between India and Pakistan, drawn during partition in 1947. The Durand Line is with Afghanistan and the McMahon Line with China.',
     ),
     MockQuestion(
       id: 'p224-52',
@@ -435,6 +486,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Indus', 'Jhelum', 'Ravi', 'Chenab'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: 'The Indus, Jhelum and Chenab flow through Jammu and Kashmir, while the Ravi does not take that route. That makes the Ravi the odd one out here.',
     ),
     MockQuestion(
       id: 'p224-53',
@@ -443,6 +495,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Igneous Rocks', 'Sedimentary Rocks', 'Lava Rocks', 'Metamorphic Rocks'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'Sedimentary rocks form when layers of sediment build up, often on ocean floors, and harden over a long period of time. Igneous rocks form from cooled magma instead.',
     ),
     // Basic Science
     MockQuestion(
@@ -452,6 +505,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Faster', 'Negligible', 'Slower', 'Equal'],
       correctIndex: 0,
       topic: 'Physics',
+      explanation: 'P waves are compression waves and travel faster than S waves, which are slower shear waves. That is why P waves are felt first in an earthquake.',
     ),
     MockQuestion(
       id: 'p224-55',
@@ -460,6 +514,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Photosynthesis', 'Glycolysis', 'Gluconeogenesis', 'Fermentation'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: 'Gluconeogenesis is the process that builds glucose from non-carbohydrate sources such as amino acids and lactate. Glycolysis breaks glucose down instead.',
     ),
     MockQuestion(
       id: 'p224-56',
@@ -468,6 +523,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Positron', 'Photon', 'Antineutrino', 'Alpha particle'],
       correctIndex: 2,
       topic: 'Physics',
+      explanation: 'In beta decay, a neutron turns into a proton and emits an electron together with an antineutrino, keeping charge and energy balanced.',
     ),
     MockQuestion(
       id: 'p224-57',
@@ -476,6 +532,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Protein', 'Lipids', 'Vitamin C', 'Glucose'],
       correctIndex: 3,
       topic: 'Biology',
+      explanation: 'Glucose is the main fuel broken down in cellular respiration to release energy. Proteins and lipids can also be used, but glucose is the primary source.',
     ),
     MockQuestion(
       id: 'p224-58',
@@ -484,6 +541,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Magnitude', 'Luminosity', 'Intensity', 'Flux'],
       correctIndex: 1,
       topic: 'Physics',
+      explanation: 'Luminosity is the total power of radiation given out by a star. Magnitude measures how bright it appears, which also depends on distance.',
     ),
     MockQuestion(
       id: 'p224-59',
@@ -492,6 +550,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Evaporation', 'Transpiration', 'Percolation', 'Condensation'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: 'Percolation is the movement of water down through the soil. Evaporation moves water up into the air and condensation turns vapour into liquid.',
     ),
     MockQuestion(
       id: 'p224-60',
@@ -500,6 +559,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Seral Stage', 'Pioneer community', 'Secondary succession', 'Climax community'],
       correctIndex: 3,
       topic: 'Biology',
+      explanation: 'The climax community is the final, stable stage of ecological succession, reached when an ecosystem settles into a self-sustaining balance.',
     ),
     MockQuestion(
       id: 'p224-61',
@@ -508,6 +568,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Ionic bonding', 'No chemical bonding', 'Metallic bonding', 'Covalent bonding'],
       correctIndex: 1,
       topic: 'Chemistry',
+      explanation: 'Noble gases have full outer electron shells, so their atoms do not form chemical bonds with each other. They exist as single, unbonded atoms.',
     ),
     MockQuestion(
       id: 'p224-62',
@@ -516,6 +577,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Low to high pressure', 'West to East only', 'High to low pressure', 'North to South only'],
       correctIndex: 2,
       topic: 'Physics',
+      explanation: 'Air moves from areas of high pressure to areas of low pressure, which is what drives wind. It does not generally flow from low to high pressure.',
     ),
     MockQuestion(
       id: 'p224-63',
@@ -524,6 +586,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Methane and Ethane', 'Helium and Neon', 'Propane and Butane', 'Oxygen and Nitrogen'],
       correctIndex: 2,
       topic: 'Chemistry',
+      explanation: 'LPG, liquefied petroleum gas, is mainly a mixture of propane and butane. Methane and ethane are the main components of natural gas instead.',
     ),
     MockQuestion(
       id: 'p224-64',
@@ -532,6 +595,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Secondary pollution', 'Primary pollution', 'Tertiary pollution', 'Natural aerosols'],
       correctIndex: 1,
       topic: 'Environment',
+      explanation: 'Smog, nitrogen dioxide, sulphur dioxide and dust are emitted directly into the air, which makes them primary pollutants. Secondary pollutants form later through chemical reactions.',
     ),
     MockQuestion(
       id: 'p224-65',
@@ -540,6 +604,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Malaria', 'Diabetes', 'Tuberculosis', 'Influenza'],
       correctIndex: 1,
       topic: 'Biology',
+      explanation: "Diabetes is a metabolic disease, because it involves the body's handling of glucose and insulin. Malaria, tuberculosis and influenza are infectious diseases.",
     ),
     MockQuestion(
       id: 'p224-66',
@@ -548,6 +613,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Pyruvate', 'Glucose', 'ATP', 'Lactic Acid'],
       correctIndex: 0,
       topic: 'Biology',
+      explanation: 'Glycolysis breaks glucose down and its end product is pyruvate. ATP is energy released along the way, not the end product itself.',
     ),
     MockQuestion(
       id: 'p224-67',
@@ -556,6 +622,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Emission of O in air', 'Emission of CO2 in air', 'Emission of N in air', 'Emission of H2O in air'],
       correctIndex: 1,
       topic: 'Environment',
+      explanation: 'Burning fossil fuels mainly releases carbon dioxide into the air, the main greenhouse gas from combustion. It does not mainly emit oxygen or nitrogen.',
     ),
     MockQuestion(
       id: 'p224-68',
@@ -564,6 +631,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Ethane and Oxygen', 'Propane and CO', 'Methane and CO2', 'Butane and Nitrogen'],
       correctIndex: 2,
       topic: 'Chemistry',
+      explanation: 'Biogas is mainly a mixture of methane and carbon dioxide, produced when organic matter breaks down without oxygen.',
     ),
     MockQuestion(
       id: 'p224-69',
@@ -572,6 +640,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Fission reaction', 'Combustion reaction', 'Chemical Reaction', 'Fusion Reaction'],
       correctIndex: 3,
       topic: 'Physics',
+      explanation: "The Sun's energy comes from nuclear fusion, in which hydrogen nuclei join to form helium and release energy. Fission splits heavy nuclei instead.",
     ),
     MockQuestion(
       id: 'p224-70',
@@ -580,6 +649,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Collagen', 'Starch', 'Glucose', 'Cellulose'],
       correctIndex: 0,
       topic: 'Biology',
+      explanation: 'Collagen is a protein, and proteins are built from amino acids. Starch, glucose and cellulose are carbohydrates, not proteins.',
     ),
     MockQuestion(
       id: 'p224-71',
@@ -588,6 +658,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Calcium', 'Collagen', 'Elastin', 'Keratin'],
       correctIndex: 1,
       topic: 'Biology',
+      explanation: 'Collagen gives bone its tensile strength, helping it resist pulling forces. Calcium salts give bone its hardness instead.',
     ),
     MockQuestion(
       id: 'p224-72',
@@ -596,6 +667,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Far from Sun', 'In Asteroid Belt', 'Near Sun', 'In Oort Cloud'],
       correctIndex: 2,
       topic: 'Physics',
+      explanation: "A comet travels fastest near the Sun, at perihelion, because the Sun's gravity speeds it up there. It slows down as it moves away.",
     ),
     MockQuestion(
       id: 'p224-73',
@@ -604,6 +676,7 @@ const PaperTest paper224 = PaperTest(
       options: ['1 million Flowers', '5 million Flowers', '2 million Flowers', '10 million Flowers'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: 'Bees are commonly said to visit about 2 million flowers to make one pound of honey, which is the figure used in this question.',
     ),
     MockQuestion(
       id: 'p224-74',
@@ -612,6 +685,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Albert Einstein', 'J Robert Oppenheimer', 'Enrico Fermi', 'Niels Bohr'],
       correctIndex: 1,
       topic: 'Physics',
+      explanation: "J. Robert Oppenheimer is known as the father of the atom bomb for leading the Manhattan Project's laboratory work. Einstein, Fermi and Bohr contributed to the physics but did not lead the bomb programme.",
     ),
     MockQuestion(
       id: 'p224-75',
@@ -620,6 +694,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Peeling', 'Slicing', 'Coring', 'Pitting'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: 'Coring is removing the inedible central part of a fruit, such as an apple core. Peeling removes the skin and slicing only cuts the fruit.',
     ),
     MockQuestion(
       id: 'p224-76',
@@ -628,6 +703,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Nitrogen', 'Cell', 'Oxygen', 'Hydrogen'],
       correctIndex: 1,
       topic: 'Biology',
+      explanation: 'The cell is the basic building block of both animal and plant tissue. All tissues are made of cells working together.',
     ),
     MockQuestion(
       id: 'p224-77',
@@ -636,6 +712,7 @@ const PaperTest paper224 = PaperTest(
       options: ['REDD+', 'Kyoto Protocol', 'Loss and Damage Fund', 'Clean Development Mechanism'],
       correctIndex: 2,
       topic: 'Climate',
+      explanation: 'The Loss and Damage Fund was set up to help vulnerable countries deal with climate damage, after strong advocacy by Pakistan and other developing countries.',
     ),
     MockQuestion(
       id: 'p224-78',
@@ -644,6 +721,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Fruits', 'Pulses and Legumes', 'Dairy Products', 'Meat'],
       correctIndex: 1,
       topic: 'Biology',
+      explanation: 'In Pakistan, pulses and legumes are the main everyday source of protein in the diet for most people, ahead of meat and dairy, which are eaten less often.',
     ),
     MockQuestion(
       id: 'p224-79',
@@ -652,6 +730,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Attract pollinators', 'Prevent water loss', 'Enhance photosynthesis', 'Protect from insects'],
       correctIndex: 1,
       topic: 'Biology',
+      explanation: 'The thick waxy outer covering on a leaf, the cuticle, prevents water loss from the leaf surface. It also gives some protection, but its main job is sealing in water.',
     ),
     MockQuestion(
       id: 'p224-80',
@@ -660,6 +739,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Climax community', 'Seral stage', 'Pioneer community', 'Primary succession'],
       correctIndex: 0,
       topic: 'Biology',
+      explanation: 'A climax community is the final, stable and self-sustaining community of ecological succession. Seral stages and pioneer communities are earlier, temporary stages.',
     ),
     MockQuestion(
       id: 'p224-81',
@@ -668,6 +748,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Ionic bond', 'Hydrogen bond', 'High-energy phosphate bond', 'Covalent bond'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: 'The high-energy phosphate bonds in ATP store the energy used for cellular activity. Breaking such a bond releases energy the cell can use.',
     ),
     MockQuestion(
       id: 'p224-82',
@@ -676,6 +757,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Lakes', 'Glaciers', 'Estuaries', 'Rivers'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: 'Brackish water, a mix of fresh and salty water, is usually found in estuaries, where rivers meet the sea. Glaciers and most rivers hold fresh water.',
     ),
     // Basic Computer Studies
     MockQuestion(
@@ -685,6 +767,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Center', 'Right', 'Left', 'Justify'],
       correctIndex: 2,
       topic: 'MS Word',
+      explanation: 'MS Word aligns text to the left by default. Centre, right and justified alignment must be chosen deliberately.',
     ),
     MockQuestion(
       id: 'p224-84',
@@ -693,6 +776,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Extensible Markup Language', 'External Modern Language', 'Extra Modern Language', 'Expanded Media Language'],
       correctIndex: 0,
       topic: 'Computer Basics',
+      explanation: 'XML stands for Extensible Markup Language, a format for storing and transporting data in tagged form. It is not a programming language.',
     ),
     MockQuestion(
       id: 'p224-85',
@@ -701,6 +785,7 @@ const PaperTest paper224 = PaperTest(
       options: ['C++', 'Python', 'Java', 'HTML'],
       correctIndex: 1,
       topic: 'Programming',
+      explanation: 'Python is the primary language used for AI work today, because of its large ecosystem of machine-learning libraries. HTML is a markup language, not used for AI models.',
     ),
     MockQuestion(
       id: 'p224-86',
@@ -709,6 +794,7 @@ const PaperTest paper224 = PaperTest(
       options: ['1st', '2nd', '3rd', '4th'],
       correctIndex: 3,
       topic: 'Computer History',
+      explanation: 'Fourth-generation computers use microprocessors, which put a whole CPU on a single chip. Earlier generations used transistors or integrated circuits.',
     ),
     MockQuestion(
       id: 'p224-87',
@@ -717,6 +803,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Ctrl+;', 'Ctrl+D', 'Ctrl+T', 'Ctrl+,'],
       correctIndex: 0,
       topic: 'MS Excel',
+      explanation: 'Ctrl+semicolon inserts the current date in Excel. Ctrl+D fills down and Ctrl+T creates a table instead.',
     ),
     MockQuestion(
       id: 'p224-88',
@@ -725,6 +812,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Word Pro', 'Multi-Tool Word', 'Write Master', 'Office Scribe'],
       correctIndex: 1,
       topic: 'Computer History',
+      explanation: 'MS Word was originally called Multi-Tool Word when it was first released in 1983. It was later shortened to Word.',
     ),
     MockQuestion(
       id: 'p224-89',
@@ -733,6 +821,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Reactive AI', 'Narrow AI', 'Supervised AI', 'Generative AI'],
       correctIndex: 3,
       topic: 'Artificial Intelligence',
+      explanation: 'Generative AI is designed to create new content, such as text or images, by learning patterns from large amounts of existing data. Reactive and narrow AI describe different, more limited kinds of systems.',
     ),
     MockQuestion(
       id: 'p224-90',
@@ -741,6 +830,7 @@ const PaperTest paper224 = PaperTest(
       options: ['C++', 'SQL', 'Lisp', 'HTML'],
       correctIndex: 2,
       topic: 'Programming',
+      explanation: 'Lisp is traditionally known as the programming language of AI, because early AI research was built on it. C++ and SQL serve other purposes.',
     ),
     MockQuestion(
       id: 'p224-91',
@@ -749,6 +839,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Ray Tomlinson', 'Vint Cerf', 'Tim Berners Lee', 'Steve Jobs'],
       correctIndex: 0,
       topic: 'Computer History',
+      explanation: "Email is credited to Ray Tomlinson, who introduced the @ sign to separate user and host names in the early 1970s. Vint Cerf worked on the Internet's protocols and Berners-Lee on the web.",
     ),
     MockQuestion(
       id: 'p224-92',
@@ -757,6 +848,7 @@ const PaperTest paper224 = PaperTest(
       options: ['Additive manufacturing', 'Injection molding', 'Casting', 'None of these'],
       correctIndex: 0,
       topic: 'Technology',
+      explanation: 'A 3D printer uses additive manufacturing, building objects layer by layer. Injection moulding and casting shape material in moulds instead.',
     ),
     // Basic Mathematics
     MockQuestion(
@@ -766,6 +858,7 @@ const PaperTest paper224 = PaperTest(
       options: ['x\u2074', 'x\u2075', 'x\u2076', 'x\u2077'],
       correctIndex: 0,
       topic: 'Algebra',
+      explanation: 'Working: (x cubed) squared is x to the power 6, times x gives x to the power 7, and dividing by x cubed leaves x to the power 4.',
     ),
     MockQuestion(
       id: 'p224-94',
@@ -774,6 +867,7 @@ const PaperTest paper224 = PaperTest(
       options: ['99', '101', '103', '109'],
       correctIndex: 0,
       topic: 'Arithmetic',
+      explanation: 'Working: 99 squared is 9801, so the square root of 9801 is 99.',
     ),
     MockQuestion(
       id: 'p224-95',
@@ -782,6 +876,7 @@ const PaperTest paper224 = PaperTest(
       options: ['5', '6', '7', '8'],
       correctIndex: 0,
       topic: 'Ratio',
+      explanation: 'Working: 1 + x + 5 = 11, so x = 11 - 6 = 5.',
     ),
     MockQuestion(
       id: 'p224-96',
@@ -790,6 +885,7 @@ const PaperTest paper224 = PaperTest(
       options: ['46', '47', '49', '50'],
       correctIndex: 1,
       topic: 'Sequences',
+      explanation: 'Working: starting at 10 and adding 2, 0, 3, 4, 5, 6, 7, 8, 1 and 1 in turn gives 12, 12, 15, 19, 24, 30, 37, 45, 46 and finally 47 as the 11th term.',
     ),
     MockQuestion(
       id: 'p224-97',
@@ -798,6 +894,7 @@ const PaperTest paper224 = PaperTest(
       options: ['850000', '900000', '920000', '950000'],
       correctIndex: 1,
       topic: 'Ratio',
+      explanation: 'Working: 800000 multiplied by 9/8 is 900000, so the new price is 900000.',
     ),
     MockQuestion(
       id: 'p224-98',
@@ -806,6 +903,7 @@ const PaperTest paper224 = PaperTest(
       options: ['4', '5', '6', '7'],
       correctIndex: 3,
       topic: 'Arithmetic',
+      explanation: 'Working: 16 divided by 4 is 4, plus 9 is 13, minus 6 is 7.',
     ),
     MockQuestion(
       id: 'p224-99',
@@ -814,6 +912,7 @@ const PaperTest paper224 = PaperTest(
       options: ['3 days', '4 days', '5 days', '6 days'],
       correctIndex: 2,
       topic: 'Work and Time',
+      explanation: 'Working: 5 men in 6 days is 30 man-days of work, so 6 men need 30 divided by 6, which is 5 days.',
     ),
     MockQuestion(
       id: 'p224-100',
@@ -822,6 +921,7 @@ const PaperTest paper224 = PaperTest(
       options: ['32%', '64%', '25%', '16%'],
       correctIndex: 1,
       topic: 'Percentage',
+      explanation: 'Working: each side becomes 60 percent of its original length, so the area becomes 0.6 times 0.6, which is 0.36 of the original. The area is therefore reduced by 64 percent.',
     ),
   ],
   latestUpdates: [

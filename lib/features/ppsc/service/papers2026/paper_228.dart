@@ -22,6 +22,7 @@ const PaperTest paper228 = PaperTest(
       options: ['5 June', '10 December', '30 August', '3 December'],
       correctIndex: 1,
       topic: 'Days and Dates',
+      explanation: 'Human Rights Day is observed on 10 December, the date the Universal Declaration of Human Rights was adopted in 1948.',
     ),
     MockQuestion(
       id: 'p228-2',
@@ -30,6 +31,7 @@ const PaperTest paper228 = PaperTest(
       options: ['United Kingdom', 'India', 'United States', 'France'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: 'The Library of Congress, the research library of the US Congress, is in Washington, DC, in the United States.',
     ),
     MockQuestion(
       id: 'p228-3',
@@ -38,6 +40,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Egypt', 'Syria', 'Indonesia', 'Turkey'],
       correctIndex: 2,
       topic: 'News Agencies',
+      explanation: 'Antara is the national news agency of Indonesia.',
     ),
     MockQuestion(
       id: 'p228-4',
@@ -46,6 +49,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Basketball', 'Badminton', 'Baseball', 'Ice Hockey'],
       correctIndex: 2,
       topic: 'Sports',
+      explanation: "Baseball is commonly called America's national pastime and is treated in the question as the national game of the United States.",
     ),
     MockQuestion(
       id: 'p228-5',
@@ -60,6 +64,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 3,
       topic: 'History',
+      explanation: 'Badruddin Tyabji became the first Muslim president of the Indian National Congress in 1887.',
     ),
     MockQuestion(
       id: 'p228-6',
@@ -69,6 +74,7 @@ const PaperTest paper228 = PaperTest(
       options: ['470 AD', '1 BC', '476 AD', '776 BC'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'The medieval period in Europe is conventionally dated from the fall of the Western Roman Empire in 476 AD.',
     ),
     MockQuestion(
       id: 'p228-7',
@@ -78,6 +84,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Who', 'Time Magazine', 'UNO', 'None of these'],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: 'Time magazine named Joe Biden and Kamala Harris its Person of the Year for 2020.',
     ),
     MockQuestion(
       id: 'p228-8',
@@ -86,6 +93,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Sweden', 'North Macedonia', 'Finland', 'Norway'],
       correctIndex: 1,
       topic: 'World Organisations',
+      explanation: 'North Macedonia became a NATO member on 27 March 2020.',
     ),
     MockQuestion(
       id: 'p228-9',
@@ -94,6 +102,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Japan', 'Korea', 'Ancient India', 'China'],
       correctIndex: 2,
       topic: 'Culture',
+      explanation: 'Yoga originated in ancient India, where its postures, breathing and meditation practices developed.',
     ),
     MockQuestion(
       id: 'p228-10',
@@ -102,6 +111,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Ankara', 'Cairo', 'Damascus', 'Tehran'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'Al-Azhar University, one of the oldest universities in the world, is in Cairo, Egypt.',
     ),
     MockQuestion(
       id: 'p228-11',
@@ -111,6 +121,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Karachi', 'Dubai', 'Lahore', 'Multan'],
       correctIndex: 1,
       topic: 'Sports',
+      explanation: 'The final of the ICC Champions Trophy 2025 was played in Dubai.',
     ),
     MockQuestion(
       id: 'p228-12',
@@ -120,6 +131,7 @@ const PaperTest paper228 = PaperTest(
       options: ['1962', '1964', '1966', '1973'],
       correctIndex: 2,
       topic: 'World Organisations',
+      explanation: 'The Asian Development Bank began operations in December 1966, the year it was established.',
     ),
     MockQuestion(
       id: 'p228-13',
@@ -129,6 +141,7 @@ const PaperTest paper228 = PaperTest(
       options: ['AUKUS', 'Brexit', 'Both A and B', 'None of these'],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: 'Brexit is the name for the process by which the United Kingdom left the European Union in January 2020.',
     ),
     MockQuestion(
       id: 'p228-14',
@@ -143,6 +156,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 3,
       topic: 'Sports',
+      explanation: 'Aisam-ul-Haq Qureshi partnered Florin Mergea to win the 2017 Barcelona Open doubles title, as stated in the question.',
     ),
     MockQuestion(
       id: 'p228-15',
@@ -151,6 +165,7 @@ const PaperTest paper228 = PaperTest(
       options: ['800g', '900g', '700g', '500g'],
       correctIndex: 0,
       topic: 'Sports',
+      explanation: "The men's competition javelin weighs 800 grams; the women's javelin weighs 600 grams.",
     ),
     MockQuestion(
       id: 'p228-16',
@@ -160,6 +175,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Kenya', 'Burma', 'South Africa', 'Cuba'],
       correctIndex: 2,
       topic: 'World Leaders',
+      explanation: 'Nelson Mandela, the anti-apartheid leader and first president of democratic South Africa, was South African.',
     ),
     MockQuestion(
       id: 'p228-17',
@@ -174,6 +190,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'The Strait of Malacca lies between the Malay Peninsula, including Malaysia, and the Indonesian island of Sumatra.',
     ),
     MockQuestion(
       id: 'p228-18',
@@ -183,6 +200,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Zong', 'SCO', 'Telenor', 'Ufone'],
       correctIndex: 1,
       topic: 'Telecom',
+      explanation: 'The Special Communications Organization (SCO) provides telecom services in Gilgit-Baltistan, including Shimshal Valley, as framed in the question.',
     ),
     MockQuestion(
       id: 'p228-19',
@@ -192,6 +210,7 @@ const PaperTest paper228 = PaperTest(
       options: ['1876', '1877', '1886', '1893'],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'Syed Amir Ali organised the Central Muhammadan Association in 1877, as stated in the question.',
     ),
     MockQuestion(
       id: 'p228-20',
@@ -201,6 +220,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Lord Minto', 'Lord Hardinge', 'Lord Montagu', 'Lord Curzon'],
       correctIndex: 0,
       topic: 'History',
+      explanation: 'The Simla Deputation of Muslim leaders met Viceroy Lord Minto in 1906 to present their demands.',
     ),
     MockQuestion(
       id: 'p228-21',
@@ -210,6 +230,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Shah Jahan', 'Qutbuddin', 'Sher Shah Suri', 'Akbar'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'Rohtas Fort in the Salt Range was built by Sher Shah Suri in the 16th century to guard against the Gakhars and Humayun.',
     ),
     MockQuestion(
       id: 'p228-22',
@@ -219,6 +240,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Babar', 'Ahmad Shah Abdali', 'Akbar', 'Hemu'],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'Ahmad Shah Abdali defeated the Marathas at the Third Battle of Panipat in 1761.',
     ),
     MockQuestion(
       id: 'p228-23',
@@ -233,6 +255,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 3,
       topic: 'History',
+      explanation: 'Qutb-ud-Din Aibak, founder of the Delhi Sultanate, is regarded in the question as the first Muslim ruler of the subcontinent, distinct from the earlier conqueror Muhammad bin Qasim.',
     ),
     MockQuestion(
       id: 'p228-24',
@@ -241,6 +264,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Manora', 'Gaddani', 'Clifton', 'Astola'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: "Clifton Beach is Karachi's best-known and most visited beach, as framed in the question.",
     ),
     MockQuestion(
       id: 'p228-25',
@@ -249,6 +273,7 @@ const PaperTest paper228 = PaperTest(
       options: ['1947', '1949', '1956', '1958'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'Pakistan became a republic in 1956, when its first constitution came into force on 23 March 1956.',
     ),
     MockQuestion(
       id: 'p228-26',
@@ -262,6 +287,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'History',
+      explanation: "Muhammad Ali Bogra was Pakistan's third Prime Minister, after Liaquat Ali Khan and Khawaja Nazimuddin.",
     ),
     MockQuestion(
       id: 'p228-27',
@@ -270,6 +296,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Ameer-ud-Din Khidwai', 'Sadeqain', 'Brandley', 'None of these'],
       correctIndex: 0,
       topic: 'National Symbols',
+      explanation: "Pakistan's national flag was designed by Ameer-ud-Din Khidwai (Amiruddin Kidwai).",
     ),
     MockQuestion(
       id: 'p228-28',
@@ -279,6 +306,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Khuzdar', 'Quetta', 'Kalat', 'Loralai'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: 'In this item, the Brahui people are placed in relation to Kalat, in Balochistan.',
     ),
     MockQuestion(
       id: 'p228-29',
@@ -288,6 +316,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Sadiq Chaudhry', 'Asghar Khan', 'Ayub Khan', 'Noor Khan'],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'Air Marshal Asghar Khan was the first Muslim and first Pakistani Commander-in-Chief of the Pakistan Air Force.',
     ),
     MockQuestion(
       id: 'p228-30',
@@ -296,6 +325,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Iskandar Mirza', 'Yahya Khan', 'Ayub Khan', 'Feroz Khan'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'Ayub Khan introduced the Basic Democracies system in 1959, a tiered system of local councils.',
     ),
     MockQuestion(
       id: 'p228-31',
@@ -304,6 +334,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Gold and Copper', 'Salt Range', 'Dam Site', 'Historical place'],
       correctIndex: 0,
       topic: 'Geography',
+      explanation: 'Reko Diq in Balochistan is famous for its large gold and copper deposits.',
     ),
     MockQuestion(
       id: 'p228-32',
@@ -318,6 +349,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 3,
       topic: 'Current Affairs',
+      explanation: 'General Sahir Shamshad Mirza was the last Chairman of the Joint Chiefs of Staff Committee, a post abolished in November 2025.',
     ),
     MockQuestion(
       id: 'p228-33',
@@ -332,6 +364,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'History',
+      explanation: 'In 1927 Jinnah and other Muslim League leaders put forward the Delhi Proposals, seeking joint electorates with reserved Muslim seats.',
     ),
     MockQuestion(
       id: 'p228-34',
@@ -346,6 +379,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'History',
+      explanation: "North Korea, Germany and Cambodia recognised Bangladesh during Zulfiqar Ali Bhutto's era, as stated in the question.",
     ),
     MockQuestion(
       id: 'p228-35',
@@ -359,6 +393,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Law',
+      explanation: 'PEEDA stands for the Punjab Employees Efficiency, Discipline and Accountability Act, the provincial disciplinary law.',
     ),
     MockQuestion(
       id: 'p228-36',
@@ -367,6 +402,7 @@ const PaperTest paper228 = PaperTest(
       options: ['41', '42', '45', '36'],
       correctIndex: 0,
       topic: 'Geography',
+      explanation: 'On the current count used in the question, Punjab has 41 districts, after the creation of new districts in recent years.',
     ),
     MockQuestion(
       id: 'p228-37',
@@ -376,6 +412,7 @@ const PaperTest paper228 = PaperTest(
       options: ['CCP', 'SECP', 'FBR', 'None of these'],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: "Dr Kabir Ahmed Sidhu became chairman of the Securities and Exchange Commission of Pakistan (SECP) in January 2026, as recorded in the paper's latest updates.",
     ),
     MockQuestion(
       id: 'p228-38',
@@ -389,6 +426,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Current Affairs',
+      explanation: 'The COP-30 climate conference was held in Belem, Brazil, in 2025.',
     ),
     MockQuestion(
       id: 'p228-39',
@@ -398,6 +436,7 @@ const PaperTest paper228 = PaperTest(
       options: ['8 billion', '15.2 billion', '16 billion', '30 billion'],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: "The post-disaster assessment of Pakistan's 2022 floods put economic losses at about 15.2 billion US dollars, the figure given in the question.",
     ),
     MockQuestion(
       id: 'p228-40',
@@ -412,6 +451,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: "Faisal Mumtaz Rathore became Prime Minister of Azad Kashmir after the November 2025 no-confidence vote, as recorded in the paper's latest updates.",
     ),
     MockQuestion(
       id: 'p228-41',
@@ -421,6 +461,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Goodwin', 'Sagarmatha', 'Dholgiri', 'Kangchenjunga'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: "Sagarmatha is the Nepali name for Mount Everest, the world's highest peak.",
     ),
     MockQuestion(
       id: 'p228-42',
@@ -430,6 +471,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Punjab', 'Sindh', 'Gilgit-Baltistan', 'Balochistan'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: "Gilgit-Baltistan's steep mountain terrain makes it the province most exposed to landslides and floods from heavy rain and thunderstorms, as framed in the question.",
     ),
     MockQuestion(
       id: 'p228-43',
@@ -443,6 +485,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 3,
       topic: 'Geography',
+      explanation: 'The Namib Desert stretches along the Atlantic coast through Namibia, Angola and South Africa.',
     ),
     MockQuestion(
       id: 'p228-44',
@@ -451,6 +494,7 @@ const PaperTest paper228 = PaperTest(
       options: ['11', '14', '15', 'None of these'],
       correctIndex: 0,
       topic: 'Geography',
+      explanation: 'The Nile flows through 11 countries on its course from East and Central Africa to the Mediterranean.',
     ),
     MockQuestion(
       id: 'p228-45',
@@ -464,6 +508,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'Anthropocene is the proposed term for the current geological age shaped chiefly by human activity.',
     ),
     MockQuestion(
       id: 'p228-46',
@@ -472,6 +517,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Sri Lanka', 'Turkey', 'Palestine', 'Egypt'],
       correctIndex: 0,
       topic: 'Geography',
+      explanation: "Adam's Peak, a mountain sacred in several religions, is in Sri Lanka.",
     ),
     MockQuestion(
       id: 'p228-47',
@@ -480,6 +526,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Karakoram', 'Andes', 'Himalaya', 'Rocky Mountains'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: "The Andes, running along South America's west coast, are the world's longest mountain range, about 7,000 km long.",
     ),
     MockQuestion(
       id: 'p228-48',
@@ -494,6 +541,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'Sudden floods in the Himalayan and Karakoram ranges are mainly caused by glacial lake outburst floods, when a glacial lake bursts its banks.',
     ),
     MockQuestion(
       id: 'p228-49',
@@ -502,6 +550,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Neutron', 'Electron', 'Proton', 'Quark'],
       correctIndex: 1,
       topic: 'Physics',
+      explanation: 'Among the options, the electron has the lowest mass: it is far lighter than a proton or neutron, and lighter than the quark masses used in this comparison.',
     ),
     MockQuestion(
       id: 'p228-50',
@@ -516,6 +565,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Biology',
+      explanation: 'Peristalsis is the wave-like contraction of gut muscles that moves food along the digestive tract, helping digestion.',
     ),
     MockQuestion(
       id: 'p228-51',
@@ -525,6 +575,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Neptune', 'Saturn', 'Mercury', 'Jupiter'],
       correctIndex: 1,
       topic: 'Astronomy',
+      explanation: 'Saturn has the most prominent ring system, made largely of ice particles, among the planets listed.',
     ),
     MockQuestion(
       id: 'p228-52',
@@ -539,6 +590,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Astronomy',
+      explanation: 'The Andromeda galaxy is on a collision course with our own Milky Way galaxy, expected to merge in several billion years.',
     ),
     MockQuestion(
       id: 'p228-53',
@@ -552,6 +604,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 3,
       topic: 'Biology',
+      explanation: 'Cardiorespiratory refers to the heart and lungs together, so the term here means cardiorespiratory endurance, or heart-lung fitness.',
     ),
     MockQuestion(
       id: 'p228-54',
@@ -560,6 +613,7 @@ const PaperTest paper228 = PaperTest(
       options: ['B-cells', 'Dendritic cells', 'T-cells', 'Macrophages'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: 'HIV mainly infects CD4 T-cells, a type of white blood cell central to the immune response, weakening immunity.',
     ),
     MockQuestion(
       id: 'p228-55',
@@ -569,6 +623,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Field', 'File', 'Database', 'Ring'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'A database is a well-organised collection of data stored so it can be searched and retrieved.',
     ),
     MockQuestion(
       id: 'p228-56',
@@ -577,6 +632,7 @@ const PaperTest paper228 = PaperTest(
       options: ['1024 bytes', '1000 bytes', '1000 GB', '1024 KB'],
       correctIndex: 3,
       topic: 'Computer',
+      explanation: 'Using the binary convention, 1 megabyte equals 1024 kilobytes.',
     ),
     MockQuestion(
       id: 'p228-57',
@@ -586,6 +642,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Speed', 'Accuracy', 'Reliability', 'All of these'],
       correctIndex: 3,
       topic: 'Computer',
+      explanation: 'A business user wants speed, accuracy and reliability together, so all of these qualities matter.',
     ),
     MockQuestion(
       id: 'p228-58',
@@ -599,6 +656,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'An NVMe interface lets an SSD transfer data at high speed with fewer bottlenecks, increasing performance.',
     ),
     MockQuestion(
       id: 'p228-59',
@@ -607,6 +665,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Secure', 'Sequential', 'Ordered', 'Simple'],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: 'A computer program is a sequence of instructions executed in order, so in the framing of this question it should be sequential.',
     ),
     MockQuestion(
       id: 'p228-60',
@@ -616,6 +675,7 @@ const PaperTest paper228 = PaperTest(
       options: ['31', '35', '36', '38'],
       correctIndex: 1,
       topic: 'Arithmetic',
+      explanation: 'Working: larger number = (67 + 3) / 2 = 35, and the smaller is 32.',
     ),
     MockQuestion(
       id: 'p228-61',
@@ -624,6 +684,7 @@ const PaperTest paper228 = PaperTest(
       options: ['x² - x + 6', 'x² - x - 6', 'x² + x - 6', 'x² + x + 6'],
       correctIndex: 2,
       topic: 'Algebra',
+      explanation: 'Working: (x - 2)(x + 3) = x squared + 3x - 2x - 6 = x squared + x - 6.',
     ),
     MockQuestion(
       id: 'p228-62',
@@ -633,6 +694,7 @@ const PaperTest paper228 = PaperTest(
       options: ['200 km', '400 km', '800 km', '1200 km'],
       correctIndex: 1,
       topic: 'Arithmetic',
+      explanation: 'Working: speed = 150 / 3 = 50 km/h, so in 8 hours the car travels 50 x 8 = 400 km.',
     ),
     MockQuestion(
       id: 'p228-63',
@@ -642,6 +704,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Not a Square', 'Even number', 'Perfect Square', 'Prime'],
       correctIndex: 0,
       topic: 'Number Theory',
+      explanation: 'Working: four consecutive numbers sum to 4n + 6, plus 1 gives 4n + 7, which leaves remainder 3 on division by 4, while a square leaves remainder 0 or 1, so it is not a square.',
     ),
     MockQuestion(
       id: 'p228-64',
@@ -650,6 +713,7 @@ const PaperTest paper228 = PaperTest(
       options: ['-1', '1', '2', '6'],
       correctIndex: 1,
       topic: 'Algebra',
+      explanation: 'Working: y = 4 gives 64 / (3x + 1) = 16, so 3x + 1 = 4 and x = 1.',
     ),
     MockQuestion(
       id: 'p228-65',
@@ -659,6 +723,7 @@ const PaperTest paper228 = PaperTest(
       options: ['9', '10', '11', '13'],
       correctIndex: 2,
       topic: 'Sequences',
+      explanation: 'Working: each term from the third onward is the sum of the previous two: 2 + 1 = 3, 1 + 3 = 4, 3 + 4 = 7, so the next is 4 + 7 = 11.',
     ),
     MockQuestion(
       id: 'p228-66',
@@ -668,6 +733,7 @@ const PaperTest paper228 = PaperTest(
       options: ['8', '16', '18', '20'],
       correctIndex: 1,
       topic: 'Age Problems',
+      explanation: 'Working: if Moaz is 16, his father is 44; two years ago they were 14 and 42, and 42 is three times 14.',
     ),
     MockQuestion(
       id: 'p228-67',
@@ -677,6 +743,7 @@ const PaperTest paper228 = PaperTest(
       options: ['40', '50', '60', '65'],
       correctIndex: 1,
       topic: 'Arithmetic',
+      explanation: 'Working: with c correct and w wrong, c + w = 200 and 3c - w = 400, giving 4c = 600, c = 150 and w = 50.',
     ),
     MockQuestion(
       id: 'p228-68',
@@ -685,6 +752,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Dawn', 'Public speech', 'Travelling', 'None of these'],
       correctIndex: 0,
       topic: 'Khulafa-e-Rashideen',
+      explanation: 'Hazrat Umar (RA) was attacked during the dawn (Fajr) prayer, when he was leading the congregation.',
     ),
     MockQuestion(
       id: 'p228-69',
@@ -694,6 +762,7 @@ const PaperTest paper228 = PaperTest(
       options: ['1 day', '2 days', '3 days', '4 days'],
       correctIndex: 2,
       topic: 'Khulafa-e-Rashideen',
+      explanation: 'Hazrat Umar (RA) was chosen as Caliph through the Shura process over three days, as stated in the question.',
     ),
     MockQuestion(
       id: 'p228-70',
@@ -702,6 +771,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Al-Mustasim', 'Al-Mamun', 'Harun Rashid', 'Al-Mutawakil'],
       correctIndex: 0,
       topic: 'Islamic History',
+      explanation: 'Al-Mustasim was the last Abbasid caliph, killed when the Mongols captured Baghdad in 1258.',
     ),
     MockQuestion(
       id: 'p228-71',
@@ -716,6 +786,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Sahaba',
+      explanation: 'Hazrat Ali (RA) mediated between Hazrat Usman (RA) and the rebels during the siege of his house, as stated in the question.',
     ),
     MockQuestion(
       id: 'p228-72',
@@ -725,6 +796,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Tafsir', 'Mushaf', 'Musnad', 'Tawfeeq'],
       correctIndex: 1,
       topic: 'Quran',
+      explanation: "During Hazrat Abu Bakr's (RA) era the Quran was compiled into a single book form called a Mushaf.",
     ),
     MockQuestion(
       id: 'p228-73',
@@ -739,6 +811,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 3,
       topic: 'Quran',
+      explanation: "In Surah An-Nisa, Al-Muhsanat refers to chaste married women, who are protected by the verse's rulings.",
     ),
     MockQuestion(
       id: 'p228-74',
@@ -753,6 +826,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Seerat',
+      explanation: 'Hazrat Safiya (RA) was the daughter of Huyayy ibn Akhtab, chief of the Banu Nadir.',
     ),
     MockQuestion(
       id: 'p228-75',
@@ -767,6 +841,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Islamic History',
+      explanation: 'Hazrat Bilal (RA) was the first muezzin, who called the Azan openly for the Muslim community.',
     ),
     MockQuestion(
       id: 'p228-76',
@@ -775,6 +850,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Talkative', 'Friendly', 'Angry', 'Reserved'],
       correctIndex: 3,
       topic: 'Vocabulary',
+      explanation: 'Taciturn means reserved and saying little, the opposite of talkative.',
     ),
     MockQuestion(
       id: 'p228-77',
@@ -783,6 +859,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Plenty', 'Shortage', 'Excess', 'Abundance'],
       correctIndex: 1,
       topic: 'Vocabulary',
+      explanation: 'Scarcity means a shortage, a lack of supply relative to demand.',
     ),
     MockQuestion(
       id: 'p228-78',
@@ -791,6 +868,7 @@ const PaperTest paper228 = PaperTest(
       options: ['War', 'Fight', 'Truce', 'Attack'],
       correctIndex: 2,
       topic: 'Vocabulary',
+      explanation: 'A skirmish is a small, brief fight, so its best opposite among the options is a truce, an agreed pause in fighting.',
     ),
     MockQuestion(
       id: 'p228-79',
@@ -799,6 +877,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Dirty', 'Rough', 'Elegant', 'Ugly'],
       correctIndex: 2,
       topic: 'Vocabulary',
+      explanation: 'Shabby means worn and unattractive, so its antonym is elegant.',
     ),
     MockQuestion(
       id: 'p228-80',
@@ -808,6 +887,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Addressing', 'Address', 'Addressed to', 'Addressed with'],
       correctIndex: 1,
       topic: 'Grammar',
+      explanation: 'After the modal might, the base form of the verb is used: might not address, not addressing or addressed.',
     ),
     MockQuestion(
       id: 'p228-81',
@@ -816,6 +896,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Suddenly', 'Completely', 'Carefully', 'Partially'],
       correctIndex: 1,
       topic: 'Idioms',
+      explanation: 'Lock, stock and barrel means completely, the whole of something with nothing left out.',
     ),
     MockQuestion(
       id: 'p228-82',
@@ -824,6 +905,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Smoke', 'Heat', 'Ash', 'Flame'],
       correctIndex: 0,
       topic: 'Analogy',
+      explanation: 'As a flood is the excessive result of rain, smoke is the visible product that rises from fire, so smoke completes the analogy as framed.',
     ),
     MockQuestion(
       id: 'p228-83',
@@ -838,6 +920,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Voice',
+      explanation: 'The passive German is spoken becomes the active People speak German in Germany, Spain and Switzerland.',
     ),
     MockQuestion(
       id: 'p228-84',
@@ -847,6 +930,7 @@ const PaperTest paper228 = PaperTest(
       options: ['With', 'By', 'From', 'For'],
       correctIndex: 1,
       topic: 'Grammar',
+      explanation: 'Known by is the standard phrase for being recognised through something, here the choices a person makes.',
     ),
     MockQuestion(
       id: 'p228-85',
@@ -861,6 +945,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Narration',
+      explanation: 'Haste makes waste is a universal truth, so its tense does not change in indirect speech: the teacher told us that haste makes waste.',
     ),
     MockQuestion(
       id: 'p228-86',
@@ -870,6 +955,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Noun', 'Verb', 'Adjective', 'Adverb'],
       correctIndex: 3,
       topic: 'Grammar',
+      explanation: 'Later tells when the discussion will happen, so it is an adverb of time.',
     ),
     MockQuestion(
       id: 'p228-87',
@@ -884,6 +970,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Voice',
+      explanation: 'The passive He was arrested becomes the active The police arrested him on fabricated charges.',
     ),
     MockQuestion(
       id: 'p228-88',
@@ -893,6 +980,7 @@ const PaperTest paper228 = PaperTest(
       options: ['A / a', 'The / the', 'An / the', 'The / a'],
       correctIndex: 1,
       topic: 'Grammar',
+      explanation: 'The is used for both the particular sunshine and the particular tree shade referred to in the sentence.',
     ),
     MockQuestion(
       id: 'p228-89',
@@ -902,6 +990,7 @@ const PaperTest paper228 = PaperTest(
       options: ['Looking at', 'Thinking about', 'Running after', 'Going into'],
       correctIndex: 2,
       topic: 'Grammar',
+      explanation: 'Running after the materialistic world means pursuing material things eagerly.',
     ),
     MockQuestion(
       id: 'p228-90',
@@ -915,6 +1004,7 @@ const PaperTest paper228 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Idioms',
+      explanation: 'French leave means leaving without permission or without saying goodbye.',
     ),
     MockQuestion(
       id: 'p228-91',
@@ -923,6 +1013,7 @@ const PaperTest paper228 = PaperTest(
       options: ['اردو', 'فارسی', 'عربی', 'ہندی'],
       correctIndex: 0,
       topic: 'Urdu',
+      explanation: 'Rekhta was the old name of the Urdu language in its early literary form.',
     ),
     MockQuestion(
       id: 'p228-92',
@@ -931,6 +1022,7 @@ const PaperTest paper228 = PaperTest(
       options: ['آتا', 'آتے', 'آئے', 'آتی'],
       correctIndex: 3,
       topic: 'Urdu',
+      explanation: 'With the feminine plural subject, the correct verb form is aati, agreeing in gender and number.',
     ),
     MockQuestion(
       id: 'p228-93',
@@ -939,6 +1031,7 @@ const PaperTest paper228 = PaperTest(
       options: ['مسدس', 'مثنوی', 'رباعی', 'قطعہ'],
       correctIndex: 0,
       topic: 'Urdu',
+      explanation: 'A poem whose every stanza has six lines is called a musaddas.',
     ),
     MockQuestion(
       id: 'p228-94',
@@ -947,6 +1040,7 @@ const PaperTest paper228 = PaperTest(
       options: ['لشکر', 'زبان', 'ملک', 'قوم'],
       correctIndex: 0,
       topic: 'Urdu',
+      explanation: 'The word Urdu literally means army or camp (lashkar), from its origin in military camps.',
     ),
     MockQuestion(
       id: 'p228-95',
@@ -955,6 +1049,7 @@ const PaperTest paper228 = PaperTest(
       options: ['جبریل کا پر', 'بال', 'پرواز', 'خواب'],
       correctIndex: 0,
       topic: 'Urdu',
+      explanation: "Bal-e-Jibril literally means the wing of Jibril (Gabriel), the title of Iqbal's poetry collection.",
     ),
     MockQuestion(
       id: 'p228-96',
@@ -963,6 +1058,7 @@ const PaperTest paper228 = PaperTest(
       options: ['بنانا', 'اکھاڑنا', 'چھپانا', 'جلانا'],
       correctIndex: 1,
       topic: 'Urdu',
+      explanation: 'The idiom means to dig up buried dead, that is, to reopen old, settled matters.',
     ),
     MockQuestion(
       id: 'p228-97',
@@ -971,6 +1067,7 @@ const PaperTest paper228 = PaperTest(
       options: ['سانس لینا', 'کسی کو یاد کرنا', 'بات کرنا', 'خوش ہونا'],
       correctIndex: 1,
       topic: 'Urdu',
+      explanation: "The idiom dam bharna means to remember someone or to take someone's name with devotion, as given in the question.",
     ),
     MockQuestion(
       id: 'p228-98',
@@ -980,6 +1077,7 @@ const PaperTest paper228 = PaperTest(
       options: ['تشبیہ', 'استعارہ', 'مجاز مرسل', 'کنایہ'],
       correctIndex: 3,
       topic: 'Urdu',
+      explanation: 'A sentence used in a figurative sense, where the intended meaning is hidden behind the words, is called kinaya (allusion).',
     ),
     MockQuestion(
       id: 'p228-99',
@@ -989,6 +1087,7 @@ const PaperTest paper228 = PaperTest(
       options: ['کنایہ', 'استعارہ', 'مجاز مرسل', 'تشبیہ'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'When a word is used figuratively without any relation of resemblance (tashbih), it is called majaz mursal.',
     ),
     MockQuestion(
       id: 'p228-100',
@@ -998,6 +1097,7 @@ const PaperTest paper228 = PaperTest(
       options: ['صنعت تضاد', 'صنعت تشبیہ', 'صنعت تجنیس', 'صنعت مبالغہ'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'When the same word is used twice in a verse with two different meanings, the device is tajnees (paronomasia).',
     ),
   ],
   latestUpdates: [

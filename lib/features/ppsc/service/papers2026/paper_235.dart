@@ -22,6 +22,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Incheon', 'Daegu', 'Seoul', 'Busan'],
       correctIndex: 2,
       topic: 'Capitals',
+      explanation: 'Seoul is the capital and largest city of South Korea.',
     ),
     MockQuestion(
       id: 'p235-2',
@@ -30,6 +31,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Barack Obama', 'Kamala Harris', 'Joe Biden', 'George Bush'],
       correctIndex: 2,
       topic: 'World Leaders',
+      explanation: 'Joe Biden took office as president in January 2021, succeeding Donald Trump at the end of his first term.',
     ),
     MockQuestion(
       id: 'p235-3',
@@ -39,6 +41,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Lord Curzon', 'Lord Harding', 'Lord Minto', 'Lord Chelmsford'],
       correctIndex: 2,
       topic: 'Pakistan Movement',
+      explanation: "The All-India Muslim League was founded in Dhaka in December 1906, during Lord Minto's time as Viceroy of India.",
     ),
     MockQuestion(
       id: 'p235-4',
@@ -47,6 +50,7 @@ const PaperTest paper235 = PaperTest(
       options: ['1930', '1927', '1928', '1929'],
       correctIndex: 2,
       topic: 'Pakistan Movement',
+      explanation: 'The Nehru Report, the constitutional proposals drawn up under Motilal Nehru, was presented in 1928.',
     ),
     MockQuestion(
       id: 'p235-5',
@@ -61,6 +65,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'Operation Polo was the September 1948 Indian military action that brought Hyderabad under Indian control.',
     ),
     MockQuestion(
       id: 'p235-6',
@@ -69,6 +74,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Raja Jaipal', 'Raja Puru', 'Raja Dahir', 'Raja Bhoj'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'Muhammad bin Qasim defeated Raja Dahir, the ruler of Sindh, in 712.',
     ),
     MockQuestion(
       id: 'p235-7',
@@ -77,6 +83,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Sharjah', 'Dubai', 'Bahrain', 'Abu Dhabi'],
       correctIndex: 2,
       topic: 'World Geography',
+      explanation: 'Bahrain is a separate country, not one of the seven emirates; the emirates include Abu Dhabi, Dubai and Sharjah.',
     ),
     MockQuestion(
       id: 'p235-8',
@@ -85,6 +92,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Paris', 'London', 'Brussels', 'Geneva'],
       correctIndex: 2,
       topic: 'International Bodies',
+      explanation: "NATO's headquarters are located in Brussels, Belgium.",
     ),
     MockQuestion(
       id: 'p235-9',
@@ -93,6 +101,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Germany', 'France', 'United Kingdom', 'Italy'],
       correctIndex: 2,
       topic: 'Currencies',
+      explanation: 'The United Kingdom does not use the euro; its currency is the pound sterling, while Germany, France and Italy use the euro.',
     ),
     MockQuestion(
       id: 'p235-10',
@@ -101,6 +110,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Borneo', 'Madagascar', 'Greenland', 'New Guinea'],
       correctIndex: 2,
       topic: 'World Geography',
+      explanation: 'Greenland is the largest island in the world by area.',
     ),
     MockQuestion(
       id: 'p235-11',
@@ -114,6 +124,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Prime Ministers',
+      explanation: "Muhammad Ali Bogra followed Liaquat Ali Khan and Khawaja Nazimuddin, making him Pakistan's third prime minister.",
     ),
     MockQuestion(
       id: 'p235-12',
@@ -127,6 +138,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Sports',
+      explanation: "Arshad Nadeem won Pakistan's Olympic javelin gold at the Paris 2024 Games.",
     ),
     MockQuestion(
       id: 'p235-13',
@@ -135,6 +147,7 @@ const PaperTest paper235 = PaperTest(
       options: ['1956', '1949', '1951', '1961'],
       correctIndex: 2,
       topic: 'Census',
+      explanation: "Pakistan's first census was held in 1951, a few years after independence.",
     ),
     MockQuestion(
       id: 'p235-14',
@@ -144,6 +157,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Article 270', 'Article 62', 'Article 251', 'Article 240'],
       correctIndex: 2,
       topic: 'Constitution',
+      explanation: "Article 251 of Pakistan's Constitution declares Urdu to be the national language.",
     ),
     MockQuestion(
       id: 'p235-15',
@@ -158,6 +172,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'United Nations',
+      explanation: 'Pakistan served as a non-permanent member of the UN Security Council during 2025.',
     ),
     MockQuestion(
       id: 'p235-16',
@@ -172,6 +187,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'Pakistan and Saudi Arabia signed the Strategic Mutual Defence Agreement on 17 September 2025.',
     ),
     MockQuestion(
       id: 'p235-17',
@@ -185,6 +201,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'Muhammad Aurangzeb is the federal finance minister of Pakistan.',
     ),
     MockQuestion(
       id: 'p235-18',
@@ -193,6 +210,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Inter Milan', 'Real Madrid', 'Paris Saint-Germain', 'Barcelona'],
       correctIndex: 2,
       topic: 'Sports',
+      explanation: 'Paris Saint-Germain won the UEFA Champions League in the 2024-25 season.',
     ),
     MockQuestion(
       id: 'p235-19',
@@ -206,6 +224,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'Sardar Saleem Haider Khan is the Governor of Punjab.',
     ),
     MockQuestion(
       id: 'p235-20',
@@ -214,6 +233,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Deuterium', 'Protium', 'Tritium', 'Helium-3'],
       correctIndex: 2,
       topic: 'Chemistry',
+      explanation: 'Tritium is the radioactive isotope of hydrogen; protium and deuterium are not radioactive.',
     ),
     MockQuestion(
       id: 'p235-21',
@@ -222,6 +242,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Louis Pasteur', 'Thomas Edison', 'William Harvey', 'Robert Koch'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: 'William Harvey first described how blood circulates through the body.',
     ),
     MockQuestion(
       id: 'p235-22',
@@ -230,6 +251,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Core', 'Mantle', 'Crust', 'Inner core'],
       correctIndex: 2,
       topic: 'Geology',
+      explanation: 'The crust is the thin outermost layer of the Earth, above the mantle and core.',
     ),
     MockQuestion(
       id: 'p235-23',
@@ -238,6 +260,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Pancreas', 'Kidney', 'Liver', 'Spleen'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: 'Urea is produced in the liver, where nitrogen waste is converted into urea for excretion.',
     ),
     MockQuestion(
       id: 'p235-24',
@@ -246,6 +269,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Oxygen', 'Nitrogen', 'Haemoglobin', 'Carbon dioxide'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: 'Carbon monoxide binds to haemoglobin in the blood, forming carboxyhaemoglobin and blocking oxygen transport.',
     ),
     MockQuestion(
       id: 'p235-25',
@@ -254,6 +278,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Ziarat', 'Swat', 'Chiniot', 'Mianwali'],
       correctIndex: 2,
       topic: 'Minerals',
+      explanation: "Pakistan's largest verified iron-ore deposit is at Chiniot, in the Chiniot-Rajoa area.",
     ),
     MockQuestion(
       id: 'p235-26',
@@ -262,6 +287,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Function keys', 'Control keys', 'Toggle keys', 'Navigation keys'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'Caps Lock and Num Lock are toggle keys, because each press switches a mode on or off.',
     ),
     MockQuestion(
       id: 'p235-27',
@@ -270,6 +296,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Router', 'Cable', 'Protocol', 'Modem'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'Computers exchange data by following a protocol, a set of agreed rules for communication.',
     ),
     MockQuestion(
       id: 'p235-28',
@@ -283,6 +310,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: "An operating system manages the computer's hardware and software resources for the user and programs.",
     ),
     MockQuestion(
       id: 'p235-29',
@@ -291,6 +319,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Ctrl + R', 'Ctrl + L', 'Ctrl + E', 'Ctrl + J'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'In word processors, Ctrl + E is the shortcut that centres the selected text.',
     ),
     MockQuestion(
       id: 'p235-30',
@@ -299,6 +328,7 @@ const PaperTest paper235 = PaperTest(
       options: ['(x + 3)(x + 4)', '(x + 7)(x + 8)', '(x + 7)(x + 9)', '(x + 6)(x + 9)'],
       correctIndex: 2,
       topic: 'Algebra',
+      explanation: 'Working: 7 + 9 = 16 and 7 x 9 = 63, so x^2 + 16x + 63 = (x + 7)(x + 9).',
     ),
     MockQuestion(
       id: 'p235-31',
@@ -308,6 +338,7 @@ const PaperTest paper235 = PaperTest(
       options: ['400 km', '320 km', '360 km', '240 km'],
       correctIndex: 2,
       topic: 'Speed and Distance',
+      explanation: 'Working: from 12:24 to 14:12 is 1 hour 48 minutes, or 1.8 hours, and 200 x 1.8 = 360 km.',
     ),
     MockQuestion(
       id: 'p235-32',
@@ -317,6 +348,7 @@ const PaperTest paper235 = PaperTest(
       options: ['12 days', '8 days', '10 days', '15 days'],
       correctIndex: 2,
       topic: 'Work and Time',
+      explanation: 'Working: 30 x 20 x 8 = 4800 worker-hours make 3000 units, so 2000 units need 3200 worker-hours; 32 workers at 10 hours a day give 320 worker-hours a day, and 3200 / 320 = 10 days.',
     ),
     MockQuestion(
       id: 'p235-33',
@@ -326,6 +358,7 @@ const PaperTest paper235 = PaperTest(
       options: ['7.53%', '4.53%', '5.53%', '6.53%'],
       correctIndex: 2,
       topic: 'Finance',
+      explanation: 'Working: the approximation (yearly coupon plus yearly capital gain) divided by the average price gives about (50 + 5) / 975 = 5.6%, so 5.53% is the closest option.',
     ),
     MockQuestion(
       id: 'p235-34',
@@ -335,6 +368,7 @@ const PaperTest paper235 = PaperTest(
       options: ['189 m', '151 m', '164 m', '161 m'],
       correctIndex: 2,
       topic: 'Geometry',
+      explanation: 'Working: perimeter = 2 x (58.7 + 23.2) = 2 x 81.9 = 163.8 m, which is 164 m to the nearest metre.',
     ),
     MockQuestion(
       id: 'p235-35',
@@ -343,6 +377,7 @@ const PaperTest paper235 = PaperTest(
       options: ['15x', '12x', '19x', '17x'],
       correctIndex: 3,
       topic: 'Algebra',
+      explanation: 'Working: y = 2x and z = 5y = 10x, so x + 3y + z = x + 6x + 10x = 17x.',
     ),
     MockQuestion(
       id: 'p235-36',
@@ -351,6 +386,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Quickly', 'Run', 'Must', 'Beautiful'],
       correctIndex: 2,
       topic: 'Grammar',
+      explanation: 'Must is a modal verb: it expresses obligation or necessity, unlike the adverb, verb and adjective in the other options.',
     ),
     MockQuestion(
       id: 'p235-37',
@@ -359,6 +395,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Break', 'Separate', 'Blend', 'Scatter'],
       correctIndex: 2,
       topic: 'Vocabulary',
+      explanation: 'Meld means to blend or merge things together into one whole.',
     ),
     MockQuestion(
       id: 'p235-38',
@@ -367,6 +404,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Wader', 'Asp', 'Loafer', 'Alligator'],
       correctIndex: 2,
       topic: 'Analogy',
+      explanation: 'A moccasin is a kind of snake, just as a loafer is a kind of shoe, so the pair matches type to category.',
     ),
     MockQuestion(
       id: 'p235-39',
@@ -380,6 +418,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Voice',
+      explanation: 'An imperative sentence becomes passive with Let, the object and be plus the past participle: Let the chair be brought in the room.',
     ),
     MockQuestion(
       id: 'p235-40',
@@ -388,6 +427,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Irritable', 'Angry', 'Placid', 'Moody'],
       correctIndex: 2,
       topic: 'Vocabulary',
+      explanation: 'Irascible means easily angered, so its opposite is placid, meaning calm and even-tempered.',
     ),
     MockQuestion(
       id: 'p235-41',
@@ -396,6 +436,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Honey', 'Salt', 'White', 'Sugar'],
       correctIndex: 2,
       topic: 'Vocabulary',
+      explanation: 'The saying pairs the two colours: a black plum is as sweet as a white one.',
     ),
     MockQuestion(
       id: 'p235-42',
@@ -404,6 +445,7 @@ const PaperTest paper235 = PaperTest(
       options: ['of', 'to', 'at', 'by'],
       correctIndex: 2,
       topic: 'Prepositions',
+      explanation: 'At is used for a point of arrival: they picked them up at the airport.',
     ),
     MockQuestion(
       id: 'p235-43',
@@ -412,6 +454,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Must', 'Should', 'Needn\'t', 'Will'],
       correctIndex: 2,
       topic: 'Grammar',
+      explanation: "Needn't is the modal used here for something that is to be avoided during an exam: disturbing the other candidates.",
     ),
     MockQuestion(
       id: 'p235-44',
@@ -425,6 +468,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 3,
       topic: 'Punctuation',
+      explanation: 'In the present-tense question, does takes the base verb play, giving the correctly formed sentence Does Ahsan play football?',
     ),
     MockQuestion(
       id: 'p235-45',
@@ -433,6 +477,7 @@ const PaperTest paper235 = PaperTest(
       options: ['ماضی قریب', 'حال', 'ماضی بعید', 'ماضی استمراری'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'The phrase means he had come, an action completed in the distant past, which is the past distant tense (mazi baeed).',
     ),
     MockQuestion(
       id: 'p235-46',
@@ -441,6 +486,7 @@ const PaperTest paper235 = PaperTest(
       options: ['؛', '؟', '،', '۔'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'A short pause in a sentence is shown by the comma mark.',
     ),
     MockQuestion(
       id: 'p235-47',
@@ -449,6 +495,7 @@ const PaperTest paper235 = PaperTest(
       options: ['سفر', 'حرکت', 'جدائی', 'قیام'],
       correctIndex: 3,
       topic: 'Urdu',
+      explanation: 'Sukoonat means residence or stay, so its synonym is qiyam.',
     ),
     MockQuestion(
       id: 'p235-48',
@@ -457,6 +504,7 @@ const PaperTest paper235 = PaperTest(
       options: ['اسم جامد', 'اسم مصدر', 'اسم فاعل', 'اسم مشتق'],
       correctIndex: 3,
       topic: 'Urdu',
+      explanation: 'A noun formed from a masdar (verbal noun) is called an ism mushtaq, a derived noun.',
     ),
     MockQuestion(
       id: 'p235-49',
@@ -465,6 +513,7 @@ const PaperTest paper235 = PaperTest(
       options: ['مل جل کر رہنا', 'خوش ہونا', 'پیار بڑھانا', 'سخت غصہ آنا'],
       correctIndex: 3,
       topic: 'Urdu',
+      explanation: 'The idiom means losing self-control through extreme anger.',
     ),
     MockQuestion(
       id: 'p235-50',
@@ -473,6 +522,7 @@ const PaperTest paper235 = PaperTest(
       options: ['غروب ہونے کے بعد', 'درمیان کی جگہ', 'بلند جگہ', 'طلوع ہونے کی جگہ'],
       correctIndex: 3,
       topic: 'Urdu',
+      explanation: 'Matla literally means the place of rising, the point from which something rises.',
     ),
     MockQuestion(
       id: 'p235-51',
@@ -481,6 +531,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Hazrat Ali (R.A.)', 'Hazrat Abu Bakr (R.A.)', 'Hazrat Umar (R.A.)', 'Hazrat Usman (R.A.)'],
       correctIndex: 2,
       topic: 'Companions',
+      explanation: 'Hazrat Hafsa (R.A.) was the daughter of Hazrat Umar (R.A.).',
     ),
     MockQuestion(
       id: 'p235-52',
@@ -495,6 +546,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Early Caliphate',
+      explanation: "During Hazrat Abu Bakr's caliphate, Hazrat Zaid bin Sabit (R.A.) was given the task of compiling the Holy Quran.",
     ),
     MockQuestion(
       id: 'p235-53',
@@ -503,6 +555,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Uhud Fort', 'Khaybar Fort', 'Qamoos Fort', 'Khyber Fort'],
       correctIndex: 2,
       topic: 'Battles',
+      explanation: 'Hazrat Ali (R.A.) conquered the Qamoos Fort during the Battle of Khyber.',
     ),
     MockQuestion(
       id: 'p235-54',
@@ -511,6 +564,7 @@ const PaperTest paper235 = PaperTest(
       options: ['کلمات', 'آیات الاحکام', 'ان میں سے کوئی نہیں', 'حروف مقطعات'],
       correctIndex: 3,
       topic: 'Quranic Studies',
+      explanation: 'Huroof muqattaat are the detached letters at the start of some surahs, whose meaning is regarded as beyond human comprehension.',
     ),
     MockQuestion(
       id: 'p235-55',
@@ -519,6 +573,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Law only', 'Agriculture', 'Financial analytics', 'Manual accounting'],
       correctIndex: 2,
       topic: 'Technology',
+      explanation: 'Of the options given, financial analytics is a field where machine learning is used extensively, for finding patterns in large financial data.',
     ),
     MockQuestion(
       id: 'p235-56',
@@ -532,6 +587,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Tax',
+      explanation: 'Zero-rating means goods remain taxable but are charged at a 0% rate, which is different from being fully exempt.',
     ),
     MockQuestion(
       id: 'p235-57',
@@ -545,6 +601,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Business Law',
+      explanation: 'In law, a company is an entity incorporated under a law, giving it a legal existence of its own.',
     ),
     MockQuestion(
       id: 'p235-58',
@@ -553,6 +610,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Profit earned', 'Cost of production', 'Consideration received', 'Market price only'],
       correctIndex: 2,
       topic: 'Tax',
+      explanation: 'For sales tax, a taxable service is valued at the consideration received for it, that is, what is paid for the service.',
     ),
     MockQuestion(
       id: 'p235-59',
@@ -562,6 +620,7 @@ const PaperTest paper235 = PaperTest(
       options: ['75% of output tax', '100% of output tax', '90% of output tax', '50% of output tax'],
       correctIndex: 2,
       topic: 'Tax',
+      explanation: 'At the time of this paper, the maximum input-tax adjustment allowed against output tax on services in Punjab was 90% of output tax.',
     ),
     MockQuestion(
       id: 'p235-60',
@@ -571,6 +630,7 @@ const PaperTest paper235 = PaperTest(
       options: ['2 years', '1 year', '3 years', '6 years'],
       correctIndex: 2,
       topic: 'Finance',
+      explanation: 'Working: duration gap = asset duration minus liability duration = 5 - 2 = 3 years.',
     ),
     MockQuestion(
       id: 'p235-61',
@@ -579,6 +639,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Put option', 'Futures contract to sell euros', 'Call option', 'Stock option'],
       correctIndex: 2,
       topic: 'Finance',
+      explanation: 'A firm that must pay euros later buys a call option, which gives the right to buy euros at a set price and so hedges the payment.',
     ),
     MockQuestion(
       id: 'p235-62',
@@ -592,6 +653,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Finance',
+      explanation: 'OECD guidance requires institutional investors to disclose their voting policies and any conflicts of interest.',
     ),
     MockQuestion(
       id: 'p235-63',
@@ -605,6 +667,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Finance',
+      explanation: 'With non-cumulative preference shares, dividends that are not paid in a year simply do not accumulate for later years.',
     ),
     MockQuestion(
       id: 'p235-64',
@@ -618,6 +681,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Accounting',
+      explanation: 'Segment margin is contribution margin minus the fixed costs that can be traced directly to that segment.',
     ),
     MockQuestion(
       id: 'p235-65',
@@ -631,6 +695,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Accounting',
+      explanation: 'Capital expenditure is spending to buy long-term assets, such as machinery or buildings, rather than day-to-day running costs.',
     ),
     MockQuestion(
       id: 'p235-66',
@@ -644,6 +709,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Finance',
+      explanation: 'Hedging is used to reduce or manage the risk of adverse price movements, not to remove all risk or guarantee profit.',
     ),
     MockQuestion(
       id: 'p235-67',
@@ -657,6 +723,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Accounting',
+      explanation: 'Working capital is current assets minus current liabilities, the short-term funds available for day-to-day business.',
     ),
     MockQuestion(
       id: 'p235-68',
@@ -665,6 +732,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Liquid assets', 'Current assets', 'Fixed assets', 'Current liabilities'],
       correctIndex: 2,
       topic: 'Accounting',
+      explanation: 'Assets that keep giving benefit over a long period are fixed assets, unlike current assets which are used up quickly.',
     ),
     MockQuestion(
       id: 'p235-69',
@@ -678,6 +746,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Accounting',
+      explanation: 'The accounting equation is: Assets = Liabilities plus Equity.',
     ),
     MockQuestion(
       id: 'p235-70',
@@ -691,6 +760,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Accounting',
+      explanation: 'Contribution margin is sales minus variable cost, the amount left to cover fixed costs and profit.',
     ),
     MockQuestion(
       id: 'p235-71',
@@ -704,6 +774,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Accounting',
+      explanation: 'A contingent liability is an obligation that may or may not materialise, depending on a future event.',
     ),
     MockQuestion(
       id: 'p235-72',
@@ -717,6 +788,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Finance',
+      explanation: "Treasury shares are a company's own shares that it has repurchased and now holds itself.",
     ),
     MockQuestion(
       id: 'p235-73',
@@ -730,6 +802,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Finance',
+      explanation: 'The time value of money means money today is worth more than the same amount in the future, because it can be used or invested now.',
     ),
     MockQuestion(
       id: 'p235-74',
@@ -743,6 +816,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Audit',
+      explanation: 'Human error is a source of inherent risk in an audit, since mistakes can occur even in a well-run system.',
     ),
     MockQuestion(
       id: 'p235-75',
@@ -751,6 +825,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Financial reporting', 'Financial analysis', 'Creative accounting', 'Budgeting'],
       correctIndex: 2,
       topic: 'Accounting',
+      explanation: 'Deliberately manipulating financial statements to present a misleading picture is called creative accounting.',
     ),
     MockQuestion(
       id: 'p235-76',
@@ -764,6 +839,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Finance',
+      explanation: 'The cost of capital is the required rate of return a business must earn on its investments.',
     ),
     MockQuestion(
       id: 'p235-77',
@@ -777,6 +853,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Finance',
+      explanation: 'Currency appreciation means the domestic currency rises in value against foreign currencies.',
     ),
     MockQuestion(
       id: 'p235-78',
@@ -790,6 +867,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Finance',
+      explanation: 'The Security Market Line plots expected return against systematic risk, measured by beta.',
     ),
     MockQuestion(
       id: 'p235-79',
@@ -803,6 +881,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Finance',
+      explanation: 'The risk-return trade-off states that higher risk is associated with higher expected return.',
     ),
     MockQuestion(
       id: 'p235-80',
@@ -816,6 +895,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Tax',
+      explanation: 'Sales tax on services in Punjab is collected by the Punjab Revenue Authority (PRA).',
     ),
     MockQuestion(
       id: 'p235-81',
@@ -829,6 +909,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Tax',
+      explanation: 'When the sales tax rate changes, a separate return is filed for the changed period.',
     ),
     MockQuestion(
       id: 'p235-82',
@@ -843,6 +924,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Accounting',
+      explanation: "Splitting a business's life into equal periods for measuring performance is the accounting period concept.",
     ),
     MockQuestion(
       id: 'p235-83',
@@ -856,6 +938,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Finance',
+      explanation: 'Synergy in a merger is a combined effect greater than the sum of the individual effects.',
     ),
     MockQuestion(
       id: 'p235-84',
@@ -869,6 +952,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Management',
+      explanation: "Of the managers listed, the financial manager does not normally take production decisions; that is the production and operations managers' work.",
     ),
     MockQuestion(
       id: 'p235-85',
@@ -877,6 +961,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Government', 'Buyer of services', 'Service provider', 'Exporter only'],
       correctIndex: 2,
       topic: 'Tax',
+      explanation: 'In Punjab, the service provider is the person legally bound to pay sales tax on services.',
     ),
     MockQuestion(
       id: 'p235-86',
@@ -885,6 +970,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Trading', 'Farming', 'Recreational activity', 'Manufacturing'],
       correctIndex: 2,
       topic: 'Economics',
+      explanation: 'Recreational activity is done for enjoyment, not for earning, so it is not an economic activity like trading, farming or manufacturing.',
     ),
     MockQuestion(
       id: 'p235-87',
@@ -898,6 +984,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Economics',
+      explanation: 'Small and medium enterprises help an economy mainly by creating employment and supporting economic growth.',
     ),
     MockQuestion(
       id: 'p235-88',
@@ -906,6 +993,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Drawings', 'Personal expenses', 'Interest expense', 'Capital purchase of an asset'],
       correctIndex: 2,
       topic: 'Tax',
+      explanation: 'Interest expense is a business cost that can be deducted for tax, unlike drawings, personal expenses or buying a capital asset.',
     ),
     MockQuestion(
       id: 'p235-89',
@@ -914,6 +1002,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Excise duty', 'Sales tax', 'Income tax', 'Customs duty'],
       correctIndex: 2,
       topic: 'Tax',
+      explanation: 'Tax on salary is a form of income tax, since salary is income of the individual.',
     ),
     MockQuestion(
       id: 'p235-90',
@@ -927,6 +1016,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Accounting',
+      explanation: 'Working: net assets = total assets minus total liabilities.',
     ),
     MockQuestion(
       id: 'p235-91',
@@ -940,6 +1030,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Accounting',
+      explanation: 'Prime cost is direct materials plus direct labour plus direct expenses, the costs directly tied to production.',
     ),
     MockQuestion(
       id: 'p235-92',
@@ -953,6 +1044,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Accounting',
+      explanation: 'In vertical analysis, the figures of the year being analysed, the current year, form the base for comparison.',
     ),
     MockQuestion(
       id: 'p235-93',
@@ -961,6 +1053,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Total sales', 'Cash available', 'Profitability', 'Total assets efficiency'],
       correctIndex: 2,
       topic: 'Accounting',
+      explanation: 'Net profit margin shows how much profit a business keeps from its sales, so it is a measure of profitability.',
     ),
     MockQuestion(
       id: 'p235-94',
@@ -974,6 +1067,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Tax',
+      explanation: 'Short tax paid means the tax paid was less than the actual tax liability.',
     ),
     MockQuestion(
       id: 'p235-95',
@@ -987,6 +1081,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 3,
       topic: 'Finance',
+      explanation: 'A Value at Risk of Rs. 5 million at 99% confidence means the loss is not expected to exceed Rs. 5 million with 99% confidence.',
     ),
     MockQuestion(
       id: 'p235-96',
@@ -995,6 +1090,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Equity shares', 'Preference shares', 'Debentures', 'Stock dividends'],
       correctIndex: 2,
       topic: 'Finance',
+      explanation: 'Debentures are debt, not shares, so a company can raise funds through them without giving new owners voting control.',
     ),
     MockQuestion(
       id: 'p235-97',
@@ -1008,6 +1104,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Finance',
+      explanation: 'Capital budgeting is the process of planning and evaluating long-term investment projects.',
     ),
     MockQuestion(
       id: 'p235-98',
@@ -1016,6 +1113,7 @@ const PaperTest paper235 = PaperTest(
       options: ['Profitability', 'Market share', 'Liquidity of a business', 'Fixed assets value'],
       correctIndex: 2,
       topic: 'Finance',
+      explanation: 'Cash flow shows how cash moves in and out of a business, which reflects its liquidity.',
     ),
     MockQuestion(
       id: 'p235-99',
@@ -1029,6 +1127,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Finance',
+      explanation: "The payback period is the time required to recover the initial investment from the project's cash inflows.",
     ),
     MockQuestion(
       id: 'p235-100',
@@ -1043,6 +1142,7 @@ const PaperTest paper235 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Accounting',
+      explanation: 'For the unexpired part of an expense already recorded, the adjusting entry is: debit Prepaid Expense Account and credit Expense Account.',
     ),
   ],
   latestUpdates: [

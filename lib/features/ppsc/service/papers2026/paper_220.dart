@@ -24,6 +24,7 @@ const PaperTest paper220 = PaperTest(
       options: ['جائزہ لینا', 'تعریف کرنا', 'کہانی سنانا', 'گیت گانا'],
       correctIndex: 0,
       topic: 'Urdu Criticism',
+      explanation: 'تنقید کا مطلب کسی تحریر یا فن پارے کا جائزہ لینا ہے، جس میں اس کی خوبیوں اور خامیوں پر رائے دی جاتی ہے۔',
     ),
     MockQuestion(
       id: 'p220-2',
@@ -32,6 +33,7 @@ const PaperTest paper220 = PaperTest(
       options: ['سعادت حسن منٹو', 'پریم چند', 'کرشن چندر', 'عصمت چغتائی'],
       correctIndex: 0,
       topic: 'Urdu Fiction',
+      explanation: 'ٹوبہ ٹیک سنگھ سعادت حسن منٹو کا مشہور افسانہ ہے، جو تقسیم ہند کے موضوع پر لکھا گیا۔',
     ),
     MockQuestion(
       id: 'p220-3',
@@ -40,6 +42,7 @@ const PaperTest paper220 = PaperTest(
       options: ['میر تقی میر', 'غالب', 'اقبال', 'فیض'],
       correctIndex: 1,
       topic: 'Urdu Poetry',
+      explanation: 'ہزاروں خواہشیں ایسی غالب کی مشہور غزل کا مطلع ہے، اس لیے یہ شعر غالب کا ہے۔',
     ),
     MockQuestion(
       id: 'p220-4',
@@ -48,6 +51,7 @@ const PaperTest paper220 = PaperTest(
       options: ['باغ میں جانا', 'بہت خوش ہونا', 'پھول توڑنا', 'تھک جانا'],
       correctIndex: 1,
       topic: 'Urdu Idioms',
+      explanation: 'باغ باغ ہونا محاورہ ہے جس کا مطلب بہت خوش ہونا ہے۔',
     ),
     MockQuestion(
       id: 'p220-5',
@@ -56,6 +60,7 @@ const PaperTest paper220 = PaperTest(
       options: ['سر سید احمد خان', 'مولوی عبدالحق', 'شبلی نعمانی', 'الطاف حسین حالی'],
       correctIndex: 0,
       topic: 'Urdu Journals',
+      explanation: 'تہذیب الاخلاق سر سید احمد خان نے جاری کیا تھا، جو ان کی اصلاحی تحریک کا ترجمان رسالہ تھا۔',
     ),
     MockQuestion(
       id: 'p220-6',
@@ -64,6 +69,7 @@ const PaperTest paper220 = PaperTest(
       options: ['میر تقی میر', 'الطاف حسین حالی', 'غالب', 'اقبال'],
       correctIndex: 1,
       topic: 'Urdu Poetry',
+      explanation: 'مسدس حالی الطاف حسین حالی کی تصنیف ہے، جو مسلمانوں کے عروج و زوال پر لکھی گئی نظم ہے۔',
     ),
     MockQuestion(
       id: 'p220-7',
@@ -72,6 +78,7 @@ const PaperTest paper220 = PaperTest(
       options: ['شاعر مشرق', 'خدائے سخن', 'بابائے اردو', 'شمس العلما'],
       correctIndex: 1,
       topic: 'Urdu Poets',
+      explanation: 'میر تقی میر کو خدائے سخن کا لقب دیا جاتا ہے، کیونکہ وہ اردو شاعری کے بڑے استاد مانے جاتے ہیں۔',
     ),
     MockQuestion(
       id: 'p220-8',
@@ -80,6 +87,7 @@ const PaperTest paper220 = PaperTest(
       options: ['بانگ درا', 'بال جبریل', 'ضرب کلیم', 'ارمغان حجاز'],
       correctIndex: 0,
       topic: 'Iqbal',
+      explanation: 'بانگ درا اقبال کی پہلی اردو شاعری کی کتاب ہے، جس میں ان کی ابتدائی نظمیں اور غزلیں شامل ہیں۔',
     ),
     MockQuestion(
       id: 'p220-9',
@@ -88,6 +96,7 @@ const PaperTest paper220 = PaperTest(
       options: ['فارسی', 'عربی', 'ہندوی', 'ترکی'],
       correctIndex: 2,
       topic: 'Urdu History',
+      explanation: 'شمالی ہند میں صوفیا نے عام لوگوں تک پیغام پہنچانے کے لیے مقامی زبان ہندوی کا سہارا لیا، تاکہ لوگ آسانی سے سمجھ سکیں۔',
     ),
     MockQuestion(
       id: 'p220-10',
@@ -96,6 +105,7 @@ const PaperTest paper220 = PaperTest(
       options: ['اکبر', 'شاہ جہاں', 'بہادر شاہ ظفر', 'اورنگزیب'],
       correctIndex: 2,
       topic: 'Urdu Poets',
+      explanation: 'ذوق مغل بادشاہ بہادر شاہ ظفر کے استاد تھے اور دلی دربار سے وابستہ رہے۔',
     ),
     MockQuestion(
       id: 'p220-11',
@@ -104,6 +114,7 @@ const PaperTest paper220 = PaperTest(
       options: ['مختصر نظم', 'طویل فرضی کہانی', 'سوانح عمری', 'خط'],
       correctIndex: 1,
       topic: 'Urdu Prose',
+      explanation: 'داستان ایک طویل فرضی کہانی ہوتی ہے، جس میں حیرت انگیز واقعات اور کردار بیان کیے جاتے ہیں۔',
     ),
     MockQuestion(
       id: 'p220-12',
@@ -112,6 +123,7 @@ const PaperTest paper220 = PaperTest(
       options: ['محمد حسین آزاد', 'شبلی نعمانی', 'سر سید احمد خان', 'الطاف حسین حالی'],
       correctIndex: 0,
       topic: 'Urdu Prose',
+      explanation: 'آب حیات محمد حسین آزاد کی تصنیف ہے، جو اردو شاعروں کا تذکرہ ہے۔',
     ),
     MockQuestion(
       id: 'p220-13',
@@ -120,6 +132,7 @@ const PaperTest paper220 = PaperTest(
       options: ['ابوالکلام آزاد', 'اقبال', 'غالب', 'میر'],
       correctIndex: 0,
       topic: 'Urdu Prose',
+      explanation: 'غبار خاطر ابوالکلام آزاد کی تصنیف ہے، جو ان کے خطوط کا مجموعہ ہے۔',
     ),
     MockQuestion(
       id: 'p220-14',
@@ -128,6 +141,7 @@ const PaperTest paper220 = PaperTest(
       options: ['سلیمان ندوی', 'سر سید احمد خان', 'محمد حسین آزاد', 'الطاف حسین حالی'],
       correctIndex: 0,
       topic: 'Urdu Prose',
+      explanation: 'سیرت النبی شبلی نعمانی نے شروع کی تھی اور ان کے بعد سلیمان ندوی نے اس کی تکمیل میں حصہ لیا۔',
     ),
     MockQuestion(
       id: 'p220-15',
@@ -136,6 +150,7 @@ const PaperTest paper220 = PaperTest(
       options: ['قرۃ العین حیدر', 'عصمت چغتائی', 'احمد ندیم قاسمی', 'کرشن چندر'],
       correctIndex: 0,
       topic: 'Urdu Novel',
+      explanation: 'آگ کا دریا قرۃ العین حیدر کا مشہور ناول ہے۔',
     ),
     MockQuestion(
       id: 'p220-16',
@@ -144,6 +159,7 @@ const PaperTest paper220 = PaperTest(
       options: ['مرزا ہادی رسوا', 'پریم چند', 'منٹو', 'مشتاق احمد یوسفی'],
       correctIndex: 0,
       topic: 'Urdu Novel',
+      explanation: 'امراؤ جان ادا مرزا ہادی رسوا کی تصنیف ہے۔',
     ),
     MockQuestion(
       id: 'p220-17',
@@ -152,6 +168,7 @@ const PaperTest paper220 = PaperTest(
       options: ['احمد فراز', 'اشتیاق حسین قریشی', 'احمد ندیم قاسمی', 'حفیظ جالندھری'],
       correctIndex: 1,
       topic: 'Urdu Institutions',
+      explanation: 'اکادمی ادبیات پاکستان کے پہلے چیئرمین اشتیاق حسین قریشی تھے۔',
     ),
     MockQuestion(
       id: 'p220-18',
@@ -160,6 +177,7 @@ const PaperTest paper220 = PaperTest(
       options: ['نظم', 'ناول و افسانہ', 'ڈراما', 'سفرنامہ'],
       correctIndex: 1,
       topic: 'Urdu Fiction',
+      explanation: 'الطاف فاطمہ ناول اور افسانے کی مصنفہ کے طور پر جانی جاتی ہیں۔',
     ),
     MockQuestion(
       id: 'p220-19',
@@ -168,6 +186,7 @@ const PaperTest paper220 = PaperTest(
       options: ['مرزا اسد اللہ خان غالب', 'مرزا محمد حسین', 'مرزا علی رضا', 'مرزا احمد بیگ'],
       correctIndex: 0,
       topic: 'Urdu Poets',
+      explanation: 'مرزا غالب کا اصل نام مرزا اسد اللہ خان غالب تھا۔',
     ),
     MockQuestion(
       id: 'p220-20',
@@ -176,6 +195,7 @@ const PaperTest paper220 = PaperTest(
       options: ['پروین شاکر', 'کشور ناہید', 'فہمیدہ ریاض', 'زہرہ نگاہ'],
       correctIndex: 0,
       topic: 'Urdu Poetry',
+      explanation: 'خوشبو پروین شاکر کا مشہور شعری مجموعہ ہے۔',
     ),
     MockQuestion(
       id: 'p220-21',
@@ -184,6 +204,7 @@ const PaperTest paper220 = PaperTest(
       options: ['مقدمہ شعر و شاعری', 'آب حیات', 'یادگار غالب', 'حیات جاوید'],
       correctIndex: 0,
       topic: 'Urdu Criticism',
+      explanation: 'مقدمہ شعر و شاعری کو اردو کی پہلی تنقیدی کتاب مانا جاتا ہے، جو حالی نے لکھی تھی۔',
     ),
     MockQuestion(
       id: 'p220-22',
@@ -192,6 +213,7 @@ const PaperTest paper220 = PaperTest(
       options: ['محمد دین فوق', 'اقبال', 'فیض', 'جوش ملیح آبادی'],
       correctIndex: 0,
       topic: 'Urdu Poets',
+      explanation: 'محمد دین فوق کا نام کشمیر کے حوالے سے لیا جاتا ہے، کیونکہ وہ کشمیر کی تاریخ و ادب سے وابستہ رہے۔',
     ),
     MockQuestion(
       id: 'p220-23',
@@ -200,6 +222,7 @@ const PaperTest paper220 = PaperTest(
       options: ['علم الاقتصاد', 'بانگ درا', 'اسرار خودی', 'رموز بیخودی'],
       correctIndex: 0,
       topic: 'Iqbal',
+      explanation: 'اقبال کی سب سے پہلی کتاب علم الاقتصاد تھی، جو معاشیات کے موضوع پر لکھی گئی تھی۔',
     ),
     MockQuestion(
       id: 'p220-24',
@@ -208,6 +231,7 @@ const PaperTest paper220 = PaperTest(
       options: ['سب رس', 'باغ و بہار', 'فسانہ عجائب', 'راجا گوپی چند'],
       correctIndex: 0,
       topic: 'Urdu Prose',
+      explanation: 'اردو نثر کی ابتدا سب رس سے مانی جاتی ہے، جو ملا وجہی کی تصنیف ہے۔',
     ),
     MockQuestion(
       id: 'p220-25',
@@ -216,6 +240,7 @@ const PaperTest paper220 = PaperTest(
       options: ['1955', '1963', '1960', '1968'],
       correctIndex: 1,
       topic: 'Urdu Novel',
+      explanation: 'اداس نسلیں عبداللہ حسین کا ناول ہے اور اس کی شناخت 1963 سے جڑی ہے، جس سال اس نے ادبی انعام حاصل کیا۔',
     ),
     MockQuestion(
       id: 'p220-26',
@@ -224,6 +249,7 @@ const PaperTest paper220 = PaperTest(
       options: ['پنجابی', 'سندھی', 'اردو', 'انگریزی'],
       correctIndex: 2,
       topic: 'Urdu Status',
+      explanation: '1973 کے آئین کے تحت اردو پاکستان کی قومی زبان قرار دی گئی ہے۔',
     ),
     MockQuestion(
       id: 'p220-27',
@@ -232,6 +258,7 @@ const PaperTest paper220 = PaperTest(
       options: ['آنکھ کا مرض', 'بہت پیارا', 'دور کی چیز', 'ستارہ دیکھنا'],
       correctIndex: 1,
       topic: 'Urdu Idioms',
+      explanation: 'آنکھ کا تارا محاورہ ہے جس کا مطلب بہت پیارا ہونا ہے۔',
     ),
     MockQuestion(
       id: 'p220-28',
@@ -240,6 +267,7 @@ const PaperTest paper220 = PaperTest(
       options: ['قدرت اللہ شہاب', 'اشفاق احمد', 'بانو قدسیہ', 'ممتاز مفتی'],
       correctIndex: 0,
       topic: 'Urdu Prose',
+      explanation: 'شہاب نامہ قدرت اللہ شہاب کی خودنوشت ہے۔',
     ),    MockQuestion(
       id: 'p220-29',
       subject: MockSubject.generalKnowledge,
@@ -247,6 +275,7 @@ const PaperTest paper220 = PaperTest(
       options: ['37', '38', '39', '40'],
       correctIndex: 2,
       topic: 'Urdu Alphabet',
+      explanation: 'عام گنتی میں اردو کے بنیادی حروف 39 مانے جاتے ہیں، اس لیے یہ جواب درست ہے۔',
     ),
     MockQuestion(
       id: 'p220-30',
@@ -255,6 +284,7 @@ const PaperTest paper220 = PaperTest(
       options: ['تعلیم', 'تالیم', 'تعلم', 'تلییم'],
       correctIndex: 0,
       topic: 'Urdu Spelling',
+      explanation: 'تعلیم ہی درست املا ہے، باقی صورتیں املا کے لحاظ سے غلط ہیں۔',
     ),
     MockQuestion(
       id: 'p220-31',
@@ -263,6 +293,7 @@ const PaperTest paper220 = PaperTest(
       options: ['فریقین نے صلح کر لی', 'فریقوں نے صلح کر لیا', 'فریق نے صلح کر لیا', 'فریقین صلح کر لی'],
       correctIndex: 0,
       topic: 'Urdu Grammar',
+      explanation: 'فریقین جمع کا صیغہ ہے، اس لیے اس کے ساتھ صلح کر لی کا درست جملہ یہی ہے۔',
     ),
     MockQuestion(
       id: 'p220-32',
@@ -271,6 +302,7 @@ const PaperTest paper220 = PaperTest(
       options: ['مشکل', 'مسکل', 'مشقل', 'مسقل'],
       correctIndex: 0,
       topic: 'Urdu Spelling',
+      explanation: 'مشکل ہی درست املا ہے، باقی صورتیں غلط ہیں۔',
     ),
     MockQuestion(
       id: 'p220-33',
@@ -279,6 +311,7 @@ const PaperTest paper220 = PaperTest(
       options: ['امتیاز علی تاج', 'آغا حشر کاشمیری', 'پریم چند', 'سعادت حسن منٹو'],
       correctIndex: 0,
       topic: 'Urdu Drama',
+      explanation: 'ڈراما انارکلی امتیاز علی تاج نے لکھا تھا۔',
     ),
     MockQuestion(
       id: 'p220-34',
@@ -287,6 +320,7 @@ const PaperTest paper220 = PaperTest(
       options: ['1958', '1960', '1962', '1965'],
       correctIndex: 2,
       topic: 'Urdu Poets',
+      explanation: 'فیض احمد فیض کو 1962 میں لینن امن انعام دیا گیا تھا۔',
     ),
     MockQuestion(
       id: 'p220-35',
@@ -295,6 +329,7 @@ const PaperTest paper220 = PaperTest(
       options: ['نظام الدین اولیا', 'معین الدین چشتی', 'بہاؤالدین زکریا', 'فرید الدین گنج شکر'],
       correctIndex: 0,
       topic: 'Urdu History',
+      explanation: 'امیر خسرو حضرت نظام الدین اولیا کے مرید و شاگرد تھے۔',
     ),
     MockQuestion(
       id: 'p220-36',
@@ -303,6 +338,7 @@ const PaperTest paper220 = PaperTest(
       options: ['دیا شنکر نسیم', 'میر انیس', 'دبیر', 'نظیر اکبر آبادی'],
       correctIndex: 0,
       topic: 'Urdu Poetry',
+      explanation: 'گلزار نسیم دیا شنکر نسیم کی تصنیف ہے، جو ایک مثنوی ہے۔',
     ),
     MockQuestion(
       id: 'p220-37',
@@ -311,6 +347,7 @@ const PaperTest paper220 = PaperTest(
       options: ['گواہی دینا', 'لڑائی کرنا', 'سفر کرنا', 'خط لکھنا'],
       correctIndex: 0,
       topic: 'Urdu Vocabulary',
+      explanation: 'شہادت کا لغوی معنی گواہی دینا ہے۔',
     ),
     MockQuestion(
       id: 'p220-38',
@@ -319,6 +356,7 @@ const PaperTest paper220 = PaperTest(
       options: ['ہجو', 'مدح', 'رثا', 'واسوخت'],
       correctIndex: 1,
       topic: 'Urdu Poetry',
+      explanation: 'مرثیہ اور قصیدہ دونوں میں مدح مشترک ہوتی ہے، یعنی کسی کی تعریف بیان کی جاتی ہے۔',
     ),
     MockQuestion(
       id: 'p220-39',
@@ -327,6 +365,7 @@ const PaperTest paper220 = PaperTest(
       options: ['1924', '1930', '1935', '1938'],
       correctIndex: 2,
       topic: 'Iqbal',
+      explanation: 'بال جبریل اقبال کا شعری مجموعہ ہے جو 1935 میں شائع ہوا۔',
     ),
     MockQuestion(
       id: 'p220-40',
@@ -335,6 +374,7 @@ const PaperTest paper220 = PaperTest(
       options: ['سندھی', 'پنجابی', 'پشتو', 'بلوچی'],
       correctIndex: 1,
       topic: 'Languages',
+      explanation: 'پاکستان میں سب سے زیادہ بولی جانے والی مادری زبان پنجابی ہے۔',
     ),
     MockQuestion(
       id: 'p220-41',
@@ -343,6 +383,7 @@ const PaperTest paper220 = PaperTest(
       options: ['رکیک', 'فصیح', 'بلیغ', 'سلیس'],
       correctIndex: 0,
       topic: 'Urdu Criticism',
+      explanation: 'شعر میں غیر مناسب یا کمزور لفظ کو رکیک کہتے ہیں۔',
     ),
     MockQuestion(
       id: 'p220-42',
@@ -351,6 +392,7 @@ const PaperTest paper220 = PaperTest(
       options: ['غلام ہمدانی مصحفی', 'میر تقی میر', 'غالب', 'ذوق'],
       correctIndex: 0,
       topic: 'Urdu Criticism',
+      explanation: 'ریاض الفصحا غلام ہمدانی مصحفی نے مرتب کیا تھا، جو شاعروں کا تذکرہ ہے۔',
     ),
     MockQuestion(
       id: 'p220-43',
@@ -359,6 +401,7 @@ const PaperTest paper220 = PaperTest(
       options: ['اسلامی ادب کی تحریک', 'ترقی پسند تحریک', 'رومانوی تحریک', 'جدیدیت'],
       correctIndex: 0,
       topic: 'Urdu Movements',
+      explanation: 'سراج منیر اسلامی ادب کی تحریک سے وابستہ رہے۔',
     ),
     MockQuestion(
       id: 'p220-44',
@@ -367,6 +410,7 @@ const PaperTest paper220 = PaperTest(
       options: ['ڈر کر بھاگ جانا', 'زور سے بولنا', 'خاموش رہنا', 'کھانا کھانا'],
       correctIndex: 0,
       topic: 'Urdu Idioms',
+      explanation: 'دم دبانا محاورہ ہے جس کا مطلب ڈر کر بھاگ جانا ہے۔',
     ),
     MockQuestion(
       id: 'p220-45',
@@ -375,6 +419,7 @@ const PaperTest paper220 = PaperTest(
       options: ['میر', 'غالب', 'اقبال', 'درد'],
       correctIndex: 1,
       topic: 'Urdu Poetry',
+      explanation: 'دل ناداں تجھے ہوا کیا ہے غالب کی مشہور غزل کا مصرع ہے۔',
     ),
     MockQuestion(
       id: 'p220-46',
@@ -383,6 +428,7 @@ const PaperTest paper220 = PaperTest(
       options: ['سید سبط اصغر نقوی', 'سید محمد جون', 'جعفر حسین', 'علی رضا'],
       correctIndex: 0,
       topic: 'Urdu Poets',
+      explanation: 'جون ایلیا کا اصل نام سید سبط اصغر نقوی تھا۔',
     ),
     MockQuestion(
       id: 'p220-47',
@@ -391,6 +437,7 @@ const PaperTest paper220 = PaperTest(
       options: ['شب رفتہ', 'بانگ درا', 'خوشبو', 'شعلہ طور'],
       correctIndex: 0,
       topic: 'Urdu Poetry',
+      explanation: 'مجید امجد کا مشہور شعری مجموعہ شب رفتہ ہے۔',
     ),
     MockQuestion(
       id: 'p220-48',
@@ -399,6 +446,7 @@ const PaperTest paper220 = PaperTest(
       options: ['خوبصورت وجہ بتانا', 'طنز کرنا', 'مبالغہ کرنا', 'تشبیہ دینا'],
       correctIndex: 0,
       topic: 'Urdu Criticism',
+      explanation: 'حسن تعلیل وہ صنعت ہے جس میں کسی بات کی خوبصورت وجہ بیان کی جاتی ہے۔',
     ),
     MockQuestion(
       id: 'p220-49',
@@ -407,6 +455,7 @@ const PaperTest paper220 = PaperTest(
       options: ['نظم', 'افسانہ', 'ڈراما', 'سفرنامہ'],
       correctIndex: 1,
       topic: 'Urdu Fiction',
+      explanation: 'احمد ندیم قاسمی افسانہ نگاری کے لیے مشہور ہیں۔',
     ),
     MockQuestion(
       id: 'p220-50',
@@ -415,6 +464,7 @@ const PaperTest paper220 = PaperTest(
       options: ['قلم', 'کلم', 'قلام', 'کلام'],
       correctIndex: 0,
       topic: 'Urdu Spelling',
+      explanation: 'قلم ہی درست املا ہے، باقی صورتیں غلط ہیں۔',
     ),
     MockQuestion(
       id: 'p220-51',
@@ -423,6 +473,7 @@ const PaperTest paper220 = PaperTest(
       options: ['کسی چیز پر تسلط', 'خط لکھنا', 'سفر کرنا', 'تجارت کرنا'],
       correctIndex: 0,
       topic: 'Urdu Vocabulary',
+      explanation: 'قبضہ کا مطلب کسی چیز پر تسلط یا اختیار حاصل کرنا ہے۔',
     ),
     MockQuestion(
       id: 'p220-52',
@@ -431,6 +482,7 @@ const PaperTest paper220 = PaperTest(
       options: ['میر مہدی مجروح', 'مصطفی خان شیفتہ', 'منشی ہرگوپال تفتہ', 'نواب یوسف علی خان'],
       correctIndex: 2,
       topic: 'Urdu Letters',
+      explanation: 'غالب کے سب سے زیادہ خطوط منشی ہرگوپال تفتہ کے نام ہیں، اس لیے یہ جواب درست ہے۔',
     ),
     MockQuestion(
       id: 'p220-53',
@@ -439,6 +491,7 @@ const PaperTest paper220 = PaperTest(
       options: ['3', '5', '7', '9'],
       correctIndex: 1,
       topic: 'Urdu Poetry',
+      explanation: 'غزل میں کم از کم پانچ اشعار ہوتے ہیں، یہ غزل کی روایتی شرط مانی جاتی ہے۔',
     ),
     MockQuestion(
       id: 'p220-54',
@@ -447,6 +500,7 @@ const PaperTest paper220 = PaperTest(
       options: ['تصویر یا پرچھائیں', 'آواز', 'خوشبو', 'ذائقہ'],
       correctIndex: 0,
       topic: 'Urdu Vocabulary',
+      explanation: 'عکس کا مطلب تصویر یا پرچھائیں ہے۔',
     ),
     MockQuestion(
       id: 'p220-55',
@@ -455,6 +509,7 @@ const PaperTest paper220 = PaperTest(
       options: ['نظم', 'مضمون و انشائیہ', 'ڈراما', 'ناول'],
       correctIndex: 1,
       topic: 'Urdu Prose',
+      explanation: 'رشید احمد صدیقی مضمون اور انشائیہ نگاری کے لیے مشہور ہیں۔',
     ),
     MockQuestion(
       id: 'p220-56',
@@ -463,6 +518,7 @@ const PaperTest paper220 = PaperTest(
       options: ['نقاد', 'شاعر', 'ناول نگار', 'ڈراما نگار'],
       correctIndex: 0,
       topic: 'Urdu Criticism',
+      explanation: 'ادب پر تنقید کرنے والے کو نقاد کہتے ہیں۔',
     ),
     MockQuestion(
       id: 'p220-57',
@@ -471,6 +527,7 @@ const PaperTest paper220 = PaperTest(
       options: ['آخری الفاظ کی ہم آوازی', 'پہلا مصرع', 'شاعر کا نام', 'نظم کا عنوان'],
       correctIndex: 0,
       topic: 'Urdu Poetry',
+      explanation: 'غزل میں قافیہ سے مراد اشعار کے آخر میں آنے والے ہم آواز الفاظ ہیں۔',
     ),
     MockQuestion(
       id: 'p220-58',
@@ -479,6 +536,7 @@ const PaperTest paper220 = PaperTest(
       options: ['تذکرہ', 'ناول', 'ڈراما', 'سفرنامہ'],
       correctIndex: 0,
       topic: 'Urdu Prose',
+      explanation: 'شعرا کے حالات زندگی پر مبنی کتاب کو تذکرہ کہتے ہیں۔',
     ),
     MockQuestion(
       id: 'p220-59',
@@ -487,6 +545,7 @@ const PaperTest paper220 = PaperTest(
       options: ['غالب', 'اقبال', 'میر', 'فیض'],
       correctIndex: 1,
       topic: 'Urdu Poets',
+      explanation: 'شاعر مشرق کا لقب علامہ اقبال کو ملا۔',
     ),
     MockQuestion(
       id: 'p220-60',
@@ -495,6 +554,7 @@ const PaperTest paper220 = PaperTest(
       options: ['مولوی عبدالحق', 'سر سید احمد خان', 'حالی', 'شبلی'],
       correctIndex: 0,
       topic: 'Urdu Institutions',
+      explanation: 'انجمن ترقی اردو سے سب سے زیادہ وابستہ شخصیت مولوی عبدالحق ہیں، جو بابائے اردو کہلاتے ہیں۔',
     ),
     MockQuestion(
       id: 'p220-61',
@@ -503,6 +563,7 @@ const PaperTest paper220 = PaperTest(
       options: ['محمد ابراہیم ذوق', 'محمد حسین ذوق', 'احمد ذوق', 'علی ذوق'],
       correctIndex: 0,
       topic: 'Urdu Poets',
+      explanation: 'ذوق کا اصل نام محمد ابراہیم ذوق تھا۔',
     ),
     MockQuestion(
       id: 'p220-62',
@@ -511,6 +572,7 @@ const PaperTest paper220 = PaperTest(
       options: ['محبوب سے گفتگو', 'جنگ کا بیان', 'سفر کی روداد', 'تاریخ لکھنا'],
       correctIndex: 0,
       topic: 'Urdu Poetry',
+      explanation: 'غزل کا لغوی معنی محبوب سے گفتگو کرنا ہے۔',
     ),
     MockQuestion(
       id: 'p220-63',
@@ -519,6 +581,7 @@ const PaperTest paper220 = PaperTest(
       options: ['زبان کی ساخت کا مطالعہ', 'شاعری کی تاریخ', 'ناول کی اقسام', 'خطوط کا مجموعہ'],
       correctIndex: 0,
       topic: 'Linguistics',
+      explanation: 'لسانی تشکیلات سے مراد زبان کی ساخت کا مطالعہ ہے۔',
     ),
     MockQuestion(
       id: 'p220-64',
@@ -527,6 +590,7 @@ const PaperTest paper220 = PaperTest(
       options: ['وہ کتاب پڑھ رہا ہے', 'وہ کتاب پڑھ رہے ہے', 'وہ کتاب پڑھ رہی ہے', 'وہ کتاب پڑھ رہا ہیں'],
       correctIndex: 0,
       topic: 'Urdu Grammar',
+      explanation: 'وہ کتاب پڑھ رہا ہے درست جملہ ہے، کیونکہ واحد مذکر کے لیے رہا ہے استعمال ہوتا ہے۔',
     ),
     MockQuestion(
       id: 'p220-65',
@@ -535,6 +599,7 @@ const PaperTest paper220 = PaperTest(
       options: ['پچھتانا', 'خوش ہونا', 'ہاتھ دھونا', 'سلام کرنا'],
       correctIndex: 0,
       topic: 'Urdu Idioms',
+      explanation: 'ہاتھ ملنا محاورہ ہے جس کا مطلب پچھتانا ہے۔',
     ),
     MockQuestion(
       id: 'p220-66',
@@ -543,6 +608,7 @@ const PaperTest paper220 = PaperTest(
       options: ['یاد کرنا', 'سمجھنا', 'لاگو کرنا', 'تخلیق کرنا'],
       correctIndex: 3,
       topic: 'Pedagogy',
+      explanation: 'بلوم کی درجہ بندی میں سب سے اونچی سطح تخلیق کرنا ہے، جو یاد کرنے اور سمجھنے سے آگے کی مہارت ہے۔',
     ),
     MockQuestion(
       id: 'p220-67',
@@ -551,6 +617,7 @@ const PaperTest paper220 = PaperTest(
       options: ['فن شاعری', 'علم بدیع', 'علم بیان', 'علم عروض'],
       correctIndex: 0,
       topic: 'Urdu Criticism',
+      explanation: 'اردو تنقید میں Poetics کے لیے فن شاعری کی اصطلاح استعمال ہوتی ہے۔',
     ),
     MockQuestion(
       id: 'p220-68',
@@ -559,6 +626,7 @@ const PaperTest paper220 = PaperTest(
       options: ['ڈاکٹر سجاد باقر رضوی', 'احمد ندیم قاسمی', 'اشفاق احمد', 'ممتاز مفتی'],
       correctIndex: 0,
       topic: 'Translation',
+      explanation: 'دی ریچڈ آف دی ارتھ کا اردو ترجمہ ڈاکٹر سجاد باقر رضوی نے کیا تھا۔',
     ),
     MockQuestion(
       id: 'p220-69',
@@ -567,6 +635,7 @@ const PaperTest paper220 = PaperTest(
       options: ['بانگ درا', 'بال جبریل', 'ضرب کلیم', 'ارمغان حجاز'],
       correctIndex: 0,
       topic: 'Iqbal',
+      explanation: 'اقبال کی نظم ہمالہ ان کے مجموعے بانگ درا میں شامل ہے۔',
     ),
     MockQuestion(
       id: 'p220-70',
@@ -575,6 +644,7 @@ const PaperTest paper220 = PaperTest(
       options: ['تنقید بھرے انداز میں مزاح', 'تعریف کرنا', 'دعا کرنا', 'شکایت کرنا'],
       correctIndex: 0,
       topic: 'Urdu Criticism',
+      explanation: 'طنز سے مراد تنقید بھرے انداز میں مزاح کرنا ہے۔',
     ),
     MockQuestion(
       id: 'p220-71',
@@ -583,6 +653,7 @@ const PaperTest paper220 = PaperTest(
       options: ['شہر کی تباہی پر نظم', 'شہر کی تعریف', 'شہر کا سفرنامہ', 'شہر کی تاریخ'],
       correctIndex: 0,
       topic: 'Urdu Poetry',
+      explanation: 'شہر آشوب وہ نظم ہوتی ہے جس میں شہر کی تباہی یا بربادی کا ذکر ہوتا ہے۔',
     ),
     MockQuestion(
       id: 'p220-72',
@@ -591,6 +662,7 @@ const PaperTest paper220 = PaperTest(
       options: ['غلط سمجھنا', 'صحیح سمجھنا', 'بھول جانا', 'یاد کرنا'],
       correctIndex: 0,
       topic: 'Urdu Vocabulary',
+      explanation: 'غلط فہمی کا مطلب کسی بات کو غلط سمجھنا ہے۔',
     ),
     MockQuestion(
       id: 'p220-73',
@@ -599,6 +671,7 @@ const PaperTest paper220 = PaperTest(
       options: ['سجاد ظہیر', 'اقبال', 'غالب', 'حالی'],
       correctIndex: 0,
       topic: 'Urdu Movements',
+      explanation: 'اردو میں ترقی پسند تحریک کے بانیوں میں سجاد ظہیر شامل ہیں۔',
     ),
     MockQuestion(
       id: 'p220-74',
@@ -607,6 +680,7 @@ const PaperTest paper220 = PaperTest(
       options: ['افلاطون', 'ارسطو', 'کانٹ', 'ہیگل'],
       correctIndex: 1,
       topic: 'Philosophy',
+      explanation: 'حقیقت پسندی کے فلسفی بانی ارسطو مانے جاتے ہیں، جن کا زور مشاہدے اور حقیقت پر تھا۔',
     ),
     MockQuestion(
       id: 'p220-75',
@@ -615,6 +689,7 @@ const PaperTest paper220 = PaperTest(
       options: ['Realists', 'Naturalists', 'Pragmatists', 'Existentialists'],
       correctIndex: 1,
       topic: 'Pedagogy',
+      explanation: 'پلے وے طریقہ تدریس پر سب سے زیادہ زور فطرت پسند مکتب فکر دیتا ہے، جو بچے کی فطری دلچسپی اور کھیل کے ذریعے سیکھنے کو اہمیت دیتا ہے۔',
     ),
     MockQuestion(
       id: 'p220-76',
@@ -623,6 +698,7 @@ const PaperTest paper220 = PaperTest(
       options: ['Stem', 'Key', 'Distractor', 'Option'],
       correctIndex: 0,
       topic: 'Pedagogy',
+      explanation: 'کثیر الانتخابی سوال میں سوال کے بیان کو Stem کہتے ہیں۔',
     ),
     MockQuestion(
       id: 'p220-77',
@@ -631,6 +707,7 @@ const PaperTest paper220 = PaperTest(
       options: ['Management', 'Mathematics', 'Medicine', 'Music'],
       correctIndex: 1,
       topic: 'Pedagogy',
+      explanation: 'STEAM میں S سائنس، T ٹیکنالوجی، E انجینئرنگ، A آرٹس اور M میتھمیٹکس ہے۔',
     ),
     MockQuestion(
       id: 'p220-78',
@@ -639,6 +716,7 @@ const PaperTest paper220 = PaperTest(
       options: ['مختصر', 'بڑا', 'اونچا', 'گہرا'],
       correctIndex: 0,
       topic: 'Urdu Vocabulary',
+      explanation: 'طویل کا متضاد مختصر ہے، یعنی لمبے کے مقابلے میں چھوٹا۔',
     ),
     MockQuestion(
       id: 'p220-79',
@@ -647,6 +725,7 @@ const PaperTest paper220 = PaperTest(
       options: ['مولوی عبدالحق', 'نصیر الدین ہاشمی', 'محی الدین قادری', 'عبدالقادر سروری'],
       correctIndex: 1,
       topic: 'Urdu Criticism',
+      explanation: 'اردو نظم کے نظریے کے پیش کرنے والے نصیر الدین ہاشمی مانے جاتے ہیں۔',
     ),
     MockQuestion(
       id: 'p220-80',
@@ -655,6 +734,7 @@ const PaperTest paper220 = PaperTest(
       options: ['دھنپت رائے', 'گوپی چند', 'رام چند', 'کشن چند'],
       correctIndex: 0,
       topic: 'Urdu Fiction',
+      explanation: 'پریم چند کا اصل نام دھنپت رائے تھا۔',
     ),
     MockQuestion(
       id: 'p220-81',
@@ -663,6 +743,7 @@ const PaperTest paper220 = PaperTest(
       options: ['دو مصرعوں کا مجموعہ', 'ایک مصرع', 'چار مصرعے', 'ایک بند'],
       correctIndex: 0,
       topic: 'Urdu Poetry',
+      explanation: 'شعر دو مصرعوں کا مجموعہ ہوتا ہے۔',
     ),
   ],
   latestUpdates: [],

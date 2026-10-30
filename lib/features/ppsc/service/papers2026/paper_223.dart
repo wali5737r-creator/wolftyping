@@ -24,6 +24,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Every process keeps a resource to itself', 'Resources cannot be taken away from a process', 'A process holds one resource while waiting for another', 'Processes wait for each other in a closed loop'],
       correctIndex: 3,
       topic: 'Operating Systems',
+      explanation: 'A deadlock happens when processes wait on each other in a closed loop, so none of them can proceed. Holding a resource while waiting is part of the picture, but the circular wait is what locks the system.',
     ),
     MockQuestion(
       id: 'p223-2',
@@ -32,6 +33,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Microsoft', 'Apple', 'Google', 'Samsung'],
       correctIndex: 2,
       topic: 'Operating Systems',
+      explanation: 'Android is developed by Google, which leads its development. Samsung makes Android phones but does not develop the operating system itself.',
     ),
     MockQuestion(
       id: 'p223-3',
@@ -40,6 +42,7 @@ const PaperTest paper223 = PaperTest(
       options: ['RAM', 'Hard Disk', 'ROM', 'Cache Memory'],
       correctIndex: 1,
       topic: 'Memory',
+      explanation: 'Virtual memory extends RAM by using space on the hard disk as overflow storage. The operating system swaps pages between RAM and disk as needed.',
     ),
     MockQuestion(
       id: 'p223-4',
@@ -48,6 +51,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Charles Babbage', 'John von Neumann', 'Alan Turing', 'Blaise Pascal'],
       correctIndex: 1,
       topic: 'Computer History',
+      explanation: 'John von Neumann described the stored-program design, in which instructions and data are both kept in memory. Earlier machines were often fed instructions separately instead.',
     ),
     MockQuestion(
       id: 'p223-5',
@@ -56,6 +60,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Memory Unit', 'I/O Interface', 'ALU', 'CPU'],
       correctIndex: 1,
       topic: 'Computer Architecture',
+      explanation: 'The classic design centres on memory, a processing unit containing an ALU and a control unit, and input and output. A standalone I/O interface is not one of its named core parts.',
     ),
     MockQuestion(
       id: 'p223-6',
@@ -64,6 +69,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Cache', 'SRAM', 'Registers', 'DRAM'],
       correctIndex: 2,
       topic: 'Memory',
+      explanation: 'Registers sit inside the CPU and are accessed directly, so they are faster than cache, SRAM and DRAM.',
     ),
     MockQuestion(
       id: 'p223-7',
@@ -72,6 +78,7 @@ const PaperTest paper223 = PaperTest(
       options: ['LAN', 'MAN', 'WAN', 'PAN'],
       correctIndex: 2,
       topic: 'Networking',
+      explanation: 'The Internet links networks across the world, which makes it a wide area network. A LAN covers only a small local area.',
     ),
     MockQuestion(
       id: 'p223-8',
@@ -80,6 +87,7 @@ const PaperTest paper223 = PaperTest(
       options: ['4.7 GB', '1.44 MB', '700 MB', '8.5 GB'],
       correctIndex: 2,
       topic: 'Storage',
+      explanation: 'A standard CD-ROM holds about 700 MB of data. The 4.7 GB figure belongs to a standard single-layer DVD.',
     ),
     MockQuestion(
       id: 'p223-9',
@@ -88,6 +96,7 @@ const PaperTest paper223 = PaperTest(
       options: ['.docx', '.pdf', '.xlsx', '.pptx'],
       correctIndex: 3,
       topic: 'MS Office',
+      explanation: 'PowerPoint presentations use the .pptx extension. The .docx and .xlsx extensions belong to Word and Excel, while .pdf is a document format.',
     ),
     MockQuestion(
       id: 'p223-10',
@@ -96,6 +105,7 @@ const PaperTest paper223 = PaperTest(
       options: ['F2', 'F3', 'F4', 'F5'],
       correctIndex: 2,
       topic: 'MS Excel',
+      explanation: 'In Excel, F4 repeats the most recent action. F2 edits a cell and F5 opens the Go To dialog instead.',
     ),
     MockQuestion(
       id: 'p223-11',
@@ -104,6 +114,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Ctrl+A', 'Ctrl+Z', 'Ctrl+C', 'Ctrl+V'],
       correctIndex: 1,
       topic: 'Shortcuts',
+      explanation: 'Ctrl+Z is the standard undo shortcut in most applications. Ctrl+A selects all, Ctrl+C copies and Ctrl+V pastes.',
     ),
     MockQuestion(
       id: 'p223-12',
@@ -112,6 +123,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Draft View', 'Print Layout View', 'Web Layout View', 'Outline View'],
       correctIndex: 1,
       topic: 'MS Word',
+      explanation: 'Headers and footers appear on the page itself, so they are visible in Print Layout View. Draft View shows the document without page furniture.',
     ),
     MockQuestion(
       id: 'p223-13',
@@ -120,6 +132,7 @@ const PaperTest paper223 = PaperTest(
       options: ['View Menu', 'Home Menu', 'Insert Menu', 'Design Menu'],
       correctIndex: 2,
       topic: 'MS Word',
+      explanation: 'In Microsoft Word, headers and footers are added from the Insert menu. The Home menu holds formatting commands instead.',
     ),
     MockQuestion(
       id: 'p223-14',
@@ -128,6 +141,7 @@ const PaperTest paper223 = PaperTest(
       options: ['F5', 'Shift+F5', 'Ctrl+F5', 'Alt+F5'],
       correctIndex: 1,
       topic: 'MS PowerPoint',
+      explanation: 'Shift+F5 starts a PowerPoint slide show from the current slide. Plain F5 starts it from the beginning.',
     ),
     MockQuestion(
       id: 'p223-15',
@@ -136,6 +150,7 @@ const PaperTest paper223 = PaperTest(
       options: ['General User interface', 'Graphical Unified interface', 'Graphical User interface', 'General Unified interface'],
       correctIndex: 2,
       topic: 'Computer Basics',
+      explanation: 'GUI stands for Graphical User Interface, the visual way of interacting with a computer through windows, icons and menus.',
     ),
     MockQuestion(
       id: 'p223-16',
@@ -144,6 +159,7 @@ const PaperTest paper223 = PaperTest(
       options: ['American Standard code for information coding', 'Advanced standard code for information interchange', 'American standard code for information interchange', 'American system code for information interchange'],
       correctIndex: 2,
       topic: 'Computer Basics',
+      explanation: 'ASCII stands for American Standard Code for Information Interchange, the coding scheme that represents text characters as numbers.',
     ),
     MockQuestion(
       id: 'p223-17',
@@ -152,6 +168,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Windows', 'Mac OS', 'iOS', 'Linux'],
       correctIndex: 3,
       topic: 'Operating Systems',
+      explanation: 'Linux is open-source software whose source code anyone may inspect and modify. Windows, macOS and iOS are proprietary systems.',
     ),
     MockQuestion(
       id: 'p223-18',
@@ -160,6 +177,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Ctrl+N', 'Ctrl+M', 'Ctrl+S', 'Ctrl+I'],
       correctIndex: 1,
       topic: 'MS PowerPoint',
+      explanation: 'Ctrl+M inserts a new slide in PowerPoint. Ctrl+N creates a new presentation and Ctrl+S saves.',
     ),
     MockQuestion(
       id: 'p223-19',
@@ -168,6 +186,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Centralized version control system', 'File sharing tool', 'Distributed version control system (DVCS)', 'Project management software'],
       correctIndex: 2,
       topic: 'Software Tools',
+      explanation: 'Git is a distributed version control system, because every user holds a full copy of the repository history. A centralised system keeps history only on one server.',
     ),
     MockQuestion(
       id: 'p223-20',
@@ -176,6 +195,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Transpose', 'Pivot', 'Filter', 'Sort'],
       correctIndex: 0,
       topic: 'MS Excel',
+      explanation: 'Transpose swaps rows and columns, turning row data into column data and vice versa. Filter, Sort and Pivot do different jobs.',
     ),
     MockQuestion(
       id: 'p223-21',
@@ -184,6 +204,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Adobe Reader', 'VLC Media Player', 'Microsoft Word', 'Winzip'],
       correctIndex: 3,
       topic: 'Software Tools',
+      explanation: 'WinZip is a file compression tool used to pack files into archives. The other programs are a reader, a media player and a word processor.',
     ),
     MockQuestion(
       id: 'p223-22',
@@ -192,6 +213,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Megabytes', 'Kilobytes', 'Gigahertz', 'Bytes'],
       correctIndex: 2,
       topic: 'Hardware',
+      explanation: "A CPU's speed is measured in gigahertz, the number of clock cycles per second. Megabytes and bytes measure storage, not speed.",
     ),
     MockQuestion(
       id: 'p223-23',
@@ -200,6 +222,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Archie', 'AltaVista', 'Yahoo', 'Google'],
       correctIndex: 0,
       topic: 'Internet',
+      explanation: 'Archie, created in 1990 to index FTP archives, is widely regarded as the first search engine. AltaVista, Yahoo and Google all came later.',
     ),
     MockQuestion(
       id: 'p223-24',
@@ -208,6 +231,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Melissa', 'Trojan', 'Creeper', 'Brain'],
       correctIndex: 2,
       topic: 'Computer History',
+      explanation: 'Creeper, an experimental self-replicating program from the early 1970s, is regarded as the first computer virus. Brain came later and was the first virus for IBM PCs.',
     ),
     MockQuestion(
       id: 'p223-25',
@@ -216,6 +240,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Compiler', 'Operating System', 'Loader', 'Assembler'],
       correctIndex: 1,
       topic: 'Operating Systems',
+      explanation: 'The operating system manages the hardware and provides the platform that programs run on, so a computer cannot boot into a usable state without one.',
     ),
     MockQuestion(
       id: 'p223-26',
@@ -224,6 +249,7 @@ const PaperTest paper223 = PaperTest(
       options: ['View > Select All', 'File > Select All', 'Insert > Select All', 'Home > Editing > Select > Select All'],
       correctIndex: 3,
       topic: 'MS Word',
+      explanation: 'In Word, the full-document selection path runs through Home, then Editing, then Select, then Select All. The other menu paths do not contain that command.',
     ),
     MockQuestion(
       id: 'p223-27',
@@ -232,6 +258,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Steve Jobs and Steve Wozniak', 'Bill Gates and Paul Allen', 'Larry Page and Sergey Brin', 'Jeff Bezos and Elon Musk'],
       correctIndex: 1,
       topic: 'Computer History',
+      explanation: 'Microsoft was founded by Bill Gates and Paul Allen. Jobs and Wozniak founded Apple, while Page and Brin founded Google.',
     ),
     MockQuestion(
       id: 'p223-28',
@@ -240,6 +267,7 @@ const PaperTest paper223 = PaperTest(
       options: ['winword', 'excel', 'powerpnt', 'outlook'],
       correctIndex: 2,
       topic: 'MS PowerPoint',
+      explanation: 'Typing powerpnt in the Windows Run box launches PowerPoint. The commands winword and excel launch Word and Excel instead.',
     ),
     MockQuestion(
       id: 'p223-29',
@@ -248,6 +276,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Execute programs', 'Manage memory', 'Translate high level language into machine code', 'Debug errors'],
       correctIndex: 2,
       topic: 'Programming',
+      explanation: 'A compiler translates a whole high-level language program into machine code. It does not itself execute the program or manage memory.',
     ),
     MockQuestion(
       id: 'p223-30',
@@ -256,6 +285,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Assign a keyboard shortcut to the macro', 'Save the macro', 'Record macro', 'Name the macro'],
       correctIndex: 0,
       topic: 'MS Word',
+      explanation: 'In the macro creation sequence used here, naming the macro comes first and assigning a keyboard shortcut follows, so the shortcut step is the second step.',
     ),
     MockQuestion(
       id: 'p223-31',
@@ -264,6 +294,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Design Tab', 'Insert Tab', 'Home Tab', 'Animations Tab'],
       correctIndex: 0,
       topic: 'MS PowerPoint',
+      explanation: 'PowerPoint themes are applied from the Design tab, which holds the theme gallery. The Insert and Animations tabs serve other purposes.',
     ),
     MockQuestion(
       id: 'p223-32',
@@ -272,6 +303,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Java', 'C++', 'Visual Basic', 'Python'],
       correctIndex: 2,
       topic: 'MS Word',
+      explanation: 'Word macros are written in Visual Basic for Applications, a form of Visual Basic. Java, C++ and Python are not used for Word macros.',
     ),
     MockQuestion(
       id: 'p223-33',
@@ -280,6 +312,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Sums a range of cells', 'Performs a logical test and returns a value based on the result', 'Counts cells', 'Finds the average of a range of cells'],
       correctIndex: 1,
       topic: 'MS Excel',
+      explanation: 'The IF function performs a logical test and returns one value when the test is true and another when it is false. It does not sum, count or average a range.',
     ),
     MockQuestion(
       id: 'p223-34',
@@ -288,6 +321,7 @@ const PaperTest paper223 = PaperTest(
       options: ['POP3', 'FTP', 'SMTP', 'SSH'],
       correctIndex: 2,
       topic: 'Networking',
+      explanation: 'SMTP, the Simple Mail Transfer Protocol, is used to send email. POP3 is used to receive mail, while FTP transfers files.',
     ),
     MockQuestion(
       id: 'p223-35',
@@ -296,6 +330,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Router', 'Switch', 'Primary Network', 'Topology'],
       correctIndex: 0,
       topic: 'Networking',
+      explanation: 'A router connects separate network segments or networks and forwards traffic between them. A switch mainly forwards traffic within one local network.',
     ),
     MockQuestion(
       id: 'p223-36',
@@ -304,6 +339,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Delete', 'Insert', 'Update', 'Submit'],
       correctIndex: 3,
       topic: 'Databases',
+      explanation: 'Delete, Insert and Update are all SQL keywords, but Submit is not a keyword in SQL. That is why it is the odd one out.',
     ),
     MockQuestion(
       id: 'p223-37',
@@ -312,6 +348,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Right', 'Center', 'Justify', 'Left'],
       correctIndex: 3,
       topic: 'MS Word',
+      explanation: 'Word aligns paragraphs to the left by default. Centre, right and justified alignment must be chosen deliberately.',
     ),
     MockQuestion(
       id: 'p223-38',
@@ -320,6 +357,7 @@ const PaperTest paper223 = PaperTest(
       options: ['F5', 'F1', 'F3', 'F7'],
       correctIndex: 0,
       topic: 'MS PowerPoint',
+      explanation: 'F5 starts a PowerPoint slide show from the beginning. Shift+F5 is the shortcut that starts it from the current slide.',
     ),
     MockQuestion(
       id: 'p223-39',
@@ -328,6 +366,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Row', 'Column', 'Cell', 'Range'],
       correctIndex: 2,
       topic: 'MS Excel',
+      explanation: 'A cell, the intersection of a row and a column, is the basic unit of a worksheet where text and numbers are entered.',
     ),
     MockQuestion(
       id: 'p223-40',
@@ -336,6 +375,7 @@ const PaperTest paper223 = PaperTest(
       options: ['F1', 'F2', 'F3', 'Edit'],
       correctIndex: 1,
       topic: 'MS Excel',
+      explanation: 'F2 edits the selected cell in Excel. F1 opens help and F3 pastes a name instead.',
     ),
     MockQuestion(
       id: 'p223-41',
@@ -344,6 +384,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Ctrl+Home', 'Ctrl+End', 'Ctrl+Page Down', 'Ctrl+Page Up'],
       correctIndex: 2,
       topic: 'MS Excel',
+      explanation: 'Ctrl+Page Down moves to the next sheet in a workbook. Ctrl+Page Up moves to the previous sheet.',
     ),
     MockQuestion(
       id: 'p223-42',
@@ -352,6 +393,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Home Tab', 'Formulas Tab', 'Insert Tab', 'Data Tab'],
       correctIndex: 2,
       topic: 'MS Excel',
+      explanation: 'Pivot tables are inserted from the Insert tab in Excel. The Home and Data tabs do not contain the PivotTable command.',
     ),
     MockQuestion(
       id: 'p223-43',
@@ -360,6 +402,7 @@ const PaperTest paper223 = PaperTest(
       options: ['128 bits', '36 bits', '48 bits', 'None'],
       correctIndex: 0,
       topic: 'Networking',
+      explanation: 'IPv6 addresses are 128 bits long, which gives a vastly larger address space than the 32-bit IPv4 format.',
     ),
     MockQuestion(
       id: 'p223-44',
@@ -368,6 +411,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Uniquely identifies each record', 'Auto number is an example of a key', 'Cannot be repeated', 'All of these'],
       correctIndex: 3,
       topic: 'Databases',
+      explanation: 'A primary key uniquely identifies each record, its values cannot repeat, and an auto-number field is a common example. Hence all the statements hold.',
     ),
     MockQuestion(
       id: 'p223-45',
@@ -376,6 +420,7 @@ const PaperTest paper223 = PaperTest(
       options: ['A column containing the primary key of another table', 'Used to design data type', 'Defines null status', 'A key used for encryption'],
       correctIndex: 0,
       topic: 'Databases',
+      explanation: 'A foreign key is a column that holds the primary key values of another table, linking the two tables together.',
     ),
     MockQuestion(
       id: 'p223-46',
@@ -384,6 +429,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Python', 'Lisp', 'Ruby', 'Java'],
       correctIndex: 0,
       topic: 'Programming',
+      explanation: 'Python is the most widely used language for artificial intelligence work today, thanks to its large libraries and community. Lisp was historically important but is no longer the leading choice.',
     ),
     MockQuestion(
       id: 'p223-47',
@@ -392,6 +438,7 @@ const PaperTest paper223 = PaperTest(
       options: ['11', '12', '13', '10'],
       correctIndex: 0,
       topic: 'MS Word',
+      explanation: 'The default font size in current versions of MS Word is 11 points. The other sizes must be set manually.',
     ),
     MockQuestion(
       id: 'p223-48',
@@ -400,6 +447,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Record', 'Field', 'Table', 'Database'],
       correctIndex: 1,
       topic: 'Databases',
+      explanation: 'A field, a single item of data such as a name or a price, is the smallest logical unit of data in a database. Records and tables are built from fields.',
     ),
     MockQuestion(
       id: 'p223-49',
@@ -408,6 +456,7 @@ const PaperTest paper223 = PaperTest(
       options: ['0 and 1', '1 and 2', '1 and 3', '1 and 5'],
       correctIndex: 0,
       topic: 'Number Systems',
+      explanation: 'Binary numbers use only the two digits 0 and 1, matching the on and off states of computer circuits.',
     ),
     MockQuestion(
       id: 'p223-50',
@@ -416,6 +465,7 @@ const PaperTest paper223 = PaperTest(
       options: ['File extension', 'Name', 'Size', 'Location'],
       correctIndex: 0,
       topic: 'Computer Basics',
+      explanation: 'A file is mainly recognised by its extension, the suffix that tells the system what kind of file it is. Names, sizes and locations do not identify the file type.',
     ),
     MockQuestion(
       id: 'p223-51',
@@ -424,6 +474,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Word processor', 'Spreadsheet', 'Presentation tool', 'Database'],
       correctIndex: 0,
       topic: 'Software Tools',
+      explanation: 'Google Docs is a word processor, used for writing and editing documents. It is not a spreadsheet, presentation or database tool.',
     ),
     MockQuestion(
       id: 'p223-52',
@@ -432,6 +483,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Agile', 'Spiral', 'Iterative', 'Water fall'],
       correctIndex: 3,
       topic: 'Software Engineering',
+      explanation: 'The linear sequential model, in which each phase finishes before the next begins, is also known as the waterfall model.',
     ),
     MockQuestion(
       id: 'p223-53',
@@ -440,6 +492,7 @@ const PaperTest paper223 = PaperTest(
       options: ['DevOps', 'Agile', 'Waterfall', 'RAD'],
       correctIndex: 1,
       topic: 'Software Engineering',
+      explanation: 'Scrum is a framework used within the Agile approach to software development. It is not part of Waterfall or DevOps as such.',
     ),
     MockQuestion(
       id: 'p223-54',
@@ -448,6 +501,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Compiling', 'Executing', 'Testing', 'Debugging'],
       correctIndex: 3,
       topic: 'Programming',
+      explanation: 'Debugging is the process of finding and fixing errors in program code. Compiling translates code and testing checks it, but neither is the fixing process itself.',
     ),
     MockQuestion(
       id: 'p223-55',
@@ -456,6 +510,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Detector', 'Modulator', 'Transponders', 'Stations'],
       correctIndex: 2,
       topic: 'Networking',
+      explanation: 'The multiple repeaters carried by a communication satellite are called transponders, because they receive, amplify and retransmit signals.',
     ),
     MockQuestion(
       id: 'p223-56',
@@ -464,6 +519,7 @@ const PaperTest paper223 = PaperTest(
       options: ['FIFO', 'LIFO', 'FILO', 'LILO'],
       correctIndex: 1,
       topic: 'Data Structures',
+      explanation: 'A stack works on the last-in, first-out principle: the most recently added item is the first one removed. FIFO describes a queue instead.',
     ),
     MockQuestion(
       id: 'p223-57',
@@ -472,6 +528,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Database', 'Cloud storage', 'Blockchain', 'Data Warehouse'],
       correctIndex: 2,
       topic: 'Computer Basics',
+      explanation: 'A blockchain is a decentralised, distributed digital ledger in which records are shared across many computers. An ordinary database is normally held in one place.',
     ),
     MockQuestion(
       id: 'p223-58',
@@ -480,6 +537,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Shell', 'The kernel', 'Device drivers', 'File system'],
       correctIndex: 1,
       topic: 'Operating Systems',
+      explanation: 'The kernel is the core of an operating system and has the most basic control over all hardware devices. The shell, drivers and file system work above or beside it.',
     ),
     MockQuestion(
       id: 'p223-59',
@@ -488,6 +546,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Exec', 'Fork', 'Wait', 'Kill'],
       correctIndex: 1,
       topic: 'Operating Systems',
+      explanation: 'In Unix, the fork system call creates a new process by duplicating the calling process. Exec replaces a process image, while wait and kill do other jobs.',
     ),
     MockQuestion(
       id: 'p223-60',
@@ -496,6 +555,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Improve processing', 'Improve Data Storage', 'Improve graphics', 'Improve Network speed'],
       correctIndex: 1,
       topic: 'Storage',
+      explanation: 'RAID improves data storage by spreading data across several disks, which can raise performance and provide redundancy. It is not a processing or graphics technology.',
     ),
     MockQuestion(
       id: 'p223-61',
@@ -504,6 +564,7 @@ const PaperTest paper223 = PaperTest(
       options: ['To perform a horizontal lookup', 'To perform a calculation', 'To perform a vertical lookup and return a value based on specific criteria', 'To format data'],
       correctIndex: 2,
       topic: 'MS Excel',
+      explanation: 'VLOOKUP performs a vertical lookup, searching down the first column of a table and returning a value from a matching row.',
     ),
     MockQuestion(
       id: 'p223-62',
@@ -512,6 +573,7 @@ const PaperTest paper223 = PaperTest(
       options: ['MAX()', 'MIN()', 'AVERAGE()', 'COUNT()'],
       correctIndex: 0,
       topic: 'MS Excel',
+      explanation: 'The MAX function returns the largest number in a range. MIN returns the smallest, AVERAGE the mean and COUNT the number of numeric cells.',
     ),
     MockQuestion(
       id: 'p223-63',
@@ -520,6 +582,7 @@ const PaperTest paper223 = PaperTest(
       options: ['AVERAGE()', 'SUM()', 'COUNT()', 'MIN()'],
       correctIndex: 1,
       topic: 'MS Excel',
+      explanation: 'The SUM function adds up a set of values in Excel. AVERAGE, COUNT and MIN perform different calculations.',
     ),
     MockQuestion(
       id: 'p223-64',
@@ -528,6 +591,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Workbooks', 'Worksheet', 'Charts', 'Both B & C'],
       correctIndex: 3,
       topic: 'MS Excel',
+      explanation: 'A workbook holds worksheets, and it can also hold chart sheets, so both worksheets and charts together describe its contents.',
     ),
     MockQuestion(
       id: 'p223-65',
@@ -536,6 +600,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Storage operations', 'Arithmetic and logical operations', 'Control Operations', 'Input/Output operations'],
       correctIndex: 1,
       topic: 'Hardware',
+      explanation: 'The ALU, the arithmetic logic unit, performs arithmetic and logical operations. Storage, control and input/output are handled elsewhere.',
     ),
     MockQuestion(
       id: 'p223-66',
@@ -544,6 +609,7 @@ const PaperTest paper223 = PaperTest(
       options: ['A process terminates unexpectedly', 'A process waits indefinitely for resources held by other processes', 'CPU is overloaded', 'Memory is insufficient'],
       correctIndex: 1,
       topic: 'Operating Systems',
+      explanation: 'A deadlock occurs when a process waits indefinitely for resources held by other processes that are themselves waiting. A process ending or a busy CPU does not by itself cause one.',
     ),
     MockQuestion(
       id: 'p223-67',
@@ -552,6 +618,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Cloud Storage', 'Network Drive', 'USB Drive', 'Internal Hard Drive'],
       correctIndex: 2,
       topic: 'Operating Systems',
+      explanation: 'A USB drive is a valid external destination for a backup made with Windows Backup and Restore. It keeps the backup separate from the drive being backed up.',
     ),
     MockQuestion(
       id: 'p223-68',
@@ -560,6 +627,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Security purposes', 'Recovery process', 'Performance enhancement', 'Memory management'],
       correctIndex: 1,
       topic: 'Operating Systems',
+      explanation: 'Checkpoints record a recoverable state of the system so work can be restored after a failure. They are a recovery mechanism, not a security or performance feature.',
     ),
     MockQuestion(
       id: 'p223-69',
@@ -568,6 +636,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Created in Word', 'Created DBMS Package', 'Database created in EXCEL', 'Database on external server'],
       correctIndex: 3,
       topic: 'Databases',
+      explanation: 'An external database is one held on an external server rather than created inside a local application such as Word or Excel.',
     ),
     MockQuestion(
       id: 'p223-70',
@@ -576,6 +645,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Tuple', 'Relation', 'Attribute', 'Domain'],
       correctIndex: 1,
       topic: 'Databases',
+      explanation: 'In a relational database, a table is also called a relation. A tuple is a row, an attribute is a column and a domain is the set of allowed values.',
     ),
     MockQuestion(
       id: 'p223-71',
@@ -584,6 +654,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Long Long', 'long double', 'Using float', 'Wchar-t'],
       correctIndex: 2,
       topic: 'Programming',
+      explanation: 'C and C++ have types such as long long and long double, but the phrase using float is not a type name in either language.',
     ),
     MockQuestion(
       id: 'p223-72',
@@ -592,6 +663,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Decimal', 'Binary', 'Hexadecimal', 'Octal'],
       correctIndex: 1,
       topic: 'Number Systems',
+      explanation: 'Computers mainly use the binary number system, because their circuits work with two states, on and off. Decimal, octal and hexadecimal are used by people for convenience.',
     ),
     MockQuestion(
       id: 'p223-73',
@@ -600,6 +672,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Home Tab', 'References Tab', 'Layout Tab', 'Design Tab'],
       correctIndex: 1,
       topic: 'MS Word',
+      explanation: 'In MS Word, a table of contents is inserted from the References tab. The Home and Layout tabs do not contain that command.',
     ),
     MockQuestion(
       id: 'p223-74',
@@ -608,6 +681,7 @@ const PaperTest paper223 = PaperTest(
       options: ['WordArt', 'SmartArt', 'Picture Tools', 'Drawing Tools'],
       correctIndex: 2,
       topic: 'MS Word',
+      explanation: 'Artistic effects for a picture are found under Picture Tools in Word. WordArt and SmartArt are different features for styled text and diagrams.',
     ),
     MockQuestion(
       id: 'p223-75',
@@ -616,6 +690,7 @@ const PaperTest paper223 = PaperTest(
       options: ['ROUND()', 'DIV()', 'MOD()', 'QUOTIENT()'],
       correctIndex: 2,
       topic: 'MS Excel',
+      explanation: 'The MOD function returns the remainder after dividing two numbers. ROUND, DIV and QUOTIENT do not give the remainder.',
     ),
     MockQuestion(
       id: 'p223-76',
@@ -624,6 +699,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Operating System', 'Utility Program', 'Multimedia', 'Windows'],
       correctIndex: 0,
       topic: 'Operating Systems',
+      explanation: 'Mac, running macOS, is an operating system made by Apple. It is not a utility program or a version of Windows.',
     ),
     MockQuestion(
       id: 'p223-77',
@@ -632,6 +708,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Constants only', 'Variables only', 'Operands & Operators', 'Functions only'],
       correctIndex: 2,
       topic: 'Programming',
+      explanation: 'An expression in programming is a collection of operands and operators, such as numbers and variables combined with plus or times signs.',
     ),
     MockQuestion(
       id: 'p223-78',
@@ -640,6 +717,7 @@ const PaperTest paper223 = PaperTest(
       options: ['SISD', 'MIMD', 'MISD', 'SIMD'],
       correctIndex: 0,
       topic: 'Computer Architecture',
+      explanation: 'SISD stands for a single instruction stream and a single data stream, the classic single-processor design. SIMD, MISD and MIMD describe parallel designs.',
     ),
     MockQuestion(
       id: 'p223-79',
@@ -648,6 +726,7 @@ const PaperTest paper223 = PaperTest(
       options: ['.xlsx', '.csv', '.xls', '.pdf'],
       correctIndex: 3,
       topic: 'MS Excel',
+      explanation: 'The .xlsx, .xls and .csv formats are all usable with Excel, but .pdf is a document format, not a native Excel file format.',
     ),
     MockQuestion(
       id: 'p223-80',
@@ -656,6 +735,7 @@ const PaperTest paper223 = PaperTest(
       options: ['21', '80', '25', '443'],
       correctIndex: 1,
       topic: 'Networking',
+      explanation: 'HTTP works on port 80 by default. Port 443 is used by HTTPS, port 21 by FTP and port 25 by SMTP.',
     ),
     MockQuestion(
       id: 'p223-81',
@@ -664,6 +744,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Hardware', 'Operating System', 'Protocol Network', 'Software'],
       correctIndex: 2,
       topic: 'Networking',
+      explanation: 'A protocol sets the rules for how computers communicate with each other. Hardware and software alone do not define those rules.',
     ),
     MockQuestion(
       id: 'p223-82',
@@ -672,6 +753,7 @@ const PaperTest paper223 = PaperTest(
       options: ['ICMP', 'RIP', 'BGP', 'OSPF'],
       correctIndex: 0,
       topic: 'Networking',
+      explanation: 'RIP, BGP and OSPF exchange routing information, while ICMP carries error and diagnostic messages. That is why ICMP is not a routing protocol.',
     ),
     MockQuestion(
       id: 'p223-83',
@@ -680,6 +762,7 @@ const PaperTest paper223 = PaperTest(
       options: ['FTP', 'UDP', 'RARP', 'Telnet'],
       correctIndex: 3,
       topic: 'Networking',
+      explanation: 'Telnet is the protocol used to log in to another computer remotely from a terminal. FTP transfers files and UDP is a transport protocol.',
     ),
     MockQuestion(
       id: 'p223-84',
@@ -688,6 +771,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Physical Layer', 'Process Layer', 'Transport Layer', 'Network Layer'],
       correctIndex: 1,
       topic: 'Networking',
+      explanation: 'The OSI model has seven layers, and Process Layer is not one of them. The Physical, Network and Transport layers all are.',
     ),
     MockQuestion(
       id: 'p223-85',
@@ -696,6 +780,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Asymmetric Key cryptography', 'Hash cryptography', 'Symmetric Key cryptography', 'Quantum cryptography'],
       correctIndex: 0,
       topic: 'Security',
+      explanation: 'In asymmetric key cryptography, one key is made public and the other kept private. Symmetric cryptography uses a single shared key instead.',
     ),
     MockQuestion(
       id: 'p223-86',
@@ -704,6 +789,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Star Topology', 'Mesh Topology', 'Bus Topology', 'Ring Topology'],
       correctIndex: 0,
       topic: 'Networking',
+      explanation: 'In a star topology, every device connects through a central hub, so failure of that hub disrupts the whole network. Mesh, bus and ring designs spread that risk differently.',
     ),
     MockQuestion(
       id: 'p223-87',
@@ -712,6 +798,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Network Layer', 'Transport Layer', 'Session Layer', 'Data Link Layer'],
       correctIndex: 1,
       topic: 'Networking',
+      explanation: 'The transport layer handles end-to-end communication and error handling between sender and receiver. The network layer only routes packets hop by hop.',
     ),
     MockQuestion(
       id: 'p223-88',
@@ -720,6 +807,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Maximum Transfer Unit', 'Minimum Transmission Unit', 'Maximum Throughput Unit', 'The Maximum size of the single data packet that can be transmitted'],
       correctIndex: 3,
       topic: 'Networking',
+      explanation: 'MTU stands for the maximum size of a single data packet that can be transmitted over a network link. Larger packets must be split before sending.',
     ),
     MockQuestion(
       id: 'p223-89',
@@ -728,6 +816,7 @@ const PaperTest paper223 = PaperTest(
       options: ['The maximum data transfer rate of a network connection', 'The frequency of the signal', 'The distance data travels', 'The physical width of the cable'],
       correctIndex: 0,
       topic: 'Networking',
+      explanation: 'Bandwidth means the maximum data transfer rate of a network connection. It is not the signal frequency, the distance data travels or the width of a cable.',
     ),
     MockQuestion(
       id: 'p223-90',
@@ -736,6 +825,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Directed graph', 'Weighted graph', 'Complete graph', 'Sparse graph'],
       correctIndex: 2,
       topic: 'Data Structures',
+      explanation: 'A complete graph is one in which every node is connected directly to every other node. Directed, weighted and sparse describe different graph properties.',
     ),
     MockQuestion(
       id: 'p223-91',
@@ -744,6 +834,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Refraction', 'Attenuation', 'Dispersion', 'Reflection'],
       correctIndex: 1,
       topic: 'Networking',
+      explanation: 'Attenuation is the weakening of light as it travels through a fibre. Refraction, dispersion and reflection are different optical effects.',
     ),
     MockQuestion(
       id: 'p223-92',
@@ -752,6 +843,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Virus', 'Worm', 'Trojan', 'Spyware'],
       correctIndex: 1,
       topic: 'Security',
+      explanation: 'A worm copies itself and spreads without any action from the user. A virus needs a host file or user action, and a Trojan relies on tricking the user.',
     ),
     MockQuestion(
       id: 'p223-93',
@@ -760,6 +852,7 @@ const PaperTest paper223 = PaperTest(
       options: ['=SUM(A1:A10)', 'SUM(Sales)/(10-5)', '=AVERAGE(B1:B5)', '=MAX(C1:C8)'],
       correctIndex: 1,
       topic: 'MS Excel',
+      explanation: 'An Excel formula must begin with an equals sign, and this entry does not. The other entries are properly formed formulas.',
     ),
     MockQuestion(
       id: 'p223-94',
@@ -768,6 +861,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Security', 'Recovery process', 'Performance monitoring', 'User authentication'],
       correctIndex: 1,
       topic: 'Operating Systems',
+      explanation: 'In an operating system, checkpoints are used for the recovery process, recording a state that work can be restored from after a failure.',
     ),
     MockQuestion(
       id: 'p223-95',
@@ -776,6 +870,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Slides', 'Fields', 'Records', 'Cells'],
       correctIndex: 0,
       topic: 'MS PowerPoint',
+      explanation: 'A PowerPoint presentation is a collection of slides, each holding text, images or other content. Fields, records and cells belong to other kinds of software.',
     ),
     MockQuestion(
       id: 'p223-96',
@@ -784,6 +879,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Improve processing speed', 'Improve graphics', 'Enhance storage performance by distributing data across multiple drives', 'Enhance network security'],
       correctIndex: 2,
       topic: 'Storage',
+      explanation: 'RAID enhances storage performance by distributing data across multiple drives, and it can also provide redundancy if a drive fails.',
     ),
     MockQuestion(
       id: 'p223-97',
@@ -792,6 +888,7 @@ const PaperTest paper223 = PaperTest(
       options: ['S', 'S?', 'S#', 'S????'],
       correctIndex: 3,
       topic: 'Databases',
+      explanation: 'In MS Access, the question mark stands for exactly one character, so S followed by four question marks matches a five-letter word starting with S.',
     ),
     MockQuestion(
       id: 'p223-98',
@@ -800,6 +897,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Wifi card', 'Fiber optics', 'Bluetooth', 'Network interface card'],
       correctIndex: 3,
       topic: 'Networking',
+      explanation: 'An Ethernet card is a network interface card, the hardware that connects a computer to a wired network. It is not a Wi-Fi card or a Bluetooth device.',
     ),
     MockQuestion(
       id: 'p223-99',
@@ -808,6 +906,7 @@ const PaperTest paper223 = PaperTest(
       options: ['Gate', 'Computer', 'Verify', 'Wildcard letters'],
       correctIndex: 1,
       topic: 'Computer Basics',
+      explanation: 'A lock secures a door, and a password likewise controls access to a computer. The relationship in both cases is a means of securing something.',
     ),
     MockQuestion(
       id: 'p223-100',
@@ -816,6 +915,7 @@ const PaperTest paper223 = PaperTest(
       options: ['To reduce table size', 'To speedup data search', 'Both A & B', 'None of the above'],
       correctIndex: 1,
       topic: 'Databases',
+      explanation: 'Indexing speeds up data search by letting the database locate rows directly instead of scanning the whole table. It does not reduce the size of the table itself.',
     ),
   ],
   latestUpdates: [

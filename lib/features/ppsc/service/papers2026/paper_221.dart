@@ -24,6 +24,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Canada', 'United States', 'Mexico', 'China'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'The Hoover Dam was built across the Colorado River in the United States, on the border of Nevada and Arizona.',
     ),
     MockQuestion(
       id: 'p221-2',
@@ -32,6 +33,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Tokyo', 'Beijing', 'Seoul', 'Bangkok'],
       correctIndex: 1,
       topic: 'World Knowledge',
+      explanation: 'The Forbidden City is the old imperial palace complex in Beijing, China, home of the Ming and Qing emperors.',
     ),
     MockQuestion(
       id: 'p221-3',
@@ -40,6 +42,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Ukraine', 'Russia', 'Belarus', 'Poland'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'The Kremlin and Red Square are in Moscow, the capital of Russia.',
     ),
     MockQuestion(
       id: 'p221-4',
@@ -48,6 +51,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Sudan', 'Egypt', 'Ethiopia', 'Libya'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'The Aswan Dam is on the Nile in Egypt and is one of the best known dams in Africa.',
     ),
     MockQuestion(
       id: 'p221-5',
@@ -56,6 +60,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Buckingham Palace', '10 Downing Street', 'Westminster Abbey', 'Clarence House'],
       correctIndex: 1,
       topic: 'World Knowledge',
+      explanation: '10 Downing Street in London is the official residence of the Prime Minister of the United Kingdom.',
     ),
     MockQuestion(
       id: 'p221-6',
@@ -64,6 +69,7 @@ const PaperTest paper221 = PaperTest(
       options: ['India', 'Australia', 'New Zealand', 'England'],
       correctIndex: 2,
       topic: 'Sports',
+      explanation: 'New Zealand won the first ICC World Test Championship final in 2021, beating India.',
     ),
     MockQuestion(
       id: 'p221-7',
@@ -72,6 +78,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Spain', 'Brazil', 'Portugal', 'Argentina'],
       correctIndex: 2,
       topic: 'Sports',
+      explanation: 'Cristiano Ronaldo plays international football for Portugal, the country of his birth.',
     ),
     MockQuestion(
       id: 'p221-8',
@@ -80,6 +87,7 @@ const PaperTest paper221 = PaperTest(
       options: ['15 days', '17 days', '19 days', '23 days'],
       correctIndex: 1,
       topic: 'Sports',
+      explanation: 'The Tokyo Olympic Games held in 2021 ran from 23 July to 8 August, a total of 17 days.',
     ),
     MockQuestion(
       id: 'p221-9',
@@ -88,6 +96,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Saudi Arabia', 'Bahrain', 'Qatar', 'United Arab Emirates'],
       correctIndex: 3,
       topic: 'Current Affairs',
+      explanation: 'Among the Gulf states listed, the well reported amnesty pardoning and releasing a large group of Pakistani prisoners was that of the United Arab Emirates.',
     ),
     MockQuestion(
       id: 'p221-10',
@@ -96,6 +105,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Sydney', 'Canberra', 'Melbourne', 'Perth'],
       correctIndex: 1,
       topic: 'Capitals',
+      explanation: 'Canberra is the capital of Australia, not Sydney or Melbourne.',
     ),
     MockQuestion(
       id: 'p221-11',
@@ -104,6 +114,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Viceroy of India', 'Governor of Punjab', 'Secretary of State for India', 'Prime Minister'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'Edwin Montagu was Secretary of State for India in the British government when he made the Montagu Declaration of 1917.',
     ),
     MockQuestion(
       id: 'p221-12',
@@ -112,6 +123,7 @@ const PaperTest paper221 = PaperTest(
       options: ['3 metres', '4 metres', '5 metres', '6 metres'],
       correctIndex: 1,
       topic: 'Athletics',
+      explanation: 'The javelin runway is marked by two parallel lines 4 metres apart.',
     ),
     MockQuestion(
       id: 'p221-13',
@@ -120,6 +132,7 @@ const PaperTest paper221 = PaperTest(
       options: ['600 grams', '700 grams', '800 grams', '900 grams'],
       correctIndex: 2,
       topic: 'Athletics',
+      explanation: 'Under World Athletics rules, a standard javelin for senior men weighs 800 grams.',
     ),
     MockQuestion(
       id: 'p221-14',
@@ -128,6 +141,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Only a shareholder', 'Only a customer', 'Anyone affected by or interested in a project', 'Only a manager'],
       correctIndex: 2,
       topic: 'General Knowledge',
+      explanation: 'A stakeholder is anyone affected by or interested in a project, not only a shareholder, customer or manager.',
     ),
     // Pakistan Studies
     MockQuestion(
@@ -137,6 +151,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Karachi Kings', 'Multan Sultans', 'Lahore Qalandars', 'Islamabad United'],
       correctIndex: 2,
       topic: 'Sports',
+      explanation: 'Lahore Qalandars won the Pakistan Super League title in 2022.',
     ),
     MockQuestion(
       id: 'p221-16',
@@ -145,6 +160,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Alauddin Khilji', 'Qutb-ud-din Aibak', 'Jalal-ud-din Khilji', 'Muhammad bin Tughlaq'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'Jalal-ud-din Khilji founded the Khilji dynasty, which began ruling Delhi in 1290.',
     ),
     MockQuestion(
       id: 'p221-17',
@@ -153,6 +169,7 @@ const PaperTest paper221 = PaperTest(
       options: ['1961', '1962', '1964', '1966'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'Khwaja Nazimuddin, a former prime minister of Pakistan, died on 22 October 1964.',
     ),
     MockQuestion(
       id: 'p221-18',
@@ -161,6 +178,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Iskandar Mirza', 'Ayub Khan', 'Yahya Khan', 'Zulfikar Ali Bhutto'],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'The 1962 Constitution of Pakistan was put into force under the rule of President Ayub Khan.',
     ),
     MockQuestion(
       id: 'p221-19',
@@ -169,6 +187,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Nur Jahan', 'Razia Sultana', 'Chand Bibi', 'Mumtaz Mahal'],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'Razia Sultana ruled Delhi from 1236 to 1240 and is remembered as the first woman ruler of the Delhi Sultanate.',
     ),
     MockQuestion(
       id: 'p221-20',
@@ -177,6 +196,7 @@ const PaperTest paper221 = PaperTest(
       options: ['June 1946', 'July 1946', 'August 1946', 'September 1946'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'Direct Action Day took place on 16 August 1946.',
     ),
     MockQuestion(
       id: 'p221-21',
@@ -185,6 +205,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Cricketer', 'Singer', 'Comedian', 'Novelist'],
       correctIndex: 2,
       topic: 'Culture',
+      explanation: 'Moin Akhtar was famous chiefly as a comedian, one of Pakistan best loved stage and television performers.',
     ),
     MockQuestion(
       id: 'p221-22',
@@ -193,6 +214,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Sindh', 'Punjab', 'Bombay', 'Bengal'],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'Before 1901, the area later called the North-West Frontier Province was administered as part of Punjab.',
     ),
     MockQuestion(
       id: 'p221-23',
@@ -201,6 +223,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Circular debt only', 'Power theft only', 'Fuel imports only', 'Circular debt, power theft and fuel imports together'],
       correctIndex: 3,
       topic: 'Current Affairs',
+      explanation: 'Pakistan energy crisis is commonly blamed on circular debt, power theft and fuel imports together, not on any one of them alone.',
     ),
     MockQuestion(
       id: 'p221-24',
@@ -209,6 +232,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Muhammad Khan Junejo', 'Ghulam Ishaq Khan', 'Nawaz Sharif', 'Farooq Leghari'],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'After General Zia-ul-Haq died in 1988, Ghulam Ishaq Khan, as chairman of the Senate, succeeded him as President of Pakistan.',
     ),
     MockQuestion(
       id: 'p221-25',
@@ -217,6 +241,7 @@ const PaperTest paper221 = PaperTest(
       options: ['92.97 metres', '90.50 metres', '89.30 metres', '95.20 metres'],
       correctIndex: 0,
       topic: 'Sports',
+      explanation: 'Arshad Nadeem threw 92.97 metres at Paris 2024, setting a new Olympic javelin record.',
     ),
     MockQuestion(
       id: 'p221-26',
@@ -225,6 +250,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Punjab', 'Sindh', 'Balochistan', 'Khyber Pakhtunkhwa'],
       correctIndex: 2,
       topic: 'Culture',
+      explanation: 'In regional ethnography, the Hansi community discussed in the question is chiefly found in Balochistan.',
     ),
     // Current Affairs
     MockQuestion(
@@ -234,6 +260,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Belarus', 'Ukraine', 'Georgia', 'Moldova'],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: 'The ongoing war involving Russia is being fought against Ukraine, its neighbouring state.',
     ),
     MockQuestion(
       id: 'p221-28',
@@ -242,6 +269,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Petro Poroshenko', 'Volodymyr Zelenskyy', 'Viktor Yanukovych', 'Yulia Tymoshenko'],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: 'Volodymyr Zelenskyy is the president of Ukraine during the ongoing Russia-Ukraine war.',
     ),
     MockQuestion(
       id: 'p221-29',
@@ -250,6 +278,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Egypt', 'Nigeria', 'Morocco', 'Senegal'],
       correctIndex: 2,
       topic: 'Sports',
+      explanation: 'The 2025 Africa Cup of Nations was held in Morocco, running from December 2025 into January 2026.',
     ),
     MockQuestion(
       id: 'p221-30',
@@ -258,6 +287,7 @@ const PaperTest paper221 = PaperTest(
       options: ['September 2024', 'October 2024', 'November 2024', 'December 2024'],
       correctIndex: 3,
       topic: 'Current Affairs',
+      explanation: 'Uraan Pakistan, the National Economic Transformation Plan 2024-29, was launched on 31 December 2024, so December 2024 is correct.',
     ),
     // Everyday Science
     MockQuestion(
@@ -267,6 +297,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Stomach', 'Liver', 'Small intestine', 'Large intestine'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: 'Maltose is mainly broken down into glucose in the small intestine, where the enzyme maltase acts on it.',
     ),
     MockQuestion(
       id: 'p221-32',
@@ -275,6 +306,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Aeroplanes', 'Ships', 'Light waves', 'Sound waves'],
       correctIndex: 1,
       topic: 'Physics',
+      explanation: 'The knot is a unit of nautical speed, so speed measured in knots applies to ships.',
     ),
     // Mathematics
     MockQuestion(
@@ -284,6 +316,7 @@ const PaperTest paper221 = PaperTest(
       options: ['1', '2', '3', '4'],
       correctIndex: 1,
       topic: 'Ratio',
+      explanation: 'Working: if a, b and c are 3, 4 and 7 parts, their sum is 14 parts, and 14 divided by 7 equals 2.',
     ),
     MockQuestion(
       id: 'p221-34',
@@ -292,6 +325,7 @@ const PaperTest paper221 = PaperTest(
       options: ['6', '8', '10', '12'],
       correctIndex: 2,
       topic: 'Arithmetic',
+      explanation: 'Working: by BODMAS, first 4 times 8 divided by 4 equals 8, then 6 minus 4 plus 8 equals 10.',
     ),
     MockQuestion(
       id: 'p221-35',
@@ -300,6 +334,7 @@ const PaperTest paper221 = PaperTest(
       options: ['20 over 40', '25 over 40', '30 over 40', '35 over 40'],
       correctIndex: 1,
       topic: 'Fractions',
+      explanation: 'Working: multiply numerator and denominator of 5 over 8 by 5 to get 25 over 40.',
     ),
     MockQuestion(
       id: 'p221-36',
@@ -308,6 +343,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Quadrant', 'Origin', 'Abscissa', 'Ordinate'],
       correctIndex: 1,
       topic: 'Geometry',
+      explanation: 'The point where the x-axis and y-axis meet is called the origin.',
     ),
     // English
     MockQuestion(
@@ -317,6 +353,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Polite', 'Impudent', 'Timid', 'Serious'],
       correctIndex: 1,
       topic: 'Vocabulary',
+      explanation: 'Cheeky means rude or disrespectful in a bold way, so impudent is the closest in meaning.',
     ),
     MockQuestion(
       id: 'p221-38',
@@ -325,6 +362,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Skilful', 'Clumsy', 'Brave', 'Quick'],
       correctIndex: 1,
       topic: 'Vocabulary',
+      explanation: 'Maladroit means awkward or lacking skill, so clumsy is the closest in meaning.',
     ),
     MockQuestion(
       id: 'p221-39',
@@ -333,6 +371,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Shy', 'Bold', 'Calm', 'Honest'],
       correctIndex: 1,
       topic: 'Vocabulary',
+      explanation: 'Impudent means bold and disrespectful, so bold is the closest in meaning among the options.',
     ),
     MockQuestion(
       id: 'p221-40',
@@ -341,6 +380,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Fatima Jinnah', 'the Fatima Jinnah', 'a Fatima Jinnah', 'an Fatima Jinnah'],
       correctIndex: 0,
       topic: 'Grammar',
+      explanation: 'A proper name used on its own takes no article, so She is Fatima Jinnah of society is correct without the, a or an.',
     ),
     MockQuestion(
       id: 'p221-41',
@@ -349,6 +389,7 @@ const PaperTest paper221 = PaperTest(
       options: ['She told him that she will have written the letters', 'She told him that she would have written the letters', 'She told him that she had written the letters', 'She told him that she writes the letters'],
       correctIndex: 1,
       topic: 'Narration',
+      explanation: 'In indirect speech, said to becomes told and will have written becomes would have written, giving: She told him that she would have written the letters.',
     ),
     // Urdu
     MockQuestion(
@@ -358,6 +399,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Muhammad Husain Azad', 'Maulvi Abdul Haq', 'Shibli Nomani', 'Altaf Husain Hali'],
       correctIndex: 1,
       topic: 'Urdu Literature',
+      explanation: 'Baba-e-Urdu kehlane wale azeem shakhsiyat Maulvi Abdul Haq hain, jinhon ne Urdu ki taraqqi ke liye kaam kiya.',
     ),
     MockQuestion(
       id: 'p221-43',
@@ -366,6 +408,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Aik lafz', 'Aik aawaz ki alamat', 'Aik jumla', 'Aik misra'],
       correctIndex: 1,
       topic: 'Urdu Grammar',
+      explanation: 'Urdu mein harf se murad aik aawaz ki alamat hai, na ke poora lafz ya jumla.',
     ),
     MockQuestion(
       id: 'p221-44',
@@ -374,6 +417,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Bohat tang karna', 'Khushboo sunghna', 'Naak saaf karna', 'Chup rehna'],
       correctIndex: 0,
       topic: 'Urdu Idioms',
+      explanation: 'Naak mein dum karna ka matlab hai kisi ko bohat tang karna.',
     ),
     MockQuestion(
       id: 'p221-45',
@@ -382,6 +426,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Kitaab', 'Taqreer ya khitab', 'Khat', 'Aik sheher'],
       correctIndex: 1,
       topic: 'Urdu Vocabulary',
+      explanation: 'Urdu lafz khitab ka durust maani taqreer ya khitab karna hai.',
     ),
     MockQuestion(
       id: 'p221-46',
@@ -390,6 +435,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Chiragh', 'Matti ke bartan', 'Phool', 'Roshni ka din'],
       correctIndex: 0,
       topic: 'Urdu Literature',
+      explanation: 'Is misre mein diye se murad chiragh hain, jo khushi ke mauqe par jalaye jate the.',
     ),
     // Islamiat
     MockQuestion(
@@ -399,6 +445,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Zaid ibn Harithah (RA)', 'Salman Farsi (RA)', 'Zubair ibn al-Awwam (RA)', 'Ali ibn Abi Talib (RA)'],
       correctIndex: 2,
       topic: 'Seerah',
+      explanation: 'Zubair ibn al-Awwam is given the title Hawari-e-Rasool, the disciple of the Messenger.',
     ),
     MockQuestion(
       id: 'p221-48',
@@ -407,6 +454,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Utbah ibn Rabiah', 'Shaybah ibn Rabiah', 'Al-Walid ibn Utbah', 'Abu Sufyan'],
       correctIndex: 2,
       topic: 'Seerah',
+      explanation: 'In the opening single combats at Badr, Hazrat Ali faced and defeated Al-Walid ibn Utbah.',
     ),
     MockQuestion(
       id: 'p221-49',
@@ -415,6 +463,7 @@ const PaperTest paper221 = PaperTest(
       options: ['Hadith is the reported saying, while Sunnah is the practical example followed by Muslims', 'Hadith is only about law, Sunnah is only about worship', 'They are exactly the same in every sense', 'Sunnah is reported, Hadith is practised'],
       correctIndex: 0,
       topic: 'Hadith',
+      explanation: 'In the usual textbook distinction, Hadith is the reported saying, while Sunnah is the practical example of the Prophet followed by Muslims.',
     ),
     MockQuestion(
       id: 'p221-50',
@@ -423,6 +472,7 @@ const PaperTest paper221 = PaperTest(
       options: ['The same year', 'The next year', 'After three years', 'After five years'],
       correctIndex: 1,
       topic: 'Seerah',
+      explanation: 'Under the Treaty of Hudaybiyyah, the Muslims were to return for pilgrimage the next year, which they did in the Umrat al-Qada.',
     ),
   ],
   latestUpdates: [

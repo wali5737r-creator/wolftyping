@@ -24,6 +24,7 @@ const PaperTest paper233 = PaperTest(
       options: ['Haripur', 'Swabi', 'Attock', 'Mianwali'],
       correctIndex: 0,
       topic: 'Dams',
+      explanation: 'Tarbela Dam is located in Haripur district of Khyber Pakhtunkhwa, on the Indus River.',
     ),
     MockQuestion(
       id: 'p233-2',
@@ -38,6 +39,7 @@ const PaperTest paper233 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Khilafat Movement',
+      explanation: 'The Khilafat Movement of 1919 to 1924 was launched by the Ali Brothers, Maulana Muhammad Ali and Maulana Shaukat Ali.',
     ),
     MockQuestion(
       id: 'p233-3',
@@ -52,6 +54,7 @@ const PaperTest paper233 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'SAARC',
+      explanation: 'SAARC was founded in Dhaka in 1985, when its charter was adopted.',
     ),
     MockQuestion(
       id: 'p233-4',
@@ -61,6 +64,7 @@ const PaperTest paper233 = PaperTest(
       options: ['24', '14', '43', '19'],
       correctIndex: 0,
       topic: 'Irrigation',
+      explanation: 'Standard overviews count 24 main canal systems in the Indus Basin system; this is distinct from the wider count of canal commands.',
     ),
     MockQuestion(
       id: 'p233-5',
@@ -74,6 +78,7 @@ const PaperTest paper233 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'August Offer',
+      explanation: 'The August Offer of 1940 was made by Viceroy Lord Linlithgow.',
     ),
     MockQuestion(
       id: 'p233-6',
@@ -88,6 +93,7 @@ const PaperTest paper233 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Islamic Summit',
+      explanation: 'The Second Islamic Summit Conference was held in Lahore, Pakistan, in 1974.',
     ),
     MockQuestion(
       id: 'p233-7',
@@ -101,6 +107,7 @@ const PaperTest paper233 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Shimla Accord',
+      explanation: 'The Shimla Accord of July 1972 was signed by Zulfikar Ali Bhutto and Indira Gandhi.',
     ),
     MockQuestion(
       id: 'p233-8',
@@ -115,6 +122,7 @@ const PaperTest paper233 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Aligarh Movement',
+      explanation: 'Sir Syed Ahmad Khan founded the Mohammedan Anglo-Oriental College at Aligarh in 1875, which later became Aligarh Muslim University.',
     ),
     MockQuestion(
       id: 'p233-9',
@@ -124,6 +132,7 @@ const PaperTest paper233 = PaperTest(
       options: ['1897', '1899', '1900', '1901'],
       correctIndex: 2,
       topic: 'Iqbal',
+      explanation: 'Iqbal recited Nala-i-Yatim at the annual meeting of the Anjuman Himayat-i-Islam on 24 February 1900, according to the published Iqbal chronology.',
     ),
     MockQuestion(
       id: 'p233-10',
@@ -138,6 +147,7 @@ const PaperTest paper233 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Partition',
+      explanation: 'The Radcliffe Award, which fixed the boundaries between India and Pakistan, was published on 17 August 1947.',
     ),
   ],
 );

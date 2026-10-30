@@ -24,6 +24,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Egypt', 'Israel', 'Turkey', 'Ethiopia'],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: 'Israel formally recognised Somaliland as a sovereign state on 26 December 2025, and as of October 2026 it remains the only UN member state to have done so.',
     ),
     MockQuestion(
       id: 'p225-2',
@@ -32,6 +33,7 @@ const PaperTest paper225 = PaperTest(
       options: ['USA', 'France', 'United Kingdom', 'China'],
       correctIndex: 2,
       topic: 'Sports',
+      explanation: 'The modern game of badminton was first organised in the United Kingdom, where its rules were drawn up at Badminton House in the 1870s. It was not first organised in the USA, France or China.',
     ),
     MockQuestion(
       id: 'p225-3',
@@ -40,6 +42,7 @@ const PaperTest paper225 = PaperTest(
       options: ['French President\u2019s office', 'UN headquarters', 'Official residence of the British Prime Minister', 'British Parliament'],
       correctIndex: 2,
       topic: 'World Knowledge',
+      explanation: '10 Downing Street in London is the official residence of the British Prime Minister. Parliament meets at Westminster, and the UN headquarters is in New York.',
     ),
     MockQuestion(
       id: 'p225-4',
@@ -48,6 +51,7 @@ const PaperTest paper225 = PaperTest(
       options: ['2', '3', '4', '5'],
       correctIndex: 3,
       topic: 'Geography',
+      explanation: 'There are five Central Asian states: Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan and Uzbekistan.',
     ),
     MockQuestion(
       id: 'p225-5',
@@ -56,6 +60,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Thailand', 'Myanmar', 'Laos', 'Vietnam'],
       correctIndex: 1,
       topic: 'Currencies',
+      explanation: 'The kyat is the currency of Myanmar. Thailand uses the baht, Laos the kip and Vietnam the dong.',
     ),
     MockQuestion(
       id: 'p225-6',
@@ -64,6 +69,7 @@ const PaperTest paper225 = PaperTest(
       options: ['9 million SEK', '10 million SEK', '11 million SEK', '15 million SEK'],
       correctIndex: 2,
       topic: 'Awards',
+      explanation: 'The monetary value of a Nobel Prize is currently 11 million Swedish kronor, the amount set when the prize sum was raised in 2023.',
     ),
     MockQuestion(
       id: 'p225-7',
@@ -72,6 +78,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Gambia', 'Malaysia', 'South Africa', 'Pakistan'],
       correctIndex: 0,
       topic: 'International Law',
+      explanation: 'Gambia took Myanmar to the International Court of Justice over the treatment of the Rohingya, filing its case in 2019.',
     ),
     MockQuestion(
       id: 'p225-8',
@@ -80,6 +87,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Yasser Arafat', 'Sheikh Ahmad Yasin', 'Khaled Mashal', 'Ismail Haniyeh'],
       correctIndex: 1,
       topic: 'World History',
+      explanation: 'Hamas was founded in 1987 by Sheikh Ahmad Yasin. Yasser Arafat led Fatah, while Khaled Mashal and Ismail Haniyeh led Hamas only later.',
     ),
     MockQuestion(
       id: 'p225-9',
@@ -88,6 +96,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Economic boom', 'Pessimism', 'Stagflation', 'Cautious optimism'],
       correctIndex: 3,
       topic: 'Economics',
+      explanation: "Cautious optimism describes a careful but hopeful outlook on the economy's future. Pessimism is a negative outlook and stagflation means stagnant growth with inflation.",
     ),
     MockQuestion(
       id: 'p225-10',
@@ -96,6 +105,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Europe', 'Asia', 'North America', 'Antarctica'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: "Greenland is geographically part of North America, even though it is politically linked to Denmark in Europe. Its position off Canada's north-east coast places it on the North American continent.",
     ),
     MockQuestion(
       id: 'p225-11',
@@ -104,6 +114,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Physics', 'Medicine', 'Literature', 'Peace'],
       correctIndex: 3,
       topic: 'Awards',
+      explanation: 'The Nobel Peace Prize is awarded by a Norwegian committee in Oslo, while the other Nobel Prizes are awarded by Swedish institutions.',
     ),
     MockQuestion(
       id: 'p225-12',
@@ -112,6 +123,7 @@ const PaperTest paper225 = PaperTest(
       options: ['World Order', 'Politics and Principles', 'Diplomacy', 'On China'],
       correctIndex: 1,
       topic: 'Books',
+      explanation: 'World Order, Diplomacy and On China are all books by Henry Kissinger, so Politics and Principles is the title that was not written by him.',
     ),
     MockQuestion(
       id: 'p225-13',
@@ -120,6 +132,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Egypt', 'Jordan', 'Saudi Arabia', 'UAE'],
       correctIndex: 2,
       topic: 'World Personalities',
+      explanation: 'The late Grand Mufti Abdul Aziz ibn Baz belonged to Saudi Arabia, where he served as Grand Mufti. He was not Egyptian, Jordanian or Emirati.',
     ),
     MockQuestion(
       id: 'p225-14',
@@ -128,6 +141,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Tunisia', 'Morocco', 'Algeria', 'Libya'],
       correctIndex: 2,
       topic: 'World History',
+      explanation: "Ahmed Ben Bella was a leading figure of Algerian independence and Algeria's first president. He belonged to Algeria, not Tunisia, Morocco or Libya.",
     ),
     MockQuestion(
       id: 'p225-15',
@@ -136,6 +150,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Myanmar', 'Sri Lanka', 'Maldives', 'Singapore'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'Ceylon was the old name of Sri Lanka, used until the country renamed itself in 1972. Myanmar was formerly Burma and Singapore was never called Ceylon.',
     ),
     MockQuestion(
       id: 'p225-16',
@@ -144,6 +159,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Iraq', 'Iran', 'Turkey', 'Afghanistan'],
       correctIndex: 1,
       topic: 'World History',
+      explanation: 'SAVAK was the secret police of pre-revolution Iran under the Shah, disbanded after the 1979 revolution. It was not an Iraqi, Turkish or Afghan body.',
     ),
     MockQuestion(
       id: 'p225-17',
@@ -152,6 +168,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Bangladesh', 'Turkey', 'Iran', 'Pakistan'],
       correctIndex: 0,
       topic: 'International Organisations',
+      explanation: 'Bangladesh is not a member of the Economic Cooperation Organization. Turkey, Iran and Pakistan are all members, along with Afghanistan and the Central Asian states.',
     ),
     MockQuestion(
       id: 'p225-18',
@@ -160,6 +177,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Alaska', 'Arizona', 'Hawaii', 'New Mexico'],
       correctIndex: 2,
       topic: 'World Knowledge',
+      explanation: 'Hawaii was the last state to join the United States, admitted in 1959, after Alaska earlier that same year. Arizona and New Mexico joined much earlier.',
     ),
     MockQuestion(
       id: 'p225-19',
@@ -168,6 +186,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Mahatma Gandhi', 'Martin Luther King Jr.', 'Nelson Mandela', 'Winston Churchill'],
       correctIndex: 2,
       topic: 'Books',
+      explanation: 'Long Walk to Freedom is the autobiography of Nelson Mandela, published in 1994. Gandhi, Martin Luther King Jr. and Churchill wrote different autobiographical works.',
     ),
     MockQuestion(
       id: 'p225-20',
@@ -176,6 +195,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Bill Gates', 'Larry Ellison', 'Larry Page', 'Steve Jobs'],
       correctIndex: 1,
       topic: 'Technology',
+      explanation: 'Larry Ellison co-founded the Oracle Corporation in 1977. Bill Gates co-founded Microsoft, Larry Page co-founded Google and Steve Jobs co-founded Apple.',
     ),
     MockQuestion(
       id: 'p225-21',
@@ -184,6 +204,7 @@ const PaperTest paper225 = PaperTest(
       options: ['22nd April', '5th June', '21st July', '16th September'],
       correctIndex: 1,
       topic: 'Days',
+      explanation: 'World Environment Day is celebrated on 5 June each year. 22 April is Earth Day and 16 September is the ozone layer day.',
     ),
     MockQuestion(
       id: 'p225-22',
@@ -192,6 +213,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Mithali Raj', 'Belinda Clark', 'Sana Mir', 'Ellyse Perry'],
       correctIndex: 2,
       topic: 'Sports',
+      explanation: 'Sana Mir was inducted into the ICC Hall of Fame in 2025, the first Pakistani woman cricketer to receive the honour. Mithali Raj is Indian and Belinda Clark Australian.',
     ),
     MockQuestion(
       id: 'p225-23',
@@ -200,6 +222,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Earthquakes', 'Floods', 'Droughts', 'Cyclones'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'Floods are the natural disaster Pakistan and Bangladesh face most frequently, because of their monsoon rains and great river systems. Earthquakes, droughts and cyclones occur less often in both countries.',
     ),
     MockQuestion(
       id: 'p225-24',
@@ -208,6 +231,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Bitcoin', 'Ripple', 'Litecoin', 'None of these'],
       correctIndex: 0,
       topic: 'Economics',
+      explanation: 'Bitcoin is a digital currency used worldwide without any government backing it, running on a decentralised network. Ripple and Litecoin are also decentralised, but Bitcoin is the one the question points to as the worldwide example.',
     ),
     // Pakistan Studies
     MockQuestion(
@@ -217,6 +241,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Education', 'Finance', 'Provinces and the judiciary', 'Health'],
       correctIndex: 2,
       topic: 'Constitution',
+      explanation: 'The 27th Constitutional Amendment of 2025 mainly changed arrangements relating to the provinces and the judiciary, including the creation of a Federal Constitutional Court.',
     ),
     MockQuestion(
       id: 'p225-26',
@@ -225,6 +250,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Bangladesh', 'Iran', 'Saudi Arabia', 'Turkey'],
       correctIndex: 0,
       topic: 'Current Affairs',
+      explanation: "In August 2025, Pakistan's foreign minister made his first visit in about 13 years to Bangladesh, restoring high-level contact after a long gap.",
     ),
     MockQuestion(
       id: 'p225-27',
@@ -233,6 +259,7 @@ const PaperTest paper225 = PaperTest(
       options: ['UAE', 'China', 'USA', 'Saudi Arabia'],
       correctIndex: 1,
       topic: 'Economy',
+      explanation: 'China was the largest source of foreign direct investment into Pakistan in 2025, which is the figure this question uses.',
     ),
     MockQuestion(
       id: 'p225-28',
@@ -241,6 +268,7 @@ const PaperTest paper225 = PaperTest(
       options: ['China', 'USA', 'Germany', 'UK'],
       correctIndex: 1,
       topic: 'Economy',
+      explanation: "The USA is the biggest single buyer of Pakistan's textile exports, taking a larger share than China, Germany or the UK.",
     ),
     MockQuestion(
       id: 'p225-29',
@@ -249,6 +277,7 @@ const PaperTest paper225 = PaperTest(
       options: ['2014', '2015', '2016', '2017'],
       correctIndex: 0,
       topic: 'Economy',
+      explanation: 'The European Union granted GSP+ trade status to Pakistan in 2014, giving Pakistani exports preferential access to EU markets.',
     ),
     MockQuestion(
       id: 'p225-30',
@@ -257,6 +286,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Article 184', 'Article 175', 'Article 51', 'Article 199'],
       correctIndex: 1,
       topic: 'Constitution',
+      explanation: "The judiciary part of Pakistan's Constitution opens with Article 175, which deals with the establishment and jurisdiction of courts. That is why the Federal Constitutional Court provisions sit in that part.",
     ),
     MockQuestion(
       id: 'p225-31',
@@ -265,6 +295,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Political instability', 'Bureaucratic hurdles', 'Energy shortages', 'All of these'],
       correctIndex: 3,
       topic: 'Economy',
+      explanation: "Political instability, bureaucratic hurdles and energy shortages are all commonly cited as problems for Pakistan's business climate, so all of them together is the correct answer.",
     ),
     MockQuestion(
       id: 'p225-32',
@@ -273,6 +304,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Dast-e-Saba', 'Nuskha-Ha-e-Wafa', 'Dard-e-Ashob', 'Zindan-Nama'],
       correctIndex: 2,
       topic: 'Urdu Literature',
+      explanation: 'Dast-e-Saba, Nuskha-Ha-e-Wafa and Zindan-Nama are collections by Faiz Ahmad Faiz, so Dard-e-Ashob is the collection that was not written by him.',
     ),
     MockQuestion(
       id: 'p225-33',
@@ -281,6 +313,7 @@ const PaperTest paper225 = PaperTest(
       options: ['2019', '2020', '2018', '2021'],
       correctIndex: 0,
       topic: 'History',
+      explanation: 'The Kartarpur Corridor opened for pilgrims in November 2019, giving Sikh pilgrims visa-free access to Gurdwara Darbar Sahib in Pakistan.',
     ),
     MockQuestion(
       id: 'p225-34',
@@ -289,6 +322,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Fazal Ilahi Chaudhry', 'Zulfikar Ali Bhutto', 'Iskander Mirza', 'Nurul Amin'],
       correctIndex: 3,
       topic: 'History',
+      explanation: 'Nurul Amin is recorded as the only person to have held the office of Vice President of Pakistan.',
     ),
     MockQuestion(
       id: 'p225-35',
@@ -297,6 +331,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Muhammad Ali Bogra', 'Liaquat Ali Khan', 'I.I. Chundrigar', 'Ghulam Muhammad'],
       correctIndex: 0,
       topic: 'History',
+      explanation: "Muhammad Ali Bogra joined Pakistan's cabinet later, so he was not a member of the first cabinet formed in 1947. Liaquat Ali Khan, I.I. Chundrigar and Ghulam Muhammad were members of it.",
     ),
     MockQuestion(
       id: 'p225-36',
@@ -305,6 +340,7 @@ const PaperTest paper225 = PaperTest(
       options: ['China', 'Uzbekistan', 'Tajikistan', 'Kyrgyzstan'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: 'The Wakhan Corridor in Afghanistan separates Pakistan from Tajikistan, forming a narrow strip between the two countries.',
     ),
     MockQuestion(
       id: 'p225-37',
@@ -313,6 +349,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Shipbuilding', 'Fish industry', 'Salt mining', 'Tourism'],
       correctIndex: 1,
       topic: 'Economy',
+      explanation: 'The fish industry is the largest industry along the Karachi and Balochistan coast, based on the Arabian Sea catch landed at its ports.',
     ),
     MockQuestion(
       id: 'p225-38',
@@ -321,6 +358,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Mukhtar Masood', 'Bano Qudsia', 'Ashfaq Ahmed', 'Qurratulain Hyder'],
       correctIndex: 0,
       topic: 'Urdu Literature',
+      explanation: 'Awaz-e-Dost, a well-known Urdu book, was written by Mukhtar Masood. Bano Qudsia, Ashfaq Ahmed and Qurratulain Hyder wrote other famous works.',
     ),
     MockQuestion(
       id: 'p225-39',
@@ -329,6 +367,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Asian Games', 'FIH Nations Cup', 'Commonwealth Games', 'Olympics'],
       correctIndex: 1,
       topic: 'Sports',
+      explanation: 'In 2025, Pakistan reached the final of the FIH Nations Cup, its first major hockey final in about 11 years.',
     ),
     // Current Affairs
     MockQuestion(
@@ -338,6 +377,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Russia', 'USA', 'China', 'Brazil'],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: 'The United States withdrew from the Paris climate agreement in 2025, with the withdrawal taking effect in January 2026.',
     ),
     MockQuestion(
       id: 'p225-41',
@@ -346,6 +386,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Azerbaijan', 'Turkey', 'Qatar', 'Egypt'],
       correctIndex: 0,
       topic: 'Current Affairs',
+      explanation: 'Azerbaijan expanded its order for JF-17 Thunder jets from Pakistan from 16 to 40 aircraft in 2025, in a deal worth about 4.6 billion dollars.',
     ),
     MockQuestion(
       id: 'p225-42',
@@ -354,6 +395,7 @@ const PaperTest paper225 = PaperTest(
       options: ['8%', '10%', '12%', '14%'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: "Under the 2025-26 budget, Pakistan's overall tax-to-GDP ratio was targeted at closest to 12 percent, which is the figure this question uses.",
     ),
     MockQuestion(
       id: 'p225-43',
@@ -362,6 +404,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Wetlands and Climate Change', 'Wetlands and Traditional Knowledge', 'Wetlands for our Future', 'Sustainable Wetlands'],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: 'The theme of World Wetlands Day 2026 was Wetlands and Traditional Knowledge, linking wetland conservation with the knowledge of local communities.',
     ),
     MockQuestion(
       id: 'p225-44',
@@ -370,6 +413,7 @@ const PaperTest paper225 = PaperTest(
       options: ['USA', 'France', 'UK', 'Canada'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: 'The UK removed Pakistan from its Air Safety List on 16 July 2025, after its Air Safety Committee judged that the necessary safety improvements had been made.',
     ),
     MockQuestion(
       id: 'p225-45',
@@ -378,6 +422,7 @@ const PaperTest paper225 = PaperTest(
       options: ['10 Jan 2026', '15 Mar 2026', '12 Feb 2026', '20 May 2026'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: "Bangladesh's general elections were held on 12 February 2026, and the BNP won, with Tarique Rahman sworn in as Prime Minister days later.",
     ),
     MockQuestion(
       id: 'p225-46',
@@ -386,6 +431,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Mike Tyson', 'Muhammad Ali', 'Joe Frazier', 'George Foreman'],
       correctIndex: 3,
       topic: 'Current Affairs',
+      explanation: 'George Foreman, the former world heavyweight boxing champion, died in March 2025. Mike Tyson is still alive, and Muhammad Ali and Joe Frazier died in earlier years.',
     ),
     MockQuestion(
       id: 'p225-47',
@@ -394,6 +440,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Egypt\u2019s Defence Minister', 'Jordanian general', 'Libyan Chief of Staff', 'Sudanese envoy'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: "The officer who died in a plane crash near Ankara in December 2025 was Libya's Chief of Staff, the head of the Libyan army.",
     ),
     MockQuestion(
       id: 'p225-48',
@@ -402,6 +449,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Politician', 'Scientist', 'Student leader', 'Sportsman'],
       correctIndex: 2,
       topic: 'Current Affairs',
+      explanation: "Sharif Osman Hadi, killed in Bangladesh in late 2025, was known as a student leader, a prominent figure in the country's student movement.",
     ),
     MockQuestion(
       id: 'p225-49',
@@ -410,6 +458,7 @@ const PaperTest paper225 = PaperTest(
       options: ['JS Group', 'Arif Habib Consortium', 'Hashoo Group', 'Lucky Group'],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: 'The Arif Habib Consortium won the December 2025 auction to buy a majority stake in PIA, with a bid of 135 billion rupees for a 75 percent stake.',
     ),
     // Geography
     MockQuestion(
@@ -419,6 +468,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Chitral', 'Swat', 'Gilgit', 'Skardu'],
       correctIndex: 0,
       topic: 'Geography',
+      explanation: 'The Lowari Pass connects the Dir side with the Chitral valley, crossing the Hindu Kush foothills into Chitral.',
     ),
     MockQuestion(
       id: 'p225-51',
@@ -427,6 +477,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Pacific', 'Atlantic', 'Indian', 'Arctic'],
       correctIndex: 0,
       topic: 'Geography',
+      explanation: 'The Pacific is the largest ocean in the world, covering more area than the Atlantic, Indian and Arctic oceans.',
     ),
     // Basic Science
     MockQuestion(
@@ -436,6 +487,7 @@ const PaperTest paper225 = PaperTest(
       options: ['High-speed suborbital flight', 'Hybrid satellite links', 'Hyperspectral Earth observation', 'Hypersonic strike'],
       correctIndex: 2,
       topic: 'Space',
+      explanation: "Pakistan's HS-1 satellite is designed for hyperspectral Earth observation, meaning it records many narrow bands of light to study land, water and vegetation in detail.",
     ),
     MockQuestion(
       id: 'p225-53',
@@ -444,6 +496,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Warehouses', 'Coolers', 'Silos', 'Chillers'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: 'In a dairy plant, milk held after reception in large tanks is stored in silos, the tall vessels used for bulk liquid storage. Warehouses and chillers serve different purposes.',
     ),
     MockQuestion(
       id: 'p225-54',
@@ -452,6 +505,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Enzymes', 'Water', 'Hormones', 'Sunlight'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: 'Ripening of fruit is controlled by plant hormones, above all ethylene, which triggers the ripening process. Enzymes carry out changes during ripening but hormones control it.',
     ),
     MockQuestion(
       id: 'p225-55',
@@ -460,6 +514,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Glucose + Glucose', 'Glucose + Galactose', 'Glucose + Fructose', 'Fructose + Galactose'],
       correctIndex: 2,
       topic: 'Chemistry',
+      explanation: 'Sucrose, ordinary table sugar, is made by joining glucose and fructose. Glucose plus galactose makes lactose instead.',
     ),
     MockQuestion(
       id: 'p225-56',
@@ -468,6 +523,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Ecosystem', 'Community', 'Biome', 'Biosphere'],
       correctIndex: 1,
       topic: 'Biology',
+      explanation: 'Two or more populations of different species living together form a community. An ecosystem also includes the non-living environment, while a biome is a much larger region.',
     ),
     MockQuestion(
       id: 'p225-57',
@@ -476,6 +532,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Peat', 'Lignite', 'Anthracite', 'Bituminous'],
       correctIndex: 2,
       topic: 'Chemistry',
+      explanation: 'Anthracite is the purest form of coal, with the highest carbon content and the least impurities. Peat and lignite are lower-grade coals.',
     ),
     MockQuestion(
       id: 'p225-58',
@@ -484,6 +541,7 @@ const PaperTest paper225 = PaperTest(
       options: ['20%', '25%', '30%', '33%'],
       correctIndex: 3,
       topic: 'Environment',
+      explanation: 'About 33 percent of land is commonly recommended to stay under forest for ecological balance, which is the guideline figure used in this question.',
     ),
     MockQuestion(
       id: 'p225-59',
@@ -492,6 +550,7 @@ const PaperTest paper225 = PaperTest(
       options: ['UAA', 'UAG', 'UGA', 'AUG'],
       correctIndex: 3,
       topic: 'Biology',
+      explanation: 'AUG is the start codon for protein synthesis, coding for methionine and signalling where translation begins. UAA, UAG and UGA are stop codons.',
     ),
     MockQuestion(
       id: 'p225-60',
@@ -500,6 +559,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Cosmic wind', 'Solar wind', 'Solar flares', 'Radiation'],
       correctIndex: 1,
       topic: 'Physics',
+      explanation: 'Charged particles streaming from the Sun through space are called the solar wind. Solar flares are sudden bursts, not the steady stream itself.',
     ),
     MockQuestion(
       id: 'p225-61',
@@ -508,6 +568,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Carbohydrates', 'Lipids', 'Polypeptides', 'Nucleic acids'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: 'Enzymes are mainly made of polypeptides, chains of amino acids folded into proteins. A few enzymes are made of RNA, but proteins are the general rule.',
     ),
     MockQuestion(
       id: 'p225-62',
@@ -516,6 +577,7 @@ const PaperTest paper225 = PaperTest(
       options: ['CaCO3', 'Al2O3', 'SiO2', 'Fe2O3'],
       correctIndex: 2,
       topic: 'Chemistry',
+      explanation: 'Quartz is silicon dioxide, with the chemical formula SiO2. Calcium carbonate is CaCO3 and iron oxide is Fe2O3.',
     ),
     MockQuestion(
       id: 'p225-63',
@@ -524,6 +586,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Transcription', 'Restriction', 'Translation', 'Replication'],
       correctIndex: 1,
       topic: 'Biology',
+      explanation: 'Restriction is the process that cuts DNA at specific points, carried out by restriction enzymes that recognise particular sequences. Transcription and translation do not cut DNA.',
     ),
     MockQuestion(
       id: 'p225-64',
@@ -532,6 +595,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Nucleus', 'Cytoplasm', 'Nucleolus', 'Endoplasmic reticulum'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: 'Ribosomes are mainly assembled in the nucleolus, the dense region inside the nucleus. They then move out to the cytoplasm to make proteins.',
     ),
     MockQuestion(
       id: 'p225-65',
@@ -540,6 +604,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Solid', 'Gas', 'Liquid', 'Plasma'],
       correctIndex: 0,
       topic: 'Physics',
+      explanation: "In an earthquake, S-waves can travel through solids only. They cannot pass through liquids or gases, which is why they are blocked by the Earth's liquid outer core.",
     ),
     MockQuestion(
       id: 'p225-66',
@@ -548,6 +613,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Dry vegetation', 'High temperatures', 'Low humidity', 'All of them'],
       correctIndex: 3,
       topic: 'Environment',
+      explanation: 'Dry vegetation, high temperatures and low humidity all raise the risk of wildfires, so all of them together is the correct answer.',
     ),
     MockQuestion(
       id: 'p225-67',
@@ -556,6 +622,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Fossil fuel', 'Biomass', 'Biogas', 'Compost'],
       correctIndex: 1,
       topic: 'Environment',
+      explanation: 'Plant material and waste from living things used as fuel is called biomass. Fossil fuel comes from ancient buried matter, while biogas is a gas made from biomass.',
     ),
     MockQuestion(
       id: 'p225-68',
@@ -564,6 +631,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Ionic bond', 'Covalent bond', 'Hydrogen bond', 'Metallic bond'],
       correctIndex: 2,
       topic: 'Chemistry',
+      explanation: 'Hydrogen bonds hold one water molecule to another, linking the hydrogen of one molecule to the oxygen of the next. Covalent bonds hold the atoms within a single water molecule.',
     ),
     MockQuestion(
       id: 'p225-69',
@@ -572,6 +640,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Lumen', 'Thylakoid', 'Stroma', 'Outer membrane'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: 'In a chloroplast, carbon dioxide is fixed into sugar in the stroma, the fluid around the thylakoids, during the Calvin cycle. The thylakoids host the light reactions instead.',
     ),
     MockQuestion(
       id: 'p225-70',
@@ -580,6 +649,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Carbon neutral', 'Carbon positive', 'Carbon negative', 'Renewable fuel'],
       correctIndex: 0,
       topic: 'Environment',
+      explanation: 'Ethanol as a biofuel is often described as carbon neutral, because the carbon dioxide released when it burns is roughly balanced by the carbon dioxide absorbed by the crop as it grew.',
     ),
     MockQuestion(
       id: 'p225-71',
@@ -588,6 +658,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Mercury', 'Earth', 'Venus', 'Mars'],
       correctIndex: 1,
       topic: 'Physics',
+      explanation: 'Earth has the highest density of any planet, about 5.5 grams per cubic centimetre, because of its large iron core and compression. Mercury, Venus and Mars are less dense.',
     ),
     MockQuestion(
       id: 'p225-72',
@@ -596,6 +667,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Aluminium', 'Zinc', 'Tin', 'Chromium'],
       correctIndex: 2,
       topic: 'Chemistry',
+      explanation: 'Tin coats the steel of a food tin, giving the familiar tinplate that resists rust. Zinc coats galvanised steel instead, and aluminium is a different can material.',
     ),
     MockQuestion(
       id: 'p225-73',
@@ -604,6 +676,7 @@ const PaperTest paper225 = PaperTest(
       options: ['5%', '10%', '15%', '20%'],
       correctIndex: 1,
       topic: 'Physics',
+      explanation: "Nuclear power supplies about 10 percent of the world's electricity, roughly one-tenth of total generation.",
     ),
     MockQuestion(
       id: 'p225-74',
@@ -612,6 +685,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Secondary water treatment', 'Tertiary water treatment', 'Primary water treatment', 'Disinfection'],
       correctIndex: 2,
       topic: 'Environment',
+      explanation: 'Sedimentation, letting solids settle out of water, is part of primary water treatment, the first stage of cleaning wastewater. Secondary treatment uses biological processes instead.',
     ),
     MockQuestion(
       id: 'p225-75',
@@ -620,6 +694,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Sulfur dioxide', 'Particulate matter', 'Carbon monoxide', 'Ozone'],
       correctIndex: 1,
       topic: 'Environment',
+      explanation: 'Particulate matter, tiny solid and liquid particles in the air, is a key particle component of smog. Sulphur dioxide, carbon monoxide and ozone are gases.',
     ),
     MockQuestion(
       id: 'p225-76',
@@ -628,6 +703,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Peeling', 'Slicing', 'Coring', 'Pitting'],
       correctIndex: 2,
       topic: 'Biology',
+      explanation: 'Coring is removing the inedible central part of a fruit, such as an apple core. Peeling removes the skin and slicing only cuts the fruit.',
     ),
     MockQuestion(
       id: 'p225-77',
@@ -636,6 +712,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Archean', 'Paleozoic', 'Hadean', 'Precambrian'],
       correctIndex: 1,
       topic: 'Biology',
+      explanation: 'The Paleozoic is one of the eras of the Phanerozoic eon, alongside the Mesozoic and Cenozoic. The Archean and Hadean are much older eons, and the Precambrian is not a single era.',
     ),
     MockQuestion(
       id: 'p225-78',
@@ -644,6 +721,7 @@ const PaperTest paper225 = PaperTest(
       options: ['T', 'T^-1', 'T^-2', 'T^2'],
       correctIndex: 1,
       topic: 'Physics',
+      explanation: "Under Wien's displacement law, the wavelength at which a star shines brightest is inversely proportional to temperature, varying as T to the power minus 1. Hotter stars therefore peak at shorter wavelengths.",
     ),
     MockQuestion(
       id: 'p225-79',
@@ -652,6 +730,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Tabulation', 'Categorization', 'Classification', 'Organization'],
       correctIndex: 2,
       topic: 'Science',
+      explanation: 'Classification is sorting data into classes and groups by shared features. Tabulation arranges data in tables, while categorisation is a looser grouping term.',
     ),
     // Basic Computer Studies
     MockQuestion(
@@ -661,6 +740,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Atlas', 'Helix', 'Optima', 'Tesla Vision'],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: "Helix is Figure's vision-language-action model, described by Figure as the first such model to control the entire humanoid upper body, including wrists, torso, head and fingers.",
     ),
     MockQuestion(
       id: 'p225-81',
@@ -669,6 +749,7 @@ const PaperTest paper225 = PaperTest(
       options: ['General AI', 'Embedded AI', 'Machine learning', 'Neural AI'],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: 'When AI is built directly into a physical device for real-time work, it is called embedded AI. General AI would mean human-level intelligence across tasks, which is a different concept.',
     ),
     MockQuestion(
       id: 'p225-82',
@@ -677,6 +758,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Line chart', 'Pie chart', 'Bar chart', 'Histogram'],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'A line chart best shows how values change over time, because its connected points make trends easy to see. Pie charts show shares of a whole instead.',
     ),
     MockQuestion(
       id: 'p225-83',
@@ -685,6 +767,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Adds new features', 'Upgrades the operating system', 'Fixes bugs and security', 'Improves performance'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'The main job of a software patch is to fix bugs and security problems. A patch may add small improvements, but fixing faults is its primary purpose.',
     ),
     MockQuestion(
       id: 'p225-84',
@@ -693,6 +776,7 @@ const PaperTest paper225 = PaperTest(
       options: ['IPS', 'CRT', 'LCD', 'Plasma'],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'IPS panels are common in advanced modern monitors, valued for wide viewing angles and accurate colours. CRT and plasma panels belong to older display technology.',
     ),
     MockQuestion(
       id: 'p225-85',
@@ -701,6 +785,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Automatic Routing Protocol', 'Address Resolution Protocol', 'Advanced Resolution Process', 'Address Routing Protocol'],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: 'ARP stands for Address Resolution Protocol, which maps an IP address to a physical MAC address on a local network.',
     ),
     MockQuestion(
       id: 'p225-86',
@@ -709,6 +794,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Runs the program', 'Finds errors', 'Links libraries', 'Converts into machine code'],
       correctIndex: 3,
       topic: 'Computer',
+      explanation: 'A compiler mainly converts source code into machine code that the computer can execute. Running the program and linking libraries are separate steps.',
     ),
     MockQuestion(
       id: 'p225-87',
@@ -717,6 +803,7 @@ const PaperTest paper225 = PaperTest(
       options: ['MS Word', 'C++', 'Java', 'Python'],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'MS Word is a word processor, not a programming language. C++, Java and Python are all programming languages.',
     ),
     MockQuestion(
       id: 'p225-88',
@@ -725,6 +812,7 @@ const PaperTest paper225 = PaperTest(
       options: ['50', '100', '500', 'Unlimited'],
       correctIndex: 3,
       topic: 'Computer',
+      explanation: "PowerPoint sets no fixed cap on the number of slides a presentation can hold, so the limit is effectively unlimited, bounded only by the computer's resources.",
     ),
     MockQuestion(
       id: 'p225-89',
@@ -733,6 +821,7 @@ const PaperTest paper225 = PaperTest(
       options: ['1965', '1969', '1983', '1971'],
       correctIndex: 3,
       topic: 'Computer',
+      explanation: 'The first email is credited to 1971, when Ray Tomlinson sent the first networked message using the @ sign to address it. Earlier internal messaging systems were not networked email.',
     ),
     MockQuestion(
       id: 'p225-90',
@@ -741,6 +830,7 @@ const PaperTest paper225 = PaperTest(
       options: ['Software', 'Hardware', 'Firmware', 'Middleware'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'Software built into hardware is called firmware, stored in the device itself to control its basic functions. Ordinary software runs on top of an operating system instead.',
     ),
     // Basic Mathematics
     MockQuestion(
@@ -750,6 +840,7 @@ const PaperTest paper225 = PaperTest(
       options: ['28', '29', '30', '31'],
       correctIndex: 0,
       topic: 'Arithmetic',
+      explanation: 'Working: 175 percent of a number is 49, so the number is 49 divided by 1.75, which is 28.',
     ),
     MockQuestion(
       id: 'p225-92',
@@ -758,6 +849,7 @@ const PaperTest paper225 = PaperTest(
       options: ['A \u2229 B is empty', 'A \u2229 B = S', 'A \u222a B is empty', 'A = B'],
       correctIndex: 0,
       topic: 'Probability',
+      explanation: 'If A and B are mutually exclusive events, they cannot happen together, so their intersection is empty.',
     ),
     MockQuestion(
       id: 'p225-93',
@@ -766,6 +858,7 @@ const PaperTest paper225 = PaperTest(
       options: ['720', '820', '920', '1020'],
       correctIndex: 0,
       topic: 'Arithmetic',
+      explanation: 'Working: 10! divided by 7! is 10 times 9 times 8, which is 720.',
     ),
     MockQuestion(
       id: 'p225-94',
@@ -774,6 +867,7 @@ const PaperTest paper225 = PaperTest(
       options: ['300', '250', '350', '450'],
       correctIndex: 0,
       topic: 'Arithmetic',
+      explanation: 'Working: 135 boys are 45 percent of the total, so the total is 135 divided by 0.45, which is 300 students.',
     ),
     MockQuestion(
       id: 'p225-95',
@@ -782,6 +876,7 @@ const PaperTest paper225 = PaperTest(
       options: ['13', '11', '14', '15'],
       correctIndex: 2,
       topic: 'Statistics',
+      explanation: 'Working: the calls in order are 11, 12, 13, 14, 15, 16 and 17, and the middle value of these seven is 14, so the median is 14.',
     ),
     MockQuestion(
       id: 'p225-96',
@@ -790,6 +885,7 @@ const PaperTest paper225 = PaperTest(
       options: ['2', '0', '1', '-1'],
       correctIndex: 3,
       topic: 'Algebra',
+      explanation: 'Working: 3(x - 1) = -6 gives x - 1 = -2, so x = -1.',
     ),
     MockQuestion(
       id: 'p225-97',
@@ -798,6 +894,7 @@ const PaperTest paper225 = PaperTest(
       options: ['15%', '25%', '30%', '35%'],
       correctIndex: 1,
       topic: 'Arithmetic',
+      explanation: 'Working: the increase is 90 - 72 = 18 cm, and 18 divided by 72 is 0.25, so the percentage increase is 25 percent.',
     ),
     MockQuestion(
       id: 'p225-98',
@@ -806,6 +903,7 @@ const PaperTest paper225 = PaperTest(
       options: ['72 cm\u00b2', '80 cm\u00b2', '96 cm\u00b2', '100 cm\u00b2'],
       correctIndex: 2,
       topic: 'Geometry',
+      explanation: 'Working: a cube of volume 64 cubic cm has side 4 cm, so its total surface area is 6 times 4 squared, which is 96 square cm.',
     ),
     MockQuestion(
       id: 'p225-99',
@@ -814,6 +912,7 @@ const PaperTest paper225 = PaperTest(
       options: ['\u221a2', '\u221a3', '2', '3'],
       correctIndex: 1,
       topic: 'Algebra',
+      explanation: 'Working: the square root of t is 1/2, so t is 1/4 and 2/t is 8. Log base 2 of 8 is 3, and the square root of 3 is the answer.',
     ),
     MockQuestion(
       id: 'p225-100',
@@ -822,6 +921,7 @@ const PaperTest paper225 = PaperTest(
       options: ['50p\u00b2 - 72q\u00b2', '25p\u00b2 + 36q\u00b2', '50p\u00b2 + 72q\u00b2', '25p\u00b2 - 36q\u00b2'],
       correctIndex: 2,
       topic: 'Algebra',
+      explanation: 'Working: expanding gives (25p squared - 60pq + 36q squared) plus (25p squared + 60pq + 36q squared). The pq terms cancel, leaving 50p squared + 72q squared.',
     ),
   ],
   latestUpdates: [

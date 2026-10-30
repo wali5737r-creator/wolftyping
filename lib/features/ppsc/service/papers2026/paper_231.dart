@@ -23,6 +23,7 @@ const PaperTest paper231 = PaperTest(
       options: ['Sindh', 'Balochistan', 'Punjab', 'Khyber Pakhtunkhwa'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'Kund Malir beach lies on the Makran coast in Balochistan.',
     ),
     MockQuestion(
       id: 'p231-2',
@@ -32,6 +33,7 @@ const PaperTest paper231 = PaperTest(
       options: ['Music', 'Philosophy', 'Painting', 'Calligraphy'],
       correctIndex: 1,
       topic: 'Medieval History',
+      explanation: 'Muhammad bin Tughlaq was known as a highly learned sultan, most famous for his mastery of philosophy.',
     ),
     MockQuestion(
       id: 'p231-3',
@@ -41,6 +43,7 @@ const PaperTest paper231 = PaperTest(
       options: ['Heat', 'Sound', 'Radiation', 'Soot'],
       correctIndex: 3,
       topic: 'Pollution',
+      explanation: 'Heat, sound and radiation are forms of energy, so they are physical pollutants, while soot is particulate matter rather than a physical pollutant.',
     ),
     MockQuestion(
       id: 'p231-4',
@@ -50,6 +53,7 @@ const PaperTest paper231 = PaperTest(
       options: ['Herbivores', 'Green plants', 'Carnivores', 'Decomposers'],
       correctIndex: 1,
       topic: 'Ecology',
+      explanation: 'Green plants are producers, so they occupy the first trophic level of a food chain.',
     ),
     MockQuestion(
       id: 'p231-5',
@@ -59,6 +63,7 @@ const PaperTest paper231 = PaperTest(
       options: ['50:33', '48:25', '10:3', '54:125'],
       correctIndex: 2,
       topic: 'Ratio',
+      explanation: 'x / y = 6 / 5 and z / y = 9 / 25, so x / z = (6 / 5) / (9 / 25) = 150 / 45 = 10 / 3.',
     ),
     MockQuestion(
       id: 'p231-6',
@@ -68,6 +73,7 @@ const PaperTest paper231 = PaperTest(
       options: ['36 cm', '72 cm', '12 cm', '6 cm'],
       correctIndex: 1,
       topic: 'Geometry',
+      explanation: 'With sides 3k, 4k and 5k, area = (1/2) x 3k x 4k = 6k squared = 216, so k = 6 and perimeter = 12k = 72 cm.',
     ),
     MockQuestion(
       id: 'p231-7',
@@ -77,6 +83,7 @@ const PaperTest paper231 = PaperTest(
       options: ['30', '25', '20', '10'],
       correctIndex: 3,
       topic: 'Percentage',
+      explanation: 'Three-quarters pass, so one-quarter fail: 40 / 4 = 10 pupils.',
     ),
     MockQuestion(
       id: 'p231-8',
@@ -86,6 +93,7 @@ const PaperTest paper231 = PaperTest(
       options: ['6 but not 12', '12 but not 24', '24', 'None of these'],
       correctIndex: 2,
       topic: 'Number Theory',
+      explanation: 'A prime larger than 3 is odd and not a multiple of 3, so its square minus 1 is divisible by both 8 and 3, hence by 24.',
     ),
     MockQuestion(
       id: 'p231-9',
@@ -95,6 +103,7 @@ const PaperTest paper231 = PaperTest(
       options: ['20,000', '22,000', '24,000', '26,000'],
       correctIndex: 2,
       topic: 'Angels',
+      explanation: 'The traditional account cited in this item gives 24,000 visits by Angel Jibrael to the Holy Prophet.',
     ),
     MockQuestion(
       id: 'p231-10',
@@ -104,6 +113,7 @@ const PaperTest paper231 = PaperTest(
       options: ['Persuade', 'Dissuade', 'Lure', 'Coax'],
       correctIndex: 1,
       topic: 'Vocabulary',
+      explanation: 'Cajole means to coax, so its opposite is dissuade, meaning to persuade someone not to do something.',
     ),
     MockQuestion(
       id: 'p231-11',
@@ -112,6 +122,7 @@ const PaperTest paper231 = PaperTest(
       options: ['Scarce', 'Abundant', 'Meagre', 'Limited'],
       correctIndex: 1,
       topic: 'Vocabulary',
+      explanation: 'Plentiful means existing in large amounts, which is the same as abundant.',
     ),
     MockQuestion(
       id: 'p231-12',
@@ -120,6 +131,7 @@ const PaperTest paper231 = PaperTest(
       options: ['soul', 'light', 'mind', 'thought'],
       correctIndex: 2,
       topic: 'Idioms',
+      explanation: 'The complete saying is: out of sight, out of mind.',
     ),
     MockQuestion(
       id: 'p231-13',
@@ -134,6 +146,7 @@ const PaperTest paper231 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Grammar',
+      explanation: 'The correct structure is so poor that he could not buy food, using that plus a subject and could not.',
     ),
     MockQuestion(
       id: 'p231-14',
@@ -143,6 +156,7 @@ const PaperTest paper231 = PaperTest(
       options: ['لقب', 'خطاب', 'کنیت', 'تخلص'],
       correctIndex: 0,
       topic: 'Urdu Grammar',
+      explanation: 'Quaid-e-Azam is a laqab, an honorary title describing a person, rather than a khitab conferred by government.',
     ),
     MockQuestion(
       id: 'p231-15',
@@ -152,6 +166,7 @@ const PaperTest paper231 = PaperTest(
       options: ['ہر طرف خوشی', 'آسان راستہ', 'ہر طرف مشکلات', 'کوئی بھی نہیں'],
       correctIndex: 2,
       topic: 'Urdu Proverbs',
+      explanation: 'Aage kuan, peeche khai describes being in difficulty on every side, with no easy way out.',
     ),
   ],
 );

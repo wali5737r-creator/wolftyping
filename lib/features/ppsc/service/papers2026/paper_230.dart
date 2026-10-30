@@ -22,6 +22,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Johannesburg', 'Pretoria', 'Durban', 'Cape Town'],
       correctIndex: 3,
       topic: 'Geography',
+      explanation: 'Muizenberg is a seaside suburb on False Bay, just south of Cape Town, so Cape Town is the city it belongs to.',
     ),
     MockQuestion(
       id: 'p230-2',
@@ -31,6 +32,7 @@ const PaperTest paper230 = PaperTest(
       options: ['1980', '1973', '1960', '1975'],
       correctIndex: 3,
       topic: 'World Organisations',
+      explanation: 'The Bank formally opened and began its activities in 1975, which is the year used in this question.',
     ),
     MockQuestion(
       id: 'p230-3',
@@ -40,6 +42,7 @@ const PaperTest paper230 = PaperTest(
       options: ['London', 'Berlin', 'Paris', 'Geneva'],
       correctIndex: 1,
       topic: 'World Organisations',
+      explanation: 'Transparency International is headquartered in Berlin, Germany.',
     ),
     MockQuestion(
       id: 'p230-4',
@@ -49,6 +52,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Sindh', 'Punjab', 'Bengal', 'Madras'],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'The Kuka Movement arose in Punjab under Baba Ram Singh in the nineteenth century.',
     ),
     MockQuestion(
       id: 'p230-5',
@@ -57,6 +61,7 @@ const PaperTest paper230 = PaperTest(
       options: ['1961', '1989', '1945', '1971'],
       correctIndex: 0,
       topic: 'History',
+      explanation: 'The Berlin Wall was erected in August 1961, dividing East and West Berlin.',
     ),
     MockQuestion(
       id: 'p230-6',
@@ -65,6 +70,7 @@ const PaperTest paper230 = PaperTest(
       options: ['South Africa', 'North Korea', 'China', 'Japan'],
       correctIndex: 1,
       topic: 'World Leaders',
+      explanation: 'Kim Jong Un is the leader of North Korea.',
     ),
     MockQuestion(
       id: 'p230-7',
@@ -73,6 +79,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Bondi Beach', 'Boulders Beach', 'Miami Beach', 'Clifton Beach'],
       correctIndex: 1,
       topic: 'Geography',
+      explanation: 'Boulders Beach, near Simon\'s Town, is famous for its colony of African penguins.',
     ),
     MockQuestion(
       id: 'p230-8',
@@ -86,6 +93,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Abbreviations',
+      explanation: 'BRT is the standard abbreviation for Bus Rapid Transit, a bus system with dedicated lanes and stations.',
     ),
     MockQuestion(
       id: 'p230-9',
@@ -95,6 +103,7 @@ const PaperTest paper230 = PaperTest(
       options: ['9 hours', '10 hours', '16 hours', '24 hours'],
       correctIndex: 0,
       topic: 'Everyday Science',
+      explanation: 'A Kyoto study found SARS-CoV-2 survived about 9 hours on human skin, much longer than influenza A.',
     ),
     MockQuestion(
       id: 'p230-10',
@@ -103,6 +112,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Puma', 'Adidas', 'GSK', 'Reebok'],
       correctIndex: 1,
       topic: 'Famous Personalities',
+      explanation: 'Adi Dassler founded Adidas; his brother Rudolf later founded the rival brand Puma.',
     ),
     MockQuestion(
       id: 'p230-11',
@@ -116,6 +126,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Abbreviations',
+      explanation: 'MCAT stands for Medical College Admission Test, the standard entrance test for medical school.',
     ),
     MockQuestion(
       id: 'p230-12',
@@ -130,6 +141,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'PERA',
+      explanation: 'Under the PERA procedure, the Enforcement Officer issues an Emergency Prohibition Order where a public nuisance exists.',
     ),
     MockQuestion(
       id: 'p230-13',
@@ -144,6 +156,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'PERA',
+      explanation: 'The Sub Divisional Enforcement Officer heads the Enforcement Station at sub-division level.',
     ),
     MockQuestion(
       id: 'p230-14',
@@ -158,6 +171,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'PERA',
+      explanation: 'As head of the Enforcement Station, the SDEO is the officer responsible for the station\'s record-keeping in this practice item.',
     ),
     MockQuestion(
       id: 'p230-15',
@@ -172,6 +186,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'PERA',
+      explanation: 'PERA was set up as Punjab\'s overarching enforcement authority, covering offences such as hoarding and profiteering that harm public welfare.',
     ),
     MockQuestion(
       id: 'p230-16',
@@ -185,6 +200,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'Operation Radd-ul-Fasaad was launched to eliminate terrorism and strengthen security across the country.',
     ),
     MockQuestion(
       id: 'p230-17',
@@ -193,6 +209,7 @@ const PaperTest paper230 = PaperTest(
       options: ['1938', '1936', '1931', '1900'],
       correctIndex: 0,
       topic: 'History',
+      explanation: 'Iqbal Day commemorates Allama Iqbal, whose life ended in 1938, and this practice item dates the observance to that year.',
     ),
     MockQuestion(
       id: 'p230-18',
@@ -202,6 +219,7 @@ const PaperTest paper230 = PaperTest(
       options: ['1981', '1991', '2001', '2011'],
       correctIndex: 0,
       topic: 'History',
+      explanation: 'Lahore Fort was inscribed on the UNESCO World Heritage List in 1981, together with the Shalimar Gardens.',
     ),
     MockQuestion(
       id: 'p230-19',
@@ -215,6 +233,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'Din-i-Ilahi was the religious order introduced by the Mughal emperor Akbar.',
     ),
     MockQuestion(
       id: 'p230-20',
@@ -229,6 +248,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'History',
+      explanation: 'Under the Treaty of Amritsar of 1846, Gulab Singh paid 75 lakh rupees for Kashmir.',
     ),
     MockQuestion(
       id: 'p230-21',
@@ -237,6 +257,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Malala Yousafzai', 'Arooba Faridi', 'Arfa Karim', 'Sana Mir'],
       correctIndex: 1,
       topic: 'Famous Personalities',
+      explanation: 'Arooba Faridi was reported at the age of 23 as Pakistan\'s youngest female aerospace engineer.',
     ),
     MockQuestion(
       id: 'p230-22',
@@ -246,6 +267,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Ayub Khan', 'Yahya Khan', 'Zulfiqar Ali Bhutto', 'Zia-ul-Haq'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'After Yahya Khan\'s resignation in December 1971, Zulfiqar Ali Bhutto became the first civilian Chief Martial Law Administrator.',
     ),
     MockQuestion(
       id: 'p230-23',
@@ -254,6 +276,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Punjab', 'KPK', 'Balochistan', 'Sindh'],
       correctIndex: 2,
       topic: 'Geography',
+      explanation: 'Among the provinces listed, the Pasht River is the Balochistan river named in this practice item.',
     ),
     MockQuestion(
       id: 'p230-24',
@@ -262,6 +285,7 @@ const PaperTest paper230 = PaperTest(
       options: ['1996', '1997', '1999', '1998'],
       correctIndex: 3,
       topic: 'History',
+      explanation: 'Rafiq Tarar was sworn in as President of Pakistan on 1 January 1998, after his election in December 1997.',
     ),
     MockQuestion(
       id: 'p230-25',
@@ -270,6 +294,7 @@ const PaperTest paper230 = PaperTest(
       options: ['2005', '2010', '2007', '2009'],
       correctIndex: 2,
       topic: 'History',
+      explanation: 'The National Reconciliation Ordinance was promulgated in 2007.',
     ),
     MockQuestion(
       id: 'p230-26',
@@ -278,6 +303,7 @@ const PaperTest paper230 = PaperTest(
       options: ['P', 'K', 'Pt', 'Ps'],
       correctIndex: 1,
       topic: 'Chemistry',
+      explanation: 'The chemical symbol K for potassium comes from its Latin name, kalium.',
     ),
     MockQuestion(
       id: 'p230-27',
@@ -286,6 +312,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Terylene', 'Nylon', 'Rayon', 'Orlon'],
       correctIndex: 1,
       topic: 'Chemistry',
+      explanation: 'Nylon is a synthetic polyamide, which is why it is commonly called polyamide.',
     ),
     MockQuestion(
       id: 'p230-28',
@@ -299,6 +326,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'AI stands for Artificial Intelligence, the simulation of human intelligence by machines.',
     ),
     MockQuestion(
       id: 'p230-29',
@@ -312,6 +340,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: 'OTP stands for One Time Password, a code valid for a single login or transaction.',
     ),
     MockQuestion(
       id: 'p230-30',
@@ -325,6 +354,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'DOS stands for Disk Operating System, an early operating system for personal computers.',
     ),
     MockQuestion(
       id: 'p230-31',
@@ -333,6 +363,7 @@ const PaperTest paper230 = PaperTest(
       options: ['E-commerce', 'E-banking', 'E-learning', 'E-governance'],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'Buying and selling goods or services over the internet is called e-commerce.',
     ),
     MockQuestion(
       id: 'p230-32',
@@ -346,6 +377,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: 'In PowerPoint, pressing F5 starts the slide show from the beginning.',
     ),
     MockQuestion(
       id: 'p230-33',
@@ -354,6 +386,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Ctrl+P', 'Ctrl+S', 'Ctrl+M', 'Ctrl+F'],
       correctIndex: 3,
       topic: 'Computer',
+      explanation: 'Ctrl+F is the standard Find shortcut in MS Word and most other programs.',
     ),
     MockQuestion(
       id: 'p230-34',
@@ -362,6 +395,7 @@ const PaperTest paper230 = PaperTest(
       options: ['DOC / PDF', 'JPG / JPEG', 'MP3', 'EXE / ZIP'],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: 'JPG and JPEG are the standard formats for saving photographs and other pictures.',
     ),
     MockQuestion(
       id: 'p230-35',
@@ -370,6 +404,7 @@ const PaperTest paper230 = PaperTest(
       options: ['=ADD()', '=PLUS()', '=SUM()', '=TOTAL()'],
       correctIndex: 2,
       topic: 'Computer',
+      explanation: 'In Excel, the SUM function adds a range of numbers, as in =SUM(A1:A5).',
     ),
     MockQuestion(
       id: 'p230-36',
@@ -379,6 +414,7 @@ const PaperTest paper230 = PaperTest(
       options: ['@', '%', '&', '#'],
       correctIndex: 0,
       topic: 'Computer',
+      explanation: 'In an email address, the @ symbol separates the username from the domain name.',
     ),
     MockQuestion(
       id: 'p230-37',
@@ -388,6 +424,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Scanner', 'Modem', 'RAM', 'Monitor'],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: 'A modem converts digital signals to analogue signals for transmission, and back again.',
     ),
     MockQuestion(
       id: 'p230-38',
@@ -401,6 +438,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Computer',
+      explanation: 'Ctrl+N opens a new window or a new document, depending on the program.',
     ),
     MockQuestion(
       id: 'p230-39',
@@ -415,6 +453,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: 'The March 2026 Punjab school closure ran from 10 to 31 March 2026, with classes held online during that period.',
     ),
     MockQuestion(
       id: 'p230-40',
@@ -429,6 +468,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Current Affairs',
+      explanation: 'The 2025 Nobel Prize in Physiology or Medicine was awarded to Mary Brunkow, Fred Ramsdell and Shimon Sakaguchi for their work on peripheral immune tolerance.',
     ),
     MockQuestion(
       id: 'p230-41',
@@ -438,6 +478,7 @@ const PaperTest paper230 = PaperTest(
       options: ['30 km', '40 km', '36.67 km', '45 km'],
       correctIndex: 2,
       topic: 'Arithmetic',
+      explanation: 'Time = 19 / 57 = 1/3 hour, so distance at 110 km/h = 110 x 1/3 = 36.67 km.',
     ),
     MockQuestion(
       id: 'p230-42',
@@ -451,6 +492,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'LCM and HCF',
+      explanation: '144 is a multiple of 18, so the LCM is 144 and the HCF is 18.',
     ),
     MockQuestion(
       id: 'p230-43',
@@ -459,6 +501,7 @@ const PaperTest paper230 = PaperTest(
       options: ['70', '45', '95', '80'],
       correctIndex: 1,
       topic: 'Ratio',
+      explanation: '75 : 375 simplifies to 1 : 5, so the missing term is 225 / 5 = 45.',
     ),
     MockQuestion(
       id: 'p230-44',
@@ -468,6 +511,7 @@ const PaperTest paper230 = PaperTest(
       options: ['8 days', '9 days', '12 days', '14 days'],
       correctIndex: 2,
       topic: 'Arithmetic',
+      explanation: 'Total work = 8 x 9 = 72 man-days, so 6 men take 72 / 6 = 12 days.',
     ),
     MockQuestion(
       id: 'p230-45',
@@ -477,6 +521,7 @@ const PaperTest paper230 = PaperTest(
       options: ['20%', '25%', '35%', '30%'],
       correctIndex: 3,
       topic: 'Percentage',
+      explanation: 'Female percentage = 18 / 60 x 100 = 30 percent.',
     ),
     MockQuestion(
       id: 'p230-46',
@@ -486,6 +531,7 @@ const PaperTest paper230 = PaperTest(
       options: ['18 and 12', '17 and 11', '16 and 10', '15 and 9'],
       correctIndex: 1,
       topic: 'Algebra',
+      explanation: 'Since a - b = 6 and a squared - b squared = (a - b)(a + b) = 168, a + b = 28, giving a = 17 and b = 11.',
     ),
     MockQuestion(
       id: 'p230-47',
@@ -495,6 +541,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Trial / Test (Fitnah)', 'Reward', 'Blessing', 'Punishment'],
       correctIndex: 0,
       topic: 'Quran',
+      explanation: 'Surah Al-Anfal describes wealth and children as a trial, or fitnah, for believers.',
     ),
     MockQuestion(
       id: 'p230-48',
@@ -508,6 +555,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Prophets',
+      explanation: 'Hazrat Yousuf was the son of Hazrat Yaqub, as stated in the Quran.',
     ),
     MockQuestion(
       id: 'p230-49',
@@ -521,6 +569,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Quran',
+      explanation: 'Bani Israel means the Children of Israel, and Israel is the title of Prophet Yaqub.',
     ),
     MockQuestion(
       id: 'p230-50',
@@ -529,6 +578,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Hadith', 'Fiqh', 'Tafsir', 'Tajweed'],
       correctIndex: 2,
       topic: 'Quran',
+      explanation: 'Tafsir is the scholarly interpretation and explanation of the Holy Quran.',
     ),
     MockQuestion(
       id: 'p230-51',
@@ -542,6 +592,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 1,
       topic: 'Quran',
+      explanation: 'Surah Al-Falaq and Surah An-Nas are recited together seeking protection from evil and harm.',
     ),
     MockQuestion(
       id: 'p230-52',
@@ -550,6 +601,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Sunan Abu Dawood', 'Sahih Bukhari', 'Ibn Majah', 'Jami Tirmidhi'],
       correctIndex: 1,
       topic: 'Hadith',
+      explanation: 'Sahih Bukhari is regarded in the Sunni tradition as the most authentic collection of Hadith.',
     ),
     MockQuestion(
       id: 'p230-53',
@@ -558,6 +610,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Companion', 'Hypocrites’ leader in Madina', 'King', 'Scholar'],
       correctIndex: 1,
       topic: 'Islamic History',
+      explanation: 'Abdullah bin Ubay was the leader of the hypocrites in Madina.',
     ),
     MockQuestion(
       id: 'p230-54',
@@ -566,6 +619,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Reconcile', 'Agree', 'Fight', 'Settle'],
       correctIndex: 2,
       topic: 'Vocabulary',
+      explanation: 'To make peace means to reconcile, so its opposite is to fight.',
     ),
     MockQuestion(
       id: 'p230-55',
@@ -574,6 +628,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Dinner', 'Brunch', 'Breakfast', 'Snack'],
       correctIndex: 0,
       topic: 'Analogy',
+      explanation: 'Meals follow in order through the day: breakfast, then lunch, then dinner.',
     ),
     MockQuestion(
       id: 'p230-56',
@@ -588,6 +643,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Narration',
+      explanation: 'The reporting verb says is in the present tense, so the reported clause keeps its present tense: honesty is the best policy.',
     ),
     MockQuestion(
       id: 'p230-57',
@@ -596,6 +652,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Very ancient or old', 'Very beautiful', 'Very modern', 'Very difficult'],
       correctIndex: 0,
       topic: 'Idioms',
+      explanation: 'As old as the hills is an idiom meaning very ancient or old.',
     ),
     MockQuestion(
       id: 'p230-58',
@@ -604,6 +661,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Kind', 'Wicked', 'Honest', 'Noble'],
       correctIndex: 1,
       topic: 'Vocabulary',
+      explanation: 'Devilish means wicked or evil in nature.',
     ),
     MockQuestion(
       id: 'p230-59',
@@ -612,6 +670,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Build', 'Ruin', 'Repair', 'Improve'],
       correctIndex: 1,
       topic: 'Vocabulary',
+      explanation: 'Wreck means to ruin or destroy something.',
     ),
     MockQuestion(
       id: 'p230-60',
@@ -626,6 +685,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Voice',
+      explanation: 'The past simple passive is formed with was plus the past participle: was landed by the pilot.',
     ),
     MockQuestion(
       id: 'p230-61',
@@ -640,6 +700,7 @@ const PaperTest paper230 = PaperTest(
       ],
       correctIndex: 0,
       topic: 'Grammar',
+      explanation: 'The clause who lives in Karachi is extra information, so it is set off with commas on both sides.',
     ),
     MockQuestion(
       id: 'p230-62',
@@ -648,6 +709,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Exclamation mark', 'Comma', 'Question mark', 'Colon'],
       correctIndex: 0,
       topic: 'Grammar',
+      explanation: 'Wow is an exclamation, and exclamations take an exclamation mark.',
     ),
     MockQuestion(
       id: 'p230-63',
@@ -657,6 +719,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Noun', 'Adjective', 'Interjection', 'Verb'],
       correctIndex: 1,
       topic: 'Grammar',
+      explanation: 'Excellent describes the noun exercises, so it is an adjective.',
     ),
     MockQuestion(
       id: 'p230-64',
@@ -665,6 +728,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Has', 'Have', 'Is', 'Are'],
       correctIndex: 0,
       topic: 'Grammar',
+      explanation: 'With none of you, the singular verb has is used in this sentence.',
     ),
     MockQuestion(
       id: 'p230-65',
@@ -673,6 +737,7 @@ const PaperTest paper230 = PaperTest(
       options: ['The', 'An', 'A', 'No article'],
       correctIndex: 0,
       topic: 'Grammar',
+      explanation: 'The is used before an adjective used as a noun for a whole class of people, as in the rich.',
     ),
     MockQuestion(
       id: 'p230-66',
@@ -681,6 +746,7 @@ const PaperTest paper230 = PaperTest(
       options: ['Cover', 'Pages', 'Title', 'Author'],
       correctIndex: 0,
       topic: 'Idioms',
+      explanation: 'The complete idiom is: do not judge a book by its cover.',
     ),
     MockQuestion(
       id: 'p230-67',
@@ -689,6 +755,7 @@ const PaperTest paper230 = PaperTest(
       options: ['بہت عزیز ہونا', 'دشمن ہونا', 'غصہ ہونا', 'بیمار ہونا'],
       correctIndex: 0,
       topic: 'Urdu',
+      explanation: 'The Urdu idiom naak ka baal hona means to be very dear or close to someone.',
     ),
     MockQuestion(
       id: 'p230-68',
@@ -697,6 +764,7 @@ const PaperTest paper230 = PaperTest(
       options: ['راز فاش ہونا', 'خوش ہونا', 'گھبرانا', 'ناراض ہونا'],
       correctIndex: 0,
       topic: 'Urdu',
+      explanation: 'The Urdu idiom takht az baam hona means that a secret is revealed.',
     ),
     MockQuestion(
       id: 'p230-69',
@@ -705,6 +773,7 @@ const PaperTest paper230 = PaperTest(
       options: ['بدھ', 'جمعرات', 'ہفتہ', 'جمعہ'],
       correctIndex: 1,
       topic: 'Urdu',
+      explanation: 'In Urdu grammar, Jumeraat (Thursday) is treated as feminine, unlike the other days listed.',
     ),
     MockQuestion(
       id: 'p230-70',
@@ -713,6 +782,7 @@ const PaperTest paper230 = PaperTest(
       options: ['فارسی', 'اردو', 'ترکی', 'عربی'],
       correctIndex: 3,
       topic: 'Urdu',
+      explanation: 'Shams (sun) and Al-Qamar (moon) are Arabic words.',
     ),
     MockQuestion(
       id: 'p230-71',
@@ -721,6 +791,7 @@ const PaperTest paper230 = PaperTest(
       options: ['اسم معرفہ', 'اسم نکرہ', 'اسم اشارہ', 'اسم جمع'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'Ism-e-ishara is the noun used to point to something near or far.',
     ),
     MockQuestion(
       id: 'p230-72',
@@ -729,6 +800,7 @@ const PaperTest paper230 = PaperTest(
       options: ['وہ لڑکے', 'وہ گئی', 'وہ بچے', 'وہ گئے'],
       correctIndex: 3,
       topic: 'Urdu',
+      explanation: 'Woh goes with the plural masculine verb gaye, which fits the plural subject implied here.',
     ),
     MockQuestion(
       id: 'p230-73',
@@ -737,6 +809,7 @@ const PaperTest paper230 = PaperTest(
       options: ['فارسی', 'اردو', 'ترکی', 'عربی'],
       correctIndex: 0,
       topic: 'Urdu',
+      explanation: 'Aftab, meaning the sun, is a Persian word.',
     ),
     MockQuestion(
       id: 'p230-74',
@@ -745,6 +818,7 @@ const PaperTest paper230 = PaperTest(
       options: ['علم بیان', 'علم عروض', 'علم نحو', 'علم بدیع'],
       correctIndex: 0,
       topic: 'Urdu',
+      explanation: 'Majaz-e-mursal belongs to ilm-e-bayan, the branch of rhetoric dealing with figurative speech.',
     ),
     MockQuestion(
       id: 'p230-75',
@@ -753,6 +827,7 @@ const PaperTest paper230 = PaperTest(
       options: ['حروف منقوط', 'حروف مہملہ', 'حروف تہجی', 'حروف علت'],
       correctIndex: 1,
       topic: 'Urdu',
+      explanation: 'Letters written without dots are called huruf-e-muhmala.',
     ),
     MockQuestion(
       id: 'p230-76',
@@ -761,6 +836,7 @@ const PaperTest paper230 = PaperTest(
       options: ['منقوط', 'غیر منقوط', 'حروف تہجی', 'صلاح'],
       correctIndex: 1,
       topic: 'Urdu',
+      explanation: 'In this practice item, ghair manqut is treated as the differing term among the options given.',
     ),
     MockQuestion(
       id: 'p230-77',
@@ -769,6 +845,7 @@ const PaperTest paper230 = PaperTest(
       options: ['ملے جلے حروف', 'الگ حروف', 'ہم آواز حروف', 'نقطوں والے حروف'],
       correctIndex: 1,
       topic: 'Urdu',
+      explanation: 'In this practice item, makhloot huruf is matched with separate (alag) letters.',
     ),
     MockQuestion(
       id: 'p230-78',
@@ -777,6 +854,7 @@ const PaperTest paper230 = PaperTest(
       options: ['قلت', 'کمی', 'فراوانی', 'تنگی'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'Farawani means abundance, which fits the sense of plenty of warm clothes in the market.',
     ),
     MockQuestion(
       id: 'p230-79',
@@ -785,6 +863,7 @@ const PaperTest paper230 = PaperTest(
       options: ['صرف', 'عروض', 'منطق', 'نحو'],
       correctIndex: 1,
       topic: 'Urdu',
+      explanation: 'The science of poetic metre is called ilm-e-aruz.',
     ),
     MockQuestion(
       id: 'p230-80',
@@ -793,6 +872,7 @@ const PaperTest paper230 = PaperTest(
       options: ['شاعر', 'سپاہی', 'پہاڑ توڑنے والا', 'دریا'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'Kohkan literally means one who breaks or cuts mountains, the title of Farhad in legend.',
     ),
     MockQuestion(
       id: 'p230-81',
@@ -801,6 +881,7 @@ const PaperTest paper230 = PaperTest(
       options: ['فعل', 'حرف', 'اسم', 'جملہ'],
       correctIndex: 2,
       topic: 'Urdu',
+      explanation: 'Marifa (definite) and nakira (indefinite) are kinds of ism, or noun.',
     ),
     MockQuestion(
       id: 'p230-82',
@@ -809,6 +890,7 @@ const PaperTest paper230 = PaperTest(
       options: ['میز ٹوٹ گئی', 'میز ٹوٹ گیا', 'میز ٹوٹی گئی', 'میز ٹوٹ گئے'],
       correctIndex: 0,
       topic: 'Urdu',
+      explanation: 'Mez (table) is feminine in Urdu, so the correct form is toot gayi.',
     ),
     MockQuestion(
       id: 'p230-83',
@@ -817,6 +899,7 @@ const PaperTest paper230 = PaperTest(
       options: ['سدا خوش رہو', 'سدا خوش رہیں', 'سدا خوش رہتا', 'سدا خوش رہے'],
       correctIndex: 0,
       topic: 'Urdu',
+      explanation: 'Sada khush raho is the standard form of this blessing addressed in the second person.',
     ),
     MockQuestion(
       id: 'p230-84',
@@ -825,6 +908,7 @@ const PaperTest paper230 = PaperTest(
       options: ['پانچ', 'چار', 'تین', 'دو'],
       correctIndex: 0,
       topic: 'Urdu',
+      explanation: 'Tashbih has five elements: the thing compared, the thing compared to, the point of similarity, the particle of comparison, and the purpose.',
     ),
   ],
   latestUpdates: [
