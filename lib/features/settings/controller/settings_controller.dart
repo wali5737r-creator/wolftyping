@@ -14,8 +14,9 @@ class SettingsController extends GetxController {
   final settings = Rxn<AppSettings>();
   final loading = true.obs;
 
-  /// Used by `main.dart` (`Get.putAsync`) so settings are loaded from
-  /// SQLite before the first frame.
+  /// Used by `main.dart`: the controller is registered synchronously
+  /// and this load runs in the background while the app shows a loading
+  /// screen, so a slow database open never blocks the first frame.
   Future<SettingsController> init() async {
     await load();
     return this;
@@ -30,10 +31,14 @@ class SettingsController extends GetxController {
 
   Future<void> load() async {
     loading.value = true;
-
-    settings.value = await SettingsRepository.instance.load();
-
-    loading.value = false;
+    try {
+      settings.value = await SettingsRepository.instance.load();
+    } finally {
+      // Always release the loading flag, even if the database load
+      // throws: callers fall back to built-in defaults, and the boot
+      // loading screen in main.dart must never stick forever.
+      loading.value = false;
+    }
   }
 
   // Save settings and apply theme.

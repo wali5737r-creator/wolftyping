@@ -192,8 +192,17 @@ class _Controls extends StatelessWidget {
   final UrduStyleTypingController controller;
 
   Future<void> _confirmStop(BuildContext context) async {
+    // Freeze the clock the moment Stop is tapped. Before this fix the
+    // timer kept running while the confirmation dialog was open, and a
+    // second tap could dismiss the dialog on its barrier without
+    // stopping anything — so Stop appeared to do nothing. Pausing first
+    // makes the first tap always stop the timer; Cancel resumes it.
+    final bool wasPaused =
+        controller.snapshot.value.status == TypingTestStatus.paused;
+    if (!wasPaused) controller.togglePauseResume();
     final bool? confirmed = await showDialog<bool>(
       context: context,
+      barrierDismissible: false,
       builder: (ctx) => AlertDialog(
         title: const Text('Stop test?'),
         content: const Text(
@@ -214,7 +223,9 @@ class _Controls extends StatelessWidget {
     if (confirmed == true) {
       controller.stopTest();
     } else {
-      // Cancelled / dismissed: hand the keyboard back to the typing area.
+      // Cancelled: resume only if the test was running when Stop was
+      // tapped (an already-paused test stays paused).
+      if (!wasPaused) controller.togglePauseResume();
       controller.focusNode.requestFocus();
     }
   }

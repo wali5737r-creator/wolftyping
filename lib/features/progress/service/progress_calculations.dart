@@ -162,12 +162,23 @@ class ProgressCalculations {
     ];
   }
 
-  /// Readable practice-time formatting (spec section 12): "2h 35m" or
-  /// "45m" — never raw seconds.
+  /// Readable practice-time formatting (spec section 12): "2h 35m",
+  /// "45m", or "30s" for under a minute. Seconds are never silently
+  /// dropped: a 30-second session used to display as "0m" here while
+  /// the Dashboard showed "30s" for the same value.
   static String formatPracticeTime(int totalSeconds) {
     final int hours = totalSeconds ~/ 3600;
     final int minutes = (totalSeconds % 3600) ~/ 60;
-    if (hours > 0) return '${hours}h ${minutes}m';
-    return '${minutes}m';
+    final int seconds = totalSeconds % 60;
+    if (hours > 0) {
+      return seconds > 0
+          ? '${hours}h ${minutes}m ${seconds}s'
+          : '${hours}h ${minutes}m';
+    }
+    if (minutes > 0) {
+      return seconds > 0 ? '${minutes}m ${seconds}s' : '${minutes}m';
+    }
+    if (seconds > 0) return '${seconds}s';
+    return '0m';
   }
 }

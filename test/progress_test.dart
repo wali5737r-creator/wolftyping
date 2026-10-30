@@ -62,6 +62,12 @@ void main() {
       expect(ProgressCalculations.formatPracticeTime(2700), '45m');
       expect(ProgressCalculations.formatPracticeTime(0), '0m');
     });
+
+    test('does not drop seconds: under a minute shows seconds', () {
+      expect(ProgressCalculations.formatPracticeTime(30), '30s');
+      expect(ProgressCalculations.formatPracticeTime(90), '1m 30s');
+      expect(ProgressCalculations.formatPracticeTime(3661), '1h 1m 1s');
+    });
   });
 
   group('Improvement calculation', () {
