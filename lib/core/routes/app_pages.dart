@@ -44,6 +44,7 @@ import '../../features/progress/view/progress_view.dart';
 import '../../features/profile/controller/profile_controller.dart';
 import '../../features/profile/view/profile_view.dart';
 
+import '../../features/feedback/view/feedback_view.dart';
 import '../../features/settings/view/settings_view.dart';
 
 import 'app_routes.dart';
@@ -274,6 +275,12 @@ class AppPages {
           () => ProfileController(),
         );
       }),
+    ),
+
+    // Feedback / contact (email only; nothing is sent by the app)
+    GetPage(
+      name: AppRoutes.feedback,
+      page: () => const FeedbackView(),
     ),
 
     // Settings

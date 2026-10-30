@@ -97,6 +97,12 @@ const List<SidebarItem> kSidebarItems = [
     selectedIcon: Icons.person,
   ),
   SidebarItem(
+    route: AppRoutes.feedback,
+    label: 'Feedback',
+    icon: Icons.feedback_outlined,
+    selectedIcon: Icons.feedback,
+  ),
+  SidebarItem(
     route: AppRoutes.settings,
     label: 'Settings',
     icon: Icons.settings_outlined,
