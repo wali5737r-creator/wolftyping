@@ -15,6 +15,7 @@ import '../model/custom_set.dart';
 import '../model/mock_question.dart';
 import '../model/paper_test.dart';
 import '../service/mock_test_engine.dart';
+import 'weak_subject_hint.dart';
 
 /// PPSC practice MCQ mock test: a timed column view showing every
 /// question together on one scrollable page, with a Submit control at
@@ -211,6 +212,12 @@ class _SampleSetupPanel extends StatelessWidget {
                   ),
                 );
               }),
+              const SizedBox(height: 20),
+              WeakSubjectHint(
+                controller: controller,
+                onPractiseSubject: (subject) =>
+                    controller.selectSubject(subject),
+              ),
               const SizedBox(height: 20),
               ElevatedButton.icon(
                 onPressed: () {

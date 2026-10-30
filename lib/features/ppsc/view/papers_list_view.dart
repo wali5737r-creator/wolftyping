@@ -6,8 +6,10 @@ import '../../../core/routes/app_routes.dart';
 import '../../../core/widgets/app_scaffold.dart';
 import '../../../core/widgets/app_surfaces.dart';
 import '../controller/mock_test_controller.dart';
+import '../model/mock_question.dart';
 import '../model/paper_test.dart';
 import '../service/papers_registry.dart';
+import 'weak_subject_hint.dart';
 import 'paper_list_section.dart';
 
 /// Practice papers organised by year.
@@ -43,6 +45,27 @@ class PapersListView extends GetView<MockTestController> {
                       'Timed practice tests organised by year, paper and '
                       'department. Practice material only — not official '
                       'papers.',
+                ),
+                const SizedBox(height: 20),
+                WeakSubjectHint(
+                  controller: controller,
+                  onPractiseSubject: (MockSubject subject) {
+                    Get.toNamed(AppRoutes.ppscMockTest);
+                    WidgetsBinding.instance.addPostFrameCallback((_) {
+                      Get.find<MockTestController>().selectSubject(subject);
+                    });
+                  },
+                ),
+                const SizedBox(height: 12),
+                OutlinedButton.icon(
+                  onPressed: () {
+                    Get.toNamed(AppRoutes.ppscMockTest);
+                    WidgetsBinding.instance.addPostFrameCallback((_) {
+                      Get.find<MockTestController>().selectBookmarked();
+                    });
+                  },
+                  icon: const Icon(Icons.bookmark_outlined),
+                  label: const Text('Bookmarked questions'),
                 ),
                 const SizedBox(height: 20),
                 for (final PaperYearGroup group in groups) ...[
