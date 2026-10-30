@@ -171,6 +171,17 @@ class ParagraphFormView extends GetView<ParagraphFormController> {
                         ),
                       ],
                     )),
+                Obx(() {
+                  final String? error = controller.saveError.value;
+                  if (error == null) return const SizedBox.shrink();
+                  return Padding(
+                    padding: const EdgeInsets.only(top: 12),
+                    child: Text(
+                      error,
+                      style: const TextStyle(color: Colors.red),
+                    ),
+                  );
+                }),
                 const SizedBox(height: AppDimensions.gapLarge),
               ],
             ),

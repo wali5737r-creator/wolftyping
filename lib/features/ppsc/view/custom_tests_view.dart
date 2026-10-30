@@ -480,6 +480,11 @@ class _LinkImportDialogState extends State<_LinkImportDialog> {
               'User-created practice test — not an official paper.',
               style: AppTextStyles.body,
             ),
+            const SizedBox(height: 8),
+            const Text(
+              'Imported from a code/file — WolfTyping did not check who made this.',
+              style: AppTextStyles.body,
+            ),
             if (_error != null) ...[
               const SizedBox(height: 12),
               Text(_error!, style: const TextStyle(color: Colors.red)),
@@ -564,6 +569,11 @@ class _ImportDialogState extends State<_ImportDialog> {
               'Paste the share code a teacher sent you. Bad codes are '
               'rejected with an explanation — nothing is saved until '
               'the whole test checks out.',
+              style: AppTextStyles.body,
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              'Imported from a code/file — WolfTyping did not check who made this.',
               style: AppTextStyles.body,
             ),
             const SizedBox(height: 12),
