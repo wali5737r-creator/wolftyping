@@ -37,6 +37,18 @@ python3 -m http.server 8000
 # open http://localhost:8000/
 ```
 
+Deploy note (Cloudflare Pages serves the committed `build/web/` with no
+build command, and `build/` is gitignored): after every rebuild, force-add
+any NEW files under `build/web/` before pushing, or they will not deploy
+even though modified tracked files update normally:
+
+```sh
+git add -f build/web/sitemap.xml build/web/robots.txt \
+  build/web/og-image.png build/web/logo.svg \
+  build/web/assets/assets/images/logo.png
+git status --ignored -- build/web/   # check nothing new is left behind
+```
+
 Notes from the build environment (VM, 2026-10-30): Dart/pub HTTP requests
 hung (the Dart HTTP client did not pick up the egress proxy), while `curl`
 worked. Packages were downloaded via `curl` from pub.dev, SHA-256-verified
