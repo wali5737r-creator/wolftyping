@@ -62,7 +62,7 @@ const List<SidebarItem> kSidebarItems = [
   ),
   SidebarItem(
     route: AppRoutes.ppscPastPapers,
-    label: '2026 Practice Papers',
+    label: 'PPSC Past Papers',
     icon: Icons.article_outlined,
     selectedIcon: Icons.article,
   ),
