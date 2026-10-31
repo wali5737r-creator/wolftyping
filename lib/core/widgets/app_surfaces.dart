@@ -4,53 +4,67 @@ import '../constants/app_colors.dart';
 import '../constants/app_dimensions.dart';
 import '../constants/app_text_styles.dart';
 
-/// Very soft neumorphic shadow pair (one darker, one lighter) shared by
-/// every raised surface. Kept deliberately subtle: low alpha, small blur.
+/// 3D depth recipe (designer report 2026-10-31, L1 "Teal Depth" / D1
+/// "Teal Night"). Light: a layered shadow — one soft, wide shadow plus one
+/// tight, close shadow — with a white top highlight drawn by the surface
+/// border (see [SoftSurface]). Dark: depth is tonal, not shadow — shadows
+/// are invisible on dark, so raised surfaces get a bright 1px top edge
+/// only. No neumorphic double-shadow, no blur panels.
 class AppShadows {
   AppShadows._();
 
-  static List<BoxShadow> raised(bool isDark) => <BoxShadow>[
-        BoxShadow(
-          color: (isDark
-                  ? AppColors.darkShadowDark
-                  : AppColors.lightShadowDark)
-              .withValues(alpha: isDark ? 0.55 : 0.35),
-          blurRadius: 10,
-          offset: const Offset(3, 3),
-        ),
-        BoxShadow(
-          color: (isDark
-                  ? AppColors.darkShadowHighlight
-                  : AppColors.lightShadowHighlight)
-              .withValues(alpha: isDark ? 0.45 : 0.85),
-          blurRadius: 10,
-          offset: const Offset(-3, -3),
-        ),
-      ];
+  static List<BoxShadow> raised(bool isDark) => isDark
+      ? <BoxShadow>[
+          const BoxShadow(
+            color: Color(0x12FFFFFF),
+            blurRadius: 0,
+            offset: Offset(0, -1),
+          ),
+        ]
+      : <BoxShadow>[
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.10),
+            blurRadius: 24,
+            offset: const Offset(0, 6),
+          ),
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.07),
+            blurRadius: 8,
+            offset: const Offset(0, 2),
+          ),
+        ];
 
   /// Slightly deeper pair, used only by [ClayCard].
-  static List<BoxShadow> clay(bool isDark) => <BoxShadow>[
-        BoxShadow(
-          color: (isDark
-                  ? AppColors.darkShadowDark
-                  : AppColors.lightShadowDark)
-              .withValues(alpha: isDark ? 0.60 : 0.45),
-          blurRadius: 16,
-          offset: const Offset(5, 6),
-        ),
-        BoxShadow(
-          color: (isDark
-                  ? AppColors.darkShadowHighlight
-                  : AppColors.lightShadowHighlight)
-              .withValues(alpha: isDark ? 0.50 : 0.95),
-          blurRadius: 14,
-          offset: const Offset(-4, -4),
-        ),
-      ];
+  static List<BoxShadow> clay(bool isDark) => isDark
+      ? <BoxShadow>[
+          const BoxShadow(
+            color: Color(0x17FFFFFF),
+            blurRadius: 0,
+            offset: Offset(0, -1),
+          ),
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.35),
+            blurRadius: 16,
+            offset: const Offset(0, 6),
+          ),
+        ]
+      : <BoxShadow>[
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.14),
+            blurRadius: 28,
+            offset: const Offset(0, 8),
+          ),
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.08),
+            blurRadius: 10,
+            offset: const Offset(0, 3),
+          ),
+        ];
 }
 
-/// The app's standard card: theme surface colour, thin border, soft
-/// neumorphic shadow. Use [raised] = false for flat, in-card sub-tiles.
+/// The app's standard card: theme surface colour, thin border, layered
+/// shadow (light) or bright top edge (dark) — see [AppShadows].
+/// Use [raised] = false for flat, in-card sub-tiles.
 class SoftSurface extends StatelessWidget {
   const SoftSurface({
     super.key,
@@ -89,6 +103,9 @@ class SoftSurface extends StatelessWidget {
       );
     }
 
+    // NOTE: the border must stay uniform — Flutter forbids borderRadius
+    // with non-uniform border colors (paint assertion). Depth comes from
+    // AppShadows (layered shadows on light, bright top edge on dark).
     return Container(
       margin: margin,
       decoration: BoxDecoration(

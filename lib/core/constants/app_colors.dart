@@ -16,21 +16,50 @@ class AppColors {
   static const Color primaryDark = Color(0xFF2DD4BF);
   static const Color secondary = Color(0xFFD97706);
 
-  // Light theme surfaces
-  static const Color lightBackground = Color(0xFFEEF4F4);
-  static const Color lightSurface = Color(0xFFF8FBFA);
-  static const Color lightSidebar = Color(0xFFF8FBFA);
-  static const Color lightBorder = Color(0xFFD9E4E3);
-  static const Color lightTextPrimary = Color(0xFF1A1D23);
-  static const Color lightTextSecondary = Color(0xFF5A6372);
+  // Light theme surfaces — L1 "Teal Depth" (designer report 2026-10-31).
+  // S1 = card, S2 = inner tile / input fill, S3 = track / third level.
+  // The sidebar is dark teal in BOTH themes, so it has its own text tokens.
+  static const Color lightBackground = Color(0xFFE9F2F0);
+  static const Color lightSurface = Color(0xFFFFFFFF);
+  static const Color lightSurface2 = Color(0xFFF4FAF8);
+  static const Color lightSurface3 = Color(0xFFDCEAE7);
+  static const Color lightTint = Color(0xFFD9EDE8);
+  static const Color lightSidebar = Color(0xFF0B4F4A);
+  static const Color lightSidebarGradientStart = Color(0xFF07332F);
+  static const Color lightSidebarGradientEnd = Color(0xFF0B4F4A);
+  static const Color lightSidebarText = Color(0xFFEAF6F3);
+  static const Color lightSidebarSecondary = Color(0xFFA7CFC8);
+  static const Color lightSidebarAccent = Color(0xFF2DD4BF);
+  static const Color lightBorder = Color(0xFFC9DBD6);
+  static const Color lightTextPrimary = Color(0xFF12211E);
+  static const Color lightTextSecondary = Color(0xFF4A5A57);
+  static const Color lightPrimaryText = Color(0xFF0B5B54);
+  static const Color lightAccentText = Color(0xFFB45309);
+  static const Color lightSuccessText = Color(0xFF15803D);
+  static const Color lightWarningText = Color(0xFF92400E);
+  static const Color lightErrorText = Color(0xFFBE123C);
 
-  // Dark theme surfaces
-  static const Color darkBackground = Color(0xFF14161B);
-  static const Color darkSurface = Color(0xFF1C1F26);
-  static const Color darkSidebar = Color(0xFF181A20);
-  static const Color darkBorder = Color(0xFF2A2E37);
-  static const Color darkTextPrimary = Color(0xFFF2F3F5);
-  static const Color darkTextSecondary = Color(0xFF9CA3AF);
+  // Dark theme surfaces — D1 "Teal Night" (designer report 2026-10-31).
+  // Depth is tonal: each higher surface is lighter; no pure black/white.
+  static const Color darkBackground = Color(0xFF0A1211);
+  static const Color darkSurface = Color(0xFF101C1A);
+  static const Color darkSurface2 = Color(0xFF162623);
+  static const Color darkSurface3 = Color(0xFF1E322E);
+  static const Color darkTint = Color(0xFF14302B);
+  static const Color darkSidebar = Color(0xFF08100F);
+  static const Color darkSidebarGradientStart = Color(0xFF050C0B);
+  static const Color darkSidebarGradientEnd = Color(0xFF08100F);
+  static const Color darkSidebarText = Color(0xFFEDF5F2);
+  static const Color darkSidebarSecondary = Color(0xFF9DB3AD);
+  static const Color darkSidebarAccent = Color(0xFF5EEAD4);
+  static const Color darkBorder = Color(0xFF24382F);
+  static const Color darkTextPrimary = Color(0xFFEDF5F2);
+  static const Color darkTextSecondary = Color(0xFF9DB3AD);
+  static const Color darkPrimaryText = Color(0xFF5EEAD4);
+  static const Color darkAccentText = Color(0xFFF59E0B);
+  static const Color darkSuccessText = Color(0xFF4ADE80);
+  static const Color darkWarningText = Color(0xFFFBBF24);
+  static const Color darkErrorText = Color(0xFFFB7185);
 
   // Typing engine semantic states (same across light/dark)
   static const Color correctChar = Color(0xFF16A34A); // green
@@ -54,7 +83,8 @@ class AppColors {
   static const Color wrongCharLight = Color(0xFFC81443);
   static const Color wrongCharDark = Color(0xFFFB7185);
 
-  // Neumorphic shadow tones (kept very soft - see AppShadows).
+  // Legacy shadow tones (retained for compatibility; AppShadows no longer
+  // uses the neumorphic pair — see AppShadows for the layered/tonal recipe).
   static const Color lightShadowDark = Color(0xFFC0CFCD);
   static const Color lightShadowHighlight = Color(0xFFFFFFFF);
   static const Color darkShadowDark = Color(0xFF0A0B0E);

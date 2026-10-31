@@ -16,30 +16,42 @@ class AppTheme {
         brightness: Brightness.light,
         background: AppColors.lightBackground,
         surface: AppColors.lightSurface,
+        surface2: AppColors.lightSurface2,
+        surface3: AppColors.lightSurface3,
+        tint: AppColors.lightTint,
         border: AppColors.lightBorder,
         textPrimary: AppColors.lightTextPrimary,
         textSecondary: AppColors.lightTextSecondary,
+        errorText: AppColors.lightErrorText,
       );
 
   static ThemeData get dark => _base(
         brightness: Brightness.dark,
         background: AppColors.darkBackground,
         surface: AppColors.darkSurface,
+        surface2: AppColors.darkSurface2,
+        surface3: AppColors.darkSurface3,
+        tint: AppColors.darkTint,
         border: AppColors.darkBorder,
         textPrimary: AppColors.darkTextPrimary,
         textSecondary: AppColors.darkTextSecondary,
+        errorText: AppColors.darkErrorText,
       );
 
   static ThemeData _base({
     required Brightness brightness,
     required Color background,
     required Color surface,
+    required Color surface2,
+    required Color surface3,
+    required Color tint,
     required Color border,
     required Color textPrimary,
     required Color textSecondary,
+    required Color errorText,
   }) {
     final bool isDark = brightness == Brightness.dark;
-    // Brand blue for fills; a lighter tint of it for text/outlines/progress
+    // Brand teal for fills; a lighter tint of it for text/outlines/progress
     // on dark surfaces so they keep >= 4.5:1 contrast.
     final Color accent = isDark ? AppColors.primaryDark : AppColors.primary;
     final ColorScheme colorScheme = ColorScheme(
@@ -48,10 +60,15 @@ class AppTheme {
       onPrimary: Colors.white,
       secondary: AppColors.secondary,
       onSecondary: Colors.white,
-      error: AppColors.danger,
+      error: errorText,
       onError: Colors.white,
       surface: surface,
       onSurface: textPrimary,
+      surfaceContainerLowest: background,
+      surfaceContainerLow: surface2,
+      surfaceContainer: surface,
+      surfaceContainerHigh: surface2,
+      surfaceContainerHighest: surface3,
     );
 
     return ThemeData(
@@ -69,9 +86,10 @@ class AppTheme {
       ),
       cardTheme: CardThemeData(
         color: surface,
-        elevation: isDark ? 1.5 : 1,
-        shadowColor:
-            Colors.black.withValues(alpha: isDark ? 0.55 : 0.16),
+        // Light: layered shadow gives the 3D lift. Dark: depth is tonal
+        // (surface levels + borders), so no drop shadow is drawn.
+        elevation: isDark ? 0 : 2,
+        shadowColor: Colors.black.withValues(alpha: isDark ? 0.0 : 0.18),
         surfaceTintColor: Colors.transparent,
         margin: const EdgeInsets.all(4),
         shape: RoundedRectangleBorder(
@@ -91,7 +109,13 @@ class AppTheme {
           foregroundColor: Colors.white,
           disabledBackgroundColor: border,
           disabledForegroundColor: textSecondary,
-          elevation: 0,
+          // Solid teal fill (ButtonStyle has no gradient support); depth
+          // comes from elevation + shadow — a soft shadow on light, a teal
+          // glow on dark (see the designer report).
+          elevation: isDark ? 1 : 3,
+          shadowColor: isDark
+              ? AppColors.primaryDark.withValues(alpha: 0.45)
+              : Colors.black.withValues(alpha: 0.25),
           textStyle: const TextStyle(fontWeight: FontWeight.w600),
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
           shape: RoundedRectangleBorder(
@@ -125,6 +149,10 @@ class AppTheme {
         style: FilledButton.styleFrom(
           backgroundColor: AppColors.primary,
           foregroundColor: Colors.white,
+          elevation: isDark ? 1 : 3,
+          shadowColor: isDark
+              ? AppColors.primaryDark.withValues(alpha: 0.45)
+              : Colors.black.withValues(alpha: 0.25),
           textStyle: const TextStyle(fontWeight: FontWeight.w600),
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
           shape: RoundedRectangleBorder(
@@ -158,7 +186,8 @@ class AppTheme {
       ),
       progressIndicatorTheme: ProgressIndicatorThemeData(
         color: accent,
-        linearTrackColor: border,
+        // Timer/progress track is the S3 surface level, not the border.
+        linearTrackColor: surface3,
       ),
       popupMenuTheme: PopupMenuThemeData(
         color: surface,
@@ -170,7 +199,7 @@ class AppTheme {
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: background,
+        fillColor: surface2,
         hintStyle: TextStyle(color: textSecondary),
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
@@ -188,17 +217,18 @@ class AppTheme {
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppDimensions.controlRadius),
-          borderSide: const BorderSide(color: AppColors.danger),
+          borderSide: BorderSide(color: errorText),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppDimensions.controlRadius),
-          borderSide: const BorderSide(color: AppColors.danger, width: 1.5),
+          borderSide: BorderSide(color: errorText, width: 1.5),
         ),
       ),
       dialogTheme: DialogThemeData(
         backgroundColor: surface,
         surfaceTintColor: Colors.transparent,
-        elevation: 0,
+        elevation: isDark ? 0 : 8,
+        shadowColor: Colors.black.withValues(alpha: isDark ? 0.0 : 0.25),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppDimensions.cardRadius),
           side: BorderSide(color: border),
@@ -217,7 +247,8 @@ class AppTheme {
       ),
       chipTheme: ChipThemeData(
         backgroundColor: surface,
-        selectedColor: AppColors.primary.withValues(alpha: 0.14),
+        // Selected chips use the theme tint surface (report: Tint token).
+        selectedColor: tint,
         side: BorderSide(color: border),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppDimensions.controlRadius),

@@ -25,33 +25,51 @@ class AppSidebar extends StatelessWidget {
     final double width = MediaQuery.of(context).size.width;
     final bool collapsed = width < AppDimensions.collapseSidebarBreakpoint;
 
+    // The sidebar is dark teal in BOTH themes (report gradients), so its
+    // text/divider colors come from the sidebar tokens, not the theme.
+    final Color sidebarSecondary =
+        isDark ? AppColors.darkSidebarSecondary : AppColors.lightSidebarSecondary;
     return Container(
       width: collapsed
           ? AppDimensions.sidebarCollapsedWidth
           : AppDimensions.sidebarWidth,
       decoration: BoxDecoration(
-        color: isDark ? AppColors.darkSidebar : AppColors.lightSidebar,
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: <Color>[
+            isDark
+                ? AppColors.darkSidebarGradientStart
+                : AppColors.lightSidebarGradientStart,
+            isDark
+                ? AppColors.darkSidebarGradientEnd
+                : AppColors.lightSidebarGradientEnd,
+          ],
+        ),
         border: Border(
           right: BorderSide(
             color: isDark ? AppColors.darkBorder : AppColors.lightBorder,
           ),
         ),
-        boxShadow: [
-          BoxShadow(
-            color: (isDark
-                    ? AppColors.darkShadowDark
-                    : AppColors.lightShadowDark)
-                .withValues(alpha: isDark ? 0.5 : 0.25),
-            blurRadius: 14,
-            offset: const Offset(3, 0),
-          ),
-        ],
+        // Light: soft side shadow. Dark: depth is tonal — no drop shadow.
+        boxShadow: isDark
+            ? null
+            : <BoxShadow>[
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.12),
+                  blurRadius: 20,
+                  offset: const Offset(3, 0),
+                ),
+              ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _Brand(collapsed: collapsed),
-          const Divider(height: 1),
+          Divider(
+            height: 1,
+            color: sidebarSecondary.withValues(alpha: 0.25),
+          ),
           Expanded(
             child: ListView(
               padding: const EdgeInsets.symmetric(vertical: 14),
@@ -105,11 +123,17 @@ class _Brand extends StatelessWidget {
           ),
           if (!collapsed) ...[
             const SizedBox(width: 12),
-            const Flexible(
+            Flexible(
               child: Text(
                 'WolfTyping',
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700,
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? AppColors.darkSidebarText
+                      : AppColors.lightSidebarText,
+                ),
               ),
             ),
           ],
@@ -134,10 +158,15 @@ class _SidebarTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
     final bool isDark = theme.brightness == Brightness.dark;
-    // Lighter blue on dark so the selected label keeps its contrast.
-    final Color accent = isDark ? AppColors.primaryDark : AppColors.primary;
-    final Color baseText = theme.colorScheme.onSurface;
-    final Color inactive = theme.textTheme.bodySmall?.color ?? baseText;
+    // Sidebar is dark in both themes: selected labels use the bright
+    // sidebar accent, unselected labels use the sidebar text tokens.
+    final Color accent =
+        isDark ? AppColors.darkSidebarAccent : AppColors.lightSidebarAccent;
+    final Color baseText =
+        isDark ? AppColors.darkSidebarText : AppColors.lightSidebarText;
+    final Color inactive = isDark
+        ? AppColors.darkSidebarSecondary
+        : AppColors.lightSidebarSecondary;
     final Color textColor = selected ? accent : inactive;
     final BorderRadius radius = BorderRadius.circular(12);
 
