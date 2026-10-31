@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:get/get.dart';
 
@@ -305,8 +306,17 @@ class MockTestController extends GetxController {
   void startTest() {
     final List<MockQuestion> questions = availableQuestions;
     if (questions.isEmpty) return;
+    // Shuffle each question's option order for this run only, so the
+    // correct answer does not sit in a predictable A/B/C/D position
+    // (paper keys skew heavily to one position). Question order,
+    // paper files and custom-set data are untouched; only the
+    // in-session copies are shuffled, with correctIndex remapped.
+    final Random random = Random();
+    final List<MockQuestion> sessionQuestions = <MockQuestion>[
+      for (final MockQuestion q in questions) q.withShuffledOptions(random),
+    ];
     _engine = MockTestEngine(
-      questions: questions,
+      questions: sessionQuestions,
       negativeMarking: negativeMarking.value,
       negativeDeduction: negativeDeduction.value,
     );

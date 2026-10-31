@@ -52,6 +52,16 @@ void main() {
         ],
       );
 
+  /// Displayed label for an option of a question in the running
+  /// session: option positions are shuffled at test start, so tests
+  /// must read the position from the engine's (shuffled) questions,
+  /// never assume the stored order.
+  String optionLabel(MockQuestion question, int optionIndex) =>
+      '${String.fromCharCode(65 + optionIndex)}. ${question.options[optionIndex]}';
+
+  MockQuestion sessionQuestion(MockTestController controller, String id) =>
+      controller.engine.questions.firstWhere((q) => q.id == id);
+
   Future<void> pumpMock(WidgetTester tester) async {
     await tester.pumpWidget(
       GetMaterialApp(
@@ -78,15 +88,17 @@ void main() {
     expect(find.text('Previous'), findsNothing);
     expect(find.text('Question Palette'), findsNothing);
 
-    // Answer Q1 correctly, without any navigation.
+    // Answer Q1 correctly, without any navigation: tap the
+    // correct option at its shuffled position.
+    final MockQuestion q1 = sessionQuestion(controller, 'q1');
     await tester.tap(
       find.descendant(
         of: find.byKey(const ValueKey('q1')),
-        matching: find.text('A. A'),
+        matching: find.text(optionLabel(q1, q1.correctIndex)),
       ),
     );
     await tester.pump();
-    expect(controller.engine.answerFor('q1'), 0);
+    expect(controller.engine.answerFor('q1'), q1.correctIndex);
     // The third card is built lazily: scroll it into view, then
     // answer it wrongly — still without any Next/Previous navigation.
     await tester.scrollUntilVisible(
@@ -99,14 +111,19 @@ void main() {
     );
     await tester.pump();
     expect(find.text('Third question?'), findsOneWidget);
+    // Answer Q3 wrongly: tap any option that is not its
+    // correct one, at its shuffled position.
+    final MockQuestion q3 = sessionQuestion(controller, 'q3');
+    final int wrongIndex =
+        q3.correctIndex == 0 ? 1 : 0;
     await tester.tap(
       find.descendant(
         of: find.byKey(const ValueKey('q3')),
-        matching: find.text('B. B'),
+        matching: find.text(optionLabel(q3, wrongIndex)),
       ),
     );
     await tester.pump();
-    expect(controller.engine.answerFor('q3'), 1);
+    expect(controller.engine.answerFor('q3'), wrongIndex);
     expect(controller.engine.answeredCount, 2);
   });
 
@@ -117,10 +134,13 @@ void main() {
     controller.selectCustomSet(smallSet());
     controller.startTest();
     await tester.pump();
+    // Answer Q1 correctly at its shuffled position, leaving the
+    // other two unanswered, so the result is 1 / 3.
+    final MockQuestion q1 = sessionQuestion(controller, 'q1');
     await tester.tap(
       find.descendant(
         of: find.byKey(const ValueKey('q1')),
-        matching: find.text('A. A'),
+        matching: find.text(optionLabel(q1, q1.correctIndex)),
       ),
     );
     await tester.pump();

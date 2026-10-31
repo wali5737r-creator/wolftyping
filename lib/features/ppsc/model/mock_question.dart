@@ -1,3 +1,5 @@
+import 'dart:math';
+
 /// One multiple-choice question for the PPSC practice mock test.
 ///
 /// The question bank is deliberately a plain data list
@@ -47,6 +49,30 @@ class MockQuestion {
   final String? explanation;
 
   bool isCorrect(int? selectedIndex) => selectedIndex == correctIndex;
+
+  /// A copy of this question with its four options in a shuffled order
+  /// and [correctIndex] remapped to the correct option's new position,
+  /// so the correct answer text is unchanged but its A/B/C/D position
+  /// varies from one test run to the next. The original question is
+  /// never mutated and no paper/custom-set data file changes: the
+  /// shuffle happens only when a test session starts (see
+  /// `MockTestController.startTest`), so the stored key stays as
+  /// written and every retake gets a fresh order. Id, subject,
+  /// question text, topic and explanation are preserved, so bookmarks
+  /// (keyed by id), the end review and weak-subject stats all still
+  /// work on the shuffled copy.
+  MockQuestion withShuffledOptions(Random random) {
+    final List<int> order = <int>[0, 1, 2, 3]..shuffle(random);
+    return MockQuestion(
+      id: id,
+      subject: subject,
+      question: question,
+      options: <String>[for (final int i in order) options[i]],
+      correctIndex: order.indexOf(correctIndex),
+      topic: topic,
+      explanation: explanation,
+    );
+  }
 
   /// JSON form used to persist and share teacher-created custom sets
   /// (see `CustomSet`). Plain data only — no answers are hidden or

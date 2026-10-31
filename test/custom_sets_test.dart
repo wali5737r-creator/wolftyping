@@ -174,7 +174,10 @@ void main() {
 
       controller.startTest();
       expect(controller.phase.value, MockTestPhase.test);
-      controller.selectOption(0); // q1 correct
+      // Answer q1 correctly at its shuffled position in this run.
+      controller.selectOption(
+        controller.engine.questions.first.correctIndex,
+      );
       controller.nextQuestion();
       // q2 left unanswered (skipped).
       controller.submit();
