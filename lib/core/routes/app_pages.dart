@@ -44,6 +44,7 @@ import '../../features/progress/view/progress_view.dart';
 import '../../features/profile/controller/profile_controller.dart';
 import '../../features/profile/view/profile_view.dart';
 
+import '../../features/about/view/about_view.dart';
 import '../../features/feedback/view/feedback_view.dart';
 import '../../features/settings/view/settings_view.dart';
 
@@ -281,6 +282,12 @@ class AppPages {
     GetPage(
       name: AppRoutes.feedback,
       page: () => const FeedbackView(),
+    ),
+
+    // About WolfTyping (no binding needed; static content + mailto)
+    GetPage(
+      name: AppRoutes.about,
+      page: () => const AboutView(),
     ),
 
     // Settings

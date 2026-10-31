@@ -24,11 +24,12 @@ void main() {
     expect(feedbackMailSubject, 'WolfTyping Feedback');
   });
 
-  test('sidebar has a Feedback entry between Profile and Settings', () {
+  test('sidebar has a Feedback entry directly after Profile', () {
     final labels = kSidebarItems.map((i) => i.label).toList();
     expect(labels, contains('Feedback'));
     expect(labels.indexOf('Feedback'), labels.indexOf('Profile') + 1);
-    expect(labels.indexOf('Feedback'), labels.indexOf('Settings') - 1);
+    // About sits between Feedback and Settings.
+    expect(labels.indexOf('Feedback'), labels.indexOf('Settings') - 2);
     final item = kSidebarItems.firstWhere((i) => i.label == 'Feedback');
     expect(item.route, AppRoutes.feedback);
   });

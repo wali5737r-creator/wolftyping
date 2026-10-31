@@ -27,4 +27,5 @@ abstract class AppRoutes {
   static const String profile = '/profile';
   static const String settings = '/settings';
   static const String feedback = '/feedback';
+  static const String about = '/about';
 }

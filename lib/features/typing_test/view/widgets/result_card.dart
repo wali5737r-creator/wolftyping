@@ -7,8 +7,9 @@ import '../../../../core/services/result_share.dart';
 import '../../model/typing_snapshot.dart';
 
 /// A clean, self-contained result card for sharing: net WPM, accuracy,
-/// duration and date. It is rendered with explicit light colours so the
-/// downloaded PNG looks the same in light and dark mode.
+/// duration and date. It always renders the fixed L1 light tokens
+/// (AppColors.lightTextPrimary / lightTextSecondary / lightSurface) so
+/// the downloaded PNG looks the same in light and dark mode.
 ///
 /// Wrap it in a [RepaintBoundary] with a stable [GlobalKey] and pass that
 /// key to [ResultShareButtons] to enable the PNG download on web.
@@ -33,7 +34,7 @@ class ShareableResultCard extends StatelessWidget {
       width: 420,
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.lightSurface,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: AppColors.primary, width: 2),
       ),
@@ -69,7 +70,7 @@ class ShareableResultCard extends StatelessWidget {
             style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w700,
-              color: Color(0xFF1A1D23),
+              color: AppColors.lightTextPrimary,
             ),
           ),
           if (subtitle.isNotEmpty) ...[
@@ -78,7 +79,7 @@ class ShareableResultCard extends StatelessWidget {
               subtitle,
               style: const TextStyle(
                 fontSize: 13,
-                color: Color(0xFF5A6372),
+                color: AppColors.lightTextSecondary,
               ),
             ),
           ],
@@ -106,7 +107,7 @@ class ShareableResultCard extends StatelessWidget {
             'Completed ${_formatDate(completedAt)} · Practice result — WolfTyping',
             style: const TextStyle(
               fontSize: 11,
-              color: Color(0xFF5A6372),
+              color: AppColors.lightTextSecondary,
             ),
           ),
         ],
@@ -131,7 +132,7 @@ class _BigStat extends StatelessWidget {
           style: const TextStyle(
             fontSize: 34,
             fontWeight: FontWeight.w800,
-            color: Color(0xFF1A1D23),
+            color: AppColors.lightTextPrimary,
           ),
         ),
         Text(
@@ -139,7 +140,7 @@ class _BigStat extends StatelessWidget {
           style: const TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.w600,
-            color: Color(0xFF5A6372),
+            color: AppColors.lightTextSecondary,
           ),
         ),
       ],
@@ -160,12 +161,12 @@ class _DetailRow extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(label, style: const TextStyle(color: Color(0xFF5A6372))),
+          Text(label, style: const TextStyle(color: AppColors.lightTextSecondary)),
           Text(
             value,
             style: const TextStyle(
               fontWeight: FontWeight.w600,
-              color: Color(0xFF1A1D23),
+              color: AppColors.lightTextPrimary,
             ),
           ),
         ],
