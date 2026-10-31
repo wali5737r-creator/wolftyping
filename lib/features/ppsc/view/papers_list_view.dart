@@ -7,19 +7,18 @@ import '../../../core/widgets/app_scaffold.dart';
 import '../../../core/widgets/app_surfaces.dart';
 import '../controller/mock_test_controller.dart';
 import '../model/mock_question.dart';
-import '../model/paper_test.dart';
 import '../service/papers_registry.dart';
 import 'weak_subject_hint.dart';
-import 'paper_list_section.dart';
 
 /// Practice papers organised by year.
 ///
-/// The heading is followed by the built year's papers in todo-list
-/// style (one row per paper, with search, a department filter, and a
-/// completion line), then the next years' sections in year order.
-/// Tapping a built year opens a page listing all of that year's
-/// papers; years with no built papers show honestly as "coming soon"
-/// with 0 papers built and are not tappable into a test.
+/// The heading is followed by one row per built year (2026, then
+/// 2025, then the next years in year order), each labelled
+/// "Past Papers" with its paper and question counts. Tapping a year
+/// opens a page listing all of that year's papers in todo-list style
+/// (with search, a department filter, and a completion line); years
+/// with no built papers show honestly as "coming soon" with 0 papers
+/// built and are not tappable into a test.
 ///
 /// Practice material only: every paper is written in fresh wording and
 /// is never presented as an official or verbatim paper.
@@ -69,18 +68,9 @@ class PapersListView extends GetView<MockTestController> {
                 ),
                 const SizedBox(height: 20),
                 for (final PaperYearGroup group in groups) ...[
-                  if (group.isBuilt) ...[
-                    _YearHeader(group: group),
-                    const SizedBox(height: 12),
-                    PaperListSection(
-                      year: group.year,
-                      papers: group.papers,
-                      onStartPaper: (PaperTest paper) {
-                        controller.selectPaper(paper);
-                        Get.toNamed(AppRoutes.ppscMockTest);
-                      },
-                    ),
-                  ] else
+                  if (group.isBuilt)
+                    _YearHeader(group: group)
+                  else
                     _ComingSoonYearRow(year: group.year),
                   const SizedBox(height: 20),
                 ],
@@ -121,7 +111,7 @@ class _YearHeader extends StatelessWidget {
                 Text('${group.year}', style: AppTextStyles.h2),
                 const SizedBox(height: 2),
                 Text(
-                  '${group.papers.length} papers · '
+                  'Past Papers · ${group.papers.length} papers · '
                   '${group.totalQuestions} questions in total',
                   style: AppTextStyles.bodyMedium,
                 ),

@@ -87,47 +87,46 @@ void main() {
   }
 
   group('year-grouped list screen', () {
-    testWidgets('shows heading, 2026 and 2025 papers, and coming-soon years',
+    testWidgets('shows heading, year rows, and coming-soon years',
         (tester) async {
       await pumpEntry(tester);
       expect(find.text('Practice Papers'), findsOneWidget);
       expect(find.text('2026'), findsOneWidget);
-      expect(find.text('Start'), findsNWidgets(77));
-      expect(find.text('0/21 papers complete'), findsOneWidget);
-      expect(find.text('0/56 papers complete'), findsOneWidget);
       expect(find.text('2025'), findsOneWidget);
+      // One row per built year, labelled Past Papers with counts;
+      // no paper rows, Start buttons, or search controls on the
+      // entry screen — papers live on each year's own page.
+      expect(find.textContaining('Past Papers'), findsNWidgets(2));
+      expect(find.text('Start'), findsNothing);
+      expect(find.byKey(const Key('paper-search-field')), findsNothing);
+      expect(find.byKey(const Key('paper-department-filter')),
+          findsNothing);
       expect(find.text('Coming soon · 0 papers built'), findsNWidgets(6));
-      // Search + filter controls are present in each built year's
-      // section (one set per section).
-      expect(find.byKey(const Key('paper-search-field')), findsNWidgets(2));
-      expect(
-        find.byKey(const Key('paper-department-filter')),
-        findsNWidgets(2),
-      );
     });
 
     testWidgets('search filters the todo-list rows live', (tester) async {
       await pumpEntry(tester);
-      // Each built year's section has its own search field; the first
-      // one filters the 2026 section only.
+      // Search lives on the year's own page: open 2026 first.
+      await tester.tap(find.byKey(const Key('paper-year-2026-header')));
+      await tester.pumpAndSettle();
       await tester.enterText(
-        find.byKey(const Key('paper-search-field')).first,
+        find.byKey(const Key('paper-search-field')),
         '233',
       );
       await tester.pumpAndSettle();
-      expect(find.text('Start'), findsNWidgets(57));
+      expect(find.text('Start'), findsNWidgets(1));
       expect(
         find.textContaining('Paper 233'),
         findsOneWidget,
       );
       await tester.enterText(
-        find.byKey(const Key('paper-search-field')).first,
+        find.byKey(const Key('paper-search-field')),
         'no-such-paper-xyz',
       );
       await tester.pumpAndSettle();
       expect(find.text('No papers match this search or filter.'),
           findsOneWidget);
-      expect(find.text('Start'), findsNWidgets(56));
+      expect(find.text('Start'), findsNothing);
     });
 
     testWidgets('tapping a built year opens its year page', (tester) async {
@@ -197,8 +196,10 @@ void main() {
       controller.submit();
       await controller.flushProgress();
       await tester.pumpAndSettle();
-      // Back to the list: the row now shows the best score + Retake.
-      Get.toNamed(AppRoutes.ppscPastPapers);
+      // Back to the year's page: the row now shows the best score
+      // + Retake (paper rows live on the year page, not the entry
+      // screen).
+      Get.toNamed(AppRoutes.ppscPastPapersYear, arguments: 2026);
       await tester.pumpAndSettle();
       expect(find.text('Retake'), findsOneWidget);
       expect(find.textContaining('Best score:'), findsOneWidget);

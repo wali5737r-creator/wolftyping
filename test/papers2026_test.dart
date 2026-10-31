@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
 import 'package:typing_master/core/routes/app_pages.dart';
@@ -63,7 +64,7 @@ void main() {
   });
 
   group('papers views', () {
-    testWidgets('papers list renders all 2026 and 2025 papers',
+    testWidgets('year rows open year pages with all papers',
         (tester) async {
       await tester.pumpWidget(
         GetMaterialApp(
@@ -74,7 +75,22 @@ void main() {
       );
       await tester.pumpAndSettle();
       expect(find.text('Practice Papers'), findsOneWidget);
-      expect(find.text('Start'), findsNWidgets(77));
+      // Entry screen shows year rows only; papers live on year pages.
+      expect(find.text('Start'), findsNothing);
+      await tester.tap(find.byKey(const Key('paper-year-2026-header')));
+      await tester.pumpAndSettle();
+      expect(find.text('2026 Practice Papers'), findsOneWidget);
+      expect(find.text('Start'), findsNWidgets(21));
+      Get.toNamed(AppRoutes.ppscPastPapers);
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(
+        find.byKey(const Key('paper-year-2025-header')),
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const Key('paper-year-2025-header')));
+      await tester.pumpAndSettle();
+      expect(find.text('2025 Practice Papers'), findsOneWidget);
+      expect(find.text('Start'), findsNWidgets(56));
     });
 
     testWidgets('paper setup renders after selecting a paper',
