@@ -74,11 +74,11 @@ const PaperTest paper164 = PaperTest(
     MockQuestion(
       id: 'p164-7',
       subject: MockSubject.islamiat,
-      question: 'Which branch of learning deals with the shares of inheritance?',
+      question: 'Which term names the fixed shares of inheritance laid down in the Quran?',
       options: ['Al-Faraid', 'Al-Turath', 'Al-Wajibat', 'Al-Mirath'],
-      correctIndex: 3,
+      correctIndex: 0,
       topic: 'Fiqh',
-      explanation: 'Al-mirath and al-faraid are used interchangeably for the law of inheritance; al-faraid literally names the fixed shares set out in the Quran.',
+      explanation: 'Al-faraid denotes the fixed shares allocated by the Quran and Sunnah. Al-mirath is the wider word for inheritance itself, so it does not name the fixed shares specifically.',
     ),
     MockQuestion(
       id: 'p164-8',
