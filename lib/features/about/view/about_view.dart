@@ -73,11 +73,13 @@ class AboutView extends StatelessWidget {
                         'Everyday Science.',
                       ),
                       _AboutRow(
-                        '77 timed practice papers — 21 from 2026 and '
-                        '56 from 2025 — 4,596 practice questions in '
-                        'total, each with an explanation in the end '
-                        'review, and latest-update notes on '
-                        'current-affairs questions.',
+                        '237 timed practice papers — 21 from 2026, '
+                        '56 from 2025, 24 from 2024, 25 from 2023, '
+                        '28 from 2022, 23 from 2021, 29 from 2020 '
+                        'and 31 from 2019 — 19,768 practice '
+                        'questions in total, each with an explanation '
+                        'in the end review, and latest-update notes '
+                        'on current-affairs questions.',
                       ),
                       _AboutRow(
                         'Custom MCQ tests: teachers can make their own '

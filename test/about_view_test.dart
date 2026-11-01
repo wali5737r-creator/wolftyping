@@ -50,8 +50,8 @@ void main() {
       find.textContaining('600-question practice bank'),
       findsOneWidget,
     );
-    expect(find.textContaining('77 timed practice papers'), findsOneWidget);
-    expect(find.textContaining('4,596 practice questions'), findsOneWidget);
+    expect(find.textContaining('237 timed practice papers'), findsOneWidget);
+    expect(find.textContaining('19,768 practice questions'), findsOneWidget);
     expect(
       find.textContaining('not real, past or official PPSC papers'),
       findsOneWidget,
