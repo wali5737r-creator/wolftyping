@@ -487,7 +487,7 @@ class _LinkImportDialogState extends State<_LinkImportDialog> {
             ),
             if (_error != null) ...[
               const SizedBox(height: 12),
-              Text(_error!, style: const TextStyle(color: Colors.red)),
+              Text(_error!, style: TextStyle(color: Theme.of(context).colorScheme.error)),
             ],
           ],
         ),
@@ -587,7 +587,7 @@ class _ImportDialogState extends State<_ImportDialog> {
             ),
             if (_error != null) ...[
               const SizedBox(height: 12),
-              Text(_error!, style: const TextStyle(color: Colors.red)),
+              Text(_error!, style: TextStyle(color: Theme.of(context).colorScheme.error)),
             ],
             if (kIsWeb) ...[
               const SizedBox(height: 12),

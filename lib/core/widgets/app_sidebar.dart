@@ -213,7 +213,7 @@ class _SidebarTile extends StatelessWidget {
                         color: selected ? accent : baseText,
                         fontWeight:
                             selected ? FontWeight.w700 : FontWeight.w500,
-                        fontSize: 13.5,
+                        fontSize: 14,
                       ),
                     ),
                   ),

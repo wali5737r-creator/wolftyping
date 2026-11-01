@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_dimensions.dart';
 import '../../../core/constants/app_text_styles.dart';
 import '../../../core/widgets/app_surfaces.dart';
@@ -47,7 +48,7 @@ class PaperRow extends StatelessWidget {
                   ? Icons.check_box_outlined
                   : Icons.check_box_outline_blank,
               size: 22,
-              color: attempted ? Colors.green : null,
+              color: attempted ? AppColors.success : null,
             ),
             const SizedBox(width: 12),
             Expanded(

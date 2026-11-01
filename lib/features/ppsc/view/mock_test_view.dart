@@ -791,23 +791,33 @@ class _TestPanelState extends State<_TestPanel> {
             'All questions are on this page — scroll to answer, then submit at the end.',
             style: AppTextStyles.captionOf(context),
           ),
-          if (warning) ...[
-            const SizedBox(height: 10),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: AppColors.wrongCharBg,
-                borderRadius: BorderRadius.circular(
-                  AppDimensions.cardRadius,
-                ),
-              ),
-              child: const Text(
-                'Only 5 minutes left! The test will submit automatically when time ends.',
-                style: TextStyle(fontWeight: FontWeight.w700),
-              ),
-            ),
-          ],
+          AnimatedSwitcher(
+            duration: const Duration(milliseconds: 150),
+            child: warning
+                ? Column(
+                    key: const ValueKey('time-warning'),
+                    children: [
+                      const SizedBox(height: 10),
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: AppColors.wrongCharBg,
+                          borderRadius: BorderRadius.circular(
+                            AppDimensions.cardRadius,
+                          ),
+                        ),
+                        child: const Text(
+                          'Only 5 minutes left! The test will submit automatically when time ends.',
+                          style: TextStyle(fontWeight: FontWeight.w700),
+                        ),
+                      ),
+                    ],
+                  )
+                : const SizedBox.shrink(
+                    key: ValueKey('no-time-warning'),
+                  ),
+          ),
           const SizedBox(height: 12),
           Expanded(
             child: ListView.builder(
@@ -831,29 +841,13 @@ class _TestPanelState extends State<_TestPanel> {
                         for (int i = 0; i < question.options.length; i++)
                           Padding(
                             padding: const EdgeInsets.only(bottom: 8),
-                            child: SizedBox(
-                              width: double.infinity,
-                              child: OutlinedButton(
-                                style: OutlinedButton.styleFrom(
-                                  alignment: Alignment.centerLeft,
-                                  backgroundColor: selected == i
-                                      ? Theme.of(
-                                          context,
-                                        ).colorScheme.primary.withValues(alpha: 0.12)
-                                      : null,
-                                  side: BorderSide(
-                                    color: selected == i
-                                        ? Theme.of(context).colorScheme.primary
-                                        : Theme.of(context).dividerColor,
-                                  ),
-                                ),
-                                onPressed: () =>
-                                    controller.selectOptionFor(question, i),
-                                child: Text(
-                                  '${String.fromCharCode(65 + i)}. ${question.options[i]}',
-                                  style: AppTextStyles.bodyMedium,
-                                ),
-                              ),
+                            child: _OptionTile(
+                              key: Key('mock-option-${question.id}-$i'),
+                              letter: String.fromCharCode(65 + i),
+                              label: question.options[i],
+                              selected: selected == i,
+                              onTap: () =>
+                                  controller.selectOptionFor(question, i),
                             ),
                           ),
                         if (selected != null)
@@ -1177,6 +1171,121 @@ class _ReviewTile extends StatelessWidget {
               ),
             ),
         ],
+      ),
+    );
+  }
+}
+
+/// One MCQ option row: a 26px letter badge, the option text, and a check
+/// icon when selected (Package A polish). Selection fades over 150ms;
+/// hover tints the fill and keyboard focus draws a 2px accent ring.
+class _OptionTile extends StatefulWidget {
+  const _OptionTile({
+    super.key,
+    required this.letter,
+    required this.label,
+    required this.selected,
+    required this.onTap,
+  });
+
+  final String letter;
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+
+  @override
+  State<_OptionTile> createState() => _OptionTileState();
+}
+
+class _OptionTileState extends State<_OptionTile> {
+  final FocusNode _focusNode = FocusNode();
+  bool _focused = false;
+  bool _hovered = false;
+
+  @override
+  void dispose() {
+    _focusNode.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final ColorScheme scheme = Theme.of(context).colorScheme;
+    final Color accent = scheme.primary;
+    final BorderRadius radius =
+        BorderRadius.circular(AppDimensions.controlRadius);
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 150),
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: widget.selected
+            ? accent.withValues(alpha: 0.12)
+            : _hovered
+                ? accent.withValues(alpha: 0.05)
+                : null,
+        border: Border.all(
+          color: _focused || widget.selected
+              ? accent
+              : Theme.of(context).dividerColor,
+          width: _focused || widget.selected ? 2 : 1,
+        ),
+        borderRadius: radius,
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          focusNode: _focusNode,
+          onFocusChange: (bool focused) {
+            if (mounted) setState(() => _focused = focused);
+          },
+          onHover: (bool hovered) {
+            if (mounted) setState(() => _hovered = hovered);
+          },
+          hoverColor: Colors.transparent,
+          focusColor: Colors.transparent,
+          borderRadius: radius,
+          onTap: widget.onTap,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+            child: Row(
+              children: [
+                Container(
+                  width: 26,
+                  height: 26,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: widget.selected
+                        ? accent
+                        : accent.withValues(alpha: 0.12),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Text(
+                    widget.letter,
+                    style: AppTextStyles.bodyMedium.copyWith(
+                      // Scaffold background reads on the accent fill in
+                      // both themes (white is too faint on the bright
+                      // dark-theme accent).
+                      color: widget.selected
+                          ? Theme.of(context).scaffoldBackgroundColor
+                          : accent,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    widget.label,
+                    style: AppTextStyles.bodyMedium,
+                  ),
+                ),
+                if (widget.selected) ...[
+                  const SizedBox(width: 8),
+                  Icon(Icons.check, size: 20, color: accent),
+                ],
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

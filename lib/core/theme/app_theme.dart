@@ -38,6 +38,15 @@ class AppTheme {
         errorText: AppColors.darkErrorText,
       );
 
+  /// 2px focus ring for filled-style buttons: transparent when idle,
+  /// accent-colored when keyboard-focused (Package A polish).
+  static WidgetStateProperty<BorderSide> _focusRingSide(Color accent) =>
+      WidgetStateProperty.resolveWith<BorderSide>(
+        (Set<WidgetState> states) => states.contains(WidgetState.focused)
+            ? BorderSide(color: accent, width: 2)
+            : BorderSide.none,
+      );
+
   static ThemeData _base({
     required Brightness brightness,
     required Color background,
@@ -121,6 +130,10 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppDimensions.controlRadius),
           ),
+        ).copyWith(
+          // 2px focus ring (Package A polish) so keyboard users can see
+          // focus on web; invisible when the button is not focused.
+          side: _focusRingSide(accent),
         ),
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
@@ -133,6 +146,13 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppDimensions.controlRadius),
           ),
+        ).copyWith(
+          side: WidgetStateProperty.resolveWith<BorderSide>(
+            (Set<WidgetState> states) =>
+                states.contains(WidgetState.focused)
+                    ? BorderSide(color: accent, width: 2)
+                    : BorderSide(color: border),
+          ),
         ),
       ),
       textButtonTheme: TextButtonThemeData(
@@ -143,6 +163,8 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppDimensions.controlRadius),
           ),
+        ).copyWith(
+          side: _focusRingSide(accent),
         ),
       ),
       filledButtonTheme: FilledButtonThemeData(
@@ -158,6 +180,8 @@ class AppTheme {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppDimensions.controlRadius),
           ),
+        ).copyWith(
+          side: _focusRingSide(accent),
         ),
       ),
       switchTheme: SwitchThemeData(
@@ -213,7 +237,7 @@ class AppTheme {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppDimensions.controlRadius),
-          borderSide: BorderSide(color: accent, width: 1.5),
+          borderSide: BorderSide(color: accent, width: 2),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppDimensions.controlRadius),
@@ -221,7 +245,7 @@ class AppTheme {
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppDimensions.controlRadius),
-          borderSide: BorderSide(color: errorText, width: 1.5),
+          borderSide: BorderSide(color: errorText, width: 2),
         ),
       ),
       dialogTheme: DialogThemeData(

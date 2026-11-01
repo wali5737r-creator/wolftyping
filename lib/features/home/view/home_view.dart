@@ -42,10 +42,21 @@ class _EmptyState extends StatelessWidget {
       title: 'No completed tests yet',
       message: 'Finish a typing test and your speed, accuracy and daily '
           'progress will show up here.',
-      actions: ElevatedButton.icon(
-        onPressed: () => Get.offNamed(defaultTypingRoute()),
-        icon: const Icon(Icons.play_arrow),
-        label: const Text('Start a typing test'),
+      actions: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ElevatedButton.icon(
+            onPressed: () => Get.offNamed(defaultTypingRoute()),
+            icon: const Icon(Icons.play_arrow),
+            label: const Text('Start a typing test'),
+          ),
+          const SizedBox(height: 8),
+          TextButton.icon(
+            onPressed: () => Get.offNamed(AppRoutes.lessons),
+            icon: const Icon(Icons.school_outlined),
+            label: const Text('View lessons'),
+          ),
+        ],
       ),
     );
   }

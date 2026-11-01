@@ -52,12 +52,17 @@ void main() {
         ],
       );
 
-  /// Displayed label for an option of a question in the running
-  /// session: option positions are shuffled at test start, so tests
-  /// must read the position from the engine's (shuffled) questions,
-  /// never assume the stored order.
-  String optionLabel(MockQuestion question, int optionIndex) =>
-      '${String.fromCharCode(65 + optionIndex)}. ${question.options[optionIndex]}';
+  /// Option positions are shuffled at test start, so tests must read
+  /// the position from the engine's (shuffled) questions, never assume
+  /// the stored order. Options render as a letter-badge tile keyed
+  /// `mock-option-<question id>-<position>` with the option text
+  /// beside the badge (no "A. ..." prefix text).
+  Future<void> tapOption(
+    WidgetTester tester,
+    String questionId,
+    int optionIndex,
+  ) =>
+      tester.tap(find.byKey(Key('mock-option-$questionId-$optionIndex')));
 
   MockQuestion sessionQuestion(MockTestController controller, String id) =>
       controller.engine.questions.firstWhere((q) => q.id == id);
@@ -89,16 +94,19 @@ void main() {
     expect(find.text('Question Palette'), findsNothing);
 
     // Answer Q1 correctly, without any navigation: tap the
-    // correct option at its shuffled position.
+    // correct option at its shuffled position. The selected tile
+    // shows a letter badge and a check icon.
     final MockQuestion q1 = sessionQuestion(controller, 'q1');
-    await tester.tap(
-      find.descendant(
-        of: find.byKey(const ValueKey('q1')),
-        matching: find.text(optionLabel(q1, q1.correctIndex)),
-      ),
-    );
+    await tapOption(tester, 'q1', q1.correctIndex);
     await tester.pump();
     expect(controller.engine.answerFor('q1'), q1.correctIndex);
+    expect(
+      find.descendant(
+        of: find.byKey(const ValueKey('q1')),
+        matching: find.byIcon(Icons.check),
+      ),
+      findsOneWidget,
+    );
     // The third card is built lazily: scroll it into view, then
     // answer it wrongly — still without any Next/Previous navigation.
     await tester.scrollUntilVisible(
@@ -116,15 +124,41 @@ void main() {
     final MockQuestion q3 = sessionQuestion(controller, 'q3');
     final int wrongIndex =
         q3.correctIndex == 0 ? 1 : 0;
-    await tester.tap(
-      find.descendant(
-        of: find.byKey(const ValueKey('q3')),
-        matching: find.text(optionLabel(q3, wrongIndex)),
-      ),
-    );
+    await tapOption(tester, 'q3', wrongIndex);
     await tester.pump();
     expect(controller.engine.answerFor('q3'), wrongIndex);
     expect(controller.engine.answeredCount, 2);
+  });
+
+  testWidgets('option tiles show letter badges, not "A. ..." prefixes',
+      (tester) async {
+    await pumpMock(tester);
+    final controller = Get.find<MockTestController>();
+    controller.selectCustomSet(smallSet());
+    controller.startTest();
+    await tester.pump();
+    // q1/q2 cards are built initially; the old combined "A. <text>"
+    // prefix text no longer exists anywhere in the built cards.
+    for (final String id in <String>['q1', 'q2']) {
+      for (int i = 0; i < 4; i++) {
+        expect(find.byKey(Key('mock-option-$id-$i')), findsOneWidget);
+      }
+    }
+    expect(find.textContaining(RegExp(r'^[A-D]\. ')), findsNothing);
+    // The third card builds lazily on scroll (and the first cards are
+    // recycled away), so assert its tiles only after scrolling to it.
+    await tester.scrollUntilVisible(
+      find.text('Third question?'),
+      200,
+      scrollable: find.descendant(
+        of: find.byKey(const Key('mock-test-question-list')),
+        matching: find.byType(Scrollable),
+      ),
+    );
+    await tester.pump();
+    for (int i = 0; i < 4; i++) {
+      expect(find.byKey(Key('mock-option-q3-$i')), findsOneWidget);
+    }
   });
 
   testWidgets('submit with unanswered questions confirms and reviews',
@@ -137,12 +171,7 @@ void main() {
     // Answer Q1 correctly at its shuffled position, leaving the
     // other two unanswered, so the result is 1 / 3.
     final MockQuestion q1 = sessionQuestion(controller, 'q1');
-    await tester.tap(
-      find.descendant(
-        of: find.byKey(const ValueKey('q1')),
-        matching: find.text(optionLabel(q1, q1.correctIndex)),
-      ),
-    );
+    await tapOption(tester, 'q1', q1.correctIndex);
     await tester.pump();
     await tester.tap(find.text('Submit Test'));
     await tester.pumpAndSettle();

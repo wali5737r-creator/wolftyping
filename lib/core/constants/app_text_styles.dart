@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'app_colors.dart';
 import 'app_fonts.dart';
 
 /// Text styles used across the app.
@@ -16,6 +15,7 @@ class AppTextStyles {
     fontSize: 28,
     fontWeight: FontWeight.w700,
     height: 1.2,
+    letterSpacing: -0.5,
   );
 
   static const TextStyle h2 = TextStyle(
@@ -42,25 +42,30 @@ class AppTextStyles {
     height: 1.5,
   );
 
+  /// Caption text with NO fixed color: it inherits the ambient text
+  /// color. It used to hardcode the light-theme grey, which was too
+  /// faint on dark surfaces. Prefer [captionOf] wherever a
+  /// BuildContext is available so the muted color of the ACTIVE theme
+  /// is used.
   static const TextStyle caption = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w400,
     height: 1.4,
-    color: AppColors.lightTextSecondary,
   );
 
-  /// [caption] with the muted colour of the ACTIVE theme (the const
-  /// [caption] above always uses the light-theme grey, which is too faint
-  /// on dark surfaces). Prefer this wherever a BuildContext is available.
+  /// [caption] with the muted colour of the ACTIVE theme. Prefer this
+  /// wherever a BuildContext is available.
   static TextStyle captionOf(BuildContext context) => caption.copyWith(
         color: Theme.of(context).textTheme.bodySmall?.color,
       );
 
   /// Big stat numbers (WPM, Accuracy) on dashboard / result cards.
+  /// Display size (Package A polish): numbers read as headlines.
   static const TextStyle statValue = TextStyle(
-    fontSize: 32,
+    fontSize: 40,
     fontWeight: FontWeight.w800,
     height: 1.1,
+    letterSpacing: -0.5,
   );
 
   static const TextStyle statLabel = TextStyle(

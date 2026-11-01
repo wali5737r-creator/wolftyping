@@ -43,12 +43,14 @@ class AppColors {
   // Depth is tonal: each higher surface is lighter; no pure black/white.
   static const Color darkBackground = Color(0xFF0A1211);
   static const Color darkSurface = Color(0xFF101C1A);
-  static const Color darkSurface2 = Color(0xFF162623);
-  static const Color darkSurface3 = Color(0xFF1E322E);
+  // Deepened steps (Package A polish, 2026-11-01) so dark cards lift
+  // off the background; all text pairs on S2/S3 stay WCAG AA.
+  static const Color darkSurface2 = Color(0xFF182A26);
+  static const Color darkSurface3 = Color(0xFF21382F);
   static const Color darkTint = Color(0xFF14302B);
   static const Color darkSidebar = Color(0xFF08100F);
   static const Color darkSidebarGradientStart = Color(0xFF050C0B);
-  static const Color darkSidebarGradientEnd = Color(0xFF08100F);
+  static const Color darkSidebarGradientEnd = Color(0xFF0E2A26);
   static const Color darkSidebarText = Color(0xFFEDF5F2);
   static const Color darkSidebarSecondary = Color(0xFF9DB3AD);
   static const Color darkSidebarAccent = Color(0xFF5EEAD4);
