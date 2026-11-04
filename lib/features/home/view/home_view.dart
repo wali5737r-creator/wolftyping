@@ -24,7 +24,7 @@ class HomeView extends GetView<HomeController> {
           return const Center(child: CircularProgressIndicator());
         }
         if (!controller.hasTests) {
-          return const _EmptyState();
+          return _EmptyState(loadTimedOut: controller.loadTimedOut.value);
         }
         return const _DashboardBody();
       }),
@@ -33,11 +33,15 @@ class HomeView extends GetView<HomeController> {
 }
 
 class _EmptyState extends StatelessWidget {
-  const _EmptyState();
+  const _EmptyState({this.loadTimedOut = false});
+
+  /// When the history read timed out, the same empty state is shown plus
+  /// a one-line notice: the data is safe, reopening the page retries.
+  final bool loadTimedOut;
 
   @override
   Widget build(BuildContext context) {
-    return EmptyStateView(
+    final Widget empty = EmptyStateView(
       icon: Icons.keyboard_alt_outlined,
       title: 'No completed tests yet',
       message: 'Finish a typing test and your speed, accuracy and daily '
@@ -58,6 +62,21 @@ class _EmptyState extends StatelessWidget {
           ),
         ],
       ),
+    );
+    if (!loadTimedOut) return empty;
+    return Column(
+      children: [
+        Expanded(child: empty),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 24),
+          child: Text(
+            'History could not be loaded. Your data is safe — '
+            'try reopening this page.',
+            style: AppTextStyles.captionOf(context),
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ],
     );
   }
 }

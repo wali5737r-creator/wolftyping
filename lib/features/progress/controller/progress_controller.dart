@@ -13,7 +13,24 @@ import '../service/progress_repository.dart';
 /// every displayed number is derived via ProgressCalculations — no
 /// widget ever computes a statistic itself (spec section 19/25).
 class ProgressController extends GetxController {
+  /// How long a data read may take before the screen gives up waiting and
+  /// shows empty data instead of spinning forever (the database open can
+  /// hang on a reload). Tests inject a shorter value.
+  static const Duration kLoadTimeout = Duration(seconds: 8);
+
+  ProgressController({
+    ProgressRepository? repository,
+    Duration loadTimeout = kLoadTimeout,
+  })  : _repository = repository ?? ProgressRepository.instance,
+        _loadTimeout = loadTimeout;
+
+  final ProgressRepository _repository;
+  final Duration _loadTimeout;
+
   final RxBool isLoading = false.obs;
+
+  /// True when the latest load gave up waiting on the database.
+  final RxBool loadTimedOut = false.obs;
   final RxList<TypingTestRecord> allTests = <TypingTestRecord>[].obs;
   final RxInt dailyGoalSeconds = 600.obs;
   final Rx<LessonProgressSummary> lessonSummary =
@@ -45,11 +62,30 @@ class ProgressController extends GetxController {
 
   Future<void> load() async {
     isLoading.value = true;
+    loadTimedOut.value = false;
     try {
       final results = await Future.wait([
-        ProgressRepository.instance.fetchAllTests(),
-        ProgressRepository.instance.fetchDailyGoalSeconds(),
-        ProgressRepository.instance.fetchLessonProgressSummary(),
+        _repository.fetchAllTests().timeout(
+          _loadTimeout,
+          onTimeout: () {
+            loadTimedOut.value = true;
+            return <TypingTestRecord>[];
+          },
+        ),
+        _repository.fetchDailyGoalSeconds().timeout(
+          _loadTimeout,
+          onTimeout: () {
+            loadTimedOut.value = true;
+            return 600;
+          },
+        ),
+        _repository.fetchLessonProgressSummary().timeout(
+          _loadTimeout,
+          onTimeout: () {
+            loadTimedOut.value = true;
+            return LessonProgressSummary.empty;
+          },
+        ),
       ]);
       allTests.value = results[0] as List<TypingTestRecord>;
       dailyGoalSeconds.value = results[1] as int;

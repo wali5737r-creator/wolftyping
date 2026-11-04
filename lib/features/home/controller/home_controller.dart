@@ -16,7 +16,25 @@ import '../../progress/service/progress_repository.dart';
 /// saved, a record deleted, history cleared, settings reset, daily goal
 /// changed), so the Dashboard is always current.
 class HomeController extends GetxController {
+  /// How long a history/goal read may take before the dashboard gives up
+  /// waiting and shows the empty state instead of spinning forever (the
+  /// database open can hang on a reload). Tests inject a shorter value.
+  static const Duration kLoadTimeout = Duration(seconds: 8);
+
+  HomeController({
+    ProgressRepository? repository,
+    Duration loadTimeout = kLoadTimeout,
+  })  : _repository = repository ?? ProgressRepository.instance,
+        _loadTimeout = loadTimeout;
+
+  final ProgressRepository _repository;
+  final Duration _loadTimeout;
+
   final RxBool isLoading = true.obs;
+
+  /// True when the latest load gave up waiting on the database. The view
+  /// shows a one-line notice in that case; the stored data is untouched.
+  final RxBool loadTimedOut = false.obs;
   final RxList<TypingTestRecord> allTests = <TypingTestRecord>[].obs;
   final RxInt dailyGoalSeconds = 600.obs;
 
@@ -35,9 +53,22 @@ class HomeController extends GetxController {
   }
 
   Future<void> load() async {
+    loadTimedOut.value = false;
     try {
-      final tests = await ProgressRepository.instance.fetchAllTests();
-      final goal = await ProgressRepository.instance.fetchDailyGoalSeconds();
+      final tests = await _repository.fetchAllTests().timeout(
+        _loadTimeout,
+        onTimeout: () {
+          loadTimedOut.value = true;
+          return <TypingTestRecord>[];
+        },
+      );
+      final goal = await _repository.fetchDailyGoalSeconds().timeout(
+        _loadTimeout,
+        onTimeout: () {
+          loadTimedOut.value = true;
+          return 600;
+        },
+      );
       allTests.value = tests;
       dailyGoalSeconds.value = goal;
     } finally {
