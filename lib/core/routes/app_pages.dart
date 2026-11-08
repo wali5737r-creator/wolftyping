@@ -54,12 +54,10 @@ class AppPages {
   AppPages._();
 
   static final List<GetPage> pages = [
-    // Root URL: the bare homepage opens the dashboard too. This page
-    // must exist now that GetMaterialApp no longer sets an initialRoute:
-    // without it, opening https://wolftyping.pages.dev/ (route '/')
-    // would be an unknown route. Cold-start deep links (e.g.
-    // /#/typing-test) are honoured from the browser URL instead of
-    // being forced to the dashboard.
+    // Root route safety net: the bare homepage resolves to the
+    // dashboard (an empty hash falls back to '/dashboard'), but '/'
+    // stays registered so a plain '/' navigation can never be an
+    // unknown route.
     GetPage(
       name: '/',
       page: () => const HomeView(),
