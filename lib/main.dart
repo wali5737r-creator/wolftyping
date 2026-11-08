@@ -11,12 +11,22 @@ import 'core/services/theme_service.dart';
 import 'core/theme/app_theme.dart';
 import 'features/settings/controller/settings_controller.dart';
 
+// TEMPORARY DIAGNOSTIC (remove before merge): frozen at the very start of
+// main(), before anything in the app can rewrite the URL.
+String _startupFragment = '';
+String _startupDefaultRoute = '';
+String _startupUri = '';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // TEMPORARY DIAGNOSTIC (remove before merge): cold-start deep links
   // still land on the dashboard on the preview, so log what the app
   // actually sees at startup.
+  _startupFragment = Uri.base.fragment;
+  _startupUri = Uri.base.toString();
+  _startupDefaultRoute =
+      WidgetsBinding.instance.platformDispatcher.defaultRouteName;
   debugPrint(
       'WOLFDIAG main uri.base=${Uri.base} fragment=${Uri.base.fragment}');
 
@@ -118,7 +128,7 @@ class _WolfTypingAppState extends State<WolfTypingApp> {
       debugPrint(
           'WOLFDIAG build fragment=${Uri.base.fragment} resolved=${resolveInitialRoute(Uri.base.fragment)}');
       final String diag =
-          'WOLFDIAG fragment=${Uri.base.fragment} resolved=${resolveInitialRoute(Uri.base.fragment)} route3s=$_diagRoute3s';
+          'WOLFDIAG start=$_startupFragment defroute=$_startupDefaultRoute fragment=${Uri.base.fragment} resolved=${resolveInitialRoute(Uri.base.fragment)} route3s=$_diagRoute3s';
       return GetMaterialApp(
         title: 'WolfTyping',
         debugShowCheckedModeBanner: false,
