@@ -178,13 +178,19 @@ class AppPages {
       }),
     ),
 
-    // One year's practice papers (argument: the year as an int;
-    // defaults to 2026 when no argument is given)
+    // One year's practice papers (argument: the year as an int, or the
+    // ?year= query parameter from a link such as
+    // /#/ppsc-past-papers-year?year=2025; defaults to 2026 otherwise).
+    // An unknown year shows the honest "coming soon" state in
+    // YearPapersView, so a bad value can never invent papers.
     GetPage(
       name: AppRoutes.ppscPastPapersYear,
       page: () {
         final Object? argument = Get.arguments;
-        return YearPapersView(year: argument is int ? argument : 2026);
+        final int? queryYear = int.tryParse(Get.parameters['year'] ?? '');
+        return YearPapersView(
+          year: queryYear ?? (argument is int ? argument : 2026),
+        );
       },
       binding: BindingsBuilder(() {
         Get.lazyPut<MockTestController>(() => MockTestController());
