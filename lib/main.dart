@@ -15,7 +15,10 @@ import 'features/settings/controller/settings_controller.dart';
 // main(), before anything in the app can rewrite the URL.
 String _startupFragment = '';
 String _startupDefaultRoute = '';
-String _startupUri = '';
+// TEMPORARY DIAGNOSTIC (remove before merge): frozen snapshots of the URL
+// fragment at each boot stage, so the banner shows WHEN it changes.
+String _loadFrag = '';
+String _routerFrag = '';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +27,6 @@ Future<void> main() async {
   // still land on the dashboard on the preview, so log what the app
   // actually sees at startup.
   _startupFragment = Uri.base.fragment;
-  _startupUri = Uri.base.toString();
   _startupDefaultRoute =
       WidgetsBinding.instance.platformDispatcher.defaultRouteName;
   debugPrint(
@@ -104,6 +106,11 @@ class _WolfTypingAppState extends State<WolfTypingApp> {
       final SettingsController settings = Get.find<SettingsController>();
       final bool stillLoading = settings.loading.value && !_bootTimedOut;
       if (stillLoading) {
+        // TEMPORARY DIAGNOSTIC (remove before merge): freeze the fragment
+        // seen while the loading screen is up.
+        if (_loadFrag.isEmpty) {
+          _loadFrag = Uri.base.fragment;
+        }
         return MaterialApp(
           title: 'WolfTyping',
           debugShowCheckedModeBanner: false,
@@ -124,11 +131,15 @@ class _WolfTypingAppState extends State<WolfTypingApp> {
           ),
         );
       }
-      // TEMPORARY DIAGNOSTIC (remove before merge).
+      // TEMPORARY DIAGNOSTIC (remove before merge): freeze the fragment
+      // seen the first time the router app is built.
+      if (_routerFrag.isEmpty) {
+        _routerFrag = Uri.base.fragment;
+      }
       debugPrint(
           'WOLFDIAG build fragment=${Uri.base.fragment} resolved=${resolveInitialRoute(Uri.base.fragment)}');
       final String diag =
-          'WOLFDIAG start=$_startupFragment defroute=$_startupDefaultRoute fragment=${Uri.base.fragment} resolved=${resolveInitialRoute(Uri.base.fragment)} route3s=$_diagRoute3s';
+          'WOLFDIAG start=$_startupFragment defroute=$_startupDefaultRoute loadFrag=$_loadFrag routerFrag=$_routerFrag route3s=$_diagRoute3s';
       return GetMaterialApp(
         title: 'WolfTyping',
         debugShowCheckedModeBanner: false,
