@@ -63,6 +63,10 @@ class _WolfTypingAppState extends State<WolfTypingApp> {
 
   bool _bootTimedOut = false;
 
+  // TEMPORARY DIAGNOSTIC (remove before merge): shown on screen because
+  // the test browser cannot open DevTools to read console logs.
+  String _diagRoute3s = '';
+
   @override
   void initState() {
     super.initState();
@@ -73,6 +77,9 @@ class _WolfTypingAppState extends State<WolfTypingApp> {
     Future.delayed(const Duration(seconds: 3), () {
       try {
         debugPrint('WOLFDIAG after3s currentRoute=${Get.currentRoute}');
+        if (mounted) {
+          setState(() => _diagRoute3s = Get.currentRoute);
+        }
       } catch (e) {
         debugPrint('WOLFDIAG after3s currentRoute error: $e');
       }
@@ -110,6 +117,8 @@ class _WolfTypingAppState extends State<WolfTypingApp> {
       // TEMPORARY DIAGNOSTIC (remove before merge).
       debugPrint(
           'WOLFDIAG build fragment=${Uri.base.fragment} resolved=${resolveInitialRoute(Uri.base.fragment)}');
+      final String diag =
+          'WOLFDIAG fragment=${Uri.base.fragment} resolved=${resolveInitialRoute(Uri.base.fragment)} route3s=$_diagRoute3s';
       return GetMaterialApp(
         title: 'WolfTyping',
         debugShowCheckedModeBanner: false,
@@ -123,6 +132,29 @@ class _WolfTypingAppState extends State<WolfTypingApp> {
         getPages: AppPages.pages,
         defaultTransition: Transition.fadeIn,
         transitionDuration: const Duration(milliseconds: 150),
+        // TEMPORARY DIAGNOSTIC (remove before merge): yellow banner with
+        // the startup values, readable on screen without DevTools.
+        builder: (BuildContext context, Widget? child) {
+          return Stack(
+            children: <Widget>[
+              child ?? const SizedBox.shrink(),
+              Positioned(
+                left: 0,
+                right: 0,
+                bottom: 0,
+                child: Container(
+                  color: Colors.yellow,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+                  child: Text(
+                    diag,
+                    style: const TextStyle(fontSize: 11, color: Colors.black),
+                  ),
+                ),
+              ),
+            ],
+          );
+        },
       );
     });
   }
