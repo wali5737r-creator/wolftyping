@@ -54,6 +54,18 @@ class AppPages {
   AppPages._();
 
   static final List<GetPage> pages = [
+    // Root route safety net: the bare homepage resolves to the
+    // dashboard (an empty hash falls back to '/dashboard'), but '/'
+    // stays registered so a plain '/' navigation can never be an
+    // unknown route.
+    GetPage(
+      name: '/',
+      page: () => const HomeView(),
+      binding: BindingsBuilder(() {
+        Get.lazyPut<HomeController>(() => HomeController());
+      }),
+    ),
+
     // Dashboard
     GetPage(
       name: AppRoutes.dashboard,

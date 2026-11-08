@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 
 import 'core/database/app_database.dart';
 import 'core/routes/app_pages.dart';
-import 'core/routes/app_routes.dart';
 import 'core/services/data_refresh_service.dart';
 import 'core/services/theme_service.dart';
 import 'core/theme/app_theme.dart';
@@ -13,6 +12,8 @@ import 'features/settings/controller/settings_controller.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Core services are put here (once, app-wide) rather than lazily per
 
   // Core services are put here (once, app-wide) rather than lazily per
   // feature, since almost every controller will eventually need the
@@ -30,7 +31,7 @@ Future<void> main() async {
   // with no loading state for as long as the database took to open.
   // Register the
   // controller synchronously and load in the background instead;
-  // WolfTypingApp shows a loading screen until settings arrive, and
+  // WolfTypingApp shows a loading overlay until settings arrive, and
   // every caller already copes with absent settings via
   // SettingsController.currentOrNull (built-in defaults). If the load
   // fails or never finishes, the app still opens (see the boot timeout
@@ -50,7 +51,7 @@ class WolfTypingApp extends StatefulWidget {
 }
 
 class _WolfTypingAppState extends State<WolfTypingApp> {
-  /// Releases the loading screen if the settings/database load has not
+  /// Releases the loading overlay if the settings/database load has not
   /// finished within this long, so a hung database open can never leave
   /// the app blank forever. The load keeps running in the background.
   static const Duration _bootTimeout = Duration(seconds: 10);
@@ -69,40 +70,50 @@ class _WolfTypingAppState extends State<WolfTypingApp> {
   Widget build(BuildContext context) {
     final ThemeService themeService = Get.find<ThemeService>();
 
+    // FIX (deep links): the Router mounts on the very first frame.
+    // An earlier plain-MaterialApp loading screen let its Navigator
+    // rewrite the browser URL (its topmost route is '/'), which
+    // destroyed cold-start deep links before the Router ever saw them.
+    // The loading state is now an overlay inside the router app, so
+    // the URL the Router parses is the one the user opened.
     return Obx(() {
-      final SettingsController settings = Get.find<SettingsController>();
-      final bool stillLoading = settings.loading.value && !_bootTimedOut;
-      if (stillLoading) {
-        return MaterialApp(
-          title: 'WolfTyping',
-          debugShowCheckedModeBanner: false,
-          theme: AppTheme.light,
-          darkTheme: AppTheme.dark,
-          themeMode: themeService.themeMode.value,
-          home: const Scaffold(
-            body: Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  CircularProgressIndicator(),
-                  SizedBox(height: 16),
-                  Text('Loading WolfTyping…'),
-                ],
-              ),
-            ),
-          ),
-        );
-      }
       return GetMaterialApp(
         title: 'WolfTyping',
         debugShowCheckedModeBanner: false,
         theme: AppTheme.light,
         darkTheme: AppTheme.dark,
         themeMode: themeService.themeMode.value,
-        initialRoute: AppRoutes.dashboard,
         getPages: AppPages.pages,
         defaultTransition: Transition.fadeIn,
         transitionDuration: const Duration(milliseconds: 150),
+        builder: (BuildContext context, Widget? child) {
+          return Stack(
+            children: <Widget>[
+              child ?? const SizedBox.shrink(),
+              // Loading overlay while settings load (released by the
+              // 10-second boot timeout if the database never answers).
+              Obx(() {
+                final SettingsController settings =
+                    Get.find<SettingsController>();
+                final bool stillLoading =
+                    settings.loading.value && !_bootTimedOut;
+                if (!stillLoading) return const SizedBox.shrink();
+                return const Scaffold(
+                  body: Center(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        CircularProgressIndicator(),
+                        SizedBox(height: 16),
+                        Text('Loading WolfTyping…'),
+                      ],
+                    ),
+                  ),
+                );
+              }),
+            ],
+          );
+        },
       );
     });
   }
