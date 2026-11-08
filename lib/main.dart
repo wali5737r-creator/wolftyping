@@ -19,6 +19,11 @@ String _startupDefaultRoute = '';
 // fragment at each boot stage, so the banner shows WHEN it changes.
 String _loadFrag = '';
 String _routerFrag = '';
+// FIX (Option C): the first route, frozen in main() before the loading
+// screen's plain-MaterialApp Navigator can strip the URL hash. Fed to the
+// Router as its initial route information, so a cold-start deep link
+// survives boot. Validated (known route or dashboard fallback).
+String _frozenInitialLocation = '/dashboard';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,6 +34,8 @@ Future<void> main() async {
   _startupFragment = Uri.base.fragment;
   _startupDefaultRoute =
       WidgetsBinding.instance.platformDispatcher.defaultRouteName;
+  // FIX (Option C): freeze the deep link now — see _frozenInitialLocation.
+  _frozenInitialLocation = resolveInitialRoute(Uri.base.fragment);
   debugPrint(
       'WOLFDIAG main uri.base=${Uri.base} fragment=${Uri.base.fragment}');
 
@@ -150,6 +157,15 @@ class _WolfTypingAppState extends State<WolfTypingApp> {
         // initial route carries it, so resolve it from Uri.base.fragment
         // (dashboard fallback for empty/unknown fragments).
         initialRoute: resolveInitialRoute(Uri.base.fragment),
+        // FIX (Option C): the Router's initial route information comes
+        // from the location frozen in main(), not from the live URL —
+        // the loading screen's Navigator rewrites the live URL before
+        // the Router mounts, so reading it here would be too late.
+        routeInformationProvider: PlatformRouteInformationProvider(
+          initialRouteInformation: RouteInformation(
+            uri: Uri.parse(_frozenInitialLocation),
+          ),
+        ),
         getPages: AppPages.pages,
         defaultTransition: Transition.fadeIn,
         transitionDuration: const Duration(milliseconds: 150),
