@@ -10,26 +10,10 @@ import 'core/services/theme_service.dart';
 import 'core/theme/app_theme.dart';
 import 'features/settings/controller/settings_controller.dart';
 
-// TEMPORARY DIAGNOSTIC (remove before merge): frozen at the very start of
-// main(), before anything in the app can rewrite the URL.
-String _startupFragment = '';
-String _startupDefaultRoute = '';
-// TEMPORARY DIAGNOSTIC (remove before merge): the URL fragment seen the
-// first time the router app is built, so the banner shows it.
-String _routerFrag = '';
-bool _routerFragLatched = false;
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // TEMPORARY DIAGNOSTIC (remove before merge): cold-start deep links
-  // still land on the dashboard on the preview, so log what the app
-  // actually sees at startup.
-  _startupFragment = Uri.base.fragment;
-  _startupDefaultRoute =
-      WidgetsBinding.instance.platformDispatcher.defaultRouteName;
-  debugPrint(
-      'WOLFDIAG main uri.base=${Uri.base} fragment=${Uri.base.fragment}');
+  // Core services are put here (once, app-wide) rather than lazily per
 
   // Core services are put here (once, app-wide) rather than lazily per
   // feature, since almost every controller will eventually need the
@@ -67,16 +51,12 @@ class WolfTypingApp extends StatefulWidget {
 }
 
 class _WolfTypingAppState extends State<WolfTypingApp> {
-  /// Releases the loading screen if the settings/database load has not
+  /// Releases the loading overlay if the settings/database load has not
   /// finished within this long, so a hung database open can never leave
   /// the app blank forever. The load keeps running in the background.
   static const Duration _bootTimeout = Duration(seconds: 10);
 
   bool _bootTimedOut = false;
-
-  // TEMPORARY DIAGNOSTIC (remove before merge): shown on screen because
-  // the test browser cannot open DevTools to read console logs.
-  String _diagRoute3s = '';
 
   @override
   void initState() {
@@ -84,36 +64,18 @@ class _WolfTypingAppState extends State<WolfTypingApp> {
     Future.delayed(_bootTimeout, () {
       if (mounted) setState(() => _bootTimedOut = true);
     });
-    // TEMPORARY DIAGNOSTIC (remove before merge).
-    Future.delayed(const Duration(seconds: 3), () {
-      try {
-        debugPrint('WOLFDIAG after3s currentRoute=${Get.currentRoute}');
-        if (mounted) {
-          setState(() => _diagRoute3s = Get.currentRoute);
-        }
-      } catch (e) {
-        debugPrint('WOLFDIAG after3s currentRoute error: $e');
-      }
-    });
   }
 
   @override
   Widget build(BuildContext context) {
     final ThemeService themeService = Get.find<ThemeService>();
 
-    // FIX (Option D): the Router mounts on the very first frame.
+    // FIX (deep links): the Router mounts on the very first frame.
     // An earlier plain-MaterialApp loading screen let its Navigator
     // rewrite the browser URL (its topmost route is '/'), which
     // destroyed cold-start deep links before the Router ever saw them.
     // The loading state is now an overlay inside the router app, so
     // the URL the Router parses is the one the user opened.
-    if (!_routerFragLatched) {
-      _routerFrag = Uri.base.fragment;
-      _routerFragLatched = true;
-    }
-    debugPrint('WOLFDIAG build fragment=${Uri.base.fragment}');
-    final String diag =
-        'WOLFDIAG start=$_startupFragment defroute=$_startupDefaultRoute routerFrag=$_routerFrag route3s=$_diagRoute3s';
     return Obx(() {
       return GetMaterialApp(
         title: 'WolfTyping',
@@ -149,23 +111,6 @@ class _WolfTypingAppState extends State<WolfTypingApp> {
                   ),
                 );
               }),
-              // TEMPORARY DIAGNOSTIC (remove before merge): yellow
-              // banner with the startup values, readable on screen
-              // without DevTools.
-              Positioned(
-                left: 0,
-                right: 0,
-                bottom: 0,
-                child: Container(
-                  color: Colors.yellow,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-                  child: Text(
-                    diag,
-                    style: const TextStyle(fontSize: 11, color: Colors.black),
-                  ),
-                ),
-              ),
             ],
           );
         },
