@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 
 import 'core/database/app_database.dart';
 import 'core/routes/app_pages.dart';
-import 'core/routes/app_routes.dart';
 import 'core/services/data_refresh_service.dart';
 import 'core/services/theme_service.dart';
 import 'core/theme/app_theme.dart';
@@ -99,7 +98,6 @@ class _WolfTypingAppState extends State<WolfTypingApp> {
         theme: AppTheme.light,
         darkTheme: AppTheme.dark,
         themeMode: themeService.themeMode.value,
-        initialRoute: AppRoutes.dashboard,
         getPages: AppPages.pages,
         defaultTransition: Transition.fadeIn,
         transitionDuration: const Duration(milliseconds: 150),
