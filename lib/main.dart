@@ -14,6 +14,12 @@ import 'features/settings/controller/settings_controller.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  // TEMPORARY DIAGNOSTIC (remove before merge): cold-start deep links
+  // still land on the dashboard on the preview, so log what the app
+  // actually sees at startup.
+  debugPrint(
+      'WOLFDIAG main uri.base=${Uri.base} fragment=${Uri.base.fragment}');
+
   // Core services are put here (once, app-wide) rather than lazily per
   // feature, since almost every controller will eventually need the
   // database, and theme must be ready before the first frame.
@@ -63,6 +69,14 @@ class _WolfTypingAppState extends State<WolfTypingApp> {
     Future.delayed(_bootTimeout, () {
       if (mounted) setState(() => _bootTimedOut = true);
     });
+    // TEMPORARY DIAGNOSTIC (remove before merge).
+    Future.delayed(const Duration(seconds: 3), () {
+      try {
+        debugPrint('WOLFDIAG after3s currentRoute=${Get.currentRoute}');
+      } catch (e) {
+        debugPrint('WOLFDIAG after3s currentRoute error: $e');
+      }
+    });
   }
 
   @override
@@ -93,6 +107,9 @@ class _WolfTypingAppState extends State<WolfTypingApp> {
           ),
         );
       }
+      // TEMPORARY DIAGNOSTIC (remove before merge).
+      debugPrint(
+          'WOLFDIAG build fragment=${Uri.base.fragment} resolved=${resolveInitialRoute(Uri.base.fragment)}');
       return GetMaterialApp(
         title: 'WolfTyping',
         debugShowCheckedModeBanner: false,
