@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 import 'core/database/app_database.dart';
 import 'core/routes/app_pages.dart';
+import 'core/routes/initial_route.dart';
 import 'core/services/data_refresh_service.dart';
 import 'core/services/theme_service.dart';
 import 'core/theme/app_theme.dart';
@@ -98,6 +99,10 @@ class _WolfTypingAppState extends State<WolfTypingApp> {
         theme: AppTheme.light,
         darkTheme: AppTheme.dark,
         themeMode: themeService.themeMode.value,
+        // Cold-start deep links: GetX drops the URL hash unless the
+        // initial route carries it, so resolve it from Uri.base.fragment
+        // (dashboard fallback for empty/unknown fragments).
+        initialRoute: resolveInitialRoute(Uri.base.fragment),
         getPages: AppPages.pages,
         defaultTransition: Transition.fadeIn,
         transitionDuration: const Duration(milliseconds: 150),
