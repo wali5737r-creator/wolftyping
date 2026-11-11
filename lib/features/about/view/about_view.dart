@@ -73,10 +73,10 @@ class AboutView extends StatelessWidget {
                         'Everyday Science.',
                       ),
                       _AboutRow(
-                        '237 timed practice papers — 21 from 2026, '
+                        '241 timed practice papers — 25 from 2026, '
                         '56 from 2025, 24 from 2024, 25 from 2023, '
                         '28 from 2022, 23 from 2021, 29 from 2020 '
-                        'and 31 from 2019 — 19,768 practice '
+                        'and 31 from 2019 — 20,163 practice '
                         'questions in total, each with an explanation '
                         'in the end review, and latest-update notes '
                         'on current-affairs questions.',

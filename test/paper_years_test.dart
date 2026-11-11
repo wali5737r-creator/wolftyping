@@ -30,8 +30,8 @@ void main() {
       final groups = paperYearGroups;
       expect(groups.first.year, 2026);
       expect(groups.first.isBuilt, isTrue);
-      expect(groups.first.papers.length, 21);
-      expect(groups.first.totalQuestions, 1417);
+      expect(groups.first.papers.length, 25);
+      expect(groups.first.totalQuestions, 1812);
       expect(groups[1].year, 2025);
       expect(groups[1].isBuilt, isTrue);
       expect(groups[1].papers.length, 56);
@@ -96,7 +96,7 @@ void main() {
         filterPapers(all, query: '233', department: 'No such department'),
         isEmpty,
       );
-      expect(filterPapers(all).length, 21);
+      expect(filterPapers(all).length, 25);
     });
   });
 
@@ -165,14 +165,14 @@ void main() {
       await tester.tap(find.byKey(const Key('paper-year-2026-header')));
       await tester.pumpAndSettle();
       expect(find.text('2026 Practice Papers'), findsOneWidget);
-      expect(find.text('Start'), findsNWidgets(21));
-      expect(find.text('0/21 papers complete'), findsOneWidget);
+      expect(find.text('Start'), findsNWidgets(25));
+      expect(find.text('0/25 papers complete'), findsOneWidget);
     });
 
     testWidgets('tapping the built 2025 year opens its year page',
         (tester) async {
       await pumpEntry(tester);
-      // The 2025 header sits below the 21-paper 2026 section, off
+      // The 2025 header sits below the 25-paper 2026 section, off
       // screen in the test viewport: scroll it into view first.
       await tester.ensureVisible(
         find.byKey(const Key('paper-year-2025-header')),
@@ -240,7 +240,7 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.text('Retake'), findsOneWidget);
       expect(find.textContaining('Best score:'), findsOneWidget);
-      expect(find.text('1/21 papers complete'), findsOneWidget);
+      expect(find.text('1/25 papers complete'), findsOneWidget);
     });
   });
 }
