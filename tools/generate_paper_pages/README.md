@@ -70,3 +70,11 @@ metadata, slugs and URLs used.
   typed by hand. The `--verify` step fails the run if a page disagrees
   with the Dart data, if FAQ JSON-LD does not match the visible FAQ,
   or if a forbidden term appears in the visible text.
+
+## Year-page links (do not drop)
+
+`link_year_pages.py` wraps each year page's paper-number cell in a link to
+that paper's static page. Without it the paper pages are reachable only
+via the sitemap. Re-run it after any regeneration or hand-edit of the year
+pages: `python3 tools/generate_paper_pages/link_year_pages.py` (expect
+"TOTAL linked: 241"). It is idempotent.
