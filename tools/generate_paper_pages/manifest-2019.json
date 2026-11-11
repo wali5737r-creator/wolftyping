@@ -1,0 +1,557 @@
+{
+  "year": 2019,
+  "papers": 31,
+  "questions": 2987,
+  "entries": [
+    {
+      "paperNo": 1,
+      "post": "Provincial Management Service, etc. (BS-17) — General Knowledge",
+      "department": "Punjab Public Service Commission",
+      "examDate": "2019",
+      "questionCount": 96,
+      "subjects": {
+        "generalKnowledge": 30,
+        "pakistanStudies": 19,
+        "islamiat": 1,
+        "mathematics": 8,
+        "everydayScience": 38
+      },
+      "latestUpdates": 4,
+      "slug": "provincial-management-service-etc-general-knowledge-punjab-public-service-commission-2019",
+      "url": "https://wolftyping.pages.dev/paper-1-provincial-management-service-etc-general-knowledge-punjab-public-service-commission-2019/"
+    },
+    {
+      "paperNo": 2,
+      "post": "Provincial Management Service (PMS) (BS-17) — Ministerial Quota",
+      "department": "Punjab Public Service Commission",
+      "examDate": "2019",
+      "questionCount": 95,
+      "subjects": {
+        "generalKnowledge": 39,
+        "pakistanStudies": 23,
+        "english": 8,
+        "islamiat": 11,
+        "mathematics": 2,
+        "everydayScience": 12
+      },
+      "latestUpdates": 2,
+      "slug": "provincial-management-service-ministerial-quota-punjab-public-service-commission-2019",
+      "url": "https://wolftyping.pages.dev/paper-2-provincial-management-service-ministerial-quota-punjab-public-service-commission-2019/"
+    },
+    {
+      "paperNo": 3,
+      "post": "Sub Inspector (Open Merit)",
+      "department": "Punjab Police Department",
+      "examDate": "2019",
+      "questionCount": 96,
+      "subjects": {
+        "generalKnowledge": 48,
+        "pakistanStudies": 7,
+        "english": 2,
+        "islamiat": 2,
+        "mathematics": 34,
+        "everydayScience": 3
+      },
+      "latestUpdates": 1,
+      "slug": "sub-inspector-punjab-police-2019",
+      "url": "https://wolftyping.pages.dev/paper-3-sub-inspector-punjab-police-2019/"
+    },
+    {
+      "paperNo": 4,
+      "post": "Sub Inspector (Service Quota)",
+      "department": "Punjab Police Department",
+      "examDate": "2019",
+      "questionCount": 96,
+      "subjects": {
+        "generalKnowledge": 38,
+        "pakistanStudies": 10,
+        "english": 6,
+        "islamiat": 6,
+        "mathematics": 31,
+        "everydayScience": 5
+      },
+      "latestUpdates": 1,
+      "slug": "sub-inspector-service-quota-punjab-police-2019",
+      "url": "https://wolftyping.pages.dev/paper-4-sub-inspector-service-quota-punjab-police-2019/"
+    },
+    {
+      "paperNo": 5,
+      "post": "Assistant Sub-Inspector (BS-11) — Among Graduate Constables / Head Constables",
+      "department": "Punjab Police Department",
+      "examDate": "2019",
+      "questionCount": 99,
+      "subjects": {
+        "generalKnowledge": 43,
+        "pakistanStudies": 11,
+        "english": 4,
+        "islamiat": 3,
+        "mathematics": 35,
+        "everydayScience": 3
+      },
+      "latestUpdates": 1,
+      "slug": "assistant-sub-inspector-among-graduate-constables-head-constables-punjab-police-2019",
+      "url": "https://wolftyping.pages.dev/paper-5-assistant-sub-inspector-among-graduate-constables-head-constables-punjab-police-2019/"
+    },
+    {
+      "paperNo": 6,
+      "post": "Junior Clerk (BS-11)",
+      "department": "Punjab Board of Revenue Department",
+      "examDate": "2019",
+      "questionCount": 96,
+      "subjects": {
+        "generalKnowledge": 37,
+        "pakistanStudies": 19,
+        "english": 16,
+        "islamiat": 11,
+        "mathematics": 3,
+        "everydayScience": 10
+      },
+      "latestUpdates": 2,
+      "slug": "junior-clerk-punjab-board-of-revenue-2019",
+      "url": "https://wolftyping.pages.dev/paper-6-junior-clerk-punjab-board-of-revenue-2019/"
+    },
+    {
+      "paperNo": 7,
+      "post": "District Zakat Officer (BS-17)",
+      "department": "Punjab Zakat & Ushar Department",
+      "examDate": "2019",
+      "questionCount": 98,
+      "subjects": {
+        "generalKnowledge": 28,
+        "pakistanStudies": 12,
+        "english": 6,
+        "islamiat": 46,
+        "everydayScience": 6
+      },
+      "latestUpdates": 1,
+      "slug": "district-zakat-officer-punjab-zakat-ushar-2019",
+      "url": "https://wolftyping.pages.dev/paper-7-district-zakat-officer-punjab-zakat-ushar-2019/"
+    },
+    {
+      "paperNo": 8,
+      "post": "Inspector, Cooperative Societies",
+      "department": "Cooperatives Department",
+      "examDate": "2019",
+      "questionCount": 98,
+      "subjects": {
+        "generalKnowledge": 46,
+        "pakistanStudies": 18,
+        "english": 10,
+        "islamiat": 11,
+        "mathematics": 5,
+        "everydayScience": 8
+      },
+      "latestUpdates": 2,
+      "slug": "inspector-cooperative-societies-cooperatives-2019",
+      "url": "https://wolftyping.pages.dev/paper-8-inspector-cooperative-societies-cooperatives-2019/"
+    },
+    {
+      "paperNo": 9,
+      "post": "Assistant Director, Directorate of Labour Welfare",
+      "department": "Labour & Human Resource Department",
+      "examDate": "2019",
+      "questionCount": 97,
+      "subjects": {
+        "generalKnowledge": 45,
+        "pakistanStudies": 17,
+        "english": 11,
+        "islamiat": 9,
+        "mathematics": 8,
+        "everydayScience": 7
+      },
+      "latestUpdates": 1,
+      "slug": "assistant-director-directorate-of-labour-welfare-labour-human-resource-2019",
+      "url": "https://wolftyping.pages.dev/paper-9-assistant-director-directorate-of-labour-welfare-labour-human-resource-2019/"
+    },
+    {
+      "paperNo": 10,
+      "post": "Assistant (BS-16)",
+      "department": "Labour & Human Resource Department",
+      "examDate": "2019",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 47,
+        "pakistanStudies": 20,
+        "english": 10,
+        "islamiat": 8,
+        "mathematics": 7,
+        "everydayScience": 8
+      },
+      "latestUpdates": 1,
+      "slug": "assistant-labour-human-resource-2019",
+      "url": "https://wolftyping.pages.dev/paper-10-assistant-labour-human-resource-2019/"
+    },
+    {
+      "paperNo": 11,
+      "post": "Assistant (BS-16)",
+      "department": "Labour & Human Resource Department",
+      "examDate": "2019",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 37,
+        "pakistanStudies": 26,
+        "english": 14,
+        "islamiat": 8,
+        "mathematics": 8,
+        "everydayScience": 7
+      },
+      "latestUpdates": 3,
+      "slug": "assistant-bs-16-labour-human-resource-2019",
+      "url": "https://wolftyping.pages.dev/paper-11-assistant-bs-16-labour-human-resource-2019/"
+    },
+    {
+      "paperNo": 12,
+      "post": "Labour Inspector (BS-14)",
+      "department": "Labour & Human Resource Department",
+      "examDate": "2019",
+      "questionCount": 88,
+      "subjects": {
+        "generalKnowledge": 43,
+        "pakistanStudies": 15,
+        "english": 8,
+        "islamiat": 9,
+        "mathematics": 8,
+        "everydayScience": 5
+      },
+      "latestUpdates": 1,
+      "slug": "labour-inspector-labour-human-resource-2019",
+      "url": "https://wolftyping.pages.dev/paper-12-labour-inspector-labour-human-resource-2019/"
+    },
+    {
+      "paperNo": 13,
+      "post": "Junior Clerk (BS-11)",
+      "department": "Labour & Human Resource Department",
+      "examDate": "2019",
+      "questionCount": 99,
+      "subjects": {
+        "generalKnowledge": 40,
+        "pakistanStudies": 23,
+        "english": 12,
+        "islamiat": 7,
+        "mathematics": 7,
+        "everydayScience": 10
+      },
+      "latestUpdates": 2,
+      "slug": "junior-clerk-labour-human-resource-2019",
+      "url": "https://wolftyping.pages.dev/paper-13-junior-clerk-labour-human-resource-2019/"
+    },
+    {
+      "paperNo": 14,
+      "post": "Assistant Director (BS-17)",
+      "department": "Punjab Employees Social Security Institution (PESSI)",
+      "examDate": "2019",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 43,
+        "pakistanStudies": 23,
+        "english": 11,
+        "islamiat": 8,
+        "mathematics": 5,
+        "everydayScience": 10
+      },
+      "latestUpdates": 1,
+      "slug": "assistant-director-punjab-employees-social-security-institution-2019",
+      "url": "https://wolftyping.pages.dev/paper-14-assistant-director-punjab-employees-social-security-institution-2019/"
+    },
+    {
+      "paperNo": 15,
+      "post": "Assistant (BS-16)",
+      "department": "Population Welfare Department",
+      "examDate": "2019",
+      "questionCount": 97,
+      "subjects": {
+        "generalKnowledge": 49,
+        "pakistanStudies": 6,
+        "english": 16,
+        "islamiat": 5,
+        "mathematics": 10,
+        "everydayScience": 11
+      },
+      "latestUpdates": 2,
+      "slug": "assistant-population-welfare-2019",
+      "url": "https://wolftyping.pages.dev/paper-15-assistant-population-welfare-2019/"
+    },
+    {
+      "paperNo": 16,
+      "post": "Caretaker (BS-16)",
+      "department": "Lahore High Court",
+      "examDate": "2019",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 45,
+        "pakistanStudies": 33,
+        "mathematics": 12,
+        "everydayScience": 10
+      },
+      "latestUpdates": 2,
+      "slug": "caretaker-lahore-high-court-2019",
+      "url": "https://wolftyping.pages.dev/paper-16-caretaker-lahore-high-court-2019/"
+    },
+    {
+      "paperNo": 17,
+      "post": "Assistant (BS-16)",
+      "department": "Lahore High Court",
+      "examDate": "2019",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 65,
+        "pakistanStudies": 19,
+        "english": 8,
+        "everydayScience": 8
+      },
+      "latestUpdates": 3,
+      "slug": "assistant-lahore-high-court-2019",
+      "url": "https://wolftyping.pages.dev/paper-17-assistant-lahore-high-court-2019/"
+    },
+    {
+      "paperNo": 18,
+      "post": "Deputy Accountant (BS-16) — Morning",
+      "department": "Finance Department / Punjab Treasury and Accounts Service",
+      "examDate": "2019",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 40,
+        "pakistanStudies": 22,
+        "english": 12,
+        "islamiat": 8,
+        "mathematics": 11,
+        "everydayScience": 7
+      },
+      "latestUpdates": 0,
+      "slug": "deputy-accountant-morning-finance-punjab-treasury-and-accounts-service-2019",
+      "url": "https://wolftyping.pages.dev/paper-18-deputy-accountant-morning-finance-punjab-treasury-and-accounts-service-2019/"
+    },
+    {
+      "paperNo": 19,
+      "post": "Deputy Accountant (BS-16) — Evening",
+      "department": "Finance Department / Punjab Treasury and Accounts Service",
+      "examDate": "2019",
+      "questionCount": 97,
+      "subjects": {
+        "generalKnowledge": 45,
+        "pakistanStudies": 19,
+        "english": 10,
+        "islamiat": 8,
+        "mathematics": 7,
+        "everydayScience": 8
+      },
+      "latestUpdates": 3,
+      "slug": "deputy-accountant-evening-finance-punjab-treasury-and-accounts-service-2019",
+      "url": "https://wolftyping.pages.dev/paper-19-deputy-accountant-evening-finance-punjab-treasury-and-accounts-service-2019/"
+    },
+    {
+      "paperNo": 20,
+      "post": "Assistant Director Planning (BS-17)",
+      "department": "Planning & Development Department",
+      "examDate": "2019",
+      "questionCount": 94,
+      "subjects": {
+        "generalKnowledge": 41,
+        "pakistanStudies": 15,
+        "english": 13,
+        "islamiat": 10,
+        "mathematics": 8,
+        "everydayScience": 7
+      },
+      "latestUpdates": 1,
+      "slug": "assistant-director-planning-planning-development-2019",
+      "url": "https://wolftyping.pages.dev/paper-20-assistant-director-planning-planning-development-2019/"
+    },
+    {
+      "paperNo": 21,
+      "post": "Assistant (BS-16) (11K 2019)",
+      "department": "Planning & Development Department",
+      "examDate": "2019",
+      "questionCount": 98,
+      "subjects": {
+        "generalKnowledge": 42,
+        "pakistanStudies": 21,
+        "english": 12,
+        "islamiat": 7,
+        "mathematics": 8,
+        "everydayScience": 8
+      },
+      "latestUpdates": 1,
+      "slug": "assistant-planning-development-2019",
+      "url": "https://wolftyping.pages.dev/paper-21-assistant-planning-development-2019/"
+    },
+    {
+      "paperNo": 22,
+      "post": "Assistant Director Archives (BS-17)",
+      "department": "Civil Secretariat Department (S & GAD)",
+      "examDate": "2019",
+      "questionCount": 89,
+      "subjects": {
+        "generalKnowledge": 43,
+        "pakistanStudies": 26,
+        "english": 2,
+        "islamiat": 13,
+        "everydayScience": 5
+      },
+      "latestUpdates": 1,
+      "slug": "assistant-director-archives-civil-secretariat-2019",
+      "url": "https://wolftyping.pages.dev/paper-22-assistant-director-archives-civil-secretariat-2019/"
+    },
+    {
+      "paperNo": 23,
+      "post": "Protocol Officer (BS-17)",
+      "department": "Civil Secretariat Department (S & GAD)",
+      "examDate": "2019",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 55,
+        "pakistanStudies": 25,
+        "english": 9,
+        "islamiat": 7,
+        "everydayScience": 4
+      },
+      "latestUpdates": 1,
+      "slug": "protocol-officer-civil-secretariat-2019",
+      "url": "https://wolftyping.pages.dev/paper-23-protocol-officer-civil-secretariat-2019/"
+    },
+    {
+      "paperNo": 24,
+      "post": "Junior Clerk (27C2019)",
+      "department": "Services and General Administration Department",
+      "examDate": "2019",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 67,
+        "pakistanStudies": 12,
+        "english": 6,
+        "islamiat": 4,
+        "mathematics": 7,
+        "everydayScience": 4
+      },
+      "latestUpdates": 1,
+      "slug": "junior-clerk-services-and-general-administration-2019",
+      "url": "https://wolftyping.pages.dev/paper-24-junior-clerk-services-and-general-administration-2019/"
+    },
+    {
+      "paperNo": 25,
+      "post": "Assistant (BS-16)",
+      "department": "Punjab Public Service Commission, Services & General Administration Department",
+      "examDate": "2019",
+      "questionCount": 98,
+      "subjects": {
+        "generalKnowledge": 59,
+        "pakistanStudies": 14,
+        "english": 10,
+        "islamiat": 9,
+        "mathematics": 2,
+        "everydayScience": 4
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-punjab-public-service-commission-services-general-administration-2019",
+      "url": "https://wolftyping.pages.dev/paper-25-assistant-punjab-public-service-commission-services-general-administration-2019/"
+    },
+    {
+      "paperNo": 26,
+      "post": "Assistant (BS-16)",
+      "department": "Punjab Public Service Commission, Services & General Administration Department",
+      "examDate": "2019",
+      "questionCount": 95,
+      "subjects": {
+        "generalKnowledge": 47,
+        "pakistanStudies": 23,
+        "english": 8,
+        "islamiat": 5,
+        "mathematics": 3,
+        "everydayScience": 9
+      },
+      "latestUpdates": 3,
+      "slug": "assistant-bs-16-punjab-public-service-commission-services-general-administration-2019",
+      "url": "https://wolftyping.pages.dev/paper-26-assistant-bs-16-punjab-public-service-commission-services-general-administration-2019/"
+    },
+    {
+      "paperNo": 27,
+      "post": "Junior Clerk (BS-11)",
+      "department": "Punjab Public Service Commission, Services & General Administration Department",
+      "examDate": "2019",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 45,
+        "pakistanStudies": 21,
+        "english": 10,
+        "islamiat": 10,
+        "mathematics": 2,
+        "everydayScience": 12
+      },
+      "latestUpdates": 2,
+      "slug": "junior-clerk-punjab-public-service-commission-services-general-administration-2019",
+      "url": "https://wolftyping.pages.dev/paper-27-junior-clerk-punjab-public-service-commission-services-general-administration-2019/"
+    },
+    {
+      "paperNo": 28,
+      "post": "Elementary School Educator General (BS-14)",
+      "department": "Labour & Human Resource Department",
+      "examDate": "2019",
+      "questionCount": 97,
+      "subjects": {
+        "generalKnowledge": 44,
+        "pakistanStudies": 14,
+        "english": 16,
+        "islamiat": 8,
+        "mathematics": 6,
+        "everydayScience": 9
+      },
+      "latestUpdates": 0,
+      "slug": "elementary-school-educator-general-labour-human-resource-2019",
+      "url": "https://wolftyping.pages.dev/paper-28-elementary-school-educator-general-labour-human-resource-2019/"
+    },
+    {
+      "paperNo": 29,
+      "post": "Elementary School Educator Urdu (BS-14)",
+      "department": "Labour & Human Resource Department",
+      "examDate": "2019",
+      "questionCount": 67,
+      "subjects": {
+        "generalKnowledge": 55,
+        "pakistanStudies": 4,
+        "english": 2,
+        "islamiat": 2,
+        "mathematics": 2,
+        "everydayScience": 2
+      },
+      "latestUpdates": 0,
+      "slug": "elementary-school-educator-urdu-labour-human-resource-2019",
+      "url": "https://wolftyping.pages.dev/paper-29-elementary-school-educator-urdu-labour-human-resource-2019/"
+    },
+    {
+      "paperNo": 30,
+      "post": "Elementary School Educator General (BS-14) (Afternoon)",
+      "department": "Labour & Human Resource Department",
+      "examDate": "2019",
+      "questionCount": 98,
+      "subjects": {
+        "generalKnowledge": 37,
+        "pakistanStudies": 22,
+        "english": 20,
+        "islamiat": 6,
+        "mathematics": 8,
+        "everydayScience": 5
+      },
+      "latestUpdates": 1,
+      "slug": "elementary-school-educator-general-bs-14-afternoon-labour-human-resource-2019",
+      "url": "https://wolftyping.pages.dev/paper-30-elementary-school-educator-general-bs-14-afternoon-labour-human-resource-2019/"
+    },
+    {
+      "paperNo": 31,
+      "post": "Elementary School Educator General (BS-14) (Evening)",
+      "department": "Labour & Human Resource Department",
+      "examDate": "2019",
+      "questionCount": 99,
+      "subjects": {
+        "generalKnowledge": 36,
+        "pakistanStudies": 18,
+        "english": 21,
+        "islamiat": 7,
+        "mathematics": 7,
+        "everydayScience": 10
+      },
+      "latestUpdates": 0,
+      "slug": "elementary-school-educator-general-bs-14-evening-labour-human-resource-2019",
+      "url": "https://wolftyping.pages.dev/paper-31-elementary-school-educator-general-bs-14-evening-labour-human-resource-2019/"
+    }
+  ]
+}
