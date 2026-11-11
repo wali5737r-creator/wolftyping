@@ -15,18 +15,23 @@ import 'package:typing_master/features/ppsc/service/papers2026_registry.dart';
 void main() {
   const List<int> expectedCounts = [
     53, 81, 50, 20, 100, 100, 100, 100, 90, 100, 25, 84, 15, 40, 10, 20, 100,
-    78, 76, 89, 86,
+    78, 76, 89, 86, 95, 100, 100, 100,
   ];
 
   group('2026 papers registry', () {
-    test('has 21 papers, numbered 219-239, all year 2026', () {
-      expect(papers2026.length, 21);
+    test('has 25 papers, numbered 219-239 plus 246-248 and 250, all year 2026',
+        () {
+      expect(papers2026.length, 25);
+      const expectedPaperNos = [
+        219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232,
+        233, 234, 235, 236, 237, 238, 239, 246, 247, 248, 250,
+      ];
       for (int i = 0; i < papers2026.length; i++) {
-        expect(papers2026[i].paperNo, 219 + i);
+        expect(papers2026[i].paperNo, expectedPaperNos[i]);
         expect(papers2026[i].year, 2026);
         expect(papers2026[i].questionCount, expectedCounts[i]);
       }
-      expect(papers2026TotalQuestions, 1417);
+      expect(papers2026TotalQuestions, 1812);
     });
 
     test('every question is valid and ids are unique per paper', () {
@@ -40,8 +45,8 @@ void main() {
       }
     });
 
-    test('latest-update notes total 41', () {
-      expect(papers2026TotalLatestUpdates, 41);
+    test('latest-update notes total 68', () {
+      expect(papers2026TotalLatestUpdates, 68);
     });
   });
 
@@ -80,7 +85,7 @@ void main() {
       await tester.tap(find.byKey(const Key('paper-year-2026-header')));
       await tester.pumpAndSettle();
       expect(find.text('2026 Practice Papers'), findsOneWidget);
-      expect(find.text('Start'), findsNWidgets(21));
+      expect(find.text('Start'), findsNWidgets(25));
       Get.toNamed(AppRoutes.ppscPastPapers);
       await tester.pumpAndSettle();
       await tester.ensureVisible(

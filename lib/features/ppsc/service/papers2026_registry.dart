@@ -20,6 +20,10 @@ import 'papers2026/paper_236.dart';
 import 'papers2026/paper_237.dart';
 import 'papers2026/paper_238.dart';
 import 'papers2026/paper_239.dart';
+import 'papers2026/paper_246.dart';
+import 'papers2026/paper_247.dart';
+import 'papers2026/paper_248.dart';
+import 'papers2026/paper_250.dart';
 
 /// All 2026 practice papers, in paper-number order.
 ///
@@ -48,6 +52,10 @@ const List<PaperTest> papers2026 = [
   paper237,
   paper238,
   paper239,
+  paper246,
+  paper247,
+  paper248,
+  paper250,
 ];
 
 /// Total number of questions across all 2026 papers.
