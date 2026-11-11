@@ -1,0 +1,426 @@
+{
+  "year": 2026,
+  "papers": 25,
+  "questions": 1812,
+  "entries": [
+    {
+      "paperNo": 219,
+      "post": "ESE General (BS-14)",
+      "department": "Punjab Worker Welfare Department",
+      "examDate": "15.02.2026",
+      "questionCount": 53,
+      "subjects": {
+        "generalKnowledge": 27,
+        "pakistanStudies": 11,
+        "english": 4,
+        "islamiat": 4,
+        "mathematics": 4,
+        "everydayScience": 3
+      },
+      "latestUpdates": 1,
+      "slug": "ese-general-punjab-worker-welfare-2026",
+      "url": "https://wolftyping.pages.dev/paper-219-ese-general-punjab-worker-welfare-2026/"
+    },
+    {
+      "paperNo": 220,
+      "post": "ESE Urdu (BS-14)",
+      "department": "Punjab Worker Welfare Department",
+      "examDate": "25.01.2026",
+      "questionCount": 81,
+      "subjects": {
+        "generalKnowledge": 81
+      },
+      "latestUpdates": 0,
+      "slug": "ese-urdu-punjab-worker-welfare-2026",
+      "url": "https://wolftyping.pages.dev/paper-220-ese-urdu-punjab-worker-welfare-2026/"
+    },
+    {
+      "paperNo": 221,
+      "post": "ESE PTI (BS-14)",
+      "department": "Punjab Worker Welfare Department",
+      "examDate": "01.02.2026",
+      "questionCount": 50,
+      "subjects": {
+        "generalKnowledge": 23,
+        "pakistanStudies": 12,
+        "english": 5,
+        "islamiat": 4,
+        "mathematics": 4,
+        "everydayScience": 2
+      },
+      "latestUpdates": 2,
+      "slug": "ese-pti-punjab-worker-welfare-2026",
+      "url": "https://wolftyping.pages.dev/paper-221-ese-pti-punjab-worker-welfare-2026/"
+    },
+    {
+      "paperNo": 222,
+      "post": "Superintendent (BS-17)",
+      "department": "Punjab Excise and Narcotics Departments",
+      "examDate": "01.02.2026",
+      "questionCount": 20,
+      "subjects": {
+        "english": 20
+      },
+      "latestUpdates": 0,
+      "slug": "superintendent-punjab-excise-and-narcotics-2026",
+      "url": "https://wolftyping.pages.dev/paper-222-superintendent-punjab-excise-and-narcotics-2026/"
+    },
+    {
+      "paperNo": 223,
+      "post": "Computer Operator (BS-15)",
+      "department": "Punjab Revenue Authority",
+      "examDate": "14.02.2026",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 100
+      },
+      "latestUpdates": 1,
+      "slug": "computer-operator-punjab-revenue-authority-2026",
+      "url": "https://wolftyping.pages.dev/paper-223-computer-operator-punjab-revenue-authority-2026/"
+    },
+    {
+      "paperNo": 224,
+      "post": "PMS (BS-17)",
+      "department": "Provincial Management Services (S&GAD)",
+      "examDate": "25-01-2026",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 47,
+        "pakistanStudies": 16,
+        "mathematics": 8,
+        "everydayScience": 29
+      },
+      "latestUpdates": 5,
+      "slug": "pms-provincial-management-services-2026",
+      "url": "https://wolftyping.pages.dev/paper-224-pms-provincial-management-services-2026/"
+    },
+    {
+      "paperNo": 225,
+      "post": "PMS (BS-17) — Evening",
+      "department": "Provincial Management Services (S&GAD)",
+      "examDate": "25-01-2026",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 47,
+        "pakistanStudies": 15,
+        "mathematics": 10,
+        "everydayScience": 28
+      },
+      "latestUpdates": 4,
+      "slug": "pms-evening-provincial-management-services-2026",
+      "url": "https://wolftyping.pages.dev/paper-225-pms-evening-provincial-management-services-2026/"
+    },
+    {
+      "paperNo": 226,
+      "post": "Assistant / Office Assistant (BS-16)",
+      "department": "Different Departments",
+      "examDate": "24.01.2026",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 36,
+        "pakistanStudies": 23,
+        "english": 15,
+        "islamiat": 6,
+        "mathematics": 9,
+        "everydayScience": 11
+      },
+      "latestUpdates": 1,
+      "slug": "assistant-office-assistant-2026",
+      "url": "https://wolftyping.pages.dev/paper-226-assistant-office-assistant-2026/"
+    },
+    {
+      "paperNo": 227,
+      "post": "Enforcement / Intelligence Officer (PERA)",
+      "department": "Punjab Enforcement Regulatory Authority",
+      "examDate": "15.03.2026",
+      "questionCount": 90,
+      "subjects": {
+        "generalKnowledge": 11,
+        "pakistanStudies": 43,
+        "english": 17,
+        "mathematics": 9,
+        "everydayScience": 10
+      },
+      "latestUpdates": 1,
+      "slug": "enforcement-intelligence-officer-punjab-enforcement-regulatory-authority-2026",
+      "url": "https://wolftyping.pages.dev/paper-227-enforcement-intelligence-officer-punjab-enforcement-regulatory-authority-2026/"
+    },
+    {
+      "paperNo": 228,
+      "post": "Assistant (BS-16)",
+      "department": "Punjab Disaster Management Department",
+      "examDate": "05.04.2026",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 44,
+        "pakistanStudies": 19,
+        "english": 15,
+        "islamiat": 8,
+        "mathematics": 8,
+        "everydayScience": 6
+      },
+      "latestUpdates": 3,
+      "slug": "assistant-punjab-disaster-management-2026",
+      "url": "https://wolftyping.pages.dev/paper-228-assistant-punjab-disaster-management-2026/"
+    },
+    {
+      "paperNo": 229,
+      "post": "Assistant Librarian (BS-11)",
+      "department": "Punjab Labour and Human Resources Department",
+      "examDate": "18.04.2026",
+      "questionCount": 25,
+      "subjects": {
+        "generalKnowledge": 10,
+        "pakistanStudies": 4,
+        "english": 3,
+        "islamiat": 2,
+        "mathematics": 4,
+        "everydayScience": 2
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-librarian-punjab-labour-and-human-resources-2026",
+      "url": "https://wolftyping.pages.dev/paper-229-assistant-librarian-punjab-labour-and-human-resources-2026/"
+    },
+    {
+      "paperNo": 230,
+      "post": "Sergeant (BS-07)",
+      "department": "Punjab Enforcement and Regulatory Authority (PERA)",
+      "examDate": "19.04.2026",
+      "questionCount": 84,
+      "subjects": {
+        "generalKnowledge": 42,
+        "pakistanStudies": 14,
+        "english": 13,
+        "islamiat": 7,
+        "mathematics": 6,
+        "everydayScience": 2
+      },
+      "latestUpdates": 1,
+      "slug": "sergeant-punjab-enforcement-and-regulatory-authority-2026",
+      "url": "https://wolftyping.pages.dev/paper-230-sergeant-punjab-enforcement-and-regulatory-authority-2026/"
+    },
+    {
+      "paperNo": 231,
+      "post": "Senior Inspector (BS-16) & Assistant Director (BS-17)",
+      "department": "Punjab Environment Protection Department",
+      "examDate": "19.04.2026",
+      "questionCount": 15,
+      "subjects": {
+        "generalKnowledge": 3,
+        "pakistanStudies": 1,
+        "english": 4,
+        "islamiat": 1,
+        "mathematics": 4,
+        "everydayScience": 2
+      },
+      "latestUpdates": 0,
+      "slug": "senior-inspector-assistant-director-punjab-environment-protection-2026",
+      "url": "https://wolftyping.pages.dev/paper-231-senior-inspector-assistant-director-punjab-environment-protection-2026/"
+    },
+    {
+      "paperNo": 232,
+      "post": "English Grammar Compulsory (BS-17)",
+      "department": "Punjab Provincial Management Services (PMS), Services & General Administration Department",
+      "examDate": "26.04.2026",
+      "questionCount": 40,
+      "subjects": {
+        "english": 40
+      },
+      "latestUpdates": 0,
+      "slug": "english-grammar-compulsory-punjab-provincial-management-services-services-general-administration-2026",
+      "url": "https://wolftyping.pages.dev/paper-232-english-grammar-compulsory-punjab-provincial-management-services-services-general-administration-2026/"
+    },
+    {
+      "paperNo": 233,
+      "post": "Pakistan Studies Compulsory (BS-17)",
+      "department": "Punjab Provincial Management Services (PMS), Services & General Administration Department",
+      "examDate": "26.04.2026",
+      "questionCount": 10,
+      "subjects": {
+        "pakistanStudies": 10
+      },
+      "latestUpdates": 0,
+      "slug": "pakistan-studies-compulsory-punjab-provincial-management-services-services-general-administration-2026",
+      "url": "https://wolftyping.pages.dev/paper-233-pakistan-studies-compulsory-punjab-provincial-management-services-services-general-administration-2026/"
+    },
+    {
+      "paperNo": 234,
+      "post": "Audit Officer (BS-17)",
+      "department": "Punjab Revenue Authority",
+      "examDate": "06.06.2026",
+      "questionCount": 20,
+      "subjects": {
+        "generalKnowledge": 6,
+        "pakistanStudies": 4,
+        "english": 6,
+        "mathematics": 2,
+        "everydayScience": 2
+      },
+      "latestUpdates": 1,
+      "slug": "audit-officer-punjab-revenue-authority-2026",
+      "url": "https://wolftyping.pages.dev/paper-234-audit-officer-punjab-revenue-authority-2026/"
+    },
+    {
+      "paperNo": 235,
+      "post": "Enforcement Officer (BS-17)",
+      "department": "Punjab Revenue Authority",
+      "examDate": "07.06.2026",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 62,
+        "pakistanStudies": 9,
+        "english": 15,
+        "islamiat": 4,
+        "mathematics": 5,
+        "everydayScience": 5
+      },
+      "latestUpdates": 3,
+      "slug": "enforcement-officer-punjab-revenue-authority-2026",
+      "url": "https://wolftyping.pages.dev/paper-235-enforcement-officer-punjab-revenue-authority-2026/"
+    },
+    {
+      "paperNo": 236,
+      "post": "Assistant (BS-16)",
+      "department": "Punjab Police Department (Old Case Batch 1)",
+      "examDate": "20.06.2026",
+      "questionCount": 78,
+      "subjects": {
+        "generalKnowledge": 25,
+        "pakistanStudies": 13,
+        "english": 20,
+        "islamiat": 5,
+        "mathematics": 6,
+        "everydayScience": 9
+      },
+      "latestUpdates": 6,
+      "slug": "assistant-punjab-police-2026",
+      "url": "https://wolftyping.pages.dev/paper-236-assistant-punjab-police-2026/"
+    },
+    {
+      "paperNo": 237,
+      "post": "Assistant (BS-16)",
+      "department": "Punjab Police Department (Old Case Batch 2)",
+      "examDate": "20.06.2026",
+      "questionCount": 76,
+      "subjects": {
+        "generalKnowledge": 21,
+        "pakistanStudies": 7,
+        "english": 23,
+        "islamiat": 6,
+        "mathematics": 13,
+        "everydayScience": 6
+      },
+      "latestUpdates": 4,
+      "slug": "assistant-bs-16-punjab-police-old-case-batch-2-2026",
+      "url": "https://wolftyping.pages.dev/paper-237-assistant-bs-16-punjab-police-old-case-batch-2-2026/"
+    },
+    {
+      "paperNo": 238,
+      "post": "Assistant (BS-16)",
+      "department": "Punjab Police Department (Old Case Batch 3)",
+      "examDate": "21.06.2026",
+      "questionCount": 89,
+      "subjects": {
+        "generalKnowledge": 24,
+        "pakistanStudies": 11,
+        "english": 24,
+        "islamiat": 5,
+        "mathematics": 16,
+        "everydayScience": 9
+      },
+      "latestUpdates": 4,
+      "slug": "assistant-bs-16-punjab-police-old-case-batch-3-2026",
+      "url": "https://wolftyping.pages.dev/paper-238-assistant-bs-16-punjab-police-old-case-batch-3-2026/"
+    },
+    {
+      "paperNo": 239,
+      "post": "Assistant (BS-16)",
+      "department": "Punjab Police Department (Old Case Batch 4)",
+      "examDate": "21.06.2026",
+      "questionCount": 86,
+      "subjects": {
+        "generalKnowledge": 27,
+        "pakistanStudies": 10,
+        "english": 26,
+        "islamiat": 4,
+        "mathematics": 11,
+        "everydayScience": 8
+      },
+      "latestUpdates": 4,
+      "slug": "assistant-bs-16-punjab-police-old-case-batch-4-2026",
+      "url": "https://wolftyping.pages.dev/paper-239-assistant-bs-16-punjab-police-old-case-batch-4-2026/"
+    },
+    {
+      "paperNo": 246,
+      "post": "Junior Clerk (BS-11)",
+      "department": "Different BOR Departments (Clubbed Case ID-194)",
+      "examDate": "03.10.2026",
+      "questionCount": 95,
+      "subjects": {
+        "generalKnowledge": 42,
+        "pakistanStudies": 6,
+        "english": 22,
+        "islamiat": 8,
+        "mathematics": 8,
+        "everydayScience": 9
+      },
+      "latestUpdates": 5,
+      "slug": "junior-clerk-bor-2026",
+      "url": "https://wolftyping.pages.dev/paper-246-junior-clerk-bor-2026/"
+    },
+    {
+      "paperNo": 247,
+      "post": "Assistant Secretary (BS-17) / Deputy Controller (BS-18)",
+      "department": "Lahore — Other Club Cases, Morning Batch (Clubbed Case ID-189)",
+      "examDate": "04.10.2026",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 37,
+        "pakistanStudies": 13,
+        "english": 25,
+        "islamiat": 7,
+        "mathematics": 9,
+        "everydayScience": 9
+      },
+      "latestUpdates": 7,
+      "slug": "assistant-secretary-deputy-controller-lahore-other-club-cases-morning-batch-2026",
+      "url": "https://wolftyping.pages.dev/paper-247-assistant-secretary-deputy-controller-lahore-other-club-cases-morning-batch-2026/"
+    },
+    {
+      "paperNo": 248,
+      "post": "Assistant (BS-16)",
+      "department": "BOR Department and BISE Lahore, Evening Batch (Clubbed Case ID-193)",
+      "examDate": "04.10.2026",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 44,
+        "pakistanStudies": 7,
+        "english": 24,
+        "islamiat": 7,
+        "mathematics": 8,
+        "everydayScience": 10
+      },
+      "latestUpdates": 6,
+      "slug": "assistant-bor-and-bise-lahore-evening-batch-2026",
+      "url": "https://wolftyping.pages.dev/paper-248-assistant-bor-and-bise-lahore-evening-batch-2026/"
+    },
+    {
+      "paperNo": 250,
+      "post": "Child Protection Officer (BS-17)",
+      "department": "Home Department",
+      "examDate": "18.10.2026",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 36,
+        "pakistanStudies": 16,
+        "english": 25,
+        "islamiat": 7,
+        "mathematics": 8,
+        "everydayScience": 8
+      },
+      "latestUpdates": 9,
+      "slug": "child-protection-officer-home-2026",
+      "url": "https://wolftyping.pages.dev/paper-250-child-protection-officer-home-2026/"
+    }
+  ]
+}

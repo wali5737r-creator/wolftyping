@@ -1,0 +1,529 @@
+{
+  "year": 2020,
+  "papers": 29,
+  "questions": 2866,
+  "entries": [
+    {
+      "paperNo": 32,
+      "post": "Provincial Management Service, etc. (BS-17)",
+      "department": "Punjab Public Service Commission",
+      "examDate": "2020",
+      "questionCount": 99,
+      "subjects": {
+        "generalKnowledge": 49,
+        "pakistanStudies": 28,
+        "english": 1,
+        "islamiat": 1,
+        "mathematics": 4,
+        "everydayScience": 16
+      },
+      "latestUpdates": 1,
+      "slug": "provincial-management-service-etc-punjab-public-service-commission-2020",
+      "url": "https://wolftyping.pages.dev/paper-32-provincial-management-service-etc-punjab-public-service-commission-2020/"
+    },
+    {
+      "paperNo": 33,
+      "post": "Assistant (BS-16)",
+      "department": "Police Department, Punjab",
+      "examDate": "2020",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 45,
+        "pakistanStudies": 16,
+        "english": 9,
+        "islamiat": 10,
+        "mathematics": 10,
+        "everydayScience": 10
+      },
+      "latestUpdates": 4,
+      "slug": "assistant-police-punjab-2020",
+      "url": "https://wolftyping.pages.dev/paper-33-assistant-police-punjab-2020/"
+    },
+    {
+      "paperNo": 34,
+      "post": "Assistant Director (Investigation) (BS-17)",
+      "department": "Punjab Anti-Corruption Establishment Wing, Services & General Administration Department",
+      "examDate": "2020",
+      "questionCount": 98,
+      "subjects": {
+        "generalKnowledge": 36,
+        "pakistanStudies": 31,
+        "english": 11,
+        "islamiat": 9,
+        "mathematics": 6,
+        "everydayScience": 5
+      },
+      "latestUpdates": 2,
+      "slug": "assistant-director-punjab-anti-corruption-establishment-wing-services-general-administration-2020",
+      "url": "https://wolftyping.pages.dev/paper-34-assistant-director-punjab-anti-corruption-establishment-wing-services-general-administration-2020/"
+    },
+    {
+      "paperNo": 35,
+      "post": "Inspector (BS-16)",
+      "department": "Anti-Corruption Establishment, Punjab",
+      "examDate": "2020",
+      "questionCount": 95,
+      "subjects": {
+        "generalKnowledge": 37,
+        "pakistanStudies": 24,
+        "english": 10,
+        "islamiat": 8,
+        "mathematics": 10,
+        "everydayScience": 6
+      },
+      "latestUpdates": 2,
+      "slug": "inspector-anti-corruption-establishment-punjab-2020",
+      "url": "https://wolftyping.pages.dev/paper-35-inspector-anti-corruption-establishment-punjab-2020/"
+    },
+    {
+      "paperNo": 36,
+      "post": "Assistant Sub Inspector (BS-16)",
+      "department": "Anti-Corruption Establishment, Punjab",
+      "examDate": "2020",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 47,
+        "pakistanStudies": 20,
+        "english": 10,
+        "islamiat": 8,
+        "mathematics": 10,
+        "everydayScience": 5
+      },
+      "latestUpdates": 2,
+      "slug": "assistant-sub-inspector-anti-corruption-establishment-punjab-2020",
+      "url": "https://wolftyping.pages.dev/paper-36-assistant-sub-inspector-anti-corruption-establishment-punjab-2020/"
+    },
+    {
+      "paperNo": 37,
+      "post": "Assistant (BS-16)",
+      "department": "Anti-Corruption Establishment, Punjab",
+      "examDate": "2020",
+      "questionCount": 97,
+      "subjects": {
+        "generalKnowledge": 48,
+        "pakistanStudies": 17,
+        "english": 11,
+        "islamiat": 8,
+        "mathematics": 6,
+        "everydayScience": 7
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-anti-corruption-establishment-punjab-2020",
+      "url": "https://wolftyping.pages.dev/paper-37-assistant-anti-corruption-establishment-punjab-2020/"
+    },
+    {
+      "paperNo": 38,
+      "post": "Junior Clerk (BS-11)",
+      "department": "Anti-Corruption Establishment, Punjab",
+      "examDate": "2020",
+      "questionCount": 97,
+      "subjects": {
+        "generalKnowledge": 58,
+        "pakistanStudies": 17,
+        "english": 3,
+        "islamiat": 7,
+        "mathematics": 7,
+        "everydayScience": 5
+      },
+      "latestUpdates": 2,
+      "slug": "junior-clerk-anti-corruption-establishment-punjab-2020",
+      "url": "https://wolftyping.pages.dev/paper-38-junior-clerk-anti-corruption-establishment-punjab-2020/"
+    },
+    {
+      "paperNo": 39,
+      "post": "Assistant (BS-16)",
+      "department": "Provincial Disaster Management Authority / Board of Revenue, Punjab",
+      "examDate": "2021",
+      "questionCount": 93,
+      "subjects": {
+        "generalKnowledge": 42,
+        "pakistanStudies": 14,
+        "english": 15,
+        "islamiat": 7,
+        "mathematics": 7,
+        "everydayScience": 8
+      },
+      "latestUpdates": 4,
+      "slug": "assistant-provincial-disaster-management-authority-board-of-revenue-punjab-2020",
+      "url": "https://wolftyping.pages.dev/paper-39-assistant-provincial-disaster-management-authority-board-of-revenue-punjab-2020/"
+    },
+    {
+      "paperNo": 40,
+      "post": "Ziladar",
+      "department": "Punjab Irrigation Department",
+      "examDate": "2020",
+      "questionCount": 99,
+      "subjects": {
+        "generalKnowledge": 47,
+        "pakistanStudies": 19,
+        "english": 10,
+        "islamiat": 8,
+        "mathematics": 11,
+        "everydayScience": 4
+      },
+      "latestUpdates": 2,
+      "slug": "ziladar-punjab-irrigation-2020",
+      "url": "https://wolftyping.pages.dev/paper-40-ziladar-punjab-irrigation-2020/"
+    },
+    {
+      "paperNo": 41,
+      "post": "Ziladar (Research/DLR Zone) (BS-14)",
+      "department": "Punjab Irrigation Department",
+      "examDate": "2020",
+      "questionCount": 98,
+      "subjects": {
+        "generalKnowledge": 41,
+        "pakistanStudies": 25,
+        "english": 11,
+        "islamiat": 7,
+        "mathematics": 8,
+        "everydayScience": 6
+      },
+      "latestUpdates": 3,
+      "slug": "ziladar-research-dlr-zone-bs-14-punjab-irrigation-2020",
+      "url": "https://wolftyping.pages.dev/paper-41-ziladar-research-dlr-zone-bs-14-punjab-irrigation-2020/"
+    },
+    {
+      "paperNo": 42,
+      "post": "Assistant Director Local Government (BS-17)",
+      "department": "Local Government & Community Development Department",
+      "examDate": "2020",
+      "questionCount": 98,
+      "subjects": {
+        "generalKnowledge": 69,
+        "pakistanStudies": 10,
+        "english": 4,
+        "islamiat": 7,
+        "mathematics": 4,
+        "everydayScience": 4
+      },
+      "latestUpdates": 1,
+      "slug": "assistant-director-local-government-local-government-community-development-2020",
+      "url": "https://wolftyping.pages.dev/paper-42-assistant-director-local-government-local-government-community-development-2020/"
+    },
+    {
+      "paperNo": 43,
+      "post": "Assistants / Head Clerk (BS-16)",
+      "department": "Local Government & Community Development Department",
+      "examDate": "2020",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 51,
+        "pakistanStudies": 26,
+        "english": 10,
+        "islamiat": 7,
+        "mathematics": 2,
+        "everydayScience": 4
+      },
+      "latestUpdates": 2,
+      "slug": "assistants-head-clerk-local-government-community-development-2020",
+      "url": "https://wolftyping.pages.dev/paper-43-assistants-head-clerk-local-government-community-development-2020/"
+    },
+    {
+      "paperNo": 44,
+      "post": "Assistant",
+      "department": "Agriculture Department, Water Management Wing",
+      "examDate": "2020",
+      "questionCount": 98,
+      "subjects": {
+        "generalKnowledge": 42,
+        "pakistanStudies": 21,
+        "english": 10,
+        "islamiat": 9,
+        "mathematics": 10,
+        "everydayScience": 6
+      },
+      "latestUpdates": 4,
+      "slug": "assistant-agriculture-water-management-wing-2020",
+      "url": "https://wolftyping.pages.dev/paper-44-assistant-agriculture-water-management-wing-2020/"
+    },
+    {
+      "paperNo": 45,
+      "post": "Assistant (BS-16)",
+      "department": "Livestock & Dairy Development Department",
+      "examDate": "2020",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 39,
+        "pakistanStudies": 26,
+        "english": 8,
+        "islamiat": 11,
+        "mathematics": 10,
+        "everydayScience": 6
+      },
+      "latestUpdates": 2,
+      "slug": "assistant-livestock-dairy-development-2020",
+      "url": "https://wolftyping.pages.dev/paper-45-assistant-livestock-dairy-development-2020/"
+    },
+    {
+      "paperNo": 46,
+      "post": "Assistant (BS-16)",
+      "department": "Zakat & Ushr Department (Office of Administrator Zakat & Ushr, Punjab)",
+      "examDate": "2021",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 40,
+        "pakistanStudies": 16,
+        "english": 16,
+        "islamiat": 8,
+        "mathematics": 9,
+        "everydayScience": 11
+      },
+      "latestUpdates": 2,
+      "slug": "assistant-zakat-ushr-2020",
+      "url": "https://wolftyping.pages.dev/paper-46-assistant-zakat-ushr-2020/"
+    },
+    {
+      "paperNo": 47,
+      "post": "Manager Auqaf",
+      "department": "Auqaf & Religious Affairs Department",
+      "examDate": "2020",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 47,
+        "pakistanStudies": 17,
+        "english": 9,
+        "islamiat": 8,
+        "mathematics": 10,
+        "everydayScience": 9
+      },
+      "latestUpdates": 1,
+      "slug": "manager-auqaf-auqaf-religious-affairs-2020",
+      "url": "https://wolftyping.pages.dev/paper-47-manager-auqaf-auqaf-religious-affairs-2020/"
+    },
+    {
+      "paperNo": 48,
+      "post": "Labour Officer (BS-16)",
+      "department": "Labour & Human Resource Department",
+      "examDate": "2020",
+      "questionCount": 98,
+      "subjects": {
+        "generalKnowledge": 45,
+        "pakistanStudies": 16,
+        "english": 12,
+        "islamiat": 7,
+        "mathematics": 8,
+        "everydayScience": 10
+      },
+      "latestUpdates": 0,
+      "slug": "labour-officer-labour-human-resource-2020",
+      "url": "https://wolftyping.pages.dev/paper-48-labour-officer-labour-human-resource-2020/"
+    },
+    {
+      "paperNo": 49,
+      "post": "Assistant (BS-16)",
+      "department": "Labour and Human Resource Department",
+      "examDate": "2020",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 41,
+        "pakistanStudies": 20,
+        "english": 10,
+        "islamiat": 9,
+        "mathematics": 5,
+        "everydayScience": 15
+      },
+      "latestUpdates": 1,
+      "slug": "assistant-labour-and-human-resource-2020",
+      "url": "https://wolftyping.pages.dev/paper-49-assistant-labour-and-human-resource-2020/"
+    },
+    {
+      "paperNo": 50,
+      "post": "Labour Inspector (BS-14)",
+      "department": "Punjab Labour & Human Resource Department",
+      "examDate": "2020",
+      "questionCount": 99,
+      "subjects": {
+        "generalKnowledge": 43,
+        "pakistanStudies": 24,
+        "english": 7,
+        "islamiat": 8,
+        "mathematics": 11,
+        "everydayScience": 6
+      },
+      "latestUpdates": 1,
+      "slug": "labour-inspector-punjab-labour-human-resource-2020",
+      "url": "https://wolftyping.pages.dev/paper-50-labour-inspector-punjab-labour-human-resource-2020/"
+    },
+    {
+      "paperNo": 51,
+      "post": "Assistant (BS-16)",
+      "department": "Punjab Employees Social Security Institution (PESSI), Labour & Human Resource Department",
+      "examDate": "2020",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 52,
+        "pakistanStudies": 29,
+        "english": 5,
+        "islamiat": 6,
+        "mathematics": 2,
+        "everydayScience": 6
+      },
+      "latestUpdates": 2,
+      "slug": "assistant-punjab-employees-social-security-institution-labour-human-resource-2020",
+      "url": "https://wolftyping.pages.dev/paper-51-assistant-punjab-employees-social-security-institution-labour-human-resource-2020/"
+    },
+    {
+      "paperNo": 52,
+      "post": "Assistant Director Population Welfare / Deputy District Population Officer (BS-17)",
+      "department": "Population Welfare Department, Punjab",
+      "examDate": "2020",
+      "questionCount": 99,
+      "subjects": {
+        "generalKnowledge": 56,
+        "pakistanStudies": 14,
+        "english": 10,
+        "islamiat": 3,
+        "mathematics": 4,
+        "everydayScience": 12
+      },
+      "latestUpdates": 1,
+      "slug": "assistant-director-population-welfare-deputy-district-population-officer-population-welfare-punjab-2020",
+      "url": "https://wolftyping.pages.dev/paper-52-assistant-director-population-welfare-deputy-district-population-officer-population-welfare-punjab-2020/"
+    },
+    {
+      "paperNo": 53,
+      "post": "Assistant (BS-16)",
+      "department": "Punjab Land Records Authority (PLRA)",
+      "examDate": "2020",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 40,
+        "pakistanStudies": 21,
+        "english": 9,
+        "islamiat": 8,
+        "mathematics": 15,
+        "everydayScience": 7
+      },
+      "latestUpdates": 1,
+      "slug": "assistant-punjab-land-records-authority-2020",
+      "url": "https://wolftyping.pages.dev/paper-53-assistant-punjab-land-records-authority-2020/"
+    },
+    {
+      "paperNo": 54,
+      "post": "Service Centre Officials",
+      "department": "Punjab Land Records Authority (PLRA)",
+      "examDate": "2020",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 77,
+        "pakistanStudies": 11,
+        "english": 4,
+        "islamiat": 3,
+        "mathematics": 4,
+        "everydayScience": 1
+      },
+      "latestUpdates": 2,
+      "slug": "service-centre-officials-punjab-land-records-authority-2020",
+      "url": "https://wolftyping.pages.dev/paper-54-service-centre-officials-punjab-land-records-authority-2020/"
+    },
+    {
+      "paperNo": 55,
+      "post": "Accountant",
+      "department": "Local Government and Community Development Department",
+      "examDate": "2020",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 79,
+        "pakistanStudies": 5,
+        "english": 5,
+        "islamiat": 3,
+        "mathematics": 4,
+        "everydayScience": 4
+      },
+      "latestUpdates": 1,
+      "slug": "accountant-local-government-and-community-development-2020",
+      "url": "https://wolftyping.pages.dev/paper-55-accountant-local-government-and-community-development-2020/"
+    },
+    {
+      "paperNo": 56,
+      "post": "Assistant (BS-16)",
+      "department": "Punjab Finance / Treasury & Accounts Services Department",
+      "examDate": "2020",
+      "questionCount": 99,
+      "subjects": {
+        "generalKnowledge": 46,
+        "pakistanStudies": 23,
+        "english": 7,
+        "islamiat": 9,
+        "mathematics": 7,
+        "everydayScience": 7
+      },
+      "latestUpdates": 1,
+      "slug": "assistant-punjab-finance-treasury-accounts-services-2020",
+      "url": "https://wolftyping.pages.dev/paper-56-assistant-punjab-finance-treasury-accounts-services-2020/"
+    },
+    {
+      "paperNo": 57,
+      "post": "Personal Staff Officer (BS-17)",
+      "department": "Services & General Administration Department",
+      "examDate": "2020",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 56,
+        "pakistanStudies": 17,
+        "english": 8,
+        "islamiat": 3,
+        "mathematics": 7,
+        "everydayScience": 9
+      },
+      "latestUpdates": 0,
+      "slug": "personal-staff-officer-services-general-administration-2020",
+      "url": "https://wolftyping.pages.dev/paper-57-personal-staff-officer-services-general-administration-2020/"
+    },
+    {
+      "paperNo": 58,
+      "post": "Personal Assistant & Assistant (BPS-16)",
+      "department": "Punjab Overseas Pakistanis Commission, S&GAD",
+      "examDate": "2020",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 46,
+        "pakistanStudies": 21,
+        "english": 11,
+        "islamiat": 8,
+        "mathematics": 8,
+        "everydayScience": 6
+      },
+      "latestUpdates": 0,
+      "slug": "personal-assistant-assistant-punjab-overseas-pakistanis-commission-s-gad-2020",
+      "url": "https://wolftyping.pages.dev/paper-58-personal-assistant-assistant-punjab-overseas-pakistanis-commission-s-gad-2020/"
+    },
+    {
+      "paperNo": 59,
+      "post": "Assistant Director (BS-17)",
+      "department": "Punjab Public Service Commission",
+      "examDate": "2020",
+      "questionCount": 99,
+      "subjects": {
+        "generalKnowledge": 42,
+        "pakistanStudies": 25,
+        "english": 10,
+        "islamiat": 9,
+        "mathematics": 6,
+        "everydayScience": 7
+      },
+      "latestUpdates": 1,
+      "slug": "assistant-director-punjab-public-service-commission-2020",
+      "url": "https://wolftyping.pages.dev/paper-59-assistant-director-punjab-public-service-commission-2020/"
+    },
+    {
+      "paperNo": 60,
+      "post": "Data Entry Operator",
+      "department": "Punjab Police",
+      "examDate": "2020",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 72,
+        "pakistanStudies": 13,
+        "english": 5,
+        "islamiat": 4,
+        "mathematics": 4,
+        "everydayScience": 2
+      },
+      "latestUpdates": 4,
+      "slug": "data-entry-operator-punjab-police-2020",
+      "url": "https://wolftyping.pages.dev/paper-60-data-entry-operator-punjab-police-2020/"
+    }
+  ]
+}

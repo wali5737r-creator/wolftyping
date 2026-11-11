@@ -1,0 +1,945 @@
+{
+  "year": 2025,
+  "papers": 56,
+  "questions": 3179,
+  "entries": [
+    {
+      "paperNo": 162,
+      "post": "Pakistan Studies: Combined Competitive Examination-2023 (PMS) (Held in 2025)",
+      "department": "Punjab Provincial Management Services (PMS), Services & General Administration Department",
+      "examDate": "2025",
+      "questionCount": 10,
+      "subjects": {
+        "pakistanStudies": 10
+      },
+      "latestUpdates": 0,
+      "slug": "pakistan-studies-combined-competitive-examination-2023-punjab-provincial-management-services-services-general-administration-2025",
+      "url": "https://wolftyping.pages.dev/paper-162-pakistan-studies-combined-competitive-examination-2023-punjab-provincial-management-services-services-general-administration-2025/"
+    },
+    {
+      "paperNo": 163,
+      "post": "Combined Competitive Examination-2023 (PMS) (Held in 2025)",
+      "department": "Punjab Provincial Management Services (PMS), Services & General Administration Department",
+      "examDate": "2025",
+      "questionCount": 10,
+      "subjects": {
+        "english": 10
+      },
+      "latestUpdates": 0,
+      "slug": "combined-competitive-examination-2023-punjab-provincial-management-services-services-general-administration-2025",
+      "url": "https://wolftyping.pages.dev/paper-163-combined-competitive-examination-2023-punjab-provincial-management-services-services-general-administration-2025/"
+    },
+    {
+      "paperNo": 164,
+      "post": "Islamic Studies: Combined Competitive Examination-2023 (PMS) (Held in 2025)",
+      "department": "Punjab Provincial Management Services (PMS), Services & General Administration Department",
+      "examDate": "2025",
+      "questionCount": 20,
+      "subjects": {
+        "islamiat": 20
+      },
+      "latestUpdates": 0,
+      "slug": "islamic-studies-combined-competitive-examination-2023-punjab-provincial-management-services-services-general-administration-2025",
+      "url": "https://wolftyping.pages.dev/paper-164-islamic-studies-combined-competitive-examination-2023-punjab-provincial-management-services-services-general-administration-2025/"
+    },
+    {
+      "paperNo": 165,
+      "post": "Persian: Combined Competitive Examination-2023 (PMS) (Held in 2025)",
+      "department": "Punjab Provincial Management Services (PMS), Services & General Administration Department",
+      "examDate": "2025",
+      "questionCount": 10,
+      "subjects": {
+        "generalKnowledge": 10
+      },
+      "latestUpdates": 0,
+      "slug": "persian-combined-competitive-examination-2023-punjab-provincial-management-services-services-general-administration-2025",
+      "url": "https://wolftyping.pages.dev/paper-165-persian-combined-competitive-examination-2023-punjab-provincial-management-services-services-general-administration-2025/"
+    },
+    {
+      "paperNo": 166,
+      "post": "Statistical Officer (BS-17)",
+      "department": "Social Welfare & Bait-ul-Maal Department",
+      "examDate": "24.02.2025",
+      "questionCount": 15,
+      "subjects": {
+        "generalKnowledge": 6,
+        "pakistanStudies": 3,
+        "english": 2,
+        "everydayScience": 4
+      },
+      "latestUpdates": 0,
+      "slug": "statistical-officer-social-welfare-bait-ul-maal-2025",
+      "url": "https://wolftyping.pages.dev/paper-166-statistical-officer-social-welfare-bait-ul-maal-2025/"
+    },
+    {
+      "paperNo": 167,
+      "post": "Assistant Director Wildlife (BS-17)",
+      "department": "Punjab, Forestry, Wildlife, & Fisheries Department",
+      "examDate": "23.02.2025",
+      "questionCount": 21,
+      "subjects": {
+        "generalKnowledge": 9,
+        "pakistanStudies": 1,
+        "english": 5,
+        "mathematics": 1,
+        "everydayScience": 5
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-director-wildlife-punjab-forestry-wildlife-fisheries-2025",
+      "url": "https://wolftyping.pages.dev/paper-167-assistant-director-wildlife-punjab-forestry-wildlife-fisheries-2025/"
+    },
+    {
+      "paperNo": 168,
+      "post": "Accountant / Auditor / Store Keeper / Cashier (BS-16)",
+      "department": "Punjab Small Industries Corporation, Industries, Commerce, Investment & Skills Development Department",
+      "examDate": "24.02.2025",
+      "questionCount": 21,
+      "subjects": {
+        "generalKnowledge": 11,
+        "pakistanStudies": 2,
+        "english": 7,
+        "everydayScience": 1
+      },
+      "latestUpdates": 0,
+      "slug": "accountant-auditor-store-keeper-cashier-punjab-small-industries-corporation-industries-commerce-investment-skills-development-2025",
+      "url": "https://wolftyping.pages.dev/paper-168-accountant-auditor-store-keeper-cashier-punjab-small-industries-corporation-industries-commerce-investment-skills-development-2025/"
+    },
+    {
+      "paperNo": 169,
+      "post": "Junior Traffic Warden (BS-11)",
+      "department": "Punjab Police Department",
+      "examDate": "09.03.2025",
+      "questionCount": 63,
+      "subjects": {
+        "generalKnowledge": 22,
+        "pakistanStudies": 22,
+        "english": 10,
+        "mathematics": 6,
+        "everydayScience": 3
+      },
+      "latestUpdates": 1,
+      "slug": "junior-traffic-warden-punjab-police-2025",
+      "url": "https://wolftyping.pages.dev/paper-169-junior-traffic-warden-punjab-police-2025/"
+    },
+    {
+      "paperNo": 170,
+      "post": "Enforcement Officer (E.O) and Investigation Officer (I.O)",
+      "department": "Punjab Enforcement and Regularity Authority (PERA)",
+      "examDate": "16.03.2025",
+      "questionCount": 93,
+      "subjects": {
+        "generalKnowledge": 29,
+        "pakistanStudies": 25,
+        "english": 17,
+        "mathematics": 10,
+        "everydayScience": 12
+      },
+      "latestUpdates": 0,
+      "slug": "enforcement-officer-and-investigation-officer-punjab-enforcement-and-regularity-authority-2025",
+      "url": "https://wolftyping.pages.dev/paper-170-enforcement-officer-and-investigation-officer-punjab-enforcement-and-regularity-authority-2025/"
+    },
+    {
+      "paperNo": 171,
+      "post": "Provincial Management Service (PMS) (Ministerial Quota)",
+      "department": "S&GAD",
+      "examDate": "13.04.2025",
+      "questionCount": 99,
+      "subjects": {
+        "generalKnowledge": 27,
+        "pakistanStudies": 22,
+        "english": 24,
+        "islamiat": 24,
+        "everydayScience": 2
+      },
+      "latestUpdates": 0,
+      "slug": "provincial-management-service-s-gad-2025",
+      "url": "https://wolftyping.pages.dev/paper-171-provincial-management-service-s-gad-2025/"
+    },
+    {
+      "paperNo": 172,
+      "post": "Assistant Director (General Cadre) (BS-17) / Chief Officer / Municipal Officer (Regulations) (BS-16)",
+      "department": "HUD & PHED / Lahore Development Authority; Local Government & Community Development Department",
+      "examDate": "27.04.2025",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 43,
+        "pakistanStudies": 18,
+        "english": 16,
+        "islamiat": 7,
+        "mathematics": 8,
+        "everydayScience": 8
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-director-chief-officer-municipal-officer-hud-phed-lahore-development-authority-local-government-community-development-2025",
+      "url": "https://wolftyping.pages.dev/paper-172-assistant-director-chief-officer-municipal-officer-hud-phed-lahore-development-authority-local-government-community-development-2025/"
+    },
+    {
+      "paperNo": 173,
+      "post": "Clubbed Case ID-117",
+      "department": "Not stated in paper header",
+      "examDate": "27.04.2025",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 43,
+        "pakistanStudies": 21,
+        "english": 13,
+        "islamiat": 9,
+        "mathematics": 8,
+        "everydayScience": 6
+      },
+      "latestUpdates": 2,
+      "slug": "clubbed-case-id-117-not-stated-in-paper-header-2025",
+      "url": "https://wolftyping.pages.dev/paper-173-clubbed-case-id-117-not-stated-in-paper-header-2025/"
+    },
+    {
+      "paperNo": 174,
+      "post": "Social Welfare Officer / Medical Social Officer / Superintendent (Dar-ul-Aman) (BS-17)",
+      "department": "Social Welfare & Bait ul Maal Department, Government of the Punjab",
+      "examDate": "26.04.2025",
+      "questionCount": 90,
+      "subjects": {
+        "generalKnowledge": 79,
+        "pakistanStudies": 2,
+        "english": 5,
+        "mathematics": 2,
+        "everydayScience": 2
+      },
+      "latestUpdates": 0,
+      "slug": "social-welfare-officer-medical-social-officer-superintendent-social-welfare-bait-ul-maal-government-of-the-punjab-2025",
+      "url": "https://wolftyping.pages.dev/paper-174-social-welfare-officer-medical-social-officer-superintendent-social-welfare-bait-ul-maal-government-of-the-punjab-2025/"
+    },
+    {
+      "paperNo": 175,
+      "post": "Sub Inspector (Service Quota) (BS-14)",
+      "department": "Punjab Police Department",
+      "examDate": "13.03.2025",
+      "questionCount": 75,
+      "subjects": {
+        "generalKnowledge": 45,
+        "pakistanStudies": 15,
+        "english": 13,
+        "everydayScience": 2
+      },
+      "latestUpdates": 2,
+      "slug": "sub-inspector-punjab-police-2025",
+      "url": "https://wolftyping.pages.dev/paper-175-sub-inspector-punjab-police-2025/"
+    },
+    {
+      "paperNo": 176,
+      "post": "Assistant Sub-Inspector (Service Quota) (BS-11)",
+      "department": "Punjab Highway Patrol (PHP)",
+      "examDate": "09.03.2025",
+      "questionCount": 25,
+      "subjects": {
+        "generalKnowledge": 16,
+        "pakistanStudies": 5,
+        "english": 4
+      },
+      "latestUpdates": 2,
+      "slug": "assistant-sub-inspector-punjab-highway-patrol-2025",
+      "url": "https://wolftyping.pages.dev/paper-176-assistant-sub-inspector-punjab-highway-patrol-2025/"
+    },
+    {
+      "paperNo": 177,
+      "post": "Assistant Director (Research) (BS-17)",
+      "department": "Housing Urban Development & Public Health Engineering Department, Punjab Housing & Town Planning Agency (PHATA)",
+      "examDate": "12.04.2025",
+      "questionCount": 47,
+      "subjects": {
+        "generalKnowledge": 21,
+        "pakistanStudies": 9,
+        "english": 9,
+        "islamiat": 1,
+        "mathematics": 1,
+        "everydayScience": 6
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-director-housing-urban-development-public-health-engineering-punjab-housing-town-planning-agency-2025",
+      "url": "https://wolftyping.pages.dev/paper-177-assistant-director-housing-urban-development-public-health-engineering-punjab-housing-town-planning-agency-2025/"
+    },
+    {
+      "paperNo": 178,
+      "post": "Computer Operator (BS-15)",
+      "department": "Commissioner Office, Multan Division, Multan (Board of Revenue, Punjab), Office of the Deputy Commissioner (Khushab)",
+      "examDate": "12.04.2025",
+      "questionCount": 45,
+      "subjects": {
+        "generalKnowledge": 28,
+        "pakistanStudies": 5,
+        "english": 6,
+        "mathematics": 3,
+        "everydayScience": 3
+      },
+      "latestUpdates": 0,
+      "slug": "computer-operator-commissioner-office-multan-division-multan-office-of-the-deputy-commissioner-2025",
+      "url": "https://wolftyping.pages.dev/paper-178-computer-operator-commissioner-office-multan-division-multan-office-of-the-deputy-commissioner-2025/"
+    },
+    {
+      "paperNo": 179,
+      "post": "Municipal Officer (Finance) / DMO (Finance) / AMO / Assistant Director, PLGB (BS-17)",
+      "department": "Local Government & Community Development Department",
+      "examDate": "2025",
+      "questionCount": 19,
+      "subjects": {
+        "generalKnowledge": 7,
+        "pakistanStudies": 3,
+        "english": 4,
+        "mathematics": 2,
+        "everydayScience": 3
+      },
+      "latestUpdates": 0,
+      "slug": "municipal-officer-dmo-amo-assistant-director-plgb-local-government-community-development-2025",
+      "url": "https://wolftyping.pages.dev/paper-179-municipal-officer-dmo-amo-assistant-director-plgb-local-government-community-development-2025/"
+    },
+    {
+      "paperNo": 180,
+      "post": "Assistant Director / District Development Officer / Assistant Secretary (Board) / Economist / Manager (PHS) (BS-17)",
+      "department": "Punjab Small Industries Corporation, Industries, Commerce, Investment & Skills Development Department",
+      "examDate": "26.04.2025",
+      "questionCount": 29,
+      "subjects": {
+        "generalKnowledge": 2,
+        "english": 17,
+        "mathematics": 9,
+        "everydayScience": 1
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-director-district-development-officer-assistant-secretary-economist-manager-punjab-small-industries-corporation-industries-commerce-investment-skills-development-2025",
+      "url": "https://wolftyping.pages.dev/paper-180-assistant-director-district-development-officer-assistant-secretary-economist-manager-punjab-small-industries-corporation-industries-commerce-investment-skills-development-2025/"
+    },
+    {
+      "paperNo": 181,
+      "post": "Junior Clerk (BS-11)",
+      "department": "Various Departments (Clubbed Case ID-125)",
+      "examDate": "01.06.2025",
+      "questionCount": 99,
+      "subjects": {
+        "generalKnowledge": 51,
+        "pakistanStudies": 11,
+        "english": 23,
+        "islamiat": 1,
+        "mathematics": 6,
+        "everydayScience": 7
+      },
+      "latestUpdates": 0,
+      "slug": "junior-clerk-various-2025",
+      "url": "https://wolftyping.pages.dev/paper-181-junior-clerk-various-2025/"
+    },
+    {
+      "paperNo": 182,
+      "post": "Assistant Director Fisheries (BS-17)",
+      "department": "Forestry, Wildlife & Fisheries Department",
+      "examDate": "01.06.2025",
+      "questionCount": 25,
+      "subjects": {
+        "generalKnowledge": 10,
+        "pakistanStudies": 2,
+        "english": 6,
+        "mathematics": 2,
+        "everydayScience": 5
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-director-fisheries-forestry-wildlife-fisheries-2025",
+      "url": "https://wolftyping.pages.dev/paper-182-assistant-director-fisheries-forestry-wildlife-fisheries-2025/"
+    },
+    {
+      "paperNo": 183,
+      "post": "Internal Audit Specialist (BS-18)",
+      "department": "Punjab Revenue Authority, Finance Department",
+      "examDate": "31.05.2025",
+      "questionCount": 15,
+      "subjects": {
+        "generalKnowledge": 9,
+        "pakistanStudies": 1,
+        "english": 2,
+        "mathematics": 1,
+        "everydayScience": 2
+      },
+      "latestUpdates": 0,
+      "slug": "internal-audit-specialist-punjab-revenue-authority-finance-2025",
+      "url": "https://wolftyping.pages.dev/paper-183-internal-audit-specialist-punjab-revenue-authority-finance-2025/"
+    },
+    {
+      "paperNo": 184,
+      "post": "Data Entry Operator (BS-12)",
+      "department": "Punjab Police, Special Branch",
+      "examDate": "31.05.2025",
+      "questionCount": 74,
+      "subjects": {
+        "generalKnowledge": 74
+      },
+      "latestUpdates": 0,
+      "slug": "data-entry-operator-punjab-police-special-branch-2025",
+      "url": "https://wolftyping.pages.dev/paper-184-data-entry-operator-punjab-police-special-branch-2025/"
+    },
+    {
+      "paperNo": 185,
+      "post": "Planning Officer (BS-17)",
+      "department": "Specialized Healthcare and Medical Education Department",
+      "examDate": "22.06.2025",
+      "questionCount": 15,
+      "subjects": {
+        "generalKnowledge": 9,
+        "pakistanStudies": 2,
+        "english": 4
+      },
+      "latestUpdates": 0,
+      "slug": "planning-officer-specialized-healthcare-and-medical-education-2025",
+      "url": "https://wolftyping.pages.dev/paper-185-planning-officer-specialized-healthcare-and-medical-education-2025/"
+    },
+    {
+      "paperNo": 186,
+      "post": "Assistant Director (HR and Admin) (BS-17)",
+      "department": "Punjab Council of Arts, Information and Culture Department",
+      "examDate": "13.04.2025",
+      "questionCount": 20,
+      "subjects": {
+        "generalKnowledge": 8,
+        "pakistanStudies": 4,
+        "english": 4,
+        "mathematics": 2,
+        "everydayScience": 2
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-director-punjab-council-of-arts-information-and-culture-2025",
+      "url": "https://wolftyping.pages.dev/paper-186-assistant-director-punjab-council-of-arts-information-and-culture-2025/"
+    },
+    {
+      "paperNo": 187,
+      "post": "Assistant Executive Engineer / SDO / Assistant Design Engineer (BS-17)",
+      "department": "Irrigation Department",
+      "examDate": "24.02.2025",
+      "questionCount": 20,
+      "subjects": {
+        "generalKnowledge": 8,
+        "pakistanStudies": 4,
+        "english": 3,
+        "islamiat": 1,
+        "mathematics": 1,
+        "everydayScience": 3
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-executive-engineer-sdo-assistant-design-engineer-irrigation-2025",
+      "url": "https://wolftyping.pages.dev/paper-187-assistant-executive-engineer-sdo-assistant-design-engineer-irrigation-2025/"
+    },
+    {
+      "paperNo": 188,
+      "post": "Planning Officer (BS-17)",
+      "department": "Primary and Secondary Healthcare Department",
+      "examDate": "28.06.2025",
+      "questionCount": 16,
+      "subjects": {
+        "generalKnowledge": 8,
+        "pakistanStudies": 2,
+        "english": 2,
+        "mathematics": 1,
+        "everydayScience": 3
+      },
+      "latestUpdates": 1,
+      "slug": "planning-officer-primary-and-secondary-healthcare-2025",
+      "url": "https://wolftyping.pages.dev/paper-188-planning-officer-primary-and-secondary-healthcare-2025/"
+    },
+    {
+      "paperNo": 189,
+      "post": "Zilladar (BS-16)",
+      "department": "Punjab Irrigation Department (Morning)",
+      "examDate": "29.06.2025",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 50,
+        "pakistanStudies": 12,
+        "english": 15,
+        "islamiat": 8,
+        "mathematics": 8,
+        "everydayScience": 7
+      },
+      "latestUpdates": 3,
+      "slug": "zilladar-punjab-irrigation-2025",
+      "url": "https://wolftyping.pages.dev/paper-189-zilladar-punjab-irrigation-2025/"
+    },
+    {
+      "paperNo": 190,
+      "post": "Zilladar (BS-16)",
+      "department": "Punjab Irrigation Department",
+      "examDate": "29.06.2025",
+      "questionCount": 99,
+      "subjects": {
+        "generalKnowledge": 45,
+        "pakistanStudies": 13,
+        "english": 15,
+        "islamiat": 8,
+        "mathematics": 8,
+        "everydayScience": 10
+      },
+      "latestUpdates": 1,
+      "slug": "zilladar-bs-16-punjab-irrigation-2025",
+      "url": "https://wolftyping.pages.dev/paper-190-zilladar-bs-16-punjab-irrigation-2025/"
+    },
+    {
+      "paperNo": 191,
+      "post": "Curator (BS-17)",
+      "department": "Directorate General of Archaeology, Tourism, Archaeology & Museums Department",
+      "examDate": "22.06.2025",
+      "questionCount": 25,
+      "subjects": {
+        "generalKnowledge": 12,
+        "pakistanStudies": 11,
+        "islamiat": 1,
+        "everydayScience": 1
+      },
+      "latestUpdates": 0,
+      "slug": "curator-directorate-general-of-archaeology-tourism-archaeology-museums-2025",
+      "url": "https://wolftyping.pages.dev/paper-191-curator-directorate-general-of-archaeology-tourism-archaeology-museums-2025/"
+    },
+    {
+      "paperNo": 192,
+      "post": "Assistant Director (Accounts & Finance) (BS-17)",
+      "department": "Housing, Urban Development & Public Health Engineering Department, WASA, Rawalpindi",
+      "examDate": "12.07.2025",
+      "questionCount": 20,
+      "subjects": {
+        "generalKnowledge": 9,
+        "pakistanStudies": 5,
+        "english": 4,
+        "everydayScience": 2
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-director-housing-urban-development-public-health-engineering-wasa-rawalpindi-2025",
+      "url": "https://wolftyping.pages.dev/paper-192-assistant-director-housing-urban-development-public-health-engineering-wasa-rawalpindi-2025/"
+    },
+    {
+      "paperNo": 193,
+      "post": "Assistant Director (Assessment & Collection) (BS-17)",
+      "department": "Housing, Urban Development & Public Health Engineering Department, WASA, Rawalpindi",
+      "examDate": "2025",
+      "questionCount": 30,
+      "subjects": {
+        "generalKnowledge": 16,
+        "pakistanStudies": 3,
+        "english": 4,
+        "mathematics": 4,
+        "everydayScience": 3
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-director-assessment-collection-bs-17-housing-urban-development-public-health-engineering-wasa-rawalpindi-2025",
+      "url": "https://wolftyping.pages.dev/paper-193-assistant-director-assessment-collection-bs-17-housing-urban-development-public-health-engineering-wasa-rawalpindi-2025/"
+    },
+    {
+      "paperNo": 194,
+      "post": "Assistant Director (BS-17) - Clubbed Case ID-144",
+      "department": "Multiple departments, Government of the Punjab",
+      "examDate": "13.07.2025",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 41,
+        "pakistanStudies": 18,
+        "english": 15,
+        "islamiat": 9,
+        "mathematics": 9,
+        "everydayScience": 8
+      },
+      "latestUpdates": 2,
+      "slug": "assistant-director-clubbed-case-id-144-multiple-government-of-the-punjab-2025",
+      "url": "https://wolftyping.pages.dev/paper-194-assistant-director-clubbed-case-id-144-multiple-government-of-the-punjab-2025/"
+    },
+    {
+      "paperNo": 195,
+      "post": "Field Officer / Assistant Curator / Assistant (BS-16) (Evening) - Clubbed Case ID-153",
+      "department": "Multiple departments, Government of the Punjab",
+      "examDate": "13.07.2025",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 37,
+        "pakistanStudies": 23,
+        "english": 15,
+        "islamiat": 7,
+        "mathematics": 8,
+        "everydayScience": 10
+      },
+      "latestUpdates": 0,
+      "slug": "field-officer-assistant-curator-assistant-clubbed-case-id-153-multiple-government-of-the-punjab-2025",
+      "url": "https://wolftyping.pages.dev/paper-195-field-officer-assistant-curator-assistant-clubbed-case-id-153-multiple-government-of-the-punjab-2025/"
+    },
+    {
+      "paperNo": 196,
+      "post": "Building Inspector (BS-14)",
+      "department": "Local Government & Community Development Department, Government of the Punjab",
+      "examDate": "2025",
+      "questionCount": 20,
+      "subjects": {
+        "generalKnowledge": 8,
+        "pakistanStudies": 4,
+        "english": 2,
+        "mathematics": 2,
+        "everydayScience": 4
+      },
+      "latestUpdates": 0,
+      "slug": "building-inspector-local-government-community-development-government-of-the-punjab-2025",
+      "url": "https://wolftyping.pages.dev/paper-196-building-inspector-local-government-community-development-government-of-the-punjab-2025/"
+    },
+    {
+      "paperNo": 197,
+      "post": "Evaluation Officer / Statistical Officer / Economist / Research Officer (BS-17)",
+      "department": "Forestry, Wildlife and Fisheries Department",
+      "examDate": "2025",
+      "questionCount": 40,
+      "subjects": {
+        "generalKnowledge": 23,
+        "pakistanStudies": 6,
+        "english": 4,
+        "mathematics": 4,
+        "everydayScience": 3
+      },
+      "latestUpdates": 0,
+      "slug": "evaluation-officer-statistical-officer-economist-research-officer-forestry-wildlife-and-fisheries-2025",
+      "url": "https://wolftyping.pages.dev/paper-197-evaluation-officer-statistical-officer-economist-research-officer-forestry-wildlife-and-fisheries-2025/"
+    },
+    {
+      "paperNo": 198,
+      "post": "Assistant Entomologist (BS-17)",
+      "department": "Forestry, Wildlife and Fisheries Department",
+      "examDate": "2025",
+      "questionCount": 20,
+      "subjects": {
+        "generalKnowledge": 10,
+        "pakistanStudies": 3,
+        "english": 3,
+        "mathematics": 2,
+        "everydayScience": 2
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-entomologist-forestry-wildlife-and-fisheries-2025",
+      "url": "https://wolftyping.pages.dev/paper-198-assistant-entomologist-forestry-wildlife-and-fisheries-2025/"
+    },
+    {
+      "paperNo": 199,
+      "post": "Industrial Development Officer (BS-16)",
+      "department": "Industries, Commerce, Investment & Skills Development Department (ICI & SDD), Directorate General of Industries, Prices, Weight & Measures, Punjab, Lahore",
+      "examDate": "2025",
+      "questionCount": 60,
+      "subjects": {
+        "generalKnowledge": 18,
+        "pakistanStudies": 19,
+        "english": 10,
+        "mathematics": 1,
+        "everydayScience": 12
+      },
+      "latestUpdates": 1,
+      "slug": "industrial-development-officer-industries-commerce-investment-skills-development-directorate-general-of-industries-prices-weight-measures-punjab-lahore-2025",
+      "url": "https://wolftyping.pages.dev/paper-199-industrial-development-officer-industries-commerce-investment-skills-development-directorate-general-of-industries-prices-weight-measures-punjab-lahore-2025/"
+    },
+    {
+      "paperNo": 200,
+      "post": "Mineral Development Officer (BS-16)",
+      "department": "Mines & Minerals Department",
+      "examDate": "2025",
+      "questionCount": 20,
+      "subjects": {
+        "generalKnowledge": 7,
+        "pakistanStudies": 4,
+        "english": 4,
+        "mathematics": 2,
+        "everydayScience": 3
+      },
+      "latestUpdates": 0,
+      "slug": "mineral-development-officer-mines-minerals-2025",
+      "url": "https://wolftyping.pages.dev/paper-200-mineral-development-officer-mines-minerals-2025/"
+    },
+    {
+      "paperNo": 201,
+      "post": "Evaluation Officer / Statistical Officer / Economist / Research Officer (BS-17)",
+      "department": "Forestry, Wildlife and Fisheries Department",
+      "examDate": "2025",
+      "questionCount": 40,
+      "subjects": {
+        "generalKnowledge": 23,
+        "pakistanStudies": 6,
+        "english": 4,
+        "mathematics": 4,
+        "everydayScience": 3
+      },
+      "latestUpdates": 0,
+      "slug": "evaluation-officer-statistical-officer-economist-research-officer-bs-17-forestry-wildlife-and-fisheries-2025",
+      "url": "https://wolftyping.pages.dev/paper-201-evaluation-officer-statistical-officer-economist-research-officer-bs-17-forestry-wildlife-and-fisheries-2025/"
+    },
+    {
+      "paperNo": 202,
+      "post": "Evaluation Officer (BS-17)",
+      "department": "Social Welfare",
+      "examDate": "2025",
+      "questionCount": 20,
+      "subjects": {
+        "generalKnowledge": 9,
+        "pakistanStudies": 3,
+        "english": 4,
+        "mathematics": 2,
+        "everydayScience": 2
+      },
+      "latestUpdates": 0,
+      "slug": "evaluation-officer-social-welfare-2025",
+      "url": "https://wolftyping.pages.dev/paper-202-evaluation-officer-social-welfare-2025/"
+    },
+    {
+      "paperNo": 203,
+      "post": "Planning Officer (BS-17)",
+      "department": "Specialized Healthcare & Medical Education Department",
+      "examDate": "2025",
+      "questionCount": 13,
+      "subjects": {
+        "generalKnowledge": 4,
+        "pakistanStudies": 2,
+        "english": 3,
+        "mathematics": 1,
+        "everydayScience": 3
+      },
+      "latestUpdates": 0,
+      "slug": "planning-officer-specialized-healthcare-medical-education-2025",
+      "url": "https://wolftyping.pages.dev/paper-203-planning-officer-specialized-healthcare-medical-education-2025/"
+    },
+    {
+      "paperNo": 204,
+      "post": "Assistant Director (Stat) (BS-17)",
+      "department": "Agriculture Department",
+      "examDate": "21.09.2025",
+      "questionCount": 18,
+      "subjects": {
+        "generalKnowledge": 11,
+        "english": 4,
+        "mathematics": 2,
+        "everydayScience": 1
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-director-agriculture-2025",
+      "url": "https://wolftyping.pages.dev/paper-204-assistant-director-agriculture-2025/"
+    },
+    {
+      "paperNo": 205,
+      "post": "Junior Clerk (BS-11)",
+      "department": "Punjab Public Service Commission",
+      "examDate": "27.09.2025",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 49,
+        "pakistanStudies": 27,
+        "english": 13,
+        "islamiat": 1,
+        "mathematics": 6,
+        "everydayScience": 4
+      },
+      "latestUpdates": 0,
+      "slug": "junior-clerk-punjab-public-service-commission-2025",
+      "url": "https://wolftyping.pages.dev/paper-205-junior-clerk-punjab-public-service-commission-2025/"
+    },
+    {
+      "paperNo": 206,
+      "post": "Assistant Registrar Cooperative Societies (BS-17)",
+      "department": "Cooperative Societies",
+      "examDate": "28.09.2025",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 52,
+        "pakistanStudies": 22,
+        "english": 2,
+        "islamiat": 22,
+        "everydayScience": 2
+      },
+      "latestUpdates": 2,
+      "slug": "assistant-registrar-cooperative-societies-cooperative-societies-2025",
+      "url": "https://wolftyping.pages.dev/paper-206-assistant-registrar-cooperative-societies-cooperative-societies-2025/"
+    },
+    {
+      "paperNo": 207,
+      "post": "Assistant PESSI (BS-16)",
+      "department": "Punjab Employees Social Security Department",
+      "examDate": "19.10.2025",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 40,
+        "pakistanStudies": 23,
+        "english": 15,
+        "islamiat": 8,
+        "mathematics": 8,
+        "everydayScience": 6
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-pessi-punjab-employees-social-security-2025",
+      "url": "https://wolftyping.pages.dev/paper-207-assistant-pessi-punjab-employees-social-security-2025/"
+    },
+    {
+      "paperNo": 208,
+      "post": "Sub Inspector (BS-14) Open Merit",
+      "department": "Punjab Police Departments",
+      "examDate": "19.10.2025",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 52,
+        "pakistanStudies": 5,
+        "english": 39,
+        "mathematics": 3,
+        "everydayScience": 1
+      },
+      "latestUpdates": 0,
+      "slug": "sub-inspector-open-merit-punjab-police-2025",
+      "url": "https://wolftyping.pages.dev/paper-208-sub-inspector-open-merit-punjab-police-2025/"
+    },
+    {
+      "paperNo": 209,
+      "post": "Labour Officer (BS-16)",
+      "department": "Labour and Human Resources Department",
+      "examDate": "16.11.2025",
+      "questionCount": 89,
+      "subjects": {
+        "generalKnowledge": 32,
+        "pakistanStudies": 24,
+        "english": 14,
+        "mathematics": 8,
+        "everydayScience": 11
+      },
+      "latestUpdates": 3,
+      "slug": "labour-officer-labour-and-human-resources-2025",
+      "url": "https://wolftyping.pages.dev/paper-209-labour-officer-labour-and-human-resources-2025/"
+    },
+    {
+      "paperNo": 210,
+      "post": "Assistant (BS-16)",
+      "department": "Different Departments",
+      "examDate": "16.11.2025",
+      "questionCount": 97,
+      "subjects": {
+        "generalKnowledge": 38,
+        "pakistanStudies": 14,
+        "english": 14,
+        "islamiat": 9,
+        "mathematics": 9,
+        "everydayScience": 13
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-2025",
+      "url": "https://wolftyping.pages.dev/paper-210-assistant-2025/"
+    },
+    {
+      "paperNo": 211,
+      "post": "Office Assistant (BS-16)",
+      "department": "Board of Revenue Gujrat",
+      "examDate": "07.12.2025",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 47,
+        "pakistanStudies": 15,
+        "english": 14,
+        "islamiat": 8,
+        "mathematics": 8,
+        "everydayScience": 8
+      },
+      "latestUpdates": 1,
+      "slug": "office-assistant-board-of-revenue-gujrat-2025",
+      "url": "https://wolftyping.pages.dev/paper-211-office-assistant-board-of-revenue-gujrat-2025/"
+    },
+    {
+      "paperNo": 212,
+      "post": "Assistant Superintendent Jail (BS-16)",
+      "department": "Prison Department",
+      "examDate": "13.12.2025",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 40,
+        "pakistanStudies": 21,
+        "english": 13,
+        "islamiat": 9,
+        "mathematics": 8,
+        "everydayScience": 9
+      },
+      "latestUpdates": 3,
+      "slug": "assistant-superintendent-jail-prison-2025",
+      "url": "https://wolftyping.pages.dev/paper-212-assistant-superintendent-jail-prison-2025/"
+    },
+    {
+      "paperNo": 213,
+      "post": "Junior Clerk (BS-11)",
+      "department": "Punjab Police Department",
+      "examDate": "14.12.2025",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 49,
+        "pakistanStudies": 21,
+        "english": 14,
+        "mathematics": 8,
+        "everydayScience": 8
+      },
+      "latestUpdates": 0,
+      "slug": "junior-clerk-punjab-police-2025",
+      "url": "https://wolftyping.pages.dev/paper-213-junior-clerk-punjab-police-2025/"
+    },
+    {
+      "paperNo": 214,
+      "post": "Junior Clerk (BS-11)",
+      "department": "Punjab Police Department",
+      "examDate": "14.12.2025",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 48,
+        "pakistanStudies": 18,
+        "english": 15,
+        "mathematics": 8,
+        "everydayScience": 11
+      },
+      "latestUpdates": 0,
+      "slug": "junior-clerk-bs-11-punjab-police-2025",
+      "url": "https://wolftyping.pages.dev/paper-214-junior-clerk-bs-11-punjab-police-2025/"
+    },
+    {
+      "paperNo": 215,
+      "post": "Junior Clerk (BS-11) (Clubbed Case ID-172, Morning)",
+      "department": "Different Departments",
+      "examDate": "20.12.2025",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 43,
+        "pakistanStudies": 24,
+        "english": 11,
+        "islamiat": 8,
+        "mathematics": 7,
+        "everydayScience": 7
+      },
+      "latestUpdates": 2,
+      "slug": "junior-clerk-2025",
+      "url": "https://wolftyping.pages.dev/paper-215-junior-clerk-2025/"
+    },
+    {
+      "paperNo": 216,
+      "post": "Junior Clerk (BS-11) (Clubbed Case ID-169, Evening)",
+      "department": "Different Departments",
+      "examDate": "20.12.2025",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 46,
+        "pakistanStudies": 19,
+        "english": 13,
+        "islamiat": 6,
+        "mathematics": 6,
+        "everydayScience": 10
+      },
+      "latestUpdates": 1,
+      "slug": "junior-clerk-bs-11-clubbed-case-id-169-evening-2025",
+      "url": "https://wolftyping.pages.dev/paper-216-junior-clerk-bs-11-clubbed-case-id-169-evening-2025/"
+    },
+    {
+      "paperNo": 217,
+      "post": "SDEO (BS-16)",
+      "department": "Punjab Enforcement and Regulatory Authority (PERA)",
+      "examDate": "21.12.2025",
+      "questionCount": 92,
+      "subjects": {
+        "generalKnowledge": 38,
+        "pakistanStudies": 15,
+        "english": 14,
+        "islamiat": 7,
+        "mathematics": 11,
+        "everydayScience": 7
+      },
+      "latestUpdates": 3,
+      "slug": "sdeo-punjab-enforcement-and-regulatory-authority-2025",
+      "url": "https://wolftyping.pages.dev/paper-217-sdeo-punjab-enforcement-and-regulatory-authority-2025/"
+    }
+  ]
+}

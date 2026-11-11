@@ -1,0 +1,491 @@
+{
+  "year": 2022,
+  "papers": 28,
+  "questions": 2712,
+  "entries": [
+    {
+      "paperNo": 84,
+      "post": "Junior Clerk (BS-11)",
+      "department": "Punjab Police Department",
+      "examDate": "2022",
+      "questionCount": 99,
+      "subjects": {
+        "generalKnowledge": 41,
+        "pakistanStudies": 24,
+        "english": 12,
+        "islamiat": 7,
+        "mathematics": 6,
+        "everydayScience": 9
+      },
+      "latestUpdates": 4,
+      "slug": "junior-clerk-punjab-police-2022",
+      "url": "https://wolftyping.pages.dev/paper-84-junior-clerk-punjab-police-2022/"
+    },
+    {
+      "paperNo": 85,
+      "post": "Naib Tehsildar General Knowledge (BS-14)",
+      "department": "Revenue Department, Gujranwala-Faisalabad-Sahiwal-Dera Ghazi Khan-Bahawalpur Region",
+      "examDate": "2022",
+      "questionCount": 98,
+      "subjects": {
+        "generalKnowledge": 58,
+        "pakistanStudies": 18,
+        "islamiat": 11,
+        "mathematics": 1,
+        "everydayScience": 10
+      },
+      "latestUpdates": 1,
+      "slug": "naib-tehsildar-general-knowledge-revenue-gujranwala-faisalabad-sahiwal-dera-ghazi-khan-bahawalpur-region-2022",
+      "url": "https://wolftyping.pages.dev/paper-85-naib-tehsildar-general-knowledge-revenue-gujranwala-faisalabad-sahiwal-dera-ghazi-khan-bahawalpur-region-2022/"
+    },
+    {
+      "paperNo": 86,
+      "post": "Naib Tehsildar English (BS-14)",
+      "department": "Revenue Department, Gujranwala-Faisalabad-Sahiwal-Dera Ghazi Khan-Bahawalpur Region",
+      "examDate": "2022",
+      "questionCount": 90,
+      "subjects": {
+        "english": 90
+      },
+      "latestUpdates": 0,
+      "slug": "naib-tehsildar-english-revenue-gujranwala-faisalabad-sahiwal-dera-ghazi-khan-bahawalpur-region-2022",
+      "url": "https://wolftyping.pages.dev/paper-86-naib-tehsildar-english-revenue-gujranwala-faisalabad-sahiwal-dera-ghazi-khan-bahawalpur-region-2022/"
+    },
+    {
+      "paperNo": 87,
+      "post": "Naib Tehsildar General Knowledge (BS-14)",
+      "department": "Revenue Department",
+      "examDate": "2022",
+      "questionCount": 99,
+      "subjects": {
+        "generalKnowledge": 59,
+        "pakistanStudies": 18,
+        "islamiat": 10,
+        "mathematics": 1,
+        "everydayScience": 11
+      },
+      "latestUpdates": 2,
+      "slug": "naib-tehsildar-general-knowledge-revenue-2022",
+      "url": "https://wolftyping.pages.dev/paper-87-naib-tehsildar-general-knowledge-revenue-2022/"
+    },
+    {
+      "paperNo": 88,
+      "post": "Naib Tehsildar English (BS-14)",
+      "department": "Revenue Department",
+      "examDate": "2022",
+      "questionCount": 100,
+      "subjects": {
+        "english": 100
+      },
+      "latestUpdates": 0,
+      "slug": "naib-tehsildar-english-revenue-2022",
+      "url": "https://wolftyping.pages.dev/paper-88-naib-tehsildar-english-revenue-2022/"
+    },
+    {
+      "paperNo": 89,
+      "post": "Assistant Director Processing (BS-17)",
+      "department": "Agriculture Department (Seed Corporation of Punjab)",
+      "examDate": "2022",
+      "questionCount": 98,
+      "subjects": {
+        "generalKnowledge": 47,
+        "pakistanStudies": 19,
+        "english": 13,
+        "islamiat": 7,
+        "mathematics": 8,
+        "everydayScience": 4
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-director-processing-agriculture-2022",
+      "url": "https://wolftyping.pages.dev/paper-89-assistant-director-processing-agriculture-2022/"
+    },
+    {
+      "paperNo": 90,
+      "post": "Assistant / Head Clerk (BS-16)",
+      "department": "Livestock & Dairy Development Department, Directorate General (PROD)",
+      "examDate": "2022",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 32,
+        "pakistanStudies": 30,
+        "english": 15,
+        "islamiat": 7,
+        "mathematics": 7,
+        "everydayScience": 9
+      },
+      "latestUpdates": 2,
+      "slug": "assistant-head-clerk-livestock-dairy-development-directorate-general-2022",
+      "url": "https://wolftyping.pages.dev/paper-90-assistant-head-clerk-livestock-dairy-development-directorate-general-2022/"
+    },
+    {
+      "paperNo": 91,
+      "post": "Manager Auqaf (BS-16)",
+      "department": "Punjab Auqaf Organization",
+      "examDate": "2022",
+      "questionCount": 96,
+      "subjects": {
+        "generalKnowledge": 37,
+        "pakistanStudies": 20,
+        "english": 16,
+        "islamiat": 6,
+        "mathematics": 8,
+        "everydayScience": 9
+      },
+      "latestUpdates": 1,
+      "slug": "manager-auqaf-punjab-auqaf-organization-2022",
+      "url": "https://wolftyping.pages.dev/paper-91-manager-auqaf-punjab-auqaf-organization-2022/"
+    },
+    {
+      "paperNo": 92,
+      "post": "Assistant (BS-16)",
+      "department": "Labour & Human Resource Department (Punjab Employees Social Security Institution)",
+      "examDate": "2022",
+      "questionCount": 97,
+      "subjects": {
+        "generalKnowledge": 41,
+        "pakistanStudies": 17,
+        "english": 15,
+        "islamiat": 8,
+        "mathematics": 8,
+        "everydayScience": 8
+      },
+      "latestUpdates": 1,
+      "slug": "assistant-labour-human-resource-2022",
+      "url": "https://wolftyping.pages.dev/paper-92-assistant-labour-human-resource-2022/"
+    },
+    {
+      "paperNo": 93,
+      "post": "Assistant (BS-16)",
+      "department": "Services & General Administration Department",
+      "examDate": "2022",
+      "questionCount": 98,
+      "subjects": {
+        "generalKnowledge": 36,
+        "pakistanStudies": 23,
+        "english": 14,
+        "islamiat": 8,
+        "mathematics": 8,
+        "everydayScience": 9
+      },
+      "latestUpdates": 2,
+      "slug": "assistant-services-general-administration-2022",
+      "url": "https://wolftyping.pages.dev/paper-93-assistant-services-general-administration-2022/"
+    },
+    {
+      "paperNo": 94,
+      "post": "Assistant (BS-16)",
+      "department": "Punjab Public Service Commission",
+      "examDate": "2022",
+      "questionCount": 98,
+      "subjects": {
+        "generalKnowledge": 35,
+        "pakistanStudies": 22,
+        "english": 15,
+        "islamiat": 9,
+        "mathematics": 8,
+        "everydayScience": 9
+      },
+      "latestUpdates": 2,
+      "slug": "assistant-punjab-public-service-commission-2022",
+      "url": "https://wolftyping.pages.dev/paper-94-assistant-punjab-public-service-commission-2022/"
+    },
+    {
+      "paperNo": 95,
+      "post": "Lecturer Urdu (BS-17)",
+      "department": "Higher Education Department Punjab",
+      "examDate": "2022",
+      "questionCount": 72,
+      "subjects": {
+        "generalKnowledge": 59,
+        "pakistanStudies": 5,
+        "english": 4,
+        "mathematics": 2,
+        "everydayScience": 2
+      },
+      "latestUpdates": 0,
+      "slug": "lecturer-urdu-higher-education-punjab-2022",
+      "url": "https://wolftyping.pages.dev/paper-95-lecturer-urdu-higher-education-punjab-2022/"
+    },
+    {
+      "paperNo": 96,
+      "post": "Lecturer Pakistan Studies (BS-17)",
+      "department": "Punjab Higher Education Department",
+      "examDate": "2022",
+      "questionCount": 98,
+      "subjects": {
+        "generalKnowledge": 23,
+        "pakistanStudies": 69,
+        "english": 4,
+        "mathematics": 1,
+        "everydayScience": 1
+      },
+      "latestUpdates": 0,
+      "slug": "lecturer-pakistan-studies-punjab-higher-education-2022",
+      "url": "https://wolftyping.pages.dev/paper-96-lecturer-pakistan-studies-punjab-higher-education-2022/"
+    },
+    {
+      "paperNo": 97,
+      "post": "Lecturer Political Science (BS-17)",
+      "department": "Punjab Higher Education Department",
+      "examDate": "2022",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 67,
+        "pakistanStudies": 25,
+        "english": 4,
+        "mathematics": 1,
+        "everydayScience": 3
+      },
+      "latestUpdates": 0,
+      "slug": "lecturer-political-science-punjab-higher-education-2022",
+      "url": "https://wolftyping.pages.dev/paper-97-lecturer-political-science-punjab-higher-education-2022/"
+    },
+    {
+      "paperNo": 98,
+      "post": "Lecturer History (BS-17)",
+      "department": "Punjab Higher Education Department",
+      "examDate": "21/05/2022",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 79,
+        "pakistanStudies": 10,
+        "english": 4,
+        "islamiat": 3,
+        "mathematics": 2,
+        "everydayScience": 2
+      },
+      "latestUpdates": 1,
+      "slug": "lecturer-history-punjab-higher-education-2022",
+      "url": "https://wolftyping.pages.dev/paper-98-lecturer-history-punjab-higher-education-2022/"
+    },
+    {
+      "paperNo": 99,
+      "post": "Lecturer Islamiat (BS-17)",
+      "department": "Higher Education Department Punjab",
+      "examDate": "12/06/2022",
+      "questionCount": 94,
+      "subjects": {
+        "generalKnowledge": 8,
+        "pakistanStudies": 1,
+        "english": 4,
+        "islamiat": 78,
+        "mathematics": 1,
+        "everydayScience": 2
+      },
+      "latestUpdates": 0,
+      "slug": "lecturer-islamiat-higher-education-punjab-2022",
+      "url": "https://wolftyping.pages.dev/paper-99-lecturer-islamiat-higher-education-punjab-2022/"
+    },
+    {
+      "paperNo": 100,
+      "post": "Assistant (BS-16)",
+      "department": "Special Education Department",
+      "examDate": "2022",
+      "questionCount": 97,
+      "subjects": {
+        "generalKnowledge": 39,
+        "pakistanStudies": 19,
+        "english": 15,
+        "islamiat": 8,
+        "mathematics": 9,
+        "everydayScience": 7
+      },
+      "latestUpdates": 1,
+      "slug": "assistant-special-education-2022",
+      "url": "https://wolftyping.pages.dev/paper-100-assistant-special-education-2022/"
+    },
+    {
+      "paperNo": 101,
+      "post": "Assistant / Head Clerk (BS-16) — Various Posts (CODE-15)",
+      "department": "Energy Department and other Punjab departments",
+      "examDate": "13/06/2022",
+      "questionCount": 99,
+      "subjects": {
+        "generalKnowledge": 40,
+        "pakistanStudies": 22,
+        "english": 15,
+        "islamiat": 7,
+        "mathematics": 8,
+        "everydayScience": 7
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-head-clerk-various-posts-energy-and-other-punjab-2022",
+      "url": "https://wolftyping.pages.dev/paper-101-assistant-head-clerk-various-posts-energy-and-other-punjab-2022/"
+    },
+    {
+      "paperNo": 102,
+      "post": "Various Posts (CODE-16)",
+      "department": "Punjab Public Service Commission and other departments",
+      "examDate": "11/06/2022",
+      "questionCount": 99,
+      "subjects": {
+        "generalKnowledge": 38,
+        "pakistanStudies": 27,
+        "english": 15,
+        "islamiat": 4,
+        "mathematics": 9,
+        "everydayScience": 6
+      },
+      "latestUpdates": 0,
+      "slug": "various-posts-punjab-public-service-commission-and-other-2022",
+      "url": "https://wolftyping.pages.dev/paper-102-various-posts-punjab-public-service-commission-and-other-2022/"
+    },
+    {
+      "paperNo": 103,
+      "post": "Assistant (BS-16)",
+      "department": "Center for Professional Development of Public Prosecutors (CPD)",
+      "examDate": "2022",
+      "questionCount": 98,
+      "subjects": {
+        "generalKnowledge": 43,
+        "pakistanStudies": 19,
+        "english": 15,
+        "islamiat": 6,
+        "mathematics": 8,
+        "everydayScience": 7
+      },
+      "latestUpdates": 5,
+      "slug": "assistant-center-for-professional-development-of-public-prosecutors-2022",
+      "url": "https://wolftyping.pages.dev/paper-103-assistant-center-for-professional-development-of-public-prosecutors-2022/"
+    },
+    {
+      "paperNo": 104,
+      "post": "Parole / Probation Officer (BS-16)",
+      "department": "Home Department (Punjab Probation and Parole Service)",
+      "examDate": "2022",
+      "questionCount": 99,
+      "subjects": {
+        "generalKnowledge": 84,
+        "pakistanStudies": 5,
+        "english": 5,
+        "islamiat": 1,
+        "mathematics": 2,
+        "everydayScience": 2
+      },
+      "latestUpdates": 1,
+      "slug": "parole-probation-officer-home-2022",
+      "url": "https://wolftyping.pages.dev/paper-104-parole-probation-officer-home-2022/"
+    },
+    {
+      "paperNo": 105,
+      "post": "Assistant (BS-16)",
+      "department": "Industries, Commerce, Investment and Skills Development Department (Printing and Stationery, Punjab)",
+      "examDate": "2022",
+      "questionCount": 97,
+      "subjects": {
+        "generalKnowledge": 45,
+        "pakistanStudies": 13,
+        "english": 15,
+        "islamiat": 7,
+        "mathematics": 8,
+        "everydayScience": 9
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-industries-commerce-investment-and-skills-development-2022",
+      "url": "https://wolftyping.pages.dev/paper-105-assistant-industries-commerce-investment-and-skills-development-2022/"
+    },
+    {
+      "paperNo": 106,
+      "post": "Store Officer (BS-16)",
+      "department": "Agriculture Department (Seed Corporation of Punjab)",
+      "examDate": "2022",
+      "questionCount": 96,
+      "subjects": {
+        "generalKnowledge": 33,
+        "pakistanStudies": 23,
+        "english": 12,
+        "islamiat": 9,
+        "mathematics": 9,
+        "everydayScience": 10
+      },
+      "latestUpdates": 1,
+      "slug": "store-officer-agriculture-2022",
+      "url": "https://wolftyping.pages.dev/paper-106-store-officer-agriculture-2022/"
+    },
+    {
+      "paperNo": 107,
+      "post": "Assistant Director (Admin) (BS-17)",
+      "department": "Home Department (Punjab Forensic Science Agency)",
+      "examDate": "30/10/2022",
+      "questionCount": 98,
+      "subjects": {
+        "generalKnowledge": 40,
+        "pakistanStudies": 17,
+        "english": 16,
+        "islamiat": 5,
+        "mathematics": 12,
+        "everydayScience": 8
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-director-home-2022",
+      "url": "https://wolftyping.pages.dev/paper-107-assistant-director-home-2022/"
+    },
+    {
+      "paperNo": 108,
+      "post": "Assistant Director (BS-17)",
+      "department": "Labour & Human Resource Department (Punjab Employees Social Security Institution - PESSI)",
+      "examDate": "04/12/2022",
+      "questionCount": 95,
+      "subjects": {
+        "generalKnowledge": 46,
+        "pakistanStudies": 17,
+        "english": 15,
+        "mathematics": 12,
+        "everydayScience": 5
+      },
+      "latestUpdates": 1,
+      "slug": "assistant-director-labour-human-resource-2022",
+      "url": "https://wolftyping.pages.dev/paper-108-assistant-director-labour-human-resource-2022/"
+    },
+    {
+      "paperNo": 109,
+      "post": "Assistant (BS-16) & Junior Clerk (BS-11)",
+      "department": "Agriculture Department (PPSC & PPRA)",
+      "examDate": "2022",
+      "questionCount": 99,
+      "subjects": {
+        "generalKnowledge": 56,
+        "pakistanStudies": 14,
+        "english": 13,
+        "islamiat": 7,
+        "everydayScience": 9
+      },
+      "latestUpdates": 1,
+      "slug": "assistant-junior-clerk-agriculture-2022",
+      "url": "https://wolftyping.pages.dev/paper-109-assistant-junior-clerk-agriculture-2022/"
+    },
+    {
+      "paperNo": 110,
+      "post": "Assistant / Labour Officer / Labour Inspector / Administrator / Estate Officer (Various Posts, CLUB/CODE-27)",
+      "department": "Various Punjab Departments (PPRA, Environment Protection, Labour & Human Resource, Information & Culture, Youth Affairs & Sports, Board of Revenue, Law & Parliamentary Affairs, Housing Urban Development & Public Health Engineering)",
+      "examDate": "2022",
+      "questionCount": 98,
+      "subjects": {
+        "generalKnowledge": 43,
+        "pakistanStudies": 18,
+        "english": 16,
+        "islamiat": 8,
+        "mathematics": 8,
+        "everydayScience": 5
+      },
+      "latestUpdates": 2,
+      "slug": "assistant-labour-officer-labour-inspector-administrator-estate-officer-various-punjab-2022",
+      "url": "https://wolftyping.pages.dev/paper-110-assistant-labour-officer-labour-inspector-administrator-estate-officer-various-punjab-2022/"
+    },
+    {
+      "paperNo": 111,
+      "post": "Data Entry Operator (BS-14)",
+      "department": "Lahore High Court, Lahore",
+      "examDate": "2022",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 90,
+        "english": 9,
+        "islamiat": 1
+      },
+      "latestUpdates": 0,
+      "slug": "data-entry-operator-lahore-high-court-lahore-2022",
+      "url": "https://wolftyping.pages.dev/paper-111-data-entry-operator-lahore-high-court-lahore-2022/"
+    }
+  ]
+}

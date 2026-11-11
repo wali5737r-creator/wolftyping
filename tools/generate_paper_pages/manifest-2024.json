@@ -1,0 +1,431 @@
+{
+  "year": 2024,
+  "papers": 24,
+  "questions": 2175,
+  "entries": [
+    {
+      "paperNo": 138,
+      "post": "Lecturer Islamiat (BS-17)",
+      "department": "Special Education Department, Punjab",
+      "examDate": "27.07.2024",
+      "questionCount": 75,
+      "subjects": {
+        "generalKnowledge": 12,
+        "pakistanStudies": 4,
+        "english": 3,
+        "islamiat": 54,
+        "mathematics": 2
+      },
+      "latestUpdates": 0,
+      "slug": "lecturer-islamiat-special-education-punjab-2024",
+      "url": "https://wolftyping.pages.dev/paper-138-lecturer-islamiat-special-education-punjab-2024/"
+    },
+    {
+      "paperNo": 139,
+      "post": "Assistant (BS-16)",
+      "department": "Various Departments",
+      "examDate": "28.07.2024",
+      "questionCount": 94,
+      "subjects": {
+        "generalKnowledge": 37,
+        "pakistanStudies": 21,
+        "english": 14,
+        "islamiat": 6,
+        "mathematics": 8,
+        "everydayScience": 8
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-various-2024",
+      "url": "https://wolftyping.pages.dev/paper-139-assistant-various-2024/"
+    },
+    {
+      "paperNo": 140,
+      "post": "Assistant (BS-16) / Admin Officer (BS-16) / Store Officer (BS-16) / Transport Sub Inspector (BS-14)",
+      "department": "Punjab Provincial Transport Authority, Transport Department; Punjab Seed Corporation, Agriculture Department; Office of the Deputy Commissioner / District Collector, Hafizabad; Special Education Department",
+      "examDate": "28.07.2024",
+      "questionCount": 97,
+      "subjects": {
+        "generalKnowledge": 36,
+        "pakistanStudies": 23,
+        "english": 15,
+        "islamiat": 7,
+        "mathematics": 8,
+        "everydayScience": 8
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-admin-officer-store-officer-transport-sub-inspector-punjab-provincial-transport-authority-transport-punjab-seed-corporation-agriculture-office-of-the-deputy-commissioner-district-collector-hafizabad-special-education-2024",
+      "url": "https://wolftyping.pages.dev/paper-140-assistant-admin-officer-store-officer-transport-sub-inspector-punjab-provincial-transport-authority-transport-punjab-seed-corporation-agriculture-office-of-the-deputy-commissioner-district-collector-hafizabad-special-education-2024/"
+    },
+    {
+      "paperNo": 141,
+      "post": "Inspector Cooperative Societies (BS-14)",
+      "department": "Cooperatives Department, Punjab",
+      "examDate": "10.08.2024",
+      "questionCount": 92,
+      "subjects": {
+        "generalKnowledge": 48,
+        "pakistanStudies": 18,
+        "english": 12,
+        "islamiat": 5,
+        "mathematics": 6,
+        "everydayScience": 3
+      },
+      "latestUpdates": 0,
+      "slug": "inspector-cooperative-societies-cooperatives-punjab-2024",
+      "url": "https://wolftyping.pages.dev/paper-141-inspector-cooperative-societies-cooperatives-punjab-2024/"
+    },
+    {
+      "paperNo": 142,
+      "post": "Subject Specialist / Lecturer Urdu (BS-17)",
+      "department": "Special Education Department, Punjab",
+      "examDate": "10.08.2024",
+      "questionCount": 82,
+      "subjects": {
+        "generalKnowledge": 71,
+        "pakistanStudies": 3,
+        "english": 4,
+        "mathematics": 2,
+        "everydayScience": 2
+      },
+      "latestUpdates": 0,
+      "slug": "subject-specialist-lecturer-urdu-special-education-punjab-2024",
+      "url": "https://wolftyping.pages.dev/paper-142-subject-specialist-lecturer-urdu-special-education-punjab-2024/"
+    },
+    {
+      "paperNo": 143,
+      "post": "Corporal (BS-11)",
+      "department": "Counter Terrorism Department, Punjab Police",
+      "examDate": "11.08.2024",
+      "questionCount": 97,
+      "subjects": {
+        "generalKnowledge": 35,
+        "pakistanStudies": 28,
+        "english": 32,
+        "everydayScience": 2
+      },
+      "latestUpdates": 0,
+      "slug": "corporal-counter-terrorism-punjab-police-2024",
+      "url": "https://wolftyping.pages.dev/paper-143-corporal-counter-terrorism-punjab-police-2024/"
+    },
+    {
+      "paperNo": 144,
+      "post": "Chief Officer / Municipal Officer (Regulations) (BS-16)",
+      "department": "Local Government & Community Development Department",
+      "examDate": "11.08.2024",
+      "questionCount": 90,
+      "subjects": {
+        "generalKnowledge": 50,
+        "pakistanStudies": 7,
+        "english": 17,
+        "islamiat": 4,
+        "mathematics": 5,
+        "everydayScience": 7
+      },
+      "latestUpdates": 1,
+      "slug": "chief-officer-municipal-officer-local-government-community-development-2024",
+      "url": "https://wolftyping.pages.dev/paper-144-chief-officer-municipal-officer-local-government-community-development-2024/"
+    },
+    {
+      "paperNo": 145,
+      "post": "Intelligence Officer (BS-14), Punjab Police Special Branch + Assistant (BS-16), Cooperatives Department",
+      "department": "Punjab Police Special Branch and Cooperatives Department",
+      "examDate": "25.08.2024",
+      "questionCount": 98,
+      "subjects": {
+        "generalKnowledge": 57,
+        "english": 16,
+        "islamiat": 6,
+        "mathematics": 7,
+        "everydayScience": 12
+      },
+      "latestUpdates": 0,
+      "slug": "intelligence-officer-punjab-police-special-branch-assistant-cooperatives-punjab-police-special-branch-and-cooperatives-2024",
+      "url": "https://wolftyping.pages.dev/paper-145-intelligence-officer-punjab-police-special-branch-assistant-cooperatives-punjab-police-special-branch-and-cooperatives-2024/"
+    },
+    {
+      "paperNo": 146,
+      "post": "Labour Officer (BS-16), Labour Inspector (BS-14), Assistant (BS-16) and Junior Patrol Officer (BS-11)",
+      "department": "Labour and Human Resource Department, Punjab Ring Road Authority and Communication and Works Department",
+      "examDate": "25.08.2024",
+      "questionCount": 96,
+      "subjects": {
+        "generalKnowledge": 42,
+        "pakistanStudies": 17,
+        "english": 16,
+        "islamiat": 8,
+        "mathematics": 8,
+        "everydayScience": 5
+      },
+      "latestUpdates": 0,
+      "slug": "labour-officer-labour-inspector-assistant-and-junior-patrol-officer-labour-and-human-resource-punjab-ring-road-authority-and-communication-and-works-2024",
+      "url": "https://wolftyping.pages.dev/paper-146-labour-officer-labour-inspector-assistant-and-junior-patrol-officer-labour-and-human-resource-punjab-ring-road-authority-and-communication-and-works-2024/"
+    },
+    {
+      "paperNo": 147,
+      "post": "Excise and Taxation Inspector (BS-16)",
+      "department": "Excise, Taxation & Narcotics Control Department, Punjab",
+      "examDate": "08.09.2024",
+      "questionCount": 91,
+      "subjects": {
+        "generalKnowledge": 33,
+        "pakistanStudies": 26,
+        "english": 14,
+        "islamiat": 5,
+        "mathematics": 8,
+        "everydayScience": 5
+      },
+      "latestUpdates": 0,
+      "slug": "excise-and-taxation-inspector-excise-taxation-narcotics-control-punjab-2024",
+      "url": "https://wolftyping.pages.dev/paper-147-excise-and-taxation-inspector-excise-taxation-narcotics-control-punjab-2024/"
+    },
+    {
+      "paperNo": 148,
+      "post": "Excise and Taxation Inspector (BS-16)",
+      "department": "Excise, Taxation & Narcotics Control Department, Punjab",
+      "examDate": "08.09.2024",
+      "questionCount": 93,
+      "subjects": {
+        "generalKnowledge": 35,
+        "pakistanStudies": 26,
+        "english": 15,
+        "islamiat": 3,
+        "mathematics": 7,
+        "everydayScience": 7
+      },
+      "latestUpdates": 0,
+      "slug": "excise-and-taxation-inspector-bs-16-excise-taxation-narcotics-control-punjab-2024",
+      "url": "https://wolftyping.pages.dev/paper-148-excise-and-taxation-inspector-bs-16-excise-taxation-narcotics-control-punjab-2024/"
+    },
+    {
+      "paperNo": 149,
+      "post": "Media Monitoring Officer (BS-16) / Administrative Officer (BS-17) / Information Officer (BS-17) / Administrator (BS-16) / Estate Officer (BS-16)",
+      "department": "Various Departments, Punjab",
+      "examDate": "07.09.2024",
+      "questionCount": 90,
+      "subjects": {
+        "generalKnowledge": 36,
+        "pakistanStudies": 21,
+        "english": 14,
+        "islamiat": 6,
+        "mathematics": 8,
+        "everydayScience": 5
+      },
+      "latestUpdates": 0,
+      "slug": "media-monitoring-officer-administrative-officer-information-officer-administrator-estate-officer-various-punjab-2024",
+      "url": "https://wolftyping.pages.dev/paper-149-media-monitoring-officer-administrative-officer-information-officer-administrator-estate-officer-various-punjab-2024/"
+    },
+    {
+      "paperNo": 150,
+      "post": "Junior Computer Operator (BS-12)",
+      "department": "Transport and Mass Transit Department, Irrigation Department",
+      "examDate": "29.09.2024",
+      "questionCount": 96,
+      "subjects": {
+        "generalKnowledge": 85,
+        "pakistanStudies": 2,
+        "english": 4,
+        "mathematics": 3,
+        "everydayScience": 2
+      },
+      "latestUpdates": 0,
+      "slug": "junior-computer-operator-transport-and-mass-transit-irrigation-2024",
+      "url": "https://wolftyping.pages.dev/paper-150-junior-computer-operator-transport-and-mass-transit-irrigation-2024/"
+    },
+    {
+      "paperNo": 151,
+      "post": "Assistant Director (BS-17)",
+      "department": "Local Government & Community Development Department",
+      "examDate": "28.09.2024",
+      "questionCount": 96,
+      "subjects": {
+        "generalKnowledge": 49,
+        "pakistanStudies": 15,
+        "english": 13,
+        "islamiat": 5,
+        "mathematics": 6,
+        "everydayScience": 8
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-director-local-government-community-development-2024",
+      "url": "https://wolftyping.pages.dev/paper-151-assistant-director-local-government-community-development-2024/"
+    },
+    {
+      "paperNo": 152,
+      "post": "Subject Specialist Pakistan Studies (BS-17)",
+      "department": "Special Education Department, Punjab",
+      "examDate": "13.10.2024",
+      "questionCount": 95,
+      "subjects": {
+        "generalKnowledge": 27,
+        "pakistanStudies": 61,
+        "english": 2,
+        "islamiat": 1,
+        "mathematics": 2,
+        "everydayScience": 2
+      },
+      "latestUpdates": 0,
+      "slug": "subject-specialist-pakistan-studies-special-education-punjab-2024",
+      "url": "https://wolftyping.pages.dev/paper-152-subject-specialist-pakistan-studies-special-education-punjab-2024/"
+    },
+    {
+      "paperNo": 153,
+      "post": "Protocol Assistant (BS-12)",
+      "department": "Services & General Administration Department, Chief Minister’s Office, Punjab, Lahore",
+      "examDate": "12.10.2024",
+      "questionCount": 83,
+      "subjects": {
+        "generalKnowledge": 35,
+        "pakistanStudies": 22,
+        "english": 14,
+        "islamiat": 3,
+        "everydayScience": 9
+      },
+      "latestUpdates": 0,
+      "slug": "protocol-assistant-services-general-administration-chief-minister-s-office-punjab-lahore-2024",
+      "url": "https://wolftyping.pages.dev/paper-153-protocol-assistant-services-general-administration-chief-minister-s-office-punjab-lahore-2024/"
+    },
+    {
+      "paperNo": 154,
+      "post": "Assistant (BS-16)",
+      "department": "Services & General Administration Department and Punjab Police Department",
+      "examDate": "24.11.2024",
+      "questionCount": 94,
+      "subjects": {
+        "generalKnowledge": 32,
+        "pakistanStudies": 21,
+        "english": 15,
+        "islamiat": 6,
+        "mathematics": 8,
+        "everydayScience": 12
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-services-general-administration-and-punjab-police-2024",
+      "url": "https://wolftyping.pages.dev/paper-154-assistant-services-general-administration-and-punjab-police-2024/"
+    },
+    {
+      "paperNo": 155,
+      "post": "Assistant (BS-16)",
+      "department": "Services & General Administration Department and Punjab Police Department",
+      "examDate": "24.11.2024",
+      "questionCount": 94,
+      "subjects": {
+        "generalKnowledge": 33,
+        "pakistanStudies": 23,
+        "english": 14,
+        "islamiat": 7,
+        "mathematics": 9,
+        "everydayScience": 8
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-bs-16-services-general-administration-and-punjab-police-2024",
+      "url": "https://wolftyping.pages.dev/paper-155-assistant-bs-16-services-general-administration-and-punjab-police-2024/"
+    },
+    {
+      "paperNo": 156,
+      "post": "Assistant (BS-16)",
+      "department": "Services & General Administration Department and Punjab Police Department",
+      "examDate": "01.12.2024",
+      "questionCount": 83,
+      "subjects": {
+        "generalKnowledge": 36,
+        "pakistanStudies": 10,
+        "english": 15,
+        "islamiat": 7,
+        "mathematics": 8,
+        "everydayScience": 7
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-services-general-administration-and-punjab-police-2024-01-12-2024",
+      "url": "https://wolftyping.pages.dev/paper-156-assistant-services-general-administration-and-punjab-police-2024-01-12-2024/"
+    },
+    {
+      "paperNo": 157,
+      "post": "Assistant (BS-16)",
+      "department": "Services & General Administration Department and Punjab Police Department",
+      "examDate": "01.12.2024",
+      "questionCount": 96,
+      "subjects": {
+        "generalKnowledge": 41,
+        "pakistanStudies": 16,
+        "english": 14,
+        "islamiat": 8,
+        "mathematics": 8,
+        "everydayScience": 9
+      },
+      "latestUpdates": 0,
+      "slug": "assistant-bs-16-services-general-administration-and-punjab-police-2024-01-12-2024",
+      "url": "https://wolftyping.pages.dev/paper-157-assistant-bs-16-services-general-administration-and-punjab-police-2024-01-12-2024/"
+    },
+    {
+      "paperNo": 158,
+      "post": "Tehsildar / Consolidation Officer / Hill Torrent Officer / Reader to Members Board of Revenue (BS-16)",
+      "department": "Board of Revenue, Punjab",
+      "examDate": "15.12.2024",
+      "questionCount": 97,
+      "subjects": {
+        "generalKnowledge": 58,
+        "pakistanStudies": 12,
+        "english": 10,
+        "islamiat": 6,
+        "mathematics": 5,
+        "everydayScience": 6
+      },
+      "latestUpdates": 1,
+      "slug": "tehsildar-consolidation-officer-hill-torrent-officer-reader-to-members-board-of-revenue-board-of-revenue-punjab-2024",
+      "url": "https://wolftyping.pages.dev/paper-158-tehsildar-consolidation-officer-hill-torrent-officer-reader-to-members-board-of-revenue-board-of-revenue-punjab-2024/"
+    },
+    {
+      "paperNo": 159,
+      "post": "Tehsildar / Consolidation Officer / Hill Torrent Officer / Reader to Members Board of Revenue (Ministerial Quota) (BS-16)",
+      "department": "Board of Revenue, Punjab",
+      "examDate": "12.10.2024",
+      "questionCount": 68,
+      "subjects": {
+        "generalKnowledge": 32,
+        "pakistanStudies": 12,
+        "english": 10,
+        "islamiat": 9,
+        "mathematics": 2,
+        "everydayScience": 3
+      },
+      "latestUpdates": 1,
+      "slug": "tehsildar-consolidation-officer-hill-torrent-officer-reader-to-members-board-of-revenue-ministerial-quota-bs-16-board-of-revenue-punjab-2024",
+      "url": "https://wolftyping.pages.dev/paper-159-tehsildar-consolidation-officer-hill-torrent-officer-reader-to-members-board-of-revenue-ministerial-quota-bs-16-board-of-revenue-punjab-2024/"
+    },
+    {
+      "paperNo": 160,
+      "post": "Deputy Secretary / Deputy Controller of Examinations (BS-18) and Assistant Secretary / Assistant Controller of Examinations (BS-17)",
+      "department": "Board of Intermediate and Secondary Education, Sargodha",
+      "examDate": "23.11.2024",
+      "questionCount": 78,
+      "subjects": {
+        "generalKnowledge": 37,
+        "pakistanStudies": 16,
+        "english": 10,
+        "islamiat": 2,
+        "mathematics": 7,
+        "everydayScience": 6
+      },
+      "latestUpdates": 0,
+      "slug": "deputy-secretary-deputy-controller-of-examinations-and-assistant-secretary-assistant-controller-of-examinations-board-of-intermediate-and-secondary-education-sargodha-2024",
+      "url": "https://wolftyping.pages.dev/paper-160-deputy-secretary-deputy-controller-of-examinations-and-assistant-secretary-assistant-controller-of-examinations-board-of-intermediate-and-secondary-education-sargodha-2024/"
+    },
+    {
+      "paperNo": 161,
+      "post": "Combined Competitive Examination-2023 (PMS) (BS-17)",
+      "department": "Services & General Administration Department",
+      "examDate": "15.12.2024",
+      "questionCount": 100,
+      "subjects": {
+        "generalKnowledge": 71,
+        "pakistanStudies": 10,
+        "islamiat": 2,
+        "mathematics": 3,
+        "everydayScience": 14
+      },
+      "latestUpdates": 1,
+      "slug": "combined-competitive-examination-2023-services-general-administration-2024",
+      "url": "https://wolftyping.pages.dev/paper-161-combined-competitive-examination-2023-services-general-administration-2024/"
+    }
+  ]
+}
