@@ -46,15 +46,23 @@ flutter:
     - assets/images/logo.png
 
   # --- Fonts ---------------------------------------------------------
-  # Urdu / Arabic-script text: Jameel Noori Nastaleeq. The .ttf is NOT in
-  # the repo - place your licensed copy at
-  #   assets/fonts/JameelNooriNastaleeq.ttf
-  # (exact filename). Until that file exists, `flutter build` / `flutter
-  # test` fail with "unable to locate asset entry".
+  # Urdu / Arabic-script text: Noto Nastaliq Urdu (variable font,
+  # wght 400-700, OFL, from google/fonts). 690 KB — replaces the
+  # 10.8 MB Jameel Noori Nastaleeq file, which was too large to ever
+  # finish downloading on slow connections, so Urdu never appeared.
+  # The .ttf IS in the repo at
+  #   assets/fonts/NotoNastaliqUrdu.ttf
+  # The variable file is declared once per weight the app uses
+  # (400, 500, 700) so each weight is a real instance, not faux-bold.
   fonts:
-    - family: Jameel Noori Nastaleeq
+    - family: Noto Nastaliq Urdu
       fonts:
-        - asset: assets/fonts/JameelNooriNastaleeq.ttf
+        - asset: assets/fonts/NotoNastaliqUrdu.ttf
+          weight: 400
+        - asset: assets/fonts/NotoNastaliqUrdu.ttf
+          weight: 500
+        - asset: assets/fonts/NotoNastaliqUrdu.ttf
+          weight: 700
 
     # English / UI font (Inter) is a SEPARATE future task and is deliberately
     # not declared here. Leave it commented until that task:

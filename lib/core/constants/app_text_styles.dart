@@ -4,7 +4,7 @@ import 'app_fonts.dart';
 /// Text styles used across the app.
 ///
 /// Urdu text needs a taller line height and a Nastaliq font to render
-/// correctly: [urduFontFamily] is Jameel Noori Nastaleeq (see [AppFonts]).
+/// correctly: [urduFontFamily] is Noto Nastaliq Urdu (see [AppFonts]).
 /// Every other style inherits Inter from the app theme.
 class AppTextStyles {
   AppTextStyles._();
@@ -84,11 +84,13 @@ class AppTextStyles {
     letterSpacing: 0.2,
   );
 
-  // --- Urdu UI styles (Jameel Noori Nastaleeq) -------------------------
+  // --- Urdu UI styles (Noto Nastaliq Urdu) ------------------------------
   // Use these for any Urdu / Arabic-script text shown OUTSIDE the typing
-  // area (titles, previews, dialogs, picker items). Nastaleeq is tall and
+  // area (titles, previews, dialogs, picker items). Nastaliq is tall and
   // has a deep descender, so the line height is larger than Latin text.
-  // The font ships in one weight only, so no bold (it would be faux-bold).
+  // The font is variable (wght 400-700), declared per weight in
+  // pubspec.yaml, so w500 (typing text) and w700 (highlighted keyboard
+  // keys) are real weights, not faux-bold.
 
   /// Urdu running text: previews, subtitles, dropdown items.
   static const TextStyle urduBody = TextStyle(
