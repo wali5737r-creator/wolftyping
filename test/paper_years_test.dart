@@ -27,38 +27,38 @@ void main() {
 
   group('papers registry by year', () {
     test('groups are newest-first, all years 2019-2026 built', () {
-      final groups = paperYearGroups;
+      const groups = paperYearGroups;
       expect(groups.first.year, 2026);
       expect(groups.first.isBuilt, isTrue);
-      expect(groups.first.papers.length, 25);
+      expect(groups.first.paperCount, 25);
       expect(groups.first.totalQuestions, 1812);
       expect(groups[1].year, 2025);
       expect(groups[1].isBuilt, isTrue);
-      expect(groups[1].papers.length, 56);
+      expect(groups[1].paperCount, 56);
       expect(groups[1].totalQuestions, 3179);
       expect(groups[2].year, 2024);
       expect(groups[2].isBuilt, isTrue);
-      expect(groups[2].papers.length, 24);
+      expect(groups[2].paperCount, 24);
       expect(groups[2].totalQuestions, 2175);
       expect(groups[3].year, 2023);
       expect(groups[3].isBuilt, isTrue);
-      expect(groups[3].papers.length, 25);
+      expect(groups[3].paperCount, 25);
       expect(groups[3].totalQuestions, 2381);
       expect(groups[4].year, 2022);
       expect(groups[4].isBuilt, isTrue);
-      expect(groups[4].papers.length, 28);
+      expect(groups[4].paperCount, 28);
       expect(groups[4].totalQuestions, 2712);
       expect(groups[5].year, 2021);
       expect(groups[5].isBuilt, isTrue);
-      expect(groups[5].papers.length, 23);
+      expect(groups[5].paperCount, 23);
       expect(groups[5].totalQuestions, 2051);
       expect(groups[6].year, 2020);
       expect(groups[6].isBuilt, isTrue);
-      expect(groups[6].papers.length, 29);
+      expect(groups[6].paperCount, 29);
       expect(groups[6].totalQuestions, 2866);
       expect(groups[7].year, 2019);
       expect(groups[7].isBuilt, isTrue);
-      expect(groups[7].papers.length, 31);
+      expect(groups[7].paperCount, 31);
       expect(groups[7].totalQuestions, 2987);
       expect(
         groups.map((g) => g.year).toList(),
@@ -66,25 +66,52 @@ void main() {
       );
       for (final group in groups) {
         expect(group.isBuilt, isTrue);
-        expect(group.papers, isNotEmpty);
+        expect(group.paperCount, greaterThan(0));
       }
+      expect(totalBuiltPapers, 241);
+      expect(totalBuiltQuestions, 20163);
     });
 
     test(
-        'papersForYear returns papers for built years and empty for unbuilt years',
-        () {
-      expect(papersForYear(2026), papers2026);
-      expect(papersForYear(2025), papers2025);
-      expect(papersForYear(2024), papers2024);
-      expect(papersForYear(2030), isEmpty);
+        'deferred year data matches the constant counts in paperYearGroups',
+        () async {
+      // The year list renders from the small constant table so it
+      // needs no download; this test guards that table against
+      // drifting from the real deferred paper data.
+      for (final group in paperYearGroups) {
+        final papers = await loadPapersForYear(group.year);
+        expect(papers.length, group.paperCount,
+            reason: 'paper count for ${group.year}');
+        expect(
+          papers.fold(0, (sum, paper) => sum + paper.questionCount),
+          group.totalQuestions,
+          reason: 'question total for ${group.year}',
+        );
+      }
+      final all = await loadAllPapers();
+      expect(all.length, 241);
+      expect(
+        all.fold(0, (sum, paper) => sum + paper.questionCount),
+        20163,
+      );
+    });
+
+    test(
+        'loadPapersForYear returns papers for built years and empty for unbuilt years',
+        () async {
+      expect(await loadPapersForYear(2026), papers2026);
+      expect(await loadPapersForYear(2025), papers2025);
+      expect(await loadPapersForYear(2024), papers2024);
+      expect(await loadPapersForYear(2030), isEmpty);
       expect(isPaperYearBuilt(2026), isTrue);
       expect(isPaperYearBuilt(2025), isTrue);
       expect(isPaperYearBuilt(2024), isTrue);
       expect(isPaperYearBuilt(2030), isFalse);
     });
 
-    test('filterPapers matches number, post, department and filters', () {
-      final all = papersForYear(2026);
+    test('filterPapers matches number, post, department and filters',
+        () async {
+      final all = await loadPapersForYear(2026);
       expect(filterPapers(all, query: '233').length, 1);
       expect(filterPapers(all, query: '233').first.paperNo, 233);
       expect(filterPapers(all, query: 'no-such-paper'), isEmpty);

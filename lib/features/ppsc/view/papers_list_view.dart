@@ -27,7 +27,7 @@ class PapersListView extends GetView<MockTestController> {
 
   @override
   Widget build(BuildContext context) {
-    final List<PaperYearGroup> groups = paperYearGroups;
+    const List<PaperYearGroup> groups = paperYearGroups;
     return AppScaffold(
       currentRoute: AppRoutes.ppscPastPapers,
       body: SingleChildScrollView(
@@ -111,7 +111,7 @@ class _YearHeader extends StatelessWidget {
                 Text('${group.year}', style: AppTextStyles.h2),
                 const SizedBox(height: 2),
                 Text(
-                  'Past Papers · ${group.papers.length} papers · '
+                  'Past Papers · ${group.paperCount} papers · '
                   '${group.totalQuestions} questions in total',
                   style: AppTextStyles.bodyMedium,
                 ),

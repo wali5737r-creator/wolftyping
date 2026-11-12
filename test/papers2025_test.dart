@@ -28,7 +28,7 @@ void main() {
 
   group('2025 papers registry', () {
     test('has 56 papers, numbered 162-217, all year 2025, no paper 218',
-        () {
+        () async {
       expect(papers2025.length, 56);
       expect(expectedCounts.length, 56);
       for (int i = 0; i < papers2025.length; i++) {
@@ -38,7 +38,7 @@ void main() {
       }
       expect(papers2025.any((paper) => paper.paperNo == 218), isFalse);
       expect(papers2025TotalQuestions, 3179);
-      expect(papersForYear(2025), papers2025);
+      expect(await loadPapersForYear(2025), papers2025);
     });
 
     test('every question is valid and ids are unique per paper', () {
