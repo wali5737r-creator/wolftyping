@@ -3,7 +3,7 @@ $__dart_deferred_initializers__.current=function(a,b,c,$){var B,A
 B=c[0]
 A=c[40]
 var z=a.updateTypes([])
-var y={d:B.U("v<k>")};(function constants(){var x=a.makeConstList
-A.z5=x(["Squash","Hockey","Badminton","Cricket"],y.d)
-A.A8=x(["5","7","4","6"],y.d)})()};
-(a=>{a["CkV7REp/lJOLukd/3QCmPsAPQdo="]=a.current})($__dart_deferred_initializers__);
+var y={d:B.V("v<k>")};(function constants(){var x=a.makeConstList
+A.z9=x(["Squash","Hockey","Badminton","Cricket"],y.d)
+A.Ac=x(["5","7","4","6"],y.d)})()};
+(a=>{a["MJUc6TZ65CkoWAONsj3u1q2Y6Wc="]=a.current})($__dart_deferred_initializers__);

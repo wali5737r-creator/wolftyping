@@ -1041,6 +1041,13 @@ class _ResultPanel extends StatelessWidget {
                 'Practice result only — not a real PPSC result.',
                 style: AppTextStyles.body,
               ),
+              if (controller.kind.value == MockTestKind.custom) ...[
+                const SizedBox(height: 6),
+                const Text(
+                  'This result was recorded in the gradebook.',
+                  style: AppTextStyles.body,
+                ),
+              ],
               const SizedBox(height: 20),
               Wrap(
                 spacing: AppDimensions.gapMedium,
@@ -1116,6 +1123,12 @@ class _ResultPanel extends StatelessWidget {
                     icon: const Icon(Icons.keyboard_alt_outlined),
                     label: const Text('PPSC Urdu Typing Practice'),
                   ),
+                  if (controller.kind.value == MockTestKind.custom)
+                    OutlinedButton.icon(
+                      onPressed: () => Get.toNamed(AppRoutes.gradebook),
+                      icon: const Icon(Icons.grade_outlined),
+                      label: const Text('Open gradebook'),
+                    ),
                 ],
               ),
               const SizedBox(height: 24),

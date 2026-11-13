@@ -3,10 +3,13 @@ import 'dart:math';
 
 import 'package:get/get.dart';
 
+import '../../../core/services/certificate_code.dart';
 import '../model/custom_set.dart';
+import '../model/gradebook_entry.dart';
 import '../model/mock_attempt.dart';
 import '../model/mock_question.dart';
 import '../model/paper_test.dart';
+import '../service/gradebook_repository.dart';
 import '../service/mock_progress_repository.dart';
 import '../service/mock_questions.dart';
 import '../service/mock_test_engine.dart';
@@ -449,6 +452,46 @@ class MockTestController extends GetxController {
     final Future<void> op = progress.recordAttempt(attempt);
     _progressOps.add(op);
     unawaited(op.then((_) => _progressOps.remove(op)));
+    // A finished custom test is recorded in the gradebook
+    // automatically, under the custom set's name. The entry IS a
+    // mock-kind certificate code (WT1), so the same code dedupes:
+    // re-taking with the same result never records twice.
+    if (kind.value == MockTestKind.custom && activeCustomSet.value != null) {
+      unawaited(_recordCustomResultInGradebook(finished));
+    }
+  }
+
+  /// Builds the WT1 code for a finished custom test and records it.
+  /// Never throws into [submit]: a too-long test name (over the
+  /// certificate label limit) simply skips the gradebook entry.
+  Future<void> _recordCustomResultInGradebook(MockTestResult finished) async {
+    final CustomSet? set = activeCustomSet.value;
+    if (set == null) return;
+    try {
+      final CertificateData data = CertificateData(
+        kind: CertificateKind.mock,
+        testLabel: set.name,
+        holderName: displayStudentName,
+        date: DateTime.now(),
+        score: finished.score,
+        totalQuestions: finished.totalQuestions,
+        correct: finished.correct,
+        wrong: finished.wrong,
+        skipped: finished.skipped,
+        accuracy: 0,
+      );
+      final String code = encodeCertificateCode(data);
+      await GradebookRepository.instance.recordEntry(
+        GradebookEntry.fromCertificateData(
+          data,
+          code,
+          source: 'this device',
+        ),
+      );
+    } catch (_) {
+      // Gradebook recording is a bonus, never a reason to fail a
+      // finished test.
+    }
   }
 
   void backToSetup() {

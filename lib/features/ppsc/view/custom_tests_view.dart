@@ -70,6 +70,11 @@ class CustomTestsView extends GetView<CustomSetsController> {
                       icon: const Icon(Icons.input),
                       label: const Text('Import a shared test'),
                     ),
+                    OutlinedButton.icon(
+                      onPressed: () => Get.toNamed(AppRoutes.gradebook),
+                      icon: const Icon(Icons.grade_outlined),
+                      label: const Text('Gradebook'),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 20),

@@ -19,10 +19,12 @@ import '../../features/practice/view/mistake_practice_view.dart';
 import '../../features/practice/view/practice_view.dart';
 
 import '../../features/ppsc/controller/custom_sets_controller.dart';
+import '../../features/ppsc/controller/gradebook_controller.dart';
 import '../../features/ppsc/controller/mock_test_controller.dart';
 import '../../features/ppsc/controller/ppsc_typing_controller.dart';
 import '../../features/ppsc/view/custom_set_editor_view.dart';
 import '../../features/ppsc/view/custom_tests_view.dart';
+import '../../features/ppsc/view/gradebook_view.dart';
 import '../../features/ppsc/view/mock_test_view.dart';
 import '../../features/ppsc/view/papers_list_view.dart';
 import '../../features/ppsc/view/year_papers_view.dart';
@@ -229,6 +231,17 @@ class AppPages {
       page: () => const CustomSetEditorView(),
       binding: BindingsBuilder(() {
         Get.lazyPut<CustomSetsController>(() => CustomSetsController());
+      }),
+    ),
+
+    // Gradebook: recorded custom-test results, grouped by test
+    // (in-app route only — no static page, no sitemap entry).
+    GetPage(
+      name: AppRoutes.gradebook,
+      page: () => const GradebookView(),
+      binding: BindingsBuilder(() {
+        Get.lazyPut<CustomSetsController>(() => CustomSetsController());
+        Get.lazyPut<GradebookController>(() => GradebookController());
       }),
     ),
 

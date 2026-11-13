@@ -18,6 +18,7 @@ abstract class AppRoutes {
   static const String ppscPastPapersYear = '/ppsc-past-papers-year';
   static const String ppscCustomTests = '/ppsc-custom-tests';
   static const String ppscCustomTestEditor = '/ppsc-custom-test-editor';
+  static const String gradebook = '/gradebook';
   static const String myParagraphs = '/my-paragraphs';
   static const String paragraphForm = '/paragraph-form';
   static const String paragraphPreview = '/paragraph-preview';
