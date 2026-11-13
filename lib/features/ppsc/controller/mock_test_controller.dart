@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/services/certificate_code.dart';
 import '../model/custom_set.dart';
@@ -57,10 +58,47 @@ class MockTestController extends GetxController {
   /// persistence with [flushProgress] instead of guessing.
   final List<Future<void>> _progressOps = <Future<void>>[];
 
+  /// On-device key for the last mock duration the user chose, so the
+  /// setup page remembers it across reloads. 90 minutes stays the
+  /// default when nothing was ever chosen (or the stored value is
+  /// not a duration this test offers).
+  static const String mockDurationStorageKey =
+      'wolftyping_mock_duration_minutes';
+
   @override
   void onInit() {
     super.onInit();
     unawaited(progress.init());
+    unawaited(_restoreDuration());
+  }
+
+  /// Restores the last chosen duration. A missing or invalid stored
+  /// value leaves the 90-minute default untouched, and a storage
+  /// failure never blocks the setup page.
+  Future<void> _restoreDuration() async {
+    try {
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+      final int? minutes = prefs.getInt(mockDurationStorageKey);
+      if (minutes == null) return;
+      final Duration saved = Duration(minutes: minutes);
+      if (fullDurations.contains(saved)) {
+        selectedDuration.value = saved;
+      }
+    } catch (_) {
+      // Keep the 90-minute default.
+    }
+  }
+
+  /// Persists a chosen duration. A failed write is swallowed:
+  /// remembering the choice is a bonus, never a reason to break
+  /// choosing one.
+  Future<void> _persistDuration(Duration duration) async {
+    try {
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+      await prefs.setInt(mockDurationStorageKey, duration.inMinutes);
+    } catch (_) {
+      // Best effort only.
+    }
   }
 
   /// Waits for all progress writes started so far to finish.
@@ -148,9 +186,7 @@ class MockTestController extends GetxController {
       return fullTestQuestions;
     }
     if (kind.value == MockTestKind.subject && subject.value != null) {
-      return sampleQuestions
-          .where((q) => q.subject == subject.value)
-          .toList();
+      return sampleQuestions.where((q) => q.subject == subject.value).toList();
     }
     return sampleQuestions;
   }
@@ -263,6 +299,7 @@ class MockTestController extends GetxController {
 
   void selectDuration(Duration duration) {
     selectedDuration.value = duration;
+    unawaited(_persistDuration(duration));
   }
 
   void setNegativeMarking(bool value) {
@@ -409,8 +446,7 @@ class MockTestController extends GetxController {
   /// Weakest subjects from recorded attempts, weakest first. Empty
   /// when no attempts have enough questions yet — the UI must show
   /// no hint (or a neutral prompt), never invented data.
-  List<SubjectAttemptStats> get weakestSubjects =>
-      progress.weakestSubjects();
+  List<SubjectAttemptStats> get weakestSubjects => progress.weakestSubjects();
 
   void clearCurrentAnswer() {
     if (_engine == null) return;
@@ -420,8 +456,7 @@ class MockTestController extends GetxController {
 
   int? selectedFor(MockQuestion question) => engine.answerFor(question.id);
 
-  List<MockQuestion> get unansweredQuestions =>
-      _engine?.unanswered ?? const [];
+  List<MockQuestion> get unansweredQuestions => _engine?.unanswered ?? const [];
 
   /// Finishes the test and computes the result. [auto] is true only
   /// when the countdown reached zero.
@@ -433,8 +468,7 @@ class MockTestController extends GetxController {
     final MockTestResult finished = engine.result();
     result.value = finished;
     phase.value = MockTestPhase.result;
-    final Map<String, Map<String, int>> breakdown =
-        _subjectBreakdown(finished);
+    final Map<String, Map<String, int>> breakdown = _subjectBreakdown(finished);
     // Planned duration and time actually spent: History shows both,
     // and the planned duration is what its duration filter matches.
     // `remaining` is already zero on an auto-submit, so elapsed is

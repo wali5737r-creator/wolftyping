@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ui';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
@@ -32,6 +33,15 @@ CustomSet _seedSet() => CustomSet(
 );
 
 Future<void> _pumpCustomTests(WidgetTester tester) async {
+  // Tall viewport: each mock-test question card reserves the
+  // Clear-answer row's height (so answering never shifts the list),
+  // so the default 600px viewport no longer builds the second
+  // card initially — the run-through test reads both without
+  // scrolling.
+  tester.view.physicalSize = const Size(800, 1400);
+  tester.view.devicePixelRatio = 1.0;
+  addTearDown(tester.view.resetPhysicalSize);
+  addTearDown(tester.view.resetDevicePixelRatio);
   await tester.pumpWidget(
     GetMaterialApp(
       theme: AppTheme.light,

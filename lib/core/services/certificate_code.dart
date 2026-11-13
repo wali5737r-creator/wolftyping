@@ -96,6 +96,98 @@ class CertificateData {
     final String s = _formatNumber(score);
     return kind == CertificateKind.mock ? '$s / $totalQuestions' : '$s WPM';
   }
+
+  /// Plain-JSON form, for on-device storage of the last generated
+  /// certificate (see `LastCertificateStore`). The verification code
+  /// itself is stored alongside it; the JSON is only the result.
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'kind': kind.name,
+        'testLabel': testLabel,
+        'holderName': holderName,
+        'date': date.toIso8601String(),
+        'score': score,
+        'totalQuestions': totalQuestions,
+        'correct': correct,
+        'wrong': wrong,
+        'skipped': skipped,
+        'accuracy': accuracy,
+      };
+
+  /// Inverse of [toJson]. Throws [FormatException] on a missing field,
+  /// an unknown kind, or a value outside the ranges
+  /// [decodeCertificateCode] enforces, so a corrupt stored blob is
+  /// rejected instead of displayed.
+  factory CertificateData.fromJson(Map<String, dynamic> json) {
+    final CertificateKind? kind = switch (json['kind']) {
+      'mock' => CertificateKind.mock,
+      'typing' => CertificateKind.typing,
+      _ => null,
+    };
+    final String? label = json['testLabel'] as String?;
+    final String? name = json['holderName'] as String?;
+    final DateTime? date = json['date'] is String
+        ? DateTime.tryParse(json['date'] as String)
+        : null;
+    final double? score = (json['score'] as num?)?.toDouble();
+    final int? total = (json['totalQuestions'] as num?)?.toInt();
+    final int? correct = (json['correct'] as num?)?.toInt();
+    final int? wrong = (json['wrong'] as num?)?.toInt();
+    final int? skipped = (json['skipped'] as num?)?.toInt();
+    final double? accuracy = (json['accuracy'] as num?)?.toDouble();
+    if (kind == null ||
+        label == null ||
+        label.trim().isEmpty ||
+        label.length > maxLabelLength ||
+        name == null ||
+        name.trim().isEmpty ||
+        name.length > maxNameLength ||
+        date == null ||
+        date.year < 2020 ||
+        date.year > 2100 ||
+        score == null ||
+        score < 0 ||
+        total == null ||
+        total < 0 ||
+        correct == null ||
+        correct < 0 ||
+        wrong == null ||
+        wrong < 0 ||
+        skipped == null ||
+        skipped < 0 ||
+        accuracy == null ||
+        accuracy < 0 ||
+        accuracy > 100) {
+      throw const FormatException(
+        'Stored certificate data is not valid.',
+      );
+    }
+    if (kind == CertificateKind.mock) {
+      if (total == 0 ||
+          score > total ||
+          correct + wrong + skipped != total ||
+          accuracy != 0) {
+        throw const FormatException(
+          'Stored certificate data describes an impossible mock result.',
+        );
+      }
+    } else if (total != 0 || skipped != 0 || score > 300) {
+      throw const FormatException(
+        'Stored certificate data describes an impossible typing result.',
+      );
+    }
+    return CertificateData(
+      kind: kind,
+      testLabel: label,
+      holderName: name,
+      date: DateTime(date.year, date.month, date.day),
+      score: score,
+      totalQuestions: total,
+      correct: correct,
+      wrong: wrong,
+      skipped: skipped,
+      accuracy: accuracy,
+    );
+  }
 }
 
 /// Salt mixed into the checksum so a code from another scheme cannot

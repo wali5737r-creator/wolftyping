@@ -148,10 +148,9 @@ class AppTheme {
           ),
         ).copyWith(
           side: WidgetStateProperty.resolveWith<BorderSide>(
-            (Set<WidgetState> states) =>
-                states.contains(WidgetState.focused)
-                    ? BorderSide(color: accent, width: 2)
-                    : BorderSide(color: border),
+            (Set<WidgetState> states) => states.contains(WidgetState.focused)
+                ? BorderSide(color: accent, width: 2)
+                : BorderSide(color: border),
           ),
         ),
       ),
@@ -273,6 +272,23 @@ class AppTheme {
         backgroundColor: surface,
         // Selected chips use the theme tint surface (report: Tint token).
         selectedColor: tint,
+        // The label is the primary text colour in BOTH states. The
+        // Material 3 default selected label (onSecondaryContainer,
+        // a pale dynamic colour for this scheme) was unreadable
+        // against the light tint — pale text on light green. Primary
+        // text on the tint measures 13.7:1 (light) and 12.7:1 (dark),
+        // both well above the 4.5:1 readable-text bar; the values are
+        // pinned by choice_chip_contrast_test.dart. The checkmark
+        // takes the same colour so it stays visible too.
+        labelStyle: TextStyle(
+          color: textPrimary,
+          fontWeight: FontWeight.w500,
+        ),
+        secondaryLabelStyle: TextStyle(
+          color: textPrimary,
+          fontWeight: FontWeight.w600,
+        ),
+        checkmarkColor: textPrimary,
         side: BorderSide(color: border),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppDimensions.controlRadius),
