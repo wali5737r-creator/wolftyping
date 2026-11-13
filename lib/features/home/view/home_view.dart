@@ -23,12 +23,20 @@ class HomeView extends GetView<HomeController> {
         if (controller.isLoading.value) {
           return const Center(child: CircularProgressIndicator());
         }
+        // The empty list means three different things and must never
+        // be shown as one headline: still recovering (the database may
+        // well have tests, it just hasn't answered yet), recovery
+        // failed (the data is there but unreadable), or genuinely
+        // empty (the load completed and there are no tests). Only the
+        // last one may say "No completed tests yet".
+        if (controller.loadTimedOut.value && !controller.loadFailed.value) {
+          return _RecoveringState(onRetry: controller.retryLoad);
+        }
+        if (controller.loadTimedOut.value && controller.loadFailed.value) {
+          return _FailedState(onRetry: controller.retryLoad);
+        }
         if (!controller.hasTests) {
-          return _EmptyState(
-            loadTimedOut: controller.loadTimedOut.value,
-            loadFailed: controller.loadFailed.value,
-            onRetry: controller.retryLoad,
-          );
+          return const _EmptyState();
         }
         return const _DashboardBody();
       }),
@@ -36,32 +44,89 @@ class HomeView extends GetView<HomeController> {
   }
 }
 
-class _EmptyState extends StatelessWidget {
-  const _EmptyState({
-    this.loadTimedOut = false,
-    this.loadFailed = false,
-    this.onRetry,
-  });
+/// Shown while a timed-out load is still recovering in the background:
+/// a spinner, not the "No completed tests yet" headline — completed
+/// tests may well exist, the database just hasn't answered yet. The
+/// "will reload on its own" promise is kept by the controller's
+/// re-check timer plus its direct reload on recovery success.
+class _RecoveringState extends StatelessWidget {
+  const _RecoveringState({required this.onRetry});
 
-  /// When the history read timed out, the same empty state is shown plus
-  /// a Retry button: in-app navigation reuses the same database instance,
-  /// so only a real retry (which runs database recovery) can help —
-  /// reopening the page would just re-run the same stuck open.
-  final bool loadTimedOut;
-
-  /// When the background recovery has already reported the database
-  /// still unreachable (as opposed to merely still recovering), the
-  /// notice says so — the user can tell "still recovering" from
-  /// "recovery failed".
-  final bool loadFailed;
-
-  /// Called by the "Retry loading history" button. Null when no retry
-  /// is offered (kept optional so the plain empty state stays usable).
-  final VoidCallback? onRetry;
+  final VoidCallback onRetry;
 
   @override
   Widget build(BuildContext context) {
-    final Widget empty = EmptyStateView(
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const CircularProgressIndicator(),
+            const SizedBox(height: 16),
+            const Text('Still loading your history',
+                style: AppTextStyles.h3, textAlign: TextAlign.center),
+            const SizedBox(height: 8),
+            Text(
+              'Your typing history is still loading in the background — '
+              'recovery has not finished yet. Your data is safe. This '
+              'page will reload on its own when recovery finishes.',
+              style: AppTextStyles.captionOf(context),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton.icon(
+              onPressed: onRetry,
+              icon: const Icon(Icons.refresh),
+              label: const Text('Retry loading history'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Shown when the background recovery has already reported the database
+/// still unreachable: no auto-reload promise here (recovery is done),
+/// just the honest failure and Retry.
+class _FailedState extends StatelessWidget {
+  const _FailedState({required this.onRetry});
+
+  final VoidCallback onRetry;
+
+  @override
+  Widget build(BuildContext context) {
+    return EmptyStateView(
+      icon: Icons.history,
+      title: "History couldn't be loaded",
+      message: 'Your data is safe — tap Retry to try again.',
+      actions: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ElevatedButton.icon(
+            onPressed: onRetry,
+            icon: const Icon(Icons.refresh),
+            label: const Text('Retry loading history'),
+          ),
+          const SizedBox(height: 8),
+          ElevatedButton.icon(
+            onPressed: () => Get.offNamed(defaultTypingRoute()),
+            icon: const Icon(Icons.play_arrow),
+            label: const Text('Start a typing test'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _EmptyState extends StatelessWidget {
+  const _EmptyState();
+
+  @override
+  Widget build(BuildContext context) {
+    return EmptyStateView(
       icon: Icons.keyboard_alt_outlined,
       title: 'No completed tests yet',
       message: 'Finish a typing test and your speed, accuracy and daily '
@@ -82,35 +147,6 @@ class _EmptyState extends StatelessWidget {
           ),
         ],
       ),
-    );
-    if (!loadTimedOut) return empty;
-    return Column(
-      children: [
-        Expanded(child: empty),
-        if (onRetry != null)
-          Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: ElevatedButton.icon(
-              onPressed: onRetry,
-              icon: const Icon(Icons.refresh),
-              label: const Text('Retry loading history'),
-            ),
-          ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 24),
-          child: Text(
-            loadFailed
-                ? 'History could not be loaded. Your data is safe — '
-                    'tap Retry to try again.'
-                : 'History is still loading in the background — '
-                    'recovery has not finished yet. Your data is safe; '
-                    'tap Retry to try again, or wait and this page '
-                    'will reload on its own.',
-            style: AppTextStyles.captionOf(context),
-            textAlign: TextAlign.center,
-          ),
-        ),
-      ],
     );
   }
 }

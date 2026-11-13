@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../core/constants/app_text_styles.dart';
 import '../../../core/routes/app_routes.dart';
 import '../../../core/widgets/app_controls.dart';
 import '../../../core/widgets/app_scaffold.dart';
@@ -339,6 +340,10 @@ class _PartialDataBanner extends StatelessWidget {
   }
 }
 
+/// The three states of an empty History list — see the Dashboard's
+/// [_RecoveringState]/[_FailedState] for why they must not share one
+/// headline: only a load that completed with zero rows may say
+/// "No completed tests yet".
 class _EmptyState extends StatelessWidget {
   const _EmptyState({
     this.loadTimedOut = false,
@@ -346,15 +351,15 @@ class _EmptyState extends StatelessWidget {
     this.onRetry,
   });
 
-  /// When the history read timed out, the same empty state is shown plus
-  /// a Retry button and an honest one-line notice: the data was not
-  /// deleted, it just could not be read yet.
+  /// When the history read timed out, the recovering state is shown
+  /// instead of the empty state: the data was not deleted, it just
+  /// could not be read yet.
   final bool loadTimedOut;
 
   /// When the background recovery has already reported the database
   /// still unreachable (as opposed to merely still recovering), the
-  /// notice says so — the user can tell "still recovering" from
-  /// "recovery failed".
+  /// failed state is shown — the user can tell "still recovering"
+  /// from "recovery failed".
   final bool loadFailed;
 
   /// Called by the "Retry loading history" button. Null when no retry
@@ -363,7 +368,9 @@ class _EmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Widget empty = EmptyStateView(
+    if (loadTimedOut && !loadFailed) return _RecoveringState(onRetry);
+    if (loadTimedOut && loadFailed) return _FailedState(onRetry);
+    return EmptyStateView(
       icon: Icons.history,
       title: 'No completed tests yet',
       message: 'Finish a typing test or a mock test and it will show up here.',
@@ -387,42 +394,98 @@ class _EmptyState extends StatelessWidget {
         ],
       ),
     );
-    if (!loadTimedOut) return empty;
-    // Scrollable, not Expanded: the History header + filters already
-    // take much of the viewport, so the empty state + Retry + notice
-    // (taller than the remaining space on short screens) must scroll
-    // rather than overflow. An Expanded around `empty` would give it a
-    // tight height smaller than its content and overflow instead. A
-    // SingleChildScrollView (not a ListView) builds the Retry button
-    // eagerly, so it is always in the tree.
+  }
+}
+
+// Scrollable, not Expanded: the History header + filters already take
+// much of the viewport, so the state + Retry + notice (taller than the
+// remaining space on short screens) must scroll rather than overflow.
+// A SingleChildScrollView (not a ListView) builds the Retry button
+// eagerly, so it is always in the tree.
+class _RecoveringState extends StatelessWidget {
+  const _RecoveringState(this.onRetry);
+
+  final VoidCallback? onRetry;
+
+  @override
+  Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: [
-          empty,
-          if (onRetry != null)
-            Padding(
-              padding: const EdgeInsets.only(top: 8, bottom: 12),
-              child: Center(
-                child: ElevatedButton.icon(
-                  onPressed: onRetry,
-                  icon: const Icon(Icons.refresh),
-                  label: const Text('Retry loading history'),
-                ),
-              ),
-            ),
+          const SizedBox(height: 32),
+          const CircularProgressIndicator(),
+          const SizedBox(height: 16),
+          const Text('Still loading your history',
+              style: AppTextStyles.h3, textAlign: TextAlign.center),
+          const SizedBox(height: 8),
           Padding(
-            padding: const EdgeInsets.only(bottom: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Text(
-              loadFailed
-                  ? 'History could not be loaded. Your data is safe — '
-                      'tap Retry to try again.'
-                  : 'History is still loading in the background — '
-                      'recovery has not finished yet. Your data is '
-                      'safe; tap Retry to try again, or wait and this '
-                      'page will reload on its own.',
+              'History is still loading in the background — recovery '
+              'has not finished yet. Your data is safe. This page '
+              'will reload on its own when recovery finishes.',
+              style: AppTextStyles.captionOf(context),
               textAlign: TextAlign.center,
             ),
           ),
+          if (onRetry != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 16, bottom: 24),
+              child: ElevatedButton.icon(
+                onPressed: onRetry,
+                icon: const Icon(Icons.refresh),
+                label: const Text('Retry loading history'),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+}
+
+class _FailedState extends StatelessWidget {
+  const _FailedState(this.onRetry);
+
+  final VoidCallback? onRetry;
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          EmptyStateView(
+            icon: Icons.history,
+            title: "History couldn't be loaded",
+            message: 'Your data is safe — tap Retry to try again.',
+            actions: Wrap(
+              spacing: 12,
+              runSpacing: 12,
+              alignment: WrapAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () => Get.toNamed(AppRoutes.typingTest),
+                  child: const Text('Start English Test'),
+                ),
+                OutlinedButton(
+                  onPressed: () => Get.toNamed(AppRoutes.urduTypingTest),
+                  child: const Text('Start Urdu Test'),
+                ),
+                OutlinedButton(
+                  onPressed: () => Get.toNamed(AppRoutes.ppscMockTest),
+                  child: const Text('Start Mock Test'),
+                ),
+              ],
+            ),
+          ),
+          if (onRetry != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 8, bottom: 24),
+              child: ElevatedButton.icon(
+                onPressed: onRetry,
+                icon: const Icon(Icons.refresh),
+                label: const Text('Retry loading history'),
+              ),
+            ),
         ],
       ),
     );

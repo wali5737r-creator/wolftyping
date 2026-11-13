@@ -9,11 +9,15 @@ import 'app_database.dart';
 /// Recovery for a hung Drift database open (P0-5).
 ///
 /// Root cause: on web the database opens through
-/// `LazyDatabase(() async => WasmDatabase.open(...))`
-/// (`lib/core/database/database_connection_web.dart`). Fetching
-/// `sqlite3.wasm` (748,686 bytes) + `drift_worker.js` (357,220 bytes) on a
-/// slow connection takes a long time, inside the open — and drift 2.35.0's
-/// `LazyDatabase` caches that opener future (`_awaitOpened` in
+/// `LazyDatabase(() async => ...)` (`lib/core/database/database_connection_web.dart`).
+/// The current opener loads `sqlite3.wasm` (748,686 bytes) in the main
+/// isolate and opens IndexedDB — it either completes or throws. (The
+/// previous opener used drift's worker path, `WasmDatabase.open`, whose
+/// shared-worker probe could hang forever on Chrome; see that file.
+/// Recovery still matters because a fetch on a very slow connection can
+/// legitimately exceed the probe budget, and a hung open must be
+/// abandoned after a bounded probe.) Drift 2.35.0's `LazyDatabase`
+/// caches that opener future (`_awaitOpened` in
 /// `lib/src/utils/lazy_database.dart`): every later query awaits the same
 /// stuck future forever, so there is no retry today.
 ///

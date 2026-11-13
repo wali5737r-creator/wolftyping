@@ -5,3 +5,12 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# sqlite3.wasm (748,686 bytes) is fetched on every database open, so a
+# repeat visit within the hour reuses it instead of re-downloading it.
+# 1 hour + must-revalidate (not immutable): the file changes only when
+# the drift/sqlite3 build changes, and a stale wasm must never outlive
+# a deploy — revalidation keeps a new build safe.
+# drift_worker.js is no longer fetched (see database_connection_web.dart).
+/sqlite3.wasm
+  Cache-Control: public, max-age=3600, must-revalidate

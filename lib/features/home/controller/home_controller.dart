@@ -24,16 +24,28 @@ class HomeController extends GetxController {
   /// database open can hang on a reload). Tests inject a shorter value.
   static const Duration kLoadTimeout = Duration(seconds: 8);
 
+  /// How often the Dashboard re-checks the database while a load timed
+  /// out and recovery is still running (see [_startRecheckTimer]).
+  /// Tests inject a shorter value.
+  static const Duration kRecheckInterval = Duration(seconds: 10);
+
+  /// Maximum automatic re-checks after a timed-out load. Bounds the
+  /// timer so it can never poll forever; a manual Retry always works.
+  static const int kMaxRechecks = 6;
+
   HomeController({
     ProgressRepository? repository,
     Duration loadTimeout = kLoadTimeout,
+    Duration recheckInterval = kRecheckInterval,
     DatabaseRecovery? databaseRecovery,
   })  : _repository = repository ?? ProgressRepository.instance,
         _loadTimeout = loadTimeout,
+        _recheckInterval = recheckInterval,
         _recovery = databaseRecovery ?? DatabaseRecovery();
 
   final ProgressRepository _repository;
   final Duration _loadTimeout;
+  final Duration _recheckInterval;
   final DatabaseRecovery _recovery;
 
   final RxBool isLoading = true.obs;
@@ -53,6 +65,20 @@ class HomeController extends GetxController {
 
   Worker? _refreshWorker;
 
+  /// A load already in flight (initial load, revision bump, direct
+  /// reload after recovery, re-check timer) — joined, not restarted.
+  Future<void>? _loadFuture;
+
+  /// Re-check timer while a load timed out (see [_startRecheckTimer]).
+  Timer? _recheckTimer;
+  int _recheckCount = 0;
+
+  /// Whether this load episode already reloaded directly after a
+  /// successful recovery — at most one direct reload per episode, so a
+  /// probe-success followed by another fetch timeout cannot loop
+  /// forever (the bounded re-check timer and manual Retry still apply).
+  bool _directReloaded = false;
+
   @override
   void onInit() {
     super.onInit();
@@ -67,8 +93,8 @@ class HomeController extends GetxController {
 
   /// Loads the Dashboard data, bounded: a fetch that does not answer
   /// within [_loadTimeout] returns its fallback instead of spinning.
-  /// The empty state + "Retry loading history" button therefore appear
-  /// within ~8s of mount even when the database never answers.
+  /// The recovering state + "Retry loading history" button therefore
+  /// appear within ~8s of mount even when the database never answers.
   ///
   /// The two reads are independent and run concurrently: a hung or
   /// throwing history read degrades to the empty history state with a
@@ -83,15 +109,32 @@ class HomeController extends GetxController {
   /// throw kicks off one background recovery (at most one per load()
   /// call) and the load finishes. If recovery succeeds it replaces the
   /// stuck instance and notifies via [DataRefreshService], so the
-  /// `ever()` worker in [onInit] re-runs [load] automatically — no
-  /// manual retry needed. If recovery reports the database still
-  /// unreachable, [loadFailed] is set (only while the load is still
-  /// timed out, so a later successful reload is never overwritten by a
-  /// stale callback).
-  Future<void> load() async {
+  /// `ever()` worker in [onInit] re-runs [load] automatically — and
+  /// [_runBackgroundRecovery] also reloads directly, and the re-check
+  /// timer keeps retrying while recovery runs, so the "will reload on
+  /// its own" promise in the view is kept even if the revision bump is
+  /// missed. If recovery reports the database still unreachable,
+  /// [loadFailed] is set (only while the load is still timed out, so a
+  /// later successful reload is never overwritten by a stale callback).
+  ///
+  /// Concurrent callers (initial load, revision bump, re-check timer,
+  /// direct reload) join one in-flight load instead of resetting each
+  /// other's flags.
+  Future<void> load() {
+    final Future<void>? inFlight = _loadFuture;
+    if (inFlight != null) return inFlight;
+    final Future<void> run = _load();
+    _loadFuture = run;
+    return run.whenComplete(() {
+      if (identical(_loadFuture, run)) _loadFuture = null;
+    });
+  }
+
+  Future<void> _load() async {
     loadTimedOut.value = false;
     loadFailed.value = false;
     isLoading.value = true;
+    _directReloaded = false;
     // At most one background recovery per load() call, however many
     // fetches fail inside it.
     bool recoveryAttempted = false;
@@ -99,6 +142,7 @@ class HomeController extends GetxController {
     void kickOffBackgroundRecovery() {
       if (recoveryAttempted) return;
       recoveryAttempted = true;
+      _startRecheckTimer();
       unawaited(_runBackgroundRecovery());
     }
 
@@ -144,13 +188,47 @@ class HomeController extends GetxController {
       ]);
     } finally {
       isLoading.value = false;
+      // A load that did not time out means the database answered (or
+      // the list is genuinely empty): stop re-checking.
+      if (!loadTimedOut.value) _stopRecheckTimer();
     }
+  }
+
+  /// Re-checks the database every [_recheckInterval] while a load timed
+  /// out and recovery is still running, so a recovery that succeeds
+  /// after the revision bump — or whose bump was missed — still reloads
+  /// the Dashboard on its own. Bounded by [kMaxRechecks]; cancelled on
+  /// success, on recovery failure, on manual Retry and in [onClose].
+  void _startRecheckTimer() {
+    if (_recheckTimer != null) return;
+    _recheckCount = 0;
+    _recheckTimer = Timer.periodic(_recheckInterval, (_) async {
+      if (!loadTimedOut.value || loadFailed.value) {
+        _stopRecheckTimer();
+        return;
+      }
+      if (++_recheckCount > kMaxRechecks) {
+        _stopRecheckTimer();
+        return;
+      }
+      await load();
+      if (!loadTimedOut.value || loadFailed.value) _stopRecheckTimer();
+    });
+  }
+
+  void _stopRecheckTimer() {
+    _recheckTimer?.cancel();
+    _recheckTimer = null;
   }
 
   /// One background recovery run: replaces the stuck database instance
   /// if needed. On success [DatabaseRecovery] already notified via
   /// [DataRefreshService], so the reload happens through the `ever()`
-  /// worker. On failure only the flag is set — the data is untouched.
+  /// worker — and this method also reloads directly, so a bump fired
+  /// while this controller did not exist (or before its worker was
+  /// registered) cannot leave the page sitting on the timeout banner.
+  /// The [_loadFuture] guard makes a simultaneous bump harmless.
+  /// On failure only the flag is set — the data is untouched.
   /// With [forceFresh] (the Retry path) the recovery starts a genuinely
   /// fresh probe sequence instead of joining an in-flight run that may
   /// already be doomed.
@@ -163,6 +241,10 @@ class HomeController extends GetxController {
     }
     if (!recovered && loadTimedOut.value) {
       loadFailed.value = true;
+      _stopRecheckTimer();
+    } else if (recovered && loadTimedOut.value && !_directReloaded) {
+      _directReloaded = true;
+      unawaited(load());
     }
   }
 
@@ -174,6 +256,7 @@ class HomeController extends GetxController {
   Future<void> retryLoad() async {
     loadTimedOut.value = false;
     loadFailed.value = false;
+    _stopRecheckTimer();
     unawaited(_runBackgroundRecovery(forceFresh: true));
     await load();
   }
@@ -208,6 +291,7 @@ class HomeController extends GetxController {
 
   @override
   void onClose() {
+    _stopRecheckTimer();
     _refreshWorker?.dispose();
     super.onClose();
   }

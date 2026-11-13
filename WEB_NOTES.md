@@ -66,10 +66,10 @@ workarounds above were environment-specific, not app changes.
 |---|---|---|
 | `lib/core/database/database_connection.dart` (new) | Conditional export: `database_connection_io.dart` on desktop, `database_connection_web.dart` on web (`dart.library.js_interop`). | `dart:io` `File` does not exist on web; the database connection must differ per platform without touching repositories. |
 | `lib/core/database/database_connection_io.dart` (new) | The original file-based connection from `app_database.dart` (`LazyDatabase` + `NativeDatabase.createInBackground(File(...))`, via `path_provider`). | Desktop behaviour unchanged. |
-| `lib/core/database/database_connection_web.dart` (new) | Drift WASM: `WasmDatabase.open(databaseName: 'typing_master', sqlite3Uri: Uri.parse('sqlite3.wasm'), driftWorkerUri: Uri.parse('drift_worker.js'))` inside `LazyDatabase`. | The only Drift-supported way to run SQLite in the browser. |
+| `lib/core/database/database_connection_web.dart` (new) | Main-isolate Drift WASM: `WasmSqlite3.loadFromUrl(sqlite3.wasm)` + `IndexedDbFileSystem.open(dbName: 'typing_master')` + `WasmDatabase(sqlite3: ..., path: '/database', fileSystem: ...)` inside `LazyDatabase`. (2026-11-13: replaced `WasmDatabase.open` + the drift worker — its shared-worker probe hangs forever on Chrome, see that file. Same IndexedDB store/format, no data migration.) | The worker probe deadlocks the open on Chrome; the main-isolate open uses the exact storage drift's worker path uses for IndexedDB. |
 | `lib/core/database/app_database.dart` | Removed `dart:io`/`path`/`path_provider` imports; uses `openDatabaseConnection()`. All tables, DAOs and repositories unchanged. | The app's database API is identical on both platforms; only the connection differs. |
 | `web/` (new, generated) | `index.html`, `manifest.json`, `favicon.png`, icons. Then enhanced for landing/SEO (see §6): title, meta description, Open Graph/Twitter tags, `<noscript>` description. The Flutter bootstrap (`flutter_bootstrap.js`) is untouched. | Flutter web needs these entry files; they did not exist in the desktop project. |
-| `web/sqlite3.wasm`, `web/drift_worker.js` (new) | Copied from the Drift 2.35.0 release (byte-identical to the files shipped in the `drift` package). | Required by `WasmDatabase` at runtime; Flutter does not bundle them automatically. |
+| `web/sqlite3.wasm` (new) | Copied from the Drift 2.35.0 release (byte-identical to the file shipped in the `drift` package). `web/drift_worker.js` (same release) stays in `web/` as a spare but is no longer fetched since 2026-11-13. | Required by `WasmDatabase` at runtime; Flutter does not bundle them automatically. |
 | `pubspec.yaml` | `web: ^1.1.1` added (for the result-card PNG download). `drift` resolved to 2.35.0 via the lockfile (declared `^2.16.0`). | `package:web` is the web-safe replacement for `dart:html`. |
 | `lib/core/services/result_share.dart` + `result_share_web.dart` + `result_share_io.dart` (new) | Conditional export. Web: capture a `RepaintBoundary` as PNG and download it via a Blob + anchor click (browser APIs only). Desktop: PNG download returns `false`; copy-text still works. | Result-card sharing without desktop file APIs. |
 | `lib/features/typing_test/view/widgets/result_card.dart` (new) | `ShareableResultCard` (WPM, accuracy, duration, date) + `ResultShareButtons` (Copy Result / Download Result Card) + `formatResultShareText`. | Phase 1 item 3 (result card share). |
@@ -195,14 +195,16 @@ result (skipped questions never deduct; score never goes below 0).
 - **No headless-browser smoke check was possible** in the build
   environment (no Chromium/Firefox available, no Playwright). The build
   was verified by serving `build/web` and curl-checking that
-  `index.html`, `main.dart.js`, `flutter.js`/`flutter_bootstrap.js`,
-  `sqlite3.wasm` and `drift_worker.js` return HTTP 200. A visual/runtime
-  check in a real browser (app mounts, typing test runs, WASM database
-  opens, history persists across reload) still needs to be done by a
-  human or a browser-capable agent before calling the web build "fully
-  verified".
-- **WASM persistence depends on the browser** (OPFS/IndexedDB support);
-  see §3. The in-memory fallback loses history on refresh.
+  `index.html`, `main.dart.js`, `flutter.js`/`flutter_bootstrap.js` and
+  `sqlite3.wasm` return HTTP 200 (`drift_worker.js` is no longer fetched
+  since 2026-11-13). A visual/runtime check in a real browser (app
+  mounts, typing test runs, WASM database opens, history persists
+  across reload) still needs to be done by a human or a browser-capable
+  agent before calling the web build "fully verified".
+- **WASM persistence depends on the browser** (IndexedDB support).
+  Since 2026-11-13 the database opens in the main isolate with
+  `IndexedDbFileSystem` (no worker); the in-memory fallback loses
+  history on refresh.
 - **No commit/push/deploy was done** for this app (not approved). The
   working copy lives at `~/workspace/typing-master/`; the original zip
   was left untouched.

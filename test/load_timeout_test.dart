@@ -319,13 +319,14 @@ void main() {
     await tester.pump(const Duration(milliseconds: 300));
     await tester.pump();
     expect(find.byType(CircularProgressIndicator), findsNothing);
-    expect(find.text('No completed tests yet'), findsOneWidget);
+    // Recovery failed: the failed state, not the "No completed tests
+    // yet" headline — the database may well have tests, it just
+    // could not be read.
+    expect(find.text('No completed tests yet'), findsNothing);
+    expect(find.text("History couldn't be loaded"), findsOneWidget);
     expect(find.text('Retry loading history'), findsOneWidget);
     expect(
-      find.text(
-        'History could not be loaded. Your data is safe — '
-        'tap Retry to try again.',
-      ),
+      find.text('Your data is safe — tap Retry to try again.'),
       findsOneWidget,
     );
   });

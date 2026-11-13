@@ -36,11 +36,21 @@ class HistoryController extends GetxController {
   /// timeout (see [load]).
   static const Duration kLoadTimeout = Duration(seconds: 8);
 
+  /// How often the screen re-checks the failed part(s) while a load
+  /// timed out and recovery is still running (see [_startRecheckTimer]).
+  /// Tests inject a shorter value.
+  static const Duration kRecheckInterval = Duration(seconds: 10);
+
+  /// Maximum automatic re-checks after a timed-out load. Bounds the
+  /// timer so it can never poll forever; a manual Retry always works.
+  static const int kMaxRechecks = 6;
+
   HistoryController({
     Future<List<TypingTestRecord>> Function()? fetchAll,
     Future<List<TypingTestRecord>> Function()? fetchTyping,
     Future<List<MockAttempt>> Function()? fetchMockAttempts,
     Duration loadTimeout = kLoadTimeout,
+    Duration recheckInterval = kRecheckInterval,
     DatabaseRecovery? databaseRecovery,
   })  : _fetchTyping = fetchTyping ?? fetchAll ?? fetchAllTyping,
         _fetchMockAttempts = fetchMockAttempts ??
@@ -51,6 +61,7 @@ class HistoryController extends GetxController {
                 ? _noMockAttempts
                 : _defaultFetchMockAttempts),
         _loadTimeout = loadTimeout,
+        _recheckInterval = recheckInterval,
         _recovery = databaseRecovery ?? DatabaseRecovery();
 
   /// Default Drift source: completed typing tests from the database.
@@ -112,7 +123,20 @@ class HistoryController extends GetxController {
   final Future<List<TypingTestRecord>> Function() _fetchTyping;
   final Future<List<MockAttempt>> Function() _fetchMockAttempts;
   final Duration _loadTimeout;
+  final Duration _recheckInterval;
   final DatabaseRecovery _recovery;
+
+  /// A load already in flight — joined, not restarted (see
+  /// [HomeController] for why overlapping loads are harmful).
+  Future<void>? _loadFuture;
+
+  /// Re-check timer while a load timed out (see [_startRecheckTimer]).
+  Timer? _recheckTimer;
+  int _recheckCount = 0;
+
+  /// Whether this load episode already reloaded directly after a
+  /// successful recovery — at most one direct reload per episode.
+  bool _directReloaded = false;
 
   final RxBool isLoading = false.obs;
 
@@ -210,6 +234,7 @@ class HistoryController extends GetxController {
 
   @override
   void onClose() {
+    _stopRecheckTimer();
     _refreshWorker?.dispose();
     super.onClose();
   }
@@ -227,16 +252,34 @@ class HistoryController extends GetxController {
   /// Database recovery runs in the BACKGROUND (at most one per load()
   /// call, shared in-flight with the Dashboard/boot recovery): if it
   /// succeeds it notifies via [DataRefreshService], so the `ever()`
-  /// worker in [onInit] re-runs [load] automatically. If recovery
-  /// reports the database still unreachable, [loadFailed] is set.
+  /// worker in [onInit] re-runs [load] automatically — and
+  /// [_runBackgroundRecovery] also reloads directly, and the re-check
+  /// timer keeps retrying the failed part(s) while recovery runs, so
+  /// the "will reload on its own" promise in [partialDataNote] is kept
+  /// even if the revision bump is missed. If recovery reports the
+  /// database still unreachable, [loadFailed] is set.
   ///
   /// With [onlyFailed] (used by [retryLoad]) only the part(s) that
   /// failed in the latest load are re-read; the good part's rows stay
   /// exactly as they are.
-  Future<void> load({bool onlyFailed = false}) async {
+  ///
+  /// Concurrent callers join one in-flight load instead of resetting
+  /// each other's flags.
+  Future<void> load({bool onlyFailed = false}) {
+    final Future<void>? inFlight = _loadFuture;
+    if (inFlight != null) return inFlight;
+    final Future<void> run = _load(onlyFailed: onlyFailed);
+    _loadFuture = run;
+    return run.whenComplete(() {
+      if (identical(_loadFuture, run)) _loadFuture = null;
+    });
+  }
+
+  Future<void> _load({bool onlyFailed = false}) async {
     loadTimedOut.value = false;
     loadFailed.value = false;
     isLoading.value = true;
+    _directReloaded = false;
     // At most one background recovery per load() call, however many
     // parts fail inside it.
     bool recoveryAttempted = false;
@@ -244,6 +287,7 @@ class HistoryController extends GetxController {
     void kickOffBackgroundRecovery() {
       if (recoveryAttempted) return;
       recoveryAttempted = true;
+      _startRecheckTimer();
       unawaited(_runBackgroundRecovery());
     }
 
@@ -266,7 +310,37 @@ class HistoryController extends GetxController {
       _publish();
     } finally {
       isLoading.value = false;
+      // A load that did not time out means every part answered (or is
+      // genuinely empty): stop re-checking.
+      if (!loadTimedOut.value) _stopRecheckTimer();
     }
+  }
+
+  /// Re-checks the failed part(s) every [_recheckInterval] while a load
+  /// timed out and recovery is still running — the same promise-keeping
+  /// mechanism as the Dashboard (see [HomeController]). Bounded by
+  /// [kMaxRechecks]; cancelled on success, on recovery failure, on
+  /// manual Retry and in [onClose].
+  void _startRecheckTimer() {
+    if (_recheckTimer != null) return;
+    _recheckCount = 0;
+    _recheckTimer = Timer.periodic(_recheckInterval, (_) async {
+      if (!loadTimedOut.value || loadFailed.value) {
+        _stopRecheckTimer();
+        return;
+      }
+      if (++_recheckCount > kMaxRechecks) {
+        _stopRecheckTimer();
+        return;
+      }
+      await load(onlyFailed: true);
+      if (!loadTimedOut.value || loadFailed.value) _stopRecheckTimer();
+    });
+  }
+
+  void _stopRecheckTimer() {
+    _recheckTimer?.cancel();
+    _recheckTimer = null;
   }
 
   /// One half of [load]: the Drift typing history, bounded by
@@ -326,7 +400,9 @@ class HistoryController extends GetxController {
 
   /// One background recovery run. On success [DatabaseRecovery] already
   /// notified via [DataRefreshService], so the reload happens through
-  /// the `ever()` worker. On failure only the flag is set.
+  /// the `ever()` worker — and this method also reloads the failed
+  /// part(s) directly, so a missed bump cannot leave the page on the
+  /// timeout banner. On failure only the flag is set.
   /// With [forceFresh] (the Retry path) the recovery starts a genuinely
   /// fresh probe sequence instead of joining an in-flight run that may
   /// already be doomed.
@@ -339,6 +415,10 @@ class HistoryController extends GetxController {
     }
     if (!recovered && loadTimedOut.value) {
       loadFailed.value = true;
+      _stopRecheckTimer();
+    } else if (recovered && loadTimedOut.value && !_directReloaded) {
+      _directReloaded = true;
+      unawaited(load(onlyFailed: true));
     }
   }
 
@@ -351,6 +431,7 @@ class HistoryController extends GetxController {
   Future<void> retryLoad() async {
     loadTimedOut.value = false;
     loadFailed.value = false;
+    _stopRecheckTimer();
     if (!_typingFailed && !_mockFailed) {
       await load();
       return;
