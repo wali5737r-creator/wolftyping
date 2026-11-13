@@ -435,6 +435,13 @@ class MockTestController extends GetxController {
     phase.value = MockTestPhase.result;
     final Map<String, Map<String, int>> breakdown =
         _subjectBreakdown(finished);
+    // Planned duration and time actually spent: History shows both,
+    // and the planned duration is what its duration filter matches.
+    // `remaining` is already zero on an auto-submit, so elapsed is
+    // the full planned duration there.
+    final int plannedSeconds = selectedDuration.value.inSeconds;
+    final int elapsedSeconds =
+        (plannedSeconds - remaining.value.inSeconds).clamp(0, plannedSeconds);
     final MockAttempt attempt = MockAttempt(
       id: 'attempt-${DateTime.now().microsecondsSinceEpoch}',
       sourceKind: kind.value.name,
@@ -446,6 +453,8 @@ class MockTestController extends GetxController {
       skipped: finished.skipped,
       score: finished.score,
       attemptedAt: DateTime.now(),
+      durationSeconds: plannedSeconds,
+      actualDurationSeconds: elapsedSeconds,
       perSubjectCorrect: breakdown['correct'] ?? const {},
       perSubjectTotal: breakdown['total'] ?? const {},
     );

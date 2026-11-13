@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import '../../../core/database/database_recovery.dart';
 import '../../../core/services/data_refresh_service.dart';
 import '../../../core/services/history_file_share.dart';
+import '../../ppsc/model/mock_attempt.dart';
+import '../../ppsc/service/mock_progress_repository.dart';
 import '../../typing_test/model/typing_language.dart';
 import '../../typing_test/model/typing_test_kind.dart';
 import '../model/history_filters.dart';
@@ -27,9 +29,45 @@ class HistoryController extends GetxController {
     Future<List<TypingTestRecord>> Function()? fetchAll,
     Duration loadTimeout = kLoadTimeout,
     DatabaseRecovery? databaseRecovery,
-  })  : _fetchAll = fetchAll ?? HistoryRepository.instance.fetchAll,
+  })  : _fetchAll = fetchAll ?? fetchAllHistory,
         _loadTimeout = loadTimeout,
         _recovery = databaseRecovery ?? DatabaseRecovery();
+
+  /// Default history source: completed typing tests from the database
+  /// PLUS completed mock MCQ attempts from `MockProgressRepository`,
+  /// mapped onto [TypingTestRecord] for display (see
+  /// `TypingTestRecord.fromMockAttempt`). The merge is a pure read —
+  /// nothing is written, so a reload can never duplicate a mock
+  /// result, and re-visiting the result screen records nothing.
+  /// Attempts recorded before durations were stored map with no
+  /// duration rather than an invented one.
+  ///
+  /// This lives here, not in [HistoryRepository.fetchAll], because
+  /// Progress and Profile also read that method straight from the
+  /// `TypingTests` table — mock rows (0 WPM) must never reach their
+  /// typing averages. Backup/export likewise reads the raw table.
+  static Future<List<TypingTestRecord>> fetchAllHistory() async {
+    final List<TypingTestRecord> typing =
+        await HistoryRepository.instance.fetchAll();
+    await MockProgressRepository.instance.init();
+    return mergeWithMockAttempts(
+      typing,
+      MockProgressRepository.instance.attempts.toList(),
+    );
+  }
+
+  /// Pure merge of the two history sources, newest last (sorting is
+  /// applied later by [applyFilters]). Unit tested directly.
+  static List<TypingTestRecord> mergeWithMockAttempts(
+    List<TypingTestRecord> typing,
+    List<MockAttempt> attempts,
+  ) {
+    return [
+      ...typing,
+      for (final MockAttempt a in attempts)
+        TypingTestRecord.fromMockAttempt(a),
+    ];
+  }
 
   final Future<List<TypingTestRecord>> Function() _fetchAll;
   final Duration _loadTimeout;
@@ -149,6 +187,14 @@ class HistoryController extends GetxController {
       );
 
   Future<void> deleteTest(TypingTestRecord test) async {
+    if (test.isMock) {
+      // A mock record is not a database row: remove the attempt from
+      // its own store (which also notifies, so the list reloads).
+      await MockProgressRepository.instance
+          .removeAttempt(test.mockAttemptId!);
+      await refresh();
+      return;
+    }
     await HistoryRepository.instance.deleteTest(test.id);
     await refresh();
   }
@@ -227,16 +273,22 @@ class HistoryController extends GetxController {
   }) {
     Iterable<TypingTestRecord> list = all;
 
+    // Mock tests are not English or Urdu typing tests, so the
+    // language filter passes them through either way — filtering by
+    // language must never make a finished mock test disappear.
     if (language == HistoryLanguageFilter.english) {
-      list = list.where((t) => t.language == TypingLanguage.english);
+      list = list.where(
+          (t) => t.isMock || t.language == TypingLanguage.english);
     } else if (language == HistoryLanguageFilter.urdu) {
-      list = list.where((t) => t.language == TypingLanguage.urdu);
+      list = list.where((t) => t.isMock || t.language == TypingLanguage.urdu);
     }
 
     if (testType == HistoryTestTypeFilter.normal) {
       list = list.where((t) => t.testType == TypingTestKind.normal);
     } else if (testType == HistoryTestTypeFilter.ppsc) {
       list = list.where((t) => t.testType == TypingTestKind.ppsc);
+    } else if (testType == HistoryTestTypeFilter.mock) {
+      list = list.where((t) => t.testType == TypingTestKind.mock);
     }
 
     if (duration != HistoryDurationFilter.all) {
@@ -276,6 +328,8 @@ class HistoryController extends GetxController {
       list = list.where((t) =>
           t.language.label.toLowerCase().contains(q) ||
           t.testType.label.toLowerCase().contains(q) ||
+          (t.mockLabel?.toLowerCase().contains(q) ?? false) ||
+          (t.isMock && t.mockScoreLabel.toLowerCase().contains(q)) ||
           _formatDateForSearch(t.completedAt).contains(q));
     }
 

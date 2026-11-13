@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../../core/services/data_refresh_service.dart';
 import '../model/mock_attempt.dart';
 import '../model/mock_question.dart';
 
@@ -141,6 +142,8 @@ class MockProgressRepository {
 
   /// Records an attempt. Updates the in-memory list synchronously
   /// once storage has loaded, then persists in the background.
+  /// Notifies [DataRefreshService] so History (which now shows mock
+  /// attempts) reloads even if it was already open.
   Future<void> recordAttempt(MockAttempt attempt) async {
     if (!_loaded) await init();
     attempts.add(attempt);
@@ -148,6 +151,20 @@ class MockProgressRepository {
       attempts.removeRange(0, attempts.length - maxStoredAttempts);
     }
     await _persist();
+    DataRefreshService.notifyChanged();
+  }
+
+  /// Removes one recorded attempt (from History's delete action).
+  /// The attempt's subject-stats contribution goes with it — the
+  /// same rule as deleting a typing test from History, which also
+  /// changes the derived stats. A no-op when the id is unknown.
+  Future<void> removeAttempt(String id) async {
+    if (!_loaded) await init();
+    final int before = attempts.length;
+    attempts.removeWhere((a) => a.id == id);
+    if (attempts.length == before) return;
+    await _persist();
+    DataRefreshService.notifyChanged();
   }
 
   /// Best (highest-score) attempt for a source, or null when the

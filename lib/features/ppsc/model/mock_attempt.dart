@@ -17,6 +17,8 @@ class MockAttempt {
     required this.skipped,
     required this.score,
     required this.attemptedAt,
+    this.durationSeconds,
+    this.actualDurationSeconds,
     this.perSubjectCorrect = const {},
     this.perSubjectTotal = const {},
   });
@@ -41,6 +43,14 @@ class MockAttempt {
   final double score;
   final DateTime attemptedAt;
 
+  /// Planned duration in seconds (e.g. 300 for a 5-minute mock).
+  /// Null for attempts recorded before durations were stored.
+  final int? durationSeconds;
+
+  /// How long the user actually spent on the test, in seconds.
+  /// Null for attempts recorded before durations were stored.
+  final int? actualDurationSeconds;
+
   /// Subject name -> correct count, and subject name -> total count,
   /// for the questions in this attempt.
   final Map<String, int> perSubjectCorrect;
@@ -51,6 +61,16 @@ class MockAttempt {
         ? '${score.toInt()}'
         : score.toStringAsFixed(2);
     return '$s / $totalQuestions';
+  }
+
+  /// Display label for History / recent attempts, e.g.
+  /// 'Full mock test · 5 minutes' or 'Practice Paper 246 · 90 minutes'.
+  /// Attempts recorded before durations were stored show the plain
+  /// source label, with no invented duration.
+  String get displayLabel {
+    if (durationSeconds == null) return sourceLabel;
+    final int minutes = (durationSeconds! / 60).round();
+    return '$sourceLabel · $minutes minute${minutes == 1 ? '' : 's'}';
   }
 
   double get percentage =>
@@ -67,6 +87,8 @@ class MockAttempt {
         'skipped': skipped,
         'score': score,
         'attemptedAt': attemptedAt.toIso8601String(),
+        'durationSeconds': durationSeconds,
+        'actualDurationSeconds': actualDurationSeconds,
         'perSubjectCorrect': perSubjectCorrect,
         'perSubjectTotal': perSubjectTotal,
       };
@@ -95,6 +117,9 @@ class MockAttempt {
             json['attemptedAt'] as String? ?? '',
           ) ??
           DateTime.fromMillisecondsSinceEpoch(0),
+      durationSeconds: (json['durationSeconds'] as num?)?.toInt(),
+      actualDurationSeconds:
+          (json['actualDurationSeconds'] as num?)?.toInt(),
       perSubjectCorrect: intMap(json['perSubjectCorrect']),
       perSubjectTotal: intMap(json['perSubjectTotal']),
     );

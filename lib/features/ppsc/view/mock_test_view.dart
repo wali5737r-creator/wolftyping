@@ -14,6 +14,7 @@ import '../../../core/services/certificate_code.dart';
 import '../../../features/certificate/view/certificate_card.dart';
 import '../controller/mock_test_controller.dart';
 import '../model/custom_set.dart';
+import '../model/mock_attempt.dart';
 import '../model/mock_question.dart';
 import '../model/paper_test.dart';
 import '../service/mock_test_engine.dart';
@@ -27,7 +28,7 @@ import 'weak_subject_hint.dart';
 /// screens say so, and never claim to be real PPSC papers. Attempts
 /// are recorded on the device only (see MockProgressRepository) so
 /// paper rows can show completion and the weakest-subject hint has
-/// real data; typing-test history is separate.
+/// real data; finished attempts also appear in History.
 class MockTestView extends GetView<MockTestController> {
   const MockTestView({super.key});
 
@@ -65,33 +66,114 @@ class _SetupPanel extends StatelessWidget {
         alignment: Alignment.topLeft,
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 760),
-          child: Obx(() {
-            // Reactive reads captured directly in this builder, so this
-            // branch rebuilds when the selected test kind changes.
-            final bool isPaper =
-                controller.kind.value == MockTestKind.paper;
-            final PaperTest? paper = controller.activePaper.value;
-            if (isPaper && paper != null) {
-              return _PaperSetupPanel(controller: controller, paper: paper);
-            }
-            final bool isCustom =
-                controller.kind.value == MockTestKind.custom;
-            final CustomSet? customSet = controller.activeCustomSet.value;
-            if (isCustom && customSet != null) {
-              return _CustomSetupPanel(
-                controller: controller,
-                customSet: customSet,
-              );
-            }
-            if (controller.kind.value == MockTestKind.bookmarked) {
-              return _BookmarkedSetupPanel(controller: controller);
-            }
-            return _SampleSetupPanel(controller: controller);
-          }),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Obx(() {
+                // Reactive reads captured directly in this builder, so this
+                // branch rebuilds when the selected test kind changes.
+                final bool isPaper =
+                    controller.kind.value == MockTestKind.paper;
+                final PaperTest? paper = controller.activePaper.value;
+                if (isPaper && paper != null) {
+                  return _PaperSetupPanel(controller: controller, paper: paper);
+                }
+                final bool isCustom =
+                    controller.kind.value == MockTestKind.custom;
+                final CustomSet? customSet = controller.activeCustomSet.value;
+                if (isCustom && customSet != null) {
+                  return _CustomSetupPanel(
+                    controller: controller,
+                    customSet: customSet,
+                  );
+                }
+                if (controller.kind.value == MockTestKind.bookmarked) {
+                  return _BookmarkedSetupPanel(controller: controller);
+                }
+                return _SampleSetupPanel(controller: controller);
+              }),
+              const SizedBox(height: 20),
+              _RecentAttemptsCard(controller: controller),
+            ],
+          ),
         ),
       ),
     );
   }
+}
+
+/// Latest finished mock attempts (newest first, at most 5), read live
+/// from `MockProgressRepository` — the same attempts History shows.
+/// Shown on every setup variant, since the panel switch above is the
+/// whole setup page. Empty until the first finished test: nothing is
+/// invented, and the card says where finished tests end up.
+class _RecentAttemptsCard extends StatelessWidget {
+  const _RecentAttemptsCard({required this.controller});
+
+  final MockTestController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return Obx(() {
+      final List<MockAttempt> recent = controller.progress.attempts.reversed
+          .take(5)
+          .toList();
+      return SectionCard(
+        title: 'Your Recent Attempts',
+        subtitle: 'Your latest finished mock tests — also saved in History.',
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            if (recent.isEmpty)
+              const Text(
+                'No mock attempts yet. Finish a mock test and it will '
+                'show up here and in History.',
+                style: AppTextStyles.body,
+              )
+            else
+              for (final MockAttempt attempt in recent)
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          attempt.displayLabel,
+                          style: AppTextStyles.bodyMedium,
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Text(
+                        attempt.scoreLabel,
+                        style: AppTextStyles.bodyMedium,
+                      ),
+                      const SizedBox(width: 12),
+                      Text(
+                        _formatAttemptDate(attempt.attemptedAt),
+                        style: AppTextStyles.captionOf(context),
+                      ),
+                    ],
+                  ),
+                ),
+            const SizedBox(height: 8),
+            TextButton.icon(
+              onPressed: () => Get.toNamed(AppRoutes.history),
+              icon: const Icon(Icons.history, size: 18),
+              label: const Text('View all in History'),
+            ),
+          ],
+        ),
+      );
+    });
+  }
+}
+
+String _formatAttemptDate(DateTime d) {
+  final String date =
+      '${d.year}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}';
+  final String time =
+      '${d.hour.toString().padLeft(2, '0')}:${d.minute.toString().padLeft(2, '0')}';
+  return '$date $time';
 }
 
 /// Setup for the sample (full / subject-wise) mock tests.

@@ -20,7 +20,8 @@ enum HistoryLanguageFilter {
 enum HistoryTestTypeFilter {
   all,
   normal,
-  ppsc;
+  ppsc,
+  mock;
 
   String get label {
     switch (this) {
@@ -30,6 +31,8 @@ enum HistoryTestTypeFilter {
         return 'Normal';
       case HistoryTestTypeFilter.ppsc:
         return 'PPSC';
+      case HistoryTestTypeFilter.mock:
+        return 'Mock test';
     }
   }
 }

@@ -31,7 +31,8 @@ class HistoryView extends GetView<HistoryController> {
           children: [
             const PageHeader(
               title: 'History',
-              subtitle: 'Every completed typing test, exactly as it finished.',
+              subtitle:
+                  'Every completed typing test and mock test, exactly as it finished.',
             ),
             const SizedBox(height: 20),
             _FiltersBar(controller: controller),
@@ -79,7 +80,7 @@ class _FiltersBarState extends State<_FiltersBar> {
             controller: _searchController,
             decoration: const InputDecoration(
               prefixIcon: Icon(Icons.search, size: 20),
-              hintText: 'Search language, type, date...',
+              hintText: 'Search language, type, test name, date...',
               isDense: true,
             ),
             onChanged: (v) => widget.controller.searchQuery.value = v,
@@ -288,7 +289,7 @@ class _EmptyState extends StatelessWidget {
     final Widget empty = EmptyStateView(
       icon: Icons.history,
       title: 'No completed tests yet',
-      message: 'Finish a typing test and it will show up here.',
+      message: 'Finish a typing test or a mock test and it will show up here.',
       actions: Wrap(
         spacing: 12,
         runSpacing: 12,
@@ -301,6 +302,10 @@ class _EmptyState extends StatelessWidget {
           OutlinedButton(
             onPressed: () => Get.toNamed(AppRoutes.urduTypingTest),
             child: const Text('Start Urdu Test'),
+          ),
+          OutlinedButton(
+            onPressed: () => Get.toNamed(AppRoutes.ppscMockTest),
+            child: const Text('Start Mock Test'),
           ),
         ],
       ),

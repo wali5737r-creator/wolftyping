@@ -7,6 +7,7 @@ import '../../../core/routes/app_routes.dart';
 import '../../../core/widgets/app_controls.dart';
 import '../../../core/widgets/app_scaffold.dart';
 import '../../../core/widgets/app_surfaces.dart';
+import '../../ppsc/service/mock_progress_repository.dart';
 import '../model/typing_test_record.dart';
 import '../service/history_repository.dart';
 import 'widgets/delete_test_dialog.dart';
@@ -57,69 +58,118 @@ class _DetailContent extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               PageHeader(
-                title: record.languageAndTypeLabel,
-                subtitle: _formatDateTime(record.completedAt),
+                title: record.isMock
+                    ? (record.mockLabel ?? 'Mock test')
+                    : record.languageAndTypeLabel,
+                subtitle: record.isMock
+                    ? '${_formatDateTime(record.completedAt)} · Mock test'
+                    : _formatDateTime(record.completedAt),
               ),
               const SizedBox(height: 24),
-              Wrap(
-                spacing: AppDimensions.gapMedium,
-                runSpacing: AppDimensions.gapMedium,
-                children: [
-                  StatCard(label: 'Gross WPM', value: record.grossWpm.toStringAsFixed(1)),
-                  StatCard(label: 'Net WPM', value: record.netWpm.toStringAsFixed(1)),
-                  StatCard(label: 'Accuracy', value: '${record.accuracy.toStringAsFixed(1)}%'),
-                  StatCard(label: 'Duration', value: '${record.actualDurationSeconds}s'
-                      '${record.durationSeconds != null ? ' / ${record.durationSeconds}s planned' : ''}'),
-                  StatCard(label: 'Correct characters', value: '${record.correctCharacters}'),
-                  StatCard(label: 'Wrong characters', value: '${record.wrongCharacters}'),
-                  StatCard(label: 'Correct words', value: '${record.correctWords}'),
-                  StatCard(label: 'Wrong words', value: '${record.wrongWords}'),
-                  StatCard(label: 'Skipped words', value: '${record.skippedWords}'),
-                  StatCard(label: 'Backspaces', value: '${record.backspaces}'),
-                  StatCard(label: 'Total errors', value: '${record.totalErrors}'),
-                ],
-              ),
-              const SizedBox(height: 28),
-              const Text('Mistakes', style: AppTextStyles.h3),
-              const SizedBox(height: 10),
-              FutureBuilder<List<String>>(
-                future:
-                    HistoryRepository.instance.fetchMistakeLines(record.id),
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState != ConnectionState.done) {
-                    return const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 12),
-                      child: LinearProgressIndicator(),
-                    );
-                  }
-                  final List<String> lines = snapshot.data ?? const [];
-                  if (lines.isEmpty) {
-                    return const Text('No mistakes recorded for this test.');
-                  }
-                  return SoftSurface(
-                    child: SizedBox(
-                      width: double.infinity,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          for (final line in lines)
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 3),
-                              child: Text(line, style: AppTextStyles.body),
-                            ),
-                        ],
-                      ),
+              if (record.isMock) ...[
+                Wrap(
+                  spacing: AppDimensions.gapMedium,
+                  runSpacing: AppDimensions.gapMedium,
+                  children: [
+                    StatCard(label: 'Score', value: record.mockScoreLabel),
+                    StatCard(
+                        label: 'Percentage',
+                        value:
+                            '${record.accuracy.toStringAsFixed(1)}%'),
+                    StatCard(
+                        label: 'Correct',
+                        value: '${record.mockCorrect ?? 0}'),
+                    StatCard(
+                        label: 'Wrong', value: '${record.mockWrong ?? 0}'),
+                    StatCard(
+                        label: 'Skipped',
+                        value: '${record.mockSkipped ?? 0}'),
+                    StatCard(
+                      label: 'Duration',
+                      value: record.mockDurationText.isEmpty
+                          ? 'Not recorded'
+                          : record.mockDurationText +
+                              (record.durationSeconds != null &&
+                                      record.actualDurationSeconds > 0
+                                  ? ' / ${record.durationSeconds}s planned'
+                                  : ''),
                     ),
-                  );
-                },
-              ),
+                  ],
+                ),
+                const SizedBox(height: 28),
+                const Text('Review', style: AppTextStyles.h3),
+                const SizedBox(height: 10),
+                const Text(
+                  'Per-question review lives on the mock test result '
+                  'screen — History stores the score, not the answers.',
+                  style: AppTextStyles.body,
+                ),
+              ] else ...[
+                Wrap(
+                  spacing: AppDimensions.gapMedium,
+                  runSpacing: AppDimensions.gapMedium,
+                  children: [
+                    StatCard(label: 'Gross WPM', value: record.grossWpm.toStringAsFixed(1)),
+                    StatCard(label: 'Net WPM', value: record.netWpm.toStringAsFixed(1)),
+                    StatCard(label: 'Accuracy', value: '${record.accuracy.toStringAsFixed(1)}%'),
+                    StatCard(label: 'Duration', value: '${record.actualDurationSeconds}s'
+                        '${record.durationSeconds != null ? ' / ${record.durationSeconds}s planned' : ''}'),
+                    StatCard(label: 'Correct characters', value: '${record.correctCharacters}'),
+                    StatCard(label: 'Wrong characters', value: '${record.wrongCharacters}'),
+                    StatCard(label: 'Correct words', value: '${record.correctWords}'),
+                    StatCard(label: 'Wrong words', value: '${record.wrongWords}'),
+                    StatCard(label: 'Skipped words', value: '${record.skippedWords}'),
+                    StatCard(label: 'Backspaces', value: '${record.backspaces}'),
+                    StatCard(label: 'Total errors', value: '${record.totalErrors}'),
+                  ],
+                ),
+                const SizedBox(height: 28),
+                const Text('Mistakes', style: AppTextStyles.h3),
+                const SizedBox(height: 10),
+                FutureBuilder<List<String>>(
+                  future:
+                      HistoryRepository.instance.fetchMistakeLines(record.id),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState != ConnectionState.done) {
+                      return const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 12),
+                        child: LinearProgressIndicator(),
+                      );
+                    }
+                    final List<String> lines = snapshot.data ?? const [];
+                    if (lines.isEmpty) {
+                      return const Text('No mistakes recorded for this test.');
+                    }
+                    return SoftSurface(
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            for (final line in lines)
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 3),
+                                child: Text(line, style: AppTextStyles.body),
+                              ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ],
               const SizedBox(height: 24),
               OutlinedButton.icon(
                 onPressed: () async {
                   final bool confirmed = await confirmDeleteTest(context);
                   if (confirmed) {
-                    await HistoryRepository.instance.deleteTest(record.id);
+                    if (record.isMock) {
+                      await MockProgressRepository.instance
+                          .removeAttempt(record.mockAttemptId!);
+                    } else {
+                      await HistoryRepository.instance.deleteTest(record.id);
+                    }
                     Get.back();
                   }
                 },
