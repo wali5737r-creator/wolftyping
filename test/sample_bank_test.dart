@@ -87,8 +87,8 @@ void main() {
     });
   });
 
-  group('sample bank explanations (Phase 4: English, Mathematics, '
-      'Everyday Science and Pakistan Studies)', () {
+  group('sample bank explanations (Phase 5: English, Mathematics, '
+      'Everyday Science, Pakistan Studies and Islamiat)', () {
     test('every English question has a verified explanation', () {
       final english = sampleQuestions
           .where((q) => q.subject == MockSubject.english)
@@ -159,20 +159,34 @@ void main() {
       }
     });
 
-    test('no other subject has explanations yet', () {
-      for (final subject in MockSubject.values) {
-        if (subject == MockSubject.english ||
-            subject == MockSubject.mathematics ||
-            subject == MockSubject.everydayScience ||
-            subject == MockSubject.pakistanStudies) {
-          continue;
-        }
-        final explained = sampleQuestions
-            .where((q) =>
-                q.subject == subject && q.explanation != null)
-            .length;
-        expect(explained, 0, reason: subject.label);
+    test('every Islamiat question has a verified explanation', () {
+      final islamiat = sampleQuestions
+          .where((q) => q.subject == MockSubject.islamiat)
+          .toList();
+      expect(islamiat.length, 100);
+      for (final q in islamiat) {
+        expect(q.explanation, isNotNull, reason: q.id);
+        expect(q.explanation!.trim(), isNotEmpty, reason: q.id);
+        expect(q.explanation, q.explanation!.trim(), reason: q.id);
+        // One short sentence, not a paragraph.
+        expect(q.explanation!.length, lessThanOrEqualTo(200),
+            reason: q.id);
       }
+    });
+
+    test('no other subject has explanations yet', () {
+      // Only General Knowledge is still without explanations.
+      // Measured count is 100 real GK questions: a naive text search
+      // finds 101 "gk-" ids because the file's doc comment at the top
+      // shows an example entry with id 'gk-4'; it is not a question.
+      // No GK question is deleted or renumbered.
+      final gk = sampleQuestions
+          .where((q) => q.subject == MockSubject.generalKnowledge)
+          .toList();
+      expect(gk.length, 100);
+      final explained =
+          gk.where((q) => q.explanation != null).length;
+      expect(explained, 0, reason: MockSubject.generalKnowledge.label);
     });
 
     testWidgets('end review shows an English explanation and nothing '
@@ -321,6 +335,41 @@ void main() {
         findsOneWidget,
       );
       // Only the Pakistan Studies question carries an explanation.
+      expect(find.textContaining('Explanation:'), findsOneWidget);
+      controller.onClose();
+    });
+    testWidgets('end review shows an Islamiat explanation and '
+        'nothing for a question without one', (tester) async {
+      await tester.pumpWidget(
+        GetMaterialApp(
+          theme: AppTheme.light,
+          initialRoute: AppRoutes.ppscMockTest,
+          getPages: AppPages.pages,
+        ),
+      );
+      await tester.pumpAndSettle();
+      final controller = Get.find<MockTestController>();
+      final islamiat = sampleQuestions.firstWhere(
+          (q) => q.subject == MockSubject.islamiat);
+      final gk = sampleQuestions.firstWhere(
+          (q) => q.subject == MockSubject.generalKnowledge);
+      final engine = MockTestEngine(questions: [islamiat, gk]);
+      engine.answer(islamiat.id, islamiat.correctIndex);
+      engine.answer(gk.id, gk.correctIndex);
+      controller.selectKind(MockTestKind.full);
+      controller.result.value = engine.result();
+      controller.phase.value = MockTestPhase.result;
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(
+          find.text('Q1. ${islamiat.question}'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Q1. ${islamiat.question}'));
+      await tester.pumpAndSettle();
+      expect(
+        find.text('Explanation: ${islamiat.explanation!}'),
+        findsOneWidget,
+      );
+      // Only the Islamiat question carries an explanation.
       expect(find.textContaining('Explanation:'), findsOneWidget);
       controller.onClose();
     });

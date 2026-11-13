@@ -2651,6 +2651,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Holy Quran was revealed in which month?',
     options: ['Rajab', 'Shaban', 'Ramadan', 'Muharram'],
     correctIndex: 2,
+    explanation: 'The Quran says it was sent down in Ramadan (2:185), the month of fasting.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2659,6 +2660,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'How many pillars of Islam are there?',
     options: ['Four', 'Five', 'Six', 'Seven'],
     correctIndex: 1,
+    explanation: 'The Prophet listed five pillars in the hadith of Ibn Umar: faith, prayer, zakat, fasting and Hajj (Sahih al-Bukhari 8).',
     topic: 'Pillars of Islam',
   ),
   MockQuestion(
@@ -2667,6 +2669,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which is the first month of the Islamic calendar?',
     options: ['Ramadan', 'Shawwal', 'Safar', 'Muharram'],
     correctIndex: 3,
+    explanation: 'Muharram is the first month of the Hijri year, followed by Safar.',
     topic: 'Islamic Calendar',
   ),
   MockQuestion(
@@ -2675,6 +2678,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which surah comes first in the order of the Holy Quran?',
     options: ['Al-Fatiha', 'Al-Baqarah', 'Yasin', 'Al-Ikhlas'],
     correctIndex: 0,
+    explanation: 'Al-Fatiha, the Opening, stands first in the mushaf order of the 114 surahs.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2683,6 +2687,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which surah comes last in the order of the Holy Quran?',
     options: ['Al-Falaq', 'An-Nas', 'Al-Ikhlas', 'Al-Kawthar'],
     correctIndex: 1,
+    explanation: 'An-Nas is surah 114, the last surah in the mushaf order.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2691,6 +2696,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which is the longest surah of the Holy Quran?',
     options: ['Al-Imran', 'An-Nisa', 'Al-Baqarah', 'Al-Maidah'],
     correctIndex: 2,
+    explanation: 'Al-Baqarah, with 286 verses, is the longest surah in the Quran.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2699,6 +2705,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which is the shortest surah of the Holy Quran, with three verses?',
     options: ['Al-Asr', 'Al-Ikhlas', 'Al-Falaq', 'Al-Kawthar'],
     correctIndex: 3,
+    explanation: 'Al-Kawthar has only 10 words, fewer than Al-Asr (14), the other three-verse surah, so it is shortest by word count.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2707,6 +2714,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which surah is commonly described as the heart of the Quran?',
     options: ['Yasin', 'Al-Kahf', 'Ar-Rahman', 'Al-Waqiah'],
     correctIndex: 0,
+    explanation: 'Yasin is commonly described as the heart of the Quran, from a weak hadith (Tirmidhi 2887), not an authentic Prophetic statement.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2715,6 +2723,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The first revealed verses of the Holy Quran belong to which surah?',
     options: ['Al-Fatiha', 'Al-Alaq', 'Al-Muzzammil', 'Al-Qalam'],
     correctIndex: 1,
+    explanation: 'The first revealed words, \'Iqra\' (Read), are the opening verses of Surah Al-Alaq (96:1-5).',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2723,6 +2732,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'How many surahs are there in the Holy Quran?',
     options: ['110', '112', '114', '116'],
     correctIndex: 2,
+    explanation: 'The Quran contains 114 surahs, from Al-Fatiha to An-Nas.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2731,6 +2741,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Into how many parts (Juz) is the Holy Quran divided?',
     options: ['20', '25', '28', '30'],
     correctIndex: 3,
+    explanation: 'The Quran is divided into 30 equal parts (juz) for recitation across a month.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2739,6 +2750,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which surah does not begin with Bismillah?',
     options: ['At-Tawbah', 'Al-Anfal', 'Yunus', 'Hud'],
     correctIndex: 0,
+    explanation: 'Surah At-Tawbah (9) is the only surah that does not begin with Bismillah.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2747,6 +2759,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which surah contains Bismillah twice, once at the start and once within the surah?',
     options: ['Al-Baqarah', 'An-Naml', 'An-Nahl', 'Al-Kahf'],
     correctIndex: 1,
+    explanation: 'An-Naml has Bismillah at its start and again in verse 30, in Sulayman\'s letter.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2755,6 +2768,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Ayat al-Kursi is found in which surah?',
     options: ['Al-Imran', 'An-Nisa', 'Al-Baqarah', 'Al-Maidah'],
     correctIndex: 2,
+    explanation: 'Ayat al-Kursi is verse 255 of Surah Al-Baqarah (2:255).',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2763,6 +2777,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Over about how many years was the Holy Quran revealed?',
     options: ['13 years', '20 years', '21 years', '23 years'],
     correctIndex: 3,
+    explanation: 'Revelation began in 610 CE and ended in 632 CE, a period of about 23 years.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2771,6 +2786,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What was the first word revealed to the Prophet Muhammad (peace be upon him)?',
     options: ['Iqra', 'Qum', 'Ya-Sin', 'Alhamdu'],
     correctIndex: 0,
+    explanation: '\'Iqra\' (Read) was the first revealed word, in the opening verse of Surah Al-Alaq (96:1).',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2779,6 +2795,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In which language was the Holy Quran revealed?',
     options: ['Persian', 'Arabic', 'Hebrew', 'Turkish'],
     correctIndex: 1,
+    explanation: 'The Quran states it was revealed in clear Arabic (e.g. 12:2).',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2787,6 +2804,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The name Al-Baqarah refers to which animal?',
     options: ['Camel', 'Sheep', 'Cow', 'Goat'],
     correctIndex: 2,
+    explanation: '\'Baqarah\' means cow, named after the cow in the story told in verses 67-73.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2795,6 +2813,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which surah is commonly recited on Fridays?',
     options: ['Al-Mulk', 'Al-Waqiah', 'Ar-Rahman', 'Al-Kahf'],
     correctIndex: 3,
+    explanation: 'Reciting Surah Al-Kahf on Friday is a well-known recommended practice in hadith (al-Hakim, al-Bayhaqi).',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2803,6 +2822,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Surah Al-Fatiha is also known by which title?',
     options: ['Umm al-Kitab', 'Umm al-Qura', 'Sayyid al-Ayat', 'Umm al-Muminin'],
     correctIndex: 0,
+    explanation: 'Al-Fatiha is called Umm al-Kitab, the Mother of the Book, as it opens and sums up the Quran.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2811,6 +2831,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Surah An-Nahl is named after which creature?',
     options: ['Ant', 'Bee', 'Spider', 'Camel'],
     correctIndex: 1,
+    explanation: '\'Nahl\' means bee, named after the bee mentioned in verses 68-69.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2819,6 +2840,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Surah An-Naml is named after which creature?',
     options: ['Bee', 'Spider', 'Ant', 'Bird'],
     correctIndex: 2,
+    explanation: '\'Naml\' means ant, named after the ants in the story of Sulayman (27:18).',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2827,6 +2849,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Surah Al-Ankabut is named after which creature?',
     options: ['Bee', 'Ant', 'Locust', 'Spider'],
     correctIndex: 3,
+    explanation: '\'Ankabut\' means spider, named after the spider\'s web in verse 41.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2835,6 +2858,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Surah Maryam is named after the mother of which prophet?',
     options: ['Isa', 'Musa', 'Yusuf', 'Yahya'],
     correctIndex: 0,
+    explanation: 'Surah Maryam is named after Maryam, the mother of the prophet Isa.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2843,6 +2867,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Surah Yusuf mainly tells the story of which prophet?',
     options: ['Yunus', 'Yusuf', 'Ayub', 'Hud'],
     correctIndex: 1,
+    explanation: 'Surah Yusuf (12) tells the whole story of the prophet Yusuf from start to finish.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2851,6 +2876,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Surah Al-Fil refers to an army that came with which animals?',
     options: ['Horses', 'Camels', 'Elephants', 'Lions'],
     correctIndex: 2,
+    explanation: 'Surah Al-Fil (105) tells of Abraha\'s army, which came with elephants against Makkah.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2859,6 +2885,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In which surah is the verse about the favours of the Lord repeated many times?',
     options: ['Al-Waqiah', 'Al-Mulk', 'Al-Qamar', 'Ar-Rahman'],
     correctIndex: 3,
+    explanation: 'In Ar-Rahman the verse \'which of your Lord\'s favours will you deny?\' is repeated 31 times.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2867,6 +2894,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What is the central theme of Surah Al-Ikhlas?',
     options: ['Tawhid', 'Zakat', 'Hajj', 'Fasting'],
     correctIndex: 0,
+    explanation: 'Al-Ikhlas (112) declares Allah is One, so its central theme is Tawhid.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2875,6 +2903,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Surah Al-Asr speaks about time and the loss of people who lack what?',
     options: ['Wealth', 'Faith and good deeds', 'Knowledge of trade', 'Large families'],
     correctIndex: 1,
+    explanation: 'Al-Asr (103) says people are in loss except those with faith, good deeds, truth and patience.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2883,6 +2912,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Surah Al-Qadr describes the Night of Decree, which falls in which month?',
     options: ['Shaban', 'Shawwal', 'Ramadan', 'Dhul-Hijjah'],
     correctIndex: 2,
+    explanation: 'Surah Al-Qadr (97) describes Laylat al-Qadr, in Ramadan, the month the Quran was sent down.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2891,6 +2921,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Surah Al-Falaq and Surah An-Nas together are known as what?',
     options: ['As-Sab al-Mathani', 'Al-Muawwidhatayn', 'Az-Zahrawayn', 'Al-Mufassal'],
     correctIndex: 1,
+    explanation: 'Al-Falaq (113) and An-Nas (114) are the two surahs of refuge, al-Muawwidhatayn.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2899,6 +2930,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Holy Quran was revealed to which prophet?',
     options: ['Muhammad', 'Isa', 'Musa', 'Ibrahim'],
     correctIndex: 0,
+    explanation: 'The Quran was revealed to the Prophet Muhammad, as stated in 47:2.',
     topic: 'Quran',
   ),
   MockQuestion(
@@ -2907,6 +2939,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which book is regarded as the most authentic collection of Hadith after the Holy Quran?',
     options: ['Sunan Abu Dawud', 'Sahih al-Bukhari', 'Sunan Ibn Majah', 'Muwatta Malik'],
     correctIndex: 1,
+    explanation: 'Sunni scholarship regards Sahih al-Bukhari as the most authentic hadith book after the Quran.',
     topic: 'Hadith',
   ),
   MockQuestion(
@@ -2915,6 +2948,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who compiled the collection known as Sahih Muslim?',
     options: ['Imam Ahmad', 'Imam Tirmidhi', 'Imam Muslim', 'Imam Nasaie'],
     correctIndex: 2,
+    explanation: 'Sahih Muslim was compiled by Imam Muslim ibn al-Hajjaj, a student of al-Bukhari.',
     topic: 'Hadith',
   ),
   MockQuestion(
@@ -2928,6 +2962,7 @@ const List<MockQuestion> sampleQuestions = [
       'The sayings, actions, and approvals of the Prophet',
     ],
     correctIndex: 3,
+    explanation: 'Hadith covers the Prophet\'s sayings, actions and tacit approvals, the record of his Sunnah.',
     topic: 'Hadith',
   ),
   MockQuestion(
@@ -2941,6 +2976,7 @@ const List<MockQuestion> sampleQuestions = [
       'The title of a book',
     ],
     correctIndex: 0,
+    explanation: 'Isnad is the chain of narrators through whom a hadith was transmitted.',
     topic: 'Hadith',
   ),
   MockQuestion(
@@ -2949,6 +2985,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In Hadith study, what does the term Matn mean?',
     options: ['The cover of a book', 'The text of the Hadith', 'The name of a narrator', 'The date of compilation'],
     correctIndex: 1,
+    explanation: 'Matn is the actual text or wording of a hadith, as distinct from its chain.',
     topic: 'Hadith',
   ),
   MockQuestion(
@@ -2957,6 +2994,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which companion is known for narrating the largest number of Hadith?',
     options: ['Bilal ibn Rabah', 'Zayd ibn Harithah', 'Abu Hurayrah', 'Salman al-Farsi'],
     correctIndex: 2,
+    explanation: 'Abu Hurayrah narrated about 5,374 hadith, more than any other companion.',
     topic: 'Hadith',
   ),
   MockQuestion(
@@ -2970,6 +3008,7 @@ const List<MockQuestion> sampleQuestions = [
       'A narration in which the meaning is from Allah and the wording is from the Prophet',
     ],
     correctIndex: 3,
+    explanation: 'In a Hadith Qudsi the meaning is from Allah while the wording is the Prophet\'s.',
     topic: 'Hadith',
   ),
   MockQuestion(
@@ -2978,6 +3017,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In Hadith grading, what does the term Sahih mean?',
     options: ['Authentic', 'Weak', 'Abrogated', 'Uncertain'],
     correctIndex: 0,
+    explanation: '\'Sahih\' means authentic: a hadith with a sound, unbroken chain of reliable narrators.',
     topic: 'Hadith',
   ),
   MockQuestion(
@@ -2986,6 +3026,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who founded the Hanafi school of Islamic law?',
     options: ['Imam Malik', 'Imam Abu Hanifa', 'Imam Shafi', 'Imam Ahmad ibn Hanbal'],
     correctIndex: 1,
+    explanation: 'The Hanafi school is named after its founder, Imam Abu Hanifa (d. 767 CE).',
     topic: 'Hadith and Fiqh',
   ),
   MockQuestion(
@@ -2994,6 +3035,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who founded the Shafi school of Islamic law?',
     options: ['Imam Abu Hanifa', 'Imam Malik', 'Imam Shafi', 'Imam Bukhari'],
     correctIndex: 2,
+    explanation: 'The Shafi school is named after its founder, Imam al-Shafi (d. 820 CE).',
     topic: 'Hadith and Fiqh',
   ),
   MockQuestion(
@@ -3002,6 +3044,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who founded the Maliki school of Islamic law?',
     options: ['Imam Shafi', 'Imam Ahmad', 'Imam Abu Yusuf', 'Imam Malik'],
     correctIndex: 3,
+    explanation: 'The Maliki school is named after its founder, Imam Malik ibn Anas (d. 795 CE).',
     topic: 'Hadith and Fiqh',
   ),
   MockQuestion(
@@ -3010,6 +3053,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who founded the Hanbali school of Islamic law?',
     options: ['Imam Ahmad ibn Hanbal', 'Imam Malik', 'Imam Shafi', 'Imam Tirmidhi'],
     correctIndex: 0,
+    explanation: 'The Hanbali school is named after its founder, Imam Ahmad ibn Hanbal (d. 855 CE).',
     topic: 'Hadith and Fiqh',
   ),
   MockQuestion(
@@ -3018,6 +3062,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What does the term Sunnah most basically mean?',
     options: ['A written law book', 'The way and practice of the Prophet', 'A type of mosque', 'A month of fasting'],
     correctIndex: 1,
+    explanation: 'Sunnah means the Prophet\'s way: his practice, example and teachings in daily life.',
     topic: 'Hadith and Sunnah',
   ),
   MockQuestion(
@@ -3026,6 +3071,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Prophet Muhammad (peace be upon him) was born in which city?',
     options: ['Madinah', 'Taif', 'Makkah', 'Yemen'],
     correctIndex: 2,
+    explanation: 'The Prophet was born in Makkah, in the Year of the Elephant.',
     topic: 'Seerah',
   ),
   MockQuestion(
@@ -3034,6 +3080,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Prophet Muhammad (peace be upon him) was born in the Year of the Elephant, in about which year?',
     options: ['560 CE', '565 CE', '568 CE', '570 CE'],
     correctIndex: 3,
+    explanation: 'The Year of the Elephant is dated to about 570 CE, the year of the Prophet\'s birth.',
     topic: 'Seerah',
   ),
   MockQuestion(
@@ -3042,6 +3089,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who was the mother of the Prophet Muhammad (peace be upon him)?',
     options: ['Aminah', 'Halima', 'Khadijah', 'Fatimah'],
     correctIndex: 0,
+    explanation: 'Aminah bint Wahb was the Prophet\'s mother; she died while he was still a child.',
     topic: 'Seerah',
   ),
   MockQuestion(
@@ -3050,6 +3098,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who nursed the Prophet Muhammad (peace be upon him) in his early childhood in the desert?',
     options: ['Halima Sadia', 'Asma', 'Umm Ayman', 'Hafsa'],
     correctIndex: 0,
+    explanation: 'Halima Sadia of Banu Sad nursed the Prophet as an infant in the desert.',
     topic: 'Seerah',
   ),
   MockQuestion(
@@ -3058,6 +3107,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who was the first wife of the Prophet Muhammad (peace be upon him)?',
     options: ['Aisha', 'Khadijah', 'Hafsa', 'Sawda'],
     correctIndex: 1,
+    explanation: 'Khadijah was the Prophet\'s first wife, married about 15 years before prophethood.',
     topic: 'Seerah',
   ),
   MockQuestion(
@@ -3066,6 +3116,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'At about what age did the Prophet Muhammad (peace be upon him) receive the first revelation?',
     options: ['25 years', '33 years', '40 years', '45 years'],
     correctIndex: 2,
+    explanation: 'The first revelation came when the Prophet was about 40 years old, in 610 CE.',
     topic: 'Seerah',
   ),
   MockQuestion(
@@ -3074,6 +3125,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In which cave did the Prophet Muhammad (peace be upon him) receive the first revelation?',
     options: ['Cave of Thawr', 'Cave of Uhud', 'Cave of Badr', 'Cave of Hira'],
     correctIndex: 3,
+    explanation: 'The first revelation came in the Cave of Hira, on Jabal al-Nur near Makkah.',
     topic: 'Seerah',
   ),
   MockQuestion(
@@ -3082,6 +3134,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The migration of the Prophet Muhammad (peace be upon him) from Makkah to Madinah is called what?',
     options: ['Hijrah', 'Isra', 'Fath', 'Bayt'],
     correctIndex: 0,
+    explanation: '\'Hijrah\' is the migration from Makkah to Madinah in 622 CE, which starts the Hijri era.',
     topic: 'Seerah',
   ),
   MockQuestion(
@@ -3090,6 +3143,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In which year CE did the Hijrah to Madinah take place?',
     options: ['610 CE', '622 CE', '630 CE', '632 CE'],
     correctIndex: 1,
+    explanation: 'The Hijrah took place in 622 CE, the year from which the Hijri calendar counts.',
     topic: 'Seerah',
   ),
   MockQuestion(
@@ -3098,6 +3152,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which companion was with the Prophet Muhammad (peace be upon him) in the Cave of Thawr during the Hijrah?',
     options: ['Umar', 'Ali', 'Abu Bakr', 'Uthman'],
     correctIndex: 2,
+    explanation: 'Abu Bakr was with the Prophet in the Cave of Thawr, as mentioned in the Quran (9:40).',
     topic: 'Seerah',
   ),
   MockQuestion(
@@ -3106,6 +3161,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which mosque was built first after the arrival in the area of Madinah, at Quba?',
     options: ['Masjid al-Haram', 'Masjid al-Aqsa', 'Masjid Quba', 'Masjid al-Qiblatain'],
     correctIndex: 2,
+    explanation: 'Masjid Quba, built on arrival at Quba, was the first mosque founded (Quran 9:108).',
     topic: 'Seerah',
   ),
   MockQuestion(
@@ -3114,6 +3170,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Prophet Muhammad (peace be upon him) passed away in which city?',
     options: ['Makkah', 'Taif', 'Jerusalem', 'Madinah'],
     correctIndex: 3,
+    explanation: 'The Prophet passed away in Madinah in 11 AH (632 CE) and is buried there.',
     topic: 'Seerah',
   ),
   MockQuestion(
@@ -3122,6 +3179,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which title, meaning the trustworthy one, was given to the Prophet Muhammad (peace be upon him) before prophethood?',
     options: ['Al-Amin', 'Al-Farooq', 'As-Siddiq', 'Saifullah'],
     correctIndex: 0,
+    explanation: 'Before prophethood the people of Makkah called the Prophet al-Amin, the trustworthy one.',
     topic: 'Seerah',
   ),
   MockQuestion(
@@ -3130,6 +3188,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who was the first woman to accept Islam?',
     options: ['Aisha', 'Khadijah', 'Fatimah', 'Asma'],
     correctIndex: 1,
+    explanation: 'Khadijah, the Prophet\'s wife, was the first woman to accept Islam.',
     topic: 'Seerah',
   ),
   MockQuestion(
@@ -3138,6 +3197,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who was the first adult man to accept Islam, according to the standard account?',
     options: ['Ali', 'Zayd', 'Abu Bakr', 'Umar'],
     correctIndex: 2,
+    explanation: 'In the standard account Abu Bakr was the first adult man to accept Islam.',
     topic: 'Seerah',
   ),
   MockQuestion(
@@ -3146,6 +3206,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who was the first muezzin, known for giving the call to prayer?',
     options: ['Ammar', 'Salman', 'Suhayb', 'Bilal'],
     correctIndex: 3,
+    explanation: 'Bilal ibn Rabah was chosen as the first muezzin, giving the call to prayer.',
     topic: 'Seerah',
   ),
   MockQuestion(
@@ -3154,6 +3215,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who was the uncle of the Prophet Muhammad (peace be upon him) who was martyred at Uhud?',
     options: ['Hamza', 'Abbas', 'Abu Talib', 'Abu Lahab'],
     correctIndex: 0,
+    explanation: 'Hamza, the Prophet\'s uncle, was martyred at the Battle of Uhud in 3 AH.',
     topic: 'Seerah',
   ),
   MockQuestion(
@@ -3162,6 +3224,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Battle of Badr took place in which year of the Hijri calendar?',
     options: ['1 AH', '2 AH', '3 AH', '5 AH'],
     correctIndex: 1,
+    explanation: 'Badr was fought on 17 Ramadan 2 AH (March 624 CE), the first major battle.',
     topic: 'Islamic History',
   ),
   MockQuestion(
@@ -3170,6 +3233,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'About how many Muslims took part in the Battle of Badr, according to the standard account?',
     options: ['100', '200', '313', '1000'],
     correctIndex: 2,
+    explanation: 'The standard account counts about 313 Muslims at Badr, facing about a thousand Quraysh.',
     topic: 'Islamic History',
   ),
   MockQuestion(
@@ -3178,6 +3242,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Battle of Uhud took place in which Hijri year?',
     options: ['2 AH', '4 AH', '5 AH', '3 AH'],
     correctIndex: 3,
+    explanation: 'Uhud was fought in 3 AH (625 CE), a year after Badr.',
     topic: 'Islamic History',
   ),
   MockQuestion(
@@ -3186,6 +3251,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Battle of the Trench (Khandaq) took place in which Hijri year?',
     options: ['5 AH', '3 AH', '6 AH', '8 AH'],
     correctIndex: 0,
+    explanation: 'The Battle of the Trench was fought in 5 AH (627 CE), when Madinah was besieged.',
     topic: 'Islamic History',
   ),
   MockQuestion(
@@ -3194,6 +3260,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Treaty of Hudaybiyyah was agreed in which Hijri year?',
     options: ['4 AH', '6 AH', '7 AH', '9 AH'],
     correctIndex: 1,
+    explanation: 'The Treaty of Hudaybiyyah was agreed in 6 AH (628 CE), before the Conquest of Makkah.',
     topic: 'Islamic History',
   ),
   MockQuestion(
@@ -3202,6 +3269,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Conquest of Makkah took place in which Hijri year?',
     options: ['6 AH', '7 AH', '8 AH', '10 AH'],
     correctIndex: 2,
+    explanation: 'Makkah was conquered in 8 AH (630 CE), two years after Hudaybiyyah.',
     topic: 'Islamic History',
   ),
   MockQuestion(
@@ -3210,6 +3278,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Farewell Pilgrimage of the Prophet Muhammad (peace be upon him) took place in which Hijri year?',
     options: ['8 AH', '9 AH', '11 AH', '10 AH'],
     correctIndex: 3,
+    explanation: 'The Farewell Pilgrimage was in 10 AH (632 CE), in the Prophet\'s final year.',
     topic: 'Islamic History',
   ),
   MockQuestion(
@@ -3218,6 +3287,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who was the first Caliph after the Prophet Muhammad (peace be upon him)?',
     options: ['Abu Bakr', 'Umar', 'Uthman', 'Ali'],
     correctIndex: 0,
+    explanation: 'In the standard account Abu Bakr was the first caliph, chosen after the Prophet\'s death.',
     topic: 'Islamic History',
   ),
   MockQuestion(
@@ -3226,6 +3296,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which title was given to Abu Bakr, meaning the truthful one?',
     options: ['Al-Farooq', 'As-Siddiq', 'Dhun-Nurayn', 'Saifullah'],
     correctIndex: 1,
+    explanation: 'Abu Bakr was called as-Siddiq, the truthful one, for believing the Prophet without doubt.',
     topic: 'Islamic History',
   ),
   MockQuestion(
@@ -3234,6 +3305,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who was the second Caliph?',
     options: ['Ali', 'Uthman', 'Umar', 'Hasan'],
     correctIndex: 2,
+    explanation: 'Umar ibn al-Khattab succeeded Abu Bakr as the second caliph in the standard account.',
     topic: 'Islamic History',
   ),
   MockQuestion(
@@ -3242,6 +3314,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which title was given to Umar, meaning one who distinguishes truth from falsehood?',
     options: ['As-Siddiq', 'Dhun-Nurayn', 'Saifullah', 'Al-Farooq'],
     correctIndex: 3,
+    explanation: 'Umar was called al-Farooq, one who distinguishes truth from falsehood.',
     topic: 'Islamic History',
   ),
   MockQuestion(
@@ -3250,6 +3323,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who was the third Caliph?',
     options: ['Uthman', 'Ali', 'Umar', 'Abu Bakr'],
     correctIndex: 0,
+    explanation: 'Uthman ibn Affan succeeded Umar as the third caliph in the standard account.',
     topic: 'Islamic History',
   ),
   MockQuestion(
@@ -3258,6 +3332,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Uthman was called Dhun-Nurayn because he married two daughters of which person?',
     options: ['Abu Bakr', 'The Prophet Muhammad', 'Umar', 'Ali'],
     correctIndex: 1,
+    explanation: 'Uthman married two of the Prophet\'s daughters, Ruqayyah then Umm Kulthum, hence Dhun-Nurayn.',
     topic: 'Islamic History',
   ),
   MockQuestion(
@@ -3266,6 +3341,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who was the fourth Caliph?',
     options: ['Hasan', 'Muawiyah', 'Ali', 'Talha'],
     correctIndex: 2,
+    explanation: 'Ali ibn Abi Talib succeeded Uthman as the fourth caliph in the standard account.',
     topic: 'Islamic History',
   ),
   MockQuestion(
@@ -3274,6 +3350,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Under which Caliph was a standard written copy of the Holy Quran prepared and sent to the main centres?',
     options: ['Abu Bakr', 'Umar', 'Hasan', 'Uthman'],
     correctIndex: 3,
+    explanation: 'Under Uthman a standard written mushaf was prepared and sent to the main centres.',
     topic: 'Islamic History',
   ),
   MockQuestion(
@@ -3282,6 +3359,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which Caliph is credited with starting the Hijri calendar as the official calendar?',
     options: ['Umar', 'Abu Bakr', 'Uthman', 'Ali'],
     correctIndex: 0,
+    explanation: 'The Hijri calendar was adopted as the official calendar under Caliph Umar.',
     topic: 'Islamic History',
   ),
   MockQuestion(
@@ -3290,6 +3368,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which companion was given the title Saifullah, meaning the Sword of Allah?',
     options: ['Saad ibn Abi Waqqas', 'Khalid ibn al-Walid', 'Amr ibn al-As', 'Abu Ubaydah'],
     correctIndex: 1,
+    explanation: 'Khalid ibn al-Walid was given the title Saifullah, the Sword of Allah.',
     topic: 'Islamic History',
   ),
   MockQuestion(
@@ -3298,6 +3377,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who commanded the Muslim army at the Battle of Qadisiyyah?',
     options: ['Khalid ibn al-Walid', 'Amr ibn al-As', 'Saad ibn Abi Waqqas', 'Zubayr ibn al-Awwam'],
     correctIndex: 2,
+    explanation: 'Saad ibn Abi Waqqas commanded the Muslim army at Qadisiyyah in 14 AH.',
     topic: 'Islamic History',
   ),
   MockQuestion(
@@ -3306,6 +3386,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who led the Muslim conquest of Egypt?',
     options: ['Khalid ibn al-Walid', 'Saad ibn Abi Waqqas', 'Tariq ibn Ziyad', 'Amr ibn al-As'],
     correctIndex: 3,
+    explanation: 'Amr ibn al-As led the Muslim conquest of Egypt in 19-21 AH.',
     topic: 'Islamic History',
   ),
   MockQuestion(
@@ -3314,6 +3395,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What is the first pillar of Islam?',
     options: ['Shahadah', 'Salah', 'Zakat', 'Sawm'],
     correctIndex: 0,
+    explanation: 'Shahadah, the declaration of faith, is the first pillar of Islam.',
     topic: 'Pillars of Islam',
   ),
   MockQuestion(
@@ -3322,6 +3404,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'How many daily prayers are obligatory in Islam?',
     options: ['Three', 'Five', 'Six', 'Seven'],
     correctIndex: 1,
+    explanation: 'Five daily prayers are obligatory: Fajr, Dhuhr, Asr, Maghrib and Isha.',
     topic: 'Pillars of Islam',
   ),
   MockQuestion(
@@ -3330,6 +3413,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'How many obligatory (Fard) Rakats are there in the Fajr prayer?',
     options: ['Three', 'Four', 'Two', 'Five'],
     correctIndex: 2,
+    explanation: 'Fajr has two obligatory (fard) rakats.',
     topic: 'Pillars of Islam',
   ),
   MockQuestion(
@@ -3338,6 +3422,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'How many obligatory (Fard) Rakats are there in the Maghrib prayer?',
     options: ['Two', 'Four', 'Five', 'Three'],
     correctIndex: 3,
+    explanation: 'Maghrib has three obligatory (fard) rakats.',
     topic: 'Pillars of Islam',
   ),
   MockQuestion(
@@ -3346,6 +3431,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What is the usual rate of Zakat on cash savings held for a full lunar year?',
     options: ['2.5 percent', '5 percent', '7.5 percent', '10 percent'],
     correctIndex: 0,
+    explanation: 'Zakat on cash savings held a full lunar year above nisab is 2.5 percent.',
     topic: 'Pillars of Islam',
   ),
   MockQuestion(
@@ -3354,6 +3440,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Fasting in Ramadan is observed from when to when each day?',
     options: ['Sunset to sunrise', 'Dawn to sunset', 'Midnight to noon', 'Noon to midnight'],
     correctIndex: 1,
+    explanation: 'The Quran says to fast until night (2:187), so the fast runs from dawn to sunset.',
     topic: 'Pillars of Islam',
   ),
   MockQuestion(
@@ -3362,6 +3449,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Hajj is performed in which Islamic month?',
     options: ['Ramadan', 'Shawwal', 'Dhul-Hijjah', 'Muharram'],
     correctIndex: 2,
+    explanation: 'Hajj rites take place in Dhul-Hijjah, the twelfth month of the Hijri year.',
     topic: 'Pillars of Islam',
   ),
   MockQuestion(
@@ -3370,6 +3458,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Umrah is also known as what?',
     options: ['The greater pilgrimage', 'The lesser pilgrimage', 'The yearly fast', 'The night prayer'],
     correctIndex: 1,
+    explanation: 'Umrah is the lesser pilgrimage, which can be performed at any time of year.',
     topic: 'Pillars of Islam',
   ),
   MockQuestion(
@@ -3378,6 +3467,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What does the Arabic word Tawhid mean?',
     options: ['Charity', 'The Oneness of Allah', 'Fasting', 'Pilgrimage'],
     correctIndex: 1,
+    explanation: 'Tawhid is the Oneness of Allah, the central belief of Islam (Quran 112).',
     topic: 'Islamic Terminology',
   ),
   MockQuestion(
@@ -3386,6 +3476,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What does the Arabic word Shirk mean?',
     options: ['Prayer', 'Fasting', 'Associating partners with Allah', 'Giving charity'],
     correctIndex: 2,
+    explanation: 'Shirk is associating partners with Allah, the opposite of Tawhid.',
     topic: 'Islamic Terminology',
   ),
   MockQuestion(
@@ -3394,6 +3485,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What does the Arabic word Salah mean?',
     options: ['Charity', 'Fasting', 'Pilgrimage', 'Prayer'],
     correctIndex: 3,
+    explanation: '\'Salah\' is the Arabic word for the ritual prayer.',
     topic: 'Islamic Terminology',
   ),
   MockQuestion(
@@ -3402,6 +3494,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What does the Arabic word Sawm mean?',
     options: ['Fasting', 'Prayer', 'Charity', 'Pilgrimage'],
     correctIndex: 0,
+    explanation: '\'Sawm\' is the Arabic word for fasting, as in the fast of Ramadan.',
     topic: 'Islamic Terminology',
   ),
   MockQuestion(
@@ -3410,6 +3503,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What is the literal meaning of the Arabic word Jihad?',
     options: ['War only', 'Striving or struggle', 'Migration', 'Trade'],
     correctIndex: 1,
+    explanation: '\'Jihad\' literally means striving or struggle, which can take many forms.',
     topic: 'Islamic Terminology',
   ),
   MockQuestion(
@@ -3418,6 +3512,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What does the term Fiqh mean in Islamic study?',
     options: ['Recitation', 'Calligraphy', 'Islamic jurisprudence', 'Mosque building'],
     correctIndex: 2,
+    explanation: 'Fiqh is Islamic jurisprudence, the study of rulings derived from the Quran and Sunnah.',
     topic: 'Islamic Terminology',
   ),
   MockQuestion(
@@ -3426,6 +3521,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What does the term Shariah most basically refer to?',
     options: ['A single book', 'A city', 'The Islamic way and law', 'A type of prayer'],
     correctIndex: 2,
+    explanation: 'Shariah is the Islamic way and law, drawn from the Quran and the Prophet\'s Sunnah.',
     topic: 'Islamic Terminology',
   ),
   MockQuestion(
@@ -3434,6 +3530,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Eid ul-Fitr is celebrated at the end of which month?',
     options: ['Shaban', 'Ramadan', 'Dhul-Hijjah', 'Muharram'],
     correctIndex: 1,
+    explanation: 'Eid ul-Fitr is celebrated on 1 Shawwal, at the end of Ramadan.',
     topic: 'Pillars of Islam',
   ),
   MockQuestion(
@@ -3442,6 +3539,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Eid ul-Adha falls on which day of Dhul-Hijjah?',
     options: ['1st', '9th', '10th', '15th'],
     correctIndex: 2,
+    explanation: 'Eid ul-Adha falls on 10 Dhul-Hijjah, the day of sacrifice during Hajj.',
     topic: 'Pillars of Islam',
   ),
   MockQuestion(
@@ -3450,6 +3548,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Friday congregational prayer is called what?',
     options: ['Taraweeh', 'Tahajjud', 'Ishraq', 'Jumuah'],
     correctIndex: 3,
+    explanation: 'Jumuah is the Friday congregational prayer, held in place of Dhuhr.',
     topic: 'Pillars of Islam',
   ),
   MockQuestion(
@@ -3458,6 +3557,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Muslims face which direction in prayer, towards the Kabah in Makkah?',
     options: ['Qiblah', 'Mihrab', 'Minbar', 'Sahn'],
     correctIndex: 0,
+    explanation: 'Qiblah is the direction Muslims face in prayer, towards the Kabah in Makkah.',
     topic: 'Pillars of Islam',
   ),
   // ------------------------------------------------------------------
