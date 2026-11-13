@@ -24,7 +24,10 @@ class HomeView extends GetView<HomeController> {
           return const Center(child: CircularProgressIndicator());
         }
         if (!controller.hasTests) {
-          return _EmptyState(loadTimedOut: controller.loadTimedOut.value);
+          return _EmptyState(
+            loadTimedOut: controller.loadTimedOut.value,
+            onRetry: controller.retryLoad,
+          );
         }
         return const _DashboardBody();
       }),
@@ -33,11 +36,17 @@ class HomeView extends GetView<HomeController> {
 }
 
 class _EmptyState extends StatelessWidget {
-  const _EmptyState({this.loadTimedOut = false});
+  const _EmptyState({this.loadTimedOut = false, this.onRetry});
 
   /// When the history read timed out, the same empty state is shown plus
-  /// a one-line notice: the data is safe, reopening the page retries.
+  /// a Retry button: in-app navigation reuses the same database instance,
+  /// so only a real retry (which runs database recovery) can help —
+  /// reopening the page would just re-run the same stuck open.
   final bool loadTimedOut;
+
+  /// Called by the "Retry loading history" button. Null when no retry
+  /// is offered (kept optional so the plain empty state stays usable).
+  final VoidCallback? onRetry;
 
   @override
   Widget build(BuildContext context) {
@@ -67,11 +76,20 @@ class _EmptyState extends StatelessWidget {
     return Column(
       children: [
         Expanded(child: empty),
+        if (onRetry != null)
+          Padding(
+            padding: const EdgeInsets.only(bottom: 12),
+            child: ElevatedButton.icon(
+              onPressed: onRetry,
+              icon: const Icon(Icons.refresh),
+              label: const Text('Retry loading history'),
+            ),
+          ),
         Padding(
           padding: const EdgeInsets.only(bottom: 24),
           child: Text(
             'History could not be loaded. Your data is safe — '
-            'try reopening this page.',
+            'tap Retry to try again.',
             style: AppTextStyles.captionOf(context),
             textAlign: TextAlign.center,
           ),

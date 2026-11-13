@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
+import 'package:typing_master/core/database/database_recovery.dart';
 import 'package:typing_master/features/history/model/typing_test_record.dart';
 import 'package:typing_master/features/home/controller/home_controller.dart';
 import 'package:typing_master/features/home/view/home_view.dart';
@@ -22,6 +23,19 @@ import 'package:typing_master/features/typing_test/model/typing_test_kind.dart';
 /// the repositories are faked via `implements`.
 
 const Duration _shortTimeout = Duration(milliseconds: 50);
+
+/// Recovery that always fails fast, so the timeout tests exercise the
+/// controller/view behaviour without running the real recovery (which
+/// would probe a real database). Recovery itself is covered in
+/// database_recovery_test.dart.
+class _FailingRecovery extends DatabaseRecovery {
+  @override
+  Future<bool> ensureHealthy({
+    Duration? probeTimeout,
+    List<Duration>? retryDelays,
+  }) async =>
+      false;
+}
 
 TypingTestRecord _record({required int id}) => TypingTestRecord(
       id: id,
@@ -158,10 +172,12 @@ void main() {
       final controller = HomeController(
         repository: _NeverProgressRepository(),
         loadTimeout: _shortTimeout,
+        databaseRecovery: _FailingRecovery(),
       );
       await controller.load();
       expect(controller.isLoading.value, isFalse);
       expect(controller.loadTimedOut.value, isTrue);
+      expect(controller.loadFailed.value, isTrue);
       expect(controller.allTests, isEmpty);
       expect(controller.dailyGoalSeconds.value, 600);
     });
@@ -280,6 +296,7 @@ void main() {
       HomeController(
         repository: _NeverProgressRepository(),
         loadTimeout: _shortTimeout,
+        databaseRecovery: _FailingRecovery(),
       ),
     );
     await tester.pumpWidget(
@@ -289,10 +306,11 @@ void main() {
     await tester.pump();
     expect(find.byType(CircularProgressIndicator), findsNothing);
     expect(find.text('No completed tests yet'), findsOneWidget);
+    expect(find.text('Retry loading history'), findsOneWidget);
     expect(
       find.text(
         'History could not be loaded. Your data is safe — '
-        'try reopening this page.',
+        'tap Retry to try again.',
       ),
       findsOneWidget,
     );

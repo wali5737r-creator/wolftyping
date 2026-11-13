@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'core/database/app_database.dart';
+import 'core/database/database_recovery.dart';
 import 'core/routes/app_pages.dart';
 import 'core/services/data_refresh_service.dart';
 import 'core/services/theme_service.dart';
@@ -62,7 +63,16 @@ class _WolfTypingAppState extends State<WolfTypingApp> {
   void initState() {
     super.initState();
     Future.delayed(_bootTimeout, () {
-      if (mounted) setState(() => _bootTimedOut = true);
+      if (!mounted) return;
+      setState(() => _bootTimedOut = true);
+      // P0-5: if settings still haven't loaded, the database open is
+      // probably hung (slow WASM fetch on a slow connection). One bounded
+      // background recovery attempt: probe, replace the stuck instance if
+      // needed, reload settings. Unawaited — the overlay is already
+      // released and the app stays usable either way.
+      if (Get.find<SettingsController>().loading.value) {
+        unawaited(DatabaseRecovery().ensureHealthy());
+      }
     });
   }
 
