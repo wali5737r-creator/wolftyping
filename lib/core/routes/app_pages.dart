@@ -44,6 +44,9 @@ import '../../features/progress/view/progress_view.dart';
 import '../../features/profile/controller/profile_controller.dart';
 import '../../features/profile/view/profile_view.dart';
 
+import '../../features/certificate/view/certificate_screen.dart';
+import '../../features/certificate/view/certificate_verify_view.dart';
+
 import '../../features/about/view/about_view.dart';
 import '../../features/feedback/view/feedback_view.dart';
 import '../../features/settings/view/settings_view.dart';
@@ -294,6 +297,18 @@ class AppPages {
           () => ProfileController(),
         );
       }),
+    ),
+
+    // Practice certificate (result → name → certificate + code)
+    GetPage(
+      name: AppRoutes.certificate,
+      page: () => const CertificateScreen(),
+    ),
+
+    // Verify a practice-certificate code (no result needed)
+    GetPage(
+      name: AppRoutes.certificateVerify,
+      page: () => const CertificateVerifyView(),
     ),
 
     // Feedback / contact (email only; nothing is sent by the app)

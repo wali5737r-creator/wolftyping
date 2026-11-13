@@ -25,6 +25,8 @@ abstract class AppRoutes {
   static const String historyDetail = '/history-detail';
   static const String progress = '/progress';
   static const String profile = '/profile';
+  static const String certificate = '/certificate';
+  static const String certificateVerify = '/verify-certificate';
   static const String settings = '/settings';
   static const String feedback = '/feedback';
   static const String about = '/about';

@@ -72,7 +72,13 @@ class MockTestController extends GetxController {
   MockTestEngine? _engine;
   Timer? _timer;
 
+  /// Full-mock durations: the standard 60/90/120 minutes plus short
+  /// 5- and 10-minute quick modes — the same 100-question mock, same
+  /// negative-marking and auto-submit rules, just less time. The past
+  /// paper setup shares this list, so papers offer the same options.
   static const List<Duration> fullDurations = [
+    Duration(minutes: 5),
+    Duration(minutes: 10),
     Duration(minutes: 60),
     Duration(minutes: 90),
     Duration(minutes: 120),
@@ -160,10 +166,26 @@ class MockTestController extends GetxController {
   }
 
   /// True while the test is running and 5 minutes or less remain.
+  /// In a 5-minute quick test that is true from the start — the
+  /// banner then says so (see [timeWarningLabel]) instead of claiming
+  /// "only 5 minutes left" at the moment the test began.
   bool get timeWarning {
     return phase.value == MockTestPhase.test &&
         remaining.value > Duration.zero &&
         remaining.value <= const Duration(minutes: 5);
+  }
+
+  /// Banner text for the last-5-minutes warning. A short test (5
+  /// minutes or less in total) is in its final stretch from the start,
+  /// so it names the quick mode instead of the misleading "only 5
+  /// minutes left" wording.
+  String get timeWarningLabel {
+    if (selectedDuration.value <= const Duration(minutes: 5)) {
+      return '${selectedDuration.value.inMinutes}-minute quick test — '
+          'the test will submit automatically when time ends.';
+    }
+    return 'Only 5 minutes left! The test will submit automatically '
+        'when time ends.';
   }
 
   String get remainingLabel {

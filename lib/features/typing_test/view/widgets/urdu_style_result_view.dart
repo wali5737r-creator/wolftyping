@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 
 import '../../../../core/constants/app_text_styles.dart';
 import '../../../../core/routes/app_routes.dart';
+import '../../../../core/services/certificate_code.dart';
+import '../../../../features/certificate/view/certificate_card.dart';
 import '../../model/typing_snapshot.dart';
 import 'result_card.dart';
 import 'typing_ui_parts.dart';
@@ -93,6 +95,25 @@ class UrduStyleResultScreen extends StatelessWidget {
                     completedAt: DateTime.now(),
                   ),
                   fileName: 'wolftyping-result.png',
+                ),
+                const SizedBox(height: 12),
+                // Separate from the result card above: the result stays
+                // a result — this opens the practice certificate.
+                GetCertificateButton(
+                  data: CertificateData(
+                    kind: CertificateKind.typing,
+                    testLabel: paragraphTitle.isEmpty
+                        ? title
+                        : '$title — $paragraphTitle',
+                    holderName: '',
+                    date: DateTime.now(),
+                    score: s.netWpm,
+                    totalQuestions: 0,
+                    correct: s.correctCharacters,
+                    wrong: s.wrongCharacters,
+                    skipped: 0,
+                    accuracy: s.accuracy,
+                  ),
                 ),
                 const SizedBox(height: 28),
                 Wrap(

@@ -79,6 +79,31 @@ class ProfileView extends GetView<ProfileController> {
                     rank: i + 1,
                     record: controller.bestScores[i],
                   ),
+              const SizedBox(height: 18),
+              const Text('Practice Certificates', style: AppTextStyles.h3),
+              const SizedBox(height: 4),
+              Text(
+                'Certificates are free and checked on this device — no account, no server. A certificate shows the result was not changed after it was created; it does not prove the test was supervised.',
+                style: AppTextStyles.captionOf(context),
+              ),
+              const SizedBox(height: 10),
+              SoftSurface(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 8,
+                ),
+                child: ListTile(
+                  leading: const Icon(Icons.verified_outlined),
+                  title: const Text('Verify a certificate code'),
+                  subtitle: const Text(
+                    'Paste a WolfTyping practice-certificate code to check the result it carries.',
+                  ),
+                  trailing: const Icon(Icons.chevron_right),
+                  contentPadding: EdgeInsets.zero,
+                  onTap: () =>
+                      Get.toNamed(AppRoutes.certificateVerify),
+                ),
+              ),
             ],
           ),
         );

@@ -140,8 +140,10 @@ void main() {
       controller.result.value = engine.result();
       controller.phase.value = MockTestPhase.result;
       await tester.pumpAndSettle();
-      // The review tile is an ExpansionTile: expand it first so the
-      // explanation child is laid out.
+      // The review tile is an ExpansionTile: scroll it into view and
+      // expand it first so the explanation child is laid out.
+      await tester.ensureVisible(find.text('Q1. Synthetic question?'));
+      await tester.pumpAndSettle();
       await tester.tap(find.text('Q1. Synthetic question?'));
       await tester.pumpAndSettle();
       expect(

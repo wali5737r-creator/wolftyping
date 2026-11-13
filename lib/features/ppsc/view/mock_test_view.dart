@@ -10,6 +10,8 @@ import '../../../core/routes/app_routes.dart';
 import '../../../core/widgets/app_controls.dart';
 import '../../../core/widgets/app_scaffold.dart';
 import '../../../core/widgets/app_surfaces.dart';
+import '../../../core/services/certificate_code.dart';
+import '../../../features/certificate/view/certificate_card.dart';
 import '../controller/mock_test_controller.dart';
 import '../model/custom_set.dart';
 import '../model/mock_question.dart';
@@ -814,9 +816,11 @@ class _TestPanelState extends State<_TestPanel> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
-                              'Only 5 minutes left! The test will submit automatically when time ends.',
-                              style: TextStyle(fontWeight: FontWeight.w700),
+                            Text(
+                              controller.timeWarningLabel,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w700,
+                              ),
                             ),
                             const SizedBox(height: 8),
                             if (controller.unansweredQuestions.isEmpty)
@@ -1084,6 +1088,28 @@ class _ResultPanel extends StatelessWidget {
                     onPressed: controller.backToSetup,
                     icon: const Icon(Icons.replay),
                     label: const Text('Take Another Test'),
+                  ),
+                  // Separate from the result card above: the result
+                  // stays a result — this opens the practice
+                  // certificate (name + verification code) instead.
+                  GetCertificateButton(
+                    data: CertificateData(
+                      kind: CertificateKind.mock,
+                      testLabel:
+                          '${controller.attemptSourceLabel} · '
+                          '${controller.selectedDuration.value.inMinutes} minutes',
+                      holderName: '',
+                      date: DateTime.now(),
+                      score: result.score,
+                      totalQuestions: result.totalQuestions,
+                      correct: result.correct,
+                      wrong: result.wrong,
+                      skipped: result.skipped,
+                      accuracy: 0,
+                    ),
+                    prefilledName: controller.kind.value == MockTestKind.custom
+                        ? controller.displayStudentName
+                        : null,
                   ),
                   OutlinedButton.icon(
                     onPressed: () => Get.toNamed(AppRoutes.ppscUrdu),

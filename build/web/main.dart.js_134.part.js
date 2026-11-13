@@ -3,9 +3,9 @@ $__dart_deferred_initializers__.current=function(a,b,c,$){var B,A
 B=c[0]
 A=c[43]
 var z=a.updateTypes([])
-var y={d:B.V("p<k>")};(function constants(){var x=a.makeConstList
-A.xz=x(["F1","F2","F3","F4"],y.d)
-A.wR=x(["10","12","14","16"],y.d)
-A.yB=x(["Printer","Monitor","Scanner","Speaker"],y.d)
-A.zr=x(["MS Word","MS Excel","MS PowerPoint","MS Access"],y.d)})()};
-(a=>{a["S5M5CV+YHzMNUzJG4gkmw5zZOTQ="]=a.current})($__dart_deferred_initializers__);
+var y={d:B.U("v<k>")};(function constants(){var x=a.makeConstList
+A.xJ=x(["F1","F2","F3","F4"],y.d)
+A.x0=x(["10","12","14","16"],y.d)
+A.yM=x(["Printer","Monitor","Scanner","Speaker"],y.d)
+A.zC=x(["MS Word","MS Excel","MS PowerPoint","MS Access"],y.d)})()};
+(a=>{a["dv4hqWe2gc13FCxcp7TJho3MLuA="]=a.current})($__dart_deferred_initializers__);
