@@ -807,9 +807,53 @@ class _TestPanelState extends State<_TestPanel> {
                             AppDimensions.cardRadius,
                           ),
                         ),
-                        child: const Text(
-                          'Only 5 minutes left! The test will submit automatically when time ends.',
-                          style: TextStyle(fontWeight: FontWeight.w700),
+                        // Same unanswered list as the submit-confirm
+                        // dialog: at 5 minutes left the user can see
+                        // exactly which questions are still unanswered.
+                        // Rebuilt on every answer via answersTick above.
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              'Only 5 minutes left! The test will submit automatically when time ends.',
+                              style: TextStyle(fontWeight: FontWeight.w700),
+                            ),
+                            const SizedBox(height: 8),
+                            if (controller.unansweredQuestions.isEmpty)
+                              const Text(
+                                'You have answered every question.',
+                              )
+                            else ...[
+                              Text(
+                                '${controller.unansweredQuestions.length} question${controller.unansweredQuestions.length == 1 ? ' is' : 's are'} still unanswered:',
+                              ),
+                              const SizedBox(height: 8),
+                              // Height-capped + scrollable: with 100
+                              // unanswered the full chip list would push
+                              // the question list and Submit button off
+                              // screen. Every chip is still listed.
+                              ConstrainedBox(
+                                constraints: const BoxConstraints(
+                                  maxHeight: 120,
+                                ),
+                                child: SingleChildScrollView(
+                                  child: Wrap(
+                                    spacing: 6,
+                                    runSpacing: 6,
+                                    children: [
+                                      for (final MockQuestion q in controller
+                                          .unansweredQuestions)
+                                        Chip(
+                                          label: Text(
+                                            '${engine.questions.indexOf(q) + 1}',
+                                          ),
+                                        ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ],
                         ),
                       ),
                     ],
