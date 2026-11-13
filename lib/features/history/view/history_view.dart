@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,6 +9,7 @@ import '../../../core/widgets/app_surfaces.dart';
 import '../controller/history_controller.dart';
 import '../model/history_filters.dart';
 import '../model/typing_test_record.dart';
+import '../service/history_backup_repository.dart';
 import 'widgets/delete_test_dialog.dart';
 import 'widgets/history_row.dart';
 
@@ -153,9 +155,78 @@ class _FiltersBarState extends State<_FiltersBar> {
               },
               ),
             )),
+        // Backup lives only in this browser's database, so export it
+        // before clearing browser data. Web only — desktop/mobile
+        // have no browser download or file picker.
+        if (kIsWeb) ...[
+          OutlinedButton.icon(
+            onPressed: _exportJson,
+            icon: const Icon(Icons.download_outlined, size: 20),
+            label: const Text('Export JSON'),
+          ),
+          OutlinedButton.icon(
+            onPressed: _exportCsv,
+            icon: const Icon(Icons.table_chart_outlined, size: 20),
+            label: const Text('Export CSV'),
+          ),
+          OutlinedButton.icon(
+            onPressed: _importBackup,
+            icon: const Icon(Icons.upload_file_outlined, size: 20),
+            label: const Text('Import'),
+          ),
+        ],
       ],
       ),
     );
+  }
+
+  Future<void> _exportJson() async {
+    final String? message = await widget.controller.exportHistoryJson();
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          message ?? 'Download is available on the web version.',
+        ),
+      ),
+    );
+  }
+
+  Future<void> _exportCsv() async {
+    final String? message = await widget.controller.exportHistoryCsv();
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          message ?? 'Download is available on the web version.',
+        ),
+      ),
+    );
+  }
+
+  Future<void> _importBackup() async {
+    try {
+      final HistoryImportResult? result =
+          await widget.controller.importHistoryBackup();
+      if (!mounted || result == null) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            'Imported ${result.importedTests} test'
+            '${result.importedTests == 1 ? '' : 's'} '
+            '(${result.importedMistakes} mistake rows), '
+            '${result.skippedDuplicates} already here, '
+            '${result.mergedLessons} lesson record'
+            '${result.mergedLessons == 1 ? '' : 's'} updated.',
+          ),
+        ),
+      );
+    } on FormatException catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(e.message)),
+      );
+    }
   }
 }
 

@@ -55,7 +55,7 @@ WEB_DIR = ROOT / "web"
 PAPERS_ROOT = ROOT / "lib" / "features" / "ppsc" / "service"
 
 SITE = "https://wolftyping.pages.dev"
-LASTMOD = "2026-11-11"
+LASTMOD = "2026-11-13"
 
 # Live totals for the current paper data set (update when papers are added).
 TOTAL_PAPERS = 241
@@ -313,10 +313,27 @@ def json_ld(obj: dict) -> str:
     return '  <script type="application/ld+json">\n' + indented + "\n  </script>"
 
 
+def page_title(p: dict) -> str:
+    """Search-result title, kept to 60 chars: paper number + year + the
+    first words of the post, truncated at a word boundary with an
+    ellipsis when it does not fit. The paper number keeps every title
+    distinct, and the year stays visible. The H1 on the page still
+    carries the full post and department, and the URL slug is untouched
+    — only the title shown in search results is shortened."""
+    prefix = f"Paper {p['paperNo']} ({p['year']}) — "
+    suffix = " | WolfTyping"
+    budget = 60 - len(prefix) - len(suffix)
+    post = p["post"]
+    if len(post) <= budget:
+        return prefix + post + suffix
+    cut = post[:budget].rsplit(" ", 1)[0]
+    return prefix + cut + "…" + suffix
+
+
 def render(p: dict, template: str) -> str:
     no = p["paperNo"]
     year = p["year"]
-    title = f"Paper {no} — {p['post']} | WolfTyping"
+    title = page_title(p)
     desc = meta_description(p)
     app_url = f"{SITE}/#/ppsc-past-papers-year?year={year}"
     h1 = f"Paper {no} — {p['post']}, {p['department']}"

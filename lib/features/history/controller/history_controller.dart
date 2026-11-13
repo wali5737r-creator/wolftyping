@@ -1,10 +1,13 @@
 import 'package:get/get.dart';
 
 import '../../../core/services/data_refresh_service.dart';
+import '../../../core/services/history_file_share.dart';
 import '../../typing_test/model/typing_language.dart';
 import '../../typing_test/model/typing_test_kind.dart';
 import '../model/history_filters.dart';
 import '../model/typing_test_record.dart';
+import '../service/history_backup.dart';
+import '../service/history_backup_repository.dart';
 import '../service/history_repository.dart';
 
 /// Drives the History screen: loads completed tests once, then applies
@@ -72,6 +75,64 @@ class HistoryController extends GetxController {
   Future<void> deleteTest(TypingTestRecord test) async {
     await HistoryRepository.instance.deleteTest(test.id);
     await refresh();
+  }
+
+  /// Downloads the full backup (tests, mistakes, lesson progress,
+  /// daily goal) as a JSON file. Returns a message for the History
+  /// screen to show, or null when downloads are unavailable on this
+  /// platform (desktop/mobile have no browser download).
+  Future<String?> exportHistoryJson() async {
+    final HistoryBackup backup =
+        await HistoryBackupRepository.instance.collect();
+    final String fileName = _backupFileName('json');
+    final bool ok = await downloadHistoryFile(
+      fileName,
+      backup.toJsonString(),
+      'application/json',
+    );
+    if (!ok) return null;
+    return 'Downloaded $fileName — ${backup.tests.length} '
+        'test${backup.tests.length == 1 ? '' : 's'}, '
+        '${backup.lessons.length} lesson record'
+        '${backup.lessons.length == 1 ? '' : 's'}.';
+  }
+
+  /// Downloads the same tests as a CSV file (one row per test, for a
+  /// spreadsheet). Mistakes are a row count here — the full mistake
+  /// rows live in the JSON backup.
+  Future<String?> exportHistoryCsv() async {
+    final HistoryBackup backup =
+        await HistoryBackupRepository.instance.collect();
+    final String fileName = _backupFileName('csv');
+    final bool ok = await downloadHistoryFile(
+      fileName,
+      buildHistoryCsv(backup.tests),
+      'text/csv',
+    );
+    if (!ok) return null;
+    return 'Downloaded $fileName — ${backup.tests.length} '
+        'test${backup.tests.length == 1 ? '' : 's'}.';
+  }
+
+  /// Restores a JSON backup picked from a file. Returns null when the
+  /// user cancels the picker; throws [FormatException] with a plain
+  /// message when the file is not a valid backup (the History screen
+  /// shows that message).
+  Future<HistoryImportResult?> importHistoryBackup() async {
+    final String? text = await pickHistoryBackupText();
+    if (text == null) return null;
+    final HistoryBackup backup = HistoryBackup.parse(text);
+    final HistoryImportResult result =
+        await HistoryBackupRepository.instance.restore(backup);
+    await refresh();
+    return result;
+  }
+
+  String _backupFileName(String extension) {
+    final DateTime now = DateTime.now();
+    final String date =
+        '${now.year}${now.month.toString().padLeft(2, '0')}${now.day.toString().padLeft(2, '0')}';
+    return 'wolftyping-history-$date.$extension';
   }
 
   /// Pure filter+search+sort — no GetX, no database — unit tested
