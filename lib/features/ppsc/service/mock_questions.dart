@@ -38,6 +38,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Beautifull', 'Beautiful', 'Biutiful', 'Beautifel'],
     correctIndex: 1,
     topic: 'Spelling',
+    explanation: 'Beautiful is the standard spelling, ending in -ful with a single l.',
   ),
   MockQuestion(
     id: 'eng-2',
@@ -46,6 +47,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Sad', 'Glad', 'Joyful', 'Cheerful'],
     correctIndex: 0,
     topic: 'Vocabulary',
+    explanation: 'Sad is the opposite of happy, while glad, joyful and cheerful all mean nearly the same as happy.',
   ),
   MockQuestion(
     id: 'eng-3',
@@ -54,6 +56,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['go', 'goes', 'going', 'gone'],
     correctIndex: 1,
     topic: 'Grammar',
+    explanation: 'With the singular subject she, the present simple verb takes -es, so goes is correct.',
   ),
   MockQuestion(
     id: 'eng-new-1',
@@ -62,6 +65,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Accomodate', 'Accommodate', 'Acommodate', 'Accommadate'],
     correctIndex: 1,
     topic: 'Spelling',
+    explanation: 'Accommodate is spelled with double c and double m.',
   ),
   MockQuestion(
     id: 'eng-new-2',
@@ -70,6 +74,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Occurence', 'Occurance', 'Occurrance', 'Occurrence'],
     correctIndex: 3,
     topic: 'Spelling',
+    explanation: 'Occurrence is spelled with double c and double r, ending in -ence.',
   ),
   MockQuestion(
     id: 'eng-new-3',
@@ -78,6 +83,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Seperate', 'Separate', 'Separete', 'Seperat'],
     correctIndex: 1,
     topic: 'Spelling',
+    explanation: 'Separate is spelled with -par- in the middle, not -per-.',
   ),
   MockQuestion(
     id: 'eng-new-4',
@@ -86,6 +92,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Neccessary', 'Necesary', 'Necessery', 'Necessary'],
     correctIndex: 3,
     topic: 'Spelling',
+    explanation: 'Necessary is spelled with one c and double s.',
   ),
   MockQuestion(
     id: 'eng-new-5',
@@ -94,6 +101,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Embarass', 'Embarrass', 'Embarras', 'Embbarrass'],
     correctIndex: 1,
     topic: 'Spelling',
+    explanation: 'Embarrass is spelled with double r and double s.',
   ),
   MockQuestion(
     id: 'eng-new-6',
@@ -102,6 +110,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Millennium', 'Millenium', 'Milennium', 'Millennuim'],
     correctIndex: 0,
     topic: 'Spelling',
+    explanation: 'Millennium is spelled with double l and double n.',
   ),
   MockQuestion(
     id: 'eng-new-7',
@@ -110,6 +119,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Rythm', 'Rhythm', 'Rhythem', 'Rythem'],
     correctIndex: 1,
     topic: 'Spelling',
+    explanation: 'Rhythm is spelled r-h-y-t-h-m, with a silent h after the t.',
   ),
   MockQuestion(
     id: 'eng-new-8',
@@ -118,6 +128,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Gaurantee', 'Guarentee', 'Guarantee', 'Guarente'],
     correctIndex: 2,
     topic: 'Spelling',
+    explanation: 'Guarantee is spelled g-u-a-r-a-n-t-e-e.',
   ),
   MockQuestion(
     id: 'eng-new-9',
@@ -126,6 +137,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Harasment', 'Harassment', 'Harrassment', 'Harassement'],
     correctIndex: 1,
     topic: 'Spelling',
+    explanation: 'Harassment is spelled with one r and double s.',
   ),
   MockQuestion(
     id: 'eng-new-10',
@@ -134,6 +146,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Comittee', 'Commitee', 'Committe', 'Committee'],
     correctIndex: 3,
     topic: 'Spelling',
+    explanation: 'Committee is spelled with double m, double t and double e.',
   ),
   MockQuestion(
     id: 'eng-new-11',
@@ -142,6 +155,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['will have completed', 'will complete', 'complete', 'have completed'],
     correctIndex: 0,
     topic: 'Grammar - Tenses',
+    explanation: 'By this time tomorrow points to an action finished in the future, so the future perfect is used.',
   ),
   MockQuestion(
     id: 'eng-new-12',
@@ -150,6 +164,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['lives', 'has been living', 'is living', 'lived'],
     correctIndex: 1,
     topic: 'Grammar - Tenses',
+    explanation: 'Since 2019 shows an action that started in the past and still continues, so the present perfect continuous is used.',
   ),
   MockQuestion(
     id: 'eng-new-13',
@@ -158,6 +173,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['left', 'has left', 'leaves', 'had left'],
     correctIndex: 3,
     topic: 'Grammar - Tenses',
+    explanation: 'The train left before I reached the station, so the earlier past action takes the past perfect.',
   ),
   MockQuestion(
     id: 'eng-new-14',
@@ -166,6 +182,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['finishes', 'finish', 'is finishing', 'has finished'],
     correctIndex: 0,
     topic: 'Grammar - Tenses',
+    explanation: 'Every evening shows a regular habit, so the present simple is used, and he takes finishes.',
   ),
   MockQuestion(
     id: 'eng-new-15',
@@ -174,6 +191,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['played', 'were playing', 'play', 'had played'],
     correctIndex: 1,
     topic: 'Grammar - Tenses',
+    explanation: 'The rain interrupted an action already in progress, so the past continuous is used.',
   ),
   MockQuestion(
     id: 'eng-new-16',
@@ -182,6 +200,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['go', 'gone', 'went', 'going'],
     correctIndex: 2,
     topic: 'Grammar - Tenses',
+    explanation: 'Yesterday shows finished past time, so the simple past went is used.',
   ),
   MockQuestion(
     id: 'eng-new-17',
@@ -190,6 +209,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['writes', 'write', 'has written', 'is writing'],
     correctIndex: 3,
     topic: 'Grammar - Tenses',
+    explanation: 'Right now shows an action in progress, so the present continuous is used.',
   ),
   MockQuestion(
     id: 'eng-new-18',
@@ -198,6 +218,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['waited', 'have waited', 'are waiting', 'had been waiting'],
     correctIndex: 3,
     topic: 'Grammar - Tenses',
+    explanation: 'The waiting went on for two hours before another past event, so the past perfect continuous is used.',
   ),
   MockQuestion(
     id: 'eng-new-19',
@@ -206,6 +227,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['learns', 'is learning', 'learned', 'has been learning'],
     correctIndex: 3,
     topic: 'Grammar - Tenses',
+    explanation: 'For five years now shows an action that started in the past and still continues, so the present perfect continuous is used.',
   ),
   MockQuestion(
     id: 'eng-new-20',
@@ -214,6 +236,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['rise', 'is rising', 'rose', 'rises'],
     correctIndex: 3,
     topic: 'Grammar - Tenses',
+    explanation: 'The sun rising in the east is a universal truth, so the present simple is used, and the sun takes rises.',
   ),
   MockQuestion(
     id: 'eng-new-21',
@@ -222,6 +245,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['of', 'on', 'in', 'for'],
     correctIndex: 0,
     topic: 'Grammar - Prepositions',
+    explanation: 'The adjective fond is always followed by of.',
   ),
   MockQuestion(
     id: 'eng-new-22',
@@ -230,6 +254,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['in', 'at', 'on', 'for'],
     correctIndex: 1,
     topic: 'Grammar - Prepositions',
+    explanation: 'Good is followed by at when it means skilled in something.',
   ),
   MockQuestion(
     id: 'eng-new-23',
@@ -238,6 +263,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['from', 'with', 'of', 'about'],
     correctIndex: 2,
     topic: 'Grammar - Prepositions',
+    explanation: 'Beware is followed by of, as in beware of dogs.',
   ),
   MockQuestion(
     id: 'eng-new-24',
@@ -246,6 +272,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['on', 'with', 'to', 'in'],
     correctIndex: 0,
     topic: 'Grammar - Prepositions',
+    explanation: 'Depend is followed by on.',
   ),
   MockQuestion(
     id: 'eng-new-25',
@@ -254,6 +281,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['in', 'on', 'at', 'above'],
     correctIndex: 1,
     topic: 'Grammar - Prepositions',
+    explanation: 'On is used for something resting on a surface, like a book on a table.',
   ),
   MockQuestion(
     id: 'eng-new-26',
@@ -262,6 +290,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['at', 'to', 'in', 'on'],
     correctIndex: 2,
     topic: 'Grammar - Prepositions',
+    explanation: 'In is used with the names of large cities, so arrived in Lahore is correct.',
   ),
   MockQuestion(
     id: 'eng-new-27',
@@ -270,6 +299,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['with', 'of', 'by', 'from'],
     correctIndex: 3,
     topic: 'Grammar - Prepositions',
+    explanation: 'Suffer is followed by from when naming the cause, as in suffering from fever.',
   ),
   MockQuestion(
     id: 'eng-new-28',
@@ -278,6 +308,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['between', 'among', 'with', 'into'],
     correctIndex: 1,
     topic: 'Grammar - Prepositions',
+    explanation: 'Among is used when something is shared within a group of more than two.',
   ),
   MockQuestion(
     id: 'eng-new-29',
@@ -286,6 +317,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['to', 'at', 'on', 'for'],
     correctIndex: 3,
     topic: 'Grammar - Prepositions',
+    explanation: 'Wait is followed by for when naming the person or thing awaited.',
   ),
   MockQuestion(
     id: 'eng-new-30',
@@ -294,6 +326,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['in', 'of', 'with', 'to'],
     correctIndex: 0,
     topic: 'Grammar - Prepositions',
+    explanation: 'The fixed phrase is blind in one eye, meaning unable to see with that eye.',
   ),
   MockQuestion(
     id: 'eng-new-31',
@@ -302,6 +335,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['A', 'An', 'The', 'No article'],
     correctIndex: 1,
     topic: 'Grammar - Articles',
+    explanation: 'Honest starts with a silent h, so it takes an, which is used before a vowel sound.',
   ),
   MockQuestion(
     id: 'eng-new-32',
@@ -310,6 +344,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['a', 'an', 'the', 'no article'],
     correctIndex: 0,
     topic: 'Grammar - Articles',
+    explanation: 'University starts with a consonant y sound, so it takes a, not an.',
   ),
   MockQuestion(
     id: 'eng-new-33',
@@ -318,6 +353,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['A', 'An', 'The', 'No article'],
     correctIndex: 2,
     topic: 'Grammar - Articles',
+    explanation: 'The is used before the sun because there is only one sun.',
   ),
   MockQuestion(
     id: 'eng-new-34',
@@ -326,6 +362,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['a', 'the', 'an', 'no article'],
     correctIndex: 1,
     topic: 'Grammar - Articles',
+    explanation: 'The is used before the names of musical instruments, as in play the piano.',
   ),
   MockQuestion(
     id: 'eng-new-35',
@@ -334,6 +371,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['a', 'an', 'the', 'no article'],
     correctIndex: 0,
     topic: 'Grammar - Articles',
+    explanation: 'One-eyed starts with a consonant w sound, so it takes a, not an.',
   ),
   MockQuestion(
     id: 'eng-new-36',
@@ -342,6 +380,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['A', 'An', 'The', 'No article'],
     correctIndex: 2,
     topic: 'Grammar - Articles',
+    explanation: 'The is used before the names of rivers, as in the Nile.',
   ),
   MockQuestion(
     id: 'eng-new-37',
@@ -350,6 +389,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['A letter is wrote by her.', 'A letter is written by her.', 'A letter was written by her.', 'A letter has been written by her.'],
     correctIndex: 1,
     topic: 'Grammar - Voice',
+    explanation: 'In the passive of the present simple, the verb becomes is plus the past participle, so writes becomes is written.',
   ),
   MockQuestion(
     id: 'eng-new-38',
@@ -358,6 +398,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['This house is built by them in 1990.', 'This house has been built by them in 1990.', 'This house is being built by them in 1990.', 'This house was built by them in 1990.'],
     correctIndex: 3,
     topic: 'Grammar - Voice',
+    explanation: 'The house was built in 1990, a finished past action, so the passive is was plus the past participle.',
   ),
   MockQuestion(
     id: 'eng-new-39',
@@ -366,6 +407,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Ali finishes the work.', 'Ali has finished the work.', 'Ali finished the work.', 'Ali is finishing the work.'],
     correctIndex: 2,
     topic: 'Grammar - Voice',
+    explanation: 'The passive was finished is in the simple past, so its active form is Ali finished the work.',
   ),
   MockQuestion(
     id: 'eng-new-40',
@@ -374,6 +416,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['A novel is being read by him.', 'A novel is read by him.', 'A novel was read by him.', 'A novel has been read by him.'],
     correctIndex: 0,
     topic: 'Grammar - Voice',
+    explanation: 'In the passive of the present continuous, the verb becomes is being plus the past participle.',
   ),
   MockQuestion(
     id: 'eng-new-41',
@@ -382,6 +425,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['The door is opened.', 'Let the door be open.', 'Open the door by you.', 'Let the door be opened.'],
     correctIndex: 3,
     topic: 'Grammar - Voice',
+    explanation: 'An imperative sentence becomes passive with let plus the object plus be plus the past participle.',
   ),
   MockQuestion(
     id: 'eng-new-42',
@@ -390,6 +434,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Sara sang a song.', 'Sara sings a song.', 'Sara is singing a song.', 'Sara has sung a song.'],
     correctIndex: 1,
     topic: 'Grammar - Voice',
+    explanation: 'The passive is sung is in the present simple, so its active form is Sara sings a song.',
   ),
   MockQuestion(
     id: 'eng-new-43',
@@ -398,6 +443,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['He said that he is busy today.', 'He said that he was busy that day.', 'He said that he had been busy today.', 'He said that he is busy that day.'],
     correctIndex: 1,
     topic: 'Grammar - Narration',
+    explanation: 'In indirect speech the present simple am becomes the past simple was, and today becomes that day.',
   ),
   MockQuestion(
     id: 'eng-new-44',
@@ -406,6 +452,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['She said that she will come tomorrow.', 'She said that she would come tomorrow.', 'She said that she will come the next day.', 'She said that she would come the next day.'],
     correctIndex: 3,
     topic: 'Grammar - Narration',
+    explanation: 'In indirect speech will becomes would, and tomorrow becomes the next day.',
   ),
   MockQuestion(
     id: 'eng-new-45',
@@ -414,6 +461,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['He asked me where do I live?', 'He asked me where did I live.', 'He asked me where I live.', 'He asked me where I lived.'],
     correctIndex: 3,
     topic: 'Grammar - Narration',
+    explanation: 'In a reported question the word order returns to statement order and the tense shifts back, so do you live becomes I lived.',
   ),
   MockQuestion(
     id: 'eng-new-46',
@@ -422,6 +470,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['The teacher advised us to work hard.', 'The teacher said to work hard.', 'The teacher ordered to work hard.', 'The teacher told work hard.'],
     correctIndex: 0,
     topic: 'Grammar - Narration',
+    explanation: 'An imperative in indirect speech becomes advised plus the object plus a to-infinitive.',
   ),
   MockQuestion(
     id: 'eng-new-47',
@@ -430,6 +479,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['She said that I may succeed.', 'She wished that I may succeed.', 'She wished that I might succeed.', 'She prayed that I succeed.'],
     correctIndex: 2,
     topic: 'Grammar - Narration',
+    explanation: 'A wish beginning with may is reported with wished and might.',
   ),
   MockQuestion(
     id: 'eng-new-48',
@@ -438,6 +488,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['stay', 'will stay', 'would stay', 'stayed'],
     correctIndex: 1,
     topic: 'Grammar - Conditionals',
+    explanation: 'In a first conditional, the if-clause is present simple and the main clause takes will.',
   ),
   MockQuestion(
     id: 'eng-new-49',
@@ -446,6 +497,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['buy', 'will buy', 'would buy', 'bought'],
     correctIndex: 2,
     topic: 'Grammar - Conditionals',
+    explanation: 'In a second conditional, the if-clause is past simple and the main clause takes would.',
   ),
   MockQuestion(
     id: 'eng-new-50',
@@ -454,6 +506,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['would have passed', 'would pass', 'will pass', 'passes'],
     correctIndex: 0,
     topic: 'Grammar - Conditionals',
+    explanation: 'In a third conditional, the if-clause is past perfect and the main clause takes would have plus the past participle.',
   ),
   MockQuestion(
     id: 'eng-new-51',
@@ -462,6 +515,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['melt', 'will melt', 'would melt', 'melts'],
     correctIndex: 3,
     topic: 'Grammar - Conditionals',
+    explanation: 'In a zero conditional for a general truth, both clauses use the present simple.',
   ),
   MockQuestion(
     id: 'eng-new-52',
@@ -470,6 +524,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Cowardly', 'Courageous', 'Timid', 'Weak'],
     correctIndex: 1,
     topic: 'Vocabulary - Synonyms',
+    explanation: 'Courageous means showing bravery, so it is the synonym of brave.',
   ),
   MockQuestion(
     id: 'eng-new-53',
@@ -478,6 +533,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Swift', 'Slow', 'Late', 'Heavy'],
     correctIndex: 0,
     topic: 'Vocabulary - Synonyms',
+    explanation: 'Swift means moving very fast, so it is the synonym of rapid.',
   ),
   MockQuestion(
     id: 'eng-new-54',
@@ -486,6 +542,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Dishonest', 'Clever', 'Truthful', 'Proud'],
     correctIndex: 2,
     topic: 'Vocabulary - Synonyms',
+    explanation: 'Truthful means telling the truth, so it is the synonym of honest.',
   ),
   MockQuestion(
     id: 'eng-new-55',
@@ -494,6 +551,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Modern', 'New', 'Old', 'Recent'],
     correctIndex: 2,
     topic: 'Vocabulary - Synonyms',
+    explanation: 'Ancient means belonging to a very long time ago, so its synonym is old.',
   ),
   MockQuestion(
     id: 'eng-new-56',
@@ -502,6 +560,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Selfish', 'Stingy', 'Mean', 'Liberal'],
     correctIndex: 3,
     topic: 'Vocabulary - Synonyms',
+    explanation: 'Liberal can mean giving generously, so it is the synonym of generous here.',
   ),
   MockQuestion(
     id: 'eng-new-57',
@@ -510,6 +569,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Leave', 'Keep', 'Hold', 'Catch'],
     correctIndex: 0,
     topic: 'Vocabulary - Synonyms',
+    explanation: 'Abandon means to give up or leave something completely.',
   ),
   MockQuestion(
     id: 'eng-new-58',
@@ -518,6 +578,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Success', 'Defeat', 'Triumph', 'Glory'],
     correctIndex: 1,
     topic: 'Vocabulary - Antonyms',
+    explanation: 'Defeat is the opposite of victory.',
   ),
   MockQuestion(
     id: 'eng-new-59',
@@ -526,6 +587,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Rude', 'Kind', 'Gentle', 'Humble'],
     correctIndex: 0,
     topic: 'Vocabulary - Antonyms',
+    explanation: 'Rude means not polite, so it is the antonym of polite.',
   ),
   MockQuestion(
     id: 'eng-new-60',
@@ -534,6 +596,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Lasting', 'Stable', 'Temporary', 'Fixed'],
     correctIndex: 2,
     topic: 'Vocabulary - Antonyms',
+    explanation: 'Temporary means lasting only for a short time, the opposite of permanent.',
   ),
   MockQuestion(
     id: 'eng-new-61',
@@ -542,6 +605,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Extend', 'Contract', 'Enlarge', 'Widen'],
     correctIndex: 1,
     topic: 'Vocabulary - Antonyms',
+    explanation: 'Contract means to become smaller, the opposite of expand.',
   ),
   MockQuestion(
     id: 'eng-new-62',
@@ -550,6 +614,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Clear', 'Thin', 'Bright', 'Opaque'],
     correctIndex: 3,
     topic: 'Vocabulary - Antonyms',
+    explanation: 'Opaque means not letting light through, the opposite of transparent.',
   ),
   MockQuestion(
     id: 'eng-new-63',
@@ -558,6 +623,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Plentiful', 'Rare', 'Short', 'Limited'],
     correctIndex: 0,
     topic: 'Vocabulary - Antonyms',
+    explanation: 'Plentiful means available in large amounts, the opposite of scarce.',
   ),
   MockQuestion(
     id: 'eng-new-64',
@@ -566,6 +632,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['To eat dust', 'To be defeated', 'To work hard', 'To hide'],
     correctIndex: 1,
     topic: 'Idioms',
+    explanation: 'To bite the dust means to be defeated or to fail.',
   ),
   MockQuestion(
     id: 'eng-new-65',
@@ -574,6 +641,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Very rarely', 'Very often', 'Every month', 'At night'],
     correctIndex: 0,
     topic: 'Idioms',
+    explanation: 'Once in a blue moon means something that happens very rarely.',
   ),
   MockQuestion(
     id: 'eng-new-66',
@@ -582,6 +650,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['To break glass', 'To fight', 'To start talking in a friendly way', 'To leave'],
     correctIndex: 2,
     topic: 'Idioms',
+    explanation: 'To break the ice means to ease the first awkwardness and start talking in a friendly way.',
   ),
   MockQuestion(
     id: 'eng-new-67',
@@ -590,6 +659,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Something very easy', 'A sweet dish', 'A small part', 'A celebration'],
     correctIndex: 0,
     topic: 'Idioms',
+    explanation: 'A piece of cake means something very easy to do.',
   ),
   MockQuestion(
     id: 'eng-new-68',
@@ -598,6 +668,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['To hurt someone', 'To build a house', 'To miss a chance', 'To say exactly the right thing'],
     correctIndex: 3,
     topic: 'Idioms',
+    explanation: 'To hit the nail on the head means to say exactly the right thing.',
   ),
   MockQuestion(
     id: 'eng-new-69',
@@ -606,6 +677,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Very happy', 'Slightly ill', 'In the rain', 'In trouble'],
     correctIndex: 1,
     topic: 'Idioms',
+    explanation: 'Under the weather means feeling slightly ill.',
   ),
   MockQuestion(
     id: 'eng-new-70',
@@ -614,6 +686,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['By bus', 'On foot', 'By bicycle', 'By car'],
     correctIndex: 1,
     topic: 'Comprehension',
+    explanation: 'The passage says Ali walks to school, so he goes on foot.',
   ),
   MockQuestion(
     id: 'eng-new-71',
@@ -622,6 +695,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Red', 'Green', 'Blue', 'Black'],
     correctIndex: 2,
     topic: 'Comprehension',
+    explanation: 'The passage says Ali carries a blue bag.',
   ),
   MockQuestion(
     id: 'eng-new-72',
@@ -630,6 +704,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['At home', 'In the park', 'In the library', 'In the market'],
     correctIndex: 2,
     topic: 'Comprehension',
+    explanation: 'The passage says they study together in the library after classes.',
   ),
   MockQuestion(
     id: 'eng-new-73',
@@ -638,6 +713,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['His friend', 'His teacher', 'His brother', 'His cousin'],
     correctIndex: 0,
     topic: 'Comprehension',
+    explanation: 'The passage says Ali meets his friend at the gate.',
   ),
   MockQuestion(
     id: 'eng-new-74',
@@ -646,6 +722,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['are', 'is', 'were', 'have been'],
     correctIndex: 1,
     topic: 'Grammar - Subject Verb Agreement',
+    explanation: 'Each is singular, so it takes the singular verb is.',
   ),
   MockQuestion(
     id: 'eng-new-75',
@@ -654,6 +731,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['are', 'is', 'was', 'has'],
     correctIndex: 0,
     topic: 'Grammar - Subject Verb Agreement',
+    explanation: 'With neither...nor, the verb agrees with the nearer subject, brothers, so are is used.',
   ),
   MockQuestion(
     id: 'eng-new-76',
@@ -662,6 +740,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['are', 'were', 'is', 'have'],
     correctIndex: 2,
     topic: 'Grammar - Subject Verb Agreement',
+    explanation: 'The phrase the number of takes a singular verb, so is is correct.',
   ),
   MockQuestion(
     id: 'eng-new-77',
@@ -670,6 +749,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Childs', 'Childes', 'Children', 'Childrens'],
     correctIndex: 2,
     topic: 'Grammar - Plurals',
+    explanation: 'The irregular plural of child is children.',
   ),
   MockQuestion(
     id: 'eng-new-78',
@@ -678,6 +758,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Boxs', 'Boxies', 'Boxes', 'Boxen'],
     correctIndex: 2,
     topic: 'Grammar - Plurals',
+    explanation: 'Nouns ending in x form the plural by adding -es, so box becomes boxes.',
   ),
   MockQuestion(
     id: 'eng-new-79',
@@ -686,6 +767,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['tall', 'taller', 'tallest', 'most tall'],
     correctIndex: 1,
     topic: 'Grammar - Degrees of Comparison',
+    explanation: 'Than calls for the comparative form, so taller is used.',
   ),
   MockQuestion(
     id: 'eng-new-80',
@@ -694,6 +776,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['good', 'better', 'well', 'best'],
     correctIndex: 3,
     topic: 'Grammar - Degrees of Comparison',
+    explanation: 'The superlative of good is best, used when comparing one student with the whole class.',
   ),
   MockQuestion(
     id: 'eng-new-81',
@@ -702,6 +785,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['She do not like tea.', 'She does not likes tea.', 'She does not like tea.', 'She do not likes tea.'],
     correctIndex: 2,
     topic: 'Grammar - Sentence Correction',
+    explanation: 'After does, the main verb stays in its base form, so like, not likes, is correct.',
   ),
   MockQuestion(
     id: 'eng-new-82',
@@ -710,6 +794,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['They have lived here from 2010.', 'They lived here since 2010.', 'They have lived here since 2010.', 'They are living here from 2010.'],
     correctIndex: 2,
     topic: 'Grammar - Sentence Correction',
+    explanation: 'Since with a point in time is used with the present perfect, so have lived...since 2010 is correct.',
   ),
   MockQuestion(
     id: 'eng-new-83',
@@ -718,6 +803,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Ambiguous', 'Ambidextrous', 'Ambivalent', 'Amateur'],
     correctIndex: 1,
     topic: 'Vocabulary - One Word Substitution',
+    explanation: 'Ambidextrous means able to use both hands equally well.',
   ),
   MockQuestion(
     id: 'eng-new-84',
@@ -726,6 +812,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Aquarium', 'Apiary', 'Aviary', 'Stable'],
     correctIndex: 2,
     topic: 'Vocabulary - One Word Substitution',
+    explanation: 'An aviary is a place where birds are kept.',
   ),
   MockQuestion(
     id: 'eng-new-85',
@@ -734,6 +821,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Theist', 'Agnostic', 'Atheist', 'Fanatic'],
     correctIndex: 2,
     topic: 'Vocabulary - One Word Substitution',
+    explanation: 'An atheist is a person who does not believe in God.',
   ),
   MockQuestion(
     id: 'eng-new-86',
@@ -742,6 +830,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['What a beautiful day it is.', 'What a beautiful day it is?', 'What, a beautiful day it is!', 'What a beautiful day it is!'],
     correctIndex: 3,
     topic: 'Grammar - Punctuation',
+    explanation: 'What a...! is an exclamatory sentence, so it ends with an exclamation mark.',
   ),
   MockQuestion(
     id: 'eng-new-87',
@@ -750,6 +839,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Help', 'Hindrance', 'Support', 'Advantage'],
     correctIndex: 1,
     topic: 'Vocabulary - Synonyms',
+    explanation: 'A hindrance is something that gets in the way, so it is the synonym of obstacle.',
   ),
   MockQuestion(
     id: 'eng-new-88',
@@ -758,6 +848,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Psycology', 'Sychology', 'Psychology', 'Psycholgy'],
     correctIndex: 2,
     topic: 'Spelling',
+    explanation: 'Psychology is spelled with ps at the start and ch in the middle.',
   ),
   MockQuestion(
     id: 'eng-new-89',
@@ -766,6 +857,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Discipline', 'Dicipline', 'Disscipline', 'Disciplin'],
     correctIndex: 0,
     topic: 'Spelling',
+    explanation: 'Discipline is spelled d-i-s-c-i-p-l-i-n-e.',
   ),
   MockQuestion(
     id: 'eng-new-90',
@@ -774,6 +866,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['goes', 'went', 'has gone', 'is going'],
     correctIndex: 1,
     topic: 'Grammar - Tenses',
+    explanation: 'Last week shows finished past time, so the simple past went is used.',
   ),
   MockQuestion(
     id: 'eng-new-91',
@@ -782,6 +875,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['from', 'with', 'of', 'to'],
     correctIndex: 2,
     topic: 'Grammar - Prepositions',
+    explanation: 'Afraid is followed by of.',
   ),
   MockQuestion(
     id: 'eng-new-92',
@@ -790,6 +884,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['an', 'a', 'the', 'no article'],
     correctIndex: 0,
     topic: 'Grammar - Articles',
+    explanation: 'Umbrella starts with a vowel sound, so it takes an.',
   ),
   MockQuestion(
     id: 'eng-new-93',
@@ -798,6 +893,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['A song is sing by her.', 'A song was sung by her.', 'A song is sung by her.', 'A song has sung by her.'],
     correctIndex: 2,
     topic: 'Grammar - Voice',
+    explanation: 'In the passive of the present simple, sings becomes is sung.',
   ),
   MockQuestion(
     id: 'eng-new-94',
@@ -806,6 +902,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['He said that he is ill.', 'He said that he was ill.', 'He said that he had been ill.', 'He said that he is being ill.'],
     correctIndex: 1,
     topic: 'Grammar - Narration',
+    explanation: 'In indirect speech the present simple am becomes the past simple was.',
   ),
   MockQuestion(
     id: 'eng-new-95',
@@ -814,6 +911,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['will', 'can', 'would', 'must'],
     correctIndex: 2,
     topic: 'Grammar - Conditionals',
+    explanation: 'In a second conditional, the main clause takes would.',
   ),
   MockQuestion(
     id: 'eng-new-96',
@@ -822,6 +920,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Kind in giving', 'Selfish', 'Proud', 'Lazy'],
     correctIndex: 0,
     topic: 'Vocabulary - Meaning in Context',
+    explanation: 'Generous means kind in giving, as shown by the sentence about helping the poor.',
   ),
   MockQuestion(
     id: 'eng-new-97',
@@ -830,6 +929,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Bold', 'Courageous', 'Cowardly', 'Heroic'],
     correctIndex: 2,
     topic: 'Vocabulary - Antonyms',
+    explanation: 'Cowardly means lacking courage, the opposite of brave.',
   ),
   // ------------------------------------------------------------------
   // General Knowledge (100 questions)
