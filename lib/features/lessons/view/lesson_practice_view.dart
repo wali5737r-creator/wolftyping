@@ -310,6 +310,14 @@ class _PracticePanel extends StatelessWidget {
                 nextChar: next,
                 needsBackspace: wrongSoFar && backspaceAllowed,
                 urdu: isUrdu,
+                // Urdu lessons: the guide board is the on-screen keyboard
+                // (same controller methods as physical keys). English
+                // lessons stay display-only.
+                onCharacter: isUrdu ? controller.onCharacter : null,
+                onSpace: isUrdu ? controller.onSpace : null,
+                onBackspace: isUrdu ? controller.onBackspace : null,
+                showBackspace: backspaceAllowed,
+                focusNode: controller.focusNode,
               ),
             );
           }),
