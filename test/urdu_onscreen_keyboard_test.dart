@@ -400,11 +400,13 @@ void main() {
       // Noto Nastaliq Urdu: ascent 1.904em, descent 0.596em, dots below
       // a letter reach ~0.43em below the baseline. The line box must
       // leave at least that much room below the baseline or the dots
-      // fall outside the current-word highlight (typingTextUr) and the
-      // descenders crowd the bottom edge (urduBody).
+      // fall outside the current-word highlight (typingTextUr), the
+      // descenders crowd the bottom edge (urduBody), and the glyph
+      // spills out of its heatmap tile (urduKey).
       for (final TextStyle style in <TextStyle>[
         AppTextStyles.typingTextUr,
         AppTextStyles.urduBody,
+        AppTextStyles.urduKey,
       ]) {
         final ParagraphBuilder builder = ParagraphBuilder(ParagraphStyle(
           fontFamily: style.fontFamily,

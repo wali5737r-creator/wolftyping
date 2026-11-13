@@ -216,7 +216,13 @@ class _UrduAlphabetGrid extends StatelessWidget {
             runSpacing: 6,
             children: [
               for (final c in _alphabet)
-                _KeyTile(label: c, controller: controller, width: 46),
+                // Urdu tiles are taller than the 40px English ones: the
+                // urduKey line box is 20px x 2.6 = 52px (Noto Nastaliq
+                // Urdu's natural line height is 2.5em), so a 40px tile
+                // let the glyph's dots and tails spill past its top and
+                // bottom edges. At 58px the full glyph fits with room
+                // to spare. Colours, scoring and mapping unchanged.
+                _KeyTile(label: c, controller: controller, width: 46, height: 58),
             ],
           ),
         ),
@@ -231,12 +237,17 @@ class _KeyTile extends StatelessWidget {
     required this.controller,
     this.trackable = true,
     this.width,
+    this.height = 40,
   });
 
   final String label;
   final PracticeController controller;
   final bool trackable;
   final double? width;
+
+  /// Tile height. English keys use the 40px default; Urdu tiles pass a
+  /// taller height so the Nastaleeq line box fits (see _UrduAlphabetGrid).
+  final double height;
 
   @override
   Widget build(BuildContext context) {
@@ -248,7 +259,7 @@ class _KeyTile extends StatelessWidget {
   Widget _plainKey(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(3),
-      height: 40,
+      height: height,
       alignment: Alignment.center,
       decoration: BoxDecoration(
         color: Theme.of(context).dividerColor.withValues(alpha: 0.35),
@@ -281,7 +292,7 @@ class _KeyTile extends StatelessWidget {
           ),
           child: Container(
             margin: const EdgeInsets.all(3),
-            height: 40,
+            height: height,
             alignment: Alignment.center,
             decoration: BoxDecoration(
               color: _colorFor(context, strength),

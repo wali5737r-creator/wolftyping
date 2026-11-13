@@ -122,10 +122,17 @@ class AppTextStyles {
   );
 
   /// Single Urdu letter in a fixed-height tile (keyboard heatmap).
+  /// Height 2.6 (was 1.5): Noto Nastaliq Urdu's natural line height is
+  /// 2.5em (ascent 1.904em / descent 0.596em), so at 1.5 the 20px
+  /// glyph's 50px extent spilled ~5px past the top and bottom of the
+  /// 40px heatmap tile — the same defect the on-screen keyboard had.
+  /// At 2.6 the line box is 52px, so the heatmap tiles are 58px tall
+  /// (see keyboard_heatmap.dart) and the full glyph — dots above and
+  /// below the baseline — fits inside its tile.
   static const TextStyle urduKey = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w400,
-    height: 1.5,
+    height: 2.6,
     fontFamily: urduFontFamily,
   );
 
