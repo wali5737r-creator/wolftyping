@@ -1,6 +1,17 @@
+import 'dart:ui'
+    show
+        LineMetrics,
+        Paragraph,
+        ParagraphBuilder,
+        ParagraphConstraints,
+        ParagraphStyle;
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
+import 'package:typing_master/core/constants/app_fonts.dart';
+import 'package:typing_master/core/constants/app_text_styles.dart';
 import 'package:typing_master/core/routes/app_pages.dart';
 import 'package:typing_master/core/routes/app_routes.dart';
 import 'package:typing_master/core/theme/app_theme.dart';
@@ -347,6 +358,72 @@ void main() {
       await pumpKeyboard(tester, width: 360);
       expect(tester.takeException(), isNull);
     });
+
+    testWidgets('Urdu key glyphs fit inside their caps at 360px',
+        (tester) async {
+      await pumpKeyboard(tester, width: 360);
+      _assertUrduGlyphsFit(tester);
+      // Keys are taller in Urdu mode: at 360px a cap is ~27px high,
+      // not the ~19px an English-height key would give.
+      final Finder caps = find.byWidgetPredicate(
+        (Widget w) => w is Container && w.decoration is BoxDecoration,
+      );
+      expect(tester.getSize(caps.first).height, greaterThanOrEqualTo(24.0));
+      // Shifted layer too (diacritics and tall letters).
+      await tapShift(tester);
+      _assertUrduGlyphsFit(tester);
+    });
+
+    testWidgets('Urdu key glyphs fit at desktop width, font capped at 18px',
+        (tester) async {
+      await pumpKeyboard(tester, width: 800);
+      _assertUrduGlyphsFit(tester);
+      final Finder urduLabels = find.byWidgetPredicate(
+        (Widget w) =>
+            w is Text &&
+            w.style?.fontFamily == AppFonts.urdu &&
+            (w.data?.isNotEmpty ?? false),
+      );
+      for (final Element el in urduLabels.evaluate()) {
+        final Text text = el.widget as Text;
+        expect(text.style?.fontSize, lessThanOrEqualTo(18.0));
+      }
+    });
+
+    testWidgets('Nastaleeq line boxes leave room for dots below the baseline',
+        (tester) async {
+      // Load the real font: the test font has Latin metrics and would
+      // not show the Nastaleeq overflow.
+      final FontLoader loader = FontLoader(AppFonts.urdu)
+        ..addFont(rootBundle.load('assets/fonts/NotoNastaliqUrdu.ttf'));
+      await loader.load();
+      // Noto Nastaliq Urdu: ascent 1.904em, descent 0.596em, dots below
+      // a letter reach ~0.43em below the baseline. The line box must
+      // leave at least that much room below the baseline or the dots
+      // fall outside the current-word highlight (typingTextUr) and the
+      // descenders crowd the bottom edge (urduBody).
+      for (final TextStyle style in <TextStyle>[
+        AppTextStyles.typingTextUr,
+        AppTextStyles.urduBody,
+      ]) {
+        final ParagraphBuilder builder = ParagraphBuilder(ParagraphStyle(
+          fontFamily: style.fontFamily,
+          fontSize: style.fontSize,
+          height: style.height,
+          fontWeight: style.fontWeight,
+        ));
+        builder.addText('پاکستان ایک خوبصورت ملک ہے');
+        final Paragraph paragraph = builder.build();
+        paragraph.layout(const ParagraphConstraints(width: 600));
+        final List<LineMetrics> lines = paragraph.computeLineMetrics();
+        expect(lines, hasLength(1), reason: '$style');
+        final double fontSize = style.fontSize!;
+        expect(lines.first.descent, greaterThanOrEqualTo(0.48 * fontSize),
+            reason: 'descent below baseline for $style');
+        expect(lines.first.ascent, greaterThanOrEqualTo(1.35 * fontSize),
+            reason: 'ascent above baseline for $style');
+      }
+    });
   });
 
   group('on-screen taps score like physical keys', () {
@@ -422,6 +499,31 @@ void main() {
           correctAfterScreen + secondWord.runes.length);
     });
   });
+}
+
+/// Every Urdu key-cap label must fit inside its key: the label's line
+/// box (fontSize x 1.8) may be neither taller nor wider than the cap it
+/// is painted in. Noto Nastaliq Urdu is 2.5em tall, so a fixed 17px label
+/// at height 1.0 overflowed the caps at 360px (worst keys: ن ق س ج م ب ش).
+void _assertUrduGlyphsFit(WidgetTester tester) {
+  final Finder urduLabels = find.byWidgetPredicate(
+    (Widget w) =>
+        w is Text &&
+        w.style?.fontFamily == AppFonts.urdu &&
+        (w.data?.isNotEmpty ?? false),
+  );
+  expect(urduLabels, findsWidgets);
+  for (final Element el in urduLabels.evaluate()) {
+    final Text text = el.widget as Text;
+    final Container? cap = el.findAncestorWidgetOfExactType<Container>();
+    expect(cap, isNotNull, reason: 'key cap for ${text.data}');
+    final Size labelSize = tester.getSize(find.byWidget(text));
+    final Size capSize = tester.getSize(find.byWidget(cap!));
+    expect(labelSize.height, lessThanOrEqualTo(capSize.height),
+        reason: '${text.data} label taller than its key cap');
+    expect(labelSize.width, lessThanOrEqualTo(capSize.width),
+        reason: '${text.data} label wider than its key cap');
+  }
 }
 
 class _Harness {

@@ -93,10 +93,15 @@ class AppTextStyles {
   // keys) are real weights, not faux-bold.
 
   /// Urdu running text: previews, subtitles, dropdown items.
+  /// Height 2.1 (was 1.8): Noto Nastaliq Urdu's natural line height is
+  /// 2.5em (ascent 1.904em / descent 0.596em), so at 1.8 the line box
+  /// left only ~7.3px below the baseline while the dots below a letter
+  /// reach ~0.43em below it — the glyph sat low in its box with its
+  /// descenders tight against the container's bottom edge.
   static const TextStyle urduBody = TextStyle(
     fontSize: 17,
     fontWeight: FontWeight.w400,
-    height: 1.8,
+    height: 2.1,
     fontFamily: urduFontFamily,
   );
 
@@ -126,10 +131,16 @@ class AppTextStyles {
 
   /// Urdu typing target/paragraph text style. Right-to-left, larger line
   /// height, no forced monospace (Urdu is not monospace-friendly).
+  /// Height 2.6 (was 2.2): the font's natural line height is 2.5em, so
+  /// 2.2 compressed the line box below what the glyphs need — the
+  /// current-word highlight (a background painted over the line box)
+  /// ended above the dots below the baseline (e.g. the پ of پاکستان).
+  /// At 2.6 the box below the baseline is ~0.62em, room for the deepest
+  /// positioned dots, and the highlight covers the whole glyph.
   static const TextStyle typingTextUr = TextStyle(
     fontSize: 26,
     fontWeight: FontWeight.w500,
-    height: 2.2,
+    height: 2.6,
     fontFamily: urduFontFamily,
   );
 }

@@ -242,7 +242,12 @@ class _LessonKeyboardState extends State<LessonKeyboard> {
       child: LayoutBuilder(builder: (context, constraints) {
         final double unit =
             ((constraints.maxWidth - 4) / 15).clamp(18.0, 40.0).toDouble();
-        final double keyHeight = unit * 0.92;
+        // Urdu keys are taller: a Nastaleeq glyph at 17px overflowed a
+        // 0.92-unit key, its dots and tails spilling into the row below
+        // (worst at 360px). Noto Nastaliq Urdu's natural line height is
+        // 2.5em (ascent 1.904em / descent 0.596em), so the label needs a
+        // 1.8 line height and a key tall enough to hold it — see _KeyCap.
+        final double keyHeight = unit * (widget.urdu ? 1.25 : 0.92);
 
         Widget key(_KeySpec spec,
             {bool next = false,
@@ -276,7 +281,11 @@ class _LessonKeyboardState extends State<LessonKeyboard> {
                   LessonKeyboard._fingers[r][c],
                   LessonKeyboard._handOf(r, c),
                   width: 1,
-                  sub: widget.urdu
+                  // The tiny Latin corner label is hidden on narrow
+                  // boards (unit < 28, e.g. phones): at 360px a key is
+                  // ~21px wide and the corner label collides with the
+                  // Nastaleeq glyph.
+                  sub: widget.urdu && unit >= 28
                       ? LessonKeyboard._base[r][c].toUpperCase()
                       : null,
                   urdu: widget.urdu &&
@@ -418,8 +427,16 @@ class _KeyCap extends StatelessWidget {
             spec.label,
             maxLines: 1,
             style: TextStyle(
-              fontSize: spec.urdu ? 17 : (small ? 10 : 13),
-              height: spec.urdu ? 1.0 : null,
+              // Nastaleeq glyphs are tall: the label font scales with
+              // the key height (never larger than 18px) and gets a 1.8
+              // line height, so the full glyph — dots above and below
+              // the baseline — fits inside the key cap at every width.
+              // A fixed 17px at height 1.0 overflowed the caps at
+              // 360px (worst keys: ن ق س ج م ب ش گ ح).
+              fontSize: spec.urdu
+                  ? (height * 0.36).clamp(10.0, 18.0)
+                  : (small ? 10 : 13),
+              height: spec.urdu ? 1.8 : null,
               fontFamily: spec.urdu ? AppFonts.urdu : null,
               fontWeight: isNext || isFocus ? FontWeight.w700 : FontWeight.w500,
               color: textColor,

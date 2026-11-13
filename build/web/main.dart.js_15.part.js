@@ -5,6 +5,6 @@ A=c[18]
 var z=a.updateTypes([])
 var y={d:B.V("p<k>")};(function constants(){var x=a.makeConstList
 A.p3=x(["Pacific","Atlantic","Indian","Arctic"],y.d)
-A.x5=x(["Adjective","Verb","Noun","Adverb"],y.d)
-A.yw=x(["\u06a9\u0646\u0627\u06cc\u06c1","\u0627\u0633\u062a\u0639\u0627\u0631\u06c1","\u062a\u0634\u0628\u06cc\u06c1","\u0645\u062c\u0627\u0632 \u0645\u0631\u0633\u0644"],y.d)})()};
-(a=>{a["KIr9RB9uLksDiOtsJ5kWAEyb+xc="]=a.current})($__dart_deferred_initializers__);
+A.x4=x(["Adjective","Verb","Noun","Adverb"],y.d)
+A.yv=x(["\u06a9\u0646\u0627\u06cc\u06c1","\u0627\u0633\u062a\u0639\u0627\u0631\u06c1","\u062a\u0634\u0628\u06cc\u06c1","\u0645\u062c\u0627\u0632 \u0645\u0631\u0633\u0644"],y.d)})()};
+(a=>{a["KI4wy2V8OKulEkoM6ZWFFiCy6CA="]=a.current})($__dart_deferred_initializers__);

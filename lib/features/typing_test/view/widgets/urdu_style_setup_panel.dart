@@ -303,7 +303,10 @@ class _ParagraphPicker extends StatelessWidget {
           SoftSurface(
             raised: false,
             radius: 12,
-            padding: const EdgeInsets.all(14),
+            // Extra bottom padding: Nastaleeq glyphs sit low in their
+            // line box (deep descenders), so a symmetric pad left the
+            // descenders close to the bottom border of the preview.
+            padding: const EdgeInsets.fromLTRB(14, 12, 14, 18),
             color: Theme.of(context).scaffoldBackgroundColor,
             child: SizedBox(
               width: double.infinity,
