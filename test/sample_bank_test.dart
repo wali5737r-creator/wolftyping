@@ -87,7 +87,7 @@ void main() {
     });
   });
 
-  group('sample bank explanations (Phase 1: English only)', () {
+  group('sample bank explanations (Phase 2: English and Mathematics)', () {
     test('every English question has a verified explanation', () {
       final english = sampleQuestions
           .where((q) => q.subject == MockSubject.english)
@@ -103,9 +103,27 @@ void main() {
       }
     });
 
+    test('every Mathematics question has a verified explanation', () {
+      final maths = sampleQuestions
+          .where((q) => q.subject == MockSubject.mathematics)
+          .toList();
+      expect(maths.length, 100);
+      for (final q in maths) {
+        expect(q.explanation, isNotNull, reason: q.id);
+        expect(q.explanation!.trim(), isNotEmpty, reason: q.id);
+        expect(q.explanation, q.explanation!.trim(), reason: q.id);
+        // One short sentence, not a paragraph.
+        expect(q.explanation!.length, lessThanOrEqualTo(200),
+            reason: q.id);
+      }
+    });
+
     test('no other subject has explanations yet', () {
       for (final subject in MockSubject.values) {
-        if (subject == MockSubject.english) continue;
+        if (subject == MockSubject.english ||
+            subject == MockSubject.mathematics) {
+          continue;
+        }
         final explained = sampleQuestions
             .where((q) =>
                 q.subject == subject && q.explanation != null)
@@ -146,6 +164,42 @@ void main() {
         findsOneWidget,
       );
       // Only the English question carries an explanation.
+      expect(find.textContaining('Explanation:'), findsOneWidget);
+      controller.onClose();
+    });
+
+    testWidgets('end review shows a Mathematics explanation and nothing '
+        'for a question without one', (tester) async {
+      await tester.pumpWidget(
+        GetMaterialApp(
+          theme: AppTheme.light,
+          initialRoute: AppRoutes.ppscMockTest,
+          getPages: AppPages.pages,
+        ),
+      );
+      await tester.pumpAndSettle();
+      final controller = Get.find<MockTestController>();
+      final maths = sampleQuestions.firstWhere(
+          (q) => q.subject == MockSubject.mathematics);
+      final gk = sampleQuestions.firstWhere(
+          (q) => q.subject == MockSubject.generalKnowledge);
+      final engine = MockTestEngine(questions: [maths, gk]);
+      engine.answer(maths.id, maths.correctIndex);
+      engine.answer(gk.id, gk.correctIndex);
+      controller.selectKind(MockTestKind.full);
+      controller.result.value = engine.result();
+      controller.phase.value = MockTestPhase.result;
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(
+          find.text('Q1. ${maths.question}'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Q1. ${maths.question}'));
+      await tester.pumpAndSettle();
+      expect(
+        find.text('Explanation: ${maths.explanation!}'),
+        findsOneWidget,
+      );
+      // Only the Mathematics question carries an explanation.
       expect(find.textContaining('Explanation:'), findsOneWidget);
       controller.onClose();
     });

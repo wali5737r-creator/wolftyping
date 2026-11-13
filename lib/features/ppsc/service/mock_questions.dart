@@ -3370,6 +3370,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['86', '94', '96', '108'],
     correctIndex: 2,
     topic: 'Arithmetic',
+    explanation: '12 × 8 = 96, because 10 × 8 = 80 and 2 × 8 = 16, so 80 + 16 = 96.',
   ),
   MockQuestion(
     id: 'math-2',
@@ -3378,6 +3379,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['25', '40', '50', '75'],
     correctIndex: 2,
     topic: 'Percentage',
+    explanation: '25% is one quarter, and one quarter of 200 is 200 ÷ 4 = 50.',
   ),
   MockQuestion(
     id: 'math-3',
@@ -3386,6 +3388,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['11', '12', '13', '14'],
     correctIndex: 1,
     topic: 'Square Roots',
+    explanation: '12 × 12 = 144, so the square root of 144 is 12.',
   ),
   MockQuestion(
     id: 'math-new-1',
@@ -3394,6 +3397,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['105', '125', '115', '95'],
     correctIndex: 2,
     topic: 'Arithmetic',
+    explanation: '47 + 68 = 115, because 40 + 60 = 100 and 7 + 8 = 15, so 100 + 15 = 115.',
   ),
   MockQuestion(
     id: 'math-new-2',
@@ -3402,6 +3406,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['55', '45', '65', '57'],
     correctIndex: 0,
     topic: 'Arithmetic',
+    explanation: '92 - 37 = 55, because 92 - 30 = 62 and 62 - 7 = 55.',
   ),
   MockQuestion(
     id: 'math-new-3',
@@ -3410,6 +3415,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['190', '200', '225', '210'],
     correctIndex: 3,
     topic: 'Arithmetic',
+    explanation: '15 × 14 = 210, because 15 × 10 = 150 and 15 × 4 = 60, so 150 + 60 = 210.',
   ),
   MockQuestion(
     id: 'math-new-4',
@@ -3418,6 +3424,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['11', '12', '13', '14'],
     correctIndex: 1,
     topic: 'Arithmetic',
+    explanation: '12 × 12 = 144, so 144 ÷ 12 = 12.',
   ),
   MockQuestion(
     id: 'math-new-5',
@@ -3426,6 +3433,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['66', '76', '86', '74'],
     correctIndex: 1,
     topic: 'Arithmetic',
+    explanation: '38 + 57 = 95, and 95 - 19 = 76.',
   ),
   MockQuestion(
     id: 'math-new-6',
@@ -3434,6 +3442,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['58', '78', '63', '68'],
     correctIndex: 3,
     topic: 'Arithmetic',
+    explanation: 'Multiply first: 9 × 7 = 63, then add 5 to get 68.',
   ),
   MockQuestion(
     id: 'math-new-7',
@@ -3442,6 +3451,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['45', '35', '55', '40'],
     correctIndex: 0,
     topic: 'Arithmetic',
+    explanation: 'Divide first: 240 ÷ 8 = 30, then add 15 to get 45.',
   ),
   MockQuestion(
     id: 'math-new-8',
@@ -3450,6 +3460,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['279', '299', '289', '269'],
     correctIndex: 2,
     topic: 'Arithmetic',
+    explanation: '17 × 17 = 289, because 17 × 10 = 170 and 17 × 7 = 119, so 170 + 119 = 289.',
   ),
   MockQuestion(
     id: 'math-new-9',
@@ -3458,6 +3469,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['103', '123', '111', '113'],
     correctIndex: 3,
     topic: 'Arithmetic',
+    explanation: '125 - 48 = 77, and 77 + 36 = 113.',
   ),
   MockQuestion(
     id: 'math-new-10',
@@ -3466,6 +3478,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['124', '154', '144', '134'],
     correctIndex: 2,
     topic: 'Arithmetic',
+    explanation: '6 × 8 = 48, and 48 × 3 = 144.',
   ),
   MockQuestion(
     id: 'math-new-11',
@@ -3474,6 +3487,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['70', '60', '80', '90'],
     correctIndex: 0,
     topic: 'Percentage',
+    explanation: '20% is one fifth, and one fifth of 350 is 350 ÷ 5 = 70.',
   ),
   MockQuestion(
     id: 'math-new-12',
@@ -3482,6 +3496,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['26', '36', '46', '30'],
     correctIndex: 1,
     topic: 'Percentage',
+    explanation: '10% of 240 is 24 and 5% is 12, so 15% is 24 + 12 = 36.',
   ),
   MockQuestion(
     id: 'math-new-13',
@@ -3490,6 +3505,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['50', '70', '60', '45'],
     correctIndex: 2,
     topic: 'Percentage',
+    explanation: '10% of 150 is 15, so 40% is 4 × 15 = 60.',
   ),
   MockQuestion(
     id: 'math-new-14',
@@ -3498,6 +3514,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['48', '38', '58', '68'],
     correctIndex: 0,
     topic: 'Percentage',
+    explanation: '10% of 480 is 480 ÷ 10 = 48.',
   ),
   MockQuestion(
     id: 'math-new-15',
@@ -3506,6 +3523,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['70', '90', '60', '80'],
     correctIndex: 3,
     topic: 'Percentage',
+    explanation: '25% is one quarter, and one quarter of 320 is 320 ÷ 4 = 80.',
   ),
   MockQuestion(
     id: 'math-new-16',
@@ -3514,6 +3532,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['130', '150', '170', '125'],
     correctIndex: 1,
     topic: 'Percentage',
+    explanation: '75% is three quarters, and three quarters of 200 is 3 × 50 = 150.',
   ),
   MockQuestion(
     id: 'math-new-17',
@@ -3522,6 +3541,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['20', '30', '40', '50'],
     correctIndex: 1,
     topic: 'Percentage',
+    explanation: '10% of 600 is 60, so 5% is half of 60, which is 30.',
   ),
   MockQuestion(
     id: 'math-new-18',
@@ -3530,6 +3550,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['17', '37', '33', '27'],
     correctIndex: 3,
     topic: 'Percentage',
+    explanation: '10% of 90 is 9, so 30% is 3 × 9 = 27.',
   ),
   MockQuestion(
     id: 'math-new-19',
@@ -3538,6 +3559,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['880', '860', '900', '820'],
     correctIndex: 0,
     topic: 'Percentage',
+    explanation: '10% of 800 is 80, so the new price is 800 + 80 = 880.',
   ),
   MockQuestion(
     id: 'math-new-20',
@@ -3546,6 +3568,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['350', '450', '400', '375'],
     correctIndex: 2,
     topic: 'Percentage',
+    explanation: '20% of 500 is 100, so the new price is 500 - 100 = 400.',
   ),
   MockQuestion(
     id: 'math-new-21',
@@ -3554,6 +3577,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['3 : 2', '4 : 3', '2 : 5', '2 : 3'],
     correctIndex: 3,
     topic: 'Ratio',
+    explanation: 'Divide both parts by 6: 12 ÷ 6 = 2 and 18 ÷ 6 = 3, so the ratio is 2 : 3.',
   ),
   MockQuestion(
     id: 'math-new-22',
@@ -3562,6 +3586,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['450', '540', '360', '300'],
     correctIndex: 2,
     topic: 'Ratio',
+    explanation: 'The ratio has 2 + 3 = 5 parts, each worth 900 ÷ 5 = 180, so the smaller share is 2 × 180 = 360.',
   ),
   MockQuestion(
     id: 'math-new-23',
@@ -3570,6 +3595,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['270', '300', '450', '240'],
     correctIndex: 0,
     topic: 'Ratio',
+    explanation: 'The ratio has 3 + 5 = 8 parts, each worth 720 ÷ 8 = 90, so the smaller share is 3 × 90 = 270.',
   ),
   MockQuestion(
     id: 'math-new-24',
@@ -3578,6 +3604,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['12', '15', '18', '16'],
     correctIndex: 1,
     topic: 'Ratio',
+    explanation: '20 ÷ 4 = 5, so x = 3 × 5 = 15.',
   ),
   MockQuestion(
     id: 'math-new-25',
@@ -3586,6 +3613,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['80', '125', '100', '150'],
     correctIndex: 2,
     topic: 'Ratio',
+    explanation: '250 ÷ 5 = 50, so 2/5 of 250 is 2 × 50 = 100.',
   ),
   MockQuestion(
     id: 'math-new-26',
@@ -3594,6 +3622,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['30', '25', '35', '20'],
     correctIndex: 0,
     topic: 'Ratio',
+    explanation: 'The ratio has 3 + 2 = 5 parts, each worth 50 ÷ 5 = 10, so the boys are 3 × 10 = 30.',
   ),
   MockQuestion(
     id: 'math-new-27',
@@ -3602,6 +3631,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['180', '240', '200', '210'],
     correctIndex: 3,
     topic: 'Ratio',
+    explanation: 'One book costs 120 ÷ 4 = 30, so 7 books cost 7 × 30 = 210.',
   ),
   MockQuestion(
     id: 'math-new-28',
@@ -3610,6 +3640,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['30 m', '3 m', '300 m', '0.3 m'],
     correctIndex: 1,
     topic: 'Ratio',
+    explanation: '3 cm × 100 cm = 300 cm, and 300 cm is 3 m.',
   ),
   MockQuestion(
     id: 'math-new-29',
@@ -3618,6 +3649,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['16', '18', '20', '22'],
     correctIndex: 1,
     topic: 'Average',
+    explanation: 'Add the numbers: 12 + 18 + 24 = 54, then divide by 3 to get 18.',
   ),
   MockQuestion(
     id: 'math-new-30',
@@ -3626,6 +3658,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['20', '30', '35', '25'],
     correctIndex: 3,
     topic: 'Average',
+    explanation: 'Add the numbers: 10 + 20 + 30 + 40 = 100, then divide by 4 to get 25.',
   ),
   MockQuestion(
     id: 'math-new-31',
@@ -3634,6 +3667,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['15', '12', '18', '20'],
     correctIndex: 0,
     topic: 'Average',
+    explanation: 'Add the numbers: 5 + 10 + 15 + 20 + 25 = 75, then divide by 5 to get 15.',
   ),
   MockQuestion(
     id: 'math-new-32',
@@ -3642,6 +3676,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['14', '18', '16', '20'],
     correctIndex: 2,
     topic: 'Average',
+    explanation: 'Add the numbers: 8 + 12 + 16 + 20 + 24 = 80, then divide by 5 to get 16.',
   ),
   MockQuestion(
     id: 'math-new-33',
@@ -3650,6 +3685,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['80', '125', '75', '100'],
     correctIndex: 3,
     topic: 'Average',
+    explanation: 'The total is the average times the count: 25 × 4 = 100.',
   ),
   MockQuestion(
     id: 'math-new-34',
@@ -3658,6 +3694,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['50', '60', '55', '45'],
     correctIndex: 2,
     topic: 'Average',
+    explanation: 'Add the numbers: 45 + 55 + 65 = 165, then divide by 3 to get 55.',
   ),
   MockQuestion(
     id: 'math-new-35',
@@ -3666,6 +3703,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['130', '120', '140', '110'],
     correctIndex: 0,
     topic: 'Average',
+    explanation: 'Add the numbers: 100 + 120 + 140 + 160 = 520, then divide by 4 to get 130.',
   ),
   MockQuestion(
     id: 'math-new-36',
@@ -3674,6 +3712,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['30', '40', '50', '45'],
     correctIndex: 1,
     topic: 'Average',
+    explanation: 'Add the scores: 20 + 30 + 40 + 50 + 60 = 200, then divide by 5 to get 40.',
   ),
   MockQuestion(
     id: 'math-new-37',
@@ -3682,6 +3721,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['15', '19', '17', '21'],
     correctIndex: 2,
     topic: 'Algebra',
+    explanation: 'Take 14 from both sides: x = 31 - 14 = 17.',
   ),
   MockQuestion(
     id: 'math-new-38',
@@ -3690,6 +3730,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['23', '21', '25', '22'],
     correctIndex: 0,
     topic: 'Algebra',
+    explanation: 'Divide both sides by 2: x = 46 ÷ 2 = 23.',
   ),
   MockQuestion(
     id: 'math-new-39',
@@ -3698,6 +3739,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['8', '12', '9', '10'],
     correctIndex: 3,
     topic: 'Algebra',
+    explanation: 'Add 9 to both sides to get 3x = 30, then divide by 3: x = 10.',
   ),
   MockQuestion(
     id: 'math-new-40',
@@ -3706,6 +3748,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['32', '36', '40', '28'],
     correctIndex: 1,
     topic: 'Algebra',
+    explanation: 'Multiply both sides by 4: x = 9 × 4 = 36.',
   ),
   MockQuestion(
     id: 'math-new-41',
@@ -3714,6 +3757,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['6', '7', '8', '9'],
     correctIndex: 1,
     topic: 'Algebra',
+    explanation: 'Take 7 from both sides to get 5x = 35, then divide by 5: x = 7.',
   ),
   MockQuestion(
     id: 'math-new-42',
@@ -3722,6 +3766,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['7', '9', '10', '8'],
     correctIndex: 3,
     topic: 'Algebra',
+    explanation: 'Take 3 from both sides to get 2x = 16, then divide by 2: x = 8.',
   ),
   MockQuestion(
     id: 'math-new-43',
@@ -3730,6 +3775,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['43', '33', '53', '7'],
     correctIndex: 0,
     topic: 'Algebra',
+    explanation: 'Add 18 to both sides: x = 25 + 18 = 43.',
   ),
   MockQuestion(
     id: 'math-new-44',
@@ -3738,6 +3784,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['22', '26', '24', '21'],
     correctIndex: 2,
     topic: 'Algebra',
+    explanation: 'Divide both sides by 4: x = 96 ÷ 4 = 24.',
   ),
   MockQuestion(
     id: 'math-new-45',
@@ -3746,6 +3793,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['8', '10', '7', '9'],
     correctIndex: 3,
     topic: 'Algebra',
+    explanation: 'Take 5 from both sides to get 3x = 27, then divide by 3: x = 9.',
   ),
   MockQuestion(
     id: 'math-new-46',
@@ -3754,6 +3802,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['5', '7', '6', '9'],
     correctIndex: 2,
     topic: 'Algebra',
+    explanation: 'Divide both sides by 2 to get x + 3 = 9, so x = 9 - 3 = 6.',
   ),
   MockQuestion(
     id: 'math-new-47',
@@ -3762,6 +3811,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['81', '72 sq cm', '90 sq cm', '99 sq cm'],
     correctIndex: 0,
     topic: 'Geometry',
+    explanation: 'The area of a square is side × side, so 9 × 9 = 81 sq cm.',
   ),
   MockQuestion(
     id: 'math-new-48',
@@ -3770,6 +3820,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['44 cm', '48', '52 cm', '36 cm'],
     correctIndex: 1,
     topic: 'Geometry',
+    explanation: 'The perimeter of a square is 4 × side, so 4 × 12 = 48 cm.',
   ),
   MockQuestion(
     id: 'math-new-49',
@@ -3778,6 +3829,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['76 sq cm', '94 sq cm', '84', '70 sq cm'],
     correctIndex: 2,
     topic: 'Geometry',
+    explanation: 'The area of a rectangle is length × width, so 12 × 7 = 84 sq cm.',
   ),
   MockQuestion(
     id: 'math-new-50',
@@ -3786,6 +3838,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['46', '38 cm', '54 cm', '42 cm'],
     correctIndex: 0,
     topic: 'Geometry',
+    explanation: 'The perimeter is 2 × (length + width), so 2 × (15 + 8) = 46 cm.',
   ),
   MockQuestion(
     id: 'math-new-51',
@@ -3794,6 +3847,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['80 sq cm', '30 sq cm', '50 sq cm', '40'],
     correctIndex: 3,
     topic: 'Geometry',
+    explanation: 'The area of a triangle is half × base × height, so half of 10 × 8 = 40 sq cm.',
   ),
   MockQuestion(
     id: 'math-new-52',
@@ -3802,6 +3856,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['40 cm', '44', '48 cm', '36 cm'],
     correctIndex: 1,
     topic: 'Geometry',
+    explanation: 'Circumference is pi × diameter, so 22/7 × 14 = 44 cm.',
   ),
   MockQuestion(
     id: 'math-new-53',
@@ -3810,6 +3865,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['48 cubic cm', '64', '80 cubic cm', '56 cubic cm'],
     correctIndex: 1,
     topic: 'Geometry',
+    explanation: 'The volume of a cube is side × side × side, so 4 × 4 × 4 = 64 cubic cm.',
   ),
   MockQuestion(
     id: 'math-new-54',
@@ -3818,6 +3874,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['50 cubic cm', '70 cubic cm', '48 cubic cm', '60'],
     correctIndex: 3,
     topic: 'Geometry',
+    explanation: 'The volume of a cuboid is length × width × height, so 5 × 4 × 3 = 60 cubic cm.',
   ),
   MockQuestion(
     id: 'math-new-55',
@@ -3826,6 +3883,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['225', '200 sq cm', '250 sq cm', '210 sq cm'],
     correctIndex: 0,
     topic: 'Geometry',
+    explanation: 'The area of a square is side × side, so 15 × 15 = 225 sq cm.',
   ),
   MockQuestion(
     id: 'math-new-56',
@@ -3834,6 +3892,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['48 sq cm', '60 sq cm', '54', '45 sq cm'],
     correctIndex: 2,
     topic: 'Geometry',
+    explanation: 'The area of a triangle is half × base × height, so half of 12 × 9 = 54 sq cm.',
   ),
   MockQuestion(
     id: 'math-new-57',
@@ -3842,6 +3901,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['6 cm', '10 cm', '9 cm', '8'],
     correctIndex: 3,
     topic: 'Geometry',
+    explanation: 'Width is area ÷ length, so 120 ÷ 15 = 8 cm.',
   ),
   MockQuestion(
     id: 'math-new-58',
@@ -3850,6 +3910,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['132 sq cm', '176 sq cm', '154', '144 sq cm'],
     correctIndex: 2,
     topic: 'Geometry',
+    explanation: 'The area of a circle is pi × radius × radius, so 22/7 × 7 × 7 = 154 sq cm.',
   ),
   MockQuestion(
     id: 'math-new-59',
@@ -3858,6 +3919,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['30', '25 km/h', '35 km/h', '40 km/h'],
     correctIndex: 0,
     topic: 'Speed and Distance',
+    explanation: 'Speed is distance ÷ time, so 60 ÷ 2 = 30 km/h.',
   ),
   MockQuestion(
     id: 'math-new-60',
@@ -3866,6 +3928,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['120 km', '135', '150 km', '125 km'],
     correctIndex: 1,
     topic: 'Speed and Distance',
+    explanation: 'Distance is speed × time, so 45 × 3 = 135 km.',
   ),
   MockQuestion(
     id: 'math-new-61',
@@ -3874,6 +3937,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['3 hours', '5 hours', '4', '6 hours'],
     correctIndex: 2,
     topic: 'Speed and Distance',
+    explanation: 'Time is distance ÷ speed, so 240 ÷ 60 = 4 hours.',
   ),
   MockQuestion(
     id: 'math-new-62',
@@ -3882,6 +3946,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['60', '50 km/h', '70 km/h', '45 km/h'],
     correctIndex: 0,
     topic: 'Speed and Distance',
+    explanation: 'Speed is distance ÷ time, so 90 ÷ 1.5 = 60 km/h.',
   ),
   MockQuestion(
     id: 'math-new-63',
@@ -3890,6 +3955,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['180 km', '220 km', '160 km', '200'],
     correctIndex: 3,
     topic: 'Speed and Distance',
+    explanation: 'Distance is speed × time, so 80 × 2.5 = 200 km.',
   ),
   MockQuestion(
     id: 'math-new-64',
@@ -3898,6 +3964,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['40 km/h', '50', '60 km/h', '45 km/h'],
     correctIndex: 1,
     topic: 'Speed and Distance',
+    explanation: 'Speed is distance ÷ time, so 150 ÷ 3 = 50 km/h.',
   ),
   MockQuestion(
     id: 'math-new-65',
@@ -3906,6 +3973,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['5 hours', '6', '7 hours', '4 hours'],
     correctIndex: 1,
     topic: 'Speed and Distance',
+    explanation: 'Time is distance ÷ speed, so 360 ÷ 60 = 6 hours.',
   ),
   MockQuestion(
     id: 'math-new-66',
@@ -3914,6 +3982,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['10 km/h', '14 km/h', '16 km/h', '12'],
     correctIndex: 3,
     topic: 'Speed and Distance',
+    explanation: 'Speed is distance ÷ time, so 24 ÷ 2 = 12 km/h.',
   ),
   MockQuestion(
     id: 'math-new-67',
@@ -3922,6 +3991,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['20', '15 km', '25 km', '9 km'],
     correctIndex: 0,
     topic: 'Speed and Distance',
+    explanation: 'Distance is speed × time, so 5 × 4 = 20 km.',
   ),
   MockQuestion(
     id: 'math-new-68',
@@ -3930,6 +4000,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['3 hours', '5 hours', '4', '6 hours'],
     correctIndex: 2,
     topic: 'Speed and Distance',
+    explanation: 'Time is distance ÷ speed, so 180 ÷ 45 = 4 hours.',
   ),
   MockQuestion(
     id: 'math-new-69',
@@ -3938,6 +4009,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['9', '11', '12', '10'],
     correctIndex: 3,
     topic: 'Number Series',
+    explanation: 'Each number rises by 2, so the next number after 8 is 10.',
   ),
   MockQuestion(
     id: 'math-new-70',
@@ -3946,6 +4018,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['13', '16', '15', '18'],
     correctIndex: 2,
     topic: 'Number Series',
+    explanation: 'Each number rises by 3, so the next number after 12 is 15.',
   ),
   MockQuestion(
     id: 'math-new-71',
@@ -3954,6 +4027,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['80', '60', '70', '100'],
     correctIndex: 0,
     topic: 'Number Series',
+    explanation: 'Each number doubles, so the next number after 40 is 80.',
   ),
   MockQuestion(
     id: 'math-new-72',
@@ -3962,6 +4036,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['50', '60', '65', '55'],
     correctIndex: 1,
     topic: 'Number Series',
+    explanation: 'Each number falls by 10, so the next number after 70 is 60.',
   ),
   MockQuestion(
     id: 'math-new-73',
@@ -3970,6 +4045,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['20', '30', '25', '36'],
     correctIndex: 2,
     topic: 'Number Series',
+    explanation: 'The numbers are squares: 1, 4, 9, 16, so the next is 5 × 5 = 25.',
   ),
   MockQuestion(
     id: 'math-new-74',
@@ -3978,6 +4054,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['17', '15', '16', '19'],
     correctIndex: 0,
     topic: 'Number Series',
+    explanation: 'The gaps grow by 1 each time (1, 2, 3, 4), so the next gap is 5 and 12 + 5 = 17.',
   ),
   MockQuestion(
     id: 'math-new-75',
@@ -3986,6 +4063,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['11', '12', '10', '13'],
     correctIndex: 3,
     topic: 'Number Series',
+    explanation: 'Each number is the sum of the two before it, so 5 + 8 = 13 comes next.',
   ),
   MockQuestion(
     id: 'math-new-76',
@@ -3994,6 +4072,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['0', '1', '2', '6'],
     correctIndex: 1,
     topic: 'Number Series',
+    explanation: 'Each number is divided by 3, so the next number after 3 is 1.',
   ),
   MockQuestion(
     id: 'math-new-77',
@@ -4002,6 +4081,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['32', '35', '36', '42'],
     correctIndex: 1,
     topic: 'Number Series',
+    explanation: 'Each number rises by 7, so the next number after 28 is 35.',
   ),
   MockQuestion(
     id: 'math-new-78',
@@ -4010,6 +4090,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['1', '2', '5', '0'],
     correctIndex: 3,
     topic: 'Number Series',
+    explanation: 'The gaps grow by 1 each time (-2, -3, -4, -5), so the next gap is -6 and 6 - 6 = 0.',
   ),
   MockQuestion(
     id: 'math-new-79',
@@ -4018,6 +4099,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['200', '150', '250', '100'],
     correctIndex: 0,
     topic: 'Simple Interest',
+    explanation: 'Simple interest is principal × rate × time ÷ 100, so 1000 × 10 × 2 ÷ 100 = 200.',
   ),
   MockQuestion(
     id: 'math-new-80',
@@ -4026,6 +4108,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['250', '350', '300', '200'],
     correctIndex: 2,
     topic: 'Simple Interest',
+    explanation: 'Simple interest is principal × rate × time ÷ 100, so 2000 × 5 × 3 ÷ 100 = 300.',
   ),
   MockQuestion(
     id: 'math-new-81',
@@ -4034,6 +4117,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['200', '280', '180', '240'],
     correctIndex: 3,
     topic: 'Simple Interest',
+    explanation: 'Simple interest is principal × rate × time ÷ 100, so 1500 × 8 × 2 ÷ 100 = 240.',
   ),
   MockQuestion(
     id: 'math-new-82',
@@ -4042,6 +4126,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['150', '250', '200', '300'],
     correctIndex: 2,
     topic: 'Simple Interest',
+    explanation: 'Simple interest is principal × rate × time ÷ 100, so 5000 × 4 × 1 ÷ 100 = 200.',
   ),
   MockQuestion(
     id: 'math-new-83',
@@ -4050,6 +4135,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['360', '300', '400', '240'],
     correctIndex: 0,
     topic: 'Simple Interest',
+    explanation: 'Simple interest is principal × rate × time ÷ 100, so 1200 × 10 × 3 ÷ 100 = 360.',
   ),
   MockQuestion(
     id: 'math-new-84',
@@ -4058,6 +4144,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['150', '180', '200', '120'],
     correctIndex: 1,
     topic: 'Simple Interest',
+    explanation: 'Simple interest is principal × rate × time ÷ 100, so 600 × 15 × 2 ÷ 100 = 180.',
   ),
   MockQuestion(
     id: 'math-new-85',
@@ -4066,6 +4153,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['600', '800', '720', '660'],
     correctIndex: 2,
     topic: 'Simple Interest',
+    explanation: 'Simple interest is principal × rate × time ÷ 100, so 3000 × 6 × 4 ÷ 100 = 720.',
   ),
   MockQuestion(
     id: 'math-new-86',
@@ -4074,6 +4162,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['400', '300', '500', '350'],
     correctIndex: 0,
     topic: 'Simple Interest',
+    explanation: 'Simple interest is principal × rate × time ÷ 100, so 2500 × 8 × 2 ÷ 100 = 400.',
   ),
   MockQuestion(
     id: 'math-new-87',
@@ -4082,6 +4171,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['2100', '2300', '2150', '2200'],
     correctIndex: 3,
     topic: 'Simple Interest',
+    explanation: 'The interest is 2000 × 5 × 2 ÷ 100 = 200, so the total to repay is 2000 + 200 = 2200.',
   ),
   MockQuestion(
     id: 'math-new-88',
@@ -4090,6 +4180,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['300', '400', '500', '200'],
     correctIndex: 1,
     topic: 'Simple Interest',
+    explanation: 'Simple interest is principal × rate × time ÷ 100, so 4000 × 10 × 1 ÷ 100 = 400.',
   ),
   MockQuestion(
     id: 'math-new-89',
@@ -4098,6 +4189,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['16', '24', '32', '48'],
     correctIndex: 1,
     topic: 'LCM and HCF',
+    explanation: 'The multiples of 6 are 6, 12, 18, 24, and 24 is also a multiple of 8, so the LCM is 24.',
   ),
   MockQuestion(
     id: 'math-new-90',
@@ -4106,6 +4198,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['6', '18', '8', '12'],
     correctIndex: 3,
     topic: 'LCM and HCF',
+    explanation: 'The factors of 24 are 1, 2, 3, 4, 6, 8, 12, 24, and the largest shared with 36 is 12.',
   ),
   MockQuestion(
     id: 'math-new-91',
@@ -4114,6 +4207,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['15', '13', '17', '25'],
     correctIndex: 0,
     topic: 'Square Roots',
+    explanation: '15 × 15 = 225, so the square root of 225 is 15.',
   ),
   MockQuestion(
     id: 'math-new-92',
@@ -4122,6 +4216,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['105', '115', '125', '150'],
     correctIndex: 2,
     topic: 'Powers',
+    explanation: '5 cubed is 5 × 5 × 5 = 125.',
   ),
   MockQuestion(
     id: 'math-new-93',
@@ -4130,6 +4225,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['50', '70', '40', '60'],
     correctIndex: 3,
     topic: 'Fractions',
+    explanation: '80 ÷ 4 = 20, so 3/4 of 80 is 3 × 20 = 60.',
   ),
   MockQuestion(
     id: 'math-new-94',
@@ -4138,6 +4234,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['65', '85', '75', '60'],
     correctIndex: 2,
     topic: 'Fractions',
+    explanation: '125 ÷ 5 = 25, so 3/5 of 125 is 3 × 25 = 75.',
   ),
   MockQuestion(
     id: 'math-new-95',
@@ -4146,6 +4243,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['55', '45', '65', '50'],
     correctIndex: 0,
     topic: 'Arithmetic',
+    explanation: 'Pair the numbers from the ends: 1 + 10, 2 + 9 and so on each make 11, and five such pairs give 5 × 11 = 55.',
   ),
   MockQuestion(
     id: 'math-new-96',
@@ -4154,6 +4252,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['20', '24', '28', '14'],
     correctIndex: 1,
     topic: 'Powers',
+    explanation: '7 squared is 49 and 5 squared is 25, so the difference is 49 - 25 = 24.',
   ),
   MockQuestion(
     id: 'math-new-97',
@@ -4162,6 +4261,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['8', '12', '10', '15'],
     correctIndex: 2,
     topic: 'Algebra',
+    explanation: 'Work backwards: 30 - 10 = 20, and half of 20 is 10, so the original number was 10.',
   ),
   // ------------------------------------------------------------------
   // Everyday Science (100 questions)
