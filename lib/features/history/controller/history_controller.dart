@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:get/get.dart';
 
+import '../../../core/database/database_recovery.dart';
 import '../../../core/services/data_refresh_service.dart';
 import '../../../core/services/history_file_share.dart';
 import '../../typing_test/model/typing_language.dart';
@@ -15,7 +18,33 @@ import '../service/history_repository.dart';
 /// recalculate the whole database repeatedly) via the pure
 /// [applyFilters] method.
 class HistoryController extends GetxController {
+  /// How long the history read may take before the screen gives up
+  /// waiting and shows the empty state instead of spinning forever (the
+  /// database open can hang on a reload). Tests inject a shorter value.
+  static const Duration kLoadTimeout = Duration(seconds: 8);
+
+  HistoryController({
+    Future<List<TypingTestRecord>> Function()? fetchAll,
+    Duration loadTimeout = kLoadTimeout,
+    DatabaseRecovery? databaseRecovery,
+  })  : _fetchAll = fetchAll ?? HistoryRepository.instance.fetchAll,
+        _loadTimeout = loadTimeout,
+        _recovery = databaseRecovery ?? DatabaseRecovery();
+
+  final Future<List<TypingTestRecord>> Function() _fetchAll;
+  final Duration _loadTimeout;
+  final DatabaseRecovery _recovery;
+
   final RxBool isLoading = false.obs;
+
+  /// True when the latest load gave up waiting on the database. The view
+  /// shows a Retry button in that case; the stored data is untouched.
+  final RxBool loadTimedOut = false.obs;
+
+  /// True when the latest load timed out AND the background database
+  /// recovery reported the database still unreachable.
+  final RxBool loadFailed = false.obs;
+
   final RxList<TypingTestRecord> allTests = <TypingTestRecord>[].obs;
 
   final Rx<HistoryLanguageFilter> languageFilter =
@@ -49,13 +78,60 @@ class HistoryController extends GetxController {
     super.onClose();
   }
 
+  /// Loads the history, bounded: a read that does not answer within
+  /// [_loadTimeout] returns an empty list instead of spinning forever
+  /// (the old load awaited `fetchAll()` with no timeout at all).
+  /// Database recovery runs in the BACKGROUND (at most one per load()
+  /// call, shared in-flight with the Dashboard/boot recovery): if it
+  /// succeeds it notifies via [DataRefreshService], so the `ever()`
+  /// worker in [onInit] re-runs [load] automatically. If recovery
+  /// reports the database still unreachable, [loadFailed] is set.
   Future<void> load() async {
+    loadTimedOut.value = false;
+    loadFailed.value = false;
     isLoading.value = true;
+    bool recoveryAttempted = false;
     try {
-      allTests.value = await HistoryRepository.instance.fetchAll();
+      bool timedOut = false;
+      allTests.value = await _fetchAll().timeout(
+        _loadTimeout,
+        onTimeout: () {
+          timedOut = true;
+          loadTimedOut.value = true;
+          return <TypingTestRecord>[];
+        },
+      );
+      if (timedOut && !recoveryAttempted) {
+        recoveryAttempted = true;
+        unawaited(_runBackgroundRecovery());
+      }
     } finally {
       isLoading.value = false;
     }
+  }
+
+  /// One background recovery run. On success [DatabaseRecovery] already
+  /// notified via [DataRefreshService], so the reload happens through
+  /// the `ever()` worker. On failure only the flag is set.
+  Future<void> _runBackgroundRecovery() async {
+    bool recovered = false;
+    try {
+      recovered = await _recovery.ensureHealthy();
+    } catch (_) {
+      recovered = false;
+    }
+    if (!recovered && loadTimedOut.value) {
+      loadFailed.value = true;
+    }
+  }
+
+  /// Re-runs [load] from the empty/timeout state (the "Retry loading
+  /// history" button). Resets the flags first so a recovered load clears
+  /// the timeout notice.
+  Future<void> retryLoad() async {
+    loadTimedOut.value = false;
+    loadFailed.value = false;
+    await load();
   }
 
   @override

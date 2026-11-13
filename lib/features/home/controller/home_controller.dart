@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:get/get.dart';
 
 import '../../../core/database/database_recovery.dart';
@@ -40,9 +42,11 @@ class HomeController extends GetxController {
   /// shows a one-line notice in that case; the stored data is untouched.
   final RxBool loadTimedOut = false.obs;
 
-  /// True when the latest load failed even after database recovery (the
-  /// database stayed unreachable). Distinct from [loadTimedOut]: a plain
-  /// timeout that recovery fixed clears both flags on the retry.
+  /// True when the latest load failed even after the background database
+  /// recovery ran and reported the database still unreachable. Distinct
+  /// from [loadTimedOut]: a plain timeout only means the load gave up
+  /// waiting — recovery is still running in the background, and if it
+  /// succeeds the Dashboard reloads on its own (see [load]).
   final RxBool loadFailed = false.obs;
   final RxList<TypingTestRecord> allTests = <TypingTestRecord>[].obs;
   final RxInt dailyGoalSeconds = 600.obs;
@@ -61,24 +65,45 @@ class HomeController extends GetxController {
     }
   }
 
+  /// Loads the Dashboard data, bounded: a fetch that does not answer
+  /// within [_loadTimeout] returns its fallback instead of spinning.
+  /// The empty state + "Retry loading history" button therefore appear
+  /// within ~8s of mount even when the database never answers.
+  ///
+  /// Database recovery runs in the BACKGROUND, never inside this load:
+  /// the old in-load recovery cost up to ~41.5s of spinner (8s fetch
+  /// timeout + 3 probes × 8s + backoff + 8s retry). Here a timeout kicks
+  /// off one background recovery (at most one per load() call) and the
+  /// load finishes. If recovery succeeds it replaces the stuck instance
+  /// and notifies via [DataRefreshService], so the `ever()` worker in
+  /// [onInit] re-runs [load] automatically — no manual retry needed.
+  /// If recovery reports the database still unreachable, [loadFailed]
+  /// is set (only while the load is still timed out, so a later
+  /// successful reload is never overwritten by a stale callback).
   Future<void> load() async {
     loadTimedOut.value = false;
     loadFailed.value = false;
     isLoading.value = true;
-    // At most one recovery attempt per load() call, however many fetches
-    // time out inside it — recovery is bounded (see DatabaseRecovery)
-    // and a second attempt would just re-probe the same fresh instance.
+    // At most one background recovery per load() call, however many
+    // fetches time out inside it.
     bool recoveryAttempted = false;
 
-    /// Runs [fetch] under the load timeout. On a timeout, attempts one
-    /// database recovery and retries the fetch once; a throw still
+    void kickOffBackgroundRecovery() {
+      if (recoveryAttempted) return;
+      recoveryAttempted = true;
+      unawaited(_runBackgroundRecovery());
+    }
+
+    /// Runs [fetch] under the load timeout. On a timeout, marks the
+    /// load timed out, kicks off background recovery once, and returns
+    /// the fallback — the load finishes promptly. A throw still
     /// propagates (unchanged from before recovery existed).
-    Future<T> fetchWithRecovery<T>(
+    Future<T> fetchWithTimeout<T>(
       Future<T> Function() fetch,
       T fallback,
     ) async {
       bool timedOut = false;
-      T result = await fetch().timeout(
+      final T result = await fetch().timeout(
         _loadTimeout,
         onTimeout: () {
           timedOut = true;
@@ -86,45 +111,37 @@ class HomeController extends GetxController {
           return fallback;
         },
       );
-      if (!timedOut) return result;
-      if (recoveryAttempted) {
-        loadFailed.value = true;
-        return result;
-      }
-      recoveryAttempted = true;
-      final bool recovered =
-          await _recovery.ensureHealthy(probeTimeout: _loadTimeout);
-      if (!recovered) {
-        loadFailed.value = true;
-        return result;
-      }
-      // The database was replaced: retry once against the fresh instance
-      // (repositories resolve it lazily via Get at call time).
-      loadTimedOut.value = false;
-      bool retriedOut = false;
-      result = await fetch().timeout(
-        _loadTimeout,
-        onTimeout: () {
-          retriedOut = true;
-          loadTimedOut.value = true;
-          return fallback;
-        },
-      );
-      if (retriedOut) loadFailed.value = true;
+      if (timedOut) kickOffBackgroundRecovery();
       return result;
     }
 
     try {
-      allTests.value = await fetchWithRecovery<List<TypingTestRecord>>(
+      allTests.value = await fetchWithTimeout<List<TypingTestRecord>>(
         _repository.fetchAllTests,
         <TypingTestRecord>[],
       );
-      dailyGoalSeconds.value = await fetchWithRecovery<int>(
+      dailyGoalSeconds.value = await fetchWithTimeout<int>(
         _repository.fetchDailyGoalSeconds,
         600,
       );
     } finally {
       isLoading.value = false;
+    }
+  }
+
+  /// One background recovery run: replaces the stuck database instance
+  /// if needed. On success [DatabaseRecovery] already notified via
+  /// [DataRefreshService], so the reload happens through the `ever()`
+  /// worker. On failure only the flag is set — the data is untouched.
+  Future<void> _runBackgroundRecovery() async {
+    bool recovered = false;
+    try {
+      recovered = await _recovery.ensureHealthy();
+    } catch (_) {
+      recovered = false;
+    }
+    if (!recovered && loadTimedOut.value) {
+      loadFailed.value = true;
     }
   }
 

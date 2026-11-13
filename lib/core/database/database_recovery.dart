@@ -12,7 +12,7 @@ import 'app_database.dart';
 /// `LazyDatabase(() async => WasmDatabase.open(...))`
 /// (`lib/core/database/database_connection_web.dart`). Fetching
 /// `sqlite3.wasm` (748,686 bytes) + `drift_worker.js` (357,220 bytes) on a
-/// slow connection takes minutes, inside the open — and drift 2.35.0's
+/// slow connection takes a long time, inside the open — and drift 2.35.0's
 /// `LazyDatabase` caches that opener future (`_awaitOpened` in
 /// `lib/src/utils/lazy_database.dart`): every later query awaits the same
 /// stuck future forever, so there is no retry today.
@@ -23,6 +23,24 @@ import 'app_database.dart';
 /// database lazily at call time (`AppDatabase get _db =>
 /// Get.find<AppDatabase>();`), so the next fetch reaches the new instance.
 ///
+/// Two cases must not be confused. A permanently hung open never
+/// answers, so it must be abandoned after a bounded probe. A merely
+/// *slow* open — a fresh profile on a cold CDN / slow connection, where
+/// the WASM fetch and compile legitimately take well over 8 seconds —
+/// answers if it is given time. Abandoning that instance restarts the
+/// open from scratch, so a short probe budget can never succeed: the
+/// loop restarts the open three times and gives up. The first probe
+/// therefore gets a long budget ([firstProbeTimeout], 30s by default);
+/// only fresh replacements (attempts 2–3) use the short [probeTimeout].
+/// An instance is replaced only on a probe error or after its budget
+/// expires — never while it is still within its first-probe budget.
+///
+/// Concurrent callers share one in-flight recovery: [_inFlight] is
+/// static, so the boot-path recovery (`main.dart`), the Dashboard
+/// recovery and the History recovery all join the same future instead
+/// of each replacing the instance underneath the others. (It used to be
+/// an instance field, so two [DatabaseRecovery] instances raced.)
+///
 /// This service NEVER deletes, resets, or clears any table or file — no
 /// data loss by design. A reset/recovery option may only ever be an
 /// explicit user choice, never automatic, and none is added here.
@@ -31,6 +49,7 @@ class DatabaseRecovery {
     AppDatabase Function()? databaseFactory,
     Future<void> Function(AppDatabase db)? probe,
     this.probeTimeout = const Duration(seconds: 8),
+    this.firstProbeTimeout = const Duration(seconds: 30),
     this.retryDelays = const <Duration>[
       Duration(milliseconds: 500),
       Duration(seconds: 1),
@@ -46,6 +65,12 @@ class DatabaseRecovery {
 
   final Duration probeTimeout;
 
+  /// Budget for the FIRST probe (the currently registered instance).
+  /// Long on purpose: a slow-but-progressing cold open must be allowed
+  /// to finish instead of being restarted. Attempts 2–3 probe fresh
+  /// replacements with the short [probeTimeout].
+  final Duration firstProbeTimeout;
+
   /// Delay after failed attempt N is `retryDelays[N - 1]` (clamped to the
   /// last entry). Only the first `maxAttempts - 1` entries are used.
   final List<Duration> retryDelays;
@@ -53,7 +78,10 @@ class DatabaseRecovery {
   final AppDatabase Function() _databaseFactory;
   final Future<void> Function(AppDatabase db) _probe;
 
-  Future<bool>? _inFlight;
+  /// Shared across ALL instances: concurrent callers (boot, Dashboard,
+  /// History) join one in-flight recovery instead of racing replacements.
+  /// Cleared when the recovery completes (see [ensureHealthy]).
+  static Future<bool>? _inFlight;
 
   static Future<void> _defaultProbe(AppDatabase db) async {
     await db.customSelect('SELECT 1').get();
@@ -64,13 +92,16 @@ class DatabaseRecovery {
   /// replaced with a fresh one (bounded retries, see [maxAttempts]).
   ///
   /// Concurrent callers share one in-flight recovery instead of each
-  /// replacing the instance underneath the other.
+  /// replacing the instance underneath the other — including callers
+  /// holding different [DatabaseRecovery] instances.
   Future<bool> ensureHealthy({
     Duration? probeTimeout,
+    Duration? firstProbeTimeout,
     List<Duration>? retryDelays,
   }) {
     _inFlight ??= _ensureHealthy(
       probeTimeout ?? this.probeTimeout,
+      firstProbeTimeout ?? this.firstProbeTimeout,
       retryDelays ?? this.retryDelays,
     ).whenComplete(() => _inFlight = null);
     return _inFlight!;
@@ -78,12 +109,17 @@ class DatabaseRecovery {
 
   Future<bool> _ensureHealthy(
     Duration timeout,
+    Duration firstTimeout,
     List<Duration> delays,
   ) async {
     bool replaced = false;
     for (int attempt = 1; attempt <= maxAttempts; attempt++) {
       final AppDatabase current = _currentOrFresh();
-      if (await _probeHealthy(current, timeout)) {
+      // Attempt 1 probes the current instance with the long budget: a
+      // slow cold open can complete inside it. Attempts 2–3 probe fresh
+      // replacements with the short budget.
+      final Duration budget = attempt == 1 ? firstTimeout : timeout;
+      if (await _probeHealthy(current, budget)) {
         if (replaced) _notifyRecovered();
         return true;
       }

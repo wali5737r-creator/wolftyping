@@ -240,7 +240,10 @@ class _HistoryList extends StatelessWidget {
     return Obx(() {
       final List<TypingTestRecord> list = controller.filtered;
       if (controller.allTests.isEmpty) {
-        return _EmptyState();
+        return _EmptyState(
+          loadTimedOut: controller.loadTimedOut.value,
+          onRetry: controller.retryLoad,
+        );
       }
       if (list.isEmpty) {
         return const EmptyStateView(
@@ -269,9 +272,20 @@ class _HistoryList extends StatelessWidget {
 }
 
 class _EmptyState extends StatelessWidget {
+  const _EmptyState({this.loadTimedOut = false, this.onRetry});
+
+  /// When the history read timed out, the same empty state is shown plus
+  /// a Retry button and an honest one-line notice: the data was not
+  /// deleted, it just could not be read yet.
+  final bool loadTimedOut;
+
+  /// Called by the "Retry loading history" button. Null when no retry
+  /// is offered (kept optional so the plain empty state stays usable).
+  final VoidCallback? onRetry;
+
   @override
   Widget build(BuildContext context) {
-    return EmptyStateView(
+    final Widget empty = EmptyStateView(
       icon: Icons.history,
       title: 'No completed tests yet',
       message: 'Finish a typing test and it will show up here.',
@@ -287,6 +301,40 @@ class _EmptyState extends StatelessWidget {
           OutlinedButton(
             onPressed: () => Get.toNamed(AppRoutes.urduTypingTest),
             child: const Text('Start Urdu Test'),
+          ),
+        ],
+      ),
+    );
+    if (!loadTimedOut) return empty;
+    // Scrollable, not Expanded: the History header + filters already
+    // take much of the viewport, so the empty state + Retry + notice
+    // (taller than the remaining space on short screens) must scroll
+    // rather than overflow. An Expanded around `empty` would give it a
+    // tight height smaller than its content and overflow instead. A
+    // SingleChildScrollView (not a ListView) builds the Retry button
+    // eagerly, so it is always in the tree.
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          empty,
+          if (onRetry != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 8, bottom: 12),
+              child: Center(
+                child: ElevatedButton.icon(
+                  onPressed: onRetry,
+                  icon: const Icon(Icons.refresh),
+                  label: const Text('Retry loading history'),
+                ),
+              ),
+            ),
+          const Padding(
+            padding: EdgeInsets.only(bottom: 24),
+            child: Text(
+              'History could not be loaded. Your data is safe — '
+              'tap Retry to try again.',
+              textAlign: TextAlign.center,
+            ),
           ),
         ],
       ),

@@ -32,6 +32,7 @@ class _FailingRecovery extends DatabaseRecovery {
   @override
   Future<bool> ensureHealthy({
     Duration? probeTimeout,
+    Duration? firstProbeTimeout,
     List<Duration>? retryDelays,
   }) async =>
       false;
