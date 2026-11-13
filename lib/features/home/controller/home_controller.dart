@@ -70,22 +70,30 @@ class HomeController extends GetxController {
   /// The empty state + "Retry loading history" button therefore appear
   /// within ~8s of mount even when the database never answers.
   ///
+  /// The two reads are independent and run concurrently: a hung or
+  /// throwing history read degrades to the empty history state with a
+  /// Retry (a throw used to propagate out of [load] entirely), and a
+  /// failing daily-goal read falls back to the default goal without
+  /// hiding the history rows — and vice versa. This is the same
+  /// partial-data treatment History applies to its two sources.
+  ///
   /// Database recovery runs in the BACKGROUND, never inside this load:
   /// the old in-load recovery cost up to ~41.5s of spinner (8s fetch
-  /// timeout + 3 probes × 8s + backoff + 8s retry). Here a timeout kicks
-  /// off one background recovery (at most one per load() call) and the
-  /// load finishes. If recovery succeeds it replaces the stuck instance
-  /// and notifies via [DataRefreshService], so the `ever()` worker in
-  /// [onInit] re-runs [load] automatically — no manual retry needed.
-  /// If recovery reports the database still unreachable, [loadFailed]
-  /// is set (only while the load is still timed out, so a later
-  /// successful reload is never overwritten by a stale callback).
+  /// timeout + 3 probes × 8s + backoff + 8s retry). Here a timeout or
+  /// throw kicks off one background recovery (at most one per load()
+  /// call) and the load finishes. If recovery succeeds it replaces the
+  /// stuck instance and notifies via [DataRefreshService], so the
+  /// `ever()` worker in [onInit] re-runs [load] automatically — no
+  /// manual retry needed. If recovery reports the database still
+  /// unreachable, [loadFailed] is set (only while the load is still
+  /// timed out, so a later successful reload is never overwritten by a
+  /// stale callback).
   Future<void> load() async {
     loadTimedOut.value = false;
     loadFailed.value = false;
     isLoading.value = true;
     // At most one background recovery per load() call, however many
-    // fetches time out inside it.
+    // fetches fail inside it.
     bool recoveryAttempted = false;
 
     void kickOffBackgroundRecovery() {
@@ -94,36 +102,46 @@ class HomeController extends GetxController {
       unawaited(_runBackgroundRecovery());
     }
 
-    /// Runs [fetch] under the load timeout. On a timeout, marks the
-    /// load timed out, kicks off background recovery once, and returns
-    /// the fallback — the load finishes promptly. A throw still
-    /// propagates (unchanged from before recovery existed).
+    /// Runs [fetch] under the load timeout. On a timeout OR a throw,
+    /// marks the load timed out, kicks off background recovery once,
+    /// and returns the fallback — the load finishes promptly and the
+    /// view can offer Retry, instead of the throw propagating and
+    /// leaving the screen with no way back.
     Future<T> fetchWithTimeout<T>(
       Future<T> Function() fetch,
       T fallback,
     ) async {
-      bool timedOut = false;
-      final T result = await fetch().timeout(
-        _loadTimeout,
-        onTimeout: () {
-          timedOut = true;
-          loadTimedOut.value = true;
-          return fallback;
-        },
-      );
-      if (timedOut) kickOffBackgroundRecovery();
-      return result;
+      try {
+        return await fetch().timeout(
+          _loadTimeout,
+          onTimeout: () {
+            loadTimedOut.value = true;
+            kickOffBackgroundRecovery();
+            return fallback;
+          },
+        );
+      } catch (_) {
+        loadTimedOut.value = true;
+        kickOffBackgroundRecovery();
+        return fallback;
+      }
     }
 
     try {
-      allTests.value = await fetchWithTimeout<List<TypingTestRecord>>(
-        _repository.fetchAllTests,
-        <TypingTestRecord>[],
-      );
-      dailyGoalSeconds.value = await fetchWithTimeout<int>(
-        _repository.fetchDailyGoalSeconds,
-        600,
-      );
+      await Future.wait(<Future<void>>[
+        fetchWithTimeout<List<TypingTestRecord>>(
+          _repository.fetchAllTests,
+          <TypingTestRecord>[],
+        ).then((List<TypingTestRecord> tests) {
+          allTests.value = tests;
+        }),
+        fetchWithTimeout<int>(
+          _repository.fetchDailyGoalSeconds,
+          600,
+        ).then((int goal) {
+          dailyGoalSeconds.value = goal;
+        }),
+      ]);
     } finally {
       isLoading.value = false;
     }
@@ -133,10 +151,13 @@ class HomeController extends GetxController {
   /// if needed. On success [DatabaseRecovery] already notified via
   /// [DataRefreshService], so the reload happens through the `ever()`
   /// worker. On failure only the flag is set — the data is untouched.
-  Future<void> _runBackgroundRecovery() async {
+  /// With [forceFresh] (the Retry path) the recovery starts a genuinely
+  /// fresh probe sequence instead of joining an in-flight run that may
+  /// already be doomed.
+  Future<void> _runBackgroundRecovery({bool forceFresh = false}) async {
     bool recovered = false;
     try {
-      recovered = await _recovery.ensureHealthy();
+      recovered = await _recovery.ensureHealthy(forceFresh: forceFresh);
     } catch (_) {
       recovered = false;
     }
@@ -147,10 +168,13 @@ class HomeController extends GetxController {
 
   /// Re-runs [load] from the empty/timeout state (the "Retry loading
   /// history" button). Resets the flags first so a recovered load clears
-  /// the timeout notice.
+  /// the timeout notice. Also starts a genuinely fresh background
+  /// recovery (not a join of the stale in-flight one) so the retry has
+  /// a real chance to succeed.
   Future<void> retryLoad() async {
     loadTimedOut.value = false;
     loadFailed.value = false;
+    unawaited(_runBackgroundRecovery(forceFresh: true));
     await load();
   }
 

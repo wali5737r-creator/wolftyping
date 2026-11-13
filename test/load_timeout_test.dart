@@ -34,6 +34,7 @@ class _FailingRecovery extends DatabaseRecovery {
     Duration? probeTimeout,
     Duration? firstProbeTimeout,
     List<Duration>? retryDelays,
+    bool forceFresh = false,
   }) async =>
       false;
 }
@@ -176,6 +177,10 @@ void main() {
         databaseRecovery: _FailingRecovery(),
       );
       await controller.load();
+      // The background recovery is fire-and-forget: give it a turn to
+      // report before asserting loadFailed (the two fetches now run
+      // concurrently, so load() no longer outlasts it by a fetch).
+      await Future<void>.delayed(const Duration(milliseconds: 100));
       expect(controller.isLoading.value, isFalse);
       expect(controller.loadTimedOut.value, isTrue);
       expect(controller.loadFailed.value, isTrue);
@@ -195,18 +200,26 @@ void main() {
       expect(controller.dailyGoalSeconds.value, 900);
     });
 
-    test('throwing repository still releases loading', () async {
+    test('throwing repository is caught: empty state + Retry, no throw',
+        () async {
+      // History parity: a throw is a read failure like a timeout, not
+      // a crash — load() must finish, release loading, and offer
+      // Retry instead of propagating the throw (which used to leave
+      // the screen with no way back).
       final controller = HomeController(
         repository: _ThrowingProgressRepository(),
         loadTimeout: _shortTimeout,
+        databaseRecovery: _FailingRecovery(),
       );
-      try {
-        await controller.load();
-        fail('expected load to throw');
-      } catch (_) {
-        // Expected: the throw propagates, the flag must still release.
-      }
+      await controller.load();
+      // The background recovery is fire-and-forget: give it a turn to
+      // report before asserting loadFailed.
+      await Future<void>.delayed(const Duration(milliseconds: 100));
       expect(controller.isLoading.value, isFalse);
+      expect(controller.loadTimedOut.value, isTrue);
+      expect(controller.loadFailed.value, isTrue);
+      expect(controller.allTests, isEmpty);
+      expect(controller.dailyGoalSeconds.value, 600);
     });
   });
 

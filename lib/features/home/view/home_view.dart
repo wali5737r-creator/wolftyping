@@ -26,6 +26,7 @@ class HomeView extends GetView<HomeController> {
         if (!controller.hasTests) {
           return _EmptyState(
             loadTimedOut: controller.loadTimedOut.value,
+            loadFailed: controller.loadFailed.value,
             onRetry: controller.retryLoad,
           );
         }
@@ -36,13 +37,23 @@ class HomeView extends GetView<HomeController> {
 }
 
 class _EmptyState extends StatelessWidget {
-  const _EmptyState({this.loadTimedOut = false, this.onRetry});
+  const _EmptyState({
+    this.loadTimedOut = false,
+    this.loadFailed = false,
+    this.onRetry,
+  });
 
   /// When the history read timed out, the same empty state is shown plus
   /// a Retry button: in-app navigation reuses the same database instance,
   /// so only a real retry (which runs database recovery) can help —
   /// reopening the page would just re-run the same stuck open.
   final bool loadTimedOut;
+
+  /// When the background recovery has already reported the database
+  /// still unreachable (as opposed to merely still recovering), the
+  /// notice says so — the user can tell "still recovering" from
+  /// "recovery failed".
+  final bool loadFailed;
 
   /// Called by the "Retry loading history" button. Null when no retry
   /// is offered (kept optional so the plain empty state stays usable).
@@ -88,8 +99,13 @@ class _EmptyState extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(bottom: 24),
           child: Text(
-            'History could not be loaded. Your data is safe — '
-            'tap Retry to try again.',
+            loadFailed
+                ? 'History could not be loaded. Your data is safe — '
+                    'tap Retry to try again.'
+                : 'History is still loading in the background — '
+                    'recovery has not finished yet. Your data is safe; '
+                    'tap Retry to try again, or wait and this page '
+                    'will reload on its own.',
             style: AppTextStyles.captionOf(context),
             textAlign: TextAlign.center,
           ),

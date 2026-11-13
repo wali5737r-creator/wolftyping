@@ -4,9 +4,11 @@ import 'package:get/get.dart';
 import '../../../core/constants/app_dimensions.dart';
 import '../../../core/constants/app_text_styles.dart';
 import '../../../core/routes/app_routes.dart';
+import '../../../core/services/certificate_code.dart';
 import '../../../core/widgets/app_controls.dart';
 import '../../../core/widgets/app_scaffold.dart';
 import '../../../core/widgets/app_surfaces.dart';
+import '../../certificate/view/certificate_card.dart';
 import '../../ppsc/service/mock_progress_repository.dart';
 import '../model/typing_test_record.dart';
 import '../service/history_repository.dart';
@@ -95,6 +97,17 @@ class _DetailContent extends StatelessWidget {
                                   : ''),
                     ),
                   ],
+                ),
+                const SizedBox(height: 28),
+                // A past mock result can reach its practice certificate
+                // from here — the same flow as the result screen. The
+                // certificate is built from this result's own numbers
+                // (never from the stored last certificate, which may
+                // belong to a different result), so a result with no
+                // stored certificate still opens its certificate flow
+                // instead of dead-ending.
+                GetCertificateButton(
+                  data: _certificateDataForMockRecord(record),
                 ),
                 const SizedBox(height: 28),
                 const Text('Review', style: AppTextStyles.h3),
@@ -190,4 +203,25 @@ String _formatDateTime(DateTime d) {
   final String time =
       '${d.hour.toString().padLeft(2, '0')}:${d.minute.toString().padLeft(2, '0')}';
   return '$date $time';
+}
+
+/// The certificate data for a past mock result, built from the
+/// result's own stored numbers — scoring is never recomputed here,
+/// and the certificate scheme (WT1 code format) is unchanged. The
+/// holder name is empty: the certificate screen asks for it, exactly
+/// as the result screen does. Accuracy is 0 for a mock test, as in
+/// the result screen's certificate data.
+CertificateData _certificateDataForMockRecord(TypingTestRecord record) {
+  return CertificateData(
+    kind: CertificateKind.mock,
+    testLabel: record.mockLabel ?? 'Mock test',
+    holderName: '',
+    date: record.completedAt,
+    score: record.mockScore ?? 0,
+    totalQuestions: record.mockTotalQuestions ?? 0,
+    correct: record.mockCorrect ?? 0,
+    wrong: record.mockWrong ?? 0,
+    skipped: record.mockSkipped ?? 0,
+    accuracy: 0,
+  );
 }

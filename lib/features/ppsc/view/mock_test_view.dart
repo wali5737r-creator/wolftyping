@@ -12,6 +12,7 @@ import '../../../core/widgets/app_scaffold.dart';
 import '../../../core/widgets/app_surfaces.dart';
 import '../../../core/services/certificate_code.dart';
 import '../../../features/certificate/view/certificate_card.dart';
+import '../../../features/history/model/typing_test_record.dart';
 import '../controller/mock_test_controller.dart';
 import '../model/custom_set.dart';
 import '../model/mock_attempt.dart';
@@ -107,6 +108,13 @@ class _SetupPanel extends StatelessWidget {
 /// Shown on every setup variant, since the panel switch above is the
 /// whole setup page. Empty until the first finished test: nothing is
 /// invented, and the card says where finished tests end up.
+///
+/// Every row is a link: tapping it opens that attempt's result in
+/// History detail, where the score breakdown and "Get Practice
+/// Certificate" live. A row whose result has no stored certificate
+/// still opens its result details — the certificate button on the
+/// detail page builds the certificate from the result itself, so the
+/// tap never dead-ends.
 class _RecentAttemptsCard extends StatelessWidget {
   const _RecentAttemptsCard({required this.controller});
 
@@ -133,25 +141,34 @@ class _RecentAttemptsCard extends StatelessWidget {
               for (final MockAttempt attempt in recent)
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 4),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          attempt.displayLabel,
+                  child: InkWell(
+                    onTap: () => Get.toNamed(
+                      AppRoutes.historyDetail,
+                      arguments:
+                          TypingTestRecord.fromMockAttempt(attempt),
+                    ),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            attempt.displayLabel,
+                            style: AppTextStyles.bodyMedium,
+                          ),
+                        ),
+                        const SizedBox(width: 12),
+                        Text(
+                          attempt.scoreLabel,
                           style: AppTextStyles.bodyMedium,
                         ),
-                      ),
-                      const SizedBox(width: 12),
-                      Text(
-                        attempt.scoreLabel,
-                        style: AppTextStyles.bodyMedium,
-                      ),
-                      const SizedBox(width: 12),
-                      Text(
-                        _formatAttemptDate(attempt.attemptedAt),
-                        style: AppTextStyles.captionOf(context),
-                      ),
-                    ],
+                        const SizedBox(width: 12),
+                        Text(
+                          _formatAttemptDate(attempt.attemptedAt),
+                          style: AppTextStyles.captionOf(context),
+                        ),
+                        const SizedBox(width: 4),
+                        const Icon(Icons.chevron_right, size: 18),
+                      ],
+                    ),
                   ),
                 ),
             const SizedBox(height: 8),

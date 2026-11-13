@@ -109,6 +109,30 @@ DatabaseRecovery _recovery(
       retryDelays: _shortDelays,
     );
 
+/// Probe that hangs on the first call and answers after [delay] on
+/// later calls — a fresh replacement whose WASM open is slow but
+/// progressing.
+class _HangThenSlowProbe {
+  _HangThenSlowProbe(this._delay);
+
+  final Duration _delay;
+  int calls = 0;
+
+  Future<void> call(AppDatabase db) {
+    calls++;
+    if (calls == 1) return Completer<void>().future;
+    return Future<void>.delayed(_delay);
+  }
+}
+
+/// Close hook that records every instance it was asked to terminate.
+class _RecordingClose {
+  final List<AppDatabase> closed = <AppDatabase>[];
+
+  Future<void> call(AppDatabase db) async {
+    closed.add(db);
+  }
+}
 /// A probe that answers after a fixed delay — a slow-but-progressing
 /// open (cold WASM fetch), as opposed to a hang.
 class _SlowProbe {
@@ -135,6 +159,7 @@ class _CannedRecovery extends DatabaseRecovery {
     Duration? probeTimeout,
     Duration? firstProbeTimeout,
     List<Duration>? retryDelays,
+    bool forceFresh = false,
   }) async {
     calls++;
     return _result;
@@ -202,6 +227,7 @@ class _NotifyingRecovery extends DatabaseRecovery {
     Duration? probeTimeout,
     Duration? firstProbeTimeout,
     List<Duration>? retryDelays,
+    bool forceFresh = false,
   }) async {
     calls++;
     await Future<void>.delayed(const Duration(milliseconds: 10));
@@ -419,6 +445,115 @@ void main() {
       expect(factory.created.length, DatabaseRecovery.maxAttempts - 1);
     });
 
+    test('replacement probe gets the long budget, not the short one',
+        () async {
+      // The old rule gave replacements only the short (8s) budget, so
+      // a fresh WASM open that legitimately needs ~30s could never
+      // succeed: attempt 2 answers after 120ms — past the 50ms short
+      // budget, inside the 200ms long one — and must now succeed.
+      final _CountingFactory factory = _CountingFactory();
+      Get.put<AppDatabase>(AppDatabase());
+      final _HangThenSlowProbe probe =
+          _HangThenSlowProbe(const Duration(milliseconds: 120));
+      final DatabaseRecovery recovery = DatabaseRecovery(
+        databaseFactory: factory.call,
+        probe: probe.call,
+        probeTimeout: _shortProbe,
+        firstProbeTimeout: const Duration(milliseconds: 200),
+        retryDelays: _shortDelays,
+      );
+
+      final bool healthy = await recovery.ensureHealthy();
+
+      expect(healthy, isTrue);
+      expect(probe.calls, 2);
+      expect(factory.created.length, 1);
+      expect(identical(Get.find<AppDatabase>(), factory.created.single),
+          isTrue);
+    });
+
+    test('abandoned instance is closed, not just dropped', () async {
+      final _CountingFactory factory = _CountingFactory();
+      final AppDatabase stuck = AppDatabase();
+      Get.put<AppDatabase>(stuck);
+      final _ScriptedProbe probe = _ScriptedProbe(<_ProbeBehavior>[
+        _ProbeBehavior.hang,
+        _ProbeBehavior.ok,
+      ]);
+      final _RecordingClose close = _RecordingClose();
+      final DatabaseRecovery recovery = DatabaseRecovery(
+        databaseFactory: factory.call,
+        probe: probe.call,
+        closeInstance: close.call,
+        probeTimeout: _shortProbe,
+        firstProbeTimeout: _shortProbe,
+        retryDelays: _shortDelays,
+      );
+
+      final bool healthy = await recovery.ensureHealthy();
+      // The close is kicked off unawaited: give the event loop a turn.
+      await Future<void>.delayed(const Duration(milliseconds: 10));
+
+      expect(healthy, isTrue);
+      expect(close.closed, <AppDatabase>[stuck]);
+      expect(factory.created.length, 1);
+    });
+
+    test('probe succeeds without replacement: listeners still notified',
+        () async {
+      // A slow open that finally answers must still reload the
+      // controllers waiting on it — previously _notifyRecovered ran
+      // only `if (replaced)`, so a success without replacement never
+      // triggered a reload and the timeout banner stayed up.
+      Get.put<DataRefreshService>(DataRefreshService());
+      final DataRefreshService service = Get.find<DataRefreshService>();
+      final int before = service.revision.value;
+      final _CountingFactory factory = _CountingFactory();
+      final AppDatabase original = AppDatabase();
+      Get.put<AppDatabase>(original);
+      final _ScriptedProbe probe = _ScriptedProbe(<_ProbeBehavior>[
+        _ProbeBehavior.ok,
+      ]);
+
+      final bool healthy = await _recovery(factory, probe).ensureHealthy();
+
+      expect(healthy, isTrue);
+      expect(factory.created, isEmpty);
+      expect(identical(Get.find<AppDatabase>(), original), isTrue);
+      expect(service.revision.value, greaterThan(before));
+    });
+
+    test('forceFresh starts a fresh probe sequence instead of joining '
+        'in-flight', () async {
+      // Retry path: the first run is already doomed (its first probe
+      // hangs), so joining it would just wait for its failure. A
+      // forced-fresh call must run its own probe sequence and return
+      // its own future.
+      final _CountingFactory factory = _CountingFactory();
+      Get.put<AppDatabase>(AppDatabase());
+      final _ScriptedProbe probe = _ScriptedProbe(<_ProbeBehavior>[
+        _ProbeBehavior.hang,
+        _ProbeBehavior.hang,
+        _ProbeBehavior.ok,
+        _ProbeBehavior.ok,
+      ]);
+      final DatabaseRecovery recovery = _recovery(factory, probe);
+
+      final Future<bool> first = recovery.ensureHealthy();
+      final Future<bool> fresh =
+          recovery.ensureHealthy(forceFresh: true);
+      expect(identical(first, fresh), isFalse);
+
+      final List<bool> results = await Future.wait<bool>(<Future<bool>>[
+        first,
+        fresh,
+      ]);
+      expect(results, <bool>[true, true]);
+      // Two independent sequences ran: two hangs, two successes.
+      expect(probe.probed.length, 4);
+      expect(factory.created.length, 2);
+    });
+
     test('recovery never issues a delete/drop/reset (by construction)',
         () async {
       final String source = await File(
@@ -526,6 +661,11 @@ void main() {
       );
 
       await controller.load();
+
+      // The background recovery is fire-and-forget: give it a turn to
+      // report before asserting loadFailed (the two fetches now run
+      // concurrently, so load() no longer outlasts it by a fetch).
+      await Future<void>.delayed(const Duration(milliseconds: 100));
 
       expect(controller.isLoading.value, isFalse);
       expect(controller.loadTimedOut.value, isTrue);

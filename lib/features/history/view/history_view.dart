@@ -243,6 +243,7 @@ class _HistoryList extends StatelessWidget {
       if (controller.allTests.isEmpty) {
         return _EmptyState(
           loadTimedOut: controller.loadTimedOut.value,
+          loadFailed: controller.loadFailed.value,
           onRetry: controller.retryLoad,
         );
       }
@@ -253,7 +254,7 @@ class _HistoryList extends StatelessWidget {
           message: 'No tests match your filters. Try changing or clearing them.',
         );
       }
-      return ListView.separated(
+      final Widget listView = ListView.separated(
         itemCount: list.length,
         separatorBuilder: (_, __) => const SizedBox(height: 10),
         itemBuilder: (context, index) {
@@ -268,17 +269,93 @@ class _HistoryList extends StatelessWidget {
           );
         },
       );
+      if (!controller.hasPartialData) return listView;
+      // Partial load: one source could not be read, the other is shown
+      // below. The banner lives INSIDE the flexed list region (not as
+      // a fixed sibling in the outer Column, which would overflow a
+      // short viewport): it names the missing part and whether
+      // recovery is still running or has already failed, and Retry
+      // re-reads only the failed part.
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _PartialDataBanner(
+            note: controller.partialDataNote,
+            onRetry: controller.retryLoad,
+          ),
+          const SizedBox(height: 12),
+          Expanded(child: listView),
+        ],
+      );
     });
   }
 }
 
+/// Banner for a partial load: some rows are shown, but one source
+/// could not be read. The note names the missing part and whether
+/// recovery is still running or has failed; Retry re-reads only the
+/// failed part.
+class _PartialDataBanner extends StatelessWidget {
+  const _PartialDataBanner({required this.note, required this.onRetry});
+
+  final String note;
+  final VoidCallback onRetry;
+
+  @override
+  Widget build(BuildContext context) {
+    // Column, not a Row: on a narrow screen a side-by-side Retry
+    // button would squeeze the note to ~240px wide (11 lines tall)
+    // and overflow the list region. Full-width text first, button
+    // below, keeps the banner short at any width.
+    return SoftSurface(
+      raised: false,
+      radius: 14,
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(top: 2),
+                child: Icon(Icons.warning_amber_outlined, size: 20),
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(note),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          OutlinedButton.icon(
+            onPressed: onRetry,
+            icon: const Icon(Icons.refresh, size: 18),
+            label: const Text('Retry loading history'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class _EmptyState extends StatelessWidget {
-  const _EmptyState({this.loadTimedOut = false, this.onRetry});
+  const _EmptyState({
+    this.loadTimedOut = false,
+    this.loadFailed = false,
+    this.onRetry,
+  });
 
   /// When the history read timed out, the same empty state is shown plus
   /// a Retry button and an honest one-line notice: the data was not
   /// deleted, it just could not be read yet.
   final bool loadTimedOut;
+
+  /// When the background recovery has already reported the database
+  /// still unreachable (as opposed to merely still recovering), the
+  /// notice says so — the user can tell "still recovering" from
+  /// "recovery failed".
+  final bool loadFailed;
 
   /// Called by the "Retry loading history" button. Null when no retry
   /// is offered (kept optional so the plain empty state stays usable).
@@ -333,11 +410,16 @@ class _EmptyState extends StatelessWidget {
                 ),
               ),
             ),
-          const Padding(
-            padding: EdgeInsets.only(bottom: 24),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 24),
             child: Text(
-              'History could not be loaded. Your data is safe — '
-              'tap Retry to try again.',
+              loadFailed
+                  ? 'History could not be loaded. Your data is safe — '
+                      'tap Retry to try again.'
+                  : 'History is still loading in the background — '
+                      'recovery has not finished yet. Your data is '
+                      'safe; tap Retry to try again, or wait and this '
+                      'page will reload on its own.',
               textAlign: TextAlign.center,
             ),
           ),
