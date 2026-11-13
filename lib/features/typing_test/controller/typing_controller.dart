@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../model/english_paragraph.dart';
 import '../model/paragraph_difficulty.dart';
@@ -34,6 +35,15 @@ enum TypingScreenPhase { setup, test, result }
 /// `Timer.periodic`, translate key events into engine calls, and expose
 /// GetX-reactive state so the view can rebuild.
 class TypingController extends GetxController {
+  /// On-device key for the last typing duration the user chose, so the
+  /// setup page remembers it across visits. Seconds, not minutes —
+  /// typing has a 30-second preset. The Settings default stays the
+  /// fallback when nothing was ever chosen (or the stored value is
+  /// not a duration this test offers). Mirrors the mock-duration
+  /// pattern in MockTestController.
+  static const String typingDurationStorageKey =
+      'wolftyping_typing_duration_seconds';
+
   /// Focus node the live typing screen attaches its keyboard listener to.
   /// Kept here (not local State) so `startTest`/`restartTest` can request
   /// focus after the view has rebuilt into the test phase.
@@ -60,6 +70,9 @@ class TypingController extends GetxController {
     // Settings > Default duration.
     selectedDuration.value = TypingDurations.initialFor(
         SettingsController.currentOrNull?.defaultDurationSeconds);
+    // A duration the user chose on a previous visit wins over the
+    // Settings default (restored async; see _restoreDuration).
+    unawaited(_restoreDuration());
     final Object? args = Get.arguments;
     if (args is EnglishParagraph) {
       // Came from "Use for Test" (My Paragraphs) — load that paragraph
@@ -76,6 +89,36 @@ class TypingController extends GetxController {
   void selectDuration(Duration duration) {
     durationError.value = null;
     selectedDuration.value = duration;
+    unawaited(_persistDuration(duration));
+  }
+
+  /// Restores the last chosen duration. A missing or invalid stored
+  /// value leaves the Settings default untouched, and a storage
+  /// failure never blocks the setup page.
+  Future<void> _restoreDuration() async {
+    try {
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+      final int? seconds = prefs.getInt(typingDurationStorageKey);
+      if (seconds == null) return;
+      final Duration saved = Duration(seconds: seconds);
+      if (TypingDurations.presets.contains(saved)) {
+        selectedDuration.value = saved;
+      }
+    } catch (_) {
+      // Keep the Settings default.
+    }
+  }
+
+  /// Persists a chosen duration. A failed write is swallowed:
+  /// remembering the choice is a bonus, never a reason to break
+  /// choosing one.
+  Future<void> _persistDuration(Duration duration) async {
+    try {
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+      await prefs.setInt(typingDurationStorageKey, duration.inSeconds);
+    } catch (_) {
+      // Best effort only.
+    }
   }
 
   /// Parses a custom duration typed as whole seconds. Handles the "Invalid

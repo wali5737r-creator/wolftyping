@@ -130,6 +130,14 @@ class HistoryController extends GetxController {
   /// [HomeController] for why overlapping loads are harmful).
   Future<void>? _loadFuture;
 
+  /// A revision bump that arrived while a load was already in flight.
+  /// Joining the in-flight load silently used to swallow the bump: the
+  /// load published the data it had already read and no second bump
+  /// ever came, so the new row never appeared. A bump recorded here
+  /// runs exactly one extra reload when the in-flight load finishes
+  /// (multiple bumps during one load coalesce into that one reload).
+  bool _reloadRequested = false;
+
   /// Re-check timer while a load timed out (see [_startRecheckTimer]).
   Timer? _recheckTimer;
   int _recheckCount = 0;
@@ -225,9 +233,20 @@ class HistoryController extends GetxController {
     if (Get.isRegistered<DataRefreshService>()) {
       _refreshWorker = ever<int>(
         Get.find<DataRefreshService>().revision,
-        (_) => load(),
+        (_) => requestReload(),
       );
     }
+  }
+
+  /// Reload entry point for revision bumps: if a load is already in
+  /// flight the bump is recorded (see [_reloadRequested]) instead of
+  /// joining silently and being lost; otherwise the reload starts now.
+  void requestReload() {
+    if (_loadFuture != null) {
+      _reloadRequested = true;
+      return;
+    }
+    unawaited(load());
   }
 
   Worker? _refreshWorker;
@@ -272,6 +291,10 @@ class HistoryController extends GetxController {
     _loadFuture = run;
     return run.whenComplete(() {
       if (identical(_loadFuture, run)) _loadFuture = null;
+      if (_reloadRequested) {
+        _reloadRequested = false;
+        unawaited(load());
+      }
     });
   }
 

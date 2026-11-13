@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../typing_test/model/paragraph_difficulty.dart';
 import '../../typing_test/model/typing_durations.dart';
@@ -41,6 +42,15 @@ class PpscDurations {
 /// attempt, and the narrower duration preset list above.
 class PpscTypingController extends GetxController
     implements UrduStyleTypingController {
+  /// On-device key for the last typing duration the user chose — the
+  /// same key the English/Urdu controllers use. Seconds, not minutes.
+  /// A stored value is only restored when it is one of the PPSC
+  /// presets (2 / 5 / 10 minutes), so e.g. a 30-second English
+  /// choice never leaks into a PPSC test. Mirrors the mock-duration
+  /// pattern in MockTestController.
+  static const String typingDurationStorageKey =
+      'wolftyping_typing_duration_seconds';
+
   @override
   final FocusNode focusNode = FocusNode();
 
@@ -67,6 +77,9 @@ class PpscTypingController extends GetxController
       SettingsController.currentOrNull?.defaultDurationSeconds,
       allowed: PpscDurations.presets,
     );
+    // A duration the user chose on a previous visit wins over the
+    // Settings default (restored async; see _restoreDuration).
+    unawaited(_restoreDuration());
     selectedParagraph.value =
         UrduParagraphProvider.randomOf(selectedDifficulty.value);
   }
@@ -75,6 +88,36 @@ class PpscTypingController extends GetxController
   void selectDuration(Duration duration) {
     durationError.value = null;
     selectedDuration.value = duration;
+    unawaited(_persistDuration(duration));
+  }
+
+  /// Restores the last chosen duration. A missing value, or one that
+  /// is not a PPSC preset, leaves the Settings default untouched, and
+  /// a storage failure never blocks the setup page.
+  Future<void> _restoreDuration() async {
+    try {
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+      final int? seconds = prefs.getInt(typingDurationStorageKey);
+      if (seconds == null) return;
+      final Duration saved = Duration(seconds: seconds);
+      if (PpscDurations.presets.contains(saved)) {
+        selectedDuration.value = saved;
+      }
+    } catch (_) {
+      // Keep the Settings default.
+    }
+  }
+
+  /// Persists a chosen duration. A failed write is swallowed:
+  /// remembering the choice is a bonus, never a reason to break
+  /// choosing one.
+  Future<void> _persistDuration(Duration duration) async {
+    try {
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+      await prefs.setInt(typingDurationStorageKey, duration.inSeconds);
+    } catch (_) {
+      // Best effort only.
+    }
   }
 
   @override

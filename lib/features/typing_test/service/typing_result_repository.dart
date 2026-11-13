@@ -84,11 +84,18 @@ class TypingResultRepository {
           ]);
         });
       }
+      // The mistakes batch above runs inside an implicit transaction,
+      // whose writes drift 2.35.0's web delegate never flushes to
+      // IndexedDB — force that flush now, BEFORE broadcasting, or
+      // other tabs would re-read a file that does not have the mistake
+      // rows yet (and the typing row itself). Same pattern as the
+      // backup restore in history_backup_repository.dart.
+      await _db.flushAfterTransaction();
+
       // Dashboard / Progress / History reload now that this test is stored.
       DataRefreshService.notifyChanged();
-      // The insert above is a non-transaction write, so drift's web
-      // delegate already flushed it to IndexedDB — other tabs can
-      // re-read it as soon as this broadcast reaches them.
+      // The writes above are now flushed to IndexedDB — other tabs can
+      // re-read them as soon as this broadcast reaches them.
       DbChangeBroadcast.notify();
       return true;
     } catch (error) {
