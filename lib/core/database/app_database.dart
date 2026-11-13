@@ -72,6 +72,37 @@ class AppDatabase extends _$AppDatabase {
           await customStatement('PRAGMA foreign_keys = ON');
         },
       );
+
+  /// Flushes pending writes to durable storage after an explicit
+  /// `transaction()`.
+  ///
+  /// Drift 2.35.0's web delegate (`_WasmDelegate`, `lib/wasm.dart`)
+  /// flushes the IndexedDB file system after every write ONLY when
+  /// `isInTransaction` is false — the COMMIT statement itself runs
+  /// while still in the transaction, so writes inside `transaction()`
+  /// are NEVER flushed: they sit in this tab's memory until the next
+  /// non-transaction write or a `close()`, and nothing in the app
+  /// closes the database on tab close. A cross-tab broadcast posted
+  /// before the flush would send other tabs to re-read an IndexedDB
+  /// file that does not have the rows yet, so every `transaction()`
+  /// writer must call this before broadcasting.
+  ///
+  /// The no-op update (`WHERE 0` touches no rows) still runs through
+  /// the delegate outside any transaction, which flushes the whole
+  /// file system — including the transaction's writes — to IndexedDB.
+  /// On native platforms it is a harmless no-op update. Never throws
+  /// into the caller: the transaction already committed in this tab's
+  /// memory, so a flush failure must not report the whole operation
+  /// as failed — the only loss is durability/cross-tab visibility,
+  /// which is the pre-existing behaviour.
+  Future<void> flushAfterTransaction() async {
+    try {
+      await customUpdate('UPDATE users SET updated_at = updated_at WHERE 0');
+    } catch (error) {
+      // ignore: avoid_print
+      print('AppDatabase: flush after transaction failed — $error');
+    }
+  }
 }
 
 /// The database connection is platform-specific and lives in

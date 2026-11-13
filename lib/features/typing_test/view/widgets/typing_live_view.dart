@@ -187,7 +187,8 @@ class _Controls extends StatelessWidget {
     // timer kept running while the confirmation dialog was open, and a
     // second tap could dismiss the dialog on its barrier without
     // stopping anything — so Stop appeared to do nothing. Pausing first
-    // makes the first tap always stop the timer; Cancel resumes it.
+    // makes the first tap always stop the timer; Cancel leaves it
+    // paused until the user taps Resume.
     final bool wasPaused =
         controller.snapshot.value.status == TypingTestStatus.paused;
     if (!wasPaused) controller.togglePauseResume();
@@ -214,9 +215,13 @@ class _Controls extends StatelessWidget {
     if (confirmed == true) {
       controller.stopTest();
     } else {
-      // Cancelled: resume only if the test was running when Stop was
-      // tapped (an already-paused test stays paused).
-      if (!wasPaused) controller.togglePauseResume();
+      // Cancelled: stay paused; the user taps Resume to continue.
+      // (Deliberate behaviour change: Cancel used to auto-resume a
+      // running test, so the button then read "Pause" — a user reaching
+      // for "Resume" tapped it and PAUSED the test they thought they
+      // were resuming, which looked exactly like "Resume needs two
+      // taps". The timer is already frozen while the dialog is open,
+      // so staying paused loses nothing.)
       controller.focusNode.requestFocus();
     }
   }

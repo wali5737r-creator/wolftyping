@@ -3,6 +3,7 @@ import 'package:get/get.dart' hide Value;
 
 import '../../../core/database/app_database.dart';
 import '../../../core/services/data_refresh_service.dart';
+import '../../../core/services/db_change_broadcast.dart';
 import '../model/mistake_record.dart';
 import '../model/typing_language.dart';
 import '../model/typing_snapshot.dart';
@@ -85,6 +86,10 @@ class TypingResultRepository {
       }
       // Dashboard / Progress / History reload now that this test is stored.
       DataRefreshService.notifyChanged();
+      // The insert above is a non-transaction write, so drift's web
+      // delegate already flushed it to IndexedDB — other tabs can
+      // re-read it as soon as this broadcast reaches them.
+      DbChangeBroadcast.notify();
       return true;
     } catch (error) {
       // ignore: avoid_print

@@ -2,6 +2,7 @@ import 'package:drift/drift.dart';
 import 'package:get/get.dart' hide Value;
 
 import '../../../core/database/app_database.dart';
+import '../../../core/services/db_change_broadcast.dart';
 import '../../history/model/typing_test_record.dart';
 import '../../typing_test/model/typing_language.dart';
 import '../../typing_test/model/typing_test_kind.dart';
@@ -91,6 +92,7 @@ class ProfileRepository {
     await (_db.update(_db.users)..where((u) => u.id.equals(id))).write(
       UsersCompanion(name: Value(name.trim()), updatedAt: Value(DateTime.now())),
     );
+    DbChangeBroadcast.notify();
   }
 
   /// On-device best scores: the user's own top completed tests, ranked

@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 
 import '../../../core/database/app_database.dart';
 import '../../../core/services/data_refresh_service.dart';
+import '../../../core/services/db_change_broadcast.dart';
 import '../../typing_test/model/typing_language.dart';
 import '../../typing_test/model/typing_test_kind.dart';
 import '../model/typing_test_record.dart';
@@ -61,18 +62,29 @@ class HistoryRepository {
     ];
   }
 
-  /// Deletes a test AND its mistake rows together, in one transaction, so
-  /// no orphan `Mistakes` rows are ever left behind (spec section 6) —
-  /// `Mistakes.testId` has a foreign key to `TypingTests`, so with
-  /// foreign keys enforced the mistakes must go first.
+  /// Deletes a test AND its mistake rows together. `Mistakes.testId`
+  /// has a foreign key to `TypingTests`, so with foreign keys enforced
+  /// the mistakes must go first (spec section 6).
+  ///
+  /// The two deletes run SEQUENTIALLY, deliberately NOT inside
+  /// `transaction()`: drift 2.35.0's web delegate (`_WasmDelegate`)
+  /// flushes the IndexedDB file system after a write only when
+  /// `isInTransaction` is false, so a delete inside a transaction
+  /// sits unflushed in this tab's memory until the next
+  /// non-transaction write or a `close()` — and nothing in the app
+  /// closes the database on tab close. Sequential deletes each flush,
+  /// so the row is really gone from IndexedDB (and visible as gone to
+  /// other tabs) the moment this returns. The failure window this
+  /// opens is narrow and benign: if the second delete threw, the
+  /// mistakes would already be gone while the test remained — no
+  /// orphan rows, just a test with no mistake lines.
   Future<void> deleteTest(int testId) async {
-    await _db.transaction(() async {
-      await (_db.delete(_db.mistakes)..where((m) => m.testId.equals(testId)))
-          .go();
-      await (_db.delete(_db.typingTests)..where((t) => t.id.equals(testId)))
-          .go();
-    });
+    await (_db.delete(_db.mistakes)..where((m) => m.testId.equals(testId)))
+        .go();
+    await (_db.delete(_db.typingTests)..where((t) => t.id.equals(testId)))
+        .go();
     // Dashboard and Progress recalculate from the remaining tests.
     DataRefreshService.notifyChanged();
+    DbChangeBroadcast.notify();
   }
 }

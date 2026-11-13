@@ -4,6 +4,7 @@ import 'package:get/get.dart' hide Value;
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/database/app_database.dart';
+import '../../../core/services/db_change_broadcast.dart';
 import '../model/app_settings.dart';
 
 class SettingsRepository {
@@ -67,13 +68,20 @@ class SettingsRepository {
     await prefs.setBool('${_prefix}allow_backspace', s.allowBackspace);
     await prefs.setBool('${_prefix}urdu_rtl', s.urduRtl);
     await prefs.setString('${_prefix}difficulty', s.practiceDifficulty);
+    // Settings live in Drift too (and resetSettings() goes through
+    // here), so other tabs must re-read them as well.
+    DbChangeBroadcast.notify();
   }
 
   Future<void> clearHistory() async {
-    await _db.transaction(() async {
-      await _db.delete(_db.mistakes).go();
-      await _db.delete(_db.typingTests).go();
-    });
+    // Sequential deletes, deliberately NOT inside transaction(): drift
+    // 2.35.0's web delegate never flushes writes made inside
+    // transaction() to IndexedDB (see HistoryRepository.deleteTest),
+    // so a transactional clear could sit unflushed in this tab's
+    // memory while other tabs kept showing the cleared tests.
+    await _db.delete(_db.mistakes).go();
+    await _db.delete(_db.typingTests).go();
+    DbChangeBroadcast.notify();
   }
 
   Future<void> resetSettings() async {

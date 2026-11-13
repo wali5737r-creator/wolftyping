@@ -2,6 +2,7 @@ import 'package:drift/drift.dart';
 import 'package:get/get.dart' hide Value;
 
 import '../../../core/database/app_database.dart';
+import '../../../core/services/db_change_broadcast.dart';
 import '../../typing_test/model/typing_language.dart';
 import '../model/lesson_definition.dart';
 import '../model/lesson_with_progress.dart';
@@ -189,5 +190,7 @@ class LessonRepository {
             ..where((t) => t.id.equals(existing.id)))
           .write(companion);
     }
+    // Lesson progress is Drift data too: other tabs re-read it.
+    DbChangeBroadcast.notify();
   }
 }

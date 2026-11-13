@@ -7,6 +7,7 @@ import 'core/database/app_database.dart';
 import 'core/database/database_recovery.dart';
 import 'core/routes/app_pages.dart';
 import 'core/services/data_refresh_service.dart';
+import 'core/services/db_change_broadcast.dart';
 import 'core/services/theme_service.dart';
 import 'core/theme/app_theme.dart';
 import 'features/settings/controller/settings_controller.dart';
@@ -25,6 +26,16 @@ Future<void> main() async {
   // App-wide, permanent: the stats-changed signal and the settings.
   // Typing controllers, Dashboard and Settings all share these instances.
   Get.put<DataRefreshService>(DataRefreshService(), permanent: true);
+
+  // Cross-tab database changes (Fix 1): on web each tab holds its own
+  // private in-memory snapshot of the SQLite file, so a test saved in
+  // another tab is invisible here until this tab re-opens the
+  // database. When a message arrives, abandon this tab's stale
+  // instance for a fresh one and reload the controllers from it.
+  // No-op on non-web platforms (see DbChangeBroadcast).
+  DbChangeBroadcast.listen(() {
+    DatabaseRecovery().handleExternalChange();
+  });
 
   // Settings are loaded from SQLite (Drift/WASM: worker + OPFS/IndexedDB
   // on web), which can take seconds on a cold load. Do NOT await that

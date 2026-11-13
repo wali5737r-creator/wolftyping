@@ -3,6 +3,7 @@ import 'package:get/get.dart' hide Value;
 
 import '../../../core/database/app_database.dart';
 import '../../../core/services/data_refresh_service.dart';
+import '../../../core/services/db_change_broadcast.dart';
 import '../../progress/service/progress_repository.dart';
 import 'history_backup.dart';
 
@@ -251,8 +252,15 @@ class HistoryBackupRepository {
       }
     });
 
+    // The restore ran inside transaction(), whose writes drift 2.35.0's
+    // web delegate never flushes to IndexedDB — force that flush now,
+    // BEFORE broadcasting, or other tabs would re-read a file that
+    // does not have the restored rows yet.
+    await _db.flushAfterTransaction();
+
     // History, Dashboard and Progress recalculate from the new rows.
     DataRefreshService.notifyChanged();
+    DbChangeBroadcast.notify();
     return HistoryImportResult(
       importedTests: importedTests,
       skippedDuplicates: skippedDuplicates,

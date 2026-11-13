@@ -75,8 +75,9 @@ void main() {
     expect(controller.snapshot.value.remaining, lessThan(pausedAt));
   });
 
-  testWidgets('opening the Stop dialog freezes the timer; Cancel resumes it',
-      (tester) async {
+  testWidgets(
+      'opening the Stop dialog freezes the timer; Cancel stays paused '
+      'and Resume resumes on first tap', (tester) async {
     final TypingController controller = await pumpRunningTest(tester);
 
     await tester.pump(const Duration(seconds: 5));
@@ -92,15 +93,30 @@ void main() {
     await tester.pump(const Duration(seconds: 5));
     expect(controller.snapshot.value.remaining, beforeDialog);
 
+    // Deliberate behaviour change: Cancel does NOT auto-resume any
+    // more. The old auto-resume made the button read "Pause" after
+    // Cancel, so a user reaching for "Resume" tapped it and PAUSED
+    // the test they thought they were resuming — the exact "Resume
+    // needs two taps" experience. Now Cancel stays paused and the
+    // button reads "Resume".
     await tester.tap(find.widgetWithText(TextButton, 'Cancel'));
     await tester.pumpAndSettle();
+    expect(controller.snapshot.value.status, TypingTestStatus.paused);
+    expect(find.text('Resume'), findsOneWidget);
+    await tester.pump(const Duration(seconds: 5));
+    expect(controller.snapshot.value.remaining, beforeDialog);
+
+    // One tap on Resume restarts the clock immediately.
+    await tester.tap(find.text('Resume'));
+    await tester.pump();
     expect(controller.snapshot.value.status, TypingTestStatus.running);
     await tester.pump(const Duration(seconds: 3));
     expect(controller.snapshot.value.remaining, lessThan(beforeDialog));
   });
 
-  testWidgets('Urdu test: opening the Stop dialog freezes the timer',
-      (tester) async {
+  testWidgets(
+      'Urdu test: opening the Stop dialog freezes the timer; Cancel '
+      'stays paused and Resume resumes on first tap', (tester) async {
     tester.view.physicalSize = const Size(1400, 1600);
     tester.view.devicePixelRatio = 1.0;
     addTearDown(tester.view.resetPhysicalSize);
@@ -129,6 +145,21 @@ void main() {
     expect(find.text('Stop test?'), findsOneWidget);
     await tester.pump(const Duration(seconds: 5));
     expect(controller.snapshot.value.remaining, beforeDialog);
+
+    // Same stays-paused behaviour as the English screen: Cancel does
+    // not auto-resume, and one tap on Resume restarts the clock.
+    await tester.tap(find.widgetWithText(TextButton, 'Cancel'));
+    await tester.pumpAndSettle();
+    expect(controller.snapshot.value.status, TypingTestStatus.paused);
+    expect(find.text('Resume'), findsOneWidget);
+    await tester.pump(const Duration(seconds: 5));
+    expect(controller.snapshot.value.remaining, beforeDialog);
+
+    await tester.tap(find.text('Resume'));
+    await tester.pump();
+    expect(controller.snapshot.value.status, TypingTestStatus.running);
+    await tester.pump(const Duration(seconds: 3));
+    expect(controller.snapshot.value.remaining, lessThan(beforeDialog));
   });
 
   testWidgets('Stop (confirmed in dialog) returns to setup and stops time',

@@ -2,6 +2,7 @@ import 'package:drift/drift.dart';
 import 'package:get/get.dart' hide Value;
 
 import '../../../core/database/app_database.dart';
+import '../../../core/services/db_change_broadcast.dart';
 import '../../typing_test/model/paragraph_difficulty.dart';
 import '../../typing_test/model/typing_language.dart';
 import '../../typing_test/service/english_paragraph_provider.dart';
@@ -62,6 +63,7 @@ class ParagraphRepository {
             isCustom: const Value(true),
           ),
         );
+    DbChangeBroadcast.notify();
   }
 
   /// Updates a custom paragraph. The `isCustom = true` guard in the WHERE
@@ -88,12 +90,14 @@ class ParagraphRepository {
         updatedAt: Value(DateTime.now()),
       ),
     );
+    DbChangeBroadcast.notify();
   }
 
   Future<void> delete(int id) async {
     await (_db.delete(_db.paragraphs)
           ..where((t) => t.id.equals(id) & t.isCustom.equals(true)))
         .go();
+    DbChangeBroadcast.notify();
   }
 
   List<CustomParagraph> _builtIns() {

@@ -239,6 +239,27 @@ class DatabaseRecovery {
     unawaited(_closeAbandoned(abandoned));
   }
 
+  /// Cross-tab change: another tab wrote to the shared IndexedDB file
+  /// and posted on the `DbChangeBroadcast` channel.
+  ///
+  /// This tab's in-memory snapshot predates that write (each tab
+  /// loads its own copy at open and never re-reads), so the current
+  /// instance is abandoned for a fresh one — the same replacement
+  /// [ensureHealthy] uses, reusing its factory and bounded close —
+  /// and controllers reload from the re-opened instance, whose
+  /// `_readFiles()` then includes the other tab's rows. No probe:
+  /// the database is not suspected of being hung, only stale, and a
+  /// probe would delay the reload by its whole budget.
+  ///
+  /// A no-op when no database is registered yet (e.g. a message
+  /// arriving before boot finished registering it).
+  void handleExternalChange() {
+    if (!Get.isRegistered<AppDatabase>()) return;
+    final AppDatabase current = Get.find<AppDatabase>();
+    _replaceWithFresh(current);
+    _notifyRecovered();
+  }
+
   Future<void> _closeAbandoned(AppDatabase abandoned) async {
     try {
       await _closeInstance(abandoned);
