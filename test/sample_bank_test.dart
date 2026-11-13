@@ -87,8 +87,9 @@ void main() {
     });
   });
 
-  group('sample bank explanations (Phase 5: English, Mathematics, '
-      'Everyday Science, Pakistan Studies and Islamiat)', () {
+  group('sample bank explanations (Phase 6: English, Mathematics, '
+      'Everyday Science, Pakistan Studies, Islamiat and General '
+      'Knowledge)', () {
     test('every English question has a verified explanation', () {
       final english = sampleQuestions
           .where((q) => q.subject == MockSubject.english)
@@ -174,19 +175,52 @@ void main() {
       }
     });
 
-    test('no other subject has explanations yet', () {
-      // Only General Knowledge is still without explanations.
-      // Measured count is 100 real GK questions: a naive text search
-      // finds 101 "gk-" ids because the file's doc comment at the top
-      // shows an example entry with id 'gk-4'; it is not a question.
-      // No GK question is deleted or renumbered.
+    test('every General Knowledge question has a verified explanation',
+        () {
       final gk = sampleQuestions
           .where((q) => q.subject == MockSubject.generalKnowledge)
           .toList();
       expect(gk.length, 100);
-      final explained =
-          gk.where((q) => q.explanation != null).length;
-      expect(explained, 0, reason: MockSubject.generalKnowledge.label);
+      for (final q in gk) {
+        expect(q.explanation, isNotNull, reason: q.id);
+        expect(q.explanation!.trim(), isNotEmpty, reason: q.id);
+        expect(q.explanation, q.explanation!.trim(), reason: q.id);
+        // One short sentence, not a paragraph.
+        expect(q.explanation!.length, lessThanOrEqualTo(200),
+            reason: q.id);
+      }
+    });
+
+    test('all six subjects are covered; the only question without an '
+        'explanation is the one with a flagged wrong key', () {
+      // Every subject now has explanations: English, Mathematics,
+      // Everyday Science, Pakistan Studies, Islamiat and General
+      // Knowledge. The single known gap is sci-new-55, left without
+      // an explanation because its answer key is flagged wrong (it
+      // says fossil fuels formed from "Rocks only") and the key fix
+      // is a separate decision.
+      for (final subject in MockSubject.values) {
+        final questions = sampleQuestions
+            .where((q) => q.subject == subject)
+            .toList();
+        expect(questions.length, 100, reason: subject.label);
+        final explained =
+            questions.where((q) => q.explanation != null).length;
+        if (subject == MockSubject.everydayScience) {
+          expect(explained, 99, reason: subject.label);
+        } else {
+          expect(explained, 100, reason: subject.label);
+        }
+      }
+      final unexplained = sampleQuestions
+          .where((q) => q.explanation == null)
+          .map((q) => q.id)
+          .toList();
+      expect(unexplained, ['sci-new-55']);
+      expect(
+        sampleQuestions.where((q) => q.explanation != null).length,
+        599,
+      );
     });
 
     testWidgets('end review shows an English explanation and nothing '
@@ -370,6 +404,46 @@ void main() {
         findsOneWidget,
       );
       // Only the Islamiat question carries an explanation.
+      expect(find.textContaining('Explanation:'), findsOneWidget);
+      controller.onClose();
+    });
+
+    testWidgets('end review shows a General Knowledge explanation and '
+        'nothing for the question with the flagged wrong key',
+        (tester) async {
+      await tester.pumpWidget(
+        GetMaterialApp(
+          theme: AppTheme.light,
+          initialRoute: AppRoutes.ppscMockTest,
+          getPages: AppPages.pages,
+        ),
+      );
+      await tester.pumpAndSettle();
+      final controller = Get.find<MockTestController>();
+      final gk = sampleQuestions.firstWhere(
+          (q) => q.subject == MockSubject.generalKnowledge);
+      // sci-new-55 carries no explanation because its answer key is
+      // flagged wrong; the review must show nothing for it.
+      final flagged = sampleQuestions
+          .firstWhere((q) => q.id == 'sci-new-55');
+      expect(flagged.explanation, isNull);
+      final engine = MockTestEngine(questions: [gk, flagged]);
+      engine.answer(gk.id, gk.correctIndex);
+      engine.answer(flagged.id, flagged.correctIndex);
+      controller.selectKind(MockTestKind.full);
+      controller.result.value = engine.result();
+      controller.phase.value = MockTestPhase.result;
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(
+          find.text('Q1. ${gk.question}'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Q1. ${gk.question}'));
+      await tester.pumpAndSettle();
+      expect(
+        find.text('Explanation: ${gk.explanation!}'),
+        findsOneWidget,
+      );
+      // Only the General Knowledge question carries an explanation.
       expect(find.textContaining('Explanation:'), findsOneWidget);
       controller.onClose();
     });

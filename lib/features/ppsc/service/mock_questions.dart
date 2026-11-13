@@ -941,6 +941,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Karachi', 'Lahore', 'Islamabad', 'Peshawar'],
     correctIndex: 2,
     topic: 'Capitals',
+    explanation: 'Islamabad has been Pakistan\'s capital since 1967, when it replaced Karachi as the seat of government.',
   ),
   MockQuestion(
     id: 'gk-2',
@@ -949,6 +950,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['9', '10', '11', '12'],
     correctIndex: 2,
     topic: 'Sports',
+    explanation: 'A cricket side fields eleven players, including the bowler, wicketkeeper and nine fielders.',
   ),
   MockQuestion(
     id: 'gk-3',
@@ -957,6 +959,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Atlantic Ocean', 'Indian Ocean', 'Arctic Ocean', 'Pacific Ocean'],
     correctIndex: 3,
     topic: 'Geography',
+    explanation: 'The Pacific covers about a third of Earth\'s surface, far more than any other ocean.',
   ),
   MockQuestion(
     id: 'gk-new-1',
@@ -965,6 +968,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Seoul', 'Tokyo', 'Beijing', 'Bangkok'],
     correctIndex: 1,
     topic: 'Capitals',
+    explanation: 'Tokyo is Japan\'s capital and largest city, home to its government and the Imperial Palace.',
   ),
   MockQuestion(
     id: 'gk-new-2',
@@ -973,6 +977,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Sydney', 'Melbourne', 'Canberra', 'Perth'],
     correctIndex: 2,
     topic: 'Capitals',
+    explanation: 'Canberra was purpose-built as Australia\'s capital in 1913; Sydney is only its largest city.',
   ),
   MockQuestion(
     id: 'gk-new-3',
@@ -981,6 +986,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Ottawa', 'Toronto', 'Vancouver', 'Montreal'],
     correctIndex: 0,
     topic: 'Capitals',
+    explanation: 'Ottawa, in Ontario, is Canada\'s capital; Toronto is the largest city but not the capital.',
   ),
   MockQuestion(
     id: 'gk-new-4',
@@ -989,6 +995,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Rio de Janeiro', 'Sao Paulo', 'Salvador', 'Brasilia'],
     correctIndex: 3,
     topic: 'Capitals',
+    explanation: 'Brasilia was built inland in 1960 to replace Rio de Janeiro as Brazil\'s capital.',
   ),
   MockQuestion(
     id: 'gk-new-5',
@@ -997,6 +1004,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Alexandria', 'Cairo', 'Giza', 'Luxor'],
     correctIndex: 1,
     topic: 'Capitals',
+    explanation: 'Cairo, on the Nile, is Egypt\'s capital and largest city.',
   ),
   MockQuestion(
     id: 'gk-new-6',
@@ -1005,6 +1013,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Istanbul', 'Izmir', 'Ankara', 'Antalya'],
     correctIndex: 2,
     topic: 'Capitals',
+    explanation: 'Ankara became Turkey\'s capital in 1923; Istanbul is the larger, historic city.',
   ),
   MockQuestion(
     id: 'gk-new-7',
@@ -1013,6 +1022,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Rome', 'Milan', 'Naples', 'Venice'],
     correctIndex: 0,
     topic: 'Capitals',
+    explanation: 'Rome, the historic heart of the Roman Empire, is Italy\'s capital.',
   ),
   MockQuestion(
     id: 'gk-new-8',
@@ -1021,6 +1031,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Barcelona', 'Valencia', 'Seville', 'Madrid'],
     correctIndex: 3,
     topic: 'Capitals',
+    explanation: 'Madrid, in central Spain, is the country\'s capital and seat of its government.',
   ),
   MockQuestion(
     id: 'gk-new-9',
@@ -1029,6 +1040,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Munich', 'Berlin', 'Hamburg', 'Frankfurt'],
     correctIndex: 1,
     topic: 'Capitals',
+    explanation: 'Berlin has been Germany\'s capital since reunification in 1990.',
   ),
   MockQuestion(
     id: 'gk-new-10',
@@ -1037,6 +1049,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Saint Petersburg', 'Kazan', 'Moscow', 'Novosibirsk'],
     correctIndex: 2,
     topic: 'Capitals',
+    explanation: 'Moscow, on the Moskva River, is Russia\'s capital and largest city.',
   ),
   MockQuestion(
     id: 'gk-new-11',
@@ -1045,6 +1058,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Beijing', 'Shanghai', 'Guangzhou', 'Shenzhen'],
     correctIndex: 0,
     topic: 'Capitals',
+    explanation: 'Beijing, in northern China, is the country\'s capital and seat of government.',
   ),
   MockQuestion(
     id: 'gk-new-12',
@@ -1053,6 +1067,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Mumbai', 'Kolkata', 'Chennai', 'New Delhi'],
     correctIndex: 3,
     topic: 'Capitals',
+    explanation: 'New Delhi is India\'s capital; Mumbai is its largest city and financial centre.',
   ),
   MockQuestion(
     id: 'gk-new-13',
@@ -1061,6 +1076,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Isfahan', 'Tehran', 'Mashhad', 'Shiraz'],
     correctIndex: 1,
     topic: 'Capitals',
+    explanation: 'Tehran, at the foot of the Alborz mountains, is Iran\'s capital and largest city.',
   ),
   MockQuestion(
     id: 'gk-new-14',
@@ -1069,6 +1085,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Basra', 'Mosul', 'Baghdad', 'Erbil'],
     correctIndex: 2,
     topic: 'Capitals',
+    explanation: 'Baghdad, on the Tigris, is Iraq\'s capital and largest city.',
   ),
   MockQuestion(
     id: 'gk-new-15',
@@ -1077,6 +1094,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Riyadh', 'Jeddah', 'Mecca', 'Dammam'],
     correctIndex: 0,
     topic: 'Capitals',
+    explanation: 'Riyadh, in central Arabia, is Saudi Arabia\'s capital and largest city.',
   ),
   MockQuestion(
     id: 'gk-new-16',
@@ -1085,6 +1103,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Busan', 'Incheon', 'Daegu', 'Seoul'],
     correctIndex: 3,
     topic: 'Capitals',
+    explanation: 'Seoul, on the Han River, is South Korea\'s capital and largest city.',
   ),
   MockQuestion(
     id: 'gk-new-17',
@@ -1093,6 +1112,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Chiang Mai', 'Bangkok', 'Phuket', 'Pattaya'],
     correctIndex: 1,
     topic: 'Capitals',
+    explanation: 'Bangkok, on the Chao Phraya, is Thailand\'s capital and largest city.',
   ),
   MockQuestion(
     id: 'gk-new-18',
@@ -1101,6 +1121,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Surabaya', 'Bandung', 'Jakarta', 'Medan'],
     correctIndex: 2,
     topic: 'Capitals',
+    explanation: 'Jakarta is still Indonesia\'s capital in 2026; Nusantara is the designated future capital, awaiting a transfer decree.',
   ),
   MockQuestion(
     id: 'gk-new-19',
@@ -1109,6 +1130,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Hanoi', 'Ho Chi Minh City', 'Da Nang', 'Hue'],
     correctIndex: 0,
     topic: 'Capitals',
+    explanation: 'Hanoi, in northern Vietnam, is the capital; Ho Chi Minh City is the largest city.',
   ),
   MockQuestion(
     id: 'gk-new-20',
@@ -1117,6 +1139,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Mombasa', 'Kisumu', 'Nakuru', 'Nairobi'],
     correctIndex: 3,
     topic: 'Capitals',
+    explanation: 'Nairobi, founded as a rail depot in 1899, is Kenya\'s capital and largest city.',
   ),
   MockQuestion(
     id: 'gk-new-21',
@@ -1125,6 +1148,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Euro', 'US dollar', 'Pound sterling', 'Franc'],
     correctIndex: 2,
     topic: 'Currencies',
+    explanation: 'The pound sterling, in use for centuries, is the United Kingdom\'s currency.',
   ),
   MockQuestion(
     id: 'gk-new-22',
@@ -1133,6 +1157,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Yen', 'Won', 'Yuan', 'Ringgit'],
     correctIndex: 0,
     topic: 'Currencies',
+    explanation: 'The yen, introduced in 1871, is Japan\'s official currency.',
   ),
   MockQuestion(
     id: 'gk-new-23',
@@ -1141,6 +1166,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Ruble', 'Yuan', 'Rupee', 'Baht'],
     correctIndex: 1,
     topic: 'Currencies',
+    explanation: 'The yuan (renminbi) is China\'s official currency.',
   ),
   MockQuestion(
     id: 'gk-new-24',
@@ -1149,6 +1175,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Lira', 'Zloty', 'Krone', 'Ruble'],
     correctIndex: 3,
     topic: 'Currencies',
+    explanation: 'The ruble is Russia\'s official currency.',
   ),
   MockQuestion(
     id: 'gk-new-25',
@@ -1157,6 +1184,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Euro', 'Pound sterling', 'Swiss franc', 'Krone'],
     correctIndex: 2,
     topic: 'Currencies',
+    explanation: 'The Swiss franc is Switzerland\'s currency; Switzerland kept it instead of adopting the euro.',
   ),
   MockQuestion(
     id: 'gk-new-26',
@@ -1165,6 +1193,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Spanish', 'Portuguese', 'French', 'Italian'],
     correctIndex: 1,
     topic: 'Languages',
+    explanation: 'Portuguese, brought by colonists from Portugal, is Brazil\'s official language.',
   ),
   MockQuestion(
     id: 'gk-new-27',
@@ -1173,6 +1202,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['New York', 'Geneva', 'Paris', 'Vienna'],
     correctIndex: 0,
     topic: 'Organizations',
+    explanation: 'The United Nations headquarters has stood in New York since 1952.',
   ),
   MockQuestion(
     id: 'gk-new-28',
@@ -1181,6 +1211,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Paris', 'Vienna', 'Rome', 'Geneva'],
     correctIndex: 3,
     topic: 'Organizations',
+    explanation: 'The World Health Organization is based in Geneva, Switzerland.',
   ),
   MockQuestion(
     id: 'gk-new-29',
@@ -1189,6 +1220,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['London', 'Paris', 'Brussels', 'Madrid'],
     correctIndex: 1,
     topic: 'Organizations',
+    explanation: 'UNESCO, the UN\'s education and culture agency, is headquartered in Paris.',
   ),
   MockQuestion(
     id: 'gk-new-30',
@@ -1197,6 +1229,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Bangkok', 'Manila', 'Jakarta', 'Kuala Lumpur'],
     correctIndex: 2,
     topic: 'Organizations',
+    explanation: 'ASEAN\'s secretariat is in Jakarta, Indonesia.',
   ),
   MockQuestion(
     id: 'gk-new-31',
@@ -1205,6 +1238,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Addis Ababa', 'Nairobi', 'Accra', 'Lagos'],
     correctIndex: 0,
     topic: 'Organizations',
+    explanation: 'The African Union is headquartered in Addis Ababa, Ethiopia.',
   ),
   MockQuestion(
     id: 'gk-new-32',
@@ -1213,6 +1247,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Geneva', 'Brussels', 'The Hague', 'Vienna'],
     correctIndex: 3,
     topic: 'Organizations',
+    explanation: 'OPEC, the oil exporters\' group, is headquartered in Vienna, Austria.',
   ),
   MockQuestion(
     id: 'gk-new-33',
@@ -1221,6 +1256,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Africa', 'Asia', 'Europe', 'North America'],
     correctIndex: 1,
     topic: 'Geography',
+    explanation: 'Asia, about 44.6 million sq km, is the largest continent by area.',
   ),
   MockQuestion(
     id: 'gk-new-34',
@@ -1229,6 +1265,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Europe', 'Antarctica', 'Australia', 'South America'],
     correctIndex: 2,
     topic: 'Geography',
+    explanation: 'Australia, the smallest continent, is far smaller in area than Europe.',
   ),
   MockQuestion(
     id: 'gk-new-35',
@@ -1237,6 +1274,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Nile', 'Amazon', 'Yangtze', 'Mississippi'],
     correctIndex: 0,
     topic: 'Geography',
+    explanation: 'The Nile, about 6,650 km long, is conventionally listed as the world\'s longest river.',
   ),
   MockQuestion(
     id: 'gk-new-36',
@@ -1245,6 +1283,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Gobi Desert', 'Kalahari Desert', 'Arabian Desert', 'Sahara Desert'],
     correctIndex: 3,
     topic: 'Geography',
+    explanation: 'The Sahara, covering much of North Africa, is the world\'s largest hot desert.',
   ),
   MockQuestion(
     id: 'gk-new-37',
@@ -1253,6 +1292,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['K2', 'Mount Everest', 'Kangchenjunga', 'Makalu'],
     correctIndex: 1,
     topic: 'Geography',
+    explanation: 'Mount Everest, 8,849 m high, is the world\'s highest peak above sea level.',
   ),
   MockQuestion(
     id: 'gk-new-38',
@@ -1261,6 +1301,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Java Trench', 'Puerto Rico Trench', 'Mariana Trench', 'Tonga Trench'],
     correctIndex: 2,
     topic: 'Geography',
+    explanation: 'The Mariana Trench, about 11 km deep, is the deepest known ocean trench.',
   ),
   MockQuestion(
     id: 'gk-new-39',
@@ -1269,6 +1310,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Greenland', 'Borneo', 'Madagascar', 'Sumatra'],
     correctIndex: 0,
     topic: 'Geography',
+    explanation: 'Greenland, about 2.16 million sq km, is the world\'s largest island.',
   ),
   MockQuestion(
     id: 'gk-new-40',
@@ -1277,6 +1319,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['River Seine', 'River Danube', 'River Rhine', 'River Thames'],
     correctIndex: 3,
     topic: 'Geography',
+    explanation: 'The Thames flows through London on its way to the North Sea.',
   ),
   MockQuestion(
     id: 'gk-new-41',
@@ -1285,6 +1328,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['River Thames', 'River Seine', 'River Loire', 'River Rhone'],
     correctIndex: 1,
     topic: 'Geography',
+    explanation: 'The Seine flows through Paris on its way to the English Channel.',
   ),
   MockQuestion(
     id: 'gk-new-42',
@@ -1293,6 +1337,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Atlantic and Indian Oceans', 'Mediterranean Sea and Red Sea', 'Atlantic and Pacific Oceans', 'Pacific and Indian Oceans'],
     correctIndex: 2,
     topic: 'Geography',
+    explanation: 'The Panama Canal links the Atlantic and Pacific Oceans across Panama.',
   ),
   MockQuestion(
     id: 'gk-new-43',
@@ -1301,6 +1346,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Mediterranean Sea and Red Sea', 'Atlantic and Pacific Oceans', 'Indian and Pacific Oceans', 'Atlantic and Indian Oceans'],
     correctIndex: 0,
     topic: 'Geography',
+    explanation: 'The Suez Canal links the Mediterranean Sea with the Red Sea across Egypt.',
   ),
   MockQuestion(
     id: 'gk-new-44',
@@ -1309,6 +1355,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Lake Superior', 'Lake Victoria', 'Lake Baikal', 'Caspian Sea'],
     correctIndex: 3,
     topic: 'Geography',
+    explanation: 'The Caspian Sea, about 371,000 sq km, is the world\'s largest lake by area.',
   ),
   MockQuestion(
     id: 'gk-new-45',
@@ -1317,6 +1364,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Rocky Mountains', 'Andes', 'Himalayas', 'Alps'],
     correctIndex: 1,
     topic: 'Geography',
+    explanation: 'The Andes run about 7,000 km along South America\'s west coast, the longest continental range.',
   ),
   MockQuestion(
     id: 'gk-new-46',
@@ -1325,6 +1373,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Strait of Bosphorus', 'Strait of Malacca', 'Strait of Gibraltar', 'Strait of Hormuz'],
     correctIndex: 2,
     topic: 'Geography',
+    explanation: 'The Strait of Gibraltar, about 13 km wide, separates Spain from Morocco.',
   ),
   MockQuestion(
     id: 'gk-new-47',
@@ -1333,6 +1382,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Brazil', 'Peru', 'Colombia', 'Venezuela'],
     correctIndex: 0,
     topic: 'Geography',
+    explanation: 'About 60% of the Amazon rainforest lies in Brazil, more than in any other country.',
   ),
   MockQuestion(
     id: 'gk-new-48',
@@ -1341,6 +1391,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['John Adams', 'Thomas Jefferson', 'Abraham Lincoln', 'George Washington'],
     correctIndex: 3,
     topic: 'History',
+    explanation: 'George Washington, unanimously chosen, served as the first US President from 1789.',
   ),
   MockQuestion(
     id: 'gk-new-49',
@@ -1349,6 +1400,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Buzz Aldrin', 'Neil Armstrong', 'Michael Collins', 'Yuri Gagarin'],
     correctIndex: 1,
     topic: 'History',
+    explanation: 'Neil Armstrong stepped onto the Moon first, on 20 July 1969 during Apollo 11.',
   ),
   MockQuestion(
     id: 'gk-new-50',
@@ -1357,6 +1409,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['1979', '1985', '1989', '1991'],
     correctIndex: 2,
     topic: 'History',
+    explanation: 'The Berlin Wall fell on 9 November 1989, opening the way to German reunification.',
   ),
   MockQuestion(
     id: 'gk-new-51',
@@ -1365,6 +1418,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['1945', '1943', '1947', '1950'],
     correctIndex: 0,
     topic: 'History',
+    explanation: 'The Second World War ended in 1945, with Germany surrendering in May and Japan in September.',
   ),
   MockQuestion(
     id: 'gk-new-52',
@@ -1373,6 +1427,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['1918', '1939', '1921', '1914'],
     correctIndex: 3,
     topic: 'History',
+    explanation: 'The First World War began in 1914, after the assassination of Archduke Franz Ferdinand.',
   ),
   MockQuestion(
     id: 'gk-new-53',
@@ -1381,6 +1436,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Romans', 'Ancient Egyptians', 'Ancient Greeks', 'Persians'],
     correctIndex: 1,
     topic: 'History',
+    explanation: 'The pyramids of Giza were built by the ancient Egyptians as royal tombs.',
   ),
   MockQuestion(
     id: 'gk-new-54',
@@ -1389,6 +1445,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Isaac Newton', 'Leonardo da Vinci', 'Johannes Gutenberg', 'Galileo Galilei'],
     correctIndex: 2,
     topic: 'History',
+    explanation: 'Johannes Gutenberg\'s movable-type press, around 1440, made printing books practical in Europe.',
   ),
   MockQuestion(
     id: 'gk-new-55',
@@ -1397,6 +1454,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Wright brothers', 'Alexander Graham Bell', 'Thomas Edison', 'Henry Ford'],
     correctIndex: 0,
     topic: 'History',
+    explanation: 'The Wright brothers made the first sustained powered flight at Kitty Hawk in 1903.',
   ),
   MockQuestion(
     id: 'gk-new-56',
@@ -1405,6 +1463,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Christopher Columbus', 'Ferdinand Magellan', 'James Cook', 'Vasco da Gama'],
     correctIndex: 3,
     topic: 'History',
+    explanation: 'Vasco da Gama reached India by sea in 1498, sailing around the Cape of Good Hope.',
   ),
   MockQuestion(
     id: 'gk-new-57',
@@ -1413,6 +1472,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Attila', 'Genghis Khan', 'Timur', 'Kublai Khan'],
     correctIndex: 1,
     topic: 'History',
+    explanation: 'Genghis Khan united the Mongol tribes and founded the Mongol Empire in 1206.',
   ),
   MockQuestion(
     id: 'gk-new-58',
@@ -1421,6 +1481,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Italy', 'Egypt', 'Greece', 'Turkey'],
     correctIndex: 2,
     topic: 'History',
+    explanation: 'The ancient Olympic Games began at Olympia in Greece in 776 BC.',
   ),
   MockQuestion(
     id: 'gk-new-59',
@@ -1429,6 +1490,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['An iceberg', 'Another ship', 'A rock', 'A floating mine'],
     correctIndex: 0,
     topic: 'History',
+    explanation: 'The Titanic struck an iceberg in the North Atlantic on 14 April 1912 and sank.',
   ),
   MockQuestion(
     id: 'gk-new-60',
@@ -1437,6 +1499,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Australia', 'Brazil', 'India', 'Egypt'],
     correctIndex: 0,
     topic: 'Animals',
+    explanation: 'Kangaroos are native to Australia, where they are a national symbol.',
   ),
   MockQuestion(
     id: 'gk-new-61',
@@ -1445,6 +1508,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Saturn', 'Jupiter', 'Neptune', 'Uranus'],
     correctIndex: 1,
     topic: 'Science',
+    explanation: 'Jupiter, more than twice as massive as all other planets combined, is the largest planet.',
   ),
   MockQuestion(
     id: 'gk-new-62',
@@ -1453,6 +1517,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Venus', 'Earth', 'Mercury', 'Mars'],
     correctIndex: 2,
     topic: 'Science',
+    explanation: 'Mercury, the closest planet to the Sun, is the smallest of the eight planets.',
   ),
   MockQuestion(
     id: 'gk-new-63',
@@ -1461,6 +1526,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Saturn', 'Jupiter', 'Uranus', 'Neptune'],
     correctIndex: 0,
     topic: 'Science',
+    explanation: 'Saturn is famous for its wide, bright rings of ice and rock.',
   ),
   MockQuestion(
     id: 'gk-new-64',
@@ -1469,6 +1535,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Andromeda Galaxy', 'Triangulum Galaxy', 'Whirlpool Galaxy', 'Milky Way Galaxy'],
     correctIndex: 3,
     topic: 'Science',
+    explanation: 'Our solar system lies in the Milky Way Galaxy, a barred spiral galaxy.',
   ),
   MockQuestion(
     id: 'gk-new-65',
@@ -1477,6 +1544,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Explorer 1', 'Sputnik 1', 'Vostok 1', 'Telstar 1'],
     correctIndex: 1,
     topic: 'Science',
+    explanation: 'Sputnik 1, launched by the Soviet Union in 1957, was the first artificial satellite.',
   ),
   MockQuestion(
     id: 'gk-new-66',
@@ -1485,6 +1553,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Neil Armstrong', 'Valentina Tereshkova', 'Yuri Gagarin', 'Alan Shepard'],
     correctIndex: 2,
     topic: 'Science',
+    explanation: 'Yuri Gagarin became the first human in space aboard Vostok 1 in 1961.',
   ),
   MockQuestion(
     id: 'gk-new-67',
@@ -1493,6 +1562,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Au', 'Ag', 'Gd', 'Go'],
     correctIndex: 0,
     topic: 'Science',
+    explanation: 'Au, from the Latin \'aurum\', is the chemical symbol for gold.',
   ),
   MockQuestion(
     id: 'gk-new-68',
@@ -1501,6 +1571,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Ir', 'Pb', 'Sn', 'Fe'],
     correctIndex: 3,
     topic: 'Science',
+    explanation: 'Fe, from the Latin \'ferrum\', is the chemical symbol for iron.',
   ),
   MockQuestion(
     id: 'gk-new-69',
@@ -1509,6 +1580,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Oxygen', 'Carbon dioxide', 'Nitrogen', 'Hydrogen'],
     correctIndex: 1,
     topic: 'Science',
+    explanation: 'Plants take in carbon dioxide from the air and use it in photosynthesis to make food.',
   ),
   MockQuestion(
     id: 'gk-new-70',
@@ -1517,6 +1589,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Oxygen', 'Carbon dioxide', 'Nitrogen', 'Argon'],
     correctIndex: 2,
     topic: 'Science',
+    explanation: 'Nitrogen makes up about 78% of Earth\'s atmosphere, far more than oxygen\'s 21%.',
   ),
   MockQuestion(
     id: 'gk-new-71',
@@ -1525,6 +1598,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Five', 'Six', 'Seven', 'Eight'],
     correctIndex: 2,
     topic: 'Geography',
+    explanation: 'The standard seven-continent model counts Asia, Africa, North and South America, Antarctica, Europe and Australia.',
   ),
   MockQuestion(
     id: 'gk-new-72',
@@ -1533,6 +1607,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['196', '200', '210', '206'],
     correctIndex: 3,
     topic: 'Science',
+    explanation: 'An adult human typically has 206 bones; babies are born with more, which fuse as they grow.',
   ),
   MockQuestion(
     id: 'gk-new-73',
@@ -1541,6 +1616,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['2', '4', '3', '5'],
     correctIndex: 1,
     topic: 'Science',
+    explanation: 'The human heart has four chambers: two atria above and two ventricles below.',
   ),
   MockQuestion(
     id: 'gk-new-74',
@@ -1549,6 +1625,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Iron', 'Lead', 'Mercury', 'Tin'],
     correctIndex: 2,
     topic: 'Science',
+    explanation: 'Mercury is the only metal that stays liquid at ordinary room temperature.',
   ),
   MockQuestion(
     id: 'gk-new-75',
@@ -1557,6 +1634,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Badminton', 'Squash', 'Table tennis', 'Volleyball'],
     correctIndex: 0,
     topic: 'Sports',
+    explanation: 'Badminton is played with a shuttlecock, hit back and forth over a net with rackets.',
   ),
   MockQuestion(
     id: 'gk-new-76',
@@ -1565,6 +1643,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Ice hockey', 'Speed skating', 'Figure skating', 'Curling'],
     correctIndex: 3,
     topic: 'Sports',
+    explanation: 'In curling, players slide granite stones across ice towards a target circle.',
   ),
   MockQuestion(
     id: 'gk-new-77',
@@ -1573,6 +1652,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['William Morgan', 'James Naismith', 'Walter Camp', 'Abner Doubleday'],
     correctIndex: 1,
     topic: 'Sports',
+    explanation: 'James Naismith invented basketball in Springfield, USA, in 1891.',
   ),
   MockQuestion(
     id: 'gk-new-78',
@@ -1581,6 +1661,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['China', 'Persia', 'India', 'Egypt'],
     correctIndex: 2,
     topic: 'Sports',
+    explanation: 'Chess grew from the Indian game chaturanga, played more than a thousand years ago.',
   ),
   MockQuestion(
     id: 'gk-new-79',
@@ -1589,6 +1670,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Five', 'Four', 'Six', 'Seven'],
     correctIndex: 0,
     topic: 'Sports',
+    explanation: 'The Olympic flag has five interlaced rings, one for each inhabited continent.',
   ),
   MockQuestion(
     id: 'gk-new-80',
@@ -1597,6 +1679,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['US Open', 'French Open', 'Australian Open', 'Wimbledon'],
     correctIndex: 3,
     topic: 'Sports',
+    explanation: 'Wimbledon, first played in 1877, is the oldest tennis tournament in the world.',
   ),
   MockQuestion(
     id: 'gk-new-81',
@@ -1605,6 +1688,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Every two years', 'Every four years', 'Every three years', 'Every five years'],
     correctIndex: 1,
     topic: 'Sports',
+    explanation: 'The FIFA World Cup is held every four years, with the first played in 1930.',
   ),
   MockQuestion(
     id: 'gk-new-82',
@@ -1613,6 +1697,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['26 kilometres', '32 kilometres', '42 kilometres', '50 kilometres'],
     correctIndex: 2,
     topic: 'Sports',
+    explanation: 'A marathon is 42.195 km, so the closest option, 42 km, is correct.',
   ),
   MockQuestion(
     id: 'gk-new-83',
@@ -1621,6 +1706,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['William Shakespeare', 'Charles Dickens', 'Jane Austen', 'Mark Twain'],
     correctIndex: 0,
     topic: 'Literature and Arts',
+    explanation: 'William Shakespeare wrote Romeo and Juliet, first performed in the 1590s.',
   ),
   MockQuestion(
     id: 'gk-new-84',
@@ -1629,6 +1715,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['J. R. R. Tolkien', 'C. S. Lewis', 'Roald Dahl', 'J. K. Rowling'],
     correctIndex: 3,
     topic: 'Literature and Arts',
+    explanation: 'J. K. Rowling wrote the seven Harry Potter books, starting in 1997.',
   ),
   MockQuestion(
     id: 'gk-new-85',
@@ -1637,6 +1724,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Raphael', 'Leonardo da Vinci', 'Michelangelo', 'Rembrandt'],
     correctIndex: 1,
     topic: 'Literature and Arts',
+    explanation: 'Leonardo da Vinci painted the Mona Lisa in the early 1500s.',
   ),
   MockQuestion(
     id: 'gk-new-86',
@@ -1645,6 +1733,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Charlotte Bronte', 'Mary Shelley', 'Jane Austen', 'George Eliot'],
     correctIndex: 2,
     topic: 'Literature and Arts',
+    explanation: 'Jane Austen wrote Pride and Prejudice, published in 1813.',
   ),
   MockQuestion(
     id: 'gk-new-87',
@@ -1653,6 +1742,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Oslo', 'Stockholm', 'Geneva', 'Copenhagen'],
     correctIndex: 0,
     topic: 'Awards',
+    explanation: 'The Nobel Peace Prize is awarded in Oslo, Norway, unlike the other Nobels in Stockholm.',
   ),
   MockQuestion(
     id: 'gk-new-88',
@@ -1661,6 +1751,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Poetry', 'Novels', 'Films', 'Journalism'],
     correctIndex: 1,
     topic: 'Awards',
+    explanation: 'The Booker Prize is awarded each year for the best novel written in English.',
   ),
   MockQuestion(
     id: 'gk-new-89',
@@ -1669,6 +1760,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Albert Einstein', 'Isaac Newton', 'Niels Bohr', 'Marie Curie'],
     correctIndex: 3,
     topic: 'Famous Personalities',
+    explanation: 'Marie Curie won Nobel Prizes in Physics (1903) and Chemistry (1911).',
   ),
   MockQuestion(
     id: 'gk-new-90',
@@ -1677,6 +1769,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Wolfgang Amadeus Mozart', 'Johann Sebastian Bach', 'Ludwig van Beethoven', 'George Frideric Handel'],
     correctIndex: 2,
     topic: 'Famous Personalities',
+    explanation: 'Beethoven gradually lost his hearing from his late twenties yet kept composing.',
   ),
   MockQuestion(
     id: 'gk-new-91',
@@ -1685,6 +1778,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Albert Einstein', 'Isaac Newton', 'Niels Bohr', 'Stephen Hawking'],
     correctIndex: 0,
     topic: 'Famous Personalities',
+    explanation: 'Albert Einstein developed the theory of relativity, published in 1905 and 1915.',
   ),
   MockQuestion(
     id: 'gk-new-92',
@@ -1693,6 +1787,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Galileo Galilei', 'Johannes Kepler', 'Charles Darwin', 'Isaac Newton'],
     correctIndex: 3,
     topic: 'Famous Personalities',
+    explanation: 'Isaac Newton described universal gravitation in his Principia of 1687.',
   ),
   MockQuestion(
     id: 'gk-new-93',
@@ -1701,6 +1796,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Louis Pasteur', 'Alexander Fleming', 'Edward Jenner', 'Joseph Lister'],
     correctIndex: 1,
     topic: 'Famous Personalities',
+    explanation: 'Alexander Fleming discovered penicillin in 1928, from a mould that killed bacteria.',
   ),
   MockQuestion(
     id: 'gk-new-94',
@@ -1709,6 +1805,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Thomas Edison', 'Guglielmo Marconi', 'Alexander Graham Bell', 'Samuel Morse'],
     correctIndex: 2,
     topic: 'Famous Personalities',
+    explanation: 'Alexander Graham Bell is credited with inventing the telephone, patented in 1876.',
   ),
   MockQuestion(
     id: 'gk-new-95',
@@ -1717,6 +1814,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Italy', 'France', 'Spain', 'Greece'],
     correctIndex: 0,
     topic: 'Everyday Facts',
+    explanation: 'Pizza, in its modern form with tomato and cheese, comes from Naples, Italy.',
   ),
   MockQuestion(
     id: 'gk-new-96',
@@ -1725,6 +1823,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['India', 'Japan', 'Sri Lanka', 'China'],
     correctIndex: 3,
     topic: 'Everyday Facts',
+    explanation: 'Tea drinking began in China, where tea was brewed thousands of years ago.',
   ),
   MockQuestion(
     id: 'gk-new-97',
@@ -1733,6 +1832,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Kenya', 'Ethiopia', 'Brazil', 'Colombia'],
     correctIndex: 1,
     topic: 'Everyday Facts',
+    explanation: 'Coffee plants grew wild first in Ethiopia, where coffee drinking began.',
   ),
   // ------------------------------------------------------------------
   // Pakistan Studies (100 questions)
