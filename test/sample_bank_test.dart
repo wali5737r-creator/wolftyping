@@ -87,8 +87,8 @@ void main() {
     });
   });
 
-  group('sample bank explanations (Phase 3: English, Mathematics and '
-      'Everyday Science)', () {
+  group('sample bank explanations (Phase 4: English, Mathematics, '
+      'Everyday Science and Pakistan Studies)', () {
     test('every English question has a verified explanation', () {
       final english = sampleQuestions
           .where((q) => q.subject == MockSubject.english)
@@ -143,11 +143,28 @@ void main() {
       }
     });
 
+    test('every Pakistan Studies question has a verified explanation',
+        () {
+      final pakistanStudies = sampleQuestions
+          .where((q) => q.subject == MockSubject.pakistanStudies)
+          .toList();
+      expect(pakistanStudies.length, 100);
+      for (final q in pakistanStudies) {
+        expect(q.explanation, isNotNull, reason: q.id);
+        expect(q.explanation!.trim(), isNotEmpty, reason: q.id);
+        expect(q.explanation, q.explanation!.trim(), reason: q.id);
+        // One short sentence, not a paragraph.
+        expect(q.explanation!.length, lessThanOrEqualTo(200),
+            reason: q.id);
+      }
+    });
+
     test('no other subject has explanations yet', () {
       for (final subject in MockSubject.values) {
         if (subject == MockSubject.english ||
             subject == MockSubject.mathematics ||
-            subject == MockSubject.everydayScience) {
+            subject == MockSubject.everydayScience ||
+            subject == MockSubject.pakistanStudies) {
           continue;
         }
         final explained = sampleQuestions
@@ -266,6 +283,44 @@ void main() {
         findsOneWidget,
       );
       // Only the Science question carries an explanation.
+      expect(find.textContaining('Explanation:'), findsOneWidget);
+      controller.onClose();
+    });
+
+    testWidgets('end review shows a Pakistan Studies explanation and '
+        'nothing for a question without one', (tester) async {
+      await tester.pumpWidget(
+        GetMaterialApp(
+          theme: AppTheme.light,
+          initialRoute: AppRoutes.ppscMockTest,
+          getPages: AppPages.pages,
+        ),
+      );
+      await tester.pumpAndSettle();
+      final controller = Get.find<MockTestController>();
+      final pakistanStudies = sampleQuestions.firstWhere(
+          (q) => q.subject == MockSubject.pakistanStudies);
+      final gk = sampleQuestions.firstWhere(
+          (q) => q.subject == MockSubject.generalKnowledge);
+      final engine =
+          MockTestEngine(questions: [pakistanStudies, gk]);
+      engine.answer(
+          pakistanStudies.id, pakistanStudies.correctIndex);
+      engine.answer(gk.id, gk.correctIndex);
+      controller.selectKind(MockTestKind.full);
+      controller.result.value = engine.result();
+      controller.phase.value = MockTestPhase.result;
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(
+          find.text('Q1. ${pakistanStudies.question}'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Q1. ${pakistanStudies.question}'));
+      await tester.pumpAndSettle();
+      expect(
+        find.text('Explanation: ${pakistanStudies.explanation!}'),
+        findsOneWidget,
+      );
+      // Only the Pakistan Studies question carries an explanation.
       expect(find.textContaining('Explanation:'), findsOneWidget);
       controller.onClose();
     });

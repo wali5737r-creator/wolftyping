@@ -1748,6 +1748,7 @@ const List<MockQuestion> sampleQuestions = [
       '23 March 1940',
     ],
     correctIndex: 0,
+    explanation: 'Pakistan became independent on 14 August 1947, so that date is marked as Independence Day.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1756,6 +1757,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What is the national animal of Pakistan?',
     options: ['Lion', 'Markhor', 'Tiger', 'Deer'],
     correctIndex: 1,
+    explanation: 'The markhor, a wild goat of the northern mountains, is Pakistan\'s national animal.',
     topic: 'National Symbols',
   ),
   MockQuestion(
@@ -1764,6 +1766,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What is the national language of Pakistan?',
     options: ['Punjabi', 'Sindhi', 'English', 'Urdu'],
     correctIndex: 3,
+    explanation: 'Article 251(1) of the Constitution declares Urdu the national language, while English remains an official language.',
     topic: 'National Symbols',
   ),
   MockQuestion(
@@ -1772,6 +1775,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In which year was the Lahore Resolution passed?',
     options: ['1935', '1940', '1946', '1947'],
     correctIndex: 1,
+    explanation: 'The Lahore Resolution was passed on 23 March 1940 at the Muslim League session in Lahore.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1780,6 +1784,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who moved the Lahore Resolution in 1940?',
     options: ['Muhammad Ali Jinnah', 'Liaquat Ali Khan', 'A. K. Fazlul Haq', 'Allama Iqbal'],
     correctIndex: 2,
+    explanation: 'A. K. Fazlul Haq moved the Lahore Resolution at the 1940 session in Lahore.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1788,6 +1793,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who is known as the founder of Pakistan?',
     options: ['Liaquat Ali Khan', 'Allama Iqbal', 'Sir Aga Khan', 'Muhammad Ali Jinnah'],
     correctIndex: 3,
+    explanation: 'Muhammad Ali Jinnah led the Pakistan Movement and is honoured as Quaid-e-Azam, the founder of Pakistan.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1796,6 +1802,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In which year did Allama Iqbal deliver his Allahabad Address?',
     options: ['1930', '1925', '1935', '1940'],
     correctIndex: 0,
+    explanation: 'Iqbal delivered his Allahabad Address in December 1930, setting out his vision of a separate Muslim state.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1804,6 +1811,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who was the first president of the All India Muslim League?',
     options: ['Sir Aga Khan', 'Muhammad Ali Jinnah', 'Nawab Salimullah', 'Allama Iqbal'],
     correctIndex: 0,
+    explanation: 'Aga Khan III was elected the first president of the All India Muslim League when it was founded in 1906.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1812,6 +1820,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In which city was the All India Muslim League founded in 1906?',
     options: ['Karachi', 'Lahore', 'Dhaka', 'Delhi'],
     correctIndex: 2,
+    explanation: 'The All India Muslim League was founded in Dhaka in December 1906.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1820,6 +1829,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Simla Deputation of 1906 met which Viceroy of India?',
     options: ['Lord Curzon', 'Lord Irwin', 'Lord Mountbatten', 'Lord Minto'],
     correctIndex: 3,
+    explanation: 'The Simla Deputation of 1906 met Viceroy Lord Minto to present Muslim demands for separate electorates.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1828,6 +1838,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In which year was the Lucknow Pact signed?',
     options: ['1906', '1911', '1916', '1920'],
     correctIndex: 2,
+    explanation: 'The Lucknow Pact of 1916 brought the Muslim League and the Congress together on a common constitutional scheme.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1836,6 +1847,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In which year did the Cabinet Mission arrive in India?',
     options: ['1942', '1944', '1946', '1947'],
     correctIndex: 2,
+    explanation: 'The Cabinet Mission arrived in India in March 1946 to propose a plan for transferring power.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1844,6 +1856,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who presented the Fourteen Points in 1929?',
     options: ['Muhammad Ali Jinnah', 'Liaquat Ali Khan', 'A. K. Fazlul Haq', 'Chaudhry Rehmat Ali'],
     correctIndex: 0,
+    explanation: 'Jinnah presented his Fourteen Points in March 1929 as the Muslim reply to the Nehru Report.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1852,6 +1865,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In which year did the War of Independence take place?',
     options: ['1845', '1850', '1857', '1865'],
     correctIndex: 2,
+    explanation: 'The War of Independence against British rule broke out in 1857.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1860,6 +1874,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In which year was the partition of Bengal annulled?',
     options: ['1906', '1911', '1916', '1921'],
     correctIndex: 1,
+    explanation: 'The partition of Bengal was annulled in 1911 at the Delhi Durbar, when the capital moved to Delhi.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1868,6 +1883,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Allama Iqbal was born in which city?',
     options: ['Lahore', 'Karachi', 'Rawalpindi', 'Sialkot'],
     correctIndex: 3,
+    explanation: 'Allama Iqbal was born in Sialkot on 9 November 1877.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1876,6 +1892,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Muhammad Ali Jinnah was born in which city?',
     options: ['Karachi', 'Lahore', 'Delhi', 'Bombay'],
     correctIndex: 0,
+    explanation: 'Muhammad Ali Jinnah was born in Karachi on 25 December 1876.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1884,6 +1901,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who was the first Prime Minister of Pakistan?',
     options: ['Liaquat Ali Khan', 'Khawaja Nazimuddin', 'Iskander Mirza', 'Muhammad Ali Bogra'],
     correctIndex: 0,
+    explanation: 'Liaquat Ali Khan became Pakistan\'s first Prime Minister in 1947 and served until 1951.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1892,6 +1910,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who was the first President of Pakistan?',
     options: ['Ayub Khan', 'Liaquat Ali Khan', 'Iskander Mirza', 'Zulfikar Ali Bhutto'],
     correctIndex: 2,
+    explanation: 'Iskander Mirza became the first President of Pakistan when the 1956 Constitution came into force.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1900,6 +1919,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In which year was the Objective Resolution passed by the Constituent Assembly?',
     options: ['1949', '1952', '1956', '1973'],
     correctIndex: 0,
+    explanation: 'The Constituent Assembly passed the Objective Resolution on 12 March 1949.',
     topic: 'Constitution',
   ),
   MockQuestion(
@@ -1908,6 +1928,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In which year was the first Constitution of Pakistan adopted?',
     options: ['1949', '1952', '1954', '1956'],
     correctIndex: 3,
+    explanation: 'Pakistan\'s first Constitution was adopted on 23 March 1956, making the country a republic.',
     topic: 'Constitution',
   ),
   MockQuestion(
@@ -1916,6 +1937,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who became Governor-General of Pakistan after the death of Muhammad Ali Jinnah?',
     options: ['Liaquat Ali Khan', 'Khawaja Nazimuddin', 'Iskander Mirza', 'Ghulam Muhammad'],
     correctIndex: 1,
+    explanation: 'Khawaja Nazimuddin succeeded Jinnah as Governor-General in September 1948.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1924,6 +1946,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Liaquat Ali Khan was assassinated in which city in 1951?',
     options: ['Lahore', 'Karachi', 'Rawalpindi', 'Peshawar'],
     correctIndex: 2,
+    explanation: 'Liaquat Ali Khan was shot at Company Bagh in Rawalpindi on 16 October 1951.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1932,6 +1955,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In which year was the present Constitution of Pakistan adopted?',
     options: ['1973', '1977', '1985', '1990'],
     correctIndex: 0,
+    explanation: 'The present Constitution was passed on 10 April 1973 and came into force on 14 August 1973.',
     topic: 'Constitution',
   ),
   MockQuestion(
@@ -1940,6 +1964,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In which year did East Pakistan become Bangladesh?',
     options: ['1965', '1973', '1977', '1971'],
     correctIndex: 3,
+    explanation: 'East Pakistan became the independent state of Bangladesh on 16 December 1971.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1948,6 +1973,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Round Table Conferences of the early 1930s were held in which city?',
     options: ['Delhi', 'Karachi', 'Simla', 'London'],
     correctIndex: 3,
+    explanation: 'The Round Table Conferences of 1930-32 were held in London to discuss India\'s constitutional future.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1956,6 +1982,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In which year was the Nehru Report presented?',
     options: ['1925', '1927', '1928', '1930'],
     correctIndex: 2,
+    explanation: 'The Nehru Report, the Congress reply to the Simon Commission, was presented in 1928.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1964,6 +1991,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The resolution passed on 23 March 1940 is commonly known as which resolution?',
     options: ['Delhi Resolution', 'Pakistan Resolution', 'Lucknow Pact', 'Objective Resolution'],
     correctIndex: 1,
+    explanation: 'The 23 March 1940 resolution is commonly called the Pakistan Resolution, though it was passed as the Lahore Resolution.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1972,6 +2000,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In which year did Muhammad Ali Jinnah join the All India Muslim League?',
     options: ['1906', '1910', '1913', '1920'],
     correctIndex: 2,
+    explanation: 'Jinnah joined the All India Muslim League in 1913, after earlier working with the Congress.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1980,6 +2009,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In which year did the Simla Deputation meet the Viceroy?',
     options: ['1906', '1911', '1916', '1921'],
     correctIndex: 0,
+    explanation: 'The Simla Deputation met the Viceroy on 1 October 1906.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1988,6 +2018,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Sir Syed Ahmed Khan founded the Muhammadan Anglo-Oriental College in which year?',
     options: ['1865', '1875', '1885', '1906'],
     correctIndex: 1,
+    explanation: 'Sir Syed founded the institution as Madrasatul Uloom in 1875; it later became the Muhammadan Anglo-Oriental College.',
     topic: 'History',
   ),
   MockQuestion(
@@ -1996,6 +2027,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who led the Aligarh Movement for Muslim education in British India?',
     options: ['Allama Iqbal', 'Maulana Abul Kalam Azad', 'Liaquat Ali Khan', 'Sir Syed Ahmed Khan'],
     correctIndex: 3,
+    explanation: 'Sir Syed Ahmed Khan led the Aligarh Movement, which promoted modern education among Muslims.',
     topic: 'History',
   ),
   MockQuestion(
@@ -2004,6 +2036,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Islamabad is situated at the foot of which hills?',
     options: ['Kirthar Hills', 'Margalla Hills', 'Salt Range', 'Sulaiman Hills'],
     correctIndex: 1,
+    explanation: 'Islamabad lies at the foot of the Margalla Hills, on the edge of the Potohar Plateau.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2012,6 +2045,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which is the largest province of Pakistan by area?',
     options: ['Balochistan', 'Punjab', 'Sindh', 'Khyber Pakhtunkhwa'],
     correctIndex: 0,
+    explanation: 'Balochistan covers about 347,190 square kilometres, making it Pakistan\'s largest province by area.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2020,6 +2054,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Among the four provinces, which is the smallest by area?',
     options: ['Khyber Pakhtunkhwa', 'Sindh', 'Punjab', 'Balochistan'],
     correctIndex: 0,
+    explanation: 'After the 2018 FATA merger, Khyber Pakhtunkhwa covers about 101,741 square kilometres, the smallest of the four provinces.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2028,6 +2063,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which is the most populous province of Pakistan?',
     options: ['Sindh', 'Balochistan', 'Khyber Pakhtunkhwa', 'Punjab'],
     correctIndex: 3,
+    explanation: 'Punjab is the most populous province, with about 127.7 million people in the 2023 census.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2036,6 +2072,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What is the capital of Punjab province?',
     options: ['Lahore', 'Multan', 'Faisalabad', 'Rawalpindi'],
     correctIndex: 0,
+    explanation: 'Lahore is the capital of Punjab province.',
     topic: 'Provinces and Cities',
   ),
   MockQuestion(
@@ -2044,6 +2081,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What is the capital of Sindh province?',
     options: ['Hyderabad', 'Karachi', 'Sukkur', 'Larkana'],
     correctIndex: 1,
+    explanation: 'Karachi is the capital of Sindh province.',
     topic: 'Provinces and Cities',
   ),
   MockQuestion(
@@ -2052,6 +2090,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What is the capital of Balochistan province?',
     options: ['Gwadar', 'Turbat', 'Quetta', 'Sibi'],
     correctIndex: 2,
+    explanation: 'Quetta is the capital of Balochistan province.',
     topic: 'Provinces and Cities',
   ),
   MockQuestion(
@@ -2060,6 +2099,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What is the capital of Khyber Pakhtunkhwa province?',
     options: ['Peshawar', 'Abbottabad', 'Mardan', 'Swat'],
     correctIndex: 0,
+    explanation: 'Peshawar is the capital of Khyber Pakhtunkhwa province.',
     topic: 'Provinces and Cities',
   ),
   MockQuestion(
@@ -2068,6 +2108,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What is the capital of Gilgit-Baltistan?',
     options: ['Skardu', 'Hunza', 'Chitral', 'Gilgit'],
     correctIndex: 3,
+    explanation: 'Gilgit is the capital of Gilgit-Baltistan.',
     topic: 'Provinces and Cities',
   ),
   MockQuestion(
@@ -2076,6 +2117,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'K2, the highest peak of Pakistan, is located in which mountain range?',
     options: ['Himalayas', 'Hindu Kush', 'Sulaiman', 'Karakoram'],
     correctIndex: 3,
+    explanation: 'K2 stands in the Karakoram range, on the Pakistan-China border.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2084,6 +2126,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which is the highest mountain peak of Pakistan?',
     options: ['Nanga Parbat', 'Tirich Mir', 'K2', 'Rakaposhi'],
     correctIndex: 2,
+    explanation: 'K2, at 8,611 metres, is Pakistan\'s highest peak and the world\'s second highest.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2092,6 +2135,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Thar Desert is located mainly in which province?',
     options: ['Sindh', 'Punjab', 'Balochistan', 'Khyber Pakhtunkhwa'],
     correctIndex: 0,
+    explanation: 'The Thar Desert lies mainly in Sindh, in the districts of Tharparkar and Umerkot.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2100,6 +2144,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Thal Desert is located mainly in which province?',
     options: ['Sindh', 'Punjab', 'Balochistan', 'Khyber Pakhtunkhwa'],
     correctIndex: 1,
+    explanation: 'The Thal Desert lies mainly in Punjab, between the Indus and the Jhelum-Chenab rivers.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2108,6 +2153,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Kharan Desert is located in which province?',
     options: ['Punjab', 'Sindh', 'Khyber Pakhtunkhwa', 'Balochistan'],
     correctIndex: 3,
+    explanation: 'The Kharan Desert lies in Balochistan, in the Kharan district.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2116,6 +2162,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which is the longest river of Pakistan?',
     options: ['Jhelum', 'Ravi', 'Indus', 'Chenab'],
     correctIndex: 2,
+    explanation: 'The Indus, about 3,180 kilometres long, is the longest river of Pakistan.',
     topic: 'Rivers and Dams',
   ),
   MockQuestion(
@@ -2124,6 +2171,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which river flows through the city of Lahore?',
     options: ['Ravi', 'Indus', 'Chenab', 'Jhelum'],
     correctIndex: 0,
+    explanation: 'The Ravi flows past Lahore, which stands on its eastern bank.',
     topic: 'Rivers and Dams',
   ),
   MockQuestion(
@@ -2132,6 +2180,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Indus River rises in which region?',
     options: ['Afghanistan', 'Tibet', 'Kashmir', 'Iran'],
     correctIndex: 1,
+    explanation: 'The Indus rises in Tibet, near Mount Kailash and Lake Mansarovar.',
     topic: 'Rivers and Dams',
   ),
   MockQuestion(
@@ -2140,6 +2189,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which river flows through the Peshawar valley?',
     options: ['Indus', 'Swat', 'Jhelum', 'Kabul'],
     correctIndex: 3,
+    explanation: 'The Kabul River flows through the Peshawar valley before joining the Indus.',
     topic: 'Rivers and Dams',
   ),
   MockQuestion(
@@ -2148,6 +2198,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which city has the largest seaport of Pakistan?',
     options: ['Karachi', 'Gwadar', 'Pasni', 'Keti Bandar'],
     correctIndex: 0,
+    explanation: 'Karachi Port is Pakistan\'s largest and busiest seaport.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2156,6 +2207,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Gwadar port is located in which province?',
     options: ['Sindh', 'Punjab', 'Balochistan', 'Khyber Pakhtunkhwa'],
     correctIndex: 2,
+    explanation: 'Gwadar port lies on the Balochistan coast, at the western end of the Makran.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2164,6 +2216,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Khyber Pass connects Pakistan with which country?',
     options: ['China', 'Afghanistan', 'Iran', 'India'],
     correctIndex: 1,
+    explanation: 'The Khyber Pass links Pakistan with Afghanistan, running from Peshawar towards Jalalabad.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2172,6 +2225,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Bolan Pass is located in which province?',
     options: ['Balochistan', 'Sindh', 'Punjab', 'Khyber Pakhtunkhwa'],
     correctIndex: 0,
+    explanation: 'The Bolan Pass, the route from Quetta towards Sibi, lies in Balochistan.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2180,6 +2234,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which country lies to the east of Pakistan?',
     options: ['Afghanistan', 'Iran', 'China', 'India'],
     correctIndex: 3,
+    explanation: 'India lies to the east of Pakistan, across the border that runs from Kashmir to the Rann of Kutch.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2188,6 +2243,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which country lies to the north of Pakistan?',
     options: ['India', 'Iran', 'Afghanistan', 'China'],
     correctIndex: 3,
+    explanation: 'China lies to the north of Pakistan, across the Karakoram and the Khunjerab Pass.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2196,6 +2252,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Siachen Glacier is located in which mountain range?',
     options: ['Himalayas', 'Karakoram', 'Hindu Kush', 'Sulaiman'],
     correctIndex: 1,
+    explanation: 'The Siachen Glacier lies in the Karakoram range, in the far north of Pakistan.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2204,6 +2261,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Hunza Valley is located in which territory?',
     options: ['Azad Kashmir', 'Punjab', 'Gilgit-Baltistan', 'Khyber Pakhtunkhwa'],
     correctIndex: 2,
+    explanation: 'The Hunza Valley lies in Gilgit-Baltistan, in the northern Karakoram.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2212,6 +2270,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which valley is often called the Switzerland of Pakistan?',
     options: ['Swat', 'Hunza', 'Kaghan', 'Neelum'],
     correctIndex: 0,
+    explanation: 'Swat is popularly called the Switzerland of Pakistan for its green valleys and snow-capped peaks.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2220,6 +2279,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Murree, a well-known hill station, is located in which province?',
     options: ['Khyber Pakhtunkhwa', 'Sindh', 'Balochistan', 'Punjab'],
     correctIndex: 3,
+    explanation: 'Murree is a hill station in the Punjab, in the Galiyat foothills near Islamabad.',
     topic: 'Provinces and Cities',
   ),
   MockQuestion(
@@ -2228,6 +2288,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Ziarat, famous for its juniper forests, is located in which province?',
     options: ['Punjab', 'Balochistan', 'Sindh', 'Khyber Pakhtunkhwa'],
     correctIndex: 1,
+    explanation: 'Ziarat, famous for its ancient juniper forests, lies in Balochistan.',
     topic: 'Provinces and Cities',
   ),
   MockQuestion(
@@ -2236,6 +2297,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Lake Saif-ul-Malook is located near which town?',
     options: ['Murree', 'Hunza', 'Naran', 'Swat'],
     correctIndex: 2,
+    explanation: 'Lake Saif-ul-Malook lies near Naran, in the Kaghan Valley of Khyber Pakhtunkhwa.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2244,6 +2306,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Manchar Lake is located in which province?',
     options: ['Punjab', 'Sindh', 'Balochistan', 'Khyber Pakhtunkhwa'],
     correctIndex: 1,
+    explanation: 'Manchar Lake, one of Asia\'s largest freshwater lakes, lies in Sindh.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2252,6 +2315,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Keenjhar Lake is located in which province?',
     options: ['Punjab', 'Balochistan', 'Khyber Pakhtunkhwa', 'Sindh'],
     correctIndex: 3,
+    explanation: 'Keenjhar Lake lies in Sindh, in Thatta district, and supplies water to Karachi.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2260,6 +2324,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Attabad Lake is located in which valley?',
     options: ['Hunza', 'Murree', 'Swat', 'Kaghan'],
     correctIndex: 0,
+    explanation: 'Attabad Lake formed in the Hunza valley after a landslide blocked the Hunza River in 2010.',
     topic: 'Geography',
   ),
   MockQuestion(
@@ -2268,6 +2333,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Tarbela Dam is built on which river?',
     options: ['Jhelum', 'Chenab', 'Indus', 'Kabul'],
     correctIndex: 2,
+    explanation: 'The Tarbela Dam is built on the Indus River, near Topi in Khyber Pakhtunkhwa.',
     topic: 'Rivers and Dams',
   ),
   MockQuestion(
@@ -2276,6 +2342,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Mangla Dam is built on which river?',
     options: ['Jhelum', 'Indus', 'Chenab', 'Ravi'],
     correctIndex: 0,
+    explanation: 'The Mangla Dam is built on the Jhelum River, in Azad Kashmir.',
     topic: 'Rivers and Dams',
   ),
   MockQuestion(
@@ -2284,6 +2351,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Warsak Dam is built on which river?',
     options: ['Indus', 'Swat', 'Jhelum', 'Kabul'],
     correctIndex: 3,
+    explanation: 'The Warsak Dam is built on the Kabul River, near Peshawar.',
     topic: 'Rivers and Dams',
   ),
   MockQuestion(
@@ -2292,6 +2360,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Diamer-Basha Dam is built on which river?',
     options: ['Jhelum', 'Indus', 'Chenab', 'Kabul'],
     correctIndex: 1,
+    explanation: 'The Diamer-Basha Dam is being built on the Indus River, in Gilgit-Baltistan.',
     topic: 'Rivers and Dams',
   ),
   MockQuestion(
@@ -2300,6 +2369,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Hub Dam mainly supplies water to which city?',
     options: ['Lahore', 'Quetta', 'Hyderabad', 'Karachi'],
     correctIndex: 3,
+    explanation: 'The Hub Dam, on the Hub River, mainly supplies drinking water to Karachi.',
     topic: 'Rivers and Dams',
   ),
   MockQuestion(
@@ -2308,6 +2378,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Sukkur Barrage is built on which river?',
     options: ['Indus', 'Jhelum', 'Chenab', 'Ravi'],
     correctIndex: 0,
+    explanation: 'The Sukkur Barrage is built on the Indus River, near Sukkur in Sindh.',
     topic: 'Rivers and Dams',
   ),
   MockQuestion(
@@ -2316,6 +2387,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Kotri Barrage is located in which province?',
     options: ['Punjab', 'Balochistan', 'Khyber Pakhtunkhwa', 'Sindh'],
     correctIndex: 3,
+    explanation: 'The Kotri Barrage lies in Sindh, near Hyderabad, on the Indus River.',
     topic: 'Rivers and Dams',
   ),
   MockQuestion(
@@ -2324,6 +2396,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which is the largest dam of Pakistan?',
     options: ['Mangla Dam', 'Tarbela Dam', 'Warsak Dam', 'Hub Dam'],
     correctIndex: 1,
+    explanation: 'Tarbela is Pakistan\'s largest dam and the world\'s largest earth-filled dam.',
     topic: 'Rivers and Dams',
   ),
   MockQuestion(
@@ -2332,6 +2405,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which is the upper house of the Parliament of Pakistan?',
     options: ['National Assembly', 'Provincial Assembly', 'Senate', 'Majlis-e-Shoora'],
     correctIndex: 2,
+    explanation: 'Article 50 of the Constitution makes the Senate the upper house of Parliament.',
     topic: 'Constitution and Government',
   ),
   MockQuestion(
@@ -2340,6 +2414,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which is the lower house of the Parliament of Pakistan?',
     options: ['Senate', 'National Assembly', 'Provincial Assembly', 'Council of Common Interests'],
     correctIndex: 1,
+    explanation: 'Article 50 of the Constitution makes the National Assembly the lower house of Parliament.',
     topic: 'Constitution and Government',
   ),
   MockQuestion(
@@ -2348,6 +2423,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'For how many years are members of the Senate of Pakistan elected?',
     options: ['Four years', 'Five years', 'Six years', 'Seven years'],
     correctIndex: 2,
+    explanation: 'Under Article 59, senators are elected for six years, with half retiring every three years.',
     topic: 'Constitution and Government',
   ),
   MockQuestion(
@@ -2356,6 +2432,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'For how many years is the National Assembly of Pakistan elected?',
     options: ['Four years', 'Five years', 'Six years', 'Seven years'],
     correctIndex: 1,
+    explanation: 'Under Article 52, the National Assembly is elected for a term of five years.',
     topic: 'Constitution and Government',
   ),
   MockQuestion(
@@ -2364,6 +2441,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Supreme Court of Pakistan is located in which city?',
     options: ['Karachi', 'Lahore', 'Peshawar', 'Islamabad'],
     correctIndex: 3,
+    explanation: 'The Supreme Court of Pakistan sits in Islamabad, the federal capital.',
     topic: 'Constitution and Government',
   ),
   MockQuestion(
@@ -2372,6 +2450,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who is the head of the government of Pakistan?',
     options: ['President', 'Chief Justice', 'Speaker of the National Assembly', 'Prime Minister'],
     correctIndex: 3,
+    explanation: 'The Prime Minister heads the government and runs the day-to-day administration as chief executive.',
     topic: 'Constitution and Government',
   ),
   MockQuestion(
@@ -2380,6 +2459,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who is the head of state of Pakistan?',
     options: ['Prime Minister', 'Speaker of the National Assembly', 'President', 'Governor'],
     correctIndex: 2,
+    explanation: 'The President is the head of state and the symbol of the unity of the federation.',
     topic: 'Constitution and Government',
   ),
   MockQuestion(
@@ -2388,6 +2468,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What is the minimum voting age in Pakistan?',
     options: ['16 years', '18 years', '20 years', '21 years'],
     correctIndex: 1,
+    explanation: 'The minimum voting age in Pakistan is 18 years, under Article 51 and the Elections Act.',
     topic: 'Constitution and Government',
   ),
   MockQuestion(
@@ -2396,6 +2477,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'How many provinces does Pakistan have?',
     options: ['Three', 'Four', 'Five', 'Six'],
     correctIndex: 1,
+    explanation: 'Pakistan has four provinces: Punjab, Sindh, Khyber Pakhtunkhwa and Balochistan; Gilgit-Baltistan and Azad Kashmir are territories.',
     topic: 'Constitution and Government',
   ),
   MockQuestion(
@@ -2404,6 +2486,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Under the Constitution of 1973, what is the state religion of Pakistan?',
     options: ['Islam', 'Christianity', 'Hinduism', 'Sikhism'],
     correctIndex: 0,
+    explanation: 'Article 2 of the Constitution declares Islam the state religion of Pakistan.',
     topic: 'Constitution and Government',
   ),
   MockQuestion(
@@ -2412,6 +2495,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Parliament of Pakistan is also known by which name?',
     options: ['Majlis-e-Shoora', 'Majlis-e-Aam', 'Darbar-e-Aam', 'Shura Council'],
     correctIndex: 0,
+    explanation: 'Article 50 names Parliament as the Majlis-e-Shoora, the federal legislature.',
     topic: 'Constitution and Government',
   ),
   MockQuestion(
@@ -2420,6 +2504,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What is the currency of Pakistan?',
     options: ['Dinar', 'Riyal', 'Taka', 'Rupee'],
     correctIndex: 3,
+    explanation: 'The rupee (PKR) is the currency of Pakistan.',
     topic: 'Economy',
   ),
   MockQuestion(
@@ -2428,6 +2513,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which bank is the central bank of Pakistan?',
     options: ['State Bank of Pakistan', 'National Bank of Pakistan', 'Bank of Punjab', 'Habib Bank'],
     correctIndex: 0,
+    explanation: 'The State Bank of Pakistan, established in 1948, is the country\'s central bank.',
     topic: 'Economy',
   ),
   MockQuestion(
@@ -2436,6 +2522,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which is the main cash crop of Pakistan?',
     options: ['Wheat', 'Rice', 'Cotton', 'Maize'],
     correctIndex: 2,
+    explanation: 'A cash crop is grown for sale and export, and cotton is Pakistan\'s main cash crop, while wheat is the staple food crop.',
     topic: 'Economy',
   ),
   MockQuestion(
@@ -2444,6 +2531,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which industry earns the largest share of the export income of Pakistan?',
     options: ['Textile industry', 'Cement industry', 'Sugar industry', 'Leather industry'],
     correctIndex: 0,
+    explanation: 'Textiles consistently earn the largest share of Pakistan\'s export income, ahead of other industries.',
     topic: 'Economy',
   ),
   MockQuestion(
@@ -2452,6 +2540,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Which is the main staple food crop of Pakistan?',
     options: ['Rice', 'Cotton', 'Wheat', 'Sugarcane'],
     correctIndex: 2,
+    explanation: 'Wheat is Pakistan\'s main staple food crop, the base of the daily diet across the country.',
     topic: 'Economy',
   ),
   MockQuestion(
@@ -2460,6 +2549,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Basmati is a famous variety of which crop grown in Pakistan?',
     options: ['Wheat', 'Rice', 'Cotton', 'Maize'],
     correctIndex: 1,
+    explanation: 'Basmati is a famous long-grain aromatic variety of rice grown in Pakistan.',
     topic: 'Economy',
   ),
   MockQuestion(
@@ -2468,6 +2558,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What is the national flower of Pakistan?',
     options: ['Rose', 'Sunflower', 'Jasmine', 'Tulip'],
     correctIndex: 2,
+    explanation: 'Jasmine is the national flower of Pakistan.',
     topic: 'Culture and Symbols',
   ),
   MockQuestion(
@@ -2476,6 +2567,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What is the national tree of Pakistan?',
     options: ['Neem', 'Deodar', 'Mango', 'Banyan'],
     correctIndex: 1,
+    explanation: 'The deodar, a tall cedar of the northern mountains, is the national tree of Pakistan.',
     topic: 'Culture and Symbols',
   ),
   MockQuestion(
@@ -2484,6 +2576,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What is the national bird of Pakistan?',
     options: ['Peacock', 'Eagle', 'Parrot', 'Chukar partridge'],
     correctIndex: 3,
+    explanation: 'The chukar partridge, a game bird of the northern hills, is the national bird of Pakistan.',
     topic: 'Culture and Symbols',
   ),
   MockQuestion(
@@ -2492,6 +2585,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What is the national fruit of Pakistan?',
     options: ['Mango', 'Banana', 'Orange', 'Apple'],
     correctIndex: 0,
+    explanation: 'The mango is the national fruit of Pakistan.',
     topic: 'Culture and Symbols',
   ),
   MockQuestion(
@@ -2500,6 +2594,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'What is the national dress of Pakistan?',
     options: ['Kurta pajama', 'Sherwani', 'Dhoti kurta', 'Shalwar kameez'],
     correctIndex: 3,
+    explanation: 'Shalwar kameez is the national dress of Pakistan.',
     topic: 'Culture and Symbols',
   ),
   MockQuestion(
@@ -2508,6 +2603,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Who is the national poet of Pakistan?',
     options: ['Faiz Ahmed Faiz', 'Allama Iqbal', 'Hafeez Jalandhari', 'Josh Malihabadi'],
     correctIndex: 1,
+    explanation: 'Allama Iqbal, whose poetry inspired the Pakistan Movement, is the national poet of Pakistan.',
     topic: 'Culture and Symbols',
   ),
   MockQuestion(
@@ -2516,6 +2612,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'Mohenjo-daro, an ancient Indus Valley site, is located in which province?',
     options: ['Punjab', 'Sindh', 'Balochistan', 'Khyber Pakhtunkhwa'],
     correctIndex: 1,
+    explanation: 'Mohenjo-daro, the ancient Indus Valley city, lies near Larkana in Sindh.',
     topic: 'Culture and Heritage',
   ),
   MockQuestion(
@@ -2524,6 +2621,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The Faisal Mosque is located in which city?',
     options: ['Lahore', 'Karachi', 'Islamabad', 'Rawalpindi'],
     correctIndex: 2,
+    explanation: 'The Faisal Mosque, one of the largest mosques in the world, stands in Islamabad.',
     topic: 'Culture and Heritage',
   ),
   MockQuestion(
@@ -2532,6 +2630,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'The mausoleum of Muhammad Ali Jinnah, known as Mazar-e-Quaid, is located in which city?',
     options: ['Lahore', 'Islamabad', 'Karachi', 'Peshawar'],
     correctIndex: 2,
+    explanation: 'Mazar-e-Quaid, the mausoleum of Muhammad Ali Jinnah, stands in Karachi.',
     topic: 'Culture and Heritage',
   ),
   MockQuestion(
@@ -2540,6 +2639,7 @@ const List<MockQuestion> sampleQuestions = [
     question: 'In which year did Pakistan win the Cricket World Cup?',
     options: ['1987', '1996', '1999', '1992'],
     correctIndex: 3,
+    explanation: 'Pakistan won the Cricket World Cup in 1992, beating England in the final at Melbourne.',
     topic: 'Sports',
   ),
   // ------------------------------------------------------------------
