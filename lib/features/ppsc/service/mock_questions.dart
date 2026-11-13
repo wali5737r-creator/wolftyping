@@ -4273,6 +4273,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['CO2', 'H2O', 'O2', 'NaCl'],
     correctIndex: 1,
     topic: 'Chemistry',
+    explanation: 'A water molecule has two hydrogen atoms joined to one oxygen atom, which is written as H2O.',
   ),
   MockQuestion(
     id: 'sci-2',
@@ -4281,6 +4282,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Venus', 'Jupiter', 'Mars', 'Saturn'],
     correctIndex: 2,
     topic: 'Astronomy',
+    explanation: 'Mars looks red because its surface is covered in iron oxide dust, the same rust that colours old iron.',
   ),
   MockQuestion(
     id: 'sci-3',
@@ -4289,6 +4291,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['90°C', '95°C', '100°C', '110°C'],
     correctIndex: 2,
     topic: 'Physics',
+    explanation: 'At sea level the air pressure is one atmosphere, and water turns to steam at 100°C under that pressure.',
   ),
   MockQuestion(
     id: 'sci-new-1',
@@ -4297,6 +4300,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Liver', 'Heart', 'Lung', 'Kidney'],
     correctIndex: 1,
     topic: 'Human Body',
+    explanation: 'The heart is a muscle that contracts about 100,000 times a day, pushing blood through the arteries to every part of the body.',
   ),
   MockQuestion(
     id: 'sci-new-2',
@@ -4305,6 +4309,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Oxygen', 'Nitrogen', 'Carbon dioxide', 'Hydrogen'],
     correctIndex: 2,
     topic: 'Plants',
+    explanation: 'Plants take in carbon dioxide and, using sunlight, turn it into glucose and oxygen in photosynthesis.',
   ),
   MockQuestion(
     id: 'sci-new-3',
@@ -4313,6 +4318,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Newton', 'Joule', 'Watt', 'Ohm'],
     correctIndex: 0,
     topic: 'Physics',
+    explanation: 'Force is measured in newtons, named after Isaac Newton, whose laws describe how forces change motion.',
   ),
   MockQuestion(
     id: 'sci-new-4',
@@ -4321,6 +4327,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Hydrochloric acid', 'Citric acid', 'Sulphuric acid', 'Acetic acid'],
     correctIndex: 3,
     topic: 'Chemistry',
+    explanation: 'Vinegar is a dilute solution of acetic acid in water, which gives it its sour taste and sharp smell.',
   ),
   MockQuestion(
     id: 'sci-new-5',
@@ -4329,6 +4336,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Mercury', 'Venus', 'Earth', 'Mars'],
     correctIndex: 0,
     topic: 'Earth and Space',
+    explanation: 'Mercury orbits closest to the Sun, at about 58 million km, nearer than Venus, Earth or Mars.',
   ),
   MockQuestion(
     id: 'sci-new-6',
@@ -4337,6 +4345,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Banana', 'Orange', 'Potato', 'Onion'],
     correctIndex: 1,
     topic: 'Health',
+    explanation: 'Oranges and other citrus fruits are rich in vitamin C, which the body needs for healthy skin and healing.',
   ),
   MockQuestion(
     id: 'sci-new-7',
@@ -4345,6 +4354,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Heart', 'Kidney', 'Lungs', 'Liver'],
     correctIndex: 2,
     topic: 'Human Body',
+    explanation: 'The lungs take in air and pass oxygen into the blood while removing carbon dioxide when we breathe out.',
   ),
   MockQuestion(
     id: 'sci-new-8',
@@ -4353,6 +4363,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['10°C', '5°C', '-5°C', '0°C'],
     correctIndex: 3,
     topic: 'Physics',
+    explanation: 'Pure water freezes at 0°C at normal pressure, turning from liquid into solid ice.',
   ),
   MockQuestion(
     id: 'sci-new-9',
@@ -4361,6 +4372,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Water', 'Vacuum', 'Glass', 'Air'],
     correctIndex: 1,
     topic: 'Physics',
+    explanation: 'Light travels fastest in a vacuum, about 300,000 km per second, and slows down in water, glass or air.',
   ),
   MockQuestion(
     id: 'sci-new-10',
@@ -4369,6 +4381,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Ag', 'Gd', 'Au', 'Go'],
     correctIndex: 2,
     topic: 'Chemistry',
+    explanation: 'Gold\'s chemical symbol is Au, taken from its Latin name aurum.',
   ),
   MockQuestion(
     id: 'sci-new-11',
@@ -4377,6 +4390,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['206', '196', '216', '226'],
     correctIndex: 0,
     topic: 'Human Body',
+    explanation: 'An adult usually has 206 bones, because many of the roughly 270 bones present at birth fuse together as we grow.',
   ),
   MockQuestion(
     id: 'sci-new-12',
@@ -4385,6 +4399,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Root', 'Stem', 'Flower', 'Leaf'],
     correctIndex: 3,
     topic: 'Plants',
+    explanation: 'Leaves contain chlorophyll, which captures sunlight so the plant can make its own food by photosynthesis.',
   ),
   MockQuestion(
     id: 'sci-new-13',
@@ -4393,6 +4408,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Revolution of Earth', 'Rotation of Earth', 'Tilt of the Moon', 'Orbit of Mars'],
     correctIndex: 1,
     topic: 'Earth and Space',
+    explanation: 'Earth spins on its axis once every 24 hours, so each place turns towards the Sun for day and away for night.',
   ),
   MockQuestion(
     id: 'sci-new-14',
@@ -4401,6 +4417,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Mars', 'Mercury', 'Venus', 'Jupiter'],
     correctIndex: 2,
     topic: 'Earth and Space',
+    explanation: 'Venus is hottest because its thick carbon dioxide atmosphere traps heat in a runaway greenhouse effect.',
   ),
   MockQuestion(
     id: 'sci-new-15',
@@ -4409,6 +4426,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Oxygen', 'Carbon dioxide', 'Nitrogen', 'Hydrogen'],
     correctIndex: 0,
     topic: 'Plants',
+    explanation: 'During photosynthesis plants release oxygen as a by-product when they split water using sunlight.',
   ),
   MockQuestion(
     id: 'sci-new-16',
@@ -4417,6 +4435,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Volt', 'Ohm', 'Watt', 'Ampere'],
     correctIndex: 3,
     topic: 'Physics',
+    explanation: 'Electric current is measured in amperes, named after André-Marie Ampère, who studied electricity.',
   ),
   MockQuestion(
     id: 'sci-new-17',
@@ -4425,6 +4444,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['1', '7', '10', '14'],
     correctIndex: 1,
     topic: 'Chemistry',
+    explanation: 'Pure water is neutral, with equal amounts of hydrogen and hydroxide ions, so its pH is 7.',
   ),
   MockQuestion(
     id: 'sci-new-18',
@@ -4433,6 +4453,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Liver', 'Heart', 'Kidney', 'Lung'],
     correctIndex: 2,
     topic: 'Human Body',
+    explanation: 'The kidneys filter waste products such as urea from the blood and remove them in urine.',
   ),
   MockQuestion(
     id: 'sci-new-19',
@@ -4441,6 +4462,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Solids', 'Liquids', 'Gases', 'Vacuum'],
     correctIndex: 0,
     topic: 'Physics',
+    explanation: 'Sound travels fastest through solids because their particles are packed tightly and pass vibrations on quickly.',
   ),
   MockQuestion(
     id: 'sci-new-20',
@@ -4449,6 +4471,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Vitamin A', 'Vitamin B', 'Vitamin C', 'Vitamin D'],
     correctIndex: 3,
     topic: 'Health',
+    explanation: 'Sunlight on the skin triggers the body to make vitamin D, which is needed for strong bones.',
   ),
   MockQuestion(
     id: 'sci-new-21',
@@ -4457,6 +4480,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Liver', 'Skin', 'Heart', 'Bone'],
     correctIndex: 1,
     topic: 'Human Body',
+    explanation: 'Skin is the largest organ, covering the whole body and protecting it from germs, injury and water loss.',
   ),
   MockQuestion(
     id: 'sci-new-22',
@@ -4465,6 +4489,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Nitrogen', 'Carbon dioxide', 'Oxygen', 'Helium'],
     correctIndex: 2,
     topic: 'Chemistry',
+    explanation: 'Most things burn only when oxygen is present, because burning is a chemical reaction with oxygen.',
   ),
   MockQuestion(
     id: 'sci-new-23',
@@ -4473,6 +4498,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Reflected sunlight', 'Light made by the Moon itself', 'Heat from the Earth', 'Light from the stars only'],
     correctIndex: 0,
     topic: 'Earth and Space',
+    explanation: 'The Moon makes no light of its own; we see it because its surface reflects sunlight towards Earth.',
   ),
   MockQuestion(
     id: 'sci-new-24',
@@ -4481,6 +4507,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Sunlight only', 'Oxygen and moisture', 'Cold air only', 'Dry air only'],
     correctIndex: 1,
     topic: 'Chemistry',
+    explanation: 'Rust forms when iron reacts with oxygen and water together, so dry iron or oxygen alone does not rust it.',
   ),
   MockQuestion(
     id: 'sci-new-25',
@@ -4489,6 +4516,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Flat sheet', 'Single ring', 'Double helix', 'Straight chain'],
     correctIndex: 2,
     topic: 'Human Body',
+    explanation: 'DNA is a double helix, two strands twisted around each other like a ladder, carrying the body\'s instructions.',
   ),
   MockQuestion(
     id: 'sci-new-26',
@@ -4497,6 +4525,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['White blood cells', 'Platelets', 'Plasma', 'Red blood cells'],
     correctIndex: 3,
     topic: 'Human Body',
+    explanation: 'Red blood cells contain haemoglobin, which picks up oxygen in the lungs and carries it to the tissues.',
   ),
   MockQuestion(
     id: 'sci-new-27',
@@ -4505,6 +4534,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Thermometer', 'Barometer', 'Altimeter', 'Speedometer'],
     correctIndex: 0,
     topic: 'Technology in Daily Life',
+    explanation: 'A thermometer measures temperature by showing how much a liquid or sensor expands or changes as it warms.',
   ),
   MockQuestion(
     id: 'sci-new-28',
@@ -4513,6 +4543,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Friction', 'Gravity', 'Magnetism', 'Pressure'],
     correctIndex: 1,
     topic: 'Physics',
+    explanation: 'Gravity is the force that pulls objects towards the centre of the Earth.',
   ),
   MockQuestion(
     id: 'sci-new-29',
@@ -4521,6 +4552,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Red', 'Yellow', 'Green', 'Blue'],
     correctIndex: 2,
     topic: 'Plants',
+    explanation: 'Chlorophyll, the pigment that captures sunlight for photosynthesis, is green, so leaves look green.',
   ),
   MockQuestion(
     id: 'sci-new-30',
@@ -4529,6 +4561,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['N', 'Ni', 'Ne', 'Na'],
     correctIndex: 3,
     topic: 'Chemistry',
+    explanation: 'Sodium\'s symbol is Na, from its Latin name natrium.',
   ),
   MockQuestion(
     id: 'sci-new-31',
@@ -4537,6 +4570,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Nitrogen', 'Oxygen', 'Carbon dioxide', 'Argon'],
     correctIndex: 0,
     topic: 'Earth and Space',
+    explanation: 'About 78% of the air is nitrogen, far more than the roughly 21% that is oxygen.',
   ),
   MockQuestion(
     id: 'sci-new-32',
@@ -4545,6 +4579,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Heart', 'Brain', 'Liver', 'Lung'],
     correctIndex: 1,
     topic: 'Human Body',
+    explanation: 'The brain receives signals from the senses, makes decisions and sends orders to the rest of the body.',
   ),
   MockQuestion(
     id: 'sci-new-33',
@@ -4553,6 +4588,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Curved path', 'Zigzag path', 'Straight path', 'Circular path'],
     correctIndex: 2,
     topic: 'Physics',
+    explanation: 'Light travels in straight lines through air, which is why shadows have sharp edges.',
   ),
   MockQuestion(
     id: 'sci-new-34',
@@ -4561,6 +4597,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Heat energy to light energy', 'Sound energy to heat energy', 'Motion energy to heat energy', 'Chemical energy to electrical energy'],
     correctIndex: 3,
     topic: 'Technology in Daily Life',
+    explanation: 'A battery stores chemical energy and changes it into electrical energy when a circuit is connected.',
   ),
   MockQuestion(
     id: 'sci-new-35',
@@ -4569,6 +4606,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Vitamin A', 'Vitamin C', 'Vitamin D', 'Vitamin K'],
     correctIndex: 0,
     topic: 'Health',
+    explanation: 'Vitamin A is needed for good vision, especially in dim light, and for healthy skin.',
   ),
   MockQuestion(
     id: 'sci-new-36',
@@ -4577,6 +4615,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Rotation on its axis', 'Spin of the Moon', 'Revolution around the Sun', 'Wobble of its axis'],
     correctIndex: 2,
     topic: 'Earth and Space',
+    explanation: 'One year is the time Earth takes to complete one full revolution around the Sun, about 365 days.',
   ),
   MockQuestion(
     id: 'sci-new-37',
@@ -4585,6 +4624,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Gold', 'Diamond', 'Iron', 'Quartz'],
     correctIndex: 1,
     topic: 'Chemistry',
+    explanation: 'Diamond is the hardest natural substance, scoring 10 on the Mohs scale, because its carbon atoms are tightly bonded.',
   ),
   MockQuestion(
     id: 'sci-new-38',
@@ -4593,6 +4633,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Evaporation', 'Freezing', 'Melting', 'Condensation'],
     correctIndex: 3,
     topic: 'Physics',
+    explanation: 'Condensation is when water vapour cools and changes back into tiny liquid droplets, as on a cold glass.',
   ),
   MockQuestion(
     id: 'sci-new-39',
@@ -4601,6 +4642,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Hydrochloric acid', 'Acetic acid', 'Citric acid', 'Sulphuric acid'],
     correctIndex: 0,
     topic: 'Human Body',
+    explanation: 'The stomach makes hydrochloric acid, which kills germs in food and helps enzymes break it down.',
   ),
   MockQuestion(
     id: 'sci-new-40',
@@ -4609,6 +4651,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Darkness', 'Cold air', 'Sunlight', 'Salt'],
     correctIndex: 2,
     topic: 'Plants',
+    explanation: 'Plants need sunlight as well as water and carbon dioxide, because light energy powers photosynthesis.',
   ),
   MockQuestion(
     id: 'sci-new-41',
@@ -4617,6 +4660,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Copper', 'Tungsten', 'Iron', 'Aluminium'],
     correctIndex: 1,
     topic: 'Technology in Daily Life',
+    explanation: 'Bulb filaments are made of tungsten because it has a very high melting point and glows without melting.',
   ),
   MockQuestion(
     id: 'sci-new-42',
@@ -4625,6 +4669,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Ampere', 'Volt', 'Joule', 'Decibel'],
     correctIndex: 3,
     topic: 'Physics',
+    explanation: 'The loudness of sound is measured in decibels, named after Alexander Graham Bell.',
   ),
   MockQuestion(
     id: 'sci-new-43',
@@ -4633,6 +4678,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Two', 'Three', 'Four', 'Five'],
     correctIndex: 2,
     topic: 'Human Body',
+    explanation: 'The human heart has four chambers: two atria on top and two ventricles below.',
   ),
   MockQuestion(
     id: 'sci-new-44',
@@ -4641,6 +4687,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Ozone layer', 'Oxygen layer', 'Nitrogen layer', 'Carbon dioxide layer'],
     correctIndex: 0,
     topic: 'Environment',
+    explanation: 'The ozone layer absorbs most of the Sun\'s harmful ultraviolet rays before they reach the ground.',
   ),
   MockQuestion(
     id: 'sci-new-45',
@@ -4649,6 +4696,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Heat of the Sun', 'Moon', 'Wind', 'Spin of the Earth'],
     correctIndex: 1,
     topic: 'Earth and Space',
+    explanation: 'Tides are mainly caused by the Moon\'s gravity pulling the ocean water towards it.',
   ),
   MockQuestion(
     id: 'sci-new-46',
@@ -4657,6 +4705,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Plastic', 'Wood', 'Copper', 'Rubber'],
     correctIndex: 2,
     topic: 'Physics',
+    explanation: 'Copper is a good conductor because its outer electrons move freely and carry electric current easily.',
   ),
   MockQuestion(
     id: 'sci-new-47',
@@ -4665,6 +4714,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Starch', 'Protein', 'Fat', 'Glucose'],
     correctIndex: 3,
     topic: 'Human Body',
+    explanation: 'Glucose is the sugar carried in the blood, giving the body\'s cells the energy they need.',
   ),
   MockQuestion(
     id: 'sci-new-48',
@@ -4673,6 +4723,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Six', 'Four', 'Eight', 'Ten'],
     correctIndex: 0,
     topic: 'Human Body',
+    explanation: 'All insects have six legs, three pairs attached to the middle part of the body.',
   ),
   MockQuestion(
     id: 'sci-new-49',
@@ -4681,6 +4732,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Lungs', 'Gills', 'Skin only', 'Nose'],
     correctIndex: 1,
     topic: 'Human Body',
+    explanation: 'Fish take oxygen from water through gills, which absorb dissolved oxygen into the blood.',
   ),
   MockQuestion(
     id: 'sci-new-50',
@@ -4689,6 +4741,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Ice only', 'Darkness only', 'Water, air and warmth', 'Dry sand only'],
     correctIndex: 2,
     topic: 'Plants',
+    explanation: 'A seed germinates when it has water to soften it, air for respiration and warmth to speed growth.',
   ),
   MockQuestion(
     id: 'sci-new-51',
@@ -4697,6 +4750,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Wood', 'Plastic', 'Glass', 'Iron'],
     correctIndex: 3,
     topic: 'Physics',
+    explanation: 'Iron is magnetic, so a magnet attracts it, while wood, plastic and glass are not magnetic.',
   ),
   MockQuestion(
     id: 'sci-new-52',
@@ -4705,6 +4759,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Seven', 'Five', 'Six', 'Eight'],
     correctIndex: 0,
     topic: 'Physics',
+    explanation: 'A rainbow is usually counted as seven colours: red, orange, yellow, green, blue, indigo and violet.',
   ),
   MockQuestion(
     id: 'sci-new-53',
@@ -4713,6 +4768,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Thermometer', 'Seismograph', 'Barometer', 'Altimeter'],
     correctIndex: 1,
     topic: 'Earth and Space',
+    explanation: 'A seismograph detects ground movements and records them, showing the size and timing of an earthquake.',
   ),
   MockQuestion(
     id: 'sci-new-54',
@@ -4721,6 +4777,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Moon', 'Distant stars', 'Sun', 'Clouds'],
     correctIndex: 2,
     topic: 'Environment',
+    explanation: 'Solar energy comes from the Sun\'s light and heat, which reach Earth as radiation.',
   ),
   MockQuestion(
     id: 'sci-new-55',
@@ -4737,6 +4794,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['O negative', 'AB positive', 'A positive', 'B negative'],
     correctIndex: 0,
     topic: 'Human Body',
+    explanation: 'O negative red cells carry no A, B or Rh antigens, so they can be given to a person of any blood group.',
   ),
   MockQuestion(
     id: 'sci-new-57',
@@ -4745,6 +4803,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['35°C', '37°C', '39°C', '41°C'],
     correctIndex: 1,
     topic: 'Health',
+    explanation: 'A healthy body keeps its temperature near 37°C, controlled by the brain.',
   ),
   MockQuestion(
     id: 'sci-new-58',
@@ -4753,6 +4812,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Vitamin A', 'Vitamin C', 'Vitamin D', 'Vitamin B'],
     correctIndex: 2,
     topic: 'Health',
+    explanation: 'Vitamin D helps the body absorb calcium for bones, so a lack of it in children causes soft, weak bones called rickets.',
   ),
   MockQuestion(
     id: 'sci-new-59',
@@ -4761,6 +4821,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Solid to liquid', 'Gas to liquid', 'Liquid to solid', 'Liquid to gas'],
     correctIndex: 3,
     topic: 'Physics',
+    explanation: 'Evaporation is when a liquid changes into a gas, as water does from a wet cloth left in the sun.',
   ),
   MockQuestion(
     id: 'sci-new-60',
@@ -4769,6 +4830,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['An acid', 'A base', 'A neutral salt', 'Pure water'],
     correctIndex: 0,
     topic: 'Chemistry',
+    explanation: 'Blue litmus paper turns red in an acid because acids release hydrogen ions that change the dye\'s colour.',
   ),
   MockQuestion(
     id: 'sci-new-61',
@@ -4777,6 +4839,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['An acid', 'A base', 'A salt', 'Oil'],
     correctIndex: 1,
     topic: 'Chemistry',
+    explanation: 'Red litmus paper turns blue in a base because bases change the dye\'s colour in the opposite way to acids.',
   ),
   MockQuestion(
     id: 'sci-new-62',
@@ -4785,6 +4848,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['In', 'Ir', 'Fe', 'Fr'],
     correctIndex: 2,
     topic: 'Chemistry',
+    explanation: 'Iron\'s chemical symbol is Fe, from its Latin name ferrum.',
   ),
   MockQuestion(
     id: 'sci-new-63',
@@ -4793,6 +4857,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Oxygen', 'Nitrogen', 'Hydrogen', 'Carbon dioxide'],
     correctIndex: 3,
     topic: 'Chemistry',
+    explanation: 'Fizzy drinks are bubbly because carbon dioxide gas is dissolved in them under pressure and escapes as bubbles.',
   ),
   MockQuestion(
     id: 'sci-new-64',
@@ -4801,6 +4866,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Saturn', 'Mars', 'Venus', 'Mercury'],
     correctIndex: 0,
     topic: 'Earth and Space',
+    explanation: 'Saturn is famous for its wide, bright rings made of ice and rock particles orbiting the planet.',
   ),
   MockQuestion(
     id: 'sci-new-65',
@@ -4809,6 +4875,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Moon', 'Sun', 'Mars', 'Venus'],
     correctIndex: 1,
     topic: 'Earth and Space',
+    explanation: 'The Sun is the nearest star to Earth, about 150 million km away, while other stars are far farther.',
   ),
   MockQuestion(
     id: 'sci-new-66',
@@ -4817,6 +4884,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Planet', 'Star', 'Natural satellite of Earth', 'Comet'],
     correctIndex: 2,
     topic: 'Earth and Space',
+    explanation: 'The Moon orbits Earth and is held by its gravity, so it is Earth\'s natural satellite.',
   ),
   MockQuestion(
     id: 'sci-new-67',
@@ -4825,6 +4893,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Phases of the Moon', 'Clouds', 'Speed of rotation', 'Tilt of the axis of Earth'],
     correctIndex: 3,
     topic: 'Earth and Space',
+    explanation: 'Earth\'s axis is tilted, so different parts get more direct sunlight at different times of the year, giving seasons.',
   ),
   MockQuestion(
     id: 'sci-new-68',
@@ -4833,6 +4902,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Root', 'Leaf', 'Flower', 'Fruit'],
     correctIndex: 0,
     topic: 'Plants',
+    explanation: 'Roots grow into the soil and absorb water and minerals for the plant.',
   ),
   MockQuestion(
     id: 'sci-new-69',
@@ -4841,6 +4911,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Root', 'Stem', 'Leaf', 'Seed'],
     correctIndex: 1,
     topic: 'Plants',
+    explanation: 'The stem holds the plant upright and carries water up from the roots and food down from the leaves.',
   ),
   MockQuestion(
     id: 'sci-new-70',
@@ -4849,6 +4920,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Root', 'Stem', 'Flower', 'Bark'],
     correctIndex: 2,
     topic: 'Plants',
+    explanation: 'Flowers hold the reproductive parts, so pollination and fertilisation happen in the flower.',
   ),
   MockQuestion(
     id: 'sci-new-71',
@@ -4857,6 +4929,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Leaf', 'Stem', 'Root', 'Fruit'],
     correctIndex: 3,
     topic: 'Plants',
+    explanation: 'Fruits develop from flowers and hold the seeds inside, protecting them until they spread.',
   ),
   MockQuestion(
     id: 'sci-new-72',
@@ -4865,6 +4938,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Protein', 'Fat', 'Vitamin', 'Fibre'],
     correctIndex: 0,
     topic: 'Health',
+    explanation: 'Protein is the nutrient the body uses to build and repair tissues such as muscle and skin.',
   ),
   MockQuestion(
     id: 'sci-new-73',
@@ -4873,6 +4947,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Iron', 'Calcium', 'Iodine', 'Zinc'],
     correctIndex: 1,
     topic: 'Health',
+    explanation: 'Calcium is the mineral that makes bones and teeth hard and strong.',
   ),
   MockQuestion(
     id: 'sci-new-74',
@@ -4881,6 +4956,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Iron', 'Fluoride', 'Iodine', 'Sodium'],
     correctIndex: 2,
     topic: 'Health',
+    explanation: 'Iodine is needed to make thyroid hormones, and a lack of it swells the thyroid gland, causing goitre.',
   ),
   MockQuestion(
     id: 'sci-new-75',
@@ -4889,6 +4965,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Housefly', 'Bee', 'Ant', 'Mosquito'],
     correctIndex: 3,
     topic: 'Health',
+    explanation: 'Malaria is spread when a female Anopheles mosquito bites a person and passes the parasite into the blood.',
   ),
   MockQuestion(
     id: 'sci-new-76',
@@ -4897,6 +4974,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['To build immunity against a disease', 'To add sweetness to food', 'To keep a person awake', 'To cool the body'],
     correctIndex: 0,
     topic: 'Health',
+    explanation: 'A vaccine trains the immune system to recognise a germ, so the body can fight it off if it appears later.',
   ),
   MockQuestion(
     id: 'sci-new-77',
@@ -4905,6 +4983,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Consumers', 'Producers', 'Decomposers only', 'Scavengers only'],
     correctIndex: 1,
     topic: 'Environment',
+    explanation: 'Green plants make their own food from sunlight, so in a food chain they are the producers other life feeds on.',
   ),
   MockQuestion(
     id: 'sci-new-78',
@@ -4913,6 +4992,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Heat energy to motion energy', 'Sound energy to light energy', 'Sunlight to electrical energy', 'Wind energy to heat energy'],
     correctIndex: 2,
     topic: 'Technology in Daily Life',
+    explanation: 'A solar panel changes sunlight directly into electrical energy using light-sensitive cells.',
   ),
   MockQuestion(
     id: 'sci-new-79',
@@ -4921,6 +5001,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Makes food sweeter', 'Kills every germ at once', 'Adds vitamins to food', 'Slows the growth of bacteria'],
     correctIndex: 3,
     topic: 'Technology in Daily Life',
+    explanation: 'Cold slows bacteria down, so food kept in a refrigerator goes bad much more slowly.',
   ),
   MockQuestion(
     id: 'sci-new-80',
@@ -4929,6 +5010,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Kills most germs in the water', 'Adds salt to the water', 'Makes the water sweet', 'Removes oxygen only'],
     correctIndex: 0,
     topic: 'Health',
+    explanation: 'Boiling kills most germs in water, making it safer to drink.',
   ),
   MockQuestion(
     id: 'sci-new-81',
@@ -4937,6 +5019,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Red blood cells', 'White blood cells', 'Platelets', 'Plasma'],
     correctIndex: 1,
     topic: 'Human Body',
+    explanation: 'White blood cells defend the body by attacking germs and other invaders that cause infection.',
   ),
   MockQuestion(
     id: 'sci-new-82',
@@ -4945,6 +5028,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Red blood cells', 'White blood cells', 'Platelets', 'Plasma'],
     correctIndex: 2,
     topic: 'Human Body',
+    explanation: 'Platelets gather at a cut and help the blood clot, sealing the wound.',
   ),
   MockQuestion(
     id: 'sci-new-83',
@@ -4953,6 +5037,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Stomach', 'Liver', 'Kidney', 'Small intestine'],
     correctIndex: 3,
     topic: 'Human Body',
+    explanation: 'Most nutrients pass from food into the blood through the walls of the small intestine.',
   ),
   MockQuestion(
     id: 'sci-new-84',
@@ -4961,6 +5046,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Large intestine', 'Stomach', 'Heart', 'Lung'],
     correctIndex: 0,
     topic: 'Human Body',
+    explanation: 'The large intestine absorbs most of the water left in undigested food before it leaves the body.',
   ),
   MockQuestion(
     id: 'sci-new-85',
@@ -4969,6 +5055,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Kidney', 'Liver', 'Spleen', 'Pancreas'],
     correctIndex: 1,
     topic: 'Human Body',
+    explanation: 'The liver is the largest internal organ, making bile and processing nutrients from the blood.',
   ),
   MockQuestion(
     id: 'sci-new-86',
@@ -4977,6 +5064,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Liver', 'Kidney', 'Pancreas', 'Spleen'],
     correctIndex: 2,
     topic: 'Human Body',
+    explanation: 'The pancreas makes insulin, the hormone that lets the body\'s cells take in sugar from the blood.',
   ),
   MockQuestion(
     id: 'sci-new-87',
@@ -4985,6 +5073,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Dentine', 'Bone', 'Gum', 'Enamel of teeth'],
     correctIndex: 3,
     topic: 'Human Body',
+    explanation: 'Tooth enamel is the hardest substance in the body, harder than bone, so it can withstand chewing.',
   ),
   MockQuestion(
     id: 'sci-new-88',
@@ -4993,6 +5082,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['LED bulb', 'Old filament bulb', 'Candle', 'Oil lamp'],
     correctIndex: 0,
     topic: 'Technology in Daily Life',
+    explanation: 'An LED bulb turns far more electricity into light and less into heat than an old filament bulb.',
   ),
   MockQuestion(
     id: 'sci-new-89',
@@ -5001,6 +5091,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Pulls objects to Earth', 'Opposes motion between surfaces', 'Pushes magnets apart', 'Lifts objects upwards'],
     correctIndex: 1,
     topic: 'Physics',
+    explanation: 'Friction is the force that resists motion when two surfaces rub against each other.',
   ),
   MockQuestion(
     id: 'sci-new-90',
@@ -5009,6 +5100,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Inclined plane', 'Wedge', 'Pulley', 'Screw'],
     correctIndex: 2,
     topic: 'Physics',
+    explanation: 'A pulley is a wheel with a rope over it, used to lift a load with less effort.',
   ),
   MockQuestion(
     id: 'sci-new-91',
@@ -5017,6 +5109,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Switch', 'Wire', 'Bulb', 'Fuse'],
     correctIndex: 3,
     topic: 'Technology in Daily Life',
+    explanation: 'A fuse is a thin wire that melts and breaks the circuit when too much current flows through it.',
   ),
   MockQuestion(
     id: 'sci-new-92',
@@ -5025,6 +5118,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Plastic', 'Copper', 'Iron', 'Aluminium'],
     correctIndex: 0,
     topic: 'Physics',
+    explanation: 'Plastic does not conduct electricity, because its electrons are not free to move, so it is an insulator.',
   ),
   MockQuestion(
     id: 'sci-new-93',
@@ -5033,6 +5127,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Plain mirror', 'Glass prism', 'Wooden block', 'Cardboard sheet'],
     correctIndex: 1,
     topic: 'Physics',
+    explanation: 'A glass prism bends light and splits white light into its colours because each colour bends by a different amount.',
   ),
   MockQuestion(
     id: 'sci-new-94',
@@ -5041,6 +5136,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Metre', 'Litre', 'Kilogram', 'Second'],
     correctIndex: 2,
     topic: 'Physics',
+    explanation: 'Mass is measured in kilograms, the standard SI unit of mass.',
   ),
   MockQuestion(
     id: 'sci-new-95',
@@ -5049,6 +5145,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Heavier than water', 'Dissolved in water', 'Thicker than water only', 'Less dense than water'],
     correctIndex: 3,
     topic: 'Physics',
+    explanation: 'Oil floats on water because it is less dense than water, so it stays on top.',
   ),
   MockQuestion(
     id: 'sci-new-96',
@@ -5057,6 +5154,7 @@ const List<MockQuestion> sampleQuestions = [
     options: ['They repel each other', 'They attract each other', 'They have no effect', 'They melt each other'],
     correctIndex: 0,
     topic: 'Physics',
+    explanation: 'Like magnetic poles repel each other, while opposite poles attract.',
   ),
   MockQuestion(
     id: 'sci-new-97',
@@ -5065,5 +5163,6 @@ const List<MockQuestion> sampleQuestions = [
     options: ['Iron', 'Mercury', 'Copper', 'Gold'],
     correctIndex: 1,
     topic: 'Chemistry',
+    explanation: 'Mercury is the only metal that stays liquid at room temperature.',
   ),
 ];

@@ -87,7 +87,8 @@ void main() {
     });
   });
 
-  group('sample bank explanations (Phase 2: English and Mathematics)', () {
+  group('sample bank explanations (Phase 3: English, Mathematics and '
+      'Everyday Science)', () {
     test('every English question has a verified explanation', () {
       final english = sampleQuestions
           .where((q) => q.subject == MockSubject.english)
@@ -118,10 +119,35 @@ void main() {
       }
     });
 
+    test('every Everyday Science question has a verified explanation '
+        'except the one with a flagged wrong key', () {
+      final science = sampleQuestions
+          .where((q) => q.subject == MockSubject.everydayScience)
+          .toList();
+      expect(science.length, 100);
+      // sci-new-55 is left without an explanation: its answer key is
+      // wrong (it says fossil fuels formed from "Rocks only"), and the
+      // key fix is a separate decision, so no explanation is attached.
+      final explained =
+          science.where((q) => q.explanation != null).toList();
+      expect(explained.length, 99);
+      final unexplained =
+          science.where((q) => q.explanation == null).toList();
+      expect(unexplained.map((q) => q.id), ['sci-new-55']);
+      for (final q in explained) {
+        expect(q.explanation!.trim(), isNotEmpty, reason: q.id);
+        expect(q.explanation, q.explanation!.trim(), reason: q.id);
+        // One short sentence, not a paragraph.
+        expect(q.explanation!.length, lessThanOrEqualTo(200),
+            reason: q.id);
+      }
+    });
+
     test('no other subject has explanations yet', () {
       for (final subject in MockSubject.values) {
         if (subject == MockSubject.english ||
-            subject == MockSubject.mathematics) {
+            subject == MockSubject.mathematics ||
+            subject == MockSubject.everydayScience) {
           continue;
         }
         final explained = sampleQuestions
@@ -200,6 +226,46 @@ void main() {
         findsOneWidget,
       );
       // Only the Mathematics question carries an explanation.
+      expect(find.textContaining('Explanation:'), findsOneWidget);
+      controller.onClose();
+    });
+
+    testWidgets('end review shows an Everyday Science explanation and '
+        'nothing for the question with the flagged wrong key',
+        (tester) async {
+      await tester.pumpWidget(
+        GetMaterialApp(
+          theme: AppTheme.light,
+          initialRoute: AppRoutes.ppscMockTest,
+          getPages: AppPages.pages,
+        ),
+      );
+      await tester.pumpAndSettle();
+      final controller = Get.find<MockTestController>();
+      final science = sampleQuestions.firstWhere(
+          (q) => q.subject == MockSubject.everydayScience);
+      // sci-new-55 carries no explanation because its answer key is
+      // flagged wrong; the review must show nothing for it.
+      final flagged = sampleQuestions
+          .firstWhere((q) => q.id == 'sci-new-55');
+      expect(flagged.explanation, isNull);
+      final engine = MockTestEngine(questions: [science, flagged]);
+      engine.answer(science.id, science.correctIndex);
+      engine.answer(flagged.id, flagged.correctIndex);
+      controller.selectKind(MockTestKind.full);
+      controller.result.value = engine.result();
+      controller.phase.value = MockTestPhase.result;
+      await tester.pumpAndSettle();
+      await tester.ensureVisible(
+          find.text('Q1. ${science.question}'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Q1. ${science.question}'));
+      await tester.pumpAndSettle();
+      expect(
+        find.text('Explanation: ${science.explanation!}'),
+        findsOneWidget,
+      );
+      // Only the Science question carries an explanation.
       expect(find.textContaining('Explanation:'), findsOneWidget);
       controller.onClose();
     });
