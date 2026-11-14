@@ -8,6 +8,7 @@ abstract class AppRoutes {
   static const String urduTypingTest = '/urdu-typing-test';
   static const String lessons = '/lessons';
   static const String lessonPractice = '/lesson-practice';
+  static const String lessonKeyboardGuide = '/lesson-keyboard-guide';
   static const String practice = '/practice';
   static const String mistakePractice = '/mistake-practice';
   static const String mistakeAnalysis = '/mistake-analysis';

@@ -18,6 +18,7 @@ import '../../typing_test/view/widgets/typing_paragraph_text.dart';
 import '../../typing_test/view/widgets/typing_ui_parts.dart';
 import '../../settings/controller/settings_controller.dart';
 import '../controller/lesson_practice_controller.dart';
+import 'lesson_keyboard_guide_view.dart';
 
 /// Lesson Practice screen: instructions -> live typing -> result, all for
 /// one lesson. Uses the same `TypingEngine` and the same
@@ -143,17 +144,34 @@ class _IntroPanel extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: ElevatedButton.icon(
-                onPressed: controller.startPractice,
-                style: ElevatedButton.styleFrom(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 28, vertical: 16),
+            Wrap(
+              spacing: 12,
+              runSpacing: 12,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: controller.startPractice,
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 28, vertical: 16),
+                  ),
+                  icon: const Icon(Icons.play_arrow),
+                  label: const Text('Start Lesson'),
                 ),
-                icon: const Icon(Icons.play_arrow),
-                label: const Text('Start Lesson'),
-              ),
+                // The finger-guide board lives on its own page — it opens
+                // in this lesson's language with this lesson's new keys
+                // outlined, and never sits inside the practice panel.
+                OutlinedButton.icon(
+                  onPressed: () => Get.toNamed(
+                    AppRoutes.lessonKeyboardGuide,
+                    arguments: LessonKeyboardGuideArgs(
+                      isUrdu: isUrdu,
+                      focusKeys: lesson.definition.focusKeys,
+                    ),
+                  ),
+                  icon: const Icon(Icons.keyboard_outlined),
+                  label: const Text('Keyboard guide'),
+                ),
+              ],
             ),
             const SizedBox(height: 16),
           ],

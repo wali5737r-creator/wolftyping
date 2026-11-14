@@ -10,6 +10,7 @@ import '../../features/typing_test/view/urdu_typing_test_view.dart';
 
 import '../../features/lessons/controller/lesson_practice_controller.dart';
 import '../../features/lessons/controller/lessons_controller.dart';
+import '../../features/lessons/view/lesson_keyboard_guide_view.dart';
 import '../../features/lessons/view/lesson_practice_view.dart';
 import '../../features/lessons/view/lessons_view.dart';
 
@@ -120,6 +121,26 @@ class AppPages {
           () => LessonPracticeController(),
         );
       }),
+    ),
+
+    // Lessons keyboard guide — the finger-guide board on its OWN page
+    // (in-app route only — no static page, no sitemap entry, like the
+    // gradebook). Argument: LessonKeyboardGuideArgs, or ?lang=ur; no
+    // argument = English layout with no outlined keys.
+    GetPage(
+      name: AppRoutes.lessonKeyboardGuide,
+      page: () {
+        final Object? argument = Get.arguments;
+        if (argument is LessonKeyboardGuideArgs) {
+          return LessonKeyboardGuideView(args: argument);
+        }
+        if (Get.parameters['lang'] == 'ur') {
+          return const LessonKeyboardGuideView(
+            args: LessonKeyboardGuideArgs(isUrdu: true),
+          );
+        }
+        return const LessonKeyboardGuideView();
+      },
     ),
 
     // Practice

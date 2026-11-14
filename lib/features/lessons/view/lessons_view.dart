@@ -11,6 +11,7 @@ import '../controller/lessons_controller.dart';
 import '../model/lesson_level.dart';
 import '../model/lesson_status_filter.dart';
 import '../model/lesson_with_progress.dart';
+import 'lesson_keyboard_guide_view.dart';
 import 'widgets/lesson_card.dart';
 
 /// Lessons Dashboard: language tabs, search + level/status filters, and a
@@ -60,6 +61,21 @@ class _LanguageTabs extends StatelessWidget {
                   onSelected: () => controller.selectLanguage(lang),
                 ),
               ),
+            const Spacer(),
+            // The finger-guide board lives on its own page (Muhammad's
+            // scope decision 2026-11-14) — never inline in a lesson.
+            // Opens in the language of the tab currently selected.
+            OutlinedButton.icon(
+              onPressed: () => Get.toNamed(
+                AppRoutes.lessonKeyboardGuide,
+                arguments: LessonKeyboardGuideArgs(
+                  isUrdu: controller.selectedLanguage.value ==
+                      TypingLanguage.urdu,
+                ),
+              ),
+              icon: const Icon(Icons.keyboard_outlined),
+              label: const Text('Keyboard guide'),
+            ),
           ],
         ));
   }
