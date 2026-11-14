@@ -71,9 +71,14 @@ class TypingEngine {
 
   void _initWords() {
     // Growable: a timed test appends words when the paragraph runs out.
-    _targetWords = _targetText.isEmpty
+    // Trim first, like [_appendWords] does: without it, leading or
+    // trailing whitespace yields a phantom empty "word" (English Lesson
+    // 14's content ends with a space), which the word boxes would show
+    // as an empty box and "Word X of Y" would count.
+    final String trimmed = _targetText.trim();
+    _targetWords = trimmed.isEmpty
         ? <String>[]
-        : List<String>.of(_targetText.split(RegExp(r'\s+')));
+        : List<String>.of(trimmed.split(RegExp(r'\s+')));
     _wordStatuses = List<TypingWordStatus>.filled(
       _targetWords.length,
       TypingWordStatus.pending,

@@ -4,6 +4,24 @@ import 'package:typing_master/features/typing_test/model/typing_word_status.dart
 import 'package:typing_master/features/typing_test/service/typing_engine.dart';
 
 void main() {
+  group('0. Word splitting', () {
+    test('leading/trailing whitespace yields no phantom empty word', () {
+      // English Lesson 14's content ends with a space: without the
+      // trim, the split yields a trailing '' word — an empty box in
+      // the lesson word boxes and an extra "Word X of Y".
+      final engine = TypingEngine(
+        targetText: 'cat dog ',
+        duration: const Duration(seconds: 30),
+      );
+      expect(engine.targetWords, <String>['cat', 'dog']);
+      final leading = TypingEngine(
+        targetText: '  cat dog',
+        duration: const Duration(seconds: 30),
+      );
+      expect(leading.targetWords, <String>['cat', 'dog']);
+    });
+  });
+
   group('1. Correct typing', () {
     test('every character typed correctly gives 0 errors and 100% accuracy',
         () {

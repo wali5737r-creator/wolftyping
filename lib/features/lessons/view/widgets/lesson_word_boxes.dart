@@ -33,6 +33,17 @@ import 'lesson_keyboard.dart';
 ///    were wrong;
 ///  - pending words stay in the pending colour.
 ///
+/// One box, one word — always. Every caller already splits the drill on
+/// whitespace ([TypingEngine] for practice, `content.split` for the intro
+/// preview), and no lesson definition contains a multi-word entry, but
+/// this widget flattens any entry that ever arrives with spaces anyway,
+/// remapping its per-word state by the entry's original index — so a box
+/// can never hold two or three words. The boxes are also unmistakably
+/// separate: a strong finger-colour border (0.8 alpha) and 12px gaps,
+/// so even two-letter words ("ff", "jjj") read as distinct boxes on a
+/// real laptop screen, not one box holding "ff jjj jfj" (Muhammad's
+/// report, 2026-11-14: "Aik box ma aik word ho tmny 2 3 rkh diye").
+///
 /// Urdu: the word text uses [AppTextStyles.typingTextUr] (26px, height
 /// 2.6 — Noto Nastaliq Urdu's natural line height), so the full glyph —
 /// dots above and below the baseline — fits inside its box. Consecutive
@@ -76,23 +87,46 @@ class LessonWordBoxes extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // One box per word — hard guarantee: flatten any entry that arrives
+    // with spaces (see the class doc). In practice every caller already
+    // splits, so this is normally the identity mapping; the per-word
+    // state (status, committed buffer, current word + buffer) is remapped
+    // by the entry's original index, so nothing can drift out of step.
+    final List<_BoxWord> boxes = <_BoxWord>[];
+    for (int i = 0; i < targetWords.length; i++) {
+      final List<String> parts = targetWords[i]
+          .split(RegExp(r'\s+'))
+          .where((String w) => w.isNotEmpty)
+          .toList();
+      for (int p = 0; p < parts.length; p++) {
+        boxes.add(_BoxWord(
+          word: parts[p],
+          originalIndex: i,
+          isFirstPiece: p == 0,
+        ));
+      }
+    }
     return SelectionContainer.disabled(
       child: Wrap(
-        spacing: 8,
-        runSpacing: 10,
+        spacing: 12,
+        runSpacing: 12,
         children: [
-          for (int i = 0; i < targetWords.length; i++)
+          for (int j = 0; j < boxes.length; j++)
             _WordBox(
-              index: i,
-              word: targetWords[i],
-              status: i < wordStatuses.length
-                  ? wordStatuses[i]
+              index: j,
+              word: boxes[j].word,
+              status: boxes[j].originalIndex < wordStatuses.length
+                  ? wordStatuses[boxes[j].originalIndex]
                   : TypingWordStatus.pending,
-              typed: i < committedWordBuffers.length
-                  ? committedWordBuffers[i]
+              typed: boxes[j].originalIndex < committedWordBuffers.length
+                  ? committedWordBuffers[boxes[j].originalIndex]
                   : '',
-              isCurrent: i == currentWordIndex,
-              currentBuffer: currentWordBuffer,
+              isCurrent: boxes[j].originalIndex == currentWordIndex &&
+                  boxes[j].isFirstPiece,
+              currentBuffer: boxes[j].originalIndex == currentWordIndex &&
+                      boxes[j].isFirstPiece
+                  ? currentWordBuffer
+                  : '',
               isUrdu: isUrdu,
               baseStyle: baseStyle ??
                   (isUrdu
@@ -103,6 +137,22 @@ class LessonWordBoxes extends StatelessWidget {
       ),
     );
   }
+}
+
+/// One flattened word for [_WordBox]: the word itself plus which entry
+/// of [LessonWordBoxes.targetWords] it came from (for remapping the
+/// per-word state) and whether it is that entry's first piece (only the
+/// first piece of the current word is the current box).
+class _BoxWord {
+  const _BoxWord({
+    required this.word,
+    required this.originalIndex,
+    required this.isFirstPiece,
+  });
+
+  final String word;
+  final int originalIndex;
+  final bool isFirstPiece;
 }
 
 class _WordBox extends StatelessWidget {
@@ -164,9 +214,15 @@ class _WordBox extends StatelessWidget {
       borderColor = palette.skipped;
       borderWidth = 1.5;
     } else {
-      background = fingerColor.withValues(alpha: isDark ? 0.14 : 0.08);
-      borderColor = fingerColor.withValues(alpha: 0.45);
-      borderWidth = 1.5;
+      // Pending: a clearly visible finger-colour border (0.8 alpha) and
+      // a 2px edge — the old 0.45-alpha 1.5px edge on a 0.08-alpha
+      // background was so faint that adjacent two-letter boxes ("ff",
+      // "jjj") read as one box holding several words on a real laptop
+      // screen. The border is the box's outline; the background stays
+      // light so the pending text keeps its contrast.
+      background = fingerColor.withValues(alpha: isDark ? 0.18 : 0.12);
+      borderColor = fingerColor.withValues(alpha: 0.8);
+      borderWidth = 2;
     }
 
     // One rounded box: the body carries the state border/background and
@@ -182,7 +238,7 @@ class _WordBox extends StatelessWidget {
           Container(
             key: ValueKey('lesson-word-box-$index'),
             padding: EdgeInsets.symmetric(
-              horizontal: 10,
+              horizontal: 12,
               // Nastaliq glyphs are tall (line height 2.6em): the extra
               // vertical room keeps dots and tails inside the box.
               vertical: isUrdu ? 2 : 5,

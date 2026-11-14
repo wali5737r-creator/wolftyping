@@ -36,6 +36,10 @@ class LessonPracticeView extends GetView<LessonPracticeController> {
 
   @override
   Widget build(BuildContext context) {
+    // Re-bind to the lesson this navigation was opened for (a no-op
+    // while the same lesson is open). A reused controller must never
+    // show the previous lesson's drill — see ensureLesson().
+    controller.ensureLesson();
     return AppScaffold(
       currentRoute: AppRoutes.lessons,
       body: Obx(() {

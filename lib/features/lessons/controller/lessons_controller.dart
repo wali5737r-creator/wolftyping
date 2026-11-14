@@ -19,6 +19,16 @@ class LessonsController extends GetxController {
   final RxBool isLoading = false.obs;
   final RxList<LessonWithProgress> lessons = <LessonWithProgress>[].obs;
 
+  /// Guards concurrent loads: tapping a language tab starts a load, and
+  /// the initial load may still be in flight (first open seeds the
+  /// lessons into the database, which is slow) — without this, the
+  /// load that finishes LAST wins, so switching to Urdu before the
+  /// English load finished could leave the English list under the Urdu
+  /// tab (the user then opens "Lesson 1" and gets English content).
+  /// Only the newest generation may write the list or clear the
+  /// loading flag.
+  int _loadGeneration = 0;
+
   @override
   void onInit() {
     super.onInit();
@@ -27,12 +37,16 @@ class LessonsController extends GetxController {
   }
 
   Future<void> loadLessons() async {
+    final int generation = ++_loadGeneration;
     isLoading.value = true;
     try {
-      lessons.value = await LessonRepository.instance
+      final List<LessonWithProgress> loaded = await LessonRepository
+          .instance
           .fetchLessons(selectedLanguage.value);
+      if (generation != _loadGeneration) return;
+      lessons.value = loaded;
     } finally {
-      isLoading.value = false;
+      if (generation == _loadGeneration) isLoading.value = false;
     }
   }
 

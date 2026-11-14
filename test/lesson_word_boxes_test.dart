@@ -94,6 +94,55 @@ void main() {
       expect(richTextWith('fjf'), findsOneWidget);
     });
 
+    testWidgets('a multi-word entry is split: one box per word',
+        (tester) async {
+      // Muhammad (2026-11-14): "Aik box ma aik word ho tmny 2 3 rkh
+      // diye" — a box must never hold two or three words. No lesson
+      // definition contains a multi-word entry (see
+      // lesson_definitions_test.dart), but the widget flattens any
+      // entry that ever arrives with spaces, remapping its state by
+      // the entry's original index.
+      await pumpBoxes(
+        tester,
+        words: const ['ff jjj', 'fjf'],
+        statuses: const [TypingWordStatus.pending, TypingWordStatus.pending],
+        buffers: const [],
+        currentIndex: -1,
+      );
+      expect(find.byKey(const ValueKey('lesson-word-box-0')), findsOneWidget);
+      expect(find.byKey(const ValueKey('lesson-word-box-1')), findsOneWidget);
+      expect(find.byKey(const ValueKey('lesson-word-box-2')), findsOneWidget);
+      expect(find.byKey(const ValueKey('lesson-word-box-3')), findsNothing);
+      expect(richTextWith('ff'), findsOneWidget);
+      expect(richTextWith('jjj'), findsOneWidget);
+      expect(richTextWith('fjf'), findsOneWidget);
+      // No box's text contains a space.
+      final Iterable<RichText> texts = find
+          .byType(RichText)
+          .evaluate()
+          .map((Element e) => e.widget as RichText);
+      for (final RichText text in texts) {
+        expect(text.text.toPlainText().contains(' '), isFalse);
+      }
+    });
+
+    testWidgets('pending boxes are unmistakably separate',
+        (tester) async {
+      // The old pending style (0.45-alpha border, 8px gaps) was so
+      // faint that adjacent two-letter boxes read as one box holding
+      // several words on a real laptop screen.
+      await pumpBoxes(tester);
+      final Wrap wrap = tester.widget<Wrap>(find.byType(Wrap).first);
+      expect(wrap.spacing, 12);
+      expect(wrap.runSpacing, 12);
+      // Pending box 2 ('fjf', first letter 'f' = index teal) carries
+      // the finger colour at 0.8 alpha, not 0.45.
+      expect(
+        borderColorOf(boxDecoration(tester, 2)),
+        const Color(0xFF0F766E).withValues(alpha: 0.8),
+      );
+    });
+
     testWidgets('current word box is highlighted with the accent border',
         (tester) async {
       await pumpBoxes(tester);

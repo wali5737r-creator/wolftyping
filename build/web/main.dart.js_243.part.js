@@ -87,7 +87,7 @@ A.hFf=new C.a("p61-35",B.b,"Who wrote the book In the Line of Fire?",A.cBy,2,"Bo
 A.dGO=w(["Abida Parveen","Arooj Aftab","Fareeda Khanum","None of these"],x.h)
 A.hq7=new C.a("p61-36",B.b,"Who became the first Pakistani to win a Grammy Award?",A.dGO,1,"Music","Arooj Aftab won a Grammy in April 2022, the first Pakistani to do so.")
 A.kzB=new C.a("p61-37",B.b,"How many times has the Nishan-e-Haider been awarded?",G.f_,1,"Awards","The Nishan-e-Haider has been awarded 11 times, counting the Hilal-e-Kashmir of Saif Ali Janjua, later declared its equivalent; all awards were posthumous.")
-A.irg=new C.a("p61-38",B.b,"Shalimar Bagh in Lahore was built by which Mughal emperor?",K.p0,1,"Mughal History","The Shalimar Gardens in Lahore were built by Shah Jahan in the 1640s.")
+A.irg=new C.a("p61-38",B.b,"Shalimar Bagh in Lahore was built by which Mughal emperor?",K.p1,1,"Mughal History","The Shalimar Gardens in Lahore were built by Shah Jahan in the 1640s.")
 A.b_e=w(["Cambodia","Ireland","Taiwan","Italy"],x.h)
 A.fNW=new C.a("p61-39",B.b,"Kaavan the elephant was moved from Pakistan to which country following a court order?",A.b_e,0,"Current Affairs","Kaavan was transferred to a sanctuary in Cambodia in 2020 after the Islamabad High Court ordered his relocation.")
 A.dSu=w(["Kalhan","Birbal","Ibn Batuta","Abul Fazl"],x.h)
@@ -3837,7 +3837,7 @@ A.axN=w(["28","29","None of these","27"],x.h)
 A.fZt=new C.a("p82-12",B.a,"The European Union has how many members?",A.axN,3,"World Affairs","After Brexit, the EU has 27 member states.")
 A.bok=w(["Tripoli","Kathmandu","Brasilia","None of these"],x.h)
 A.iU1=new C.a("p82-13",B.a,"The capital of Libya is:",A.bok,0,"World Affairs","Tripoli is the capital of Libya.")
-A.kbz=new C.a("p82-14",B.a,"Which continent has no desert?",H.pC,3,"World Affairs","Europe has the Tabernas Desert in Spain, and Asia and Africa also have deserts, so none of the listed continents is desert-free.")
+A.kbz=new C.a("p82-14",B.a,"Which continent has no desert?",H.pD,3,"World Affairs","Europe has the Tabernas Desert in Spain, and Asia and Africa also have deserts, so none of the listed continents is desert-free.")
 A.eSV=w(["France","Ukraine","Russia","None of these"],x.h)
 A.jBy=new C.a("p82-15",B.a,"The Bolshevik Revolution is related to:",A.eSV,2,"World Affairs","The Bolshevik Revolution took place in Russia in 1917.")
 A.d2N=w(["Punjab","Sindh","None of these","KPK"],x.h)
@@ -4163,4 +4163,4 @@ A.a3X=w(["Commonwealth: 56 members since Gabon and Togo joined in 2022.","UK mon
 A.lsV=new D.K("2021-83",83,"Assistant (BS-16)","Women Development Department","07/08/2021",A.biO,A.a3X)
 A.dHM=w([A.luk,A.lt4,A.lti,A.ltC,A.lsp,A.ltP,A.luc,A.lvU,A.lt5,A.ltY,A.ltx,A.luS,A.lvq,A.lum,A.lv9,A.ltz,A.lvo,A.ltS,A.lv1,A.ltt,A.lt2,A.ltp,A.lsV],C.a_("v<K>"))
 A.Pu=A.dHM})()};
-(a=>{a["cUOqN6LNKNA1d9XDPuiu33SEMUU="]=a.current})($__dart_deferred_initializers__);
+(a=>{a["k02aok36FcHxwOQ1/yhZY3LyMV0="]=a.current})($__dart_deferred_initializers__);

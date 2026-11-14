@@ -25,8 +25,14 @@ class LessonPracticeController extends GetxController {
   final FocusNode focusNode = FocusNode();
 
   /// The lesson this screen was opened for — passed in as `Get.arguments`
-  /// by the Lessons Dashboard when navigating here.
-  late final LessonWithProgress lesson;
+  /// by the Lessons Dashboard when navigating here. NOT final on purpose:
+  /// the controller is normally created fresh per navigation (the page
+  /// binding disposes it on pop), but if an instance is ever reused
+  /// across navigations, [ensureLesson] re-binds it to the lesson the
+  /// screen was actually opened for — a stale controller must never
+  /// show the previous lesson's content (Urdu Lesson 1 opening with
+  /// the English drill, 2026-11-14).
+  late LessonWithProgress lesson;
 
   final Rx<LessonPracticePhase> phase = LessonPracticePhase.intro.obs;
   final RxBool lastAttemptPassed = false.obs;
@@ -34,6 +40,13 @@ class LessonPracticeController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    _bindLessonFromArguments();
+  }
+
+  /// Reads the lesson from the current navigation arguments. Falls back
+  /// to English Lesson 1 only when no lesson was passed (a bare deep
+  /// link) — the same defensive fallback as before.
+  void _bindLessonFromArguments() {
     final Object? args = Get.arguments;
     if (args is LessonWithProgress) {
       lesson = args;
@@ -52,6 +65,31 @@ class LessonPracticeController extends GetxController {
         locked: false,
       );
     }
+  }
+
+  /// Re-binds the screen to the lesson of the CURRENT navigation, if it
+  /// differs from the one bound at [onInit]. Called from the view's
+  /// build — a no-op on every rebuild while the same lesson is open
+  /// (same dbId), so mid-practice rebuilds never reset anything. When
+  /// the arguments name a different lesson, the in-progress attempt is
+  /// discarded (clock stopped, engine dropped, phase back to intro) so
+  /// the screen opens the new lesson's intro instead of showing the
+  /// old lesson's drill.
+  void ensureLesson() {
+    final Object? args = Get.arguments;
+    if (args is! LessonWithProgress) return;
+    if (args.dbId == lesson.dbId) return;
+    _clock.stop();
+    _engine = null;
+    _savedThisAttempt = false;
+    snapshot.value = TypingSnapshot.initial();
+    wordStatuses.clear();
+    targetWords.clear();
+    committedWordBuffers.clear();
+    currentWordBuffer.value = '';
+    lastAttemptPassed.value = false;
+    lesson = args;
+    phase.value = LessonPracticePhase.intro;
   }
 
   TypingEngine? _engine;
