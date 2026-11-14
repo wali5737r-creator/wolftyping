@@ -5084,8 +5084,9 @@ const List<MockQuestion> sampleQuestions = [
     subject: MockSubject.everydayScience,
     question: 'Fossil fuels such as coal and oil were formed from:',
     options: ['Fresh leaves', 'Ancient dead plants and animals', 'Sea water', 'Rocks only'],
-    correctIndex: 3,
+    correctIndex: 1,
     topic: 'Environment',
+    explanation: 'Fossil fuels formed over millions of years from buried dead plants and animals, compressed and heated under layers of rock.',
   ),
   MockQuestion(
     id: 'sci-new-56',

@@ -6,7 +6,7 @@ var z=a.updateTypes([])
 var y={d:B.Z("v<l>")};(function constants(){var x=a.makeConstList
 A.A0=x(["Hazrat Younas (A.S)","Hazrat Shoaib (A.S)","Hazrat Zull-Kifl (A.S)","None of these"],y.d)
 A.A9=x(["Surah Al-Naml","Surah Al-Qadar","Surah Al-Falaq","Surah Al-Nas"],y.d)
-A.p0=x(["Atlantic Ocean","Pacific Ocean","Indian Ocean","Arctic Ocean"],y.d)
+A.p1=x(["Atlantic Ocean","Pacific Ocean","Indian Ocean","Arctic Ocean"],y.d)
 A.A6=x(["Oman","Bahrain","Iran","None of these"],y.d)
 A.xq=x(["Dhaka","Allahabad","Delhi","Lucknow"],y.d)
 A.zx=x(["United Kingdom","Ireland","Canada","Scotland"],y.d)
@@ -15,4 +15,4 @@ A.yl=x(["Wireless Fidelity","Wired Fidelity","Wireless Focus","Wireless Field"],
 A.Au=x(["Ecology","Anthropology","Entomology","Demography"],y.d)
 A.AJ=x(["Vitamin A","Vitamin C","Vitamin D","Vitamin E"],y.d)
 A.yT=x(["Sahiwal","Multan","Narowal","Makran"],y.d)})()};
-(a=>{a["mmDRuyt4GMZBDRqf4SZ3W2EwoVM="]=a.current})($__dart_deferred_initializers__);
+(a=>{a["WE4fZ/7WoeBs8QrKlmYbtVT6i8M="]=a.current})($__dart_deferred_initializers__);

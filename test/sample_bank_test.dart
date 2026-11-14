@@ -120,21 +120,21 @@ void main() {
       }
     });
 
-    test('every Everyday Science question has a verified explanation '
-        'except the one with a flagged wrong key', () {
+    test('every Everyday Science question has a verified explanation',
+        () {
       final science = sampleQuestions
           .where((q) => q.subject == MockSubject.everydayScience)
           .toList();
       expect(science.length, 100);
-      // sci-new-55 is left without an explanation: its answer key is
-      // wrong (it says fossil fuels formed from "Rocks only"), and the
-      // key fix is a separate decision, so no explanation is attached.
+      // sci-new-55's answer key was corrected (fossil fuels formed
+      // from ancient dead plants and animals, not "Rocks only") and
+      // now carries an explanation like every other question.
       final explained =
           science.where((q) => q.explanation != null).toList();
-      expect(explained.length, 99);
+      expect(explained.length, 100);
       final unexplained =
           science.where((q) => q.explanation == null).toList();
-      expect(unexplained.map((q) => q.id), ['sci-new-55']);
+      expect(unexplained, isEmpty);
       for (final q in explained) {
         expect(q.explanation!.trim(), isNotEmpty, reason: q.id);
         expect(q.explanation, q.explanation!.trim(), reason: q.id);
@@ -191,14 +191,12 @@ void main() {
       }
     });
 
-    test('all six subjects are covered; the only question without an '
-        'explanation is the one with a flagged wrong key', () {
+    test('all six subjects are covered; every question has an '
+        'explanation', () {
       // Every subject now has explanations: English, Mathematics,
       // Everyday Science, Pakistan Studies, Islamiat and General
-      // Knowledge. The single known gap is sci-new-55, left without
-      // an explanation because its answer key is flagged wrong (it
-      // says fossil fuels formed from "Rocks only") and the key fix
-      // is a separate decision.
+      // Knowledge. The last gap was sci-new-55, whose answer key has
+      // been corrected and now carries an explanation.
       for (final subject in MockSubject.values) {
         final questions = sampleQuestions
             .where((q) => q.subject == subject)
@@ -206,20 +204,16 @@ void main() {
         expect(questions.length, 100, reason: subject.label);
         final explained =
             questions.where((q) => q.explanation != null).length;
-        if (subject == MockSubject.everydayScience) {
-          expect(explained, 99, reason: subject.label);
-        } else {
-          expect(explained, 100, reason: subject.label);
-        }
+        expect(explained, 100, reason: subject.label);
       }
       final unexplained = sampleQuestions
           .where((q) => q.explanation == null)
           .map((q) => q.id)
           .toList();
-      expect(unexplained, ['sci-new-55']);
+      expect(unexplained, isEmpty);
       expect(
         sampleQuestions.where((q) => q.explanation != null).length,
-        599,
+        600,
       );
     });
 
@@ -296,8 +290,7 @@ void main() {
     });
 
     testWidgets('end review shows an Everyday Science explanation and '
-        'nothing for the question with the flagged wrong key',
-        (tester) async {
+        'nothing for a question without one', (tester) async {
       await tester.pumpWidget(
         GetMaterialApp(
           theme: AppTheme.light,
@@ -309,14 +302,20 @@ void main() {
       final controller = Get.find<MockTestController>();
       final science = sampleQuestions.firstWhere(
           (q) => q.subject == MockSubject.everydayScience);
-      // sci-new-55 carries no explanation because its answer key is
-      // flagged wrong; the review must show nothing for it.
-      final flagged = sampleQuestions
-          .firstWhere((q) => q.id == 'sci-new-55');
-      expect(flagged.explanation, isNull);
-      final engine = MockTestEngine(questions: [science, flagged]);
+      // No sample question lacks an explanation any more, so the
+      // question without one is a synthetic fixture: the review must
+      // show nothing for it.
+      const noExplanation = MockQuestion(
+        id: 'test-no-explanation',
+        subject: MockSubject.everydayScience,
+        question: 'Synthetic question with no explanation?',
+        options: ['A', 'B', 'C', 'D'],
+        correctIndex: 0,
+      );
+      expect(noExplanation.explanation, isNull);
+      final engine = MockTestEngine(questions: [science, noExplanation]);
       engine.answer(science.id, science.correctIndex);
-      engine.answer(flagged.id, flagged.correctIndex);
+      engine.answer(noExplanation.id, noExplanation.correctIndex);
       controller.selectKind(MockTestKind.full);
       controller.result.value = engine.result();
       controller.phase.value = MockTestPhase.result;
@@ -331,6 +330,13 @@ void main() {
         findsOneWidget,
       );
       // Only the Science question carries an explanation.
+      expect(find.textContaining('Explanation:'), findsOneWidget);
+      // Expanding the question without one adds no explanation text.
+      await tester.ensureVisible(
+          find.text('Q2. ${noExplanation.question}'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Q2. ${noExplanation.question}'));
+      await tester.pumpAndSettle();
       expect(find.textContaining('Explanation:'), findsOneWidget);
       controller.onClose();
     });
@@ -409,8 +415,7 @@ void main() {
     });
 
     testWidgets('end review shows a General Knowledge explanation and '
-        'nothing for the question with the flagged wrong key',
-        (tester) async {
+        'nothing for a question without one', (tester) async {
       await tester.pumpWidget(
         GetMaterialApp(
           theme: AppTheme.light,
@@ -422,14 +427,20 @@ void main() {
       final controller = Get.find<MockTestController>();
       final gk = sampleQuestions.firstWhere(
           (q) => q.subject == MockSubject.generalKnowledge);
-      // sci-new-55 carries no explanation because its answer key is
-      // flagged wrong; the review must show nothing for it.
-      final flagged = sampleQuestions
-          .firstWhere((q) => q.id == 'sci-new-55');
-      expect(flagged.explanation, isNull);
-      final engine = MockTestEngine(questions: [gk, flagged]);
+      // No sample question lacks an explanation any more, so the
+      // question without one is a synthetic fixture: the review must
+      // show nothing for it.
+      const noExplanation = MockQuestion(
+        id: 'test-no-explanation',
+        subject: MockSubject.generalKnowledge,
+        question: 'Synthetic question with no explanation?',
+        options: ['A', 'B', 'C', 'D'],
+        correctIndex: 0,
+      );
+      expect(noExplanation.explanation, isNull);
+      final engine = MockTestEngine(questions: [gk, noExplanation]);
       engine.answer(gk.id, gk.correctIndex);
-      engine.answer(flagged.id, flagged.correctIndex);
+      engine.answer(noExplanation.id, noExplanation.correctIndex);
       controller.selectKind(MockTestKind.full);
       controller.result.value = engine.result();
       controller.phase.value = MockTestPhase.result;
@@ -444,6 +455,13 @@ void main() {
         findsOneWidget,
       );
       // Only the General Knowledge question carries an explanation.
+      expect(find.textContaining('Explanation:'), findsOneWidget);
+      // Expanding the question without one adds no explanation text.
+      await tester.ensureVisible(
+          find.text('Q2. ${noExplanation.question}'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Q2. ${noExplanation.question}'));
+      await tester.pumpAndSettle();
       expect(find.textContaining('Explanation:'), findsOneWidget);
       controller.onClose();
     });

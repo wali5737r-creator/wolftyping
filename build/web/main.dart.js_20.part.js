@@ -5,5 +5,5 @@ A=c[28]
 var z=a.updateTypes([])
 var y={d:B.Z("v<l>")};(function constants(){var x=a.makeConstList
 A.kW=x(["Indus","Jhelum","Ravi","Chenab"],y.d)
-A.pn=x(["10","12","15","20"],y.d)})()};
-(a=>{a["0s/RTRzBynLezxeliQ3/Ix8K+bc="]=a.current})($__dart_deferred_initializers__);
+A.po=x(["10","12","15","20"],y.d)})()};
+(a=>{a["NC3R6GgHZbYLyoplkpqPMLhzNBQ="]=a.current})($__dart_deferred_initializers__);
