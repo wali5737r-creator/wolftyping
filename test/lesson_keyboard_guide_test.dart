@@ -15,6 +15,9 @@ import 'package:typing_master/features/lessons/view/widgets/lesson_keyboard.dart
 ///
 ///  * the guide page renders the coloured finger-guide board (both
 ///    languages) with the finger-colour caption;
+///  * a legend under the board names every finger colour (same mapping
+///    the board paints, so a learner can tell which colour means which
+///    finger) in both layouts;
 ///  * the board is display-only: no onCharacter/onSpace/onBackspace
 ///    callbacks are wired, no key is tappable, tapping a key types
 ///    nothing;
@@ -72,6 +75,60 @@ void main() {
       expect(board.urdu, isTrue);
       expect(find.text('Space'), findsOneWidget);
       expect(find.text('Shift'), findsNWidgets(2));
+    });
+
+    // The legend (2026-11-14): the caption alone never said which
+    // colour belongs to which finger, so a new learner could not read
+    // the board from the page alone. One swatch per finger, from the
+    // board's own mapping — same in both layouts, since the colours
+    // are identical in Urdu and English.
+    testWidgets('legend names every finger colour (English layout)',
+        (tester) async {
+      await pumpGuide(tester);
+      for (final label in [
+        'Little finger',
+        'Ring finger',
+        'Middle finger',
+        'Index finger',
+        'Thumb (Space bar)',
+      ]) {
+        expect(find.text(label), findsOneWidget);
+      }
+    });
+
+    testWidgets('legend is present in the Urdu layout too',
+        (tester) async {
+      await pumpGuide(
+        tester,
+        args: const LessonKeyboardGuideArgs(isUrdu: true),
+      );
+      for (final label in [
+        'Little finger',
+        'Ring finger',
+        'Middle finger',
+        'Index finger',
+        'Thumb (Space bar)',
+      ]) {
+        expect(find.text(label), findsOneWidget);
+      }
+    });
+
+    test('fingerLegend pins the board\'s exact colour mapping', () {
+      final legend = LessonKeyboard.fingerLegend;
+      expect(legend.map((e) => e.label), [
+        'Little finger',
+        'Ring finger',
+        'Middle finger',
+        'Index finger',
+        'Thumb (Space bar)',
+      ]);
+      expect(legend.map((e) => e.color), [
+        const Color(0xFF8B5CF6),
+        const Color(0xFF0891B2),
+        const Color(0xFFD97706),
+        const Color(0xFF0F766E),
+        const Color(0xFF64748B),
+      ]);
     });
 
     testWidgets('language switch flips the board Urdu <-> English',

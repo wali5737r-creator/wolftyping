@@ -159,6 +159,20 @@ class LessonKeyboard extends StatefulWidget {
     }
   }
 
+  /// Legend data for the lessons guide page: one entry per finger
+  /// colour, in home-row order (little → thumb). Built from
+  /// [_fingerColor] — the exact colours the board paints — so the legend
+  /// can never drift from the board. The same colour serves both hands
+  /// (left and right pinky are both violet); the key's position on the
+  /// board shows which hand types it. Only Space uses the thumb.
+  static List<({String label, Color color})> get fingerLegend => [
+        (label: 'Little finger', color: _fingerColor(_Finger.pinky)),
+        (label: 'Ring finger', color: _fingerColor(_Finger.ring)),
+        (label: 'Middle finger', color: _fingerColor(_Finger.middle)),
+        (label: 'Index finger', color: _fingerColor(_Finger.indexFinger)),
+        (label: 'Thumb (Space bar)', color: _fingerColor(_Finger.thumb)),
+      ];
+
   @override
   State<LessonKeyboard> createState() => _LessonKeyboardState();
 }

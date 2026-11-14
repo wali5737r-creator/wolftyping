@@ -893,7 +893,7 @@ class _TestPanelState extends State<_TestPanel> {
                               )
                             else ...[
                               Text(
-                                '${controller.unansweredQuestions.length} question${controller.unansweredQuestions.length == 1 ? ' is' : 's are'} still unanswered:',
+                                '${controller.unansweredQuestions.length} question${controller.unansweredQuestions.length == 1 ? ' is' : 's are'} still unanswered.',
                               ),
                             ],
                           ],

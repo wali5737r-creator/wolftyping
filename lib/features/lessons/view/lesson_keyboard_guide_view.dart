@@ -125,6 +125,36 @@ class _LessonKeyboardGuideViewState extends State<LessonKeyboardGuideView> {
                     'Outlined keys are new in this lesson.',
                     style: AppTextStyles.captionOf(context),
                   ),
+                  const SizedBox(height: 10),
+                  // Legend: one swatch per finger colour, from the
+                  // board's own mapping (LessonKeyboard.fingerLegend).
+                  // The colours are identical in the Urdu and English
+                  // layouts, so the legend is the same for both.
+                  Wrap(
+                    spacing: 14,
+                    runSpacing: 8,
+                    children: [
+                      for (final entry in LessonKeyboard.fingerLegend)
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Container(
+                              width: 14,
+                              height: 14,
+                              decoration: BoxDecoration(
+                                color: entry.color,
+                                borderRadius: BorderRadius.circular(3),
+                              ),
+                            ),
+                            const SizedBox(width: 6),
+                            Text(
+                              entry.label,
+                              style: AppTextStyles.captionOf(context),
+                            ),
+                          ],
+                        ),
+                    ],
+                  ),
                 ] else
                   Text(
                     'Keyboard guide hidden — tap "Show keyboard" to see it again.',

@@ -66,7 +66,7 @@ void main() {
     );
     // Full mock test, nothing answered yet: the count as plain text,
     // and no per-question number chips anywhere in the banner.
-    expect(find.text('100 questions are still unanswered:'), findsOneWidget);
+    expect(find.text('100 questions are still unanswered.'), findsOneWidget);
     expect(find.byType(Chip), findsNothing);
     expect(find.text('1'), findsNothing);
     expect(find.text('100'), findsNothing);
