@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../../core/constants/app_colors.dart';
+import '../../../core/constants/app_fonts.dart';
+import '../../../core/utils/unicode_chars.dart';
 import '../../../core/utils/urdu_text_direction.dart';
 import '../../../core/widgets/typing_focus_keeper.dart';
 import '../../../core/constants/app_dimensions.dart';
@@ -14,17 +16,21 @@ import '../../../core/widgets/app_surfaces.dart';
 import '../../typing_test/model/typing_language.dart';
 import '../../typing_test/model/typing_snapshot.dart';
 import '../../typing_test/model/typing_test_status.dart';
-import '../../typing_test/view/widgets/typing_paragraph_text.dart';
+import '../../typing_test/model/typing_word_status.dart';
 import '../../typing_test/view/widgets/typing_ui_parts.dart';
 import '../../settings/controller/settings_controller.dart';
 import '../controller/lesson_practice_controller.dart';
 import 'lesson_keyboard_guide_view.dart';
+import 'widgets/lesson_keyboard.dart';
+import 'widgets/lesson_word_boxes.dart';
 
 /// Lesson Practice screen: instructions -> live typing -> result, all for
-/// one lesson. Uses the same `TypingEngine` and the same
-/// `TypingParagraphText` render widget as the Typing Test/Urdu/PPSC
+/// one lesson. Uses the same `TypingEngine` as the Typing Test/Urdu/PPSC
 /// screens (untimed here — a lesson ends when its drill is finished, not
-/// on a countdown).
+/// on a countdown), but renders its drill as key-style word boxes
+/// ([LessonWordBoxes]) instead of the flowing paragraph the timed screens
+/// use: one box per word, each box edged in the colour of the finger that
+/// types its first letter, so practice sets the learner's hand.
 class LessonPracticeView extends GetView<LessonPracticeController> {
   const LessonPracticeView({super.key});
 
@@ -55,6 +61,8 @@ class _IntroPanel extends StatelessWidget {
   Widget build(BuildContext context) {
     final lesson = controller.lesson;
     final bool isUrdu = lesson.definition.language == TypingLanguage.urdu;
+    final List<String> previewWords =
+        lesson.definition.content.split(RegExp(r'\s+'));
     return Align(
       alignment: Alignment.topLeft,
       child: ConstrainedBox(
@@ -128,15 +136,27 @@ class _IntroPanel extends StatelessWidget {
               ),
               const SizedBox(height: 20),
             ],
+            // The drill previewed exactly as practice shows it: one
+            // key-style box per word, edged in the colour of the finger
+            // that types its first letter (preview mode — all pending,
+            // no word highlighted).
             SoftSurface(
               child: SizedBox(
                 width: double.infinity,
                 child: Directionality(
                   textDirection:
                       isUrdu ? urduTextDirection() : TextDirection.ltr,
-                  child: Text(
-                    lesson.definition.content,
-                    style: isUrdu
+                  child: LessonWordBoxes(
+                    targetWords: previewWords,
+                    wordStatuses: List<TypingWordStatus>.filled(
+                      previewWords.length,
+                      TypingWordStatus.pending,
+                    ),
+                    committedWordBuffers: const [],
+                    currentWordIndex: -1,
+                    currentWordBuffer: '',
+                    isUrdu: isUrdu,
+                    baseStyle: isUrdu
                         ? AppTextStyles.typingTextUr
                         : AppTextStyles.typingTextEn,
                   ),
@@ -227,6 +247,35 @@ class _PracticePanel extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        // Lesson header: which lesson this is, and where the learner is
+        // in its drill — the old panel showed neither during practice.
+        Obx(() {
+          final TypingSnapshot s = controller.snapshot.value;
+          final int total = controller.targetWords.length;
+          final int shown =
+              total == 0 ? 0 : (s.currentWordIndex + 1).clamp(1, total);
+          return Padding(
+            padding: const EdgeInsets.only(bottom: 12),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    'Lesson ${controller.lesson.definition.orderIndex}: '
+                    '${controller.lesson.definition.title}',
+                    style: AppTextStyles.h3,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Text(
+                  'Word $shown of $total',
+                  style: AppTextStyles.captionOf(context),
+                ),
+              ],
+            ),
+          );
+        }),
         Obx(() {
           final TypingSnapshot s = controller.snapshot.value;
           final bool paused = s.status == TypingTestStatus.paused;
@@ -268,22 +317,67 @@ class _PracticePanel extends StatelessWidget {
               child: TypingAreaFrame(
                 focusNode: controller.focusNode,
                 child: SingleChildScrollView(
-                  child: Directionality(
-                    textDirection:
-                        isUrdu ? urduTextDirection() : TextDirection.ltr,
-                    child: Obx(() => TypingParagraphText(
-                          targetWords: controller.targetWords,
-                          wordStatuses: controller.wordStatuses,
-                          committedWordBuffers:
-                              controller.committedWordBuffers,
-                          currentWordIndex:
-                              controller.snapshot.value.currentWordIndex,
-                          currentWordBuffer:
-                              controller.currentWordBuffer.value,
-                          baseStyle: isUrdu
-                              ? AppTextStyles.typingTextUr
-                              : AppTextStyles.typingTextEn,
-                        )),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      // Which key comes next, and which finger types it —
+                      // the hand-setting cue: the learner never has to
+                      // guess, lesson after lesson.
+                      _FingerHintBar(controller: controller, isUrdu: isUrdu),
+                      const SizedBox(height: 16),
+                      Directionality(
+                        textDirection:
+                            isUrdu ? urduTextDirection() : TextDirection.ltr,
+                        child: Obx(() => LessonWordBoxes(
+                              targetWords: controller.targetWords,
+                              wordStatuses: controller.wordStatuses,
+                              committedWordBuffers:
+                                  controller.committedWordBuffers,
+                              currentWordIndex:
+                                  controller.snapshot.value.currentWordIndex,
+                              currentWordBuffer:
+                                  controller.currentWordBuffer.value,
+                              isUrdu: isUrdu,
+                              baseStyle: isUrdu
+                                  ? AppTextStyles.typingTextUr
+                                  : AppTextStyles.typingTextEn,
+                            )),
+                      ),
+                      const SizedBox(height: 20),
+                      // The colour language, spelled out under the boxes:
+                      // same swatches as the guide page, same mapping.
+                      Wrap(
+                        spacing: 14,
+                        runSpacing: 8,
+                        children: [
+                          for (final entry in LessonKeyboard.fingerLegend)
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Container(
+                                  width: 12,
+                                  height: 12,
+                                  decoration: BoxDecoration(
+                                    color: entry.color,
+                                    borderRadius: BorderRadius.circular(3),
+                                  ),
+                                ),
+                                const SizedBox(width: 6),
+                                Text(
+                                  entry.label,
+                                  style: AppTextStyles.captionOf(context),
+                                ),
+                              ],
+                            ),
+                        ],
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        'Box colours show which finger types the first '
+                        'letter of each word.',
+                        style: AppTextStyles.captionOf(context),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -338,6 +432,91 @@ class _PracticePanel extends StatelessWidget {
         }),
       ],
     );
+  }
+}
+
+/// The hand-setting cue above the word boxes: the next key to type as a
+/// mini key cap, in the colour of the finger that types it, with that
+/// finger named in words — plus a link to the full keyboard guide. The
+/// learner never has to guess which finger types what; the cue follows
+/// every keystroke. Display only — nothing here is tappable except the
+/// guide link, and no key types anything.
+class _FingerHintBar extends StatelessWidget {
+  const _FingerHintBar({required this.controller, required this.isUrdu});
+
+  final LessonPracticeController controller;
+  final bool isUrdu;
+
+  @override
+  Widget build(BuildContext context) {
+    return Obx(() {
+      final int idx = controller.snapshot.value.currentWordIndex;
+      final List<String> words = controller.targetWords;
+      if (idx < 0 || idx >= words.length) return const SizedBox.shrink();
+      final List<String> targetChars = splitChars(words[idx]);
+      final List<String> typedChars =
+          splitChars(controller.currentWordBuffer.value);
+      // The next character of the current word — or the Space that ends
+      // it (typed by the thumb).
+      final String next = typedChars.length < targetChars.length
+          ? targetChars[typedChars.length]
+          : ' ';
+      final ({Color color, String label})? finger =
+          LessonKeyboard.fingerInfoFor(next, urdu: isUrdu);
+      final bool isDark = Theme.of(context).brightness == Brightness.dark;
+      final Color fingerColor = finger?.color ??
+          (isDark ? const Color(0xFF64748B) : const Color(0xFF94A3B8));
+
+      return Row(
+        children: [
+          Container(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            decoration: BoxDecoration(
+              color: fingerColor.withValues(alpha: isDark ? 0.22 : 0.16),
+              borderRadius: BorderRadius.circular(6),
+              border: Border.all(color: fingerColor, width: 1.5),
+            ),
+            child: Text(
+              next == ' ' ? 'Space' : next,
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w700,
+                height: isUrdu && next != ' ' ? 1.8 : null,
+                fontFamily:
+                    isUrdu && next != ' ' ? AppFonts.urdu : null,
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
+            ),
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Text(
+              next == ' '
+                  ? 'Next: Space — press it with your thumb'
+                  : finger == null
+                      ? 'Next: $next'
+                      : 'Next: $next — ${finger.label}',
+              style: AppTextStyles.bodyMedium,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+          const SizedBox(width: 8),
+          TextButton.icon(
+            onPressed: () => Get.toNamed(
+              AppRoutes.lessonKeyboardGuide,
+              arguments: LessonKeyboardGuideArgs(
+                isUrdu: isUrdu,
+                focusKeys: controller.lesson.definition.focusKeys,
+              ),
+            ),
+            icon: const Icon(Icons.keyboard_outlined, size: 18),
+            label: const Text('Keyboard guide'),
+          ),
+        ],
+      );
+    });
   }
 }
 

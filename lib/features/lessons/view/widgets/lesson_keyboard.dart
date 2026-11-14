@@ -173,6 +173,44 @@ class LessonKeyboard extends StatefulWidget {
         (label: 'Thumb (Space bar)', color: _fingerColor(_Finger.thumb)),
       ];
 
+  static String _fingerLabel(_Finger f) {
+    switch (f) {
+      case _Finger.pinky:
+        return 'Little finger';
+      case _Finger.ring:
+        return 'Ring finger';
+      case _Finger.middle:
+        return 'Middle finger';
+      case _Finger.indexFinger:
+        return 'Index finger';
+      case _Finger.thumb:
+        return 'Thumb (Space bar)';
+    }
+  }
+
+  /// Which finger types [char], and in which colour the board paints
+  /// that finger — the SAME mapping the board itself uses ([_locate] +
+  /// [_fingerColor]), so a word box or hint can never disagree with the
+  /// guide board. [char] is one character; for Urdu lessons it is the
+  /// Urdu letter, translated through the phonetic layout first. A space
+  /// is typed by the thumb. Returns null when the character is on no key
+  /// (callers fall back to a neutral colour).
+  static ({Color color, String label})? fingerInfoFor(String char,
+      {bool urdu = false}) {
+    if (char == ' ') {
+      return (
+        color: _fingerColor(_Finger.thumb),
+        label: _fingerLabel(_Finger.thumb),
+      );
+    }
+    final String latin =
+        urdu ? (UrduPhoneticLayout.latinFor(char) ?? char) : char;
+    final ({int row, int col, bool shift})? loc = _locate(latin);
+    if (loc == null) return null;
+    final _Finger finger = _fingers[loc.row][loc.col];
+    return (color: _fingerColor(finger), label: _fingerLabel(finger));
+  }
+
   @override
   State<LessonKeyboard> createState() => _LessonKeyboardState();
 }
