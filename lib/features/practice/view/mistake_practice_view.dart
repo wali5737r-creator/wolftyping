@@ -16,7 +16,6 @@ import '../../typing_test/model/typing_test_status.dart';
 import '../../typing_test/view/widgets/typing_paragraph_text.dart';
 import '../../typing_test/view/widgets/typing_ui_parts.dart';
 import '../../settings/controller/settings_controller.dart';
-import '../../lessons/view/widgets/lesson_keyboard.dart';
 import '../controller/mistake_practice_controller.dart';
 
 /// Live typing + result for any of the five practice modes. Same
@@ -161,40 +160,9 @@ class _PracticePanel extends StatelessWidget {
           ),
           ),
         ),
-        // Urdu practice: the on-screen CRULP keyboard (same controller
-        // methods as physical keys). English practice has no board here,
-        // as before.
-        if (isUrdu)
-          Obx(() {
-            final int idx = controller.snapshot.value.currentWordIndex;
-            final String buffer = controller.currentWordBuffer.value;
-            String? next;
-            bool wrongSoFar = false;
-            if (idx < controller.targetWords.length) {
-              final String word = controller.targetWords[idx];
-              final List<int> wordRunes = word.runes.toList();
-              final int typed = buffer.runes.length;
-              next = typed < wordRunes.length
-                  ? String.fromCharCode(wordRunes[typed])
-                  : ' ';
-              wrongSoFar = !word.startsWith(buffer);
-            }
-            final bool backspaceAllowed =
-                SettingsController.currentOrNull?.allowBackspace != false;
-            return Padding(
-              padding: const EdgeInsets.only(top: AppDimensions.gapMedium),
-              child: LessonKeyboard(
-                nextChar: next,
-                needsBackspace: wrongSoFar && backspaceAllowed,
-                urdu: true,
-                onCharacter: controller.onCharacter,
-                onSpace: controller.onSpace,
-                onBackspace: controller.onBackspace,
-                showBackspace: backspaceAllowed,
-                focusNode: controller.focusNode,
-              ),
-            );
-          }),
+        // No on-screen keyboard: Urdu practice types with the physical
+        // keyboard only (same controller methods as before), so the
+        // typing area keeps the full height.
         const SizedBox(height: AppDimensions.gapMedium),
         Obx(() {
           final bool paused =

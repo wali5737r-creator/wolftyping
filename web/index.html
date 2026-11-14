@@ -54,6 +54,17 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
+  <!-- Preload the Urdu font: it is only fetched on first Urdu paint
+       otherwise, so on a slow connection the passage renders blank/tofu
+       for minutes (675 KB at 3 KB/s is ~230 s) while the font is in
+       flight — CanvasKit has no system-font fallback for Urdu glyphs.
+       Preloading starts the download with the page, not the first Urdu
+       screen. Served path is assets/assets/fonts/… : the pubspec asset
+       path (assets/fonts/…) is served under build/web/assets/, so the
+       URL is /assets/assets/fonts/NotoNastaliqUrdu.ttf (verified in the
+       release build; FontManifest lists the same asset key). -->
+  <link rel="preload" href="assets/assets/fonts/NotoNastaliqUrdu.ttf" as="font" type="font/ttf" crossorigin>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",

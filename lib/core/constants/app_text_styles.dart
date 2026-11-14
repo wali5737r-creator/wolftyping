@@ -146,7 +146,7 @@ class AppTextStyles {
   /// positioned dots, and the highlight covers the whole glyph.
   static const TextStyle typingTextUr = TextStyle(
     fontSize: 26,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     height: 2.6,
     fontFamily: urduFontFamily,
   );

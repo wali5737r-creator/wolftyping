@@ -3,8 +3,7 @@ import '../model/lesson_definition.dart';
 import '../model/lesson_level.dart';
 
 /// The built-in, progressive Urdu touch-typing course for the PHONETIC
-/// keyboard layout (see UrduPhoneticLayout). Same stage structure as the
-/// English course: home row, top row, bottom row, Shift letters and
+/// keyboard layout. Same stage structure as the English course: home row, top row, bottom row, Shift letters and
 /// punctuation, number row, words and sentences, speed and accuracy.
 /// Every drill only uses letters the learner has already met.
 class UrduLessonDefinitions {

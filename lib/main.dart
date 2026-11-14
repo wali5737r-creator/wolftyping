@@ -1,8 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
+import 'core/constants/app_fonts.dart';
 import 'core/database/app_database.dart';
 import 'core/database/database_recovery.dart';
 import 'core/routes/app_pages.dart';
@@ -14,6 +16,16 @@ import 'features/settings/controller/settings_controller.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Warm the Urdu font at app start (UNawaited — never blocks the first
+  // frame): without this the 675 KB Noto Nastaliq Urdu file is only
+  // fetched when the first Urdu screen paints, and on a slow connection
+  // the passage renders blank/tofu for minutes while it downloads.
+  // The <link rel="preload"> in web/index.html starts the same download
+  // even earlier; this is the belt-and-braces copy for when preload is
+  // ignored. A failure here is swallowed — the font still loads on
+  // first Urdu paint, exactly as before.
+  unawaited(_warmUrduFont());
 
   // Core services are put here (once, app-wide) rather than lazily per
 
@@ -53,6 +65,19 @@ Future<void> main() async {
   unawaited(settingsController.init());
 
   runApp(const WolfTypingApp());
+}
+
+/// Loads Noto Nastaliq Urdu into the font engine before any Urdu screen
+/// paints, so the first Urdu passage does not wait on a fresh download.
+/// Fire-and-forget by design (see main): never awaited, never throws.
+Future<void> _warmUrduFont() async {
+  try {
+    final FontLoader loader = FontLoader(AppFonts.urdu)
+      ..addFont(rootBundle.load('assets/fonts/NotoNastaliqUrdu.ttf'));
+    await loader.load();
+  } catch (_) {
+    // Font still loads on first Urdu paint, as before.
+  }
 }
 
 class WolfTypingApp extends StatefulWidget {

@@ -71,7 +71,14 @@ class AppColors {
   static const Color skippedWord = Color(0xFFF59E0B); // amber
   static const Color skippedWordBg = Color(0x1AF59E0B);
   static const Color currentWordBg = Color(0x3314B8A6);
-  static const Color pendingText = Color(0xFF9CA3AF);
+  // Near-white, not mid-grey: at 26px w600 the hairline Nastaliq strokes
+  // of untyped text in the old #9CA3AF (6.88:1 on paper) read as faint
+  // dots/dashes — at test start the WHOLE passage is pending. #DCE5E0 is
+  // 13.57:1 vs darkSurface #101C1A, so the passage reads clearly even
+  // before the first keystroke. Correct (green) / wrong (red) / skipped
+  // (amber) stay distinct from it. Light theme keeps pendingTextLight
+  // (#5A6372, 6.07:1 vs white) — already readable, unchanged.
+  static const Color pendingText = Color(0xFFDCE5E0);
 
   // Light-theme variants of the typing-text colors. The colors above were
   // chosen for the dark background; on a white/near-white surface the grey

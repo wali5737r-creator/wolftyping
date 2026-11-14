@@ -34,8 +34,11 @@ class LessonCard extends StatelessWidget {
                 _NumberBadge(number: lesson.definition.orderIndex),
                 const Spacer(),
                 if (locked)
-                  const Icon(Icons.lock_outline,
-                      size: 18, color: AppColors.pendingText)
+                  Icon(Icons.lock_outline,
+                      size: 18,
+                      color: isDark
+                          ? AppColors.darkTextSecondary
+                          : AppColors.lightTextSecondary)
                 else if (lesson.completed)
                   const TagBadge(text: 'Completed', color: AppColors.success),
               ],

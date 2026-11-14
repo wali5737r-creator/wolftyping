@@ -4,8 +4,8 @@ B=c[0]
 A=c[43]
 var z=a.updateTypes([])
 var y={d:B.Z("v<l>")};(function constants(){var x=a.makeConstList
-A.xA=x(["F1","F2","F3","F4"],y.d)
-A.wT=x(["10","12","14","16"],y.d)
-A.yE=x(["Printer","Monitor","Scanner","Speaker"],y.d)
-A.zu=x(["MS Word","MS Excel","MS PowerPoint","MS Access"],y.d)})()};
-(a=>{a["ucmIQatmavGe3K3lFjzRdUXe7o8="]=a.current})($__dart_deferred_initializers__);
+A.xo=x(["F1","F2","F3","F4"],y.d)
+A.wH=x(["10","12","14","16"],y.d)
+A.yt=x(["Printer","Monitor","Scanner","Speaker"],y.d)
+A.zj=x(["MS Word","MS Excel","MS PowerPoint","MS Access"],y.d)})()};
+(a=>{a["E5Ia/ssJuU3i6my1AlPFePRyHtA="]=a.current})($__dart_deferred_initializers__);

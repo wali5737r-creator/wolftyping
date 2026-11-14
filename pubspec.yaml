@@ -57,7 +57,7 @@ flutter:
   # The .ttf IS in the repo at
   #   assets/fonts/NotoNastaliqUrdu.ttf
   # The variable file is declared once per weight the app uses
-  # (400, 500, 700) so each weight is a real instance, not faux-bold.
+  # (400, 500, 600, 700) so each weight is a real instance, not faux-bold.
   fonts:
     - family: Noto Nastaliq Urdu
       fonts:
@@ -65,6 +65,8 @@ flutter:
           weight: 400
         - asset: assets/fonts/NotoNastaliqUrdu.ttf
           weight: 500
+        - asset: assets/fonts/NotoNastaliqUrdu.ttf
+          weight: 600
         - asset: assets/fonts/NotoNastaliqUrdu.ttf
           weight: 700
 

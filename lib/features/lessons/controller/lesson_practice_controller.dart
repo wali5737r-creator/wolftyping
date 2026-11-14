@@ -31,10 +31,6 @@ class LessonPracticeController extends GetxController {
   final Rx<LessonPracticePhase> phase = LessonPracticePhase.intro.obs;
   final RxBool lastAttemptPassed = false.obs;
 
-  /// UI-only: show/hide the on-screen keyboard guide during a lesson.
-  /// Not persisted.
-  final RxBool showKeyboardGuide = true.obs;
-
   @override
   void onInit() {
     super.onInit();

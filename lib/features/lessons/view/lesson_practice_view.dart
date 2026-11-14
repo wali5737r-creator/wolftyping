@@ -18,7 +18,6 @@ import '../../typing_test/view/widgets/typing_paragraph_text.dart';
 import '../../typing_test/view/widgets/typing_ui_parts.dart';
 import '../../settings/controller/settings_controller.dart';
 import '../controller/lesson_practice_controller.dart';
-import 'widgets/lesson_keyboard.dart';
 
 /// Lesson Practice screen: instructions -> live typing -> result, all for
 /// one lesson. Uses the same `TypingEngine` and the same
@@ -123,17 +122,6 @@ class _IntroPanel extends StatelessWidget {
                       const SizedBox(height: 8),
                     ],
                     Text(lesson.definition.tip, style: AppTextStyles.body),
-                    const SizedBox(height: 14),
-                    LessonKeyboard(
-                      focusKeys: lesson.definition.focusKeys,
-                      urdu: isUrdu,
-                    ),
-                    const SizedBox(height: 6),
-                    Text(
-                      'Colours show which finger types each key. '
-                      'Outlined keys are new in this lesson.',
-                      style: AppTextStyles.captionOf(context),
-                    ),
                   ],
                 ),
               ),
@@ -285,42 +273,8 @@ class _PracticePanel extends StatelessWidget {
           ),
           ),
         ),
-        Obx(() {
-            if (!controller.showKeyboardGuide.value) {
-              return const SizedBox.shrink();
-            }
-            final int idx = controller.snapshot.value.currentWordIndex;
-            final String buffer = controller.currentWordBuffer.value;
-            String? next;
-            bool wrongSoFar = false;
-            if (idx < controller.targetWords.length) {
-              final String word = controller.targetWords[idx];
-              final List<int> wordRunes = word.runes.toList();
-              final int typed = buffer.runes.length;
-              next = typed < wordRunes.length
-                  ? String.fromCharCode(wordRunes[typed])
-                  : ' ';
-              wrongSoFar = !word.startsWith(buffer);
-            }
-            final bool backspaceAllowed =
-                SettingsController.currentOrNull?.allowBackspace != false;
-            return Padding(
-              padding: const EdgeInsets.only(top: AppDimensions.gapMedium),
-              child: LessonKeyboard(
-                nextChar: next,
-                needsBackspace: wrongSoFar && backspaceAllowed,
-                urdu: isUrdu,
-                // Urdu lessons: the guide board is the on-screen keyboard
-                // (same controller methods as physical keys). English
-                // lessons stay display-only.
-                onCharacter: isUrdu ? controller.onCharacter : null,
-                onSpace: isUrdu ? controller.onSpace : null,
-                onBackspace: isUrdu ? controller.onBackspace : null,
-                showBackspace: backspaceAllowed,
-                focusNode: controller.focusNode,
-              ),
-            );
-          }),
+        // No on-screen keyboard: lessons type with the physical keyboard
+        // only (same controller methods as before).
         const SizedBox(height: AppDimensions.gapMedium),
         Obx(() {
           final bool paused =
@@ -347,14 +301,6 @@ class _PracticePanel extends StatelessWidget {
                 onPressed: () => Get.back(),
                 icon: const Icon(Icons.close),
                 label: const Text('Exit'),
-              ),
-              const SizedBox(width: 12),
-              OutlinedButton.icon(
-                onPressed: controller.showKeyboardGuide.toggle,
-                icon: const Icon(Icons.keyboard_outlined),
-                label: Obx(() => Text(controller.showKeyboardGuide.value
-                    ? 'Hide keyboard'
-                    : 'Show keyboard')),
               ),
               const SizedBox(width: 16),
               Flexible(

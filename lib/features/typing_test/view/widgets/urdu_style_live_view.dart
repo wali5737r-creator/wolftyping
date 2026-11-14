@@ -10,7 +10,6 @@ import '../../model/typing_test_status.dart';
 import '../../../settings/controller/settings_controller.dart';
 import '../../../settings/model/app_settings.dart';
 import '../../model/urdu_style_typing_controller.dart';
-import '../../../lessons/view/widgets/lesson_keyboard.dart';
 import '../../../../core/utils/urdu_text_direction.dart';
 import 'auto_scroll_typing_area.dart';
 import 'typing_ui_parts.dart';
@@ -114,53 +113,9 @@ class UrduStyleLiveScreen extends StatelessWidget {
         _BottomStatsGrid(controller: controller),
         const SizedBox(height: AppDimensions.gapMedium),
         _Controls(controller: controller),
-        const SizedBox(height: AppDimensions.gapMedium),
-        _UrduKeyboard(controller: controller),
       ],
       ),
     );
-  }
-}
-
-/// On-screen CRULP Urdu keyboard for the Urdu Typing Test and PPSC Urdu
-/// (custom Urdu paragraphs route through the same screen). Taps go
-/// through the same controller methods as physical keys, so scoring,
-/// timer, mistakes and history are identical; the typing area above
-/// shrinks to make room.
-class _UrduKeyboard extends StatelessWidget {
-  const _UrduKeyboard({required this.controller});
-
-  final UrduStyleTypingController controller;
-
-  @override
-  Widget build(BuildContext context) {
-    return Obx(() {
-      final int idx = controller.snapshot.value.currentWordIndex;
-      final String buffer = controller.currentWordBuffer.value;
-      String? next;
-      bool wrongSoFar = false;
-      if (idx < controller.targetWords.length) {
-        final String word = controller.targetWords[idx];
-        final List<int> wordRunes = word.runes.toList();
-        final int typed = buffer.runes.length;
-        next = typed < wordRunes.length
-            ? String.fromCharCode(wordRunes[typed])
-            : ' ';
-        wrongSoFar = !word.startsWith(buffer);
-      }
-      final bool backspaceAllowed =
-          SettingsController.currentOrNull?.allowBackspace != false;
-      return LessonKeyboard(
-        nextChar: next,
-        needsBackspace: wrongSoFar && backspaceAllowed,
-        urdu: true,
-        onCharacter: controller.onCharacter,
-        onSpace: controller.onSpace,
-        onBackspace: controller.onBackspace,
-        showBackspace: backspaceAllowed,
-        focusNode: controller.focusNode,
-      );
-    });
   }
 }
 

@@ -852,8 +852,8 @@ class _TestPanelState extends State<_TestPanel> {
       children: [
         _TestHeader(controller: controller),
         Obx(() {
-          // Banner only: the warning and its unanswered chips rebuild
-          // on each answer, never the question list below them.
+          // Banner only: the warning text and its unanswered count
+          // rebuild on each answer, never the question list below them.
           controller.answersTick.value;
           final bool warning = controller.timeWarning;
           return AnimatedSwitcher(
@@ -872,10 +872,11 @@ class _TestPanelState extends State<_TestPanel> {
                             AppDimensions.cardRadius,
                           ),
                         ),
-                        // Same unanswered list as the submit-confirm
-                        // dialog: at 5 minutes left the user can see
-                        // exactly which questions are still unanswered.
-                        // Rebuilt on every answer via answersTick above.
+                        // The count stays as plain text only — the
+                        // per-question number chips used to live here
+                        // and were removed (2026-11-14): they pushed the
+                        // question list down and duplicated the list the
+                        // submit-confirm dialog already shows.
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -893,31 +894,6 @@ class _TestPanelState extends State<_TestPanel> {
                             else ...[
                               Text(
                                 '${controller.unansweredQuestions.length} question${controller.unansweredQuestions.length == 1 ? ' is' : 's are'} still unanswered:',
-                              ),
-                              const SizedBox(height: 8),
-                              // Height-capped + scrollable: with 100
-                              // unanswered the full chip list would push
-                              // the question list and Submit button off
-                              // screen. Every chip is still listed.
-                              ConstrainedBox(
-                                constraints: const BoxConstraints(
-                                  maxHeight: 120,
-                                ),
-                                child: SingleChildScrollView(
-                                  child: Wrap(
-                                    spacing: 6,
-                                    runSpacing: 6,
-                                    children: [
-                                      for (final MockQuestion q
-                                          in controller.unansweredQuestions)
-                                        Chip(
-                                          label: Text(
-                                            '${engine.questions.indexOf(q) + 1}',
-                                          ),
-                                        ),
-                                    ],
-                                  ),
-                                ),
                               ),
                             ],
                           ],

@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
 import 'package:typing_master/core/routes/app_pages.dart';
@@ -27,7 +28,10 @@ void main() {
     expect(find.text('Start Mock Test'), findsOneWidget);
   });
 
-  testWidgets('5-minute warning banner lists unanswered questions',
+  // The number chips that used to list every unanswered question were
+  // removed 2026-11-14 (Muhammad: "upr number bhi hta do"): the banner
+  // keeps its heading and the count as plain text, with no chips.
+  testWidgets('5-minute warning banner shows count text, no number chips',
       (tester) async {
     await tester.pumpWidget(
       GetMaterialApp(
@@ -60,9 +64,11 @@ void main() {
       ),
       findsOneWidget,
     );
-    // Full mock test, nothing answered yet: all 100 questions listed.
+    // Full mock test, nothing answered yet: the count as plain text,
+    // and no per-question number chips anywhere in the banner.
     expect(find.text('100 questions are still unanswered:'), findsOneWidget);
-    expect(find.text('1'), findsOneWidget);
-    expect(find.text('100'), findsOneWidget);
+    expect(find.byType(Chip), findsNothing);
+    expect(find.text('1'), findsNothing);
+    expect(find.text('100'), findsNothing);
   });
 }

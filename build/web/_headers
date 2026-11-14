@@ -14,3 +14,14 @@
 # drift_worker.js is no longer fetched (see database_connection_web.dart).
 /sqlite3.wasm
   Cache-Control: public, max-age=3600, must-revalidate
+
+# Noto Nastaliq Urdu (690,304 bytes) is fetched on first Urdu paint, so a
+# repeat visit reuses it instead of re-downloading it — on a slow
+# connection a re-download leaves the Urdu passage blank for minutes.
+# Served at /assets/assets/fonts/… (the pubspec asset path
+# assets/fonts/… is served under build/web/assets/).
+# 1 year + must-revalidate (not immutable): the file changes only when
+# the font itself is swapped, and a stale font must never outlive a
+# deploy — revalidation keeps a new build safe.
+/assets/assets/fonts/*
+  Cache-Control: public, max-age=31536000, must-revalidate
