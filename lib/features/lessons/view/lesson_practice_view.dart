@@ -65,8 +65,15 @@ class _IntroPanel extends StatelessWidget {
   Widget build(BuildContext context) {
     final lesson = controller.lesson;
     final bool isUrdu = lesson.definition.language == TypingLanguage.urdu;
-    final List<String> previewWords =
-        lesson.definition.content.split(RegExp(r'\s+'));
+    // The preview must list the SAME words as the drill: the engine
+    // trims before splitting (TypingEngine._initWords), so the preview
+    // must too. Without the trim, a lesson whose content has trailing
+    // whitespace (English Lesson 14) previews an extra empty word the
+    // drill never has — the preview and the drill disagree.
+    final String trimmedContent = lesson.definition.content.trim();
+    final List<String> previewWords = trimmedContent.isEmpty
+        ? <String>[]
+        : trimmedContent.split(RegExp(r'\s+'));
     return Align(
       alignment: Alignment.topLeft,
       child: ConstrainedBox(
