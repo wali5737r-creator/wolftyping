@@ -23,6 +23,8 @@ class PaperRow extends StatelessWidget {
     required this.paper,
     required this.onStart,
     this.bestAttempt,
+    this.hasDraft = false,
+    this.onResume,
   });
 
   final PaperTest paper;
@@ -30,6 +32,13 @@ class PaperRow extends StatelessWidget {
 
   /// Best recorded attempt for this paper, if any.
   final MockAttempt? bestAttempt;
+
+  /// True when this paper has an unfinished mid-test draft.
+  final bool hasDraft;
+
+  /// Resumes the unfinished test. Null (and no resume button) when
+  /// there is no draft to resume.
+  final VoidCallback? onResume;
 
   @override
   Widget build(BuildContext context) {
@@ -76,9 +85,30 @@ class PaperRow extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 12),
-            ElevatedButton(
-              onPressed: onStart,
-              child: Text(attempted ? 'Retake' : 'Start'),
+            // The actions stack vertically so the row never overflows
+            // at 360px wide even with both Start/Retake and the
+            // resume button. Row tap stays = fresh start (onStart).
+            // IntrinsicWidth bounds the column (a stretched column
+            // inside a Row would get an infinite width); the buttons
+            // then share the widest button's width.
+            IntrinsicWidth(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  ElevatedButton(
+                    onPressed: onStart,
+                    child: Text(attempted ? 'Retake' : 'Start'),
+                  ),
+                  if (hasDraft && onResume != null) ...[
+                    const SizedBox(height: 6),
+                    OutlinedButton(
+                      onPressed: onResume,
+                      child: const Text('Jari rakhein'),
+                    ),
+                  ],
+                ],
+              ),
             ),
           ],
         ),

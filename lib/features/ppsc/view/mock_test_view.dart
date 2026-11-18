@@ -18,6 +18,7 @@ import '../model/custom_set.dart';
 import '../model/mock_attempt.dart';
 import '../model/mock_question.dart';
 import '../model/paper_test.dart';
+import '../service/mock_progress_repository.dart';
 import '../service/mock_test_engine.dart';
 import 'weak_subject_hint.dart';
 
@@ -144,8 +145,7 @@ class _RecentAttemptsCard extends StatelessWidget {
                   child: InkWell(
                     onTap: () => Get.toNamed(
                       AppRoutes.historyDetail,
-                      arguments:
-                          TypingTestRecord.fromMockAttempt(attempt),
+                      arguments: TypingTestRecord.fromMockAttempt(attempt),
                     ),
                     child: Row(
                       children: [
@@ -438,6 +438,32 @@ class _PaperSetupPanel extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 20),
+        // Resume for an unfinished run of this paper: same-instance
+        // path (no navigation), so it is the robust fallback when the
+        // paper row's resume could not run. Reactive on drafts, so
+        // the button disappears once the draft is gone (submitted or
+        // freshly restarted).
+        Obx(() {
+          final draft = MockProgressRepository.instance.draftFor(paper.id);
+          if (draft == null) return const SizedBox.shrink();
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'You left this paper unfinished — resume where you '
+                'stopped, with your answers and remaining time kept.',
+                style: AppTextStyles.bodyMedium,
+              ),
+              const SizedBox(height: 8),
+              OutlinedButton.icon(
+                onPressed: () => unawaited(controller.resumeTest(draft)),
+                icon: const Icon(Icons.history),
+                label: const Text('Jari rakhein'),
+              ),
+              const SizedBox(height: 20),
+            ],
+          );
+        }),
         const Text('Duration', style: AppTextStyles.h3),
         const SizedBox(height: 8),
         Obx(() {

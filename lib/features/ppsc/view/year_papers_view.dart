@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -7,6 +9,7 @@ import '../../../core/widgets/app_scaffold.dart';
 import '../../../core/widgets/app_surfaces.dart';
 import '../controller/mock_test_controller.dart';
 import '../model/paper_test.dart';
+import '../service/mock_progress_repository.dart';
 import '../service/papers_registry.dart';
 import 'paper_list_section.dart';
 
@@ -56,8 +59,7 @@ class _YearPapersViewState extends State<YearPapersView> {
               children: [
                 PageHeader(
                   title: '${widget.year} Practice Papers',
-                  subtitle:
-                      'Timed practice tests by paper and department. '
+                  subtitle: 'Timed practice tests by paper and department. '
                       'Practice material only — not official papers.',
                 ),
                 const SizedBox(height: 20),
@@ -107,6 +109,33 @@ class _YearPapersViewState extends State<YearPapersView> {
                       onStartPaper: (PaperTest paper) {
                         Get.find<MockTestController>().selectPaper(paper);
                         Get.toNamed(AppRoutes.ppscMockTest);
+                      },
+                      onResumePaper: (PaperTest paper) {
+                        Get.find<MockTestController>().selectPaper(paper);
+                        Get.toNamed(AppRoutes.ppscMockTest);
+                        // Resume after navigation, on the controller
+                        // instance the mock-test route uses. The draft
+                        // is read fresh here (not captured before
+                        // navigation), and the resume only runs when
+                        // the controller still has this paper selected
+                        // and is still on its setup panel — if the
+                        // user navigated away first, nothing happens
+                        // and the draft stays for the setup panel's
+                        // own resume button.
+                        WidgetsBinding.instance.addPostFrameCallback((_) {
+                          final MockTestController controller =
+                              Get.find<MockTestController>();
+                          if (controller.activePaper.value?.id != paper.id) {
+                            return;
+                          }
+                          if (controller.phase.value != MockTestPhase.setup) {
+                            return;
+                          }
+                          final draft = MockProgressRepository.instance
+                              .draftFor(paper.id);
+                          if (draft == null) return;
+                          unawaited(controller.resumeTest(draft));
+                        });
                       },
                     );
                   },

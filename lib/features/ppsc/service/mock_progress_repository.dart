@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../core/services/data_refresh_service.dart';
 import '../model/mock_attempt.dart';
 import '../model/mock_question.dart';
+import '../model/mock_test_draft.dart';
 
 /// On-device progress for mock/paper/custom tests: recorded attempts,
 /// bookmarked questions, and the last-used student name. No login, no
@@ -23,6 +24,7 @@ class MockProgressRepository {
 
   static const String attemptsKey = 'typing_master_mock_attempts_v1';
   static const String bookmarksKey = 'typing_master_bookmarked_questions_v1';
+  static const String draftsKey = 'typing_master_mock_drafts_v1';
   static const String lastStudentNameKey = 'typing_master_last_student_name';
 
   /// Cap on stored attempts: old attempts beyond this are dropped so
@@ -39,6 +41,12 @@ class MockProgressRepository {
 
   /// Bookmarked questions, in the order bookmarked.
   final RxList<MockQuestion> bookmarks = <MockQuestion>[].obs;
+
+  /// Unfinished paper-test drafts, keyed by paper id (one draft per
+  /// paper). Reactive so paper rows and the setup panel show the
+  /// 'Jari rakhein' resume action as soon as a draft appears or is
+  /// cleared.
+  final RxMap<String, MockTestDraft> drafts = <String, MockTestDraft>{}.obs;
 
   /// Last student name typed for a custom test, if any.
   final RxString lastStudentName = ''.obs;
@@ -62,6 +70,11 @@ class MockProgressRepository {
       final SharedPreferences prefs = await SharedPreferences.getInstance();
       attempts.assignAll(_readAttempts(prefs.getString(attemptsKey)));
       bookmarks.assignAll(_readBookmarks(prefs.getString(bookmarksKey)));
+      drafts.assignAll(<String, MockTestDraft>{
+        for (final MockTestDraft draft
+            in _readDrafts(prefs.getString(draftsKey)))
+          draft.paperId: draft,
+      });
       lastStudentName.value = prefs.getString(lastStudentNameKey) ?? '';
     } catch (_) {
       // Storage unavailable: keep empty in-memory state; the app
@@ -94,6 +107,30 @@ class MockProgressRepository {
       return out;
     } catch (_) {
       return <MockAttempt>[];
+    }
+  }
+
+  List<MockTestDraft> _readDrafts(String? raw) {
+    if (raw == null || raw.trim().isEmpty) return <MockTestDraft>[];
+    try {
+      final Object? parsed = jsonDecode(raw);
+      if (parsed is! List) return <MockTestDraft>[];
+      final List<MockTestDraft> out = [];
+      for (final Object? entry in parsed) {
+        try {
+          if (entry is Map) {
+            final MockTestDraft draft = MockTestDraft.fromJson(
+              Map<String, dynamic>.from(entry),
+            );
+            out.add(draft);
+          }
+        } catch (_) {
+          // Skip one corrupt entry; keep the rest.
+        }
+      }
+      return out;
+    } catch (_) {
+      return <MockTestDraft>[];
     }
   }
 
@@ -131,6 +168,10 @@ class MockProgressRepository {
         bookmarksKey,
         jsonEncode(bookmarks.map((q) => q.toJson()).toList()),
       );
+      await prefs.setString(
+        draftsKey,
+        jsonEncode(drafts.values.map((d) => d.toJson()).toList()),
+      );
       await prefs.setString(lastStudentNameKey, lastStudentName.value);
       lastSaveFailed.value = false;
       return true;
@@ -167,6 +208,28 @@ class MockProgressRepository {
     DataRefreshService.notifyChanged();
   }
 
+  /// The unfinished draft for [paperId], or null when that paper has
+  /// no draft (never started, or finished / freshly restarted).
+  MockTestDraft? draftFor(String paperId) => drafts[paperId];
+
+  /// Saves (or replaces) the draft for its paper. Updates the
+  /// in-memory map synchronously once storage has loaded, then
+  /// persists in the background.
+  Future<void> saveDraft(MockTestDraft draft) async {
+    if (!_loaded) await init();
+    drafts[draft.paperId] = draft;
+    await _persist();
+  }
+
+  /// Deletes the draft for [paperId]. A no-op (no write) when no
+  /// draft exists for that paper.
+  Future<void> deleteDraft(String paperId) async {
+    if (!_loaded) await init();
+    if (!drafts.containsKey(paperId)) return;
+    drafts.remove(paperId);
+    await _persist();
+  }
+
   /// Best (highest-score) attempt for a source, or null when the
   /// source has never been attempted.
   MockAttempt? bestAttemptFor(String sourceId) {
@@ -195,8 +258,7 @@ class MockProgressRepository {
   /// when full and adding, returns false and leaves state unchanged.
   Future<bool> toggleBookmark(MockQuestion question) async {
     if (!_loaded) await init();
-    final int index =
-        bookmarks.indexWhere((q) => q.id == question.id);
+    final int index = bookmarks.indexWhere((q) => q.id == question.id);
     if (index >= 0) {
       bookmarks.removeAt(index);
       await _persist();
@@ -226,8 +288,8 @@ class MockProgressRepository {
         final MockSubject? subject = _subjectByName(name);
         if (subject == null) return;
         totalBy[subject] = (totalBy[subject] ?? 0) + total;
-        correctBy[subject] = (correctBy[subject] ?? 0) +
-            (attempt.perSubjectCorrect[name] ?? 0);
+        correctBy[subject] =
+            (correctBy[subject] ?? 0) + (attempt.perSubjectCorrect[name] ?? 0);
       });
     }
     final List<SubjectAttemptStats> stats = [];
@@ -258,6 +320,7 @@ class MockProgressRepository {
   void resetForTest() {
     attempts.clear();
     bookmarks.clear();
+    drafts.clear();
     lastStudentName.value = '';
     lastSaveFailed.value = false;
     _loaded = false;

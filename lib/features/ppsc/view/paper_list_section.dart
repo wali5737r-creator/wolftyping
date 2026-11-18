@@ -25,11 +25,16 @@ class PaperListSection extends StatefulWidget {
     required this.year,
     required this.papers,
     required this.onStartPaper,
+    this.onResumePaper,
   });
 
   final int year;
   final List<PaperTest> papers;
   final void Function(PaperTest paper) onStartPaper;
+
+  /// Resumes an unfinished test for a paper. Null when the caller
+  /// offers no resume action (rows then show no resume button).
+  final void Function(PaperTest paper)? onResumePaper;
 
   @override
   State<PaperListSection> createState() => _PaperListSectionState();
@@ -47,11 +52,8 @@ class _PaperListSectionState extends State<PaperListSection> {
   }
 
   List<String> get _departments {
-    final List<String> departments = widget.papers
-        .map((p) => p.department)
-        .toSet()
-        .toList()
-      ..sort();
+    final List<String> departments =
+        widget.papers.map((p) => p.department).toSet().toList()..sort();
     return departments;
   }
 
@@ -122,8 +124,10 @@ class _PaperListSectionState extends State<PaperListSection> {
           )
         else
           Obx(() {
-            // Reactive read: rows update when an attempt is recorded.
+            // Reactive reads: rows update when an attempt is recorded
+            // and when a mid-test draft appears or is cleared.
             MockProgressRepository.instance.attempts.length;
+            MockProgressRepository.instance.drafts.length;
             return Column(
               children: [
                 for (final PaperTest paper in filtered)
@@ -131,7 +135,13 @@ class _PaperListSectionState extends State<PaperListSection> {
                     paper: paper,
                     bestAttempt: MockProgressRepository.instance
                         .bestAttemptFor(paper.id),
+                    hasDraft:
+                        MockProgressRepository.instance.draftFor(paper.id) !=
+                            null,
                     onStart: () => widget.onStartPaper(paper),
+                    onResume: widget.onResumePaper == null
+                        ? null
+                        : () => widget.onResumePaper!(paper),
                   ),
               ],
             );

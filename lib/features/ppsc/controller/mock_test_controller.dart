@@ -9,6 +9,7 @@ import '../model/custom_set.dart';
 import '../model/gradebook_entry.dart';
 import '../model/mock_attempt.dart';
 import '../model/mock_question.dart';
+import '../model/mock_test_draft.dart';
 import '../model/paper_test.dart';
 import '../service/gradebook_repository.dart';
 import '../service/mock_progress_repository.dart';
@@ -112,6 +113,16 @@ class MockTestController extends GetxController {
 
   MockTestEngine? _engine;
   Timer? _timer;
+
+  /// Seed for this run's per-question option shuffle. Generated once
+  /// per run in [startTest] (or restored from the draft in
+  /// [resumeTest]) so a resumed test reproduces the exact option
+  /// order the user saw — a restored answer still points at the same
+  /// option text.
+  int _shuffleSeed = 0;
+
+  /// The option-shuffle seed for the current (or most recent) run.
+  int get shuffleSeed => _shuffleSeed;
 
   /// Full-mock durations: the standard 60/90/120 minutes plus short
   /// 5- and 10-minute quick modes — the same 100-question mock, same
@@ -368,12 +379,27 @@ class MockTestController extends GetxController {
   void startTest() {
     final List<MockQuestion> questions = availableQuestions;
     if (questions.isEmpty) return;
+    // Fresh start for a paper discards any unfinished draft for that
+    // paper first: the new run replaces it, it is not resumed. The
+    // in-memory removal happens synchronously inside deleteDraft once
+    // storage has loaded, so no later autosave can resurrect it; the
+    // write itself is tracked in [_progressOps] like every other
+    // progress write.
+    if (kind.value == MockTestKind.paper && activePaper.value != null) {
+      final Future<void> op = progress.deleteDraft(activePaper.value!.id);
+      _progressOps.add(op);
+      unawaited(op.then((_) => _progressOps.remove(op)));
+    }
     // Shuffle each question's option order for this run only, so the
     // correct answer does not sit in a predictable A/B/C/D position
     // (paper keys skew heavily to one position). Question order,
     // paper files and custom-set data are untouched; only the
     // in-session copies are shuffled, with correctIndex remapped.
-    final Random random = Random();
+    // The shuffle is seeded per run ([_shuffleSeed]) so a mid-test
+    // draft can reproduce this exact order on resume; the randomness
+    // itself is unchanged, just reproducible.
+    _shuffleSeed = Random().nextInt(1 << 32);
+    final Random random = Random(_shuffleSeed);
     final List<MockQuestion> sessionQuestions = <MockQuestion>[
       for (final MockQuestion q in questions) q.withShuffledOptions(random),
     ];
@@ -388,6 +414,84 @@ class MockTestController extends GetxController {
     result.value = null;
     remaining.value = selectedDuration.value;
     phase.value = MockTestPhase.test;
+    _startTimer();
+  }
+
+  /// Restores a paper test from a mid-test [draft] saved by
+  /// [_saveDraft]: same paper, same shuffled option order (via the
+  /// draft's seed), same answers, remaining time and current
+  /// question. Returns true when the test is running again.
+  ///
+  /// Returns false — and deletes the stale draft — when the draft is
+  /// unusable: no paper is selected, the paper id does not match the
+  /// selected paper, or the paper has no questions. (There is no
+  /// paper lookup by id in the papers registry, so the caller must
+  /// have selected the paper first, e.g. via [selectPaper]; both UI
+  /// resume paths do.) A stale draft never crashes: answers for
+  /// removed questions are dropped, out-of-range options, question
+  /// index and remaining time are clamped to the paper as it is now.
+  Future<bool> resumeTest(MockTestDraft draft) async {
+    final PaperTest? paper = activePaper.value;
+    if (paper == null || paper.id != draft.paperId || paper.questions.isEmpty) {
+      final Future<void> op = progress.deleteDraft(draft.paperId);
+      _progressOps.add(op);
+      unawaited(op.then((_) => _progressOps.remove(op)));
+      return false;
+    }
+    if (phase.value != MockTestPhase.setup) return false;
+    // The planned duration may be a custom/paper duration that is
+    // not in [fullDurations] — use it as-is, never force it into
+    // the list. A missing/invalid planned duration falls back to
+    // the 90-minute default.
+    final int plannedSeconds = draft.plannedDurationSeconds > 0
+        ? draft.plannedDurationSeconds
+        : const Duration(minutes: 90).inSeconds;
+    kind.value = MockTestKind.paper;
+    selectedDuration.value = Duration(seconds: plannedSeconds);
+    negativeMarking.value = draft.negativeMarking;
+    negativeDeduction.value = draft.negativeDeduction;
+    _shuffleSeed = draft.shuffleSeed;
+    final Random random = Random(_shuffleSeed);
+    final List<MockQuestion> sessionQuestions = <MockQuestion>[
+      for (final MockQuestion q in paper.questions)
+        q.withShuffledOptions(random),
+    ];
+    _engine = MockTestEngine(
+      questions: sessionQuestions,
+      negativeMarking: negativeMarking.value,
+      negativeDeduction: negativeDeduction.value,
+    );
+    final Set<String> ids = <String>{
+      for (final MockQuestion q in sessionQuestions) q.id,
+    };
+    for (final MapEntry<String, int> entry in draft.answers.entries) {
+      if (ids.contains(entry.key) && entry.value >= 0 && entry.value <= 3) {
+        _engine!.answer(entry.key, entry.value);
+      }
+    }
+    final int clampedIndex = draft.currentIndex < 0
+        ? 0
+        : (draft.currentIndex >= sessionQuestions.length
+            ? sessionQuestions.length - 1
+            : draft.currentIndex);
+    currentIndex.value = clampedIndex;
+    answersTick.value++;
+    autoSubmitted.value = false;
+    result.value = null;
+    final int clampedRemaining = draft.remainingSeconds < 0
+        ? 0
+        : (draft.remainingSeconds > plannedSeconds
+            ? plannedSeconds
+            : draft.remainingSeconds);
+    remaining.value = Duration(seconds: clampedRemaining);
+    phase.value = MockTestPhase.test;
+    _startTimer();
+    return true;
+  }
+
+  /// Starts (or restarts) the 1-second countdown. At zero it
+  /// auto-submits, which also clears the paper draft (see [submit]).
+  void _startTimer() {
     _timer?.cancel();
     _timer = Timer.periodic(const Duration(seconds: 1), (_) {
       if (remaining.value <= const Duration(seconds: 1)) {
@@ -396,13 +500,49 @@ class MockTestController extends GetxController {
         return;
       }
       remaining.value = remaining.value - const Duration(seconds: 1);
+      // Throttled autosave: a draft write every 10 seconds of test
+      // time, never on every tick.
+      if (remaining.value.inSeconds % 10 == 0) _saveDraft();
     });
+  }
+
+  /// Saves the current paper test as a resumable draft — only while
+  /// a paper test is running. Writes are async and never block the
+  /// caller (or the timer), and never throw into it; they are tracked
+  /// in [_progressOps] so tests can await them with [flushProgress].
+  void _saveDraft() {
+    try {
+      if (phase.value != MockTestPhase.test) return;
+      if (kind.value != MockTestKind.paper) return;
+      final MockTestEngine? engine = _engine;
+      final PaperTest? paper = activePaper.value;
+      if (engine == null || paper == null) return;
+      final MockTestDraft draft = MockTestDraft(
+        paperId: paper.id,
+        answers: engine.answers,
+        remainingSeconds: remaining.value.inSeconds,
+        currentIndex: currentIndex.value,
+        shuffleSeed: _shuffleSeed,
+        plannedDurationSeconds: selectedDuration.value.inSeconds,
+        negativeMarking: negativeMarking.value,
+        negativeDeduction: negativeDeduction.value,
+        totalQuestions: engine.totalQuestions,
+        savedAt: DateTime.now().millisecondsSinceEpoch,
+      );
+      final Future<void> op = progress.saveDraft(draft);
+      _progressOps.add(op);
+      unawaited(op.then((_) => _progressOps.remove(op)));
+    } catch (_) {
+      // Autosave is a bonus: a draft failure must never break a
+      // running test.
+    }
   }
 
   void goToQuestion(int index) {
     if (_engine == null) return;
     if (index < 0 || index >= engine.totalQuestions) return;
     currentIndex.value = index;
+    _saveDraft();
   }
 
   void nextQuestion() => goToQuestion(currentIndex.value + 1);
@@ -413,6 +553,7 @@ class MockTestController extends GetxController {
     if (_engine == null) return;
     engine.answer(engine.questions[currentIndex.value].id, optionIndex);
     answersTick.value++;
+    _saveDraft();
   }
 
   /// Answers [question] with [optionIndex], for the column view where
@@ -423,12 +564,14 @@ class MockTestController extends GetxController {
     if (_engine == null) return;
     engine.answer(question.id, optionIndex);
     answersTick.value++;
+    _saveDraft();
   }
 
   void clearAnswerFor(MockQuestion question) {
     if (_engine == null) return;
     engine.clearAnswer(question.id);
     answersTick.value++;
+    _saveDraft();
   }
 
   bool isBookmarked(MockQuestion question) =>
@@ -452,6 +595,7 @@ class MockTestController extends GetxController {
     if (_engine == null) return;
     engine.clearAnswer(engine.questions[currentIndex.value].id);
     answersTick.value++;
+    _saveDraft();
   }
 
   int? selectedFor(MockQuestion question) => engine.answerFor(question.id);
@@ -495,6 +639,13 @@ class MockTestController extends GetxController {
     final Future<void> op = progress.recordAttempt(attempt);
     _progressOps.add(op);
     unawaited(op.then((_) => _progressOps.remove(op)));
+    // A finished paper test clears its mid-test draft — submitted
+    // (manually or automatically) means there is nothing to resume.
+    if (kind.value == MockTestKind.paper) {
+      final Future<void> draftOp = progress.deleteDraft(attemptSourceId);
+      _progressOps.add(draftOp);
+      unawaited(draftOp.then((_) => _progressOps.remove(draftOp)));
+    }
     // A finished custom test is recorded in the gradebook
     // automatically, under the custom set's name. The entry IS a
     // mock-kind certificate code (WT1), so the same code dedupes:
@@ -537,6 +688,10 @@ class MockTestController extends GetxController {
     }
   }
 
+  /// Leaves the test for the setup panel. The timer stops and the
+  /// engine is dropped, but a paper draft is NOT deleted: leaving
+  /// mid-test is exactly how a draft is made, and the user can resume
+  /// it later from the paper row or the setup panel.
   void backToSetup() {
     _timer?.cancel();
     _timer = null;
