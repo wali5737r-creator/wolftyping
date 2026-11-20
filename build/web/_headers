@@ -1,6 +1,12 @@
 /*
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' https://www.gstatic.com https://www.googletagmanager.com; connect-src 'self' https://www.gstatic.com https://fonts.gstatic.com https://www.google-analytics.com https://region1.google-analytics.com; worker-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; frame-ancestors 'self'
+  # Adsterra allowances (WolfTyping's own ad units, served from bauval.org):
+  # script-src/connect-src/style-src +bauval.org for the two invoke scripts
+  # and anything they fetch; frame-src (new) so the 728x90 unit's iframe may
+  # load; img-src widened to https: because native-banner creative images are
+  # served from rotating ad-network CDN domains (images only — scripts and
+  # frames stay pinned to bauval.org).
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' https://www.gstatic.com https://www.googletagmanager.com https://bauval.org; connect-src 'self' https://www.gstatic.com https://fonts.gstatic.com https://www.google-analytics.com https://region1.google-analytics.com https://bauval.org; worker-src 'self'; style-src 'self' 'unsafe-inline' https://bauval.org; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; frame-src 'self' https://bauval.org; object-src 'none'; base-uri 'self'; frame-ancestors 'self'
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin

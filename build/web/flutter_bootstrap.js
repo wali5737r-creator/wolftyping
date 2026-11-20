@@ -40,8 +40,19 @@ if (!window._flutter) {
 }
 _flutter.buildConfig = {"engineRevision":"89c39edfdfae2949f6806e4a315c0c08522238b7","wasmHashes":{"webparagraph/canvaskit.wasm":"0ce1b05082efdc8529550e8a01f6ff0593972d55525035010e26f5600aa9f254","chromium/canvaskit.wasm":"ae8ff1d858140f7b1300ced3fa89fb8c9dce0a400a0f4f1e11f6dcfb3315fdcf","skwasm.wasm":"e540fd5e8303b7b68ec2718cb49e9c421f8ade3075b15e02a7059a62654df9a1","skwasm_heavy.wasm":"565f5cc1cca6ab120f11934b105f01fec4b58b480c82e0889dca93af8e6f8635","wimp.wasm":"e924eaafd801d41e017d178f3fd5cf8a417f641fe35c9ed34a4e1d7582283e0c","canvaskit.wasm":"fbed517a43e82452404446683f00f2e876d835aed84410695759e67b6bb01cd3","sqlite3.wasm":"13d3f11d05b39ba0618a7115fb41640a5d48b6300f5d3f325f554b42bd6688a4"},"builds":[{"compileTarget":"dart2js","renderer":"canvaskit","mainJsPath":"main.dart.js"},{}]};
 
+
+// WolfTyping customization of the default generated bootstrap.
+// Identical boot path to the default (same build config, same
+// service-worker settings, same main.dart.js entrypoint); the only
+// difference is the `config.hostElement`: the engine mounts into the
+// #wt-app element in index.html instead of taking the full viewport,
+// so the page shell can hold a slim Adsterra strip below the app in
+// normal flow (the app is never overlaid by the ads).
 _flutter.loader.load({
   serviceWorkerSettings: {
-    serviceWorkerVersion: "2157952932" /* Flutter's service worker is deprecated and will be removed in a future Flutter release. */
+    serviceWorkerVersion: "1182057825" /* Flutter's service worker is deprecated and will be removed in a future Flutter release. */
+  },
+  config: {
+    hostElement: document.querySelector('#wt-app')
   }
 });

@@ -318,6 +318,53 @@
     }
   </style>
   <noscript><style>#wt-splash { display: none; }</style></noscript>
+  <!-- App shell + Adsterra ad strip.
+       The page is a flex column: #wt-app (the Flutter host element, see
+       flutter_bootstrap.js) fills the remaining height and #wt-ads sits
+       below it in normal flow, so the app is never covered by the ads
+       and stays fully usable. The splash above is position:fixed, so it
+       is unaffected by this layout. -->
+  <style>
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      background: #F0FDFA;
+    }
+    #wt-app { flex: 1 1 auto; min-height: 0; position: relative; }
+    #wt-ads {
+      flex: 0 0 auto;
+      background: #FFFFFF;
+      border-top: 1px solid #DCEBE7;
+      padding: 6px 8px 8px;
+      text-align: center;
+    }
+    #wt-ads .wt-ad-label {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+      color: #6B7C78; margin-bottom: 4px;
+    }
+    /* 728x90 banner: fixed-height slot; the unit is centred and clipped
+       symmetrically on screens narrower than 728px — it can never push
+       the layout sideways. */
+    #wt-ads .wt-ad-banner {
+      height: 90px;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    /* Native banner: Adsterra injects responsive content into the
+       container div. Capped so the strip stays slim and the app keeps
+       the bulk of the viewport; collapses to nothing if no ad loads. */
+    #wt-ads .wt-ad-native {
+      max-width: 970px; margin: 6px auto 0;
+      max-height: 132px; overflow: hidden;
+    }
+    @media (max-width: 640px) {
+      #wt-ads .wt-ad-native { max-height: 100px; }
+    }
+  </style>
 </head>
 <body>
   <div id="wt-splash" role="status" aria-label="WolfTyping load ho raha hai" aria-busy="true">
@@ -463,6 +510,26 @@
       <p>JavaScript is required to run the app. Please enable JavaScript and reload this page.</p>
     </main>
   </noscript>
+  <!-- Flutter mounts into #wt-app (see flutter_bootstrap.js: the
+       hostElement config), so the app occupies the flex column's
+       remaining height above the ad strip instead of the full viewport. -->
+  <div id="wt-app"></div>
+  <!-- Adsterra ads — WolfTyping's own units, in the page shell, outside
+       the Flutter canvas. The banner's atOptions live in the self-hosted
+       adsterra_banner.js because the site's CSP forbids inline scripts;
+       it is loaded immediately before the invoke script, exactly as in
+       Adsterra's original snippet. -->
+  <footer id="wt-ads">
+    <div class="wt-ad-label">Advertisement</div>
+    <div class="wt-ad-banner">
+      <script src="adsterra_banner.js"></script>
+      <script src="https://bauval.org/22/56470454c425ca6e6e04de8e1d86bda3"></script>
+    </div>
+    <div class="wt-ad-native">
+      <script async="async" data-cfasync="false" src="https://bauval.org/21/248f16be9fbe40550e3e7f7fb14498d1"></script>
+      <div id="container-248f16be9fbe40550e3e7f7fb14498d1"></div>
+    </div>
+  </footer>
   <!--
     You can customize the "flutter_bootstrap.js" script.
     This is useful to provide a custom configuration to the Flutter loader
